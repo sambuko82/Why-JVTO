@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Public Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  --font-heading: "Public Sans", sans-serif;
+  
+  --color-safety-orange: #FF6B35;
+  --color-authority-navy: #0F172A;
+  --color-authority-charcoal: #0D1B12;
+  --color-verified-lime: #A3E635;
+  --color-verified-bright: #CCFF00;
+  --color-audit-white: #F4F6F8;
+  --color-slate-200: #E2E8F0;
+}
+
+@layer base {
+  body {
+    @apply bg-audit-white text-authority-navy font-sans antialiased;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading font-black tracking-tight uppercase;
+  }
+}
+
+@layer components {
+  .bento-card {
+    @apply bg-white border border-slate-200 rounded-[2.5rem] shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden;
+  }
+  
+  .tech-badge {
+    @apply bg-authority-navy text-white font-mono text-[10px] px-2 py-1 rounded-[0.5rem] uppercase tracking-wider;
+  }
+  
+  .verified-badge {
+    @apply bg-gradient-to-r from-verified-bright to-verified-lime text-authority-navy font-mono font-bold text-[10px] px-2 py-1 rounded-[0.5rem] uppercase tracking-wider shadow-sm;
+  }
+  
+  .hash-string {
+    @apply font-mono text-[10px] text-slate-400 truncate bg-slate-50 px-2 py-1 rounded border border-slate-100;
+  }
+  
+  .status-live {
+    @apply relative flex h-2 w-2;
+  }
+  
+  .status-live::after {
+    @apply animate-ping absolute inline-flex h-full w-full rounded-full bg-safety-orange opacity-75 content-[''];
+  }
+  
+  .status-live::before {
+    @apply relative inline-flex rounded-full h-2 w-2 bg-safety-orange content-[''];
+  }
+  
+  .scanline {
+    @apply absolute w-full h-[2px] bg-safety-orange/30 shadow-[0_0_10px_rgba(255,107,53,0.5)] z-10 pointer-events-none;
+    animation: scan 3s linear infinite;
+  }
+
+  .forensic-loupe {
+    @apply absolute w-48 h-48 rounded-full border-4 border-safety-orange shadow-2xl pointer-events-none overflow-hidden z-30 bg-white;
+  }
+  
+  @keyframes scan {
+    0% { top: 0%; }
+    100% { top: 100%; }
+  }
+
+  @keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+
+  .animate-marquee {
+    animation: marquee 30s linear infinite;
+  }
+  
+  .grid-pattern {
+    background-image: radial-gradient(circle, #0F172A 1px, transparent 1px);
+    background-size: 24px 24px;
+    opacity: 0.03;
+  }
+
+  .text-glow {
+    text-shadow: 0 0 10px rgba(255, 107, 53, 0.5);
+  }
+}

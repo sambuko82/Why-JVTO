@@ -1,0 +1,231 @@
+export interface Review {
+  author: string;
+  text: string;
+  platform: string;
+  rating: number;
+  date: string;
+}
+
+export interface Credential {
+  name: string;
+  issuer: string;
+  status: string;
+  cardImage: string;
+}
+
+export interface CrewProfileData {
+  archetype: string;
+  image: string;
+  fullQuote: string;
+  expertise: string[];
+  credential: Credential;
+}
+
+export interface CrewMember {
+  id: string;
+  name: string;
+  role: string;
+  quote: string;
+  reviewer: string;
+  tags: string[];
+  profile: CrewProfileData;
+}
+
+export interface Organization {
+  legalName: string;
+  brandName?: string;
+  name: string;
+  url: string;
+  foundingDate: string;
+  nib: string;
+  address: string;
+  postalCode?: string;
+  mapCid: string;
+  description?: string;
+  priceRange?: string;
+  areaServed?: string[];
+  contactPoint?: {
+    email: string;
+    telephone: string;
+    availableLanguages: string[];
+  };
+  founder: {
+    name: string;
+    role: string;
+    unit: string;
+    description?: string;
+    image_url?: string;
+    sameAs?: string[];
+    knowsAbout?: string[];
+    memberOf?: {
+      name: string;
+      subOrganization: string;
+    };
+  };
+}
+
+export interface MedicalProtocol {
+  protocolName: string;
+  doctor: {
+    name: string;
+    sip: string;
+    affiliation: string;
+  };
+}
+
+export interface HistoryItem {
+  title: string;
+  recipient?: string;
+  score?: string;
+  address?: string;
+  edition?: string;
+  isbn?: string;
+  page?: string;
+  quote?: string;
+  authors?: string[];
+  publisher?: string;
+  year?: string;
+}
+
+export interface PressItem {
+  publisher: string;
+  date: string;
+  title: string;
+  url: string;
+  translatedTitle?: string;
+  quote?: string;
+  author?: string;
+  screenshot?: string;
+}
+
+export interface Partner {
+  name: string;
+  status: string;
+}
+
+export interface PoliceAuthority {
+  badge: string;
+  title: string;
+  description: string;
+  features: string[];
+  proof_link: string;
+}
+
+export interface OperationalLogic {
+  title: string;
+  desc: string;
+}
+
+export interface ReviewTriangulation {
+  platform: string;
+  rating: number;
+  text: string;
+  author: string;
+}
+
+export interface HealthProtocolStep {
+  step: string;
+  title: string;
+  desc: string;
+}
+
+export interface HealthProtocol {
+  title: string;
+  subtitle: string;
+  policy: string;
+  steps: HealthProtocolStep[];
+}
+
+export interface HubHero {
+  h1: string;
+  subhead: string;
+  primary_cta: { label: string; url: string };
+  secondary_cta: { label: string; url: string };
+}
+
+export interface TrustStackCard {
+  title: string;
+  summary: string;
+  link: string;
+}
+
+export interface TrustStackSection {
+  title: string;
+  description: string;
+  cards: TrustStackCard[];
+}
+
+export interface QuickAnswer {
+  q: string;
+  a: string;
+}
+
+export interface HubContent {
+  hero: HubHero;
+  intro_paragraphs: string[];
+  trust_stack: TrustStackSection;
+  quick_answers: QuickAnswer[];
+}
+
+export interface ProofItem {
+  title: string;
+  url: string;
+  type?: string;
+  hash?: string;
+  last_verified?: string;
+}
+
+export interface ProofVault {
+  legal: ProofItem[];
+  screening: ProofItem[];
+  ops: ProofItem[];
+  history: ProofItem[];
+  press: ProofItem[];
+  unpublished: ProofItem[];
+  other: ProofItem[];
+}
+
+export interface FAQItem {
+  q: string;
+  a: string;
+}
+
+export interface Asset {
+  id: string;
+  name: string;
+  category: string;
+  quantity: number;
+  status: string;
+  last_check: string;
+}
+
+export interface VerificationCredential {
+  id: string;
+  title: string;
+  issuer: string;
+  type: string;
+  status: string;
+  expiry: string;
+}
+
+export interface SSOTData {
+  organization: Organization;
+  medical: MedicalProtocol;
+  history: {
+    award2015: HistoryItem;
+    book2016: HistoryItem;
+  };
+  crew: CrewMember[];
+  press: PressItem[];
+  partners: Partner[];
+  police_authority: PoliceAuthority;
+  operational_logic: OperationalLogic[];
+  reviews_triangulation: ReviewTriangulation[];
+  crew_reviews: Record<string, Review[]>;
+  health_protocol: HealthProtocol;
+  hub_content: HubContent;
+  faq: FAQItem[];
+  proof_vault: ProofVault;
+  assets_inventory: Asset[];
+  verification_credentials: VerificationCredential[];
+}
