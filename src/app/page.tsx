@@ -79,12 +79,6 @@ export default function WhyJvto() {
 
       {/* SECTION 7: FOOTER */}
       <Footer />
-
-      {/* MOBILE NAVIGATION */}
-      <BottomNav />
-
-      {/* GLOBAL BOOKING RAIL */}
-      <BookingRail />
     </div>
   );
 }

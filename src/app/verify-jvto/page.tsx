@@ -22,7 +22,7 @@ export default function VerifyJvto() {
       <div className="fixed inset-0 grid-pattern opacity-5 pointer-events-none"></div>
       
       {/* Header */}
-      <div className="border-b border-slate-200 bg-audit-white/80 sticky top-0 z-50 backdrop-blur-xl">
+      <div className="border-b border-slate-200 bg-audit-white/80 relative z-40 backdrop-blur-xl">
         <div className="container mx-auto px-6 py-6 flex items-center justify-between">
           <button 
             onClick={onBack}
@@ -444,9 +444,6 @@ export default function VerifyJvto() {
         assetHash={selectedAsset?.hash || ''}
         assetType={selectedAsset?.type || 'image'}
       />
-
-      {/* GLOBAL BOOKING RAIL */}
-      <BookingRail />
     </div>
   );
 }

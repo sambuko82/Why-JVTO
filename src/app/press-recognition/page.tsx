@@ -41,7 +41,7 @@ export default function PressRecognition() {
       <div className="fixed inset-0 grid-pattern opacity-5 pointer-events-none"></div>
       
       {/* Header */}
-      <div className="border-b border-slate-200 bg-audit-white/80 sticky top-0 z-50 backdrop-blur-xl">
+      <div className="border-b border-slate-200 bg-audit-white/80 relative z-40 backdrop-blur-xl">
         <div className="container mx-auto px-6 py-6 flex items-center justify-between">
           <button 
             onClick={onBack}

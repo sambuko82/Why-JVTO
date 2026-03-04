@@ -18,7 +18,10 @@ import {
   UserCheck,
   ShieldAlert,
   Activity,
-  FileDigit
+  FileDigit,
+  Filter,
+  SlidersHorizontal,
+  ChevronLeft
 } from 'lucide-react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { SSOT } from '../../lib/ssot';
@@ -29,6 +32,9 @@ export default function CrewProfile() {
   const { crewId } = useParams<{ crewId: string }>();
   const navigate = useNavigate();
   const [showSchema, setShowSchema] = useState(false);
+  const [platformFilter, setPlatformFilter] = useState('All');
+  const [sortBy, setSortBy] = useState('Newest'); // Newest, Highest, Lowest
+  const [currentReviewIndex, setCurrentReviewIndex] = useState(0);
 
   // Find crew data from SSOT
   const crewMember = SSOT.crew.find(c => c.id === crewId);
@@ -52,7 +58,32 @@ export default function CrewProfile() {
   }
 
   // Get reviews from SSOT
-  const reviews = SSOT.crew_reviews[crewMember.name] || [];
+  const rawReviews = SSOT.crew_reviews[crewMember.name] || [];
+
+  // Apply filtering and sorting
+  const filteredAndSortedReviews = [...rawReviews]
+    .filter(review => platformFilter === 'All' || review.platform === platformFilter)
+    .sort((a, b) => {
+      if (sortBy === 'Highest') return b.rating - a.rating;
+      if (sortBy === 'Lowest') return a.rating - b.rating;
+      // For 'Newest', we don't have full dates, but we can assume order in SSOT is chronological or just keep as is
+      return 0; 
+    });
+
+  const platforms = ['All', ...new Set(rawReviews.map(r => r.platform))];
+
+  // Reset carousel when filters change
+  React.useEffect(() => {
+    setCurrentReviewIndex(0);
+  }, [platformFilter, sortBy]);
+
+  const nextReview = () => {
+    setCurrentReviewIndex((prev) => (prev + 1) % filteredAndSortedReviews.length);
+  };
+
+  const prevReview = () => {
+    setCurrentReviewIndex((prev) => (prev - 1 + filteredAndSortedReviews.length) % filteredAndSortedReviews.length);
+  };
 
   const profileData = {
     id: crewMember.id,
@@ -63,7 +94,7 @@ export default function CrewProfile() {
     quote: crewMember.profile.fullQuote,
     expertise: crewMember.profile.expertise,
     credential: crewMember.profile.credential,
-    reviews: reviews
+    reviews: filteredAndSortedReviews
   };
 
   const jsonLdGraph = {
@@ -95,7 +126,7 @@ export default function CrewProfile() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdGraph) }} />
 
       {/* Header / Nav */}
-      <nav className="bg-authority-navy border-b border-white/5 sticky top-0 z-50 backdrop-blur-xl">
+      <nav className="bg-authority-navy border-b border-white/5 relative z-40 backdrop-blur-xl">
         <div className="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
           <button 
             onClick={() => navigate('/')}
@@ -295,32 +326,118 @@ export default function CrewProfile() {
               Algorithmic proof extracted directly from third-party review platforms confirming {profileData.name}'s specific competencies.
             </p>
 
+            {/* Review Controls */}
+            <div className="flex flex-col sm:flex-row gap-6 mb-12 pb-12 border-b border-slate-100">
+              <div className="flex-1">
+                <div className="flex items-center gap-2 mb-3">
+                  <Filter className="w-3 h-3 text-slate-400" />
+                  <span className="font-mono text-[10px] uppercase tracking-widest text-slate-400">Filter by Platform</span>
+                </div>
+                <div className="flex flex-wrap gap-2">
+                  {platforms.map(platform => (
+                    <button
+                      key={platform}
+                      onClick={() => setPlatformFilter(platform)}
+                      className={`px-4 py-2 rounded-xl font-mono text-[10px] uppercase tracking-widest transition-all border ${
+                        platformFilter === platform 
+                          ? 'bg-authority-navy text-white border-authority-navy shadow-lg' 
+                          : 'bg-white text-slate-400 border-slate-200 hover:border-slate-300'
+                      }`}
+                    >
+                      {platform}
+                    </button>
+                  ))}
+                </div>
+              </div>
+              <div className="sm:w-48">
+                <div className="flex items-center gap-2 mb-3">
+                  <SlidersHorizontal className="w-3 h-3 text-slate-400" />
+                  <span className="font-mono text-[10px] uppercase tracking-widest text-slate-400">Sort by Rating</span>
+                </div>
+                <select 
+                  value={sortBy}
+                  onChange={(e) => setSortBy(e.target.value)}
+                  className="w-full bg-white border border-slate-200 rounded-xl px-4 py-2 font-mono text-[10px] uppercase tracking-widest focus:border-safety-orange outline-none"
+                >
+                  <option value="Newest">Newest First</option>
+                  <option value="Highest">Highest Rated</option>
+                  <option value="Lowest">Lowest Rated</option>
+                </select>
+              </div>
+            </div>
+
             <div className="space-y-8">
-              {profileData.reviews.map((review, index) => (
-                <div key={index} className="bg-slate-50 p-10 rounded-[2.5rem] border border-slate-100 hover:border-safety-orange/30 transition-all group">
-                  <div className="flex justify-between items-start mb-8">
-                    <div className="flex items-center gap-5">
-                      <div className="w-14 h-14 bg-white rounded-full flex items-center justify-center font-black text-authority-navy border border-slate-200 shadow-sm text-xl">
-                        {review.author.charAt(0)}
+              {profileData.reviews.length > 0 ? (
+                <div className="relative">
+                  <AnimatePresence mode="wait">
+                    <motion.div 
+                      key={currentReviewIndex}
+                      initial={{ opacity: 0, x: 20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      exit={{ opacity: 0, x: -20 }}
+                      transition={{ duration: 0.3 }}
+                      className="bg-slate-50 p-10 rounded-[2.5rem] border border-slate-100 hover:border-safety-orange/30 transition-all group"
+                    >
+                      <div className="flex justify-between items-start mb-8">
+                        <div className="flex items-center gap-5">
+                          <div className="w-14 h-14 bg-white rounded-full flex items-center justify-center font-black text-authority-navy border border-slate-200 shadow-sm text-xl">
+                            {profileData.reviews[currentReviewIndex].author.charAt(0)}
+                          </div>
+                          <div>
+                            <p className="font-black text-authority-navy uppercase leading-none mb-2 text-xl tracking-tight">{profileData.reviews[currentReviewIndex].author}</p>
+                            <div className="flex items-center gap-3">
+                              <p className="font-mono text-[10px] text-slate-400 uppercase tracking-widest flex items-center gap-2">
+                                <MapPin className="h-3 w-3" /> via {profileData.reviews[currentReviewIndex].platform}
+                              </p>
+                              <div className="flex items-center gap-0.5">
+                                {[...Array(5)].map((_, i) => (
+                                  <Star key={i} className={`h-3 w-3 ${i < profileData.reviews[currentReviewIndex].rating ? 'text-safety-orange fill-safety-orange' : 'text-slate-200'}`} />
+                                ))}
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div className="verified-badge bg-white text-authority-navy border-slate-200 px-4 py-2 hidden sm:block">VERIFIED_REVIEW</div>
                       </div>
-                      <div>
-                        <p className="font-black text-authority-navy uppercase leading-none mb-2 text-xl tracking-tight">{review.author}</p>
-                        <p className="font-mono text-[10px] text-slate-400 uppercase tracking-widest flex items-center gap-2">
-                          <MapPin className="h-3 w-3" /> via {review.platform}
-                        </p>
+                      <p className="text-2xl text-slate-600 italic font-light leading-tight">"{profileData.reviews[currentReviewIndex].text}"</p>
+                    </motion.div>
+                  </AnimatePresence>
+
+                  {/* Carousel Controls */}
+                  {profileData.reviews.length > 1 && (
+                    <div className="flex items-center justify-between mt-8">
+                      <div className="flex items-center gap-2">
+                        {profileData.reviews.map((_, idx) => (
+                          <button
+                            key={idx}
+                            onClick={() => setCurrentReviewIndex(idx)}
+                            className={`h-2 rounded-full transition-all ${idx === currentReviewIndex ? 'w-8 bg-safety-orange' : 'w-2 bg-slate-200 hover:bg-slate-300'}`}
+                            aria-label={`Go to review ${idx + 1}`}
+                          />
+                        ))}
+                      </div>
+                      <div className="flex items-center gap-3">
+                        <button 
+                          onClick={prevReview}
+                          className="p-3 rounded-xl border border-slate-200 text-slate-400 hover:text-authority-navy hover:border-authority-navy transition-all"
+                        >
+                          <ChevronLeft className="w-5 h-5" />
+                        </button>
+                        <button 
+                          onClick={nextReview}
+                          className="p-3 rounded-xl border border-slate-200 text-slate-400 hover:text-authority-navy hover:border-authority-navy transition-all"
+                        >
+                          <ChevronRight className="w-5 h-5" />
+                        </button>
                       </div>
                     </div>
-                    <div className="verified-badge bg-white text-authority-navy border-slate-200 px-4 py-2">VERIFIED_REVIEW</div>
-                  </div>
-                  <p className="text-2xl text-slate-600 italic font-light leading-tight">"{review.text}"</p>
+                  )}
                 </div>
-              ))}
-              
-              {profileData.reviews.length === 0 && (
-                 <div className="text-center py-24 text-slate-400 bento-card border-dashed border-2">
-                   <div className="status-live mb-4 mx-auto"></div>
-                   <p className="font-mono text-[10px] uppercase tracking-widest">No specific reviews loaded for this profile yet.</p>
-                 </div>
+              ) : (
+                <div className="text-center py-24 text-slate-400 bento-card border-dashed border-2">
+                  <div className="status-live mb-4 mx-auto"></div>
+                  <p className="font-mono text-[10px] uppercase tracking-widest">No specific reviews loaded for this profile yet.</p>
+                </div>
               )}
             </div>
           </motion.section>

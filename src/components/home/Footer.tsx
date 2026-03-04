@@ -1,8 +1,10 @@
 import React from 'react';
-import { Lock, ShieldCheck, MessageSquare, ChevronRight, Fingerprint, Globe } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
+import { Lock, ShieldCheck, MessageSquare, ChevronRight, Fingerprint, Globe, HelpCircle } from 'lucide-react';
 import { motion } from 'motion/react';
 
 export const Footer = () => {
+  const navigate = useNavigate();
   return (
     <footer className="bg-authority-navy text-white py-32 px-6 relative overflow-hidden border-t border-white/5">
       {/* Grid Pattern */}
@@ -24,6 +26,12 @@ export const Footer = () => {
             <div className="flex flex-col sm:flex-row justify-center lg:justify-start gap-4">
               <button className="group bg-safety-orange hover:bg-safety-orange/90 text-white px-10 py-5 rounded-xl font-black uppercase tracking-wider transition-all shadow-xl shadow-safety-orange/20 flex items-center justify-center gap-3">
                 Book Private Expedition <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </button>
+              <button 
+                onClick={() => navigate('/faq')}
+                className="group bg-white/5 border border-white/10 hover:bg-white/10 text-white px-10 py-5 rounded-xl font-black uppercase tracking-wider transition-all flex items-center justify-center gap-3"
+              >
+                <HelpCircle className="w-5 h-5" /> Technical FAQ
               </button>
               <button className="group bg-white/5 border border-white/10 hover:bg-white/10 text-white px-10 py-5 rounded-xl font-black uppercase tracking-wider transition-all flex items-center justify-center gap-3">
                 <MessageSquare className="w-5 h-5" /> WhatsApp Mr. Sam
