@@ -34,7 +34,7 @@ export const ForensicLocker = () => {
             </p>
           </div>
           <button 
-            onClick={() => navigate('/verify')}
+            onClick={() => navigate('/verify-jvto')}
             className="group bg-white text-authority-navy px-8 py-4 rounded-xl font-black uppercase tracking-wider transition-all hover:bg-safety-orange hover:text-white flex items-center gap-3 shadow-xl shadow-black/20"
           >
             <Lock className="w-5 h-5"/> Enter Proof Library <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />

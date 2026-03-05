@@ -49,7 +49,7 @@ export const AuthorityShield = () => {
             </div>
 
             <button 
-              onClick={() => navigate('/verify')}
+              onClick={() => navigate('/verify-jvto')}
               className="group inline-flex items-center gap-3 bg-white text-authority-navy px-8 py-4 rounded-xl font-black uppercase tracking-wider transition-all hover:bg-safety-orange hover:text-white"
             >
               View Forensic Proof <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />

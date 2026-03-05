@@ -11,9 +11,9 @@ export const TopNav = () => {
 
   const navItems = [
     { label: 'Audit Hub', path: '/' },
-    { label: 'Evidence', path: '/verify' },
-    { label: 'Safety', path: '/ijen-health-screening' },
-    { label: 'Support', path: '/faq' },
+    { label: 'Evidence', path: '/verify-jvto' },
+    { label: 'Safety', path: '/travel-guide/ijen-health-screening' },
+    { label: 'Support', path: '/why-jvto' },
   ];
 
   return (

@@ -8,9 +8,9 @@ export const BottomNav = () => {
 
   const navItems = [
     { icon: <LayoutDashboard className="w-5 h-5" />, label: 'Audit Hub', path: '/' },
-    { icon: <FileText className="w-5 h-5" />, label: 'Evidence', path: '/verify' },
-    { icon: <ShieldCheck className="w-5 h-5" />, label: 'Safety', path: '/ijen-health-screening' },
-    { icon: <MessageSquare className="w-5 h-5" />, label: 'Support', path: '/faq' },
+    { icon: <FileText className="w-5 h-5" />, label: 'Evidence', path: '/verify-jvto' },
+    { icon: <ShieldCheck className="w-5 h-5" />, label: 'Safety', path: '/travel-guide/ijen-health-screening' },
+    { icon: <MessageSquare className="w-5 h-5" />, label: 'Support', path: '/why-jvto' },
   ];
 
   return (

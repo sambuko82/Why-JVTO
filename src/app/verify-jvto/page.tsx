@@ -417,6 +417,57 @@ export default function VerifyJvto() {
             </div>
           </motion.section>
 
+          {/* Partner Network */}
+          <motion.section
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <div className="flex items-center justify-between mb-12">
+              <div className="flex items-center gap-4">
+                <div className="p-3 bg-slate-50 rounded-2xl text-safety-orange border border-slate-100">
+                  <CheckCircle2 className="w-8 h-8" />
+                </div>
+                <div>
+                  <h2 className="text-3xl font-black text-authority-navy uppercase leading-none mb-1">Partner Network</h2>
+                  <p className="font-mono text-[10px] text-slate-400 uppercase tracking-widest">VERIFIED_AFFILIATIONS</p>
+                </div>
+              </div>
+              <EvidenceBadge type="verified" text="Active Network" />
+            </div>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {SSOT.partners.map((partner, idx) => {
+                const partnerSlug = partner.name.toLowerCase().replace(/[^a-z0-9]+/g, '-');
+                return (
+                  <div 
+                    key={idx} 
+                    onClick={() => navigate(`/verify-jvto/partners/${partnerSlug}`)}
+                    className="bento-card bg-white p-8 relative group hover:border-safety-orange/30 transition-all cursor-pointer"
+                  >
+                    <div className="scanline"></div>
+                    <div className="flex items-center gap-4 mb-6">
+                      <div className="w-12 h-12 bg-slate-50 rounded-xl flex items-center justify-center border border-slate-100 text-authority-navy group-hover:text-safety-orange transition-colors">
+                        <ShieldCheck className="w-6 h-6" />
+                      </div>
+                      <div>
+                        <h3 className="text-xl font-black text-authority-navy uppercase leading-none mb-1">{partner.name}</h3>
+                        <p className="font-mono text-[10px] text-safety-orange uppercase tracking-widest">{partner.status}</p>
+                      </div>
+                    </div>
+                    <div className="flex items-center justify-between pt-6 border-t border-slate-100">
+                      <span className="font-mono text-[10px] text-slate-400 uppercase tracking-widest flex items-center gap-2">
+                        Status: Verified <ExternalLink className="w-3 h-3 group-hover:text-safety-orange transition-colors" />
+                      </span>
+                      <HashBadge hash={`PRT-${idx + 1}X9...`} />
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </motion.section>
+
         </div>
         
         {/* Footer Audit Stamp */}

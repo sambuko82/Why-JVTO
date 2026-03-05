@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { Activity, Stethoscope, FileCheck, ArrowLeft, ShieldCheck, HeartPulse, AlertTriangle, CheckCircle2, Lock, Fingerprint, Search, Database, ShieldAlert, ClipboardCheck, QrCode, ChevronRight, UserCheck, Timer, FileDigit } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
-import { SSOT } from '../../lib/ssot';
+import { SSOT } from '../../../lib/ssot';
 import { motion, AnimatePresence } from 'motion/react';
-import { BookingRail } from '../../components/BookingRail';
+import { BookingRail } from '../../../components/BookingRail';
 
 export default function IjenHealthScreening() {
   const navigate = useNavigate();

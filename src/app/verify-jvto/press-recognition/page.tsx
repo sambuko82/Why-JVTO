@@ -21,10 +21,10 @@ import {
   Quote
 } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
-import { SSOT } from '../../lib/ssot';
+import { SSOT } from '../../../lib/ssot';
 import { motion, AnimatePresence } from 'motion/react';
-import { AssetViewer } from '../../components/AssetViewer';
-import { HashBadge, EvidenceBadge } from '../../components/ForensicUI';
+import { AssetViewer } from '../../../components/AssetViewer';
+import { HashBadge, EvidenceBadge } from '../../../components/ForensicUI';
 
 export default function PressRecognition() {
   const navigate = useNavigate();

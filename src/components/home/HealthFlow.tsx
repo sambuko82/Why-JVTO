@@ -52,7 +52,7 @@ export const HealthFlow = () => {
             </div>
 
             <button 
-              onClick={() => navigate('/ijen-health-screening')}
+              onClick={() => navigate('/travel-guide/ijen-health-screening')}
               className="group inline-flex items-center gap-3 bg-authority-navy text-white px-8 py-4 rounded-xl font-black uppercase tracking-wider transition-all hover:bg-safety-orange shadow-xl shadow-authority-navy/20"
             >
               View Full Medical Protocol <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />

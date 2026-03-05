@@ -71,7 +71,7 @@ export const TeamRegistry = () => {
               </div>
               <div className="absolute inset-0 bg-gradient-to-t from-authority-navy/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-8">
                 <button 
-                  onClick={() => navigate(`/crew/${crew.id}`)}
+                  onClick={() => navigate(`/team/${crew.id}`)}
                   className="w-full bg-safety-orange text-white font-black py-4 rounded-xl text-xs uppercase tracking-widest flex items-center justify-center gap-2 shadow-xl"
                 >
                   Inspect Profile <Search className="w-4 h-4" />

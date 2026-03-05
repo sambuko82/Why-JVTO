@@ -509,7 +509,7 @@ export const SSOT: SSOTData = {
         { title: "Proof & Transparency", summary: "The 'Forensic Evidence Locker' of our legitimacy.", link: "/why-jvto/proof-transparency" },
         { title: "Health Screening", summary: "Mandatory vitals check by licensed doctors.", link: "/ijen-health-screening" },
         { title: "Guest Voices", summary: "Real reviews, triangulated across platforms.", link: "/why-jvto/guest-voices-reviews" },
-        { title: "Verified Partners", summary: "Official affiliations: TripAdvisor, ISIC, INDECON.", link: "/why-jvto/partners-verification" },
+        { title: "Verified Partners", summary: "Official affiliations: TripAdvisor, ISIC, INDECON.", link: "/verify-jvto" },
         { title: "Local Operations", summary: "Dedicated crew, private transport, no mixed groups.", link: "/why-jvto/local-team-operations" }
       ]
     },

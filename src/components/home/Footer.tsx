@@ -28,7 +28,7 @@ export const Footer = () => {
                 Book Private Expedition <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </button>
               <button 
-                onClick={() => navigate('/faq')}
+                onClick={() => navigate('/why-jvto')}
                 className="group bg-white/5 border border-white/10 hover:bg-white/10 text-white px-10 py-5 rounded-xl font-black uppercase tracking-wider transition-all flex items-center justify-center gap-3"
               >
                 <HelpCircle className="w-5 h-5" /> Technical FAQ

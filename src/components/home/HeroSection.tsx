@@ -22,7 +22,7 @@ export const HeroSection = () => {
       step++;
       if (step > auditSteps.length) {
         clearInterval(interval);
-        setTimeout(() => navigate('/verify'), 500);
+        setTimeout(() => navigate('/verify-jvto'), 500);
       } else {
         setAuditStep(step);
       }
@@ -126,13 +126,13 @@ export const HeroSection = () => {
             className="flex flex-col sm:flex-row items-center gap-4"
           >
             <button 
-              onClick={() => navigate('/verify')}
+              onClick={() => navigate('/verify-jvto')}
               className="w-full sm:w-auto bg-safety-orange hover:bg-safety-orange/90 text-white px-10 py-5 rounded-xl font-black uppercase tracking-wider transition-all shadow-xl shadow-safety-orange/20 flex items-center justify-center gap-3 group"
             >
               <Search className="w-5 h-5 group-hover:scale-110 transition-transform" /> Start Forensic Audit
             </button>
             <button 
-              onClick={() => navigate('/why-jvto/safety-screening')}
+              onClick={() => navigate('/travel-guide/ijen-health-screening')}
               className="w-full sm:w-auto bg-white/5 border border-white/10 hover:bg-white/10 text-white px-10 py-5 rounded-xl font-black uppercase tracking-wider transition-all flex items-center justify-center gap-3"
             >
               <Activity className="w-5 h-5" /> Medical Protocols

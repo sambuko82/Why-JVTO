@@ -21,7 +21,9 @@ import {
   FileDigit,
   Filter,
   SlidersHorizontal,
-  ChevronLeft
+  ChevronLeft,
+  Compass,
+  MessageSquare
 } from 'lucide-react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { SSOT } from '../../lib/ssot';
@@ -83,6 +85,24 @@ export default function CrewProfile() {
 
   const prevReview = () => {
     setCurrentReviewIndex((prev) => (prev - 1 + filteredAndSortedReviews.length) % filteredAndSortedReviews.length);
+  };
+
+  const getPlatformIcon = (platform: string) => {
+    switch (platform) {
+      case 'TripAdvisor': return <img src="https://www.tripadvisor.com/favicon.ico" alt="TripAdvisor" className="w-4 h-4" referrerPolicy="no-referrer" />;
+      case 'Google Reviews': return <img src="https://www.google.com/favicon.ico" alt="Google Reviews" className="w-4 h-4" referrerPolicy="no-referrer" />;
+      case 'Trustpilot': return <img src="https://www.trustpilot.com/favicon.ico" alt="Trustpilot" className="w-4 h-4" referrerPolicy="no-referrer" />;
+      default: return <MessageSquare className="w-4 h-4" />;
+    }
+  };
+
+  const getPlatformColor = (platform: string) => {
+    switch (platform) {
+      case 'TripAdvisor': return 'text-emerald-600 bg-emerald-50 border-emerald-200';
+      case 'Google Reviews': return 'text-blue-600 bg-blue-50 border-blue-200';
+      case 'Trustpilot': return 'text-green-600 bg-green-50 border-green-200';
+      default: return 'text-slate-600 bg-slate-50 border-slate-200';
+    }
   };
 
   const profileData = {
@@ -386,9 +406,9 @@ export default function CrewProfile() {
                           <div>
                             <p className="font-black text-authority-navy uppercase leading-none mb-2 text-xl tracking-tight">{profileData.reviews[currentReviewIndex].author}</p>
                             <div className="flex items-center gap-3">
-                              <p className="font-mono text-[10px] text-slate-400 uppercase tracking-widest flex items-center gap-2">
-                                <MapPin className="h-3 w-3" /> via {profileData.reviews[currentReviewIndex].platform}
-                              </p>
+                              <div className={`font-mono text-[10px] uppercase tracking-widest flex items-center justify-center w-8 h-8 rounded-md border ${getPlatformColor(profileData.reviews[currentReviewIndex].platform)}`} title={profileData.reviews[currentReviewIndex].platform}>
+                                {getPlatformIcon(profileData.reviews[currentReviewIndex].platform)}
+                              </div>
                               <div className="flex items-center gap-0.5">
                                 {[...Array(5)].map((_, i) => (
                                   <Star key={i} className={`h-3 w-3 ${i < profileData.reviews[currentReviewIndex].rating ? 'text-safety-orange fill-safety-orange' : 'text-slate-200'}`} />
