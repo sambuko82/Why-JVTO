@@ -12,8 +12,12 @@ import WhyJvto from './app/page';
 import VerifyJvto from './app/verify-jvto/page';
 import IjenHealthScreening from './app/travel-guide/ijen-health-screening/page';
 import PressRecognitionPage from './app/verify-jvto/press-recognition/page';
-import CrewProfile from './app/team/page';
-import FAQPage from './app/why-jvto/page';
+import CrewProfile from './app/team/ProfilePage';
+import TeamRegistryPage from './app/team/page';
+import WhyJvtoHub from './app/why-jvto/page';
+import JVTODifference from './app/why-jvto/the-jvto-difference/page';
+import SafetyLeadership from './app/why-jvto/safety-leadership/page';
+import OurStory from './app/why-jvto/our-story/page';
 import { GlobalLayout } from './components/GlobalLayout';
 
 export default function App() {
@@ -26,24 +30,27 @@ export default function App() {
             <Route path="/" element={<WhyJvto />} />
 
             {/* Trust Hub */}
-            <Route path="/why-jvto" element={<FAQPage />} />
-            <Route path="/why-jvto/safety-leadership" element={<Navigate to="/why-jvto" replace />} />
-            <Route path="/why-jvto/our-story" element={<Navigate to="/why-jvto" replace />} />
+            <Route path="/why-jvto" element={<WhyJvtoHub />} />
+            <Route path="/why-jvto/safety-leadership" element={<SafetyLeadership />} />
+            <Route path="/why-jvto/our-story" element={<OurStory />} />
             <Route path="/why-jvto/our-team" element={<Navigate to="/team" replace />} />
-            <Route path="/why-jvto/the-jvto-difference" element={<Navigate to="/why-jvto" replace />} />
+            <Route path="/why-jvto/the-jvto-difference" element={<JVTODifference />} />
+            <Route path="/why-jvto/proof-transparency" element={<Navigate to="/verify-jvto" replace />} />
+            <Route path="/why-jvto/local-team-operations" element={<Navigate to="/team" replace />} />
+            <Route path="/why-jvto/guest-voices-reviews" element={<Navigate to="/verify-jvto#reputation" replace />} />
 
             {/* Proof Library (SSOT dedicated hub) */}
             <Route path="/verify-jvto" element={<VerifyJvto />} />
             <Route path="/verify-jvto/press-recognition" element={<PressRecognitionPage />} />
-            <Route path="/verify-jvto/legal" element={<Navigate to="/verify-jvto" replace />} />
-            <Route path="/verify-jvto/police-safety" element={<Navigate to="/verify-jvto" replace />} />
-            <Route path="/verify-jvto/history-artifacts" element={<Navigate to="/verify-jvto" replace />} />
-            <Route path="/verify-jvto/partners" element={<Navigate to="/verify-jvto" replace />} />
-            <Route path="/verify-jvto/partners/:partnerId" element={<Navigate to="/verify-jvto" replace />} />
+            <Route path="/verify-jvto/legal" element={<Navigate to="/verify-jvto#legality" replace />} />
+            <Route path="/verify-jvto/police-safety" element={<Navigate to="/verify-jvto#police-safety" replace />} />
+            <Route path="/verify-jvto/history-artifacts" element={<Navigate to="/verify-jvto#history" replace />} />
+            <Route path="/verify-jvto/partners" element={<Navigate to="/verify-jvto#partners" replace />} />
+            <Route path="/verify-jvto/partners/:partnerId" element={<Navigate to="/verify-jvto#partners" replace />} />
 
             {/* Crew Registry */}
             <Route path="/team/:crewId" element={<CrewProfile />} />
-            <Route path="/team" element={<Navigate to="/" replace />} />
+            <Route path="/team" element={<TeamRegistryPage />} />
 
             {/* Travel Guide */}
             <Route path="/travel-guide/ijen-health-screening" element={<IjenHealthScreening />} />
@@ -54,7 +61,7 @@ export default function App() {
             <Route path="/tour/:slug" element={<Navigate to="/" replace />} />
 
             {/* Reviews Registry */}
-            <Route path="/reviews" element={<Navigate to="/" replace />} />
+            <Route path="/reviews" element={<Navigate to="/verify-jvto" replace />} />
 
             {/* Policy */}
             <Route path="/policy/booking-payment-cancellation" element={<Navigate to="/why-jvto" replace />} />

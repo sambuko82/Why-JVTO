@@ -101,6 +101,8 @@ export interface PressItem {
 export interface Partner {
   name: string;
   status: string;
+  description?: string;
+  tier?: string;
 }
 
 export interface PoliceAuthority {
@@ -168,21 +170,33 @@ export interface HubContent {
 }
 
 export interface ProofItem {
+  slug: string;
   title: string;
   url: string;
   type?: string;
   hash?: string;
   last_verified?: string;
+  category?: string;
 }
 
 export interface ProofVault {
-  legal: ProofItem[];
-  screening: ProofItem[];
-  ops: ProofItem[];
-  history: ProofItem[];
+  license: ProofItem[];
+  legality: ProofItem[];
+  accountability: ProofItem[];
+  safety: ProofItem[];
+  police_safety: ProofItem[];
+  credentials: ProofItem[];
   press: ProofItem[];
-  unpublished: ProofItem[];
-  other: ProofItem[];
+  history: ProofItem[];
+  partners: ProofItem[];
+  reputation: ProofItem[];
+}
+
+export interface Claim {
+  id: string;
+  text: string;
+  meaning: string;
+  evidenceAnchor: string;
 }
 
 export interface FAQItem {
@@ -226,6 +240,7 @@ export interface SSOTData {
   hub_content: HubContent;
   faq: FAQItem[];
   proof_vault: ProofVault;
+  claims: Claim[];
   assets_inventory: Asset[];
   verification_credentials: VerificationCredential[];
 }

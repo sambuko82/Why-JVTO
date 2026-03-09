@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet-async';
 import { HeroSection } from '../components/home/HeroSection';
 import { TrustStack } from '../components/home/TrustStack';
 import { AuthorityShield } from '../components/home/AuthorityShield';
@@ -8,8 +9,6 @@ import { ForensicLocker } from '../components/home/ForensicLocker';
 import { HealthFlow } from '../components/home/HealthFlow';
 import { TeamRegistry } from '../components/home/TeamRegistry';
 import { Footer } from '../components/home/Footer';
-import { BottomNav } from '../components/home/BottomNav';
-import { BookingRail } from '../components/BookingRail';
 import { SSOT } from '../lib/ssot';
 
 export default function WhyJvto() {
@@ -50,8 +49,13 @@ export default function WhyJvto() {
 
   return (
     <div className="min-h-screen bg-audit-white font-sans text-authority-navy selection:bg-safety-orange/30 pb-20 md:pb-0">
-      {/* Injeksi Skema */}
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdSchema) }} />
+      <Helmet>
+        <title>{SSOT.organization.name} | Police-Led Volcanic Expeditions</title>
+        <meta name="description" content={SSOT.organization.description} />
+        <script type="application/ld+json">
+          {JSON.stringify(jsonLdSchema)}
+        </script>
+      </Helmet>
 
       {/* SECTION 1: HERO (The Authority Statement) */}
       <HeroSection />

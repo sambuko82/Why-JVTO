@@ -83,7 +83,7 @@ export const HealthFlow = () => {
                 <Activity className="w-4 h-4 text-safety-orange" /> Verified Screening Evidence
               </h4>
               <div className="grid grid-cols-1 gap-3">
-                {SSOT.proof_vault.screening.map((item, i) => (
+                {SSOT.proof_vault.safety.map((item, i) => (
                   <a 
                     key={i}
                     href={item.url}

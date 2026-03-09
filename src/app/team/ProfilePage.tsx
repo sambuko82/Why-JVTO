@@ -29,6 +29,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { SSOT } from '../../lib/ssot';
 import { motion, AnimatePresence } from 'motion/react';
 import { HashBadge } from '../../components/ForensicUI';
+import { AuditStamp } from '../../components/AuditStamp';
 
 export default function CrewProfile() {
   const { crewId } = useParams<{ crewId: string }>();
@@ -388,7 +389,7 @@ export default function CrewProfile() {
 
             <div className="space-y-8">
               {profileData.reviews.length > 0 ? (
-                <div className="relative">
+                <div className="relative group/carousel">
                   <AnimatePresence mode="wait">
                     <motion.div 
                       key={currentReviewIndex}
@@ -396,22 +397,22 @@ export default function CrewProfile() {
                       animate={{ opacity: 1, x: 0 }}
                       exit={{ opacity: 0, x: -20 }}
                       transition={{ duration: 0.3 }}
-                      className="bg-slate-50 p-10 rounded-[2.5rem] border border-slate-100 hover:border-safety-orange/30 transition-all group"
+                      className="bg-slate-50 p-10 md:p-16 rounded-[3rem] border border-slate-100 hover:border-safety-orange/30 transition-all group"
                     >
                       <div className="flex justify-between items-start mb-8">
                         <div className="flex items-center gap-5">
-                          <div className="w-14 h-14 bg-white rounded-full flex items-center justify-center font-black text-authority-navy border border-slate-200 shadow-sm text-xl">
+                          <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center font-black text-authority-navy border border-slate-200 shadow-sm text-2xl">
                             {profileData.reviews[currentReviewIndex].author.charAt(0)}
                           </div>
                           <div>
-                            <p className="font-black text-authority-navy uppercase leading-none mb-2 text-xl tracking-tight">{profileData.reviews[currentReviewIndex].author}</p>
+                            <p className="font-black text-authority-navy uppercase leading-none mb-2 text-2xl tracking-tight">{profileData.reviews[currentReviewIndex].author}</p>
                             <div className="flex items-center gap-3">
                               <div className={`font-mono text-[10px] uppercase tracking-widest flex items-center justify-center w-8 h-8 rounded-md border ${getPlatformColor(profileData.reviews[currentReviewIndex].platform)}`} title={profileData.reviews[currentReviewIndex].platform}>
                                 {getPlatformIcon(profileData.reviews[currentReviewIndex].platform)}
                               </div>
                               <div className="flex items-center gap-0.5">
                                 {[...Array(5)].map((_, i) => (
-                                  <Star key={i} className={`h-3 w-3 ${i < profileData.reviews[currentReviewIndex].rating ? 'text-safety-orange fill-safety-orange' : 'text-slate-200'}`} />
+                                  <Star key={i} className={`h-4 w-4 ${i < profileData.reviews[currentReviewIndex].rating ? 'text-safety-orange fill-safety-orange' : 'text-slate-200'}`} />
                                 ))}
                               </div>
                             </div>
@@ -419,37 +420,63 @@ export default function CrewProfile() {
                         </div>
                         <div className="verified-badge bg-white text-authority-navy border-slate-200 px-4 py-2 hidden sm:block">VERIFIED_REVIEW</div>
                       </div>
-                      <p className="text-2xl text-slate-600 italic font-light leading-tight">"{profileData.reviews[currentReviewIndex].text}"</p>
+                      <p className="text-2xl md:text-3xl text-slate-600 italic font-light leading-tight">"{profileData.reviews[currentReviewIndex].text}"</p>
                     </motion.div>
                   </AnimatePresence>
 
-                  {/* Carousel Controls */}
+                  {/* Side Navigation Arrows */}
                   {profileData.reviews.length > 1 && (
-                    <div className="flex items-center justify-between mt-8">
-                      <div className="flex items-center gap-2">
-                        {profileData.reviews.map((_, idx) => (
-                          <button
-                            key={idx}
-                            onClick={() => setCurrentReviewIndex(idx)}
-                            className={`h-2 rounded-full transition-all ${idx === currentReviewIndex ? 'w-8 bg-safety-orange' : 'w-2 bg-slate-200 hover:bg-slate-300'}`}
-                            aria-label={`Go to review ${idx + 1}`}
-                          />
-                        ))}
-                      </div>
-                      <div className="flex items-center gap-3">
-                        <button 
-                          onClick={prevReview}
-                          className="p-3 rounded-xl border border-slate-200 text-slate-400 hover:text-authority-navy hover:border-authority-navy transition-all"
-                        >
-                          <ChevronLeft className="w-5 h-5" />
-                        </button>
-                        <button 
-                          onClick={nextReview}
-                          className="p-3 rounded-xl border border-slate-200 text-slate-400 hover:text-authority-navy hover:border-authority-navy transition-all"
-                        >
-                          <ChevronRight className="w-5 h-5" />
-                        </button>
-                      </div>
+                    <>
+                      <button 
+                        onClick={prevReview}
+                        className="absolute -left-4 md:-left-8 top-1/2 -translate-y-1/2 p-4 rounded-full bg-white shadow-xl border border-slate-100 text-authority-navy hover:bg-safety-orange hover:text-white hover:border-safety-orange transition-all z-20 opacity-0 group-hover/carousel:opacity-100 -translate-x-4 group-hover/carousel:translate-x-0 hidden sm:flex items-center justify-center"
+                        aria-label="Previous review"
+                      >
+                        <ChevronLeft className="w-6 h-6" />
+                      </button>
+                      <button 
+                        onClick={nextReview}
+                        className="absolute -right-4 md:-right-8 top-1/2 -translate-y-1/2 p-4 rounded-full bg-white shadow-xl border border-slate-100 text-authority-navy hover:bg-safety-orange hover:text-white hover:border-safety-orange transition-all z-20 opacity-0 group-hover/carousel:opacity-100 translate-x-4 group-hover/carousel:translate-x-0 hidden sm:flex items-center justify-center"
+                        aria-label="Next review"
+                      >
+                        <ChevronRight className="w-6 h-6" />
+                      </button>
+                    </>
+                  )}
+
+                  {/* Enhanced Indicators */}
+                  {profileData.reviews.length > 1 && (
+                    <div className="flex items-center justify-center gap-3 mt-12">
+                      {profileData.reviews.map((_, idx) => (
+                        <button
+                          key={idx}
+                          onClick={() => setCurrentReviewIndex(idx)}
+                          className={`h-2.5 rounded-full transition-all duration-500 ${
+                            idx === currentReviewIndex 
+                              ? 'w-12 bg-safety-orange shadow-lg shadow-safety-orange/40' 
+                              : 'w-2.5 bg-slate-200 hover:bg-slate-300'
+                          }`}
+                          aria-label={`Go to review ${idx + 1}`}
+                        />
+                      ))}
+                    </div>
+                  )}
+
+                  {/* Mobile Controls */}
+                  {profileData.reviews.length > 1 && (
+                    <div className="flex sm:hidden items-center justify-center gap-6 mt-8">
+                      <button 
+                        onClick={prevReview}
+                        className="p-4 rounded-full bg-white shadow-lg border border-slate-100 text-authority-navy"
+                      >
+                        <ChevronLeft className="w-6 h-6" />
+                      </button>
+                      <button 
+                        onClick={nextReview}
+                        className="p-4 rounded-full bg-white shadow-lg border border-slate-100 text-authority-navy"
+                      >
+                        <ChevronRight className="w-6 h-6" />
+                      </button>
                     </div>
                   )}
                 </div>
@@ -465,16 +492,7 @@ export default function CrewProfile() {
         </div>
         
         {/* Footer Audit Stamp */}
-        <div className="pt-16 border-t border-slate-200 flex flex-col items-center">
-          <div className="p-12 bg-white border-4 border-safety-orange rounded-[3rem] rotate-2 shadow-2xl relative overflow-hidden group hover:rotate-0 transition-transform">
-            <div className="scanline"></div>
-            <div className="flex flex-col items-center">
-              <UserCheck className="w-20 h-20 text-safety-orange mb-8" />
-              <span className="text-5xl font-black text-authority-navy uppercase tracking-tighter leading-none mb-3">PERSONNEL_VERIFIED</span>
-              <span className="font-mono text-[10px] text-slate-400 tracking-[0.4em] uppercase">Roster Audit 2026</span>
-            </div>
-          </div>
-        </div>
+        <AuditStamp title="PERSONNEL_VERIFIED" subtitle="Roster Audit 2026" className="pt-16" />
       </main>
     </div>
   );
