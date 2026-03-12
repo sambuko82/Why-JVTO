@@ -23,13 +23,13 @@ export const ForensicLocker = () => {
           <div className="max-w-2xl">
             <div className="flex items-center gap-2 mb-4">
               <Database className="w-4 h-4 text-safety-orange" />
-              <span className="font-mono text-[10px] uppercase tracking-widest text-slate-500">Evidence Locker v2.0</span>
+              <span className="font-mono text-[11px] uppercase tracking-widest text-slate-500">Evidence Locker v2.0</span>
             </div>
             <h2 className="text-4xl md:text-6xl font-black text-white leading-[0.9] mb-6 uppercase">
               DON'T GUESS. <br />
               <span className="text-safety-orange">VERIFY.</span>
             </h2>
-            <p className="text-slate-400 text-xl leading-tight font-light">
+            <p className="text-slate-500 text-xl leading-tight font-light">
               In an industry of ghost operators, we publish our credentials with cryptographic proofs. Audit our infrastructure directly.
             </p>
           </div>
@@ -76,7 +76,7 @@ export const ForensicLocker = () => {
               
               <div className="bg-black/20 p-3 rounded-xl border border-white/5 flex items-center gap-3">
                 <Fingerprint className="w-4 h-4 text-slate-500" />
-                <span className="font-mono text-[10px] text-slate-400 uppercase tracking-widest truncate">SHA-256: {doc.hash}</span>
+                <span className="font-mono text-[11px] text-slate-500 uppercase tracking-widest truncate">SHA-256: {doc.hash}</span>
               </div>
             </motion.div>
           ))}
@@ -85,11 +85,11 @@ export const ForensicLocker = () => {
         <div className="mt-16 flex flex-col md:flex-row items-center justify-center gap-8 py-8 border-t border-white/5">
           <div className="flex items-center gap-3">
             <div className="status-live"></div>
-            <span className="font-mono text-[10px] uppercase tracking-widest text-slate-500">Live Verification Nodes: 12/12 Active</span>
+            <span className="font-mono text-[11px] uppercase tracking-widest text-slate-500">Live Verification Nodes: 12/12 Active</span>
           </div>
           <div className="h-4 w-px bg-white/10 hidden md:block"></div>
           <div className="flex items-center gap-3">
-            <span className="font-mono text-[10px] uppercase tracking-widest text-slate-500">Last Audit: {new Date().toLocaleDateString()}</span>
+            <span className="font-mono text-[11px] uppercase tracking-widest text-slate-500">Last Audit: {new Date().toLocaleDateString()}</span>
           </div>
         </div>
       </div>

@@ -24,10 +24,10 @@ export const BottomNav = () => {
               onClick={() => navigate(item.path)}
               className="flex flex-col items-center gap-1 group relative"
             >
-              <div className={`p-2 rounded-xl transition-all duration-300 ${isActive ? 'bg-safety-orange text-white shadow-lg shadow-safety-orange/20 -translate-y-1' : 'text-slate-400 group-hover:text-white'}`}>
+              <div className={`p-2 rounded-xl transition-all duration-300 ${isActive ? 'bg-safety-orange text-white shadow-lg shadow-safety-orange/20 -translate-y-1' : 'text-slate-500 group-hover:text-white'}`}>
                 {item.icon}
               </div>
-              <span className={`text-[8px] font-mono uppercase tracking-widest transition-colors ${isActive ? 'text-safety-orange font-bold' : 'text-slate-500'}`}>
+              <span className={`text-[11px] font-mono uppercase tracking-widest transition-colors ${isActive ? 'text-safety-orange font-bold' : 'text-slate-500'}`}>
                 {item.label}
               </span>
             </button>

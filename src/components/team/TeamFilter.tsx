@@ -16,8 +16,8 @@ export const TeamFilter = ({ currentFilter, onFilterChange, count }: TeamFilterP
           <button 
             key={filter}
             onClick={() => onFilterChange(filter)}
-            className={`px-8 py-3 font-black text-[10px] uppercase tracking-widest transition-all rounded-xl ${
-              currentFilter === filter ? 'bg-authority-navy text-white shadow-lg' : 'hover:bg-slate-50 text-slate-400'
+            className={`px-8 py-3 font-black text-[11px] uppercase tracking-widest transition-all rounded-xl ${
+              currentFilter === filter ? 'bg-authority-navy text-white shadow-lg' : 'hover:bg-slate-50 text-slate-500'
             }`}
           >
             {filter}
@@ -25,7 +25,7 @@ export const TeamFilter = ({ currentFilter, onFilterChange, count }: TeamFilterP
         ))}
       </div>
       {count !== undefined && (
-        <p className="font-mono text-[10px] text-slate-400 uppercase tracking-widest">
+        <p className="font-mono text-[11px] text-slate-500 uppercase tracking-widest">
           Showing: {count} Verified Assets
         </p>
       )}

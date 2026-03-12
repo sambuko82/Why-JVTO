@@ -23,10 +23,10 @@ export const AuditStamp = ({
         <div className="flex flex-col items-center">
           <ShieldCheck className="w-20 h-20 text-safety-orange mb-8" />
           <span className="text-5xl font-black text-authority-navy uppercase tracking-tighter leading-none mb-3">{title}</span>
-          <span className="font-mono text-[10px] text-slate-400 tracking-[0.4em] uppercase">{subtitle}</span>
+          <span className="font-mono text-[11px] text-slate-500 tracking-[0.4em] uppercase">{subtitle}</span>
         </div>
       </div>
-      <p className="mt-12 font-mono text-[10px] text-slate-400 uppercase tracking-widest">
+      <p className="mt-12 font-mono text-[11px] text-slate-500 uppercase tracking-widest">
         System: {system} // Node: {node}
       </p>
     </div>

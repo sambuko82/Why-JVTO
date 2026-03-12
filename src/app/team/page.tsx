@@ -34,11 +34,11 @@ export default function TeamRegistryPage() {
         <div className="container mx-auto px-6 py-6 flex items-center justify-between">
           <button 
             onClick={() => navigate('/')}
-            className="group flex items-center gap-3 text-[10px] font-mono font-bold text-slate-400 hover:text-authority-navy transition-all uppercase tracking-widest"
+            className="group flex items-center gap-3 text-[11px] font-mono font-bold text-slate-500 hover:text-authority-navy transition-all uppercase tracking-widest"
           >
             <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" /> Back to Hub
           </button>
-          <div className="flex items-center gap-3 text-safety-orange text-[10px] font-mono font-bold uppercase tracking-[0.2em]">
+          <div className="flex items-center gap-3 text-safety-orange text-[11px] font-mono font-bold uppercase tracking-[0.2em]">
             <Lock className="w-4 h-4" /> Personnel Protocol v1.9
           </div>
         </div>
@@ -52,7 +52,7 @@ export default function TeamRegistryPage() {
         >
           <div className="flex items-center gap-2 mb-6">
             <UserCheck className="w-4 h-4 text-safety-orange" />
-            <span className="font-mono text-[10px] uppercase tracking-widest text-slate-500">Human Intelligence Registry</span>
+            <span className="font-mono text-[11px] uppercase tracking-widest text-slate-500">Human Intelligence Registry</span>
           </div>
           <h1 className="text-5xl md:text-8xl font-black text-authority-navy mb-8 leading-[0.85] uppercase tracking-tighter">
             THE TEAM <br />
@@ -68,7 +68,7 @@ export default function TeamRegistryPage() {
         <div className="flex flex-col lg:flex-row gap-8 mb-16 items-center justify-between">
           <div className="relative w-full lg:max-w-md">
             <div className="absolute inset-y-0 left-6 flex items-center pointer-events-none">
-              <Search className="w-5 h-5 text-slate-400" />
+              <Search className="w-5 h-5 text-slate-500" />
             </div>
             <input 
               type="text"
@@ -92,7 +92,7 @@ export default function TeamRegistryPage() {
         {filteredCrew.length === 0 && (
           <div className="text-center py-32 bento-card border-dashed border-2 border-slate-200">
             <Database className="w-12 h-12 text-slate-200 mx-auto mb-6" />
-            <p className="font-mono text-[10px] text-slate-400 uppercase tracking-widest">No personnel matching your criteria found in the registry.</p>
+            <p className="font-mono text-[11px] text-slate-500 uppercase tracking-widest">No personnel matching your criteria found in the registry.</p>
           </div>
         )}
 

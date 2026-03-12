@@ -31,15 +31,15 @@
   }
   
   .tech-badge {
-    @apply bg-authority-navy text-white font-mono text-[10px] px-2 py-1 rounded-[0.5rem] uppercase tracking-wider;
+    @apply bg-authority-navy text-white font-mono text-[11px] px-2 py-1 rounded-[0.5rem] uppercase tracking-wider;
   }
   
   .verified-badge {
-    @apply bg-gradient-to-r from-verified-bright to-verified-lime text-authority-navy font-mono font-bold text-[10px] px-2 py-1 rounded-[0.5rem] uppercase tracking-wider shadow-sm;
+    @apply bg-gradient-to-r from-verified-bright to-verified-lime text-authority-navy font-mono font-bold text-[11px] px-2 py-1 rounded-[0.5rem] uppercase tracking-wider shadow-sm;
   }
   
   .hash-string {
-    @apply font-mono text-[10px] text-slate-400 truncate bg-slate-50 px-2 py-1 rounded border border-slate-100;
+    @apply font-mono text-[11px] text-slate-500 truncate bg-slate-50 px-2 py-1 rounded border border-slate-100;
   }
   
   .status-live {

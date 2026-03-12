@@ -50,11 +50,11 @@ export default function IjenHealthScreening() {
         <div className="container mx-auto px-6 py-6 flex items-center justify-between">
           <button 
             onClick={onBack}
-            className="group flex items-center gap-3 text-[10px] font-mono font-bold text-slate-400 hover:text-authority-navy transition-all uppercase tracking-widest"
+            className="group flex items-center gap-3 text-[11px] font-mono font-bold text-slate-500 hover:text-authority-navy transition-all uppercase tracking-widest"
           >
             <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" /> Back to Safety Hub
           </button>
-          <div className="flex items-center gap-3 text-safety-orange text-[10px] font-mono font-bold uppercase tracking-[0.2em]">
+          <div className="flex items-center gap-3 text-safety-orange text-[11px] font-mono font-bold uppercase tracking-[0.2em]">
             <Activity className="w-4 h-4" /> Medical Protocol v2.0
           </div>
         </div>
@@ -69,7 +69,7 @@ export default function IjenHealthScreening() {
           transition={{ duration: 0.6 }}
           className="text-center mb-24"
         >
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-safety-orange/10 border border-safety-orange/30 text-safety-orange text-[10px] font-mono font-bold uppercase tracking-[0.2em] mb-8">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-safety-orange/10 border border-safety-orange/30 text-safety-orange text-[11px] font-mono font-bold uppercase tracking-[0.2em] mb-8">
             <Stethoscope className="w-4 h-4" /> Supervised by Licensed Physician
           </div>
           <h1 className="text-5xl md:text-9xl font-black text-authority-navy mb-8 leading-[0.85] uppercase tracking-tighter">
@@ -85,7 +85,7 @@ export default function IjenHealthScreening() {
         <section className="mb-32">
           <div className="flex items-center gap-2 mb-12 justify-center">
             <Timer className="w-4 h-4 text-safety-orange" />
-            <span className="font-mono text-[10px] uppercase tracking-widest text-slate-500">The Medical Clearance Flow</span>
+            <span className="font-mono text-[11px] uppercase tracking-widest text-slate-500">The Medical Clearance Flow</span>
           </div>
           <div className="grid md:grid-cols-3 gap-8 relative">
             {/* Connector Line */}
@@ -101,10 +101,10 @@ export default function IjenHealthScreening() {
                 onMouseEnter={() => setActiveStep(idx)}
                 className={`relative z-10 bento-card p-10 text-center transition-all duration-500 group ${activeStep === idx ? 'bg-authority-navy text-white scale-105 shadow-2xl' : 'bg-white'}`}
               >
-                <div className={`w-20 h-20 rounded-[2rem] mx-auto mb-8 flex items-center justify-center transition-all duration-500 ${activeStep === idx ? 'bg-safety-orange text-white' : 'bg-slate-50 text-slate-400'}`}>
+                <div className={`w-20 h-20 rounded-[2rem] mx-auto mb-8 flex items-center justify-center transition-all duration-500 ${activeStep === idx ? 'bg-safety-orange text-white' : 'bg-slate-50 text-slate-500'}`}>
                   {step.icon}
                 </div>
-                <div className={`font-mono text-[10px] uppercase tracking-widest mb-4 ${activeStep === idx ? 'text-safety-orange' : 'text-slate-400'}`}>Step 0{idx + 1}</div>
+                <div className={`font-mono text-[11px] uppercase tracking-widest mb-4 ${activeStep === idx ? 'text-safety-orange' : 'text-slate-500'}`}>Step 0{idx + 1}</div>
                 <h3 className="text-2xl font-black uppercase leading-none mb-4">{step.title}</h3>
                 <p className={`text-sm leading-tight font-light ${activeStep === idx ? 'text-slate-300' : 'text-slate-500'}`}>{step.desc}</p>
               </motion.div>
@@ -129,7 +129,7 @@ export default function IjenHealthScreening() {
                   
                   <div className="space-y-8">
                     <div>
-                      <div className="font-mono text-[10px] text-slate-500 uppercase tracking-widest mb-4">SIP (Practice License)</div>
+                      <div className="font-mono text-[11px] text-slate-500 uppercase tracking-widest mb-4">SIP (Practice License)</div>
                       <div className="font-mono text-white text-sm bg-black/40 p-6 rounded-2xl border border-white/10 break-all shadow-inner">
                         {SSOT.medical.doctor.sip}
                       </div>
@@ -138,7 +138,7 @@ export default function IjenHealthScreening() {
                       href="https://satusehat.kemkes.go.id/sdmk" 
                       target="_blank" 
                       rel="noopener noreferrer"
-                      className="group inline-flex items-center gap-3 text-[10px] font-black text-verified-bright uppercase tracking-widest hover:text-white transition-colors"
+                      className="group inline-flex items-center gap-3 text-[11px] font-black text-verified-bright uppercase tracking-widest hover:text-white transition-colors"
                     >
                       <ShieldCheck className="w-5 h-5" /> Verify on SatuSehat <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                     </a>
@@ -188,7 +188,7 @@ export default function IjenHealthScreening() {
           className="max-w-5xl mx-auto"
         >
           <div className="text-center mb-16">
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-verified-bright/10 border border-verified-bright/30 text-verified-bright text-[10px] font-mono font-bold uppercase tracking-[0.2em] mb-6">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-verified-bright/10 border border-verified-bright/30 text-verified-bright text-[11px] font-mono font-bold uppercase tracking-[0.2em] mb-6">
               <QrCode className="w-4 h-4" /> Digital Health Ledger
             </div>
             <h2 className="text-5xl font-black text-authority-navy uppercase mb-6 tracking-tighter">Fit-to-Climb Certificate</h2>
@@ -211,18 +211,18 @@ export default function IjenHealthScreening() {
                   <p className="font-mono text-sm text-slate-500 uppercase tracking-[0.4em]">Ijen Crater Expedition Clearance</p>
                 </div>
                 <div className="text-right">
-                  <div className="font-mono text-[10px] font-black uppercase text-slate-400 tracking-widest mb-3">Certificate ID</div>
+                  <div className="font-mono text-[11px] font-black uppercase text-slate-500 tracking-widest mb-3">Certificate ID</div>
                   <div className="font-mono font-black text-3xl text-authority-navy bg-slate-50 px-8 py-4 rounded-2xl border border-slate-100 shadow-inner">JVTO-MED-2026-X92</div>
                 </div>
               </div>
 
               <div className="grid md:grid-cols-2 gap-16 mb-16">
                 <div>
-                  <div className="font-mono text-[10px] font-black uppercase text-slate-400 tracking-widest mb-4">Guest Name</div>
+                  <div className="font-mono text-[11px] font-black uppercase text-slate-500 tracking-widest mb-4">Guest Name</div>
                   <div className="text-5xl font-black text-authority-navy uppercase tracking-tighter">Sarah Jenkins</div>
                 </div>
                 <div>
-                  <div className="font-mono text-[10px] font-black uppercase text-slate-400 tracking-widest mb-4">Date of Screening</div>
+                  <div className="font-mono text-[11px] font-black uppercase text-slate-500 tracking-widest mb-4">Date of Screening</div>
                   <div className="font-mono text-2xl font-bold text-authority-navy border-b border-slate-100 pb-2">October 12, 2026</div>
                 </div>
               </div>
@@ -231,15 +231,15 @@ export default function IjenHealthScreening() {
                 <div className="absolute inset-0 grid-pattern opacity-10"></div>
                 <div className="grid grid-cols-3 gap-12 text-center relative z-10">
                   <div>
-                    <div className="font-mono text-[10px] font-black uppercase text-slate-500 tracking-widest mb-4">SpO2</div>
+                    <div className="font-mono text-[11px] font-black uppercase text-slate-500 tracking-widest mb-4">SpO2</div>
                     <div className="text-5xl font-black text-verified-bright">98%</div>
                   </div>
                   <div>
-                    <div className="font-mono text-[10px] font-black uppercase text-slate-500 tracking-widest mb-4">BP</div>
+                    <div className="font-mono text-[11px] font-black uppercase text-slate-500 tracking-widest mb-4">BP</div>
                     <div className="text-5xl font-black text-verified-bright">110/70</div>
                   </div>
                   <div>
-                    <div className="font-mono text-[10px] font-black uppercase text-slate-500 tracking-widest mb-4">HR</div>
+                    <div className="font-mono text-[11px] font-black uppercase text-slate-500 tracking-widest mb-4">HR</div>
                     <div className="text-5xl font-black text-verified-bright">72 bpm</div>
                   </div>
                 </div>
@@ -247,11 +247,11 @@ export default function IjenHealthScreening() {
 
               <div className="flex flex-col md:flex-row justify-between items-end gap-12">
                 <div className="w-full md:w-auto">
-                  <div className="font-mono text-[10px] font-black uppercase text-slate-400 tracking-widest mb-6">Supervising Doctor</div>
+                  <div className="font-mono text-[11px] font-black uppercase text-slate-500 tracking-widest mb-6">Supervising Doctor</div>
                   <div className="text-3xl font-black text-authority-navy uppercase border-b-4 border-authority-navy pb-3 mb-3 inline-block min-w-[350px]">
                     {SSOT.medical.doctor.name}
                   </div>
-                  <div className="font-mono text-[10px] text-slate-500 uppercase tracking-widest">{SSOT.medical.doctor.sip}</div>
+                  <div className="font-mono text-[11px] text-slate-500 uppercase tracking-widest">{SSOT.medical.doctor.sip}</div>
                 </div>
                 <div className="text-right">
                   <div className="verified-badge bg-gradient-to-r from-verified-bright to-verified-lime text-authority-navy px-10 py-5 text-lg shadow-2xl">Medically Cleared</div>

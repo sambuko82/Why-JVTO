@@ -30,11 +30,11 @@ export default function SafetyLeadership() {
         <div className="container mx-auto px-6 py-6 flex items-center justify-between">
           <button 
             onClick={() => navigate('/why-jvto')}
-            className="group flex items-center gap-3 text-[10px] font-mono font-bold text-slate-400 hover:text-authority-navy transition-all uppercase tracking-widest"
+            className="group flex items-center gap-3 text-[11px] font-mono font-bold text-slate-500 hover:text-authority-navy transition-all uppercase tracking-widest"
           >
             <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" /> Why JVTO Hub
           </button>
-          <div className="flex items-center gap-3 text-safety-orange text-[10px] font-mono font-bold uppercase tracking-[0.2em]">
+          <div className="flex items-center gap-3 text-safety-orange text-[11px] font-mono font-bold uppercase tracking-[0.2em]">
             <Lock className="w-4 h-4" /> Protocol_Safety_v1.9
           </div>
         </div>
@@ -48,7 +48,7 @@ export default function SafetyLeadership() {
         >
           <div className="flex items-center gap-2 mb-6">
             <Shield className="w-4 h-4 text-safety-orange" />
-            <span className="font-mono text-[10px] uppercase tracking-widest text-slate-500">Safety Leadership</span>
+            <span className="font-mono text-[11px] uppercase tracking-widest text-slate-500">Safety Leadership</span>
           </div>
           <h1 className="text-5xl md:text-8xl font-black text-authority-navy mb-8 leading-[0.85] uppercase tracking-tighter">
             POLICE-LED <br />
@@ -65,11 +65,11 @@ export default function SafetyLeadership() {
           <div className="bento-card bg-authority-navy text-white p-12 relative overflow-hidden">
             <div className="scanline"></div>
             <div className="relative z-10">
-              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-safety-orange/10 border border-safety-orange/30 text-safety-orange text-[10px] font-mono font-bold uppercase tracking-[0.2em] mb-8">
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-safety-orange/10 border border-safety-orange/30 text-safety-orange text-[11px] font-mono font-bold uppercase tracking-[0.2em] mb-8">
                 <ShieldCheck className="w-3 h-3" /> State-Sanctioned Security
               </div>
               <h3 className="text-3xl font-black uppercase mb-6 leading-none">Police Command</h3>
-              <p className="text-slate-400 text-lg font-light leading-tight mb-12">
+              <p className="text-slate-500 text-lg font-light leading-tight mb-12">
                 Agung Sambuko (Mr. Sam) is an active member of the East Java Tourist Police Unit (Ditpamobvit), 
                 specializing in tourist safety and risk management.
               </p>
@@ -82,7 +82,7 @@ export default function SafetyLeadership() {
               </ul>
               <button 
                 onClick={() => navigate('/verify-jvto#police-safety')}
-                className="inline-flex items-center gap-3 text-[10px] font-mono font-bold text-safety-orange uppercase tracking-widest hover:gap-5 transition-all"
+                className="inline-flex items-center gap-3 text-[11px] font-mono font-bold text-safety-orange uppercase tracking-widest hover:gap-5 transition-all"
               >
                 Inspect Police Credentials <ChevronRight className="w-4 h-4" />
               </button>
@@ -127,7 +127,7 @@ export default function SafetyLeadership() {
           <div className="grid md:grid-cols-4 gap-6">
             {SSOT.health_protocol.steps.map((step, i) => (
               <div key={i} className="bento-card bg-white p-8 border-2 border-slate-100 relative">
-                <span className="absolute top-6 right-6 font-mono text-[10px] text-slate-200 font-black">{step.step}</span>
+                <span className="absolute top-6 right-6 font-mono text-[11px] text-slate-200 font-black">{step.step}</span>
                 <h4 className="text-lg font-black uppercase mb-3 mt-4">{step.title}</h4>
                 <p className="text-slate-500 text-xs leading-relaxed">{step.desc}</p>
               </div>
@@ -161,7 +161,7 @@ export default function SafetyLeadership() {
               viewport={{ once: true }}
               className="bento-card bg-white p-12 border-2 border-slate-100 relative overflow-hidden group"
             >
-              <div className="absolute top-0 right-0 p-6 font-mono text-[10px] text-slate-200 font-black">
+              <div className="absolute top-0 right-0 p-6 font-mono text-[11px] text-slate-200 font-black">
                 CLAIM_{claim.id}
               </div>
               <div className="max-w-3xl">
@@ -175,7 +175,7 @@ export default function SafetyLeadership() {
                 </div>
                 <button 
                   onClick={() => navigate(`/verify-jvto#${claim.evidenceAnchor}`)}
-                  className="inline-flex items-center gap-3 text-[10px] font-mono font-bold text-safety-orange uppercase tracking-widest hover:gap-5 transition-all"
+                  className="inline-flex items-center gap-3 text-[11px] font-mono font-bold text-safety-orange uppercase tracking-widest hover:gap-5 transition-all"
                 >
                   Inspect Evidence <ChevronRight className="w-4 h-4" />
                 </button>

@@ -36,7 +36,7 @@ export const TrustStack = () => {
         <div className="max-w-2xl">
           <div className="flex items-center gap-2 mb-4">
             <Database className="w-4 h-4 text-safety-orange" />
-            <span className="font-mono text-[10px] uppercase tracking-widest text-slate-500">Trust Pillar Registry</span>
+            <span className="font-mono text-[11px] uppercase tracking-widest text-slate-500">Trust Pillar Registry</span>
           </div>
           <h2 className="text-4xl md:text-7xl font-black text-authority-navy leading-[0.85] mb-6 uppercase tracking-tighter">
             {SSOT.hub_content.trust_stack.title.split(' ').slice(0, 2).join(' ')} <br />
@@ -48,7 +48,7 @@ export const TrustStack = () => {
         </div>
         <div className="flex items-center gap-4">
           <div className="text-right hidden md:block">
-            <p className="font-mono text-[10px] uppercase text-slate-400">Audit Status</p>
+            <p className="font-mono text-[11px] uppercase text-slate-500">Audit Status</p>
             <p className="font-bold text-verified-lime">PASS / VERIFIED</p>
           </div>
           <div className="h-12 w-[1px] bg-slate-200 hidden md:block"></div>
@@ -78,11 +78,11 @@ export const TrustStack = () => {
                   </div>
                   <div className="flex flex-col items-end">
                     <div className="tech-badge mb-2">0{i + 1}</div>
-                    <span className="font-mono text-[8px] text-slate-400 uppercase tracking-widest">{item.hash}</span>
+                    <span className="font-mono text-[11px] text-slate-500 uppercase tracking-widest">{item.hash}</span>
                   </div>
                 </div>
                 <h3 className="text-3xl font-black mb-4 uppercase leading-none tracking-tight group-hover:text-safety-orange transition-colors">{item.title}</h3>
-                <p className={`text-lg leading-tight font-light ${item.bg.includes('bg-white') || item.bg.includes('bg-slate-50') ? 'text-slate-500' : 'text-slate-400'}`}>
+                <p className={`text-lg leading-tight font-light ${item.bg.includes('bg-white') || item.bg.includes('bg-slate-50') ? 'text-slate-500' : 'text-slate-500'}`}>
                   {item.summary}
                 </p>
               </div>
@@ -90,7 +90,7 @@ export const TrustStack = () => {
               <div className="flex items-center justify-between mt-10 pt-8 border-t border-current/10">
                 <div className="flex items-center gap-3">
                   <Eye className="w-5 h-5 text-safety-orange" />
-                  <span className="font-mono text-[10px] uppercase tracking-[0.2em] font-bold">Inspect Proof</span>
+                  <span className="font-mono text-[11px] uppercase tracking-[0.2em] font-bold">Inspect Proof</span>
                 </div>
                 <div className="flex items-center gap-2">
                    <Fingerprint className="w-4 h-4 text-slate-300" />

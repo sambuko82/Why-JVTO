@@ -25,7 +25,7 @@ export const HealthFlow = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-safety-orange/10 border border-safety-orange/30 text-safety-orange text-[10px] font-mono font-bold uppercase tracking-[0.2em] mb-8">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-safety-orange/10 border border-safety-orange/30 text-safety-orange text-[11px] font-mono font-bold uppercase tracking-[0.2em] mb-8">
               <ShieldAlert className="w-3 h-3" /> Medical "Hard Stop" Protocol
             </div>
             <h2 className="text-4xl md:text-6xl font-black text-authority-navy leading-[0.9] mb-8 uppercase">
@@ -43,10 +43,10 @@ export const HealthFlow = () => {
                     <div className="p-2 rounded-lg bg-slate-50 group-hover:bg-white transition-colors">
                       <item.icon className="w-6 h-6 text-safety-orange" />
                     </div>
-                    <span className="font-mono text-[10px] text-slate-300 font-bold">{item.step}</span>
+                    <span className="font-mono text-[11px] text-slate-500 font-bold">{item.step}</span>
                   </div>
                   <h3 className="font-black text-authority-navy uppercase leading-none mb-1">{item.title}</h3>
-                  <p className="text-[10px] text-slate-400 uppercase tracking-widest font-bold">{item.desc}</p>
+                  <p className="text-[11px] text-slate-500 uppercase tracking-widest font-bold">{item.desc}</p>
                 </div>
               ))}
             </div>
@@ -73,7 +73,7 @@ export const HealthFlow = () => {
             <div className="flex items-center justify-between mb-8 pb-6 border-b border-slate-100">
               <div className="flex items-center gap-3">
                 <div className="status-live"></div>
-                <span className="font-mono text-[10px] uppercase tracking-widest text-slate-500">Medical Unit: Online</span>
+                <span className="font-mono text-[11px] uppercase tracking-widest text-slate-500">Medical Unit: Online</span>
               </div>
               <div className="tech-badge bg-authority-navy text-white">Clinical Registry</div>
             </div>
@@ -106,11 +106,11 @@ export const HealthFlow = () => {
                 <Lock className="w-16 h-16" />
               </div>
               <div className="relative z-10">
-                <p className="font-mono text-[10px] text-safety-orange uppercase tracking-widest font-bold mb-2">Security Hash</p>
-                <p className="font-mono text-xs text-slate-400 break-all mb-4">8F3E9A2B1C4D5E6F7G8H9I0J1K2L3M4N5O6P7Q8R9S0T1U2V3W4X5Y6Z</p>
+                <p className="font-mono text-[11px] text-safety-orange uppercase tracking-widest font-bold mb-2">Security Hash</p>
+                <p className="font-mono text-xs text-slate-500 break-all mb-4">8F3E9A2B1C4D5E6F7G8H9I0J1K2L3M4N5O6P7Q8R9S0T1U2V3W4X5Y6Z</p>
                 <div className="flex items-center gap-2">
                   <div className="verified-badge">ENCRYPTED_RECORD</div>
-                  <span className="font-mono text-[10px] text-slate-500 uppercase tracking-widest">v1.9-STABLE</span>
+                  <span className="font-mono text-[11px] text-slate-500 uppercase tracking-widest">v1.9-STABLE</span>
                 </div>
               </div>
             </div>

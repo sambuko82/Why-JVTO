@@ -27,9 +27,12 @@ import {
 } from 'lucide-react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { SSOT } from '../../lib/ssot';
+import { ForensicAnnotation } from '../../types';
 import { motion, AnimatePresence } from 'motion/react';
 import { HashBadge } from '../../components/ForensicUI';
 import { AuditStamp } from '../../components/AuditStamp';
+import { SafetyMetrics } from '../../components/SafetyMetrics';
+import { AssetViewer } from '../../components/AssetViewer';
 
 export default function CrewProfile() {
   const { crewId } = useParams<{ crewId: string }>();
@@ -38,6 +41,7 @@ export default function CrewProfile() {
   const [platformFilter, setPlatformFilter] = useState('All');
   const [sortBy, setSortBy] = useState('Newest'); // Newest, Highest, Lowest
   const [currentReviewIndex, setCurrentReviewIndex] = useState(0);
+  const [selectedAsset, setSelectedAsset] = useState<{ url: string, title: string, annotations?: ForensicAnnotation[] } | null>(null);
 
   // Find crew data from SSOT
   const crewMember = SSOT.crew.find(c => c.id === crewId);
@@ -151,17 +155,17 @@ export default function CrewProfile() {
         <div className="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
           <button 
             onClick={() => navigate('/')}
-            className="group flex items-center gap-3 text-[10px] font-mono font-bold text-slate-400 hover:text-white transition-all uppercase tracking-widest"
+            className="group flex items-center gap-3 text-[11px] font-mono font-bold text-slate-500 hover:text-white transition-all uppercase tracking-widest"
           >
             <ArrowLeft className="h-4 w-4 group-hover:-translate-x-1 transition-transform" /> Back to Registry
           </button>
           <div className="flex items-center gap-6">
-            <div className="hidden md:flex items-center gap-2 text-verified-bright text-[10px] font-mono font-bold uppercase tracking-[0.2em]">
+            <div className="hidden md:flex items-center gap-2 text-verified-bright text-[11px] font-mono font-bold uppercase tracking-[0.2em]">
               <UserCheck className="w-4 h-4" /> Personnel Profile v1.9
             </div>
             <button 
               onClick={() => setShowSchema(!showSchema)}
-              className="font-mono text-[10px] bg-white/5 hover:bg-white/10 text-verified-bright px-4 py-1.5 rounded-lg border border-white/10 transition-all flex items-center gap-2 uppercase tracking-widest"
+              className="font-mono text-[11px] bg-white/5 hover:bg-white/10 text-verified-bright px-4 py-1.5 rounded-lg border border-white/10 transition-all flex items-center gap-2 uppercase tracking-widest"
             >
               <Code className="h-3 w-3" /> {showSchema ? 'Close Graph' : 'Inspect Graph'}
             </button>
@@ -177,7 +181,7 @@ export default function CrewProfile() {
           className="bg-black/40 border-b border-white/5 overflow-x-auto"
         >
           <div className="max-w-7xl mx-auto px-6 py-10">
-            <pre className="text-[10px] text-verified-bright font-mono leading-relaxed">{JSON.stringify(jsonLdGraph, null, 2)}</pre>
+            <pre className="text-[11px] text-verified-bright font-mono leading-relaxed">{JSON.stringify(jsonLdGraph, null, 2)}</pre>
           </div>
         </motion.div>
       )}
@@ -214,9 +218,9 @@ export default function CrewProfile() {
               <div className="absolute bottom-8 left-8 right-8 z-20">
                 <div className="flex items-center gap-3 mb-4">
                   <div className="status-live"></div>
-                  <span className="font-mono text-[10px] text-safety-orange uppercase tracking-widest font-black">Active_Duty_Status</span>
+                  <span className="font-mono text-[11px] text-safety-orange uppercase tracking-widest font-black">Active_Duty_Status</span>
                 </div>
-                <div className="font-mono text-[10px] text-slate-400 uppercase tracking-widest mb-2">Personnel ID</div>
+                <div className="font-mono text-[11px] text-slate-500 uppercase tracking-widest mb-2">Personnel ID</div>
                 <div className="font-mono text-xl font-black text-white tracking-widest bg-white/5 border border-white/10 px-4 py-2 rounded-xl backdrop-blur-sm">
                   {profileData.id.toUpperCase()}
                 </div>
@@ -230,13 +234,13 @@ export default function CrewProfile() {
               </div>
 
               <div className="relative z-10">
-                <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-safety-orange/10 border border-safety-orange/30 text-safety-orange text-[10px] font-mono font-bold uppercase tracking-[0.2em] mb-10">
+                <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-safety-orange/10 border border-safety-orange/30 text-safety-orange text-[11px] font-mono font-bold uppercase tracking-[0.2em] mb-10">
                   <Award className="h-4 w-4" /> {profileData.archetype}
                 </div>
                 <h1 className="text-6xl md:text-9xl font-black text-authority-navy mb-4 leading-[0.85] uppercase tracking-tighter">
                   {profileData.name}
                 </h1>
-                <p className="text-3xl text-slate-400 font-light uppercase tracking-widest mb-12">{profileData.role}</p>
+                <p className="text-3xl text-slate-500 font-light uppercase tracking-widest mb-12">{profileData.role}</p>
 
                 <div className="flex flex-wrap gap-3 mb-16">
                   {profileData.expertise.map(skill => (
@@ -255,6 +259,54 @@ export default function CrewProfile() {
             </div>
           </div>
         </motion.section>
+
+        {/* Safety Performance Audit Section */}
+        {crewMember.profile.safetyMetrics && (
+          <motion.section
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="bento-card bg-white p-16 shadow-2xl border-slate-200"
+          >
+            <div className="flex flex-col md:flex-row md:items-center justify-between gap-8 mb-16">
+              <div className="flex items-center gap-6">
+                <div className="p-4 bg-slate-50 rounded-[1.5rem] text-safety-orange border border-slate-100">
+                  <Activity className="w-10 h-10" />
+                </div>
+                <div>
+                  <h2 className="text-4xl font-black text-authority-navy uppercase leading-none mb-2 tracking-tighter">Safety Performance Audit</h2>
+                  <p className="font-mono text-[11px] text-slate-500 uppercase tracking-widest">QUANTIFIED_TRUST_METRICS</p>
+                </div>
+              </div>
+              <div className="flex items-center gap-4 bg-slate-50 px-6 py-4 rounded-2xl border border-slate-100">
+                <div className="text-right">
+                  <p className="font-mono text-[11px] text-slate-500 uppercase tracking-widest mb-1">Aggregate Safety Score</p>
+                  <p className="text-2xl font-black text-authority-navy leading-none">
+                    {Math.round(crewMember.profile.safetyMetrics.reduce((acc, m) => acc + m.value, 0) / crewMember.profile.safetyMetrics.length)}%
+                  </p>
+                </div>
+                <div className="w-10 h-10 rounded-full bg-safety-orange/10 flex items-center justify-center">
+                  <ShieldCheck className="w-6 h-6 text-safety-orange" />
+                </div>
+              </div>
+            </div>
+
+            <div className="grid lg:grid-cols-3 gap-12">
+              <div className="lg:col-span-2">
+                <SafetyMetrics metrics={crewMember.profile.safetyMetrics} />
+              </div>
+              <div className="bg-slate-50 rounded-[2rem] p-10 border border-slate-100 flex flex-col justify-center">
+                <h3 className="text-sm font-black text-authority-navy uppercase mb-4 flex items-center gap-2">
+                  <Lock className="w-4 h-4 text-safety-orange" /> Forensic Insight
+                </h3>
+                <p className="text-xs text-slate-500 leading-relaxed italic">
+                  "These metrics are derived from a combination of field observation logs, guest feedback triangulation, and periodic technical assessments. The upward trend in historical data reflects our commitment to continuous safety training and operational refinement."
+                </p>
+              </div>
+            </div>
+          </motion.section>
+        )}
 
         {/* Forensic Evidence & Credentials */}
         <div className="grid lg:grid-cols-2 gap-12">
@@ -275,31 +327,38 @@ export default function CrewProfile() {
                 </div>
                 <div>
                   <h2 className="text-4xl font-black uppercase leading-none mb-2 tracking-tighter">Operational Credential</h2>
-                  <p className="font-mono text-[10px] text-slate-500 uppercase tracking-widest">HPWKI_LICENSED_OPERATIVE</p>
+                  <p className="font-mono text-[11px] text-slate-500 uppercase tracking-widest">HPWKI_LICENSED_OPERATIVE</p>
                 </div>
               </div>
               <div className="verified-badge bg-verified-bright text-authority-navy px-6 py-3 text-sm">ACTIVE</div>
             </div>
             
-            <p className="text-slate-400 text-2xl leading-tight font-light mb-16">
+            <p className="text-slate-500 text-2xl leading-tight font-light mb-16">
               To operate legally within the Ijen crater, guides must hold active certification from HPWKI. {profileData.name}'s credentials are cryptographically tied to our entity graph.
             </p>
 
             <div className="bg-white/5 rounded-[3rem] p-10 border border-white/10 mt-auto group">
               <div className="flex justify-between items-center mb-10">
                 <div>
-                  <p className="font-mono text-[10px] text-slate-500 uppercase tracking-widest mb-3">Issuer Authority</p>
+                  <p className="font-mono text-[11px] text-slate-500 uppercase tracking-widest mb-3">Issuer Authority</p>
                   <p className="text-2xl font-black text-white uppercase tracking-tight">{profileData.credential.issuer}</p>
                 </div>
                 <div className="text-right">
-                  <p className="font-mono text-[10px] text-slate-500 uppercase tracking-widest mb-3">Audit Status</p>
+                  <p className="font-mono text-[11px] text-slate-500 uppercase tracking-widest mb-3">Audit Status</p>
                   <div className="flex items-center gap-3 text-verified-bright font-black text-sm uppercase tracking-widest">
                     <div className="w-2.5 h-2.5 bg-verified-bright rounded-full animate-pulse"></div>
                     {profileData.credential.status}
                   </div>
                 </div>
               </div>
-              <div className="relative bg-black/40 rounded-[2rem] p-6 border border-white/5 flex justify-center items-center h-80 overflow-hidden">
+              <div 
+                onClick={() => setSelectedAsset({ 
+                  url: profileData.credential.cardImage, 
+                  title: `${profileData.name} - ${profileData.credential.name}`,
+                  annotations: profileData.credential.annotations
+                })}
+                className="relative bg-black/40 rounded-[2rem] p-6 border border-white/5 flex justify-center items-center h-80 overflow-hidden cursor-pointer group"
+              >
                 <img 
                   src={profileData.credential.cardImage} 
                   alt="License KTA" 
@@ -307,8 +366,8 @@ export default function CrewProfile() {
                   referrerPolicy="no-referrer"
                 />
                 <div className="absolute inset-0 flex items-center justify-center pointer-events-none group-hover:opacity-0 transition-opacity">
-                   <div className="bg-authority-navy/80 backdrop-blur-md text-white px-8 py-4 rounded-2xl text-[10px] font-black uppercase tracking-widest border border-white/10">
-                     Hover to Inspect KTA
+                   <div className="bg-authority-navy/80 backdrop-blur-md text-white px-8 py-4 rounded-2xl text-[11px] font-black uppercase tracking-widest border border-white/10">
+                     Click to Inspect KTA
                    </div>
                 </div>
               </div>
@@ -333,7 +392,7 @@ export default function CrewProfile() {
                 </div>
                 <div>
                   <h2 className="text-4xl font-black text-authority-navy uppercase leading-none mb-2 tracking-tighter">Guest Verification</h2>
-                  <p className="font-mono text-[10px] text-slate-400 uppercase tracking-widest">TRIANGULATED_PROOF</p>
+                  <p className="font-mono text-[11px] text-slate-500 uppercase tracking-widest">TRIANGULATED_PROOF</p>
                 </div>
               </div>
               <div className="flex -space-x-1.5">
@@ -351,18 +410,18 @@ export default function CrewProfile() {
             <div className="flex flex-col sm:flex-row gap-6 mb-12 pb-12 border-b border-slate-100">
               <div className="flex-1">
                 <div className="flex items-center gap-2 mb-3">
-                  <Filter className="w-3 h-3 text-slate-400" />
-                  <span className="font-mono text-[10px] uppercase tracking-widest text-slate-400">Filter by Platform</span>
+                  <Filter className="w-3 h-3 text-slate-500" />
+                  <span className="font-mono text-[11px] uppercase tracking-widest text-slate-500">Filter by Platform</span>
                 </div>
                 <div className="flex flex-wrap gap-2">
                   {platforms.map(platform => (
                     <button
                       key={platform}
                       onClick={() => setPlatformFilter(platform)}
-                      className={`px-4 py-2 rounded-xl font-mono text-[10px] uppercase tracking-widest transition-all border ${
+                      className={`px-4 py-2 rounded-xl font-mono text-[11px] uppercase tracking-widest transition-all border ${
                         platformFilter === platform 
                           ? 'bg-authority-navy text-white border-authority-navy shadow-lg' 
-                          : 'bg-white text-slate-400 border-slate-200 hover:border-slate-300'
+                          : 'bg-white text-slate-500 border-slate-200 hover:border-slate-300'
                       }`}
                     >
                       {platform}
@@ -372,13 +431,13 @@ export default function CrewProfile() {
               </div>
               <div className="sm:w-48">
                 <div className="flex items-center gap-2 mb-3">
-                  <SlidersHorizontal className="w-3 h-3 text-slate-400" />
-                  <span className="font-mono text-[10px] uppercase tracking-widest text-slate-400">Sort by Rating</span>
+                  <SlidersHorizontal className="w-3 h-3 text-slate-500" />
+                  <span className="font-mono text-[11px] uppercase tracking-widest text-slate-500">Sort by Rating</span>
                 </div>
                 <select 
                   value={sortBy}
                   onChange={(e) => setSortBy(e.target.value)}
-                  className="w-full bg-white border border-slate-200 rounded-xl px-4 py-2 font-mono text-[10px] uppercase tracking-widest focus:border-safety-orange outline-none"
+                  className="w-full bg-white border border-slate-200 rounded-xl px-4 py-2 font-mono text-[11px] uppercase tracking-widest focus:border-safety-orange outline-none"
                 >
                   <option value="Newest">Newest First</option>
                   <option value="Highest">Highest Rated</option>
@@ -407,7 +466,7 @@ export default function CrewProfile() {
                           <div>
                             <p className="font-black text-authority-navy uppercase leading-none mb-2 text-2xl tracking-tight">{profileData.reviews[currentReviewIndex].author}</p>
                             <div className="flex items-center gap-3">
-                              <div className={`font-mono text-[10px] uppercase tracking-widest flex items-center justify-center w-8 h-8 rounded-md border ${getPlatformColor(profileData.reviews[currentReviewIndex].platform)}`} title={profileData.reviews[currentReviewIndex].platform}>
+                              <div className={`font-mono text-[11px] uppercase tracking-widest flex items-center justify-center w-8 h-8 rounded-md border ${getPlatformColor(profileData.reviews[currentReviewIndex].platform)}`} title={profileData.reviews[currentReviewIndex].platform}>
                                 {getPlatformIcon(profileData.reviews[currentReviewIndex].platform)}
                               </div>
                               <div className="flex items-center gap-0.5">
@@ -481,9 +540,9 @@ export default function CrewProfile() {
                   )}
                 </div>
               ) : (
-                <div className="text-center py-24 text-slate-400 bento-card border-dashed border-2">
+                <div className="text-center py-24 text-slate-500 bento-card border-dashed border-2">
                   <div className="status-live mb-4 mx-auto"></div>
-                  <p className="font-mono text-[10px] uppercase tracking-widest">No specific reviews loaded for this profile yet.</p>
+                  <p className="font-mono text-[11px] uppercase tracking-widest text-slate-500">No specific reviews loaded for this profile yet.</p>
                 </div>
               )}
             </div>
@@ -494,6 +553,17 @@ export default function CrewProfile() {
         {/* Footer Audit Stamp */}
         <AuditStamp title="PERSONNEL_VERIFIED" subtitle="Roster Audit 2026" className="pt-16" />
       </main>
+
+      {/* Asset Viewer Modal */}
+      <AssetViewer 
+        isOpen={!!selectedAsset}
+        onClose={() => setSelectedAsset(null)}
+        assetUrl={selectedAsset?.url || ''}
+        assetTitle={selectedAsset?.title || ''}
+        assetHash={profileData.id.toUpperCase() + "...9A2B"}
+        assetType="image"
+        annotations={selectedAsset?.annotations}
+      />
     </div>
   );
 }

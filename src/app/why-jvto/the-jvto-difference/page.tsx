@@ -28,11 +28,11 @@ export default function JVTODifference() {
         <div className="container mx-auto px-6 py-6 flex items-center justify-between">
           <button 
             onClick={() => navigate('/why-jvto')}
-            className="group flex items-center gap-3 text-[10px] font-mono font-bold text-slate-400 hover:text-authority-navy transition-all uppercase tracking-widest"
+            className="group flex items-center gap-3 text-[11px] font-mono font-bold text-slate-500 hover:text-authority-navy transition-all uppercase tracking-widest"
           >
             <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" /> Why JVTO Hub
           </button>
-          <div className="flex items-center gap-3 text-safety-orange text-[10px] font-mono font-bold uppercase tracking-[0.2em]">
+          <div className="flex items-center gap-3 text-safety-orange text-[11px] font-mono font-bold uppercase tracking-[0.2em]">
             <Lock className="w-4 h-4" /> Protocol_Difference_v1.9
           </div>
         </div>
@@ -46,7 +46,7 @@ export default function JVTODifference() {
         >
           <div className="flex items-center gap-2 mb-6">
             <Zap className="w-4 h-4 text-safety-orange" />
-            <span className="font-mono text-[10px] uppercase tracking-widest text-slate-500">The JVTO Difference</span>
+            <span className="font-mono text-[11px] uppercase tracking-widest text-slate-500">The JVTO Difference</span>
           </div>
           <h1 className="text-5xl md:text-8xl font-black text-authority-navy mb-8 leading-[0.85] uppercase tracking-tighter">
             INTEGRITY <br />
@@ -98,7 +98,7 @@ export default function JVTODifference() {
               viewport={{ once: true }}
               className="bento-card bg-white p-12 border-2 border-slate-100 relative overflow-hidden group"
             >
-              <div className="absolute top-0 right-0 p-6 font-mono text-[10px] text-slate-200 font-black">
+              <div className="absolute top-0 right-0 p-6 font-mono text-[11px] text-slate-200 font-black">
                 CLAIM_{claim.id}
               </div>
               <div className="max-w-3xl">
@@ -112,7 +112,7 @@ export default function JVTODifference() {
                 </div>
                 <button 
                   onClick={() => navigate(`/verify-jvto#${claim.evidenceAnchor}`)}
-                  className="inline-flex items-center gap-3 text-[10px] font-mono font-bold text-safety-orange uppercase tracking-widest hover:gap-5 transition-all"
+                  className="inline-flex items-center gap-3 text-[11px] font-mono font-bold text-safety-orange uppercase tracking-widest hover:gap-5 transition-all"
                 >
                   Inspect Evidence <ChevronRight className="w-4 h-4" />
                 </button>
@@ -126,7 +126,7 @@ export default function JVTODifference() {
           <h2 className="text-4xl font-black uppercase mb-12 text-center">The Industry Standard vs. <span className="text-safety-orange">JVTO</span></h2>
           <div className="grid md:grid-cols-2 gap-px bg-slate-200 rounded-[2rem] overflow-hidden border-2 border-slate-200 shadow-2xl">
             <div className="bg-white p-12">
-              <h4 className="font-mono text-[10px] text-slate-400 uppercase tracking-widest mb-8">Typical Operators</h4>
+              <h4 className="font-mono text-[11px] text-slate-500 uppercase tracking-widest mb-8">Typical Operators</h4>
               <ul className="space-y-6">
                 {[
                   'Mixed groups with unknown fitness levels',
@@ -135,7 +135,7 @@ export default function JVTODifference() {
                   'Pressure to summit regardless of conditions',
                   'Generic guides with no safety training'
                 ].map((item, i) => (
-                  <li key={i} className="flex items-start gap-4 text-slate-400 line-through decoration-slate-300">
+                  <li key={i} className="flex items-start gap-4 text-slate-500 line-through decoration-slate-300">
                     <span className="w-2 h-2 rounded-full bg-slate-200 mt-2 shrink-0" />
                     <span className="text-sm">{item}</span>
                   </li>
@@ -143,7 +143,7 @@ export default function JVTODifference() {
               </ul>
             </div>
             <div className="bg-authority-navy p-12 text-white">
-              <h4 className="font-mono text-[10px] text-safety-orange uppercase tracking-widest mb-8">JVTO Protocol</h4>
+              <h4 className="font-mono text-[11px] text-safety-orange uppercase tracking-widest mb-8">JVTO Protocol</h4>
               <ul className="space-y-6">
                 {[
                   '100% Private tours for your group only',
@@ -164,7 +164,7 @@ export default function JVTODifference() {
 
         {/* Final CTA */}
         <div className="mt-32 text-center">
-          <p className="font-mono text-[10px] text-slate-400 uppercase tracking-widest mb-8">Ready to experience the difference?</p>
+          <p className="font-mono text-[11px] text-slate-500 uppercase tracking-widest mb-8">Ready to experience the difference?</p>
           <button 
             onClick={() => navigate('/booking')}
             className="bg-safety-orange text-white px-12 py-6 rounded-2xl font-black uppercase tracking-widest hover:scale-105 transition-all shadow-2xl shadow-safety-orange/20"

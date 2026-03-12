@@ -13,14 +13,14 @@ export const Footer = () => {
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="flex flex-col lg:flex-row justify-between items-center gap-20 mb-32">
           <div className="max-w-2xl text-center lg:text-left">
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-safety-orange/10 border border-safety-orange/30 text-safety-orange text-[10px] font-mono font-bold uppercase tracking-[0.2em] mb-8">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-safety-orange/10 border border-safety-orange/30 text-safety-orange text-[11px] font-mono font-bold uppercase tracking-[0.2em] mb-8">
               <Lock className="w-3 h-3" /> Secure Booking Protocol
             </div>
             <h2 className="text-4xl md:text-7xl font-black leading-[0.9] mb-8 uppercase">
               Ready for <br />
               <span className="text-safety-orange">Operational Certainty?</span>
             </h2>
-            <p className="text-slate-400 text-xl leading-tight font-light mb-12">
+            <p className="text-slate-500 text-xl leading-tight font-light mb-12">
               Don't leave your safety to chance. Join the elite group of travelers who prioritize verification over marketing.
             </p>
             <div className="flex flex-col sm:flex-row justify-center lg:justify-start gap-4">
@@ -45,16 +45,16 @@ export const Footer = () => {
               <ShieldCheck className="w-20 h-20 text-verified-bright mb-8" />
               <div className="space-y-4">
                 <div className="flex items-center justify-between gap-8">
-                  <span className="font-mono text-[10px] text-slate-500 uppercase tracking-widest">Entity Status</span>
+                  <span className="font-mono text-[11px] text-slate-500 uppercase tracking-widest">Entity Status</span>
                   <div className="verified-badge">VERIFIED_2026</div>
                 </div>
                 <div className="flex items-center justify-between gap-8">
-                  <span className="font-mono text-[10px] text-slate-500 uppercase tracking-widest">Security Level</span>
-                  <span className="font-mono text-[10px] text-verified-bright uppercase font-black">HIGH_STAKES</span>
+                  <span className="font-mono text-[11px] text-slate-500 uppercase tracking-widest">Security Level</span>
+                  <span className="font-mono text-[11px] text-verified-bright uppercase font-black">HIGH_STAKES</span>
                 </div>
                 <div className="flex items-center justify-between gap-8">
-                  <span className="font-mono text-[10px] text-slate-500 uppercase tracking-widest">Data Integrity</span>
-                  <span className="font-mono text-[10px] text-verified-bright uppercase font-black">100%_AUDITED</span>
+                  <span className="font-mono text-[11px] text-slate-500 uppercase tracking-widest">Data Integrity</span>
+                  <span className="font-mono text-[11px] text-verified-bright uppercase font-black">100%_AUDITED</span>
                 </div>
               </div>
             </div>
@@ -65,20 +65,20 @@ export const Footer = () => {
           <div className="flex items-center gap-4">
             <div className="flex items-center gap-2">
               <Fingerprint className="w-4 h-4 text-slate-500" />
-              <span className="font-mono text-[10px] text-slate-500 uppercase tracking-widest">SHA-256: 8F3E...9A2B</span>
+              <span className="font-mono text-[11px] text-slate-500 uppercase tracking-widest">SHA-256: 8F3E...9A2B</span>
             </div>
             <div className="h-4 w-px bg-white/10"></div>
             <div className="flex items-center gap-2">
               <Globe className="w-4 h-4 text-slate-500" />
-              <span className="font-mono text-[10px] text-slate-500 uppercase tracking-widest">Schema.org Trust Graph Injected</span>
+              <span className="font-mono text-[11px] text-slate-500 uppercase tracking-widest">Schema.org Trust Graph Injected</span>
             </div>
           </div>
           
           <div className="text-center md:text-right">
-            <p className="font-mono text-[10px] text-slate-500 uppercase tracking-[0.2em] mb-2">
+            <p className="font-mono text-[11px] text-slate-500 uppercase tracking-[0.2em] mb-2">
               &copy; 2026 PT Java Volcano Rendezvous. All Rights Reserved.
             </p>
-            <p className="font-mono text-[10px] text-slate-600 uppercase tracking-widest">
+            <p className="font-mono text-[11px] text-slate-500 uppercase tracking-widest">
               Verified Entity // Bureaucratic Chic v1.9
             </p>
           </div>

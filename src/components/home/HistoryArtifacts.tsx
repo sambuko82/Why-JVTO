@@ -38,7 +38,7 @@ export const HistoryArtifacts = () => {
         <div className="max-w-2xl">
           <div className="flex items-center gap-2 mb-4">
             <History className="w-4 h-4 text-safety-orange" />
-            <span className="font-mono text-[10px] uppercase tracking-widest text-slate-500">Archival Continuity Log</span>
+            <span className="font-mono text-[11px] uppercase tracking-widest text-slate-500">Archival Continuity Log</span>
           </div>
           <h2 className="text-4xl md:text-6xl font-black text-authority-navy leading-[0.9] mb-6 uppercase">
             FORENSIC <br />
@@ -50,7 +50,7 @@ export const HistoryArtifacts = () => {
         </div>
         <div className="hidden md:block">
           <div className="tech-badge bg-authority-navy text-white mb-2">Verified Continuity</div>
-          <p className="font-mono text-[10px] text-slate-400 uppercase tracking-widest text-right">Records: 2015 - 2026</p>
+          <p className="font-mono text-[11px] text-slate-500 uppercase tracking-widest text-right">Records: 2015 - 2026</p>
         </div>
       </div>
 
@@ -93,12 +93,12 @@ export const HistoryArtifacts = () => {
                     <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 mb-8">
                       <div className="flex items-center gap-2 mb-4">
                         <BookOpen className="w-4 h-4 text-safety-orange" />
-                        <span className="font-mono text-[10px] uppercase tracking-widest text-slate-500">Publication Metadata</span>
+                        <span className="font-mono text-[11px] uppercase tracking-widest text-slate-500">Publication Metadata</span>
                       </div>
                       <div className="grid grid-cols-1 gap-2">
                         {Object.entries(artifact.meta).map(([key, value]) => (
                           <div key={key} className="flex justify-between items-center py-1 border-b border-slate-200/50 last:border-0">
-                            <span className="font-mono text-[10px] uppercase text-slate-400">{key}</span>
+                            <span className="font-mono text-[11px] uppercase text-slate-500">{key}</span>
                             <span className="font-bold text-xs text-authority-navy">{value}</span>
                           </div>
                         ))}
@@ -108,8 +108,8 @@ export const HistoryArtifacts = () => {
 
                   <div className="flex items-center justify-between pt-6 border-t border-slate-100">
                     <div className="flex items-center gap-2">
-                      <Fingerprint className="w-4 h-4 text-slate-400" />
-                      <span className="font-mono text-[10px] text-slate-400 uppercase tracking-widest">{artifact.hash}</span>
+                      <Fingerprint className="w-4 h-4 text-slate-500" />
+                      <span className="font-mono text-[11px] text-slate-500 uppercase tracking-widest">{artifact.hash}</span>
                     </div>
                     <div className="verified-badge">ARCHIVE_PASS</div>
                   </div>
@@ -128,7 +128,7 @@ export const HistoryArtifacts = () => {
                         referrerPolicy="no-referrer"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-authority-navy/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
-                        <span className="text-white font-mono text-[10px] uppercase tracking-widest">Inspect Artifact</span>
+                        <span className="text-white font-mono text-[11px] uppercase tracking-widest">Inspect Artifact</span>
                       </div>
                     </div>
                   ))}

@@ -11,6 +11,13 @@ export interface Credential {
   issuer: string;
   status: string;
   cardImage: string;
+  annotations?: ForensicAnnotation[];
+}
+
+export interface SafetyMetric {
+  label: string;
+  value: number; // 0-100
+  history: number[]; // For sparklines
 }
 
 export interface CrewProfileData {
@@ -19,6 +26,7 @@ export interface CrewProfileData {
   fullQuote: string;
   expertise: string[];
   credential: Credential;
+  safetyMetrics?: SafetyMetric[];
 }
 
 export interface CrewMember {
@@ -85,6 +93,7 @@ export interface HistoryItem {
   authors?: string[];
   publisher?: string;
   year?: string;
+  annotations?: ForensicAnnotation[];
 }
 
 export interface PressItem {
@@ -96,6 +105,7 @@ export interface PressItem {
   quote?: string;
   author?: string;
   screenshot?: string;
+  annotations?: ForensicAnnotation[];
 }
 
 export interface Partner {
@@ -169,6 +179,14 @@ export interface HubContent {
   quick_answers: QuickAnswer[];
 }
 
+export interface ForensicAnnotation {
+  id: string;
+  x: number; // Percentage from left
+  y: number; // Percentage from top
+  label: string;
+  description: string;
+}
+
 export interface ProofItem {
   slug: string;
   title: string;
@@ -177,6 +195,7 @@ export interface ProofItem {
   hash?: string;
   last_verified?: string;
   category?: string;
+  annotations?: ForensicAnnotation[];
 }
 
 export interface ProofVault {

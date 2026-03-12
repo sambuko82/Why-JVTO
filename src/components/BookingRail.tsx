@@ -56,7 +56,7 @@ export const BookingRail = () => {
               <div>
                 <div className="flex items-center gap-2 mb-1">
                   <span className={`flex h-2 w-2 rounded-full ${auditProgress > 90 ? 'bg-verified-bright' : 'bg-safety-orange'} animate-pulse`}></span>
-                  <span className="font-mono text-[10px] text-white/60 font-bold uppercase tracking-widest">
+                  <span className="font-mono text-[11px] text-white/70 font-bold uppercase tracking-widest">
                     {auditProgress < 50 ? 'Audit_In_Progress' : auditProgress < 90 ? 'Verification_Deepening' : 'Audit_Complete_Ready_To_Deploy'}
                   </span>
                 </div>
@@ -89,10 +89,10 @@ export const BookingRail = () => {
               </a>
               
               <div className="hidden lg:flex flex-col items-end mr-4">
-                <div className="flex items-center gap-2 text-white/40 font-mono text-[8px] uppercase tracking-widest mb-1">
+                <div className="flex items-center gap-2 text-white/50 font-mono text-[11px] uppercase tracking-widest mb-1">
                   <Lock className="w-3 h-3" /> Encrypted_Channel
                 </div>
-                <span className="text-white/60 font-mono text-[10px]">Audit_Score: {auditProgress}%</span>
+                <span className="text-white/70 font-mono text-[11px]">Audit_Score: {auditProgress}%</span>
               </div>
             </div>
           </div>

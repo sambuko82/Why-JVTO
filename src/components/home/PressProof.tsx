@@ -25,14 +25,14 @@ export const PressProof = () => {
             transition={{ duration: 0.6 }}
             className="lg:w-5/12"
           >
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-safety-orange/10 border border-safety-orange/30 text-safety-orange text-[10px] font-mono font-bold uppercase tracking-[0.2em] mb-8">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-safety-orange/10 border border-safety-orange/30 text-safety-orange text-[11px] font-mono font-bold uppercase tracking-[0.2em] mb-8">
               <Newspaper className="w-3 h-3" /> National Media Verification
             </div>
             <h2 className="text-4xl md:text-6xl font-black text-white mb-8 leading-[0.9] uppercase">
               Duty First, <br/>
               <span className="text-safety-orange">Business Second.</span>
             </h2>
-            <p className="text-slate-400 text-xl mb-10 leading-tight font-light">
+            <p className="text-slate-500 text-xl mb-10 leading-tight font-light">
               Our dedication to safety is not just a company SOP. Our founder, Bripka Agung Sambuko, was covered by national media for his service as a Tourist Police officer guarding visitor safety directly in the extreme conditions of Ijen Crater.
             </p>
             
@@ -43,7 +43,7 @@ export const PressProof = () => {
               </p>
               <div className="flex items-center gap-3">
                 <div className="h-px w-8 bg-safety-orange"></div>
-                <footer className="text-[10px] font-mono font-bold text-safety-orange uppercase tracking-widest">— {detikArticle.author}</footer>
+                <footer className="text-[11px] font-mono font-bold text-safety-orange uppercase tracking-widest">— {detikArticle.author}</footer>
               </div>
             </div>
 
@@ -73,7 +73,7 @@ export const PressProof = () => {
                   <div className="w-3 h-3 rounded-full bg-amber-400"></div>
                   <div className="w-3 h-3 rounded-full bg-emerald-400"></div>
                 </div>
-                <div className="bg-white px-4 py-1.5 rounded-full border border-slate-200 text-[10px] font-mono text-slate-400 w-64 text-center truncate shadow-sm">
+                <div className="bg-white px-4 py-1.5 rounded-full border border-slate-200 text-[11px] font-mono text-slate-500 w-64 text-center truncate shadow-sm">
                   {detikArticle.url.replace('https://', '')}
                 </div>
                 <Lock className="w-4 h-4 text-slate-300" />
@@ -94,7 +94,7 @@ export const PressProof = () => {
                         <CheckCircle2 className="w-6 h-6 text-verified-bright shrink-0" />
                       </div>
                       <div>
-                        <div className="text-[10px] uppercase tracking-[0.2em] text-verified-bright font-black mb-2">
+                        <div className="text-[11px] uppercase tracking-[0.2em] text-verified-bright font-black mb-2">
                           Positive Coverage Verification
                         </div>
                         <div className="text-sm font-bold text-white leading-tight uppercase">
@@ -107,8 +107,8 @@ export const PressProof = () => {
 
               <div className="bg-slate-50 px-6 py-3 border-t border-slate-200 flex items-center justify-between">
                 <div className="flex items-center gap-2">
-                  <Fingerprint className="w-4 h-4 text-slate-400"/>
-                  <span className="text-[10px] text-slate-400 font-mono uppercase tracking-widest">SHA-256: B257B7...9A2B</span>
+                  <Fingerprint className="w-4 h-4 text-slate-500"/>
+                  <span className="text-[11px] text-slate-500 font-mono uppercase tracking-widest">SHA-256: B257B7...9A2B</span>
                 </div>
                 <div className="verified-badge">Verified Source</div>
               </div>
@@ -124,7 +124,7 @@ export const PressProof = () => {
                 className="absolute -bottom-16 -right-8 lg:-right-16 w-3/4 bg-white rounded-3xl overflow-hidden border border-white/10 shadow-2xl z-10 transform lg:rotate-3 opacity-90 hover:opacity-100 hover:z-30 transition-all duration-700 hidden sm:block"
               >
                 <div className="bg-slate-100 px-6 py-3 flex items-center justify-between border-b border-slate-200">
-                  <span className="text-[10px] font-mono text-slate-500 uppercase tracking-widest">Radar Jember Archive</span>
+                  <span className="text-[11px] font-mono text-slate-500 uppercase tracking-widest">Radar Jember Archive</span>
                   <ShieldCheck className="w-4 h-4 text-slate-300" />
                 </div>
                 <div className="relative">
@@ -135,7 +135,7 @@ export const PressProof = () => {
                     referrerPolicy="no-referrer"
                   />
                   <div className="absolute bottom-4 right-4 bg-authority-navy/90 backdrop-blur px-4 py-2 rounded-xl border border-white/10">
-                    <p className="text-[10px] text-verified-bright font-mono uppercase tracking-widest">
+                    <p className="text-[11px] text-verified-bright font-mono uppercase tracking-widest">
                       Topic: {radarArticle.translatedTitle || "Tourist Police Support"}
                     </p>
                   </div>

@@ -29,11 +29,11 @@ export default function OurStory() {
         <div className="container mx-auto px-6 py-6 flex items-center justify-between">
           <button 
             onClick={() => navigate('/why-jvto')}
-            className="group flex items-center gap-3 text-[10px] font-mono font-bold text-slate-400 hover:text-authority-navy transition-all uppercase tracking-widest"
+            className="group flex items-center gap-3 text-[11px] font-mono font-bold text-slate-500 hover:text-authority-navy transition-all uppercase tracking-widest"
           >
             <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" /> Why JVTO Hub
           </button>
-          <div className="flex items-center gap-3 text-safety-orange text-[10px] font-mono font-bold uppercase tracking-[0.2em]">
+          <div className="flex items-center gap-3 text-safety-orange text-[11px] font-mono font-bold uppercase tracking-[0.2em]">
             <Lock className="w-4 h-4" /> Protocol_History_v1.9
           </div>
         </div>
@@ -47,7 +47,7 @@ export default function OurStory() {
         >
           <div className="flex items-center gap-2 mb-6">
             <History className="w-4 h-4 text-safety-orange" />
-            <span className="font-mono text-[10px] uppercase tracking-widest text-slate-500">Our Story & Recognition</span>
+            <span className="font-mono text-[11px] uppercase tracking-widest text-slate-500">Our Story & Recognition</span>
           </div>
           <h1 className="text-5xl md:text-8xl font-black text-authority-navy mb-8 leading-[0.85] uppercase tracking-tighter">
             PROVEN <br />
@@ -73,7 +73,7 @@ export default function OurStory() {
               </p>
               <div className="flex items-center gap-4 pt-6 border-t border-slate-50">
                 <Calendar className="w-4 h-4 text-slate-300" />
-                <span className="font-mono text-[10px] text-slate-400 uppercase tracking-widest">Registry_2015</span>
+                <span className="font-mono text-[11px] text-slate-500 uppercase tracking-widest">Registry_2015</span>
               </div>
             </div>
           </div>
@@ -85,15 +85,15 @@ export default function OurStory() {
                 <BookOpen className="w-8 h-8" />
               </div>
               <h3 className="text-3xl font-black uppercase mb-4 leading-none">{SSOT.history.book2016.title}</h3>
-              <p className="text-slate-400 text-lg font-light leading-tight mb-8">
+              <p className="text-slate-500 text-lg font-light leading-tight mb-8">
                 Featured in the 4th Edition of Stefan Loose Reiseführer Indonesien (Page {SSOT.history.book2016.page}).
               </p>
-              <div className="p-6 bg-white/5 rounded-xl border border-white/10 mb-8 italic text-slate-400 text-sm leading-relaxed">
+              <div className="p-6 bg-white/5 rounded-xl border border-white/10 mb-8 italic text-slate-500 text-sm leading-relaxed">
                 "{SSOT.history.book2016.quote}"
               </div>
               <div className="flex items-center gap-4 pt-6 border-t border-white/10">
                 <Globe className="w-4 h-4 text-slate-500" />
-                <span className="font-mono text-[10px] text-slate-500 uppercase tracking-widest">Global_Recognition</span>
+                <span className="font-mono text-[11px] text-slate-500 uppercase tracking-widest">Global_Recognition</span>
               </div>
             </div>
           </div>
@@ -116,20 +116,20 @@ export default function OurStory() {
                 className="bento-card bg-white p-10 border-2 border-slate-100 group hover:border-safety-orange transition-all"
               >
                 <div className="flex items-center justify-between mb-8">
-                  <span className="font-mono text-[10px] text-safety-orange uppercase tracking-widest font-bold">{item.publisher}</span>
-                  <span className="font-mono text-[10px] text-slate-300 uppercase tracking-widest">{item.date}</span>
+                  <span className="font-mono text-[11px] text-safety-orange uppercase tracking-widest font-bold">{item.publisher}</span>
+                  <span className="font-mono text-[11px] text-slate-300 uppercase tracking-widest">{item.date}</span>
                 </div>
                 <h4 className="text-xl font-black uppercase mb-6 leading-tight group-hover:text-safety-orange transition-colors">
                   {item.title}
                 </h4>
                 {item.translatedTitle && (
-                  <p className="text-slate-400 text-xs italic mb-8">
+                  <p className="text-slate-500 text-xs italic mb-8">
                     "{item.translatedTitle}"
                   </p>
                 )}
                 <button 
                   onClick={() => navigate('/verify-jvto#press')}
-                  className="inline-flex items-center gap-3 text-[10px] font-mono font-bold text-slate-400 uppercase tracking-widest hover:text-safety-orange transition-all"
+                  className="inline-flex items-center gap-3 text-[11px] font-mono font-bold text-slate-500 uppercase tracking-widest hover:text-safety-orange transition-all"
                 >
                   View Original Artifact <ChevronRight className="w-4 h-4" />
                 </button>
@@ -148,7 +148,7 @@ export default function OurStory() {
               viewport={{ once: true }}
               className="bento-card bg-white p-12 border-2 border-slate-100 relative overflow-hidden group"
             >
-              <div className="absolute top-0 right-0 p-6 font-mono text-[10px] text-slate-200 font-black">
+              <div className="absolute top-0 right-0 p-6 font-mono text-[11px] text-slate-200 font-black">
                 CLAIM_{claim.id}
               </div>
               <div className="max-w-3xl">
@@ -162,7 +162,7 @@ export default function OurStory() {
                 </div>
                 <button 
                   onClick={() => navigate(`/verify-jvto#${claim.evidenceAnchor}`)}
-                  className="inline-flex items-center gap-3 text-[10px] font-mono font-bold text-safety-orange uppercase tracking-widest hover:gap-5 transition-all"
+                  className="inline-flex items-center gap-3 text-[11px] font-mono font-bold text-safety-orange uppercase tracking-widest hover:gap-5 transition-all"
                 >
                   Inspect Evidence <ChevronRight className="w-4 h-4" />
                 </button>

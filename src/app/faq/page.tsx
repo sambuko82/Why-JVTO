@@ -42,11 +42,11 @@ export default function FAQPage() {
         <div className="container mx-auto px-6 py-6 flex items-center justify-between">
           <button 
             onClick={() => navigate('/')}
-            className="group flex items-center gap-3 text-[10px] font-mono font-bold text-slate-400 hover:text-authority-navy transition-all uppercase tracking-widest"
+            className="group flex items-center gap-3 text-[11px] font-mono font-bold text-slate-500 hover:text-authority-navy transition-all uppercase tracking-widest"
           >
             <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" /> Back to Hub
           </button>
-          <div className="flex items-center gap-3 text-safety-orange text-[10px] font-mono font-bold uppercase tracking-[0.2em]">
+          <div className="flex items-center gap-3 text-safety-orange text-[11px] font-mono font-bold uppercase tracking-[0.2em]">
             <Lock className="w-4 h-4" /> Support Protocol v1.9
           </div>
         </div>
@@ -61,7 +61,7 @@ export default function FAQPage() {
         >
           <div className="flex items-center gap-2 mb-6">
             <HelpCircle className="w-4 h-4 text-safety-orange" />
-            <span className="font-mono text-[10px] uppercase tracking-widest text-slate-500">Knowledge Base & FAQ</span>
+            <span className="font-mono text-[11px] uppercase tracking-widest text-slate-500">Knowledge Base & FAQ</span>
           </div>
           <h1 className="text-5xl md:text-8xl font-black text-authority-navy mb-8 leading-[0.85] uppercase tracking-tighter">
             SYSTEM <br />
@@ -76,7 +76,7 @@ export default function FAQPage() {
         {/* Search Bar */}
         <div className="relative mb-16">
           <div className="absolute inset-y-0 left-6 flex items-center pointer-events-none">
-            <Search className="w-5 h-5 text-slate-400" />
+            <Search className="w-5 h-5 text-slate-500" />
           </div>
           <input 
             type="text"
@@ -102,7 +102,7 @@ export default function FAQPage() {
                 className="w-full p-8 flex items-center justify-between text-left group"
               >
                 <div className="flex items-center gap-6">
-                  <span className="font-mono text-[10px] text-slate-300 font-black">0{index + 1}</span>
+                  <span className="font-mono text-[11px] text-slate-300 font-black">0{index + 1}</span>
                   <h3 className="text-xl font-black text-authority-navy uppercase leading-tight group-hover:text-safety-orange transition-colors">
                     {faq.q}
                   </h3>
@@ -126,13 +126,13 @@ export default function FAQPage() {
                       </div>
                       <div className="mt-6 flex items-center gap-4">
                         <div className="flex items-center gap-2">
-                          <Database className="w-3 h-3 text-slate-400" />
-                          <span className="font-mono text-[8px] text-slate-400 uppercase tracking-widest">Source: SSOT_v1.9</span>
+                          <Database className="w-3 h-3 text-slate-500" />
+                          <span className="font-mono text-[11px] text-slate-500 uppercase tracking-widest">Source: SSOT_v1.9</span>
                         </div>
                         <div className="h-3 w-px bg-slate-200"></div>
                         <div className="flex items-center gap-2">
                           <ShieldCheck className="w-3 h-3 text-verified-bright" />
-                          <span className="font-mono text-[8px] text-verified-bright uppercase tracking-widest font-bold">Verified_Answer</span>
+                          <span className="font-mono text-[11px] text-verified-bright uppercase tracking-widest font-bold">Verified_Answer</span>
                         </div>
                       </div>
                     </div>
@@ -145,7 +145,7 @@ export default function FAQPage() {
           {filteredFaqs.length === 0 && (
             <div className="text-center py-24 bento-card border-dashed border-2 border-slate-200">
               <Database className="w-12 h-12 text-slate-200 mx-auto mb-6" />
-              <p className="font-mono text-[10px] text-slate-400 uppercase tracking-widest">No matching protocols found in the knowledge base.</p>
+              <p className="font-mono text-[11px] text-slate-500 uppercase tracking-widest">No matching protocols found in the knowledge base.</p>
             </div>
           )}
         </div>
@@ -155,11 +155,11 @@ export default function FAQPage() {
           <div className="scanline"></div>
           <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-12">
             <div className="max-w-md">
-              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-safety-orange/10 border border-safety-orange/30 text-safety-orange text-[10px] font-mono font-bold uppercase tracking-[0.2em] mb-6">
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-safety-orange/10 border border-safety-orange/30 text-safety-orange text-[11px] font-mono font-bold uppercase tracking-[0.2em] mb-6">
                 <MessageSquare className="w-3 h-3" /> Direct Assistance
               </div>
               <h2 className="text-4xl font-black uppercase leading-none mb-4">Still Have <br />Questions?</h2>
-              <p className="text-slate-400 text-lg font-light leading-tight">
+              <p className="text-slate-500 text-lg font-light leading-tight">
                 Initiate a secure WhatsApp session with Mr. Sam for real-time operational intelligence.
               </p>
             </div>
@@ -181,10 +181,10 @@ export default function FAQPage() {
             <div className="flex flex-col items-center">
               <ShieldCheck className="w-20 h-20 text-safety-orange mb-8" />
               <span className="text-5xl font-black text-authority-navy uppercase tracking-tighter leading-none mb-3">KNOWLEDGE_AUDITED</span>
-              <span className="font-mono text-[10px] text-slate-400 tracking-[0.4em] uppercase">Support Registry 2026</span>
+              <span className="font-mono text-[11px] text-slate-500 tracking-[0.4em] uppercase">Support Registry 2026</span>
             </div>
           </div>
-          <p className="mt-12 font-mono text-[10px] text-slate-400 uppercase tracking-widest">
+          <p className="mt-12 font-mono text-[11px] text-slate-500 uppercase tracking-widest">
             System: JVTO_SUPPORT_V1.9 // Node: ID_JKT_01_SECURE
           </p>
         </div>

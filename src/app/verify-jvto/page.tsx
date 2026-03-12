@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Shield, FileCheck, ArrowLeft, ExternalLink, MapPin, FileText, Stethoscope, History, Lock, Fingerprint, Search, Database, ShieldCheck, CheckCircle2, Eye, Download, ChevronRight, Building2, Activity, UserCheck, MessageSquare } from 'lucide-react';
+import { Shield, FileCheck, ArrowLeft, ExternalLink, MapPin, FileText, Stethoscope, History, Lock, Fingerprint, Search, Database, ShieldCheck, CheckCircle2, Eye, Download, ChevronRight, Building2, Activity, UserCheck, MessageSquare, ClipboardList } from 'lucide-react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { SSOT } from '../../lib/ssot';
 import { EvidenceBadge, SectionHeading, HashBadge } from '../../components/ForensicUI';
@@ -7,12 +7,16 @@ import { AuditStamp } from '../../components/AuditStamp';
 import { motion, AnimatePresence } from 'motion/react';
 import { AssetViewer } from '../../components/AssetViewer';
 import { BookingRail } from '../../components/BookingRail';
+import { AuditTrail } from '../../components/AuditTrail';
+import { AUDIT_LOGS } from '../../lib/auditLogs';
+import { ForensicAnnotation } from '../../types';
 
 export default function VerifyJvto() {
   const navigate = useNavigate();
   const location = useLocation();
   const onBack = () => navigate('/');
-  const [selectedAsset, setSelectedAsset] = useState<{ url: string, title: string, hash: string, type: 'image' | 'pdf' } | null>(null);
+  const [selectedAsset, setSelectedAsset] = useState<{ url: string, title: string, hash: string, type: 'image' | 'pdf', annotations?: ForensicAnnotation[] } | null>(null);
+  const [isAuditOpen, setIsAuditOpen] = useState(false);
 
   useEffect(() => {
     if (location.hash) {
@@ -24,8 +28,8 @@ export default function VerifyJvto() {
     }
   }, [location]);
 
-  const openAsset = (url: string, title: string, hash: string, type: 'image' | 'pdf' = 'image') => {
-    setSelectedAsset({ url, title, hash, type });
+  const openAsset = (url: string, title: string, hash: string, type: 'image' | 'pdf' = 'image', annotations?: ForensicAnnotation[]) => {
+    setSelectedAsset({ url, title, hash, type, annotations });
   };
 
   return (
@@ -38,12 +42,20 @@ export default function VerifyJvto() {
         <div className="container mx-auto px-6 py-6 flex items-center justify-between">
           <button 
             onClick={onBack}
-            className="group flex items-center gap-3 text-[10px] font-mono font-bold text-slate-400 hover:text-authority-navy transition-all uppercase tracking-widest"
+            className="group flex items-center gap-3 text-[11px] font-mono font-bold text-slate-500 hover:text-authority-navy transition-all uppercase tracking-widest"
           >
             <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" /> Back to Hub
           </button>
-          <div className="flex items-center gap-3 text-safety-orange text-[10px] font-mono font-bold uppercase tracking-[0.2em]">
-            <Lock className="w-4 h-4" /> Forensic Registry v1.9
+          <div className="flex items-center gap-6">
+            <button 
+              onClick={() => setIsAuditOpen(true)}
+              className="flex items-center gap-2 text-[11px] font-mono font-bold text-safety-orange hover:text-authority-navy transition-all uppercase tracking-widest border border-safety-orange/20 px-3 py-1.5 rounded-lg bg-safety-orange/5"
+            >
+              <ClipboardList className="w-4 h-4" /> View Org Audit Trail
+            </button>
+            <div className="flex items-center gap-3 text-safety-orange text-[11px] font-mono font-bold uppercase tracking-[0.2em]">
+              <Lock className="w-4 h-4" /> Forensic Registry v1.9
+            </div>
           </div>
         </div>
       </div>
@@ -57,7 +69,7 @@ export default function VerifyJvto() {
         >
           <div className="flex items-center gap-2 mb-6">
             <Database className="w-4 h-4 text-safety-orange" />
-            <span className="font-mono text-[10px] uppercase tracking-widest text-slate-500">Forensic Evidence Locker</span>
+            <span className="font-mono text-[11px] uppercase tracking-widest text-slate-500">Forensic Evidence Locker</span>
           </div>
           <h1 className="text-5xl md:text-8xl font-black text-authority-navy mb-8 leading-[0.85] uppercase tracking-tighter">
             IMMUTABLE <br />
@@ -86,7 +98,7 @@ export default function VerifyJvto() {
                 </div>
                 <div>
                   <h2 className="text-3xl font-black text-authority-navy uppercase leading-none mb-1">License to Operate</h2>
-                  <p className="font-mono text-[10px] text-slate-400 uppercase tracking-widest">TDUP_VERIFICATION</p>
+                  <p className="font-mono text-[11px] text-slate-500 uppercase tracking-widest">TDUP_VERIFICATION</p>
                 </div>
               </div>
               <EvidenceBadge type="verified" text="Official License" />
@@ -96,16 +108,16 @@ export default function VerifyJvto() {
               {SSOT.proof_vault.license.map((item) => (
                 <div 
                   key={item.slug}
-                  onClick={() => openAsset(item.url, item.title, item.hash || 'PENDING', 'image')}
+                  onClick={() => openAsset(item.url, item.title, item.hash || 'PENDING', 'image', item.annotations)}
                   className="bento-card bg-white p-8 flex items-center justify-between group cursor-pointer hover:border-safety-orange transition-all"
                 >
                   <div className="flex items-center gap-6">
-                    <div className="p-4 bg-slate-50 rounded-xl text-slate-400 group-hover:text-safety-orange transition-colors">
+                    <div className="p-4 bg-slate-50 rounded-xl text-slate-500 group-hover:text-safety-orange transition-colors">
                       <FileCheck className="w-6 h-6" />
                     </div>
                     <div>
                       <h3 className="text-lg font-black text-authority-navy uppercase leading-tight mb-1">{item.title}</h3>
-                      <p className="font-mono text-[8px] text-slate-400 uppercase tracking-widest">{item.category} // {item.last_verified}</p>
+                      <p className="font-mono text-[11px] text-slate-500 uppercase tracking-widest">{item.category} // {item.last_verified}</p>
                     </div>
                   </div>
                   <ChevronRight className="w-5 h-5 text-slate-300 group-hover:text-safety-orange group-hover:translate-x-1 transition-all" />
@@ -129,7 +141,7 @@ export default function VerifyJvto() {
                 </div>
                 <div>
                   <h2 className="text-3xl font-black text-authority-navy uppercase leading-none mb-1">Legal Entity</h2>
-                  <p className="font-mono text-[10px] text-slate-400 uppercase tracking-widest">NIB_REGISTRATION</p>
+                  <p className="font-mono text-[11px] text-slate-500 uppercase tracking-widest">NIB_REGISTRATION</p>
                 </div>
               </div>
               <EvidenceBadge type="verified" text="Active NIB" />
@@ -139,16 +151,16 @@ export default function VerifyJvto() {
               {SSOT.proof_vault.legality.map((item) => (
                 <div 
                   key={item.slug}
-                  onClick={() => openAsset(item.url, item.title, item.hash || 'PENDING', 'image')}
+                  onClick={() => openAsset(item.url, item.title, item.hash || 'PENDING', 'image', item.annotations)}
                   className="bento-card bg-white p-8 flex items-center justify-between group cursor-pointer hover:border-safety-orange transition-all"
                 >
                   <div className="flex items-center gap-6">
-                    <div className="p-4 bg-slate-50 rounded-xl text-slate-400 group-hover:text-safety-orange transition-colors">
+                    <div className="p-4 bg-slate-50 rounded-xl text-slate-500 group-hover:text-safety-orange transition-colors">
                       <ShieldCheck className="w-6 h-6" />
                     </div>
                     <div>
                       <h3 className="text-lg font-black text-authority-navy uppercase leading-tight mb-1">{item.title}</h3>
-                      <p className="font-mono text-[8px] text-slate-400 uppercase tracking-widest">{item.category} // {item.last_verified}</p>
+                      <p className="font-mono text-[11px] text-slate-500 uppercase tracking-widest">{item.category} // {item.last_verified}</p>
                     </div>
                   </div>
                   <ChevronRight className="w-5 h-5 text-slate-300 group-hover:text-safety-orange group-hover:translate-x-1 transition-all" />
@@ -172,7 +184,7 @@ export default function VerifyJvto() {
                 </div>
                 <div>
                   <h2 className="text-3xl font-black text-authority-navy uppercase leading-none mb-1">Accountability</h2>
-                  <p className="font-mono text-[10px] text-slate-400 uppercase tracking-widest">FIELD_EVIDENCE_LOGS</p>
+                  <p className="font-mono text-[11px] text-slate-500 uppercase tracking-widest">FIELD_EVIDENCE_LOGS</p>
                 </div>
               </div>
               <EvidenceBadge type="verified" text="Live Ops" />
@@ -182,7 +194,7 @@ export default function VerifyJvto() {
               {SSOT.proof_vault.accountability.map((item) => (
                 <div 
                   key={item.slug}
-                  onClick={() => openAsset(item.url, item.title, item.hash || 'PENDING', 'image')}
+                  onClick={() => openAsset(item.url, item.title, item.hash || 'PENDING', 'image', item.annotations)}
                   className="bento-card bg-white overflow-hidden group cursor-pointer hover:border-safety-orange transition-all"
                 >
                   <div className="h-48 overflow-hidden relative">
@@ -191,7 +203,7 @@ export default function VerifyJvto() {
                   </div>
                   <div className="p-6">
                     <h3 className="text-sm font-black text-authority-navy uppercase leading-tight mb-2">{item.title}</h3>
-                    <p className="font-mono text-[8px] text-slate-400 uppercase tracking-widest">{item.category} // {item.last_verified}</p>
+                    <p className="font-mono text-[11px] text-slate-500 uppercase tracking-widest">{item.category} // {item.last_verified}</p>
                   </div>
                 </div>
               ))}
@@ -213,7 +225,7 @@ export default function VerifyJvto() {
                 </div>
                 <div>
                   <h2 className="text-3xl font-black text-authority-navy uppercase leading-none mb-1">Safety Protocols</h2>
-                  <p className="font-mono text-[10px] text-slate-400 uppercase tracking-widest">HEALTH_SCREENING_AUDIT</p>
+                  <p className="font-mono text-[11px] text-slate-500 uppercase tracking-widest">HEALTH_SCREENING_AUDIT</p>
                 </div>
               </div>
               <EvidenceBadge type="verified" text="Medical Compliance" />
@@ -223,16 +235,16 @@ export default function VerifyJvto() {
               {SSOT.proof_vault.safety.map((item) => (
                 <div 
                   key={item.slug}
-                  onClick={() => openAsset(item.url, item.title, item.hash || 'PENDING', 'image')}
+                  onClick={() => openAsset(item.url, item.title, item.hash || 'PENDING', 'image', item.annotations)}
                   className="bento-card bg-white p-8 flex items-center justify-between group cursor-pointer hover:border-verified-bright transition-all"
                 >
                   <div className="flex items-center gap-6">
-                    <div className="p-4 bg-slate-50 rounded-xl text-slate-400 group-hover:text-verified-bright transition-colors">
+                    <div className="p-4 bg-slate-50 rounded-xl text-slate-500 group-hover:text-verified-bright transition-colors">
                       <Activity className="w-6 h-6" />
                     </div>
                     <div>
                       <h3 className="text-lg font-black text-authority-navy uppercase leading-tight mb-1">{item.title}</h3>
-                      <p className="font-mono text-[8px] text-slate-400 uppercase tracking-widest">{item.category} // {item.last_verified}</p>
+                      <p className="font-mono text-[11px] text-slate-500 uppercase tracking-widest">{item.category} // {item.last_verified}</p>
                     </div>
                   </div>
                   <ChevronRight className="w-5 h-5 text-slate-300 group-hover:text-verified-bright group-hover:translate-x-1 transition-all" />
@@ -256,7 +268,7 @@ export default function VerifyJvto() {
                 </div>
                 <div>
                   <h2 className="text-3xl font-black text-authority-navy uppercase leading-none mb-1">Police Integration</h2>
-                  <p className="font-mono text-[10px] text-slate-400 uppercase tracking-widest">AUTHORITY_COMMAND_LOGS</p>
+                  <p className="font-mono text-[11px] text-slate-500 uppercase tracking-widest">AUTHORITY_COMMAND_LOGS</p>
                 </div>
               </div>
               <EvidenceBadge type="verified" text="Active Escort" />
@@ -266,16 +278,16 @@ export default function VerifyJvto() {
               {SSOT.proof_vault.police_safety.map((item) => (
                 <div 
                   key={item.slug}
-                  onClick={() => openAsset(item.url, item.title, item.hash || 'PENDING', 'image')}
+                  onClick={() => openAsset(item.url, item.title, item.hash || 'PENDING', 'image', item.annotations)}
                   className="bento-card bg-white p-8 flex items-center justify-between group cursor-pointer hover:border-safety-orange transition-all"
                 >
                   <div className="flex items-center gap-6">
-                    <div className="p-4 bg-slate-50 rounded-xl text-slate-400 group-hover:text-safety-orange transition-colors">
+                    <div className="p-4 bg-slate-50 rounded-xl text-slate-500 group-hover:text-safety-orange transition-colors">
                       <Lock className="w-6 h-6" />
                     </div>
                     <div>
                       <h3 className="text-lg font-black text-authority-navy uppercase leading-tight mb-1">{item.title}</h3>
-                      <p className="font-mono text-[8px] text-slate-400 uppercase tracking-widest">{item.category} // {item.last_verified}</p>
+                      <p className="font-mono text-[11px] text-slate-500 uppercase tracking-widest">{item.category} // {item.last_verified}</p>
                     </div>
                   </div>
                   <ChevronRight className="w-5 h-5 text-slate-300 group-hover:text-safety-orange group-hover:translate-x-1 transition-all" />
@@ -299,7 +311,7 @@ export default function VerifyJvto() {
                 </div>
                 <div>
                   <h2 className="text-3xl font-black text-authority-navy uppercase leading-none mb-1">Team Credentials</h2>
-                  <p className="font-mono text-[10px] text-slate-400 uppercase tracking-widest">LICENSED_PERSONNEL</p>
+                  <p className="font-mono text-[11px] text-slate-500 uppercase tracking-widest">LICENSED_PERSONNEL</p>
                 </div>
               </div>
               <EvidenceBadge type="verified" text="Verified Guides" />
@@ -309,16 +321,16 @@ export default function VerifyJvto() {
               {SSOT.proof_vault.credentials.map((item) => (
                 <div 
                   key={item.slug}
-                  onClick={() => openAsset(item.url, item.title, item.hash || 'PENDING', 'image')}
+                  onClick={() => openAsset(item.url, item.title, item.hash || 'PENDING', 'image', item.annotations)}
                   className="bento-card bg-white p-8 flex items-center justify-between group cursor-pointer hover:border-safety-orange transition-all"
                 >
                   <div className="flex items-center gap-6">
-                    <div className="p-4 bg-slate-50 rounded-xl text-slate-400 group-hover:text-safety-orange transition-colors">
+                    <div className="p-4 bg-slate-50 rounded-xl text-slate-500 group-hover:text-safety-orange transition-colors">
                       <CheckCircle2 className="w-6 h-6" />
                     </div>
                     <div>
                       <h3 className="text-lg font-black text-authority-navy uppercase leading-tight mb-1">{item.title}</h3>
-                      <p className="font-mono text-[8px] text-slate-400 uppercase tracking-widest">{item.category} // {item.last_verified}</p>
+                      <p className="font-mono text-[11px] text-slate-500 uppercase tracking-widest">{item.category} // {item.last_verified}</p>
                     </div>
                   </div>
                   <ChevronRight className="w-5 h-5 text-slate-300 group-hover:text-safety-orange group-hover:translate-x-1 transition-all" />
@@ -342,7 +354,7 @@ export default function VerifyJvto() {
                 </div>
                 <div>
                   <h2 className="text-3xl font-black text-authority-navy uppercase leading-none mb-1">Press & Recognition</h2>
-                  <p className="font-mono text-[10px] text-slate-400 uppercase tracking-widest">THIRD_PARTY_VALIDATION</p>
+                  <p className="font-mono text-[11px] text-slate-500 uppercase tracking-widest">THIRD_PARTY_VALIDATION</p>
                 </div>
               </div>
               <EvidenceBadge type="verified" text="Media Proof" />
@@ -352,16 +364,16 @@ export default function VerifyJvto() {
               {SSOT.proof_vault.press.map((item) => (
                 <div 
                   key={item.slug}
-                  onClick={() => openAsset(item.url, item.title, item.hash || 'PENDING', 'image')}
+                  onClick={() => openAsset(item.url, item.title, item.hash || 'PENDING', 'image', item.annotations)}
                   className="bento-card bg-white p-8 flex items-center justify-between group cursor-pointer hover:border-safety-orange transition-all"
                 >
                   <div className="flex items-center gap-6">
-                    <div className="p-4 bg-slate-50 rounded-xl text-slate-400 group-hover:text-safety-orange transition-colors">
+                    <div className="p-4 bg-slate-50 rounded-xl text-slate-500 group-hover:text-safety-orange transition-colors">
                       <ExternalLink className="w-6 h-6" />
                     </div>
                     <div>
                       <h3 className="text-lg font-black text-authority-navy uppercase leading-tight mb-1">{item.title}</h3>
-                      <p className="font-mono text-[8px] text-slate-400 uppercase tracking-widest">{item.category} // {item.last_verified}</p>
+                      <p className="font-mono text-[11px] text-slate-500 uppercase tracking-widest">{item.category} // {item.last_verified}</p>
                     </div>
                   </div>
                   <ChevronRight className="w-5 h-5 text-slate-300 group-hover:text-safety-orange group-hover:translate-x-1 transition-all" />
@@ -385,7 +397,7 @@ export default function VerifyJvto() {
                 </div>
                 <div>
                   <h2 className="text-3xl font-black text-authority-navy uppercase leading-none mb-1">History Proof</h2>
-                  <p className="font-mono text-[10px] text-slate-400 uppercase tracking-widest">ARCHIVAL_CONTINUITY</p>
+                  <p className="font-mono text-[11px] text-slate-500 uppercase tracking-widest">ARCHIVAL_CONTINUITY</p>
                 </div>
               </div>
               <EvidenceBadge type="verified" text="Est. 2015" />
@@ -395,7 +407,7 @@ export default function VerifyJvto() {
               {SSOT.proof_vault.history.map((item) => (
                 <div 
                   key={item.slug}
-                  onClick={() => openAsset(item.url, item.title, item.hash || 'PENDING', 'image')}
+                  onClick={() => openAsset(item.url, item.title, item.hash || 'PENDING', 'image', item.annotations)}
                   className="bento-card bg-white overflow-hidden group cursor-pointer hover:border-verified-bright transition-all"
                 >
                   <div className="h-48 overflow-hidden relative">
@@ -404,7 +416,7 @@ export default function VerifyJvto() {
                   </div>
                   <div className="p-6">
                     <h3 className="text-sm font-black text-authority-navy uppercase leading-tight mb-2">{item.title}</h3>
-                    <p className="font-mono text-[8px] text-slate-400 uppercase tracking-widest">{item.category} // {item.last_verified}</p>
+                    <p className="font-mono text-[11px] text-slate-500 uppercase tracking-widest">{item.category} // {item.last_verified}</p>
                   </div>
                 </div>
               ))}
@@ -426,7 +438,7 @@ export default function VerifyJvto() {
                 </div>
                 <div>
                   <h2 className="text-3xl font-black text-authority-navy uppercase leading-none mb-1">Partner Network</h2>
-                  <p className="font-mono text-[10px] text-slate-400 uppercase tracking-widest">VERIFIED_AFFILIATIONS</p>
+                  <p className="font-mono text-[11px] text-slate-500 uppercase tracking-widest">VERIFIED_AFFILIATIONS</p>
                 </div>
               </div>
               <EvidenceBadge type="verified" text="Active Network" />
@@ -436,16 +448,16 @@ export default function VerifyJvto() {
               {SSOT.proof_vault.partners.map((item) => (
                 <div 
                   key={item.slug}
-                  onClick={() => openAsset(item.url, item.title, item.hash || 'PENDING', 'image')}
+                  onClick={() => openAsset(item.url, item.title, item.hash || 'PENDING', 'image', item.annotations)}
                   className="bento-card bg-white p-8 flex items-center justify-between group cursor-pointer hover:border-safety-orange transition-all"
                 >
                   <div className="flex items-center gap-6">
-                    <div className="p-4 bg-slate-50 rounded-xl text-slate-400 group-hover:text-safety-orange transition-colors">
+                    <div className="p-4 bg-slate-50 rounded-xl text-slate-500 group-hover:text-safety-orange transition-colors">
                       <CheckCircle2 className="w-6 h-6" />
                     </div>
                     <div>
                       <h3 className="text-lg font-black text-authority-navy uppercase leading-tight mb-1">{item.title}</h3>
-                      <p className="font-mono text-[8px] text-slate-400 uppercase tracking-widest">{item.category} // {item.last_verified}</p>
+                      <p className="font-mono text-[11px] text-slate-500 uppercase tracking-widest">{item.category} // {item.last_verified}</p>
                     </div>
                   </div>
                   <ChevronRight className="w-5 h-5 text-slate-300 group-hover:text-safety-orange group-hover:translate-x-1 transition-all" />
@@ -469,7 +481,7 @@ export default function VerifyJvto() {
                 </div>
                 <div>
                   <h2 className="text-3xl font-black text-authority-navy uppercase leading-none mb-1">Reputation</h2>
-                  <p className="font-mono text-[10px] text-slate-400 uppercase tracking-widest">REVIEW_VERIFICATION_PATHS</p>
+                  <p className="font-mono text-[11px] text-slate-500 uppercase tracking-widest">REVIEW_VERIFICATION_PATHS</p>
                 </div>
               </div>
               <EvidenceBadge type="verified" text="Trust Registry" />
@@ -483,8 +495,8 @@ export default function VerifyJvto() {
                 Use the links below to verify our reputation independently.
               </p>
               <div className="flex flex-wrap justify-center gap-4">
-                <a href="https://www.tripadvisor.com" target="_blank" className="px-6 py-3 bg-slate-50 rounded-xl font-mono text-[10px] uppercase tracking-widest hover:bg-safety-orange hover:text-white transition-all">TripAdvisor</a>
-                <a href="https://www.google.com/maps" target="_blank" className="px-6 py-3 bg-slate-50 rounded-xl font-mono text-[10px] uppercase tracking-widest hover:bg-safety-orange hover:text-white transition-all">Google Reviews</a>
+                <a href="https://www.tripadvisor.com" target="_blank" className="px-6 py-3 bg-slate-50 rounded-xl font-mono text-[11px] uppercase tracking-widest hover:bg-safety-orange hover:text-white transition-all">TripAdvisor</a>
+                <a href="https://www.google.com/maps" target="_blank" className="px-6 py-3 bg-slate-50 rounded-xl font-mono text-[11px] uppercase tracking-widest hover:bg-safety-orange hover:text-white transition-all">Google Reviews</a>
               </div>
             </div>
           </motion.section>
@@ -503,6 +515,15 @@ export default function VerifyJvto() {
         assetTitle={selectedAsset?.title || ''}
         assetHash={selectedAsset?.hash || ''}
         assetType={selectedAsset?.type || 'image'}
+        annotations={selectedAsset?.annotations}
+      />
+
+      <AuditTrail 
+        entityId="jvto_org"
+        entityName="Java Volcano Tour Operator"
+        logs={AUDIT_LOGS["jvto_org"] || []}
+        isOpen={isAuditOpen}
+        onClose={() => setIsAuditOpen(false)}
       />
     </div>
   );

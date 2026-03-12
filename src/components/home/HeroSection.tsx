@@ -37,13 +37,13 @@ export const HeroSection = () => {
           <div className="flex items-center gap-4">
             <div className="flex items-center gap-2">
               <div className="status-live"></div>
-              <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-safety-orange font-bold">60s Fast Audit:</span>
+              <span className="font-mono text-[11px] uppercase tracking-[0.2em] text-safety-orange font-bold">60s Fast Audit:</span>
             </div>
             <div className="flex items-center gap-2">
               {auditSteps.map((step, idx) => (
                 <div key={step.id} className="flex items-center gap-2">
                   <div className={`h-1.5 w-8 rounded-full transition-all duration-500 ${auditStep > idx ? 'bg-verified-bright' : 'bg-white/10'}`}></div>
-                  <span className={`font-mono text-[8px] uppercase tracking-widest hidden sm:block ${auditStep > idx ? 'text-verified-bright' : 'text-slate-500'}`}>
+                  <span className={`font-mono text-[11px] uppercase tracking-widest hidden sm:block ${auditStep > idx ? 'text-verified-bright' : 'text-slate-500'}`}>
                     {step.label}
                   </span>
                 </div>
@@ -51,13 +51,13 @@ export const HeroSection = () => {
             </div>
           </div>
           <div className="flex items-center gap-6">
-            <div className="hidden lg:flex items-center gap-2 text-slate-500 font-mono text-[8px] uppercase tracking-widest">
+            <div className="hidden lg:flex items-center gap-2 text-slate-500 font-mono text-[11px] uppercase tracking-widest">
               <Lock className="w-3 h-3" /> SSL_ENCRYPTED_SESSION
             </div>
             <button 
               onClick={startAudit}
               disabled={isAuditing}
-              className={`font-mono text-[10px] px-4 py-1.5 rounded-lg border transition-all uppercase tracking-widest flex items-center gap-2 ${isAuditing ? 'bg-verified-bright/10 border-verified-bright/30 text-verified-bright' : 'bg-white/5 border-white/10 hover:bg-white/10 text-white'}`}
+              className={`font-mono text-[11px] px-4 py-1.5 rounded-lg border transition-all uppercase tracking-widest flex items-center gap-2 ${isAuditing ? 'bg-verified-bright/10 border-verified-bright/30 text-verified-bright' : 'bg-white/5 border-white/10 hover:bg-white/10 text-white'}`}
             >
               {isAuditing ? (
                 <>
@@ -95,7 +95,7 @@ export const HeroSection = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-safety-orange/10 border border-safety-orange/30 text-safety-orange text-[10px] font-mono font-bold uppercase tracking-[0.2em] mb-8"
+            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-safety-orange/10 border border-safety-orange/30 text-safety-orange text-[11px] font-mono font-bold uppercase tracking-[0.2em] mb-8"
           >
             <Lock className="w-3 h-3" /> Operational Certainty Protocol v1.9
           </motion.div>

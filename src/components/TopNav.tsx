@@ -27,7 +27,7 @@ export const TopNav = () => {
             </div>
             <div>
               <h1 className="font-black uppercase tracking-tighter leading-none text-white">JVTO</h1>
-              <p className="font-mono text-[8px] uppercase tracking-widest text-slate-400">Protocol v1.9</p>
+              <p className="font-mono text-[11px] uppercase tracking-widest text-slate-500">Protocol v1.9</p>
             </div>
           </div>
 
@@ -38,8 +38,8 @@ export const TopNav = () => {
                 <button
                   key={item.path}
                   onClick={() => navigate(item.path)}
-                  className={`font-mono text-[10px] uppercase tracking-widest transition-colors relative py-2 ${
-                    isActive ? 'text-white font-bold' : 'text-slate-400 hover:text-white'
+                  className={`font-mono text-[11px] uppercase tracking-widest transition-colors relative py-2 ${
+                    isActive ? 'text-white font-bold' : 'text-slate-500 hover:text-white'
                   }`}
                 >
                   {item.label}

@@ -97,11 +97,11 @@ export default function WhyJVTOHub() {
         <div className="container mx-auto px-6 py-6 flex items-center justify-between">
           <button 
             onClick={() => navigate('/')}
-            className="group flex items-center gap-3 text-[10px] font-mono font-bold text-slate-400 hover:text-authority-navy transition-all uppercase tracking-widest"
+            className="group flex items-center gap-3 text-[11px] font-mono font-bold text-slate-500 hover:text-authority-navy transition-all uppercase tracking-widest"
           >
             <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" /> Back to Hub
           </button>
-          <div className="flex items-center gap-3 text-safety-orange text-[10px] font-mono font-bold uppercase tracking-[0.2em]">
+          <div className="flex items-center gap-3 text-safety-orange text-[11px] font-mono font-bold uppercase tracking-[0.2em]">
             <Lock className="w-4 h-4" /> Trust Protocol v1.9
           </div>
         </div>
@@ -116,7 +116,7 @@ export default function WhyJVTOHub() {
         >
           <div className="flex items-center gap-2 mb-6">
             <ShieldCheck className="w-4 h-4 text-safety-orange" />
-            <span className="font-mono text-[10px] uppercase tracking-widest text-slate-500">Why Java Volcano Tour Operator</span>
+            <span className="font-mono text-[11px] uppercase tracking-widest text-slate-500">Why Java Volcano Tour Operator</span>
           </div>
           <h1 className="text-5xl md:text-8xl font-black text-authority-navy mb-8 leading-[0.85] uppercase tracking-tighter">
             TRUST <br />
@@ -149,7 +149,7 @@ export default function WhyJVTOHub() {
                 </p>
               </div>
               <div className="flex items-center justify-between pt-6 border-t border-slate-50">
-                <span className="font-mono text-[10px] text-slate-400 uppercase tracking-widest">Protocol_0{idx + 1}</span>
+                <span className="font-mono text-[11px] text-slate-500 uppercase tracking-widest">Protocol_0{idx + 1}</span>
                 <ChevronRight className="w-5 h-5 text-safety-orange group-hover:translate-x-1 transition-transform" />
               </div>
             </motion.div>
@@ -167,12 +167,12 @@ export default function WhyJVTOHub() {
                 <HelpCircle className="w-7 h-7" />
               </div>
               <h3 className="text-2xl font-black uppercase leading-none mb-4 tracking-tight">Knowledge Base</h3>
-              <p className="text-slate-400 text-sm leading-relaxed mb-8">
+              <p className="text-slate-500 text-sm leading-relaxed mb-8">
                 Detailed answers to technical and operational questions.
               </p>
             </div>
             <div className="flex items-center justify-between pt-6 border-t border-white/10">
-              <span className="font-mono text-[10px] text-slate-500 uppercase tracking-widest">Support_Registry</span>
+              <span className="font-mono text-[11px] text-slate-500 uppercase tracking-widest">Support_Registry</span>
               <ChevronDown className="w-5 h-5 text-safety-orange" />
             </div>
           </motion.div>
@@ -188,7 +188,7 @@ export default function WhyJVTOHub() {
           {/* Search Bar */}
           <div className="relative mb-12">
             <div className="absolute inset-y-0 left-6 flex items-center pointer-events-none">
-              <Search className="w-5 h-5 text-slate-400" />
+              <Search className="w-5 h-5 text-slate-500" />
             </div>
             <input 
               type="text"
@@ -210,7 +210,7 @@ export default function WhyJVTOHub() {
                   className="w-full p-8 flex items-center justify-between text-left group"
                 >
                   <div className="flex items-center gap-6">
-                    <span className="font-mono text-[10px] text-slate-300 font-black">0{index + 1}</span>
+                    <span className="font-mono text-[11px] text-slate-300 font-black">0{index + 1}</span>
                     <h3 className="text-xl font-black text-authority-navy uppercase leading-tight group-hover:text-safety-orange transition-colors">
                       {faq.q}
                     </h3>
@@ -246,11 +246,11 @@ export default function WhyJVTOHub() {
           <div className="scanline"></div>
           <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-12">
             <div className="max-w-md">
-              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-safety-orange/10 border border-safety-orange/30 text-safety-orange text-[10px] font-mono font-bold uppercase tracking-[0.2em] mb-6">
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-safety-orange/10 border border-safety-orange/30 text-safety-orange text-[11px] font-mono font-bold uppercase tracking-[0.2em] mb-6">
                 <MessageSquare className="w-3 h-3" /> Direct Assistance
               </div>
               <h2 className="text-4xl font-black uppercase leading-none mb-4">Still Have <br />Questions?</h2>
-              <p className="text-slate-400 text-lg font-light leading-tight">
+              <p className="text-slate-500 text-lg font-light leading-tight">
                 Initiate a secure WhatsApp session with Mr. Sam for real-time operational intelligence.
               </p>
             </div>

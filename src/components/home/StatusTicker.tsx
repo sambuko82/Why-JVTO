@@ -9,7 +9,7 @@ export const StatusTicker = () => {
         <div className="flex items-center gap-8 whitespace-nowrap animate-marquee">
           <div className="flex items-center gap-2">
             <div className="status-live"></div>
-            <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-safety-orange font-bold">Live Status:</span>
+            <span className="font-mono text-[11px] uppercase tracking-[0.2em] text-safety-orange font-bold">Live Status:</span>
           </div>
           
           <div className="flex items-center gap-6">
@@ -36,8 +36,8 @@ export const StatusTicker = () => {
 const TickerItem = ({ icon, label, value, status }: { icon: React.ReactNode, label: string, value: string, status: string }) => (
   <div className="flex items-center gap-2 border-r border-white/10 pr-6 last:border-0">
     <span className="text-slate-500">{icon}</span>
-    <span className="font-mono text-[10px] uppercase tracking-widest text-slate-400">{label}:</span>
-    <span className="font-mono text-[10px] uppercase tracking-widest text-white font-bold">{value}</span>
-    <span className="font-mono text-[8px] px-1.5 py-0.5 rounded bg-verified-bright/10 text-verified-bright border border-verified-bright/20 font-bold">{status}</span>
+    <span className="font-mono text-[11px] uppercase tracking-widest text-slate-500">{label}:</span>
+    <span className="font-mono text-[11px] uppercase tracking-widest text-white font-bold">{value}</span>
+    <span className="font-mono text-[11px] px-1.5 py-0.5 rounded bg-verified-bright/10 text-verified-bright border border-verified-bright/20 font-bold">{status}</span>
   </div>
 );

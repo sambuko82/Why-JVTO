@@ -25,13 +25,13 @@ export const AuthorityShield = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-safety-orange/10 border border-safety-orange/30 text-safety-orange text-[10px] font-mono font-bold uppercase tracking-[0.2em] mb-8">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-safety-orange/10 border border-safety-orange/30 text-safety-orange text-[11px] font-mono font-bold uppercase tracking-[0.2em] mb-8">
               <Lock className="w-3 h-3" /> {SSOT.police_authority.badge}
             </div>
             <h2 className="text-4xl md:text-6xl font-black mb-8 leading-[0.9] uppercase">
               {SSOT.police_authority.title}
             </h2>
-            <p className="text-slate-400 text-xl mb-10 leading-tight font-light">
+            <p className="text-slate-500 text-xl mb-10 leading-tight font-light">
               {SSOT.police_authority.description}
             </p>
             
@@ -80,10 +80,10 @@ export const AuthorityShield = () => {
                   <div>
                     <div className="flex items-center gap-2 mb-2">
                       <span className="h-2 w-2 rounded-full bg-safety-orange animate-pulse"></span>
-                      <p className="font-mono text-[10px] text-safety-orange uppercase tracking-[0.3em] font-black">Active Duty: Ditpamobvit</p>
+                      <p className="font-mono text-[11px] text-safety-orange uppercase tracking-[0.3em] font-black">Active Duty: Ditpamobvit</p>
                     </div>
                     <p className="text-white font-black text-2xl uppercase leading-none tracking-tighter">Officer Agung Sambuko</p>
-                    <p className="text-white/60 font-mono text-[10px] uppercase tracking-widest mt-2">Official Tourist Police Command</p>
+                    <p className="text-white/70 font-mono text-[11px] uppercase tracking-widest mt-2">Official Tourist Police Command</p>
                   </div>
                   <div className="verified-badge bg-verified-bright text-authority-navy px-4 py-2 text-xs">Verified_Identity</div>
                 </div>
