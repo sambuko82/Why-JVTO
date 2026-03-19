@@ -12,10 +12,12 @@ import {
   CheckCircle2
 } from 'lucide-react';
 import { SSOT } from '../../../lib/ssot';
+import { PageSEO } from '../../../components/PageSEO';
 import { motion } from 'motion/react';
 
 export default function JVTODifference() {
   const navigate = useNavigate();
+  const meta = SSOT.pages['/why-jvto/the-jvto-difference'];
 
   const claims = SSOT.claims.filter(c => ['C1', 'C2', 'C3'].includes(c.id));
 
@@ -39,6 +41,7 @@ export default function JVTODifference() {
       </div>
 
       <div className="container mx-auto px-6 py-24 max-w-5xl relative z-10">
+        <PageSEO route="/why-jvto/the-jvto-difference" />
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -49,12 +52,10 @@ export default function JVTODifference() {
             <span className="font-mono text-[11px] uppercase tracking-widest text-slate-500">The JVTO Difference</span>
           </div>
           <h1 className="text-5xl md:text-8xl font-black text-authority-navy mb-8 leading-[0.85] uppercase tracking-tighter">
-            INTEGRITY <br />
-            <span className="text-safety-orange">OVER SCALE.</span>
+            {meta?.h1 || 'INTEGRITY OVER SCALE.'}
           </h1>
           <p className="text-slate-500 text-xl leading-tight font-light max-w-2xl">
-            We don't compete on price or volume. We compete on operational certainty, 
-            disciplined safety boundaries, and radical transparency.
+            We are not a mass-market agency. We limit our tour capacity to ensure every guest receives police-led security and medical-grade screening. This is how we maintain a 100% safety record.
           </p>
         </motion.div>
 

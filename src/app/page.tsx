@@ -1,5 +1,5 @@
 import React from 'react';
-import { Helmet } from 'react-helmet-async';
+import { PageSEO } from '../components/PageSEO';
 import { HeroSection } from '../components/home/HeroSection';
 import { Differentiators } from '../components/home/Differentiators';
 import { DestinationGrid } from '../components/home/DestinationGrid';
@@ -16,8 +16,8 @@ export default function HomePage() {
   // ============================================================================
   const jsonLdSchema = {
     "@context": "https://schema.org",
-    "@type": "TravelAgency",
-    "@id": "https://javavolcano-touroperator.com/#organization",
+    "@type": SSOT.pages['/'].schema_type || "TravelAgency",
+    "@id": `${SSOT.organization.url}/#organization`,
     "name": SSOT.organization.name,
     "legalName": SSOT.organization.legalName,
     "foundingDate": SSOT.organization.foundingDate,
@@ -48,13 +48,7 @@ export default function HomePage() {
 
   return (
     <div className="min-h-screen bg-white font-sans text-authority-navy selection:bg-safety-orange/30 pb-20 md:pb-0">
-      <Helmet>
-        <title>{SSOT.organization.name} | Police-Led Volcanic Expeditions</title>
-        <meta name="description" content={SSOT.organization.description} />
-        <script type="application/ld+json">
-          {JSON.stringify(jsonLdSchema)}
-        </script>
-      </Helmet>
+      <PageSEO route="/" schema={jsonLdSchema} />
 
       {/* SECTION 1: HERO (The Authority Statement) */}
       <HeroSection />

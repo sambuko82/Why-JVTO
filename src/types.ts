@@ -241,6 +241,17 @@ export interface VerificationCredential {
   expiry: string;
 }
 
+export interface PageMetadata {
+  route: string;
+  title_tag: string;
+  meta_description: string;
+  h1: string;
+  canonical: string;
+  schema_type: string;
+  schema_profile?: string;
+  robots?: string;
+}
+
 export interface SSOTData {
   organization: Organization;
   medical: MedicalProtocol;
@@ -262,4 +273,5 @@ export interface SSOTData {
   claims: Claim[];
   assets_inventory: Asset[];
   verification_credentials: VerificationCredential[];
+  pages: Record<string, PageMetadata>;
 }

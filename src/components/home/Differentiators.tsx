@@ -27,9 +27,9 @@ const differentiators = [
 
 export const Differentiators = () => {
   return (
-    <section className="py-24 bg-white relative overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+    <section className="py-16 md:py-24 bg-white relative overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4 md:px-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
           {differentiators.map((item, idx) => (
             <motion.div
               key={idx}
@@ -37,7 +37,7 @@ export const Differentiators = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.1 }}
-              className="p-8 rounded-2xl bg-slate-50 border border-slate-100 hover:border-safety-orange/30 transition-all group"
+              className="p-6 md:p-8 rounded-2xl bg-slate-50 border border-slate-100 hover:border-safety-orange/30 transition-all group"
             >
               <div className="mb-6 p-3 rounded-xl bg-white shadow-sm w-fit group-hover:scale-110 transition-transform">
                 {item.icon}

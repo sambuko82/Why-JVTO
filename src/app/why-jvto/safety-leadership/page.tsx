@@ -14,10 +14,12 @@ import {
   AlertTriangle
 } from 'lucide-react';
 import { SSOT } from '../../../lib/ssot';
+import { PageSEO } from '../../../components/PageSEO';
 import { motion } from 'motion/react';
 
 export default function SafetyLeadership() {
   const navigate = useNavigate();
+  const meta = SSOT.pages['/why-jvto/safety-leadership'];
 
   const safetyClaims = SSOT.claims.filter(c => ['C4'].includes(c.id));
 
@@ -41,6 +43,7 @@ export default function SafetyLeadership() {
       </div>
 
       <div className="container mx-auto px-6 py-24 max-w-5xl relative z-10">
+        <PageSEO route="/why-jvto/safety-leadership" />
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -51,12 +54,10 @@ export default function SafetyLeadership() {
             <span className="font-mono text-[11px] uppercase tracking-widest text-slate-500">Safety Leadership</span>
           </div>
           <h1 className="text-5xl md:text-8xl font-black text-authority-navy mb-8 leading-[0.85] uppercase tracking-tighter">
-            POLICE-LED <br />
-            <span className="text-safety-orange">SECURITY.</span>
+            {meta?.h1 || 'POLICE-LED SECURITY.'}
           </h1>
           <p className="text-slate-500 text-xl leading-tight font-light max-w-2xl">
-            Led by an active Tourist Police officer, JVTO integrates state-sanctioned security 
-            and medical-grade screening into every expedition.
+            We don't guess with your safety. Our operations are led by active Tourist Police personnel and supported by mandatory medical screening for all Ijen hikers.
           </p>
         </motion.div>
 

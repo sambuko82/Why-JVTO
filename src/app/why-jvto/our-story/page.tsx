@@ -13,10 +13,12 @@ import {
   Newspaper
 } from 'lucide-react';
 import { SSOT } from '../../../lib/ssot';
+import { PageSEO } from '../../../components/PageSEO';
 import { motion } from 'motion/react';
 
 export default function OurStory() {
   const navigate = useNavigate();
+  const meta = SSOT.pages['/why-jvto/our-story'];
 
   const historyClaims = SSOT.claims.filter(c => ['C9'].includes(c.id));
 
@@ -40,6 +42,7 @@ export default function OurStory() {
       </div>
 
       <div className="container mx-auto px-6 py-24 max-w-5xl relative z-10">
+        <PageSEO route="/why-jvto/our-story" />
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -50,12 +53,10 @@ export default function OurStory() {
             <span className="font-mono text-[11px] uppercase tracking-widest text-slate-500">Our Story & Recognition</span>
           </div>
           <h1 className="text-5xl md:text-8xl font-black text-authority-navy mb-8 leading-[0.85] uppercase tracking-tighter">
-            PROVEN <br />
-            <span className="text-safety-orange">HERITAGE.</span>
+            {meta?.h1 || 'PROVEN HERITAGE.'}
           </h1>
           <p className="text-slate-500 text-xl leading-tight font-light max-w-2xl">
-            From a local homestay in 2015 to a specialized operational unit, 
-            our history is documented in global guidebooks and independent media.
+            JVTO was founded by Bripka Agung Sambuko of the East Java Tourist Police. What started as a mission to protect travelers became the region's most trusted private tour operator.
           </p>
         </motion.div>
 

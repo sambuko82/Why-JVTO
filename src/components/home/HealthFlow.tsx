@@ -8,10 +8,10 @@ export const HealthFlow = () => {
   const navigate = useNavigate();
 
   const steps = [
-    { icon: Stethoscope, title: "Check", desc: "Initial Vitals & History", step: "01" },
-    { icon: ClipboardCheck, title: "Record", desc: "Digital Health Ledger", step: "02" },
-    { icon: QrCode, title: "Scan QR", desc: "Instant Verification", step: "03" },
-    { icon: HeartPulse, title: "Clearance", desc: "Final Safety Approval", step: "04" }
+    { icon: Stethoscope, title: "Doctor Check", desc: "Real SpO₂ + BP Check", step: "01" },
+    { icon: ClipboardCheck, title: "Record", desc: "Digital QR Record", step: "02" },
+    { icon: QrCode, title: "Scan QR", desc: "Gate Verification", step: "03" },
+    { icon: HeartPulse, title: "Clearance", desc: "Safety Approval", step: "04" }
   ];
 
   return (
@@ -29,11 +29,11 @@ export const HealthFlow = () => {
               <ShieldAlert className="w-3 h-3" /> Medical "Hard Stop" Protocol
             </div>
             <h2 className="text-4xl md:text-6xl font-black text-authority-navy leading-[0.9] mb-8 uppercase">
-              MEDICAL <br />
-              <span className="text-safety-orange">OVERSIGHT HUB.</span>
+              Ijen Health Screening — <br />
+              <span className="text-safety-orange">Mandatory, Included.</span>
             </h2>
             <p className="text-slate-600 text-xl mb-10 leading-tight font-light">
-              We don't guess with your health. Access to the Ijen crater requires clearance from our dedicated medical unit. <span className="font-bold text-safety-orange uppercase">{SSOT.health_protocol.policy}</span>
+              Ijen health screening is mandatory by Indonesian law to hike Ijen. JVTO arranges your pre-ascent screening with a licensed physician. The cost is included in all Ijen packages — no extra charge.
             </p>
 
             <div className="grid grid-cols-2 gap-4 mb-12">

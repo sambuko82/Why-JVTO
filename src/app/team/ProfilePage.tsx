@@ -27,6 +27,7 @@ import {
 } from 'lucide-react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { SSOT } from '../../lib/ssot';
+import { PageSEO } from '../../components/PageSEO';
 import { ForensicAnnotation } from '../../types';
 import { motion, AnimatePresence } from 'motion/react';
 import { HashBadge } from '../../components/ForensicUI';
@@ -50,6 +51,13 @@ export default function CrewProfile() {
   if (!crewMember || !crewMember.profile) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-audit-white">
+        <PageSEO 
+          metaOverride={{
+            title_tag: 'Personnel Not Found | Java Volcano Tour Operator',
+            meta_description: 'The requested personnel profile could not be found in our registry.',
+            robots: 'noindex, nofollow'
+          }}
+        />
         <div className="text-center bento-card p-16 bg-white shadow-2xl border-slate-200">
           <ShieldAlert className="w-20 h-20 text-safety-orange mx-auto mb-8" />
           <h2 className="text-4xl font-black text-authority-navy uppercase mb-6 tracking-tighter">Personnel Not Found</h2>
@@ -63,6 +71,25 @@ export default function CrewProfile() {
       </div>
     );
   }
+
+  const profileData = {
+    id: crewMember.id,
+    name: crewMember.name,
+    role: crewMember.role,
+    archetype: crewMember.profile.archetype,
+    image: crewMember.profile.image,
+    quote: crewMember.profile.fullQuote,
+    expertise: crewMember.profile.expertise,
+    credential: crewMember.profile.credential,
+    reviews: [] // will be populated below
+  };
+
+  const dynamicMeta = {
+    title_tag: `${profileData.name} | ${profileData.role} Profile | Java Volcano Tour Operator`,
+    meta_description: `Meet ${profileData.name}, a ${profileData.role} at JVTO. Archetype: ${profileData.archetype}. Expertise: ${profileData.expertise.join(', ')}. Verified credentials and guest reviews.`,
+    canonical: `https://javavolcano-touroperator.com/team/${profileData.id}`,
+    robots: 'index, follow'
+  };
 
   // Get reviews from SSOT
   const rawReviews = SSOT.crew_reviews[crewMember.name] || [];
@@ -110,17 +137,7 @@ export default function CrewProfile() {
     }
   };
 
-  const profileData = {
-    id: crewMember.id,
-    name: crewMember.name,
-    role: crewMember.role,
-    archetype: crewMember.profile.archetype,
-    image: crewMember.profile.image,
-    quote: crewMember.profile.fullQuote,
-    expertise: crewMember.profile.expertise,
-    credential: crewMember.profile.credential,
-    reviews: filteredAndSortedReviews
-  };
+  profileData.reviews = filteredAndSortedReviews;
 
   const jsonLdGraph = {
     "@context": "https://schema.org",
@@ -147,6 +164,7 @@ export default function CrewProfile() {
 
   return (
     <div className="min-h-screen bg-audit-white font-sans text-authority-navy selection:bg-safety-orange/30 pb-24 md:pb-0">
+      <PageSEO metaOverride={dynamicMeta} />
       {/* Invisible JSON-LD Injection */}
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdGraph) }} />
 

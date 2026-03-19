@@ -45,19 +45,19 @@ export const DestinationGrid = () => {
   const navigate = useNavigate();
 
   return (
-    <section className="py-24 bg-slate-50 relative overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="flex flex-col md:flex-row items-end justify-between gap-8 mb-16">
+    <section className="py-16 md:py-24 bg-slate-50 relative overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4 md:px-6">
+        <div className="flex flex-col md:flex-row items-start md:items-end justify-between gap-6 md:gap-8 mb-12 md:mb-16">
           <div className="max-w-2xl">
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-authority-navy/5 border border-authority-navy/10 text-authority-navy text-[11px] font-mono font-bold uppercase tracking-[0.2em] mb-6">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-authority-navy/5 border border-authority-navy/10 text-authority-navy text-[10px] md:text-[11px] font-mono font-bold uppercase tracking-[0.15em] md:tracking-[0.2em] mb-4 md:mb-6">
               <MapPin className="w-3 h-3" /> Operational Zones
             </div>
-            <h2 className="text-4xl md:text-6xl font-black uppercase tracking-tighter leading-[0.9] text-authority-navy">
+            <h2 className="text-3xl xs:text-4xl md:text-6xl font-black uppercase tracking-tighter leading-[0.9] text-authority-navy">
               Explore the <br />
               <span className="text-safety-orange">Ring of Fire.</span>
             </h2>
           </div>
-          <p className="text-slate-500 font-light max-w-sm leading-tight">
+          <p className="text-slate-500 font-light max-w-sm leading-tight text-sm md:text-base">
             Our operational footprint covers the most volatile and beautiful landscapes in East Java, all secured by our safety protocols.
           </p>
         </div>

@@ -22,6 +22,7 @@ import {
 } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { SSOT } from '../../../lib/ssot';
+import { PageSEO } from '../../../components/PageSEO';
 import { ForensicAnnotation } from '../../../types';
 import { motion, AnimatePresence } from 'motion/react';
 import { AssetViewer } from '../../../components/AssetViewer';
@@ -37,6 +38,7 @@ export default function PressRecognition() {
     type: 'image' | 'pdf',
     annotations?: ForensicAnnotation[]
   } | null>(null);
+  const meta = SSOT.pages['/verify-jvto/press-recognition'];
 
   const openAsset = (
     url: string, 
@@ -69,6 +71,7 @@ export default function PressRecognition() {
       </div>
 
       <div className="container mx-auto px-6 py-24 max-w-6xl relative z-10">
+        <PageSEO route="/verify-jvto/press-recognition" />
         
         {/* Hero Section */}
         <motion.div 
@@ -82,8 +85,7 @@ export default function PressRecognition() {
             <span className="font-mono text-[11px] uppercase tracking-widest text-slate-500">Public Record Archive</span>
           </div>
           <h1 className="text-5xl md:text-9xl font-black text-authority-navy mb-8 leading-[0.85] uppercase tracking-tighter">
-            PRESS <br />
-            <span className="text-safety-orange">RECOGNITION.</span>
+            {meta?.h1 || 'PRESS RECOGNITION.'}
           </h1>
           <p className="text-2xl text-slate-500 max-w-3xl leading-tight font-light">
             Our operational history is documented by international media and independent guidebooks. We don't just exist; we are a matter of public record.

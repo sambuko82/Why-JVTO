@@ -21,6 +21,7 @@ import {
   ChevronRight
 } from 'lucide-react';
 import { SSOT } from '../../lib/ssot';
+import { PageSEO } from '../../components/PageSEO';
 import { motion, AnimatePresence } from 'motion/react';
 import { BookingRail } from '../../components/BookingRail';
 import { AuditStamp } from '../../components/AuditStamp';
@@ -29,6 +30,7 @@ export default function WhyJVTOHub() {
   const navigate = useNavigate();
   const [searchQuery, setSearchQuery] = useState('');
   const [openIndex, setOpenIndex] = useState<number | null>(null);
+  const meta = SSOT.pages['/why-jvto'];
 
   const filteredFaqs = SSOT.faq.filter(faq => 
     faq.q.toLowerCase().includes(searchQuery.toLowerCase()) || 
@@ -108,6 +110,7 @@ export default function WhyJVTOHub() {
       </div>
 
       <div className="container mx-auto px-6 py-24 max-w-6xl relative z-10">
+        <PageSEO route="/why-jvto" />
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -119,12 +122,10 @@ export default function WhyJVTOHub() {
             <span className="font-mono text-[11px] uppercase tracking-widest text-slate-500">Why Java Volcano Tour Operator</span>
           </div>
           <h1 className="text-5xl md:text-8xl font-black text-authority-navy mb-8 leading-[0.85] uppercase tracking-tighter">
-            TRUST <br />
-            <span className="text-safety-orange">ENGINEERED.</span>
+            {meta?.h1 || 'TRUST ENGINEERED.'}
           </h1>
           <p className="text-slate-500 text-xl leading-tight font-light max-w-2xl">
-            JVTO is not just a tour operator; it is a specialized operational unit 
-            built on police-led safety, medical oversight, and radical transparency.
+            We don't just sell tours; we manage risk. Discover how our unique background in the Tourist Police and medical screening sets us apart from mass-market operators.
           </p>
         </motion.div>
 
@@ -168,7 +169,7 @@ export default function WhyJVTOHub() {
               </div>
               <h3 className="text-2xl font-black uppercase leading-none mb-4 tracking-tight">Knowledge Base</h3>
               <p className="text-slate-500 text-sm leading-relaxed mb-8">
-                Detailed answers to technical and operational questions.
+                We answer the hard questions about safety, logistics, and legal compliance. No marketing fluff.
               </p>
             </div>
             <div className="flex items-center justify-between pt-6 border-t border-white/10">
@@ -182,7 +183,7 @@ export default function WhyJVTOHub() {
         <div id="faq" className="max-w-4xl mx-auto">
           <div className="flex items-center gap-2 mb-12">
             <Database className="w-4 h-4 text-safety-orange" />
-            <h2 className="text-3xl font-black text-authority-navy uppercase">Operational FAQ</h2>
+            <h2 className="text-3xl font-black text-authority-navy uppercase">Common Questions — Answered Directly</h2>
           </div>
 
           {/* Search Bar */}
@@ -251,7 +252,7 @@ export default function WhyJVTOHub() {
               </div>
               <h2 className="text-4xl font-black uppercase leading-none mb-4">Still Have <br />Questions?</h2>
               <p className="text-slate-500 text-lg font-light leading-tight">
-                Initiate a secure WhatsApp session with Mr. Sam for real-time operational intelligence.
+                Message Mr. Sam directly on WhatsApp for real-time answers about your tour.
               </p>
             </div>
             <a 
@@ -260,7 +261,7 @@ export default function WhyJVTOHub() {
               rel="noopener noreferrer"
               className="bg-safety-orange hover:bg-safety-orange/90 text-white px-10 py-5 rounded-xl font-black uppercase tracking-wider transition-all shadow-xl shadow-safety-orange/20 flex items-center gap-3 group"
             >
-              Open Secure Channel <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              Message Us on WhatsApp <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </a>
           </div>
         </div>
