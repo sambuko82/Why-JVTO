@@ -20,7 +20,7 @@ export default function OurStory() {
   const navigate = useNavigate();
   const meta = SSOT.pages['/why-jvto/our-story'];
 
-  const historyClaims = SSOT.claims.filter(c => ['C9'].includes(c.id));
+  const historyClaims = SSOT.claims;
 
   return (
     <div className="min-h-screen bg-audit-white text-authority-navy font-sans selection:bg-safety-orange/30 pb-24 md:pb-0">
@@ -62,7 +62,7 @@ export default function OurStory() {
 
         {/* Historical Milestones */}
         <div className="grid md:grid-cols-2 gap-12 mb-32">
-          <div className="bento-card bg-white p-12 border-2 border-slate-100 relative overflow-hidden">
+          <div className="bento-card bg-audit-white p-12 border-2 border-slate-100 relative overflow-hidden">
             <div className="scanline opacity-5"></div>
             <div className="relative z-10">
               <div className="w-16 h-16 rounded-2xl bg-amber-500/5 text-amber-500 flex items-center justify-center mb-8 border border-amber-500/10">
@@ -114,7 +114,7 @@ export default function OurStory() {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className="bento-card bg-white p-10 border-2 border-slate-100 group hover:border-safety-orange transition-all"
+                className="bento-card bg-audit-white p-10 border-2 border-slate-100 group hover:border-safety-orange transition-all"
               >
                 <div className="flex items-center justify-between mb-8">
                   <span className="font-mono text-[11px] text-safety-orange uppercase tracking-widest font-bold">{item.publisher}</span>
@@ -147,7 +147,7 @@ export default function OurStory() {
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="bento-card bg-white p-12 border-2 border-slate-100 relative overflow-hidden group"
+              className="bento-card bg-audit-white p-12 border-2 border-slate-100 relative overflow-hidden group"
             >
               <div className="absolute top-0 right-0 p-6 font-mono text-[11px] text-slate-200 font-black">
                 CLAIM_{claim.id}
@@ -156,7 +156,7 @@ export default function OurStory() {
                 <h3 className="text-2xl font-black text-authority-navy uppercase leading-tight mb-6">
                   {claim.text}
                 </h3>
-                <div className="p-6 bg-slate-50 rounded-xl border border-slate-100 mb-8">
+                <div className="p-6 bg-audit-white rounded-xl border border-slate-100 mb-8">
                   <p className="text-slate-600 font-light leading-relaxed italic">
                     "{claim.meaning}"
                   </p>
@@ -173,7 +173,7 @@ export default function OurStory() {
         </div>
 
         {/* Final CTA */}
-        <div className="mt-32 p-12 bg-white border-4 border-slate-100 rounded-[3rem] text-center">
+        <div className="mt-32 p-12 bg-audit-white border-4 border-slate-100 rounded-[3rem] text-center">
           <h3 className="text-3xl font-black uppercase mb-6">Explore the Full Proof Vault</h3>
           <p className="text-slate-500 text-lg font-light leading-tight mb-12 max-w-2xl mx-auto">
             Our history is just one layer of the Trust Stack. Access the centralized 

@@ -19,7 +19,7 @@ export default function JVTODifference() {
   const navigate = useNavigate();
   const meta = SSOT.pages['/why-jvto/the-jvto-difference'];
 
-  const claims = SSOT.claims.filter(c => ['C1', 'C2', 'C3'].includes(c.id));
+  const claims = SSOT.claims;
 
   return (
     <div className="min-h-screen bg-audit-white text-authority-navy font-sans selection:bg-safety-orange/30 pb-24 md:pb-0">
@@ -61,21 +61,21 @@ export default function JVTODifference() {
 
         {/* Core Pillars */}
         <div className="grid md:grid-cols-3 gap-8 mb-32">
-          <div className="bento-card bg-white p-10 border-2 border-slate-100">
+          <div className="bento-card bg-audit-white p-10 border-2 border-slate-100">
             <Target className="w-10 h-10 text-safety-orange mb-6" />
             <h3 className="text-xl font-black uppercase mb-4">Operational Certainty</h3>
             <p className="text-slate-500 text-sm leading-relaxed">
               We prioritize safety over "summit fever". If conditions are dangerous, we stop. Period.
             </p>
           </div>
-          <div className="bento-card bg-white p-10 border-2 border-slate-100">
+          <div className="bento-card bg-audit-white p-10 border-2 border-slate-100">
             <Users className="w-10 h-10 text-safety-orange mb-6" />
             <h3 className="text-xl font-black uppercase mb-4">Private Exclusivity</h3>
             <p className="text-slate-500 text-sm leading-relaxed">
               No strangers, no waiting, no compromised safety due to mixed-group dynamics.
             </p>
           </div>
-          <div className="bento-card bg-white p-10 border-2 border-slate-100">
+          <div className="bento-card bg-audit-white p-10 border-2 border-slate-100">
             <Layers className="w-10 h-10 text-safety-orange mb-6" />
             <h3 className="text-xl font-black uppercase mb-4">All-Inclusive</h3>
             <p className="text-slate-500 text-sm leading-relaxed">
@@ -97,7 +97,7 @@ export default function JVTODifference() {
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="bento-card bg-white p-12 border-2 border-slate-100 relative overflow-hidden group"
+              className="bento-card bg-audit-white p-12 border-2 border-slate-100 relative overflow-hidden group"
             >
               <div className="absolute top-0 right-0 p-6 font-mono text-[11px] text-slate-200 font-black">
                 CLAIM_{claim.id}
@@ -106,7 +106,7 @@ export default function JVTODifference() {
                 <h3 className="text-2xl font-black text-authority-navy uppercase leading-tight mb-6">
                   {claim.text}
                 </h3>
-                <div className="p-6 bg-slate-50 rounded-xl border border-slate-100 mb-8">
+                <div className="p-6 bg-audit-white rounded-xl border border-slate-100 mb-8">
                   <p className="text-slate-600 font-light leading-relaxed italic">
                     "{claim.meaning}"
                   </p>
@@ -126,7 +126,7 @@ export default function JVTODifference() {
         <div className="mt-32">
           <h2 className="text-4xl font-black uppercase mb-12 text-center">The Industry Standard vs. <span className="text-safety-orange">JVTO</span></h2>
           <div className="grid md:grid-cols-2 gap-px bg-slate-200 rounded-[2rem] overflow-hidden border-2 border-slate-200 shadow-2xl">
-            <div className="bg-white p-12">
+            <div className="bg-audit-white p-12">
               <h4 className="font-mono text-[11px] text-slate-500 uppercase tracking-widest mb-8">Typical Operators</h4>
               <ul className="space-y-6">
                 {[

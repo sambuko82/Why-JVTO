@@ -25,7 +25,8 @@ export default function DestinationsHub() {
       id: 'ijen-crater',
       title: 'Ijen Crater',
       description: 'The world\'s largest acidic crater lake and the home of the rare blue fire phenomenon.',
-      image: 'https://picsum.photos/seed/ijen/800/600',
+      image: SSOT.destinations.find(d => d.slug === 'ijen-crater')?.image || '',
+      imageContext: SSOT.destinations.find(d => d.slug === 'ijen-crater')?.imageContext || '',
       category: 'Volcano',
       duration: '1-2 Days'
     },
@@ -33,7 +34,8 @@ export default function DestinationsHub() {
       id: 'mount-bromo',
       title: 'Mount Bromo',
       description: 'The most iconic sunrise in Indonesia, featuring an active volcano in a vast sea of sand.',
-      image: 'https://picsum.photos/seed/bromo/800/600',
+      image: SSOT.destinations.find(d => d.slug === 'mount-bromo')?.image || '',
+      imageContext: SSOT.destinations.find(d => d.slug === 'mount-bromo')?.imageContext || '',
       category: 'Volcano',
       duration: '1-2 Days'
     },
@@ -41,7 +43,8 @@ export default function DestinationsHub() {
       id: 'tumpak-sewu-waterfall',
       title: 'Tumpak Sewu',
       description: 'A thousand waterfalls cascading down a semicircular cliff. A true hidden paradise.',
-      image: 'https://picsum.photos/seed/tumpaksewu/800/600',
+      image: SSOT.destinations.find(d => d.slug === 'tumpak-sewu-waterfall')?.image || '',
+      imageContext: SSOT.destinations.find(d => d.slug === 'tumpak-sewu-waterfall')?.imageContext || '',
       category: 'Waterfall',
       duration: '1 Day'
     },
@@ -49,7 +52,8 @@ export default function DestinationsHub() {
       id: 'madakaripura-waterfall',
       title: 'Madakaripura',
       description: 'The eternal waterfall, believed to be the meditation place of Gajah Mada.',
-      image: 'https://picsum.photos/seed/madakaripura/800/600',
+      image: SSOT.destinations.find(d => d.slug === 'madakaripura-waterfall')?.image || '',
+      imageContext: SSOT.destinations.find(d => d.slug === 'madakaripura-waterfall')?.imageContext || '',
       category: 'Waterfall',
       duration: '1 Day'
     },
@@ -57,7 +61,8 @@ export default function DestinationsHub() {
       id: 'papuma-beach',
       title: 'Papuma Beach',
       description: 'White sands and dramatic rock formations on the southern coast of Jember.',
-      image: 'https://picsum.photos/seed/papuma/800/600',
+      image: SSOT.destinations.find(d => d.slug === 'papuma-beach')?.image || '',
+      imageContext: SSOT.destinations.find(d => d.slug === 'papuma-beach')?.imageContext || '',
       category: 'Beach',
       duration: '1 Day'
     }
@@ -119,6 +124,11 @@ export default function DestinationsHub() {
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                   referrerPolicy="no-referrer"
                 />
+                {dest.imageContext && (
+                  <div className="absolute top-4 left-4 bg-safety-orange text-white text-[9px] px-2 py-1 rounded-md font-mono font-bold uppercase tracking-widest z-10 shadow-md">
+                    {dest.imageContext}
+                  </div>
+                )}
                 <div className="absolute inset-0 bg-gradient-to-t from-authority-navy/80 via-transparent to-transparent opacity-60 group-hover:opacity-80 transition-opacity"></div>
                 <div className="absolute bottom-6 md:bottom-8 left-6 md:left-8 right-6 md:right-8">
                   <div className="flex items-center gap-2 mb-2">

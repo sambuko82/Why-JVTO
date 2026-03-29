@@ -86,7 +86,7 @@ export const TeamRegistry = () => {
                 className="h-full bg-safety-orange"
               />
             </div>
-            <p className="font-mono text-[11px] text-slate-500 uppercase tracking-widest mt-2">Aggregate performance across 14 operatives</p>
+            <p className="font-mono text-[11px] text-slate-500 uppercase tracking-widest mt-2">Aggregate performance across {SSOT.crew.length} operatives</p>
           </div>
         </div>
       </div>

@@ -2,15 +2,20 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Lock, FileDigit, ShieldCheck, Search, Fingerprint, ChevronRight, Database } from 'lucide-react';
 import { motion } from 'motion/react';
+import { SSOT } from '../../lib/ssot';
 
 export const ForensicLocker = () => {
   const navigate = useNavigate();
 
+  const formatHash = (hash: string) => {
+    return hash.substring(0, 8).toUpperCase() + "..." + hash.substring(hash.length - 4).toUpperCase();
+  };
+
   const documents = [
-    { title: "NIB Entity", img: "https://javavolcano-touroperator.com/legal/NIB-1102230032918-preview.png", hash: "FA20DDE3...9A2B", type: "LEGAL_ENTITY" },
-    { title: "Police SPRIN", img: "https://javavolcano-touroperator.com/legal/SPRIN-POLPAR.png", hash: "03C8578D...4F1E", type: "AUTHORITY_LOG" },
-    { title: "Health Screening", img: "https://javavolcano-touroperator.com/screening/ijen-screening-hotel-01.jpeg", hash: "C52194BB...7D3C", type: "MEDICAL_RECORD" },
-    { title: "HPWKI License", img: "https://javavolcano-touroperator.com/uploads/1771428741674-842615436-kta_gufron.jpg", hash: "CA1FB1A4...2B1A", type: "PERSONNEL_ID" }
+    { title: "NIB Entity", img: SSOT.proof_vault.legality[0].url, hash: formatHash(SSOT.proof_vault.legality[0].hash), type: "LEGAL_ENTITY" },
+    { title: "Police SPRIN", img: SSOT.proof_vault.police_safety[0].url, hash: formatHash(SSOT.proof_vault.police_safety[0].hash), type: "AUTHORITY_LOG" },
+    { title: "Health Screening", img: SSOT.proof_vault.safety[0].url, hash: formatHash(SSOT.proof_vault.safety[0].hash), type: "MEDICAL_RECORD" },
+    { title: "HPWKI License", img: SSOT.proof_vault.credentials[1].url, hash: formatHash(SSOT.proof_vault.credentials[1].hash), type: "PERSONNEL_ID" }
   ];
 
   return (

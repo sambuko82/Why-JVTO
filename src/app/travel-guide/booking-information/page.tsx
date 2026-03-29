@@ -12,7 +12,8 @@ import {
   ChevronRight,
   Clock,
   RefreshCcw,
-  FileText
+  FileText,
+  Users
 } from 'lucide-react';
 import { SSOT } from '../../../lib/ssot';
 import { PageSEO } from '../../../components/PageSEO';
@@ -23,54 +24,22 @@ export default function BookingInformation() {
   const navigate = useNavigate();
   const meta = SSOT.pages['/travel-guide/booking-information'];
 
-  const steps = [
-    {
-      id: '01',
-      title: 'Select Your Tour',
-      desc: 'Browse our verified private expeditions and choose the one that fits your schedule and fitness level.',
-      icon: Calendar,
-      details: 'All tours are 100% private. No mixed groups.'
-    },
-    {
-      id: '02',
-      title: '20% Secure Deposit',
-      desc: 'Pay a 20% deposit via secure payment link (Wise, Revolut, or Bank Transfer) to lock in your dates and crew.',
-      icon: CreditCard,
-      details: 'Deposit is converted to Lifetime Travel Credit if cancelled ≥48h.'
-    },
-    {
-      id: '03',
-      title: 'Confirmation & QR',
-      desc: 'Receive your official booking confirmation and Ijen Health Screening QR code (if applicable) via WhatsApp/Email.',
-      icon: CheckCircle2,
-      details: 'Digital proof of your reservation and health clearance.'
-    },
-    {
-      id: '04',
-      title: 'Final Payment & Meet',
-      desc: 'Pay the remaining 80% balance in IDR cash or transfer upon meeting your dedicated crew at the start of the tour.',
-      icon: UserCheck,
-      details: 'Transparent pricing. No hidden fees or "forced" stops.'
-    }
-  ];
+  const steps = SSOT.travel_guide.booking_info.steps;
+  const policies = SSOT.travel_guide.booking_info.policies;
 
-  const policies = [
-    {
-      title: 'Cancellation & Credit',
-      desc: 'Cancellations made 48 hours or more before departure receive 100% of the deposit as JVTO Travel Credit with no expiry date.',
-      icon: RefreshCcw
-    },
-    {
-      title: 'Private Operations',
-      desc: 'We do not mix groups. Your vehicle, guide, and driver are dedicated exclusively to you for the duration of the tour.',
-      icon: ShieldCheck
-    },
-    {
-      title: 'Transparent Pricing',
-      desc: 'Our quotes include all mandatory fees, permits, and health screenings. We do not engage in commission-based shopping stops.',
-      icon: Info
+  const getIcon = (iconName: string) => {
+    switch (iconName) {
+      case 'Calendar': return Calendar;
+      case 'CreditCard': return CreditCard;
+      case 'CheckCircle2': return CheckCircle2;
+      case 'UserCheck': return UserCheck;
+      case 'RefreshCcw': return RefreshCcw;
+      case 'ShieldCheck': return ShieldCheck;
+      case 'Info': return Info;
+      case 'Users': return Users;
+      default: return FileText;
     }
-  ];
+  };
 
   return (
     <div className="min-h-screen bg-audit-white text-authority-navy font-sans selection:bg-safety-orange/30 pb-24 md:pb-0">
@@ -128,7 +97,7 @@ export default function BookingInformation() {
               </div>
               <div className="relative z-10">
                 <div className="w-12 h-12 md:w-14 md:h-14 rounded-2xl bg-slate-50 text-safety-orange flex items-center justify-center border border-slate-100 mb-6 md:mb-8 group-hover:scale-110 transition-transform">
-                  <step.icon className="w-6 h-6 md:w-7 md:h-7" />
+                  {React.createElement(getIcon(step.icon), { className: "w-6 h-6 md:w-7 md:h-7" })}
                 </div>
                 <h3 className="text-xl md:text-2xl font-black text-authority-navy uppercase mb-4 tracking-tight">
                   <span className="text-safety-orange mr-2">{step.id}.</span> {step.title}
@@ -162,7 +131,7 @@ export default function BookingInformation() {
                 className="text-center p-6 md:p-0"
               >
                 <div className="w-12 h-12 rounded-full bg-slate-50 text-authority-navy flex items-center justify-center border border-slate-100 mx-auto mb-6">
-                  <policy.icon className="w-5 h-5" />
+                  {React.createElement(getIcon(policy.icon), { className: "w-5 h-5" })}
                 </div>
                 <h4 className="text-lg font-black text-authority-navy uppercase mb-3 tracking-tight">{policy.title}</h4>
                 <p className="text-slate-500 text-sm leading-tight font-light">{policy.desc}</p>

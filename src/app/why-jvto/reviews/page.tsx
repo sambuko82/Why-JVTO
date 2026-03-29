@@ -60,83 +60,46 @@ export default function ReviewsPage() {
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-8">
-          {/* Sample Reviews (In a real app, these would come from SSOT or an API) */}
-          {[
-            {
-              name: "Sarah Jenkins",
-              location: "Australia",
-              date: "February 2026",
-              rating: 5,
-              text: "The Ijen health screening was so professional. I felt completely safe and well-informed throughout the entire trek. JVTO is the real deal.",
-              tour: "Ijen Midnight Expedition"
-            },
-            {
-              name: "Markus Weber",
-              location: "Germany",
-              date: "January 2026",
-              rating: 5,
-              text: "Breathtaking views and even better service. The guide's knowledge of the local history made the Bromo sunrise even more special.",
-              tour: "Mount Bromo Sunrise"
-            },
-            {
-              name: "Elena Rossi",
-              location: "Italy",
-              date: "December 2025",
-              rating: 5,
-              text: "Tumpak Sewu was a dream. The coordination was seamless, and the safety protocols were top-notch. Highly recommend JVTO for solo travelers.",
-              tour: "Tumpak Sewu Waterfall Adventure"
-            },
-            {
-              name: "David Chen",
-              location: "Singapore",
-              date: "November 2025",
-              rating: 5,
-              text: "Professional, transparent, and truly local. You can tell they care about their community and their guests. Best tour in East Java.",
-              tour: "East Java Grand Tour"
-            }
-          ].map((review, i) => (
-            <motion.div 
-              key={i}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.1 }}
-              className="bento-card bg-white p-12 relative group"
-            >
-              <div className="scanline"></div>
-              <div className="flex justify-between items-start mb-8">
-                <div className="flex gap-1">
-                  {[...Array(review.rating)].map((_, i) => (
-                    <Star key={i} className="w-4 h-4 fill-safety-orange text-safety-orange" />
-                  ))}
+        <div className="grid md:grid-cols-3 gap-8">
+          {SSOT.organization.same_as_urls.map((url, i) => {
+            let platformName = 'Review Platform';
+            if (url.includes('trustpilot.com')) platformName = 'Trustpilot';
+            if (url.includes('tripadvisor.com')) platformName = 'TripAdvisor';
+            if (url.includes('google.com/maps')) platformName = 'Google Reviews';
+
+            return (
+              <motion.div 
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 }}
+                className="bento-card bg-audit-white p-12 relative group flex flex-col items-center text-center hover:border-safety-orange transition-colors"
+              >
+                <div className="scanline"></div>
+                <div className="w-16 h-16 rounded-2xl bg-slate-100 flex items-center justify-center mb-6 group-hover:bg-safety-orange/10 transition-colors">
+                  <MessageSquare className="w-8 h-8 text-slate-400 group-hover:text-safety-orange transition-colors" />
                 </div>
-                <Quote className="w-8 h-8 text-slate-100 group-hover:text-safety-orange/20 transition-colors" />
-              </div>
-              <p className="text-xl text-authority-navy font-medium leading-relaxed mb-8 italic">
-                "{review.text}"
-              </p>
-              <div className="flex items-center justify-between pt-8 border-t border-slate-100">
-                <div>
-                  <div className="text-lg font-black uppercase tracking-tighter">{review.name}</div>
-                  <div className="flex items-center gap-2 text-slate-500 font-mono text-[10px] uppercase tracking-widest mt-1">
-                    <MapPin className="w-3 h-3" /> {review.location}
-                  </div>
-                </div>
-                <div className="text-right">
-                  <div className="text-safety-orange font-mono text-[10px] font-black uppercase tracking-widest">{review.tour}</div>
-                  <div className="flex items-center justify-end gap-2 text-slate-400 font-mono text-[10px] uppercase tracking-widest mt-1">
-                    <Calendar className="w-3 h-3" /> {review.date}
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-          ))}
+                <h3 className="text-2xl font-black text-authority-navy uppercase mb-4">{platformName}</h3>
+                <p className="text-slate-500 text-sm leading-relaxed mb-8">
+                  Read unfiltered, independent reviews from our past guests on {platformName}.
+                </p>
+                <a 
+                  href={url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-auto inline-flex items-center gap-3 text-[11px] font-mono font-bold text-safety-orange uppercase tracking-widest hover:gap-5 transition-all"
+                >
+                  View Reviews <ExternalLink className="w-4 h-4" />
+                </a>
+              </motion.div>
+            );
+          })}
         </div>
         
         {/* Footer Audit Stamp */}
         <div className="mt-32 pt-12 border-t border-slate-200 flex flex-col items-center">
-          <div className="p-12 bg-white border-4 border-safety-orange rounded-[2.5rem] -rotate-2 shadow-2xl relative overflow-hidden group hover:rotate-0 transition-transform">
+          <div className="p-12 bento-card bg-audit-white border-4 border-safety-orange rounded-[2.5rem] -rotate-2 shadow-2xl relative overflow-hidden group hover:rotate-0 transition-transform">
             <div className="scanline"></div>
             <div className="flex flex-col items-center">
               <ThumbsUp className="w-20 h-20 text-safety-orange mb-8" />

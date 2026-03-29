@@ -30,6 +30,8 @@ import PoliceSafetyProof from './app/verify-jvto/police-safety/page';
 import HistoryArtifactsProof from './app/verify-jvto/history-artifacts/page';
 import CrewProfile from './app/team/ProfilePage';
 import TeamRegistryPage from './app/team/page';
+import ToursHub from './app/tours/page';
+import TourDetail from './app/tours/Detail';
 import WhyJvtoHub from './app/why-jvto/page';
 import JVTODifference from './app/why-jvto/the-jvto-difference/page';
 import SafetyLeadership from './app/why-jvto/safety-leadership/page';
@@ -86,7 +88,9 @@ export default function App() {
             <Route path="/travel-guide/packing-and-fitness" element={<PackingAndFitness />} />
 
             {/* Itinerary Cluster */}
-            <Route path="/tour/:slug" element={<Navigate to="/" replace />} />
+            <Route path="/tours" element={<ToursHub />} />
+            <Route path="/tours/:departure/:slug" element={<TourDetail />} />
+            <Route path="/tour/:slug" element={<Navigate to="/tours" replace />} />
 
             {/* Reviews Registry */}
             <Route path="/reviews" element={<ReviewsPage />} />

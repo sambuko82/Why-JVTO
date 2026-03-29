@@ -20,11 +20,21 @@ export default function PoliceEscort() {
   const navigate = useNavigate();
   const onBack = () => navigate('/travel-guide');
   const meta = SSOT.pages['/travel-guide/police-escort-for-groups'];
+  const data = SSOT.travel_guide.police_escort;
+
+  const getIcon = (iconName: string) => {
+    switch (iconName) {
+      case 'ShieldPlus': return ShieldPlus;
+      case 'Users': return Users;
+      case 'Info': return Info;
+      default: return ShieldCheck;
+    }
+  };
 
   return (
-    <div className="min-h-screen bg-white text-authority-navy font-sans selection:bg-safety-orange/30 pb-24 md:pb-0">
+    <div className="min-h-screen bg-audit-white text-authority-navy font-sans selection:bg-safety-orange/30 pb-24 md:pb-0">
       {/* Header */}
-      <div className="border-b border-slate-100 bg-white/80 relative z-40 backdrop-blur-xl">
+      <div className="border-b border-slate-100 bg-audit-white/80 relative z-40 backdrop-blur-xl">
         <div className="container mx-auto px-6 py-6 flex items-center justify-between">
           <button 
             onClick={onBack}
@@ -57,57 +67,26 @@ export default function PoliceEscort() {
         </motion.div>
 
         <div className="space-y-16 md:space-y-24">
-          
-          {/* 1. Why Police Escort? */}
-          <section>
-            <div className="flex items-center gap-4 mb-6 md:mb-8">
-              <div className="p-2.5 md:p-3 bg-slate-50 rounded-2xl text-safety-orange border border-slate-100">
-                <ShieldPlus className="w-6 h-6 md:w-8 md:h-8" />
+          {data.sections.map((section, index) => (
+            <section key={index}>
+              <div className="flex items-center gap-4 mb-6 md:mb-8">
+                <div className="p-2.5 md:p-3 bg-slate-50 rounded-2xl text-safety-orange border border-slate-100">
+                  {React.createElement(getIcon(section.icon), { className: "w-6 h-6 md:w-8 md:h-8" })}
+                </div>
+                <h2 className="text-2xl md:text-3xl font-black text-authority-navy uppercase tracking-tighter">{section.title}</h2>
               </div>
-              <h2 className="text-2xl md:text-3xl font-black text-authority-navy uppercase tracking-tighter">Why Police Escort?</h2>
-            </div>
-            <div className="prose prose-slate max-w-none">
-              <p className="text-base md:text-lg text-slate-600 leading-relaxed">
-                For large groups, navigating the busy roads of East Java can be challenging. A police escort ensures that your convoy stays together, moves efficiently through traffic, and maintains a high level of security throughout the journey.
-              </p>
-            </div>
-          </section>
-
-          {/* 2. Our Coordination */}
-          <section>
-            <div className="flex items-center gap-4 mb-6 md:mb-8">
-              <div className="p-2.5 md:p-3 bg-slate-50 rounded-2xl text-safety-orange border border-slate-100">
-                <Users className="w-6 h-6 md:w-8 md:h-8" />
+              <div className="prose prose-slate max-w-none">
+                <p className="text-base md:text-lg text-slate-600 leading-relaxed">
+                  {section.content}
+                </p>
               </div>
-              <h2 className="text-2xl md:text-3xl font-black text-authority-navy uppercase tracking-tighter">Our Coordination</h2>
-            </div>
-            <div className="prose prose-slate max-w-none">
-              <p className="text-base md:text-lg text-slate-600 leading-relaxed">
-                We maintain direct lines of communication with the Indonesian National Police (POLRI). This allows us to arrange escorts for groups of any size, ensuring that every detail is handled professionally and legally.
-              </p>
-            </div>
-          </section>
-
-          {/* 3. Booking & Requirements */}
-          <section>
-            <div className="flex items-center gap-4 mb-6 md:mb-8">
-              <div className="p-2.5 md:p-3 bg-slate-50 rounded-2xl text-safety-orange border border-slate-100">
-                <Info className="w-6 h-6 md:w-8 md:h-8" />
-              </div>
-              <h2 className="text-2xl md:text-3xl font-black text-authority-navy uppercase tracking-tighter">Booking & Requirements</h2>
-            </div>
-            <div className="prose prose-slate max-w-none">
-              <p className="text-base md:text-lg text-slate-600 leading-relaxed">
-                Police escorts must be arranged well in advance. We handle all the paperwork and coordination on your behalf. Please contact our group travel specialists for more information on requirements and pricing.
-              </p>
-            </div>
-          </section>
-
+            </section>
+          ))}
         </div>
         
         {/* Footer Audit Stamp */}
         <div className="mt-24 md:mt-32 pt-12 border-t border-slate-100 flex flex-col items-center">
-          <div className="p-6 md:p-8 bg-slate-50 border border-slate-200 rounded-3xl flex flex-col items-center">
+          <div className="p-6 md:p-8 bento-card bg-audit-white border border-slate-200 rounded-3xl flex flex-col items-center">
             <Siren className="w-10 h-10 md:w-12 md:h-12 text-safety-orange mb-4" />
             <span className="text-xl md:text-2xl font-black text-authority-navy uppercase tracking-tighter leading-none mb-2">ESCORT_VERIFIED</span>
             <span className="font-mono text-[9px] md:text-[10px] text-slate-500 tracking-[0.2em] uppercase">Police Coordination 2026</span>

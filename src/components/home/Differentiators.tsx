@@ -1,55 +1,119 @@
 import React from 'react';
-import { ShieldCheck, Activity, Lock, Search } from 'lucide-react';
+import { ShieldCheck, Activity, Lock, FileCheck, ChevronRight } from 'lucide-react';
 import { motion } from 'motion/react';
+import { useNavigate } from 'react-router-dom';
+import { SSOT } from '../../lib/ssot';
 
-const differentiators = [
-  {
-    icon: <ShieldCheck className="w-6 h-6 text-safety-orange" />,
-    title: "Police Leadership",
-    desc: "Founded and led by active Tourist Police, ensuring direct liaison with authorities and real-time safety updates."
-  },
-  {
-    icon: <Activity className="w-6 h-6 text-safety-orange" />,
-    title: "Medical Protocols",
-    desc: "Strict health screening and medical clearance protocols for high-altitude volcano trekking."
-  },
-  {
-    icon: <Lock className="w-6 h-6 text-safety-orange" />,
-    title: "Cryptographic Evidence",
-    desc: "Every claim is backed by verifiable hashes and official documentation in our Forensic Locker."
-  },
-  {
-    icon: <Search className="w-6 h-6 text-safety-orange" />,
-    title: "System Transparency",
-    desc: "We don't hide behind marketing. We invite you to audit our entire operational infrastructure."
-  }
-];
+const TwoToneIcon = ({ Icon }: { Icon: any }) => (
+  <div className="relative w-16 h-16 mb-6 group-hover:scale-105 transition-transform origin-bottom-left">
+    {/* Accent shape (simulating the green blob in the illustration) */}
+    <div className="absolute top-0 right-1 w-10 h-10 bg-safety-orange rounded-full opacity-90" />
+    {/* Main icon (simulating the black outline) */}
+    <Icon className="absolute bottom-0 left-0 w-12 h-12 text-authority-navy relative z-10" strokeWidth={1.5} />
+  </div>
+);
 
 export const Differentiators = () => {
+  const navigate = useNavigate();
+
+  // Reduced to 3 items to match the 1-row layout perfectly without scrolling
+  const differentiators = [
+    {
+      icon: ShieldCheck,
+      title: "Police-Led Security",
+      desc: `Direct authority liaison led by active ${SSOT.organization.founder.role}.`,
+      link: "/why-jvto/safety-leadership"
+    },
+    {
+      icon: Activity,
+      title: "Medical Clearance",
+      desc: "Strict high-altitude health screenings to prevent hypoxia.",
+      link: "/travel-guide/ijen-health-screening"
+    },
+    {
+      icon: Lock,
+      title: "Cryptographic Proof",
+      desc: "Verifiable hashes back every operational claim we make.",
+      link: "/verify-jvto"
+    }
+  ];
+
   return (
-    <section className="py-16 md:py-24 bg-white relative overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 md:px-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
-          {differentiators.map((item, idx) => (
-            <motion.div
-              key={idx}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: idx * 0.1 }}
-              className="p-6 md:p-8 rounded-2xl bg-slate-50 border border-slate-100 hover:border-safety-orange/30 transition-all group"
-            >
-              <div className="mb-6 p-3 rounded-xl bg-white shadow-sm w-fit group-hover:scale-110 transition-transform">
-                {item.icon}
-              </div>
-              <h3 className="text-xl font-black uppercase tracking-tight mb-4 text-authority-navy">
-                {item.title}
-              </h3>
-              <p className="text-slate-600 leading-relaxed font-light">
-                {item.desc}
+    <section className="py-12 md:py-24 bg-white relative overflow-hidden border-y border-slate-100">
+      <div className="max-w-[1400px] mx-auto px-6 md:px-12">
+        <div className="flex flex-col xl:flex-row gap-8 xl:gap-12 items-center mb-12 md:mb-16">
+          
+          {/* Text Column (Left) */}
+          <div className="xl:w-1/4 flex flex-col justify-center shrink-0 text-center xl:text-left">
+            <div className="inline-block relative mb-4 w-fit mx-auto xl:mx-0">
+              <h2 className="text-[10px] font-black uppercase tracking-widest text-authority-navy relative z-10">
+                Operational Excellence
+              </h2>
+              {/* Marker underline effect */}
+              <svg className="absolute -bottom-1 left-0 w-full h-2 text-safety-orange/80 z-0" viewBox="0 0 100 10" preserveAspectRatio="none">
+                <path d="M0 5 Q 50 0 100 5 Q 50 10 0 5" fill="currentColor" />
+              </svg>
+            </div>
+            
+            <p className="text-lg md:text-xl font-medium text-authority-navy mb-2 leading-snug">
+              Volcanic environments demand precision. We leave nothing to chance.
+            </p>
+            <p className="text-sm text-slate-500 font-normal">
+              That's why we operate with military-grade protocols.
+            </p>
+          </div>
+
+          {/* Cards Grid (Right - Scrollable on mobile, 3 Columns on desktop) */}
+          <div className="xl:w-3/4 w-full">
+            <div className="flex overflow-x-auto md:grid md:grid-cols-3 gap-4 md:gap-6 pb-6 md:pb-0 -mx-6 px-6 md:mx-0 md:px-0 snap-x hide-scrollbar">
+              {differentiators.map((item, idx) => (
+                <motion.div
+                  key={idx}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-50px" }}
+                  transition={{ delay: idx * 0.1 }}
+                  onClick={() => navigate(item.link)}
+                  className="shrink-0 w-[80vw] md:w-auto snap-start p-6 md:p-8 rounded-2xl bg-white shadow-[0_4px_20px_rgb(0,0,0,0.03)] border border-slate-100 hover:shadow-[0_10px_30px_rgb(0,0,0,0.06)] hover:-translate-y-1 transition-all duration-300 group flex flex-col cursor-pointer"
+                >
+                  <TwoToneIcon Icon={item.icon} />
+                  <h3 className="text-base font-bold text-authority-navy mb-2">
+                    {item.title}
+                  </h3>
+                  <p className="text-sm text-slate-600 leading-relaxed font-normal mb-6">
+                    {item.desc}
+                  </p>
+                  <div className="mt-auto pt-2 flex items-center gap-1 text-safety-orange font-mono text-[11px] uppercase tracking-widest group-hover:translate-x-1 transition-transform">
+                    Learn More <ChevronRight className="w-3 h-3" />
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+
+        </div>
+
+        {/* Forensic Verification CTA */}
+        <div className="mt-8 md:mt-12 p-6 md:p-10 rounded-3xl bg-slate-50 border border-slate-200 flex flex-col md:flex-row items-center justify-between gap-8">
+          <div className="flex items-center gap-4 md:gap-6">
+            <div className="p-3 md:p-4 rounded-full bg-safety-orange/10">
+              <FileCheck className="w-6 h-6 md:w-8 md:h-8 text-safety-orange" />
+            </div>
+            <div>
+              <h4 className="text-xl md:text-2xl font-black uppercase tracking-tight mb-1 text-authority-navy">
+                Forensic Verification
+              </h4>
+              <p className="text-slate-500 font-light text-[10px] md:text-sm uppercase tracking-widest">
+                Audit our legal entity, police liaison, and medical protocols in real-time.
               </p>
-            </motion.div>
-          ))}
+            </div>
+          </div>
+          <button 
+            onClick={() => navigate('/verify-jvto')}
+            className="w-full md:w-auto bg-safety-orange text-white px-8 md:px-10 py-4 md:py-5 rounded-xl font-black uppercase tracking-wider transition-all shadow-xl shadow-safety-orange/20 hover:scale-105 text-sm md:text-base"
+          >
+            Start System Audit
+          </button>
         </div>
       </div>
     </section>

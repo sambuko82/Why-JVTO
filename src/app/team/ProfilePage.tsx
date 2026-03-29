@@ -104,7 +104,7 @@ export default function CrewProfile() {
       return 0; 
     });
 
-  const platforms = ['All', ...new Set(rawReviews.map(r => r.platform))];
+  const platforms = ['All', ...new Set(rawReviews.map(r => r.platform))] as string[];
 
   // Reset carousel when filters change
   React.useEffect(() => {
@@ -373,7 +373,7 @@ export default function CrewProfile() {
                 onClick={() => setSelectedAsset({ 
                   url: profileData.credential.cardImage, 
                   title: `${profileData.name} - ${profileData.credential.name}`,
-                  annotations: profileData.credential.annotations
+                  annotations: (profileData.credential as any).annotations
                 })}
                 className="relative bg-black/40 rounded-[2rem] p-6 border border-white/5 flex justify-center items-center h-80 overflow-hidden cursor-pointer group"
               >

@@ -7,7 +7,7 @@ export const VerifyCTA = () => {
   const navigate = useNavigate();
 
   return (
-    <section className="py-16 md:py-24 bg-slate-50 relative overflow-hidden">
+    <section className="py-16 md:py-24 bg-audit-white relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 md:px-6">
         <div className="relative p-8 md:p-20 rounded-3xl md:rounded-[3rem] bg-authority-navy text-white overflow-hidden">
           {/* Grid Pattern Overlay */}

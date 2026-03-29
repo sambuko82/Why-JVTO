@@ -1,33 +1,34 @@
 import React from 'react';
 import { History, FileText, BookOpen, Lock, Fingerprint, ChevronRight } from 'lucide-react';
 import { motion } from 'motion/react';
+import { SSOT } from '../../lib/ssot';
 
 export const HistoryArtifacts = () => {
   const artifacts = [
     {
-      year: "2015",
+      year: SSOT.history.award2015.year.toString(),
       title: "THE FOUNDATION",
-      desc: "Original shipping labels and plaques from Booking.com addressed to our current headquarters. We haven't moved; we haven't changed our mission.",
+      desc: `Original shipping labels and plaques from Booking.com addressed to our current headquarters. We haven't moved; we haven't changed our mission. Recognized with a score of ${SSOT.history.award2015.score}.`,
       images: [
-        "https://javavolcano-touroperator.com/history/booking-2015-plaque.jpg",
-        "https://javavolcano-touroperator.com/history/booking-2015-shipping-label.jpg"
+        SSOT.assets.find(a => a.slug === 'booking-2015-plaque')?.url || "https://javavolcano-touroperator.com/history/booking-2015-plaque.jpg",
+        SSOT.assets.find(a => a.slug === 'booking-2015-shipping-label')?.url || "https://javavolcano-touroperator.com/history/booking-2015-shipping-label.jpg"
       ],
       hash: "SHA-256: 4f8e...2d1a",
       type: "LOGISTICS_RECORD"
     },
     {
-      year: "2018",
+      year: SSOT.history.book2016.year.toString(),
       title: "THE GUIDEBOOK STANDARD",
       desc: "Recommended by the 'German Travel Bible' (Stefan Loose) long before the post-pandemic tourism boom. Recognized for operational excellence in East Java.",
       images: [
-        "https://javavolcano-touroperator.com/history/stefan-loose-ijen-bondowoso-page.png"
+        SSOT.assets.find(a => a.slug === 'stefan-loose-ijen-bondowoso-page')?.url || "https://javavolcano-touroperator.com/history/stefan-loose-ijen-bondowoso-page.png"
       ],
       hash: "SHA-256: 9c2a...7f3b",
       type: "ARCHIVAL_PRINT",
       meta: {
-        title: "Stefan Loose Reiseführer",
-        page: "287 (Ost-JAVA)",
-        isbn: "978-3-7701-7881-0"
+        title: SSOT.history.book2016.title,
+        page: SSOT.history.book2016.page.toString(),
+        isbn: SSOT.history.book2016.isbn
       }
     }
   ];

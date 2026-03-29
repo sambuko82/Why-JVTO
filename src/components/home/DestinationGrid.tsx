@@ -1,51 +1,74 @@
-import React from 'react';
-import { motion } from 'motion/react';
+import React, { useRef, useState, useEffect } from 'react';
+import { motion, useScroll, useTransform } from 'motion/react';
 import { ChevronRight, MapPin } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
+import { SSOT } from '../../lib/ssot';
 
-const destinations = [
-  {
-    id: 'bromo',
-    name: 'Mount Bromo',
-    highlight: 'Active Caldera & Sea of Sand',
-    image: 'https://picsum.photos/seed/bromo/800/1000',
-    url: '/destinations/mount-bromo'
-  },
-  {
-    id: 'ijen',
-    name: 'Kawah Ijen',
-    highlight: 'Blue Fire & Acidic Lake',
-    image: 'https://picsum.photos/seed/ijen/800/1000',
-    url: '/destinations/kawah-ijen'
-  },
-  {
-    id: 'tumpak-sewu',
-    name: 'Tumpak Sewu',
-    highlight: 'Thousand Waterfalls',
-    image: 'https://picsum.photos/seed/waterfall/800/1000',
-    url: '/destinations/tumpak-sewu'
-  },
-  {
-    id: 'madakaripura',
-    name: 'Madakaripura',
-    highlight: 'Hidden Grotto Waterfall',
-    image: 'https://picsum.photos/seed/cave/800/1000',
-    url: '/destinations/madakaripura'
-  },
-  {
-    id: 'papuma',
-    name: 'Papuma Beach',
-    highlight: 'White Sand & Rocky Cliffs',
-    image: 'https://picsum.photos/seed/beach/800/1000',
-    url: '/destinations/papuma-beach'
-  }
-];
+const DestinationCard = ({ dest, idx, navigate }: { dest: any, idx: number, navigate: any }) => {
+  const ref = useRef<HTMLDivElement>(null);
+  const [isDesktop, setIsDesktop] = useState(false);
+
+  useEffect(() => {
+    const check = () => setIsDesktop(window.innerWidth >= 768);
+    check();
+    window.addEventListener('resize', check);
+    return () => window.removeEventListener('resize', check);
+  }, []);
+
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start end", "end start"]
+  });
+
+  // Subtle vertical parallax: move image from -12% to 12%
+  const y = useTransform(scrollYProgress, [0, 1], ["-12%", "12%"]);
+
+  return (
+    <motion.div
+      ref={ref}
+      initial={{ opacity: 0, scale: 0.95 }}
+      whileInView={{ opacity: 1, scale: 1 }}
+      viewport={{ once: true }}
+      transition={{ delay: idx * 0.1 }}
+      onClick={() => navigate(dest.route)}
+      className="relative shrink-0 w-[80vw] sm:w-[320px] md:w-[380px] aspect-[4/5] rounded-2xl overflow-hidden group cursor-pointer snap-start shadow-md hover:shadow-xl transition-shadow"
+    >
+      <motion.div 
+        className={`absolute inset-0 w-full h-full origin-center ${isDesktop ? 'scale-[1.25]' : 'scale-100'}`}
+        style={{ y: isDesktop ? y : 0 }}
+      >
+        <img 
+          src={dest.image}
+          alt={dest.name} 
+          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+          referrerPolicy="no-referrer"
+        />
+      </motion.div>
+      <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/90 opacity-90 transition-opacity duration-300 group-hover:opacity-100"></div>
+      
+      <div className="absolute top-0 left-0 right-0 p-6">
+        <p className="text-white font-bold uppercase tracking-widest text-xs drop-shadow-md">
+          {dest.highlight}
+        </p>
+      </div>
+      
+      <div className="absolute bottom-0 left-0 right-0 p-6 flex flex-col justify-end">
+        <h3 className="text-2xl md:text-3xl font-black text-white uppercase tracking-tight mb-2 drop-shadow-lg group-hover:-translate-y-1 transition-transform duration-300">
+          {dest.name}
+        </h3>
+        <div className="flex items-center gap-2 text-safety-orange font-mono text-[11px] uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-all transform translate-y-2 group-hover:translate-y-0">
+          View Dossier <ChevronRight className="w-3 h-3" />
+        </div>
+      </div>
+    </motion.div>
+  );
+};
 
 export const DestinationGrid = () => {
   const navigate = useNavigate();
 
   return (
-    <section className="py-16 md:py-24 bg-slate-50 relative overflow-hidden">
+    <section className="py-12 md:py-24 bg-audit-white relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 md:px-6">
         <div className="flex flex-col md:flex-row items-start md:items-end justify-between gap-6 md:gap-8 mb-12 md:mb-16">
           <div className="max-w-2xl">
@@ -61,38 +84,13 @@ export const DestinationGrid = () => {
             Our operational footprint covers the most volatile and beautiful landscapes in East Java, all secured by our safety protocols.
           </p>
         </div>
+      </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
-          {destinations.map((dest, idx) => (
-            <motion.div
-              key={dest.id}
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: idx * 0.1 }}
-              onClick={() => navigate(dest.url)}
-              className="relative aspect-[3/4] rounded-2xl overflow-hidden group cursor-pointer"
-            >
-              <img 
-                src={dest.image} 
-                alt={dest.name} 
-                className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0"
-                referrerPolicy="no-referrer"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-authority-navy via-transparent to-transparent opacity-80"></div>
-              
-              <div className="absolute bottom-0 left-0 right-0 p-6">
-                <h3 className="text-2xl font-black text-white uppercase tracking-tight mb-1">
-                  {dest.name}
-                </h3>
-                <p className="text-slate-300 text-xs font-light mb-4 uppercase tracking-widest">
-                  {dest.highlight}
-                </p>
-                <div className="flex items-center gap-2 text-safety-orange font-mono text-[11px] uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-all transform translate-y-2 group-hover:translate-y-0">
-                  View Dossier <ChevronRight className="w-3 h-3" />
-                </div>
-              </div>
-            </motion.div>
+      {/* Full-bleed scrollable container */}
+      <div className="w-full pl-4 md:pl-6 lg:pl-[calc((100vw-80rem)/2+1.5rem)]">
+        <div className="flex overflow-x-auto gap-4 pb-8 pr-4 md:pr-6 snap-x hide-scrollbar">
+          {SSOT.destinations.map((dest, idx) => (
+            <DestinationCard key={dest.slug} dest={dest} idx={idx} navigate={navigate} />
           ))}
         </div>
       </div>

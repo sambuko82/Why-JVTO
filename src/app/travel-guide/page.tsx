@@ -23,64 +23,19 @@ export default function TravelGuideHub() {
   const navigate = useNavigate();
   const meta = SSOT.pages['/travel-guide'];
 
-  const guideCategories = [
-    {
-      id: 'safety',
-      title: 'Safety & Protocols',
-      description: 'Our core operational standards for extreme environments.',
-      items: [
-        { 
-          title: 'Ijen Health Screening', 
-          desc: 'Mandatory medical checks and digital QR issuance.', 
-          path: '/travel-guide/ijen-health-screening',
-          icon: Activity,
-          color: 'text-verified-bright'
-        },
-        { 
-          title: 'Safety on Tours', 
-          desc: 'Comprehensive risk management and gear standards.', 
-          path: '/travel-guide/safety-on-tours',
-          icon: ShieldCheck,
-          color: 'text-safety-orange'
-        },
-        { 
-          title: 'Weather & Closures', 
-          desc: 'Real-time monitoring of volcanic activity and access.', 
-          path: '/travel-guide/weather-and-closures',
-          icon: CloudRain,
-          color: 'text-indigo-500'
-        }
-      ]
-    },
-    {
-      id: 'logistics',
-      title: 'Logistics & Planning',
-      description: 'Essential information for a seamless expedition.',
-      items: [
-        { 
-          title: 'Police Escort for Groups', 
-          desc: 'Direct coordination for large group security.', 
-          path: '/travel-guide/police-escort-for-groups',
-          icon: Users,
-          color: 'text-authority-navy'
-        },
-        { 
-          title: 'Booking Information', 
-          desc: 'Payment steps, changes, and travel credit policy.', 
-          path: '/travel-guide/booking-information',
-          icon: CreditCard,
-          color: 'text-emerald-500'
-        },
-        { 
-          title: 'Packing & Fitness', 
-          desc: 'Gear requirements and physical expectations.', 
-          path: '/travel-guide/packing-and-fitness',
-          icon: Info,
-          color: 'text-amber-500'
-        }
-      ]
+  const guideCategories = SSOT.travel_guide.categories;
+
+  const getIcon = (iconName: string) => {
+    switch (iconName) {
+      case 'Activity': return Activity;
+      case 'ShieldCheck': return ShieldCheck;
+      case 'CloudRain': return CloudRain;
+      case 'Users': return Users;
+      case 'CreditCard': return CreditCard;
+      case 'Info': return Info;
+      default: return BookOpen;
     }
-  ];
+  };
 
   return (
     <div className="min-h-screen bg-audit-white text-authority-navy font-sans selection:bg-safety-orange/30 pb-24 md:pb-0">
@@ -139,11 +94,11 @@ export default function TravelGuideHub() {
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: (catIdx * 3 + itemIdx) * 0.1 }}
                     onClick={() => navigate(item.path)}
-                    className="bento-card bg-white p-6 md:p-8 group cursor-pointer hover:border-safety-orange transition-all flex items-center justify-between"
+                    className="bento-card bg-audit-white p-6 md:p-8 group cursor-pointer hover:border-safety-orange transition-all flex items-center justify-between"
                   >
                     <div className="flex items-center gap-4 md:gap-6">
                       <div className={`w-10 h-10 md:w-12 md:h-12 rounded-xl bg-slate-50 ${item.color} flex items-center justify-center border border-slate-100 group-hover:scale-110 transition-transform shrink-0`}>
-                        <item.icon className="w-5 h-5 md:w-6 md:h-6" />
+                        {React.createElement(getIcon(item.icon), { className: "w-5 h-5 md:w-6 md:h-6" })}
                       </div>
                       <div>
                         <h3 className="text-lg md:text-xl font-black text-authority-navy uppercase leading-none mb-2 tracking-tight">{item.title}</h3>

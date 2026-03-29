@@ -24,8 +24,8 @@ export default function FAQPage() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   const filteredFaqs = SSOT.faq.filter(faq => 
-    faq.q.toLowerCase().includes(searchQuery.toLowerCase()) || 
-    faq.a.toLowerCase().includes(searchQuery.toLowerCase())
+    faq.question.toLowerCase().includes(searchQuery.toLowerCase()) || 
+    faq.answer.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
   const toggleFaq = (index: number) => {
@@ -104,7 +104,7 @@ export default function FAQPage() {
                 <div className="flex items-center gap-6">
                   <span className="font-mono text-[11px] text-slate-300 font-black">0{index + 1}</span>
                   <h3 className="text-xl font-black text-authority-navy uppercase leading-tight group-hover:text-safety-orange transition-colors">
-                    {faq.q}
+                    {faq.question}
                   </h3>
                 </div>
                 {openIndex === index ? <ChevronUp className="w-5 h-5 text-safety-orange" /> : <ChevronDown className="w-5 h-5 text-slate-300" />}
@@ -121,7 +121,7 @@ export default function FAQPage() {
                     <div className="px-8 pb-8 pt-0 border-t border-slate-50">
                       <div className="mt-8 p-8 bg-slate-50 rounded-2xl border border-slate-100">
                         <p className="text-slate-600 text-lg leading-tight font-light">
-                          {faq.a}
+                          {faq.answer}
                         </p>
                       </div>
                       <div className="mt-6 flex items-center gap-4">

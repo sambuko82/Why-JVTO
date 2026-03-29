@@ -12,35 +12,22 @@ export default function IjenHealthScreening() {
   const [activeStep, setActiveStep] = useState(0);
   const meta = SSOT.pages['/travel-guide/ijen-health-screening'];
 
-  const parameters = [
-    { 
-      icon: HeartPulse, 
-      title: "Blood Pressure & Heart Rate", 
-      desc: "Hypertension (High BP) is a major risk factor at altitude. We screen for resting heart rate anomalies before ascent.",
-      color: "text-red-500",
-      bg: "bg-red-500/10"
-    },
-    { 
-      icon: Activity, 
-      title: "Oxygen Saturation (SpO2)", 
-      desc: "We monitor oxygen levels to detect early signs of hypoxia. Anything below 92% triggers a mandatory safety review.",
-      color: "text-verified-bright",
-      bg: "bg-verified-bright/10"
-    },
-    { 
-      icon: AlertTriangle, 
-      title: "\"Hard Stop\" Authority", 
-      desc: "Our medical team has the absolute authority to cancel a climb if vitals are unsafe. No refunds on safety, but full credits provided.",
-      color: "text-safety-orange",
-      bg: "bg-safety-orange/10"
-    }
-  ];
+  const parameters = SSOT.health_protocol.parameters;
 
-  const proceduralFlow = [
-    { title: "Doctor Check", icon: <Stethoscope className="w-6 h-6" />, desc: "Real SpO₂ + BP Check by a licensed physician." },
-    { title: "Record", icon: <FileDigit className="w-6 h-6" />, desc: "Digital QR Record logged into the JVTO Health Ledger." },
-    { title: "Scan QR", icon: <QrCode className="w-6 h-6" />, desc: "Gate Verification for mandatory safety clearance." },
-  ];
+  const getIcon = (iconName: string) => {
+    switch (iconName) {
+      case 'HeartPulse': return HeartPulse;
+      case 'Activity': return Activity;
+      case 'AlertTriangle': return AlertTriangle;
+      default: return Activity;
+    }
+  };
+
+  const proceduralFlow = SSOT.health_protocol.steps.map((step, idx) => ({
+    title: step.title,
+    icon: idx === 0 ? <Stethoscope className="w-6 h-6" /> : idx === 1 ? <FileDigit className="w-6 h-6" /> : <QrCode className="w-6 h-6" />,
+    desc: step.desc
+  }));
 
   return (
     <div className="min-h-screen bg-audit-white text-authority-navy font-sans selection:bg-safety-orange/30 pb-24 md:pb-0">
@@ -101,7 +88,7 @@ export default function IjenHealthScreening() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: idx * 0.1 }}
                 onMouseEnter={() => setActiveStep(idx)}
-                className={`relative z-10 bento-card p-8 md:p-10 text-center transition-all duration-500 group ${activeStep === idx ? 'bg-authority-navy text-white md:scale-105 shadow-2xl' : 'bg-white'}`}
+                className={`relative z-10 bento-card p-8 md:p-10 text-center transition-all duration-500 group ${activeStep === idx ? 'bg-authority-navy text-white md:scale-105 shadow-2xl' : 'bg-audit-white'}`}
               >
                 <div className={`w-16 h-16 md:w-20 md:h-20 rounded-[1.5rem] md:rounded-[2rem] mx-auto mb-6 md:mb-8 flex items-center justify-center transition-all duration-500 ${activeStep === idx ? 'bg-safety-orange text-white' : 'bg-slate-50 text-slate-500'}`}>
                   {step.icon}
@@ -116,7 +103,7 @@ export default function IjenHealthScreening() {
 
         {/* Doctor Verification Block */}
         <section className="mb-24 md:mb-32">
-          <div className="bento-card bg-white p-0 overflow-hidden shadow-2xl border-slate-200">
+          <div className="bento-card bg-audit-white p-0 overflow-hidden shadow-2xl border-slate-200">
             <div className="grid grid-cols-1 lg:grid-cols-5">
               
               {/* Left: Doctor Profile */}
@@ -149,7 +136,7 @@ export default function IjenHealthScreening() {
               </div>
 
               {/* Right: The Protocol */}
-              <div className="lg:col-span-3 p-8 md:p-16 bg-white relative">
+              <div className="lg:col-span-3 p-8 md:p-16 bg-audit-white relative">
                 <div className="absolute top-0 right-0 p-8 md:p-16 opacity-[0.02] pointer-events-none">
                   <HeartPulse className="w-64 h-64 md:w-96 md:h-96" />
                 </div>
@@ -165,7 +152,7 @@ export default function IjenHealthScreening() {
                   {parameters.map((param, i) => (
                     <div key={i} className="flex flex-col md:flex-row gap-4 md:gap-8 group">
                       <div className={`w-16 h-16 md:w-20 md:h-20 rounded-[1.5rem] md:rounded-[2rem] ${param.bg} flex items-center justify-center shrink-0 border border-slate-100 group-hover:scale-110 transition-transform duration-500`}>
-                        <param.icon className={`w-8 h-8 md:w-10 md:h-10 ${param.color}`} />
+                        {React.createElement(getIcon(param.icon), { className: `w-8 h-8 md:w-10 md:h-10 ${param.color}` })}
                       </div>
                       <div>
                         <h4 className="text-authority-navy font-black text-xl md:text-2xl uppercase leading-none mb-2 md:mb-3">{param.title}</h4>
@@ -199,7 +186,7 @@ export default function IjenHealthScreening() {
             </p>
           </div>
 
-          <div className="bento-card bg-white p-6 md:p-16 shadow-2xl border-slate-200 relative overflow-hidden">
+          <div className="bento-card bg-audit-white p-6 md:p-16 shadow-2xl border-slate-200 relative overflow-hidden">
             <div className="scanline"></div>
             {/* Watermark */}
             <div className="absolute inset-0 flex items-center justify-center opacity-[0.03] pointer-events-none">

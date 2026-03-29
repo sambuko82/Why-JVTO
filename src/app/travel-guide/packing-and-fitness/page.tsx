@@ -22,58 +22,20 @@ export default function PackingAndFitness() {
   const navigate = useNavigate();
   const meta = SSOT.pages['/travel-guide/packing-and-fitness'];
 
-  const packingList = [
-    {
-      category: 'Clothing',
-      items: [
-        'Warm jacket (temperatures can drop to 5°C at Bromo/Ijen)',
-        'Long pants (trekking pants or comfortable leggings)',
-        'Layered clothing (t-shirt + sweater + jacket)',
-        'Raincoat or poncho (especially during rainy season)'
-      ],
-      icon: Thermometer
-    },
-    {
-      category: 'Footwear',
-      items: [
-        'Trekking shoes or sneakers with good grip',
-        'Warm socks',
-        'Flip-flops (for hotel/rest areas)'
-      ],
-      icon: Footprints
-    },
-    {
-      category: 'Essentials',
-      items: [
-        'Personal medications',
-        'Sunscreen and lip balm',
-        'Headlamp or flashlight (we provide some, but personal is better)',
-        'Power bank and camera gear'
-      ],
-      icon: Backpack
-    }
-  ];
+  const packingList = SSOT.travel_guide.packing_and_fitness.packingList;
+  const fitnessLevels = SSOT.travel_guide.packing_and_fitness.fitnessLevels;
 
-  const fitnessLevels = [
-    {
-      site: 'Mount Bromo',
-      level: 'Moderate',
-      desc: 'Mostly flat walking on sand, followed by ~250 stairs to the crater rim. Accessible for most people with average fitness.',
-      icon: Mountain
-    },
-    {
-      site: 'Kawah Ijen',
-      level: 'Challenging',
-      desc: 'A steep 3km uphill climb followed by a rocky descent into the crater. Requires good cardiovascular health and steady footing.',
-      icon: HeartPulse
-    },
-    {
-      site: 'Tumpak Sewu',
-      level: 'Technical',
-      desc: 'Involves descending into a canyon using bamboo ladders and walking through shallow streams. Requires agility and balance.',
-      icon: Wind
+  const getIcon = (iconName: string) => {
+    switch (iconName) {
+      case 'Thermometer': return Thermometer;
+      case 'Footprints': return Footprints;
+      case 'Backpack': return Backpack;
+      case 'Mountain': return Mountain;
+      case 'HeartPulse': return HeartPulse;
+      case 'Wind': return Wind;
+      default: return Info;
     }
-  ];
+  };
 
   return (
     <div className="min-h-screen bg-audit-white text-authority-navy font-sans selection:bg-safety-orange/30 pb-24 md:pb-0">
@@ -126,10 +88,10 @@ export default function PackingAndFitness() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1 }}
-                className="bento-card bg-white p-6 md:p-8 border-t-4 border-t-authority-navy"
+                className="bento-card bg-audit-white p-6 md:p-8 border-t-4 border-t-authority-navy"
               >
                 <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-slate-50 text-safety-orange flex items-center justify-center border border-slate-100 mb-6">
-                  <item.icon className="w-5 h-5 md:w-6 md:h-6" />
+                  {React.createElement(getIcon(item.icon), { className: "w-5 h-5 md:w-6 md:h-6" })}
                 </div>
                 <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-100 text-authority-navy text-[10px] font-mono font-bold uppercase tracking-widest mb-4">
                   {item.level}
@@ -151,11 +113,11 @@ export default function PackingAndFitness() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.3 + index * 0.1 }}
-                className="bento-card bg-white p-6 md:p-8"
+                className="bento-card bg-audit-white p-6 md:p-8"
               >
                 <div className="flex items-center gap-4 mb-6 md:mb-8">
                   <div className="w-10 h-10 rounded-xl bg-slate-50 text-authority-navy flex items-center justify-center border border-slate-100">
-                    <category.icon className="w-5 h-5" />
+                    {React.createElement(getIcon(category.icon), { className: "w-5 h-5" })}
                   </div>
                   <h3 className="text-lg md:text-xl font-black text-authority-navy uppercase tracking-tight">{category.category}</h3>
                 </div>

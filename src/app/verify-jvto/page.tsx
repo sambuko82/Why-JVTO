@@ -108,7 +108,7 @@ export default function VerifyJvto() {
             </div>
             
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-6">
-              {SSOT.proof_vault.license.map((item) => (
+              {SSOT.proof_vault.license.map((item: any) => (
                 <div 
                   key={item.slug}
                   onClick={() => openAsset(item.url, item.title, item.hash || 'PENDING', 'image', item.annotations)}
@@ -153,7 +153,7 @@ export default function VerifyJvto() {
             </div>
             
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-6">
-              {SSOT.proof_vault.legality.map((item) => (
+              {SSOT.proof_vault.legality.map((item: any) => (
                 <div 
                   key={item.slug}
                   onClick={() => openAsset(item.url, item.title, item.hash || 'PENDING', 'image', item.annotations)}
@@ -198,7 +198,7 @@ export default function VerifyJvto() {
             </div>
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
-              {SSOT.proof_vault.accountability.map((item) => (
+              {SSOT.proof_vault.accountability.map((item: any) => (
                 <div 
                   key={item.slug}
                   onClick={() => openAsset(item.url, item.title, item.hash || 'PENDING', 'image', item.annotations)}
@@ -241,7 +241,7 @@ export default function VerifyJvto() {
             </div>
             
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-6">
-              {SSOT.proof_vault.safety.map((item) => (
+              {SSOT.proof_vault.safety.map((item: any) => (
                 <div 
                   key={item.slug}
                   onClick={() => openAsset(item.url, item.title, item.hash || 'PENDING', 'image', item.annotations)}
@@ -286,7 +286,7 @@ export default function VerifyJvto() {
             </div>
             
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-6">
-              {SSOT.proof_vault.police_safety.map((item) => (
+              {SSOT.proof_vault.police_safety.map((item: any) => (
                 <div 
                   key={item.slug}
                   onClick={() => openAsset(item.url, item.title, item.hash || 'PENDING', 'image', item.annotations)}
@@ -331,7 +331,7 @@ export default function VerifyJvto() {
             </div>
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
-              {SSOT.proof_vault.credentials.map((item) => (
+              {SSOT.proof_vault.credentials.map((item: any) => (
                 <div 
                   key={item.slug}
                   onClick={() => openAsset(item.url, item.title, item.hash || 'PENDING', 'image', item.annotations)}
@@ -376,7 +376,7 @@ export default function VerifyJvto() {
             </div>
             
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-6">
-              {SSOT.proof_vault.press.map((item) => (
+              {SSOT.proof_vault.press.map((item: any) => (
                 <div 
                   key={item.slug}
                   onClick={() => openAsset(item.url, item.title, item.hash || 'PENDING', 'image', item.annotations)}
@@ -421,7 +421,7 @@ export default function VerifyJvto() {
             </div>
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
-              {SSOT.proof_vault.history.map((item) => (
+              {SSOT.proof_vault.history.map((item: any) => (
                 <div 
                   key={item.slug}
                   onClick={() => openAsset(item.url, item.title, item.hash || 'PENDING', 'image', item.annotations)}
@@ -464,7 +464,7 @@ export default function VerifyJvto() {
             </div>
             
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-6">
-              {SSOT.proof_vault.partners.map((item) => (
+              {SSOT.proof_vault.partners.map((item: any) => (
                 <div 
                   key={item.slug}
                   onClick={() => openAsset(item.url, item.title, item.hash || 'PENDING', 'image', item.annotations)}

@@ -19,16 +19,21 @@ import { AuditStamp } from '../../../components/AuditStamp';
 export default function FAQPage() {
   const navigate = useNavigate();
   const [searchQuery, setSearchQuery] = useState('');
-  const [openIndex, setOpenIndex] = useState<number | null>(null);
+  const [openId, setOpenId] = useState<string | null>(null);
   const meta = SSOT.pages['/travel-guide/faq'];
 
-  const filteredFaqs = SSOT.faq.filter(faq => 
-    faq.q.toLowerCase().includes(searchQuery.toLowerCase()) || 
-    faq.a.toLowerCase().includes(searchQuery.toLowerCase())
-  );
+  const filteredFaqs = SSOT.faq.filter(faq => {
+    if (!searchQuery.trim()) return true;
+    const keywords = searchQuery.toLowerCase().split(' ').filter(k => k.trim() !== '');
+    const q = faq.question.toLowerCase();
+    const a = faq.answer.toLowerCase();
+    
+    // Check if every keyword is found in either the question or the answer
+    return keywords.every(keyword => q.includes(keyword) || a.includes(keyword));
+  });
 
-  const toggleFaq = (index: number) => {
-    setOpenIndex(openIndex === index ? null : index);
+  const toggleFaq = (question: string) => {
+    setOpenId(openId === question ? null : question);
   };
 
   return (
@@ -79,7 +84,7 @@ export default function FAQPage() {
           </div>
           <input 
             type="text"
-            placeholder="SEARCH QUESTIONS..."
+            placeholder="SEARCH QUESTIONS OR KEYWORDS..."
             className="w-full bg-white border-2 border-slate-200 rounded-2xl py-4 md:py-6 pl-14 md:pl-16 pr-6 font-mono text-[10px] md:text-xs uppercase tracking-widest focus:border-safety-orange focus:ring-0 transition-all outline-none shadow-sm"
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
@@ -87,52 +92,55 @@ export default function FAQPage() {
         </div>
 
         <div className="space-y-4">
-          {filteredFaqs.map((faq, index) => (
-            <motion.div 
-              key={index}
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.05 }}
-              className={`bento-card bg-white border-2 transition-all overflow-hidden ${openIndex === index ? 'border-safety-orange shadow-2xl' : 'border-slate-100'}`}
-            >
-              <button 
-                onClick={() => toggleFaq(index)}
-                className="w-full p-6 md:p-8 flex items-center justify-between text-left group"
+          {filteredFaqs.map((faq, index) => {
+            const isOpen = openId === faq.question;
+            return (
+              <motion.div 
+                key={faq.question}
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: index * 0.05 }}
+                className={`bento-card bg-audit-white border-2 transition-all overflow-hidden ${isOpen ? 'border-safety-orange shadow-2xl' : 'border-slate-100'}`}
               >
-                <div className="flex items-center gap-4 md:gap-6">
-                  <span className="font-mono text-[10px] md:text-[11px] text-slate-300 font-black shrink-0">0{index + 1}</span>
-                  <h3 className="text-lg md:text-xl font-black text-authority-navy uppercase leading-tight group-hover:text-safety-orange transition-colors">
-                    {faq.q}
-                  </h3>
-                </div>
-                <div className="shrink-0 ml-4">
-                  {openIndex === index ? <ChevronUp className="w-5 h-5 text-safety-orange" /> : <ChevronDown className="w-5 h-5 text-slate-300" />}
-                </div>
-              </button>
-              
-              <AnimatePresence>
-                {openIndex === index && (
-                  <motion.div 
-                    initial={{ height: 0, opacity: 0 }}
-                    animate={{ height: 'auto', opacity: 1 }}
-                    exit={{ height: 0, opacity: 0 }}
-                    className="overflow-hidden"
-                  >
-                    <div className="px-6 md:px-8 pb-6 md:pb-8 pt-0 border-t border-slate-50">
-                      <div className="mt-6 md:mt-8 p-6 md:p-8 bg-slate-50 rounded-2xl border border-slate-100">
-                        <p className="text-slate-600 text-base md:text-lg leading-tight font-light">
-                          {faq.a}
-                        </p>
+                <button 
+                  onClick={() => toggleFaq(faq.question)}
+                  className="w-full p-6 md:p-8 flex items-center justify-between text-left group"
+                >
+                  <div className="flex items-center gap-4 md:gap-6">
+                    <span className="font-mono text-[10px] md:text-[11px] text-slate-300 font-black shrink-0">0{index + 1}</span>
+                    <h3 className="text-lg md:text-xl font-black text-authority-navy uppercase leading-tight group-hover:text-safety-orange transition-colors">
+                      {faq.question}
+                    </h3>
+                  </div>
+                  <div className="shrink-0 ml-4">
+                    {isOpen ? <ChevronUp className="w-5 h-5 text-safety-orange" /> : <ChevronDown className="w-5 h-5 text-slate-300" />}
+                  </div>
+                </button>
+                
+                <AnimatePresence>
+                  {isOpen && (
+                    <motion.div 
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: 'auto', opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      className="overflow-hidden"
+                    >
+                      <div className="px-6 md:px-8 pb-6 md:pb-8 pt-0 border-t border-slate-50">
+                        <div className="mt-6 md:mt-8 p-6 md:p-8 bg-slate-50 rounded-2xl border border-slate-100">
+                          <p className="text-slate-600 text-base md:text-lg leading-tight font-light">
+                            {faq.answer}
+                          </p>
+                        </div>
                       </div>
-                    </div>
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </motion.div>
-          ))}
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </motion.div>
+            );
+          })}
           
           {filteredFaqs.length === 0 && (
-            <div className="text-center py-16 md:py-24 bg-white rounded-3xl border-2 border-dashed border-slate-200">
+            <div className="text-center py-16 md:py-24 bg-audit-white rounded-3xl border-2 border-dashed border-slate-200">
               <Database className="w-12 h-12 text-slate-200 mx-auto mb-4" />
               <p className="text-slate-400 font-mono text-[10px] md:text-xs uppercase tracking-widest">No matching records found.</p>
             </div>

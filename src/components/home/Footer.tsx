@@ -1,16 +1,19 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Lock, ShieldCheck, MessageSquare, ChevronRight, Fingerprint, Globe, HelpCircle } from 'lucide-react';
+import { Lock, ShieldCheck, ChevronRight, HelpCircle } from 'lucide-react';
 import { motion } from 'motion/react';
+import { SSOT } from '../../lib/ssot';
 
 export const Footer = () => {
   const navigate = useNavigate();
+  const org = SSOT.organization;
   return (
-    <footer className="bg-authority-navy text-white py-16 md:py-32 px-4 md:px-6 relative overflow-hidden border-t border-white/5">
+    <footer className="bg-authority-navy text-white pt-16 md:pt-32 pb-8 md:pb-12 overflow-hidden relative border-t border-white/5">
       {/* Grid Pattern */}
       <div className="absolute inset-0 grid-pattern opacity-5"></div>
       
-      <div className="max-w-7xl mx-auto relative z-10">
+      <div className="max-w-7xl mx-auto px-4 md:px-6 relative z-10">
+        {/* Pre-footer CTA Band (moved from previous Footer content) */}
         <div className="flex flex-col lg:flex-row justify-between items-center gap-12 lg:gap-20 mb-16 md:mb-32">
           <div className="max-w-2xl text-center lg:text-left">
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-safety-orange/10 border border-safety-orange/30 text-safety-orange text-[10px] md:text-[11px] font-mono font-bold uppercase tracking-[0.15em] md:tracking-[0.2em] mb-6 md:mb-8">
@@ -35,9 +38,6 @@ export const Footer = () => {
                 className="group bg-white/5 border border-white/10 hover:bg-white/10 text-white px-8 md:px-10 py-4 md:py-5 rounded-xl font-black uppercase tracking-wider text-xs md:text-sm transition-all flex items-center justify-center gap-3"
               >
                 <HelpCircle className="w-5 h-5" /> Common Questions
-              </button>
-              <button className="group bg-white/5 border border-white/10 hover:bg-white/10 text-white px-8 md:px-10 py-4 md:py-5 rounded-xl font-black uppercase tracking-wider text-xs md:text-sm transition-all flex items-center justify-center gap-3">
-                <MessageSquare className="w-5 h-5" /> Message Us on WhatsApp
               </button>
             </div>
           </div>
@@ -64,30 +64,57 @@ export const Footer = () => {
           </div>
         </div>
 
+        {/* 5-Column Grid */}
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 mb-16 md:mb-20">
+          <div>
+            <h4 className="text-xs font-black uppercase tracking-widest text-white mb-6">Identity</h4>
+            <ul className="space-y-3 text-sm text-slate-400 font-light">
+              <li>{org.legalName}</li>
+              <li>{org.address_json?.addressLocality}, {org.address_json?.addressRegion}</li>
+              <li>{org.contact_phone}</li>
+              <li>{org.contact_email}</li>
+            </ul>
+          </div>
+          <div>
+            <h4 className="text-xs font-black uppercase tracking-widest text-white mb-6">Tours</h4>
+            <ul className="space-y-3 text-sm text-slate-400 font-light">
+              <li><button onClick={() => navigate('/tours')}>All Tours</button></li>
+              <li><button onClick={() => navigate('/tours/from-surabaya')}>From Surabaya</button></li>
+              <li><button onClick={() => navigate('/tours/from-bali')}>From Bali</button></li>
+            </ul>
+          </div>
+          <div>
+            <h4 className="text-xs font-black uppercase tracking-widest text-white mb-6">Learn</h4>
+            <ul className="space-y-3 text-sm text-slate-400 font-light">
+              <li><button onClick={() => navigate('/why-jvto')}>Why JVTO</button></li>
+              <li><button onClick={() => navigate('/why-jvto/our-team')}>Meet the Team</button></li>
+              <li><button onClick={() => navigate('/why-jvto/reviews')}>Reviews</button></li>
+              <li><button onClick={() => navigate('/travel-guide')}>Travel Guide</button></li>
+            </ul>
+          </div>
+          <div>
+            <h4 className="text-xs font-black uppercase tracking-widest text-white mb-6">Verify</h4>
+            <ul className="space-y-3 text-sm text-slate-400 font-light">
+              <li><button onClick={() => navigate('/verify-jvto')}>Verify JVTO</button></li>
+              <li><button onClick={() => navigate('/policy/booking-payment-cancellation')}>Booking Policy</button></li>
+              <li><button onClick={() => navigate('/policy/inclusions-exclusions')}>Inclusions</button></li>
+            </ul>
+          </div>
+          <div>
+            <h4 className="text-xs font-black uppercase tracking-widest text-white mb-6">Proof</h4>
+            <ul className="space-y-3 text-sm text-slate-400 font-light">
+              {org.same_as_urls.map((url, i) => (
+                <li key={i}><a href={url} target="_blank" rel="noopener noreferrer">{url.split('/')[2]}</a></li>
+              ))}
+            </ul>
+          </div>
+        </div>
+
+        {/* Bottom Bar */}
         <div className="pt-8 md:pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-8">
-          <div className="flex flex-col sm:flex-row items-center gap-4 md:gap-6">
-            <div className="flex items-center gap-2">
-              <Fingerprint className="w-4 h-4 text-slate-500" />
-              <span className="font-mono text-[10px] md:text-[11px] text-slate-500 uppercase tracking-widest">SHA-256: 8F3E...9A2B</span>
-            </div>
-            <div className="hidden sm:block h-4 w-px bg-white/10"></div>
-            <div className="flex items-center gap-2">
-              <Globe className="w-4 h-4 text-slate-500" />
-              <span className="font-mono text-[10px] md:text-[11px] text-slate-500 uppercase tracking-widest">Schema.org Trust Graph Injected</span>
-            </div>
-          </div>
-          
-          <div className="text-center md:text-right">
-            <p className="font-mono text-[10px] md:text-[11px] text-slate-300 uppercase tracking-[0.2em] mb-2 italic">
-              "Private volcano tours, built on proof."
-            </p>
-            <p className="font-mono text-[10px] md:text-[11px] text-slate-500 uppercase tracking-[0.2em] mb-2">
-              © 2015–2026 PT Java Volcano Rendezvous · Bondowoso, East Java · License No. 1102230032918
-            </p>
-            <p className="font-mono text-[10px] md:text-[11px] text-slate-500 uppercase tracking-widest">
-              Verified Entity // Bureaucratic Chic v1.9
-            </p>
-          </div>
+          <p className="text-[10px] md:text-xs text-slate-500 font-mono uppercase tracking-widest text-center md:text-left">
+            © 2015–2026 {org.legalName} · {org.address_json?.addressLocality}, {org.address_json?.addressRegion} · License No. 1102230032918
+          </p>
         </div>
       </div>
     </footer>

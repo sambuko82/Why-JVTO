@@ -11,7 +11,7 @@ export const TeamFilter = ({ currentFilter, onFilterChange, count }: TeamFilterP
 
   return (
     <div className="flex flex-col items-end gap-4">
-      <div className="flex bg-white border-2 border-slate-200 p-1.5 rounded-2xl shadow-sm">
+      <div className="flex bg-audit-white border-2 border-slate-200 p-1.5 rounded-2xl shadow-sm">
         {filters.map((filter) => (
           <button 
             key={filter}

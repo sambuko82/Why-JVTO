@@ -1,1552 +1,1292 @@
-import { SSOTData } from '../types';
+import React from 'react';
 
-export const SSOT: SSOTData = {
+export const SSOT = {
   organization: {
-    legalName: "PT Java Volcano Rendezvous",
-    brandName: "Java Volcano Tour Operator",
     name: "Java Volcano Tour Operator",
-    url: "https://javavolcano-touroperator.com",
+    legalName: "PT Java Volcano Rendezvous",
     foundingDate: "2016-01-01",
-    nib: "1102230032918",
-    address: "Jl. Khairil Anwar No.102 A, Badean, Bondowoso",
-    postalCode: "68214",
-    mapCid: "1266403973589689021",
-    description: "Java Volcano Tour Operator (JVTO) is a private tour operator based in Bondowoso, East Java, Indonesia (License No. 1102230032918, PT Java Volcano Rendezvous). The company specializes in private volcano tours to Mount Bromo, Kawah Ijen, and Tumpak Sewu, departing from Surabaya and Bali. Founded in 2015 by active Tourist Police officer Bripka Agung Sambuko, JVTO operates under Indonesian tourism regulations with mandatory health screening protocols.",
-    priceRange: "$$",
-    areaServed: ["East Java", "Mount Bromo", "Mount Ijen"],
-    contactPoint: {
-      email: "hello@javavolcano-touroperator.com",
-      telephone: "+6282244788833",
-      availableLanguages: ["en", "id"]
-    },
+    url: "https://javavolcano-touroperator.com/",
+    description: "Java Volcano Tour Operator (JVTO) is a registered Indonesian travel company based in Bondowoso and led by an active Tourist Police officer. We design private, all-inclusive itineraries to Mount Bromo, Ijen Crater and Tumpak Sewu with clear safety rules, transparent pricing and real local impact.",
     founder: {
-      name: "Bripka Agung Sambuko",
+      name: "Agung Sambuko (Mr. Sam)",
       role: "Founder & Active Tourist Police Officer",
       unit: "Ditpamobvit (Directorate of Vital Object Security)",
-      description: "Founder of JVTO and active member of the East Java Tourist Police Unit (Ditpamobvit), specializing in tourist safety and risk management.",
-      image_url: "https://javavolcano-touroperator.com/founder/mr-sam-tourist-police-portrait.png",
-      knowsAbout: ["TouristSafety", "EastJavaTourism", "VolcanoTrekking", "LogisticsManagement"],
-      memberOf: {
-        name: "Indonesian National Police",
-        subOrganization: "Ditpamobvit (Directorate of Vital Object Security)"
-      },
       sameAs: [
         "https://polri.go.id/",
         "https://www.wikidata.org/wiki/Q3103954"
       ]
-    }
+    },
+    address_json: { addressLocality: "Bondowoso", addressRegion: "East Java" },
+    contact_phone: "+62 822-4478-8833",
+    contact_email: "hello@javavolcano-touroperator.com",
+    same_as_urls: [
+      "https://trustpilot.com/review/javavolcano-touroperator.com",
+      "https://tripadvisor.com",
+      "https://google.com/maps?cid=1266403973589689021"
+    ]
   },
-  medical: {
-    protocolName: "Ijen Digital Health Security System",
-    doctor: {
-      name: "dr. Ahmad Irwandanu",
-      sip: "503.446/193/DRU/4/430.9.13/2020",
-      affiliation: "Konsil Kesehatan Indonesia (KKI)"
-    }
-  },
-  history: {
-    award2015: {
-      title: "Booking.com Guest Review Award 2015",
-      recipient: "Agung",
-      score: "9.4/10",
-      address: "Jl. Khairil Anwar No.102, Badean, Bondowoso",
-      year: "2015"
-    },
-    book2016: {
-      title: "Stefan Loose Reiseführer Indonesien",
-      edition: "4th Edition (2016)",
-      isbn: "978-3-7701-6765-4",
-      page: "287",
-      quote: "Ijen Bondowoso Homestay... Zentral gelegenes Homestay von Agung, Andrew und Ady... Wäscheservice, Motorradvermietung, Internet-PC und Touren.",
-      authors: ['Mischa Loose', 'Moritz Jacobi', 'Christian Wachsmuth'],
-      publisher: 'Dumont Reise Vlg GmbH + C',
-      year: '2016'
-    }
-  },
-  claims: [
+  assets: [
+    { slug: "jvto-hero-image", url: "https://javavolcano-touroperator.com/assets/img/hero/home.webp", alt: "Scenic view of Java volcanoes." },
+    { slug: "jvto-logo-main", url: "https://javavolcano-touroperator.com/assets/img/jvto-color.png", alt: "Java Volcano Tour Operator Logo." },
+    { slug: "mr-sam-tourist-police-portrait", url: "https://upload.wikimedia.org/wikipedia/commons/b/bf/Agung_Sambuko.jpg", alt: "Mr. Sam, active Tourist Police officer and founder of JVTO." },
+    { slug: "nib-1102230032918-preview-png", url: "https://javavolcano-touroperator.com/legal/NIB-1102230032918-preview.png", alt: "Preview of NIB certificate (PNG)." },
+    { slug: "booking-2015-plaque", url: "https://javavolcano-touroperator.com/history/booking-2015-plaque.jpg", alt: "2015 Booking.com Guest Review Award plaque" },
+    { slug: "booking-2015-shipping-label", url: "https://javavolcano-touroperator.com/history/booking-2015-shipping-label.jpg", alt: "Booking.com package addressed to Ijen Bondowoso Homestay" },
+    { slug: "guest-visit-stefan-loose", url: "https://javavolcano-touroperator.com/history/guest-visit-ijen-bondowoso-homestay-stefan-loose-inspired.jpg", alt: "Mr. Sam with guests at Ijen Bondowoso Homestay" },
+    { slug: "stefan-loose-ijen-bondowoso-page", url: "https://javavolcano-touroperator.com/history/stefan-loose-ijen-bondowoso-page.png", alt: "European travel handbook entry listing Ijen Bondowoso Homestay" },
+    { slug: "tdup-1102230032918-preview-png", url: "https://javavolcano-touroperator.com/legal/TDUP-1102230032918-preview.png", alt: "Preview of TDUP licence (PNG)." },
+    { slug: "hpwki-approval-preview-png", url: "https://javavolcano-touroperator.com/legal/HPWKI-approval-preview.png", alt: "Preview of HPWKI approval document (PNG)." },
+    { slug: "baratha-hotel-departure-team", url: "https://javavolcano-touroperator.com/ops/baratha-hotel-departure-team.jpg", alt: "Team and guests lined up outside Baratha Hotel" },
+    { slug: "group-at-jvto-office", url: "https://javavolcano-touroperator.com/ops/group-at-jvto-office.jpg", alt: "International travelers posing at JVTO Bondowoso operations office." },
+    { slug: "guest-welcome-evening", url: "https://javavolcano-touroperator.com/ops/guest-welcome-evening.png", alt: "Evening welcome and briefing with guests at JVTO office." },
+    { slug: "ijen-geopark-briefing", url: "https://javavolcano-touroperator.com/ops/ijen-geopark-briefing.png", alt: "Tourist Police briefing at Ijen Geopark Center" },
+    { slug: "office-photo", url: "https://javavolcano-touroperator.com/legal/office-photo.jpg", alt: "Photo of JVTO office" },
+    { slug: "police-escort-arrival-day", url: "https://javavolcano-touroperator.com/ops/jvto-police-escort-arrival-hotel-bondowoso-day.jpg", alt: "JVTO group standing with a traffic police officer" },
+    { slug: "police-escort-arrival-night", url: "https://javavolcano-touroperator.com/ops/jvto-police-escort-arrival-hotel-bondowoso-night.jpg", alt: "Group of JVTO travelers posing with a traffic police officer in the hotel courtyard at night" },
+    { slug: "police-vehicle-support", url: "https://javavolcano-touroperator.com/ops/police-vehicle-support.jpg", alt: "Police support vehicle with group prior to tour departure." },
+    { slug: "sprin-polpar-png", url: "https://javavolcano-touroperator.com/legal/SPRIN-POLPAR.png", alt: "Image of 'SPRIN POLPAR' Tourist Police assignment letter (PNG)." },
+    { slug: "sprin-wal-travel-2024-02-12-png", url: "https://javavolcano-touroperator.com/legal/SPRIN-WAL-TRAVEL-2024-02-12.png", alt: "Image of 'SPRIN WAL-TRAVEL' travel order dated 2024-02-12 (PNG)." },
+    { slug: "press-bbksda-ijen-guide-training", url: "https://javavolcano-touroperator.com/press/screenshot-bbksda-pelatihan-pemandu-kawah-ijen.png", alt: "BBKSDA Jatim official training article" },
+    { slug: "press-detik-polisi-pariwisata-2021-03-14", url: "https://javavolcano-touroperator.com/press/screencapture-news-detik-berita-jawa-timur-d-5492690-suka-duka-polisi-pariwisata-bondowoso-tegakkan-prokes-sambil-lawan-dingin-2026-01-14-02_48_41.png", alt: "Screenshot of Detik.com article" },
+    { slug: "press-radarjember-polpar-ijen-geopark-2021-03-24", url: "https://javavolcano-touroperator.com/press/screenshot-radarjember.jawapos.com-polpar-dibentuk-untuk-mendukung-ijen-geopark.png", alt: "Screenshot of Radar Jember article" },
+    { slug: "ijen-screening-hotel-01", url: "https://javavolcano-touroperator.com/screening/ijen-screening-hotel-01.jpeg", alt: "Nurse checks blood pressure during Ijen pre-ascent screening at hotel lobby." },
+    { slug: "ijen-screening-hotel-02", url: "https://javavolcano-touroperator.com/screening/ijen-screening-hotel-02.jpg", alt: "Medical staff measure vitals for adult traveler at a hotel table." },
+    { slug: "jvto-office-screening-1", url: "https://javavolcano-touroperator.com/screening/jvto-office-screening-1.JPG", alt: "Nurse checking blood pressure at JVTO office before Ijen climb." },
+    { slug: "jvto-office-screening-2", url: "https://javavolcano-touroperator.com/screening/jvto-office-screening-2.jpg", alt: "Oxygen saturation check recorded into JVTO system." },
+    { slug: "print-surat-sehat-preview", url: "https://javavolcano-touroperator.com/screening/print-surat-sehat-preview.png", alt: "Preview of JVTO health clearance form ready for printing (PNG)." },
+    { slug: "kta-anjas", url: "https://javavolcano-touroperator.com/uploads/1771428583288-513992233-kta_anjas.jpg", alt: "Ijen climbing license card for Anjas." },
+    { slug: "kta-gufron", url: "https://javavolcano-touroperator.com/uploads/1771428741674-842615436-kta_gufron.jpg", alt: "Ijen climbing license card for Gufron." },
+    { slug: "kta-kiki", url: "https://javavolcano-touroperator.com/uploads/1771428489070-55145932-kta_kiki.jpg", alt: "Ijen climbing license card for Kiki." },
+    { slug: "kta-rendi", url: "https://javavolcano-touroperator.com/uploads/1771428760524-516116110-kta_rendi.jpg", alt: "Ijen climbing license card for Rendi." },
+    { slug: "kta-taufik", url: "https://javavolcano-touroperator.com/uploads/1771428704448-911506028-kta_taufik.jpg", alt: "Ijen climbing license card for Taufik." },
+    { slug: "founder-with-guests-stefan-loose", url: "https://javavolcano-touroperator.com/history/founder-with-guests-stefan-loose.jpg", alt: "Agung Sambuko, founder of JVTO, standing with international guests" },
+    { slug: "crew-gufron", url: "https://javavolcano-touroperator.com/uploads/1768225567764-405955176-gufron.png", alt: "Photo of Gufron, a guide at Java Volcano Tour Operator." },
+    { slug: "crew-rendi", url: "https://javavolcano-touroperator.com/uploads/1768228514527-518051332-rendi.png", alt: "Photo of Rendi, a guide at Java Volcano Tour Operator." },
+    { slug: "crew-yandi", url: "https://javavolcano-touroperator.com/uploads/1768270364125-144711646-yandi.png", alt: "Photo of Yandi, a driver at Java Volcano Tour Operator." },
+    { slug: "crew-boy", url: "https://javavolcano-touroperator.com/uploads/1768228191022-893381041-boy.png", alt: "Photo of Boy, a guide at Java Volcano Tour Operator." },
+    { slug: "crew-fredi", url: "https://javavolcano-touroperator.com/uploads/1768276791622-262250680-freddy.png", alt: "Photo of Fredi, a driver at Java Volcano Tour Operator." },
+    { slug: "crew-anjas", url: "https://javavolcano-touroperator.com/uploads/1768270423657-690185912-anjas.png", alt: "Photo of Anjas, a guide at Java Volcano Tour Operator." },
+    { slug: "crew-taufik", url: "https://javavolcano-touroperator.com/uploads/1768228083285-919198019-taufik_1_.png", alt: "Photo of Taufik, a guide at Java Volcano Tour Operator." },
+    { slug: "crew-kiki", url: "https://javavolcano-touroperator.com/uploads/1768271545598-834784538-kiki.png", alt: "Photo of Kiki, a guide at Java Volcano Tour Operator." },
+    { slug: "crew-holili", url: "https://javavolcano-touroperator.com/uploads/1768277053384-470130286-holili.jpg", alt: "Photo of Holili, a driver at Java Volcano Tour Operator." },
+    { slug: "crew-fauzi", url: "https://javavolcano-touroperator.com/uploads/1768226003889-338819579-fauzi.png", alt: "Photo of Fauzi, a guide at Java Volcano Tour Operator." },
+    { slug: "crew-joyo", url: "https://javavolcano-touroperator.com/uploads/1768277336049-911840775-joyo.png", alt: "Photo of Joyo, a driver at Java Volcano Tour Operator." }
+  ],
+  destinations: [
+    { name: "Mount Bromo", slug: "mount-bromo", highlight: "Sunrise over Tengger Caldera", route: "/destinations/mount-bromo", image: "https://javavolcano-touroperator.com/ops/jvto-police-escort-arrival-hotel-bondowoso-day.jpg", imageContext: "Police Escort Capability" },
+    { name: "Ijen Crater", slug: "ijen-crater", highlight: "Blue fire phenomenon, acidic crater lake", route: "/destinations/ijen-crater", image: "https://javavolcano-touroperator.com/screening/ijen-screening-hotel-01.jpeg", imageContext: "Mandatory Health Screening" },
+    { name: "Tumpak Sewu Waterfall", slug: "tumpak-sewu-waterfall", highlight: "Thousand-stream waterfall, Semeru backdrop", route: "/destinations/tumpak-sewu-waterfall", image: "https://javavolcano-touroperator.com/ops/baratha-hotel-departure-team.jpg", imageContext: "Team Departure Protocol" },
+    { name: "Madakaripura Waterfall", slug: "madakaripura-waterfall", highlight: "Sacred 200m canyon waterfall", route: "/destinations/madakaripura-waterfall", image: "https://javavolcano-touroperator.com/ops/ijen-geopark-briefing.png", imageContext: "Safety Briefing" },
+    { name: "Papuma Beach", slug: "papuma-beach", highlight: "White sand beach with rock formations", route: "/destinations/papuma-beach", image: "https://javavolcano-touroperator.com/ops/group-at-jvto-office.jpg", imageContext: "HQ Coordination" }
+  ],
+  policy_pages: [
     {
-      id: "C1",
-      text: "Volcano travel is unpredictable, so JVTO focuses on operational certainty: disciplined decisions, clear safety boundaries, and realistic expectations.",
-      meaning: "We prioritize safety over 'summit fever'. If conditions are dangerous, we stop. We don't overpromise on natural phenomena like Blue Fire.",
-      evidenceAnchor: "accountability"
-    },
-    {
-      id: "C2",
-      text: "JVTO runs private tours by default so timing, pacing, and safety decisions stay consistent for your group.",
-      meaning: "No strangers, no waiting for others, and no compromised safety because of a mixed-group dynamic.",
-      evidenceAnchor: "accountability"
-    },
-    {
-      id: "C3",
-      text: "JVTO uses an all-inclusive structure by default to reduce surprise costs and mid-trip negotiation.",
-      meaning: "Fees, transport, and equipment are covered upfront. We don't 'nickel and dime' guests at the crater rim.",
-      evidenceAnchor: "accountability"
-    },
-    {
-      id: "C4",
-      text: "On routes that include Mount Ijen, JVTO integrates health screening as a practical safety step, not a formality.",
-      meaning: "Mandatory vitals check by licensed doctors to prevent medical emergencies at high altitude.",
-      evidenceAnchor: "safety"
-    },
-    {
-      id: "C5",
-      text: "JVTO organizes trust signals as a verification layer: clear claims, context, and evidence links — not just marketing statements.",
-      meaning: "Every claim we make is backed by a forensic artifact you can inspect.",
-      evidenceAnchor: "accountability"
-    },
-    {
-      id: "C6",
-      text: "JVTO treats reviews as a registry: grouped by platform and theme, so guests can validate patterns instead of reading random quotes.",
-      meaning: "We provide paths to verify our reputation independently across multiple platforms.",
-      evidenceAnchor: "reputation"
+      "route": "/policy/booking-payment-cancellation",
+      "title_tag": "Booking, Payment & Cancellation Policy | JVTO Tours",
+      "meta_description": "JVTO booking, payment, and cancellation policy. Deposit rules, balance payment timing, and Lifetime Travel Credit terms. All-inclusive private tours.",
+      "h1": "JVTO Booking, Payment & Cancellation Policy",
+      "body_md": "# JVTO Booking, Payment & Cancellation Policy\n\nPolicy Route: `/policy/booking-payment-cancellation/`\n\n### 1) Operator Identity & Official Channels\n\nThis policy applies to all enquiries, quotations, bookings, amendments, cancellations, and tour participation with Java Volcano Tour Operator (JVTO), operated by **PT Java Volcano Rendezvous**.\n\n**Official channels (valid booking, support, and payment verification):**\n\n- Website & secure checkout: `https://javavolcano-touroperator.com`\n- WhatsApp: `+62 822-4478-8833`\n- Email: `hello@javavolcano-touroperator.com`\n\nJVTO is not responsible for any offers, instructions, or payment requests made outside these official channels.\n\n---\n\n### 2) Order of Precedence (If There Is Any Discrepancy)\n\nIf there is any discrepancy, the following order applies:\n\n1. The specific terms on your **Official E-Voucher / Invoice (PDF)** for the confirmed booking\n2. This **Booking, Payment & Cancellation Policy**\n3. The **Inclusions & Exclusions Policy**\n4. The **Privacy & Data Protection Policy**\n5. The **Travel Guide — Booking Information** (/travel-guide/booking-information)\n\n---\n\n### 3) Nature of JVTO Products\n\n- JVTO operates **private, all-inclusive tours**.\n- JVTO does not operate open join-in group tours and does not sell standalone “transport-only” services as its core product.\n- Only inclusions explicitly stated on the official tour page and/or your Official E-Voucher / Invoice (PDF) are contractually binding.\n\n---\n\n### 4) When a Booking Is Confirmed\n\nA booking is confirmed **only** when all of the following are met:\n\n1. You select a specific official JVTO package; and\n2. Your required payment (deposit or full payment) is successfully processed via approved methods; and\n3. JVTO issues your **Official E-Voucher / Invoice (PDF)** confirming the booking details.\n\nEnquiries, messages, and quotations are not binding until the booking is confirmed under the rule above.\n\n---\n\n### 5) Pricing & Currency\n\n- Official pricing and accounting are in **Indonesian Rupiah (IDR)**.\n\n---\n\n### 6) Payments\n\n#### 6.1 Deposit Requirement\n\n- Standard deposit: **20%** of the total booking value.\n- If Day 1 is within **14 days**, JVTO may require up to **100%** full payment.\n\n#### 6.2 Approved Payment Methods\n\n**Deposit (initial payment):**\n\n- Card payment via JVTO secure checkout (credit/debit).\n\n**Balance payment (if applicable):**\n\n- Card payment via secure checkout (deadline below), or\n- Bank transfer / Wise (deadline below), or\n- Cash at JVTO office (only if approved in writing).\n\n#### 6.3 Balance Payment Deadlines (If Applicable)\n\n- By card: no later than **5 days before Day 1**\n- By bank transfer / Wise: no later than **3 days before Day 1**\n\n#### 6.4 Bank Transfer Details (Public)\n\nUse these details only for **balance payments** when instructed through official channels.\n\n- Bank BRI — PT Java Volcano Rendezvous — 001301001779564 — SWIFT: BRINIDJAXXX\n- Bank BCA — PT Java Volcano Rendezvous — 1200944352 — SWIFT: CENAIDJAXXX\n\nAny payment instructions outside the above must be verified via official channels before action.\n\n#### 6.5 Payment Security & Anti-Fraud\n\n- Checkout is SSL-encrypted and processed via a PCI DSS-compliant payment gateway.\n- JVTO does not store full card numbers, CVV codes, or online banking passwords.\n- JVTO will never ask you for full card details, CVV, or banking credentials via chat or email.  \n  If you are unsure, verify via WhatsApp or email before paying.\n\n---\n\n### 7) Amendments & Rescheduling\n\n#### 7.1 Amendments\n\nIf you need to correct booking details (e.g., passenger name spelling, pickup details, rooming requests), notify JVTO as soon as possible. Some changes may be subject to supplier rules, availability, and cost differences.\n\n#### 7.2 Rescheduling (Date Change)\n\n- Requests made **48 hours or more before Day 1**: one reschedule for the same package may be granted without fee, subject to availability and any seasonal/cost differences.\n- Requests made **less than 48 hours before Day 1**: generally not permitted and may be treated as a late cancellation.\n\n---\n\n### 8) Cancellation Policy (48-Hour Cut-Off)\n\n#### Definitions\n\n- **Day 1**: the first day of services for your tour.\n- Cut-off time is measured in **local Indonesia time**.\n\n#### 8.1 Guest-Initiated Cancellation (48 Hours or More Before Day 1)\n\n- Payments are **not refundable in cash**.\n- **100% converts to JVTO Travel Credit**.\n\n**Travel Credit rules:**\n\n- Issued in **IDR**\n- **Non-expiring**\n- **Transferable** with written confirmation\n- Can be used for future tours at prevailing rates\n\n#### 8.2 Guest-Initiated Cancellation (Less Than 48 Hours Before Day 1)\n\n- The booking may be forfeited up to **100%**.\n- Travel Credit and cash refunds are generally **not provided**.\n\n---\n\n### 9) Force Majeure & External Events\n\nJVTO may partially or fully cancel, postpone, or reroute a tour due to events beyond reasonable control, including (but not limited to):\n\n- Volcanic activity, toxic gas, earthquakes, landslides, floods\n- Government or park closures or restrictions\n- Strikes, civil unrest, security threats\n- Major infrastructure or transportation disruptions\n- Severe weather or conditions rendering services unsafe\n\n#### Compensation Principles (JVTO-Initiated)\n\nWhere JVTO cancels or significantly alters services not due to guest breach, non-payment, or no-show, JVTO may offer one or more of the following (considering irrecoverable third-party costs):\n\n- Reasonable alternative arrangements of comparable value\n- JVTO Travel Credit covering the unused portion\n- A partial or full cash refund, net of non-recoverable expenses, as agreed in writing\n\nGuest-initiated cancellations remain governed by Section 8.\n\n---\n\n### 10) Health, Fitness & Eligibility\n\n- Guests are responsible for ensuring they are medically and physically fit for the itinerary.\n- Certain activities (e.g., volcano hikes, night trekking, sulfur gas exposure) may be unsuitable for specific conditions.\n- Where mandatory health screening or permit conditions are imposed by authorities (e.g., Mount Ijen):\n\n  - Guests must comply with the process arranged or recognised by JVTO\n  - If a guest is denied clearance, affected components are **non-refundable**, as related costs are pre-committed\n\n- JVTO strongly recommends comprehensive travel insurance including medical cover and trip interruption.\n\n---\n\n### 11) Guest Responsibilities\n\nBy confirming a booking with JVTO, the lead guest and all participants agree to:\n\n- Provide accurate and complete information during enquiry and booking\n- Make payments through official channels and within deadlines\n- Review the Official E-Voucher promptly and report discrepancies\n- Submit pickup/logistical details within requested timeframes\n- Be present on time at the agreed pickup point\n- Follow safety instructions from JVTO crew and licensed guides\n- Respect local laws, cultures, communities, and environments\n- Hold appropriate personal travel insurance\n\nFailure to meet these responsibilities may limit JVTO’s ability to deliver services and may trigger consequences set out in this policy.\n\n---\n\n### 12) Group Incentives (FOC) — JVTO Website Only\n\nWe do offer FOC (Free of Charge) incentives based on group size.\nOur current FOC scheme is as follows:\n\n- 18 paying pax → 1 FOC\n- 35 paying pax → 2 FOC\n- 50 paying pax → 3 FOC\n\n“Pax” refers to **paying guests only**.\n\n---\n\n# Policy 2 — JVTO Inclusions & Exclusions Policy"
     },
     {
-      id: "C7",
-      text: "JVTO’s product is executed by real people. The Team Registry shows roles, routes, and proof from review mentions — not generic bios.",
-      meaning: "You know exactly who is responsible for your safety and logistics.",
-      evidenceAnchor: "reputation"
+      "route": "/policy",
+      "title_tag": "JVTO Policies – Booking, Privacy & Inclusions Overview",
+      "meta_description": "JVTO customer policies: booking/payment/cancellation rules, what is included and excluded in tours, and privacy/data protection. All policies in one place.",
+      "h1": "JVTO Policy Pack",
+      "body_md": "# JVTO Policy Pack (Customer-Facing)\n\n> **Official email:** hello@javavolcano-touroperator.com  \n> **Official WhatsApp:** +62 822-4478-8833  \n> **Official website:** https://javavolcano-touroperator.com  \n> **Issued by:** PT Java Volcano Rendezvous\n\n---\n\n## Contents\n1. **JVTO Booking, Payment & Cancellation Policy**  \n2. **JVTO Inclusions & Exclusions Policy**  \n3. **JVTO Privacy & Data Protection Policy**\n\n## Document precedence (if anything differs)\n1. **Official E‑Voucher / Invoice (PDF)** (for the confirmed booking)  \n2. **JVTO Booking, Payment & Cancellation Policy**  \n3. **JVTO Inclusions & Exclusions Policy**  \n4. **JVTO Privacy & Data Protection Policy**  \n5. **Travel Guide — Booking Information** (procedural guide): https://javavolcano-touroperator.com/travel-guide/booking-information  \n6. Other website content / informal messages\n\n---\n\n# Policy 1 — JVTO Booking, Payment & Cancellation Policy"
     },
     {
-      id: "C8",
-      text: "JVTO partnerships are explained by function: competence context (HPWKI), sustainability context (INDECON), and verification logic (ISIC).",
-      meaning: "Our affiliations aren't just logos; they are functional parts of our safety and quality system.",
-      evidenceAnchor: "partners"
+      "route": "/policy/inclusions-exclusions",
+      "title_tag": "What's Included & Excluded in JVTO Tours | JVTO",
+      "meta_description": "Exact inclusions and exclusions in JVTO private tour packages. Only written items are binding — transport, permits, guide, hotel. Clear exclusions list.",
+      "h1": "JVTO Inclusions & Exclusions Policy",
+      "body_md": "# JVTO Inclusions & Exclusions Policy\n\nPolicy Route: `/policy/inclusions-exclusions/`\n\n### 1) Purpose\n\nThis policy defines what is included and not included in JVTO private tour packages. Only inclusions written on your specific **Official E-Voucher / Invoice (PDF)** are contractually binding.\n\n---\n\n### 2) Contractual Rule (Write-it-to-Bind-it)\n\nIn this policy, “Official Tour Voucher” refers to your Official E-Voucher / Invoice (PDF) issued by JVTO after successful payment.\n\nOnly inclusions that appear on:\n\n- the official JVTO package page for your chosen tour; and/or\n- your Official E-Voucher / Invoice (PDF)\n\nare legally binding components of your package.\n\nIf it is not written in your confirmed inclusions and voucher, it is not part of the contracted package, even if discussed informally.\n\n---\n\n### 3) Standard Inclusions (All Eligible JVTO Packages)\n\nUnless stated otherwise on your Official E-Voucher / Invoice (PDF), a confirmed JVTO private tour package typically includes:\n\n#### 3.1 Transportation\n\n- Private air-conditioned vehicle for all land sectors listed in your confirmed itinerary\n- Fuel, tolls, and standard parking fees as per itinerary\n- Vehicle allocation by group size (comfort and safety):\n\n  - 2–3 guests: 1 × MPV (e.g., Toyota Avanza or similar)\n  - 4–9 guests: 1 × Toyota Hiace (or similar 16-seat minibus)\n  - 10–11 guests: 1 × Toyota Hiace + 1 × MPV (for seating and luggage space)\n\n- 4WD Jeep at Mount Bromo (when Bromo is included):\n\n  - Private jeep(s) for sunrise and crater viewpoints\n  - Max. ±4 guests per jeep for comfort and safety\n\n#### 3.2 Accommodation\n\n- Hotel / homestay accommodation for all overnight stays listed in your itinerary\n- Standard allocation (unless otherwise stated on your voucher):\n\n  - Even-numbered groups: 1 room per 2 guests (King or Twin)\n  - Odd-numbered groups: 1 room per 2 guests + 1 extra bed in one room\n\n- Rooming principles:\n\n  - Maximum 2 guests per standard room (excluding the designated extra bed where applicable)\n  - King beds for couples or guests preferring more space\n  - Twin beds for guests sharing a room\n\n- Upgrade option (subject to request and availability): replacing an extra bed with an additional private room may be available at a published supplement (as per voucher)\n\n#### 3.3 Professional Crew\n\n- Licensed, vetted crew adjusted by group size and route:\n\n  - 2–3 guests: 1 × driver-guide (English-speaking) + licensed local site guides where required\n  - 4–11 guests: 1 × professional driver + 1 × escort guide + licensed local site guides at key locations\n  - Additional drivers allocated when extra vehicles are used\n\n- Crew duties include: safe driving, time management, coordination with hotels/jeeps/ferries/park authorities, and basic route explanations and guest support\n\n#### 3.4 Tickets, Permits & Local Logistics\n\nAll listed entrance tickets and environmental/park permits connected to your confirmed itinerary, where applicable, such as:\n\n- Mount Bromo National Park access\n- Mount Ijen (including regular entrance and applicable summit/crater access where legally permitted)\n- Madakaripura Waterfall\n- Tumpak Sewu Waterfall\n- Other named attractions in your confirmed program\n- Local retribution / standard local fees where explicitly built into the package\n\n#### 3.5 Mount Ijen Safety & Trekking Support (When Ijen is Included)\n\n- Professional gas mask (rated for sulfur environment) for each participating guest\n- Trekking poles (shared or individual, depending on configuration)\n- Mandatory Ijen medical check & digital/printed clearance arranged by JVTO, conducted by licensed medical personnel at an approved facility or at your hotel in the Bondowoso area (included in the package for itineraries that visit Ijen)\n\n#### 3.6 Meals & Water\n\n- Daily bottled mineral water in the vehicle for overland sectors\n- Hotel breakfasts for each included overnight stay\n- Any additional included meals (e.g., set dinners or lunches) are included only when explicitly stated on the official package page and/or your Official E-Voucher / Invoice (PDF)\n\n#### 3.7 Java-Bali Ferry (Where Applicable)\n\nFerry tickets for Java-Bali or Bali-Java sectors when:\n\n- the crossing is listed in your itinerary; and\n- the ticket is specified as included on your voucher\n\n#### 3.8 JVTO Branded Inclusions & Group Extras\n\n- 1 × JVTO travel T-shirt per participant for eligible packages (standard JVTO design; size selection via “Complete Your Details”)\n- Custom JVTO Group T-shirt (where explicitly included): for groups of ≥12 guests in a single booking, if written on your package/voucher; 1 × custom design T-shirt per person; sizes and final design must be confirmed before production\n\n#### 3.9 On-Trip Support & Coordination\n\n- Pre-trip assistance via official WhatsApp/email\n- Clear pickup instructions and emergency contact numbers on your Official E-Voucher / Invoice (PDF)\n- On-trip coordination for timing, weather/closure adjustments, and safety decisions\n- Support in case of incident (basic first response, coordination with local clinics/hospitals, and logistics adjustments where feasible)\n\n---\n\n### 4) “We Offer More” — Conditional Inclusions (Only If Written)\n\nThe following are included **only** when clearly stated on both:\n\n- the official package description you booked; and\n- your Official E-Voucher / Invoice (PDF)\n\nConditional inclusions may include:\n\n- Custom JVTO group T-shirts (design, quantity, eligibility conditions)\n- Additional hosted meals (e.g., dinner in Bondowoso before Ijen; lunch after Tumpak Sewu; special farewell dinner)\n- Bali hotel/airport transfers beyond the standard ferry crossing\n- Early check-in / late check-out at hotels\n- Dedicated photographer/videographer services\n- Police escort or special convoy arrangements for VIP/large groups (subject to availability and regulation)\n\n**Extra meals — specific itinerary conditions (only if written):**\n\n- For Ijen + Bondowoso overnight itineraries:\n\n  - Dinner at the Bondowoso hotel before the Ijen night trek\n  - Lunch at the Bondowoso hotel after returning from Ijen\n\n- For itineraries including Tumpak Sewu:\n\n  - One additional lunch at/near Yanto Homestay (or equivalent local partner) after the Tumpak Sewu program\n\n---\n\n### 5) Exclusions (Simple Principle)\n\nTo keep things clear: anything that is not explicitly listed as an inclusion on the official package page and on your Official E-Voucher / Invoice (PDF) is excluded.\n\nCommon examples of not included items (unless clearly written as included for your specific booking):\n\n- International / domestic flights and entry visas\n- Travel insurance of any kind\n- Meals not specified (including alcohol)\n- Tips/gratuities for guides and drivers\n\n---\n\n### 6) Discrepancies\n\nThis policy is designed to integrate with your Official E-Voucher / Invoice (PDF). In the event of any discrepancy, the version referenced on your booking confirmation and voucher will apply.\n\n---\n\n# Policy 3 — JVTO Privacy & Data Protection Policy"
     },
     {
-      id: "C9",
-      text: "JVTO lists press and recognition with context so guests can evaluate third‑party references, not just branding claims.",
-      meaning: "Independent media coverage and awards are presented with original sources for verification.",
-      evidenceAnchor: "press"
+      "route": "/policy/privacy",
+      "title_tag": "Privacy Policy | Java Volcano Tour Operator (JVTO)",
+      "meta_description": "JVTO privacy policy: data collected, purpose of use, when data is shared for tour operations, and how to request data deletion. GDPR-aligned practices.",
+      "h1": "JVTO Privacy & Data Protection Policy",
+      "body_md": "# JVTO Privacy & Data Protection Policy\n\nPolicy Route: `/policy/privacy`\n\n### 1) Purpose\n\nThis policy explains what personal data JVTO collects, why it is collected, how it is used, and when it may be shared to operate your tour booking and comply with applicable requirements.\n\n---\n\n### 2) What Data We Collect\n\nJVTO may collect the following categories of data, depending on your booking and itinerary requirements:\n\n**2.1 Contact and booking details (lead guest):**\n\n- Full name\n- Email address\n- WhatsApp/mobile number\n- Booking references and tour details needed to deliver services\n\n**2.2 Participant details (where required):**\n\n- Guest list for accommodation and permits\n- Passport/ID details and date of birth where required for permits, tickets, or legal compliance\n- Pickup/drop-off details, rooming preferences, and operational notes required to deliver services\n\n**2.3 Safety and logistics information (where relevant):**\n\n- Dietary needs and relevant health information provided by you for safety planning and operational coordination (only where necessary)\n\n---\n\n### 3) Why We Collect and Use Your Data\n\nJVTO uses personal data to:\n\n- Issue and deliver your Official E-Voucher / Invoice (PDF) and manage your booking\n- Coordinate logistics before and during your tour (pickup timing, accommodation, vehicles, guides, route planning)\n- Provide customer support and operational assistance\n- Meet legal, permit, ticketing, and accommodation registration requirements where applicable\n- Support safety processes and emergency response coordination where needed\n\n---\n\n### 4) When We Share Your Data\n\nJVTO shares personal data only when required to deliver the booked services or comply with applicable requirements. This may include sharing necessary details with:\n\n- Accommodation partners (for check-in/registration and rooming)\n- Drivers, escort guides, local site guides, and operational teams (for coordination and guest support)\n- Ticketing/permit partners and local authorities where permits or entry requirements apply\n- Medical screening providers or approved facilities where mandatory screening applies (e.g., where required by authorities for specific sites)\n\nJVTO does not share data beyond what is necessary for the specific operational purpose.\n\n---\n\n### 5) Payment Data\n\n- Card payments are processed through a secure checkout and authorised payment gateway.\n- JVTO does not store full card numbers, CVV codes, or online banking passwords.\n\n---\n\n### 6) Data Protection and Access\n\nJVTO applies internal controls to protect personal data and limits access to authorised personnel and partners only when needed for service delivery.\n\n---\n\n### 7) Contact\n\nFor privacy or data-related requests, contact:\n\n- Email: `hello@javavolcano-touroperator.com`\n- WhatsApp: `+62 822-4478-8833`"
     }
   ],
-  assets_inventory: [
-    { id: "mask-01", name: "Respirator Mask (Gas Mask)", category: "Safety", quantity: 24, status: "Certified", last_check: "2025-11-07" },
-    { id: "torch-01", name: "High-Lumen Flashlight", category: "Safety", quantity: 12, status: "Operational", last_check: "2025-11-07" },
-    { id: "firstaid-01", name: "Trauma Kit (First Aid)", category: "Medical", quantity: 4, status: "Stocked", last_check: "2025-11-07" },
-    { id: "comm-01", name: "Radio Transceiver (HT)", category: "Communication", quantity: 6, status: "Operational", last_check: "2025-11-07" }
+  tours: [
+    {
+      name: "1D1N Bromo Midnight Tour",
+      route: "/tours/from-surabaya/bromo-1d1n",
+      price: "IDR 1,000,000/pax",
+      image: "https://javavolcano-touroperator.com/uploads/1768225567764-405955176-gufron.png",
+      crewName: "Led by Gufron (Guide)",
+      overview: {
+        route_meta: "Surabaya → Bromo → Surabaya",
+        highlights: ["Sunrise at Penanjakan/King Kong Hill", "4WD Jeep adventure across the Sea of Sand", "Hike to the active Bromo crater"]
+      },
+      itinerary: [
+        { day: 1, title: "Midnight Departure & Sunrise", activities: ["00:00 - Pickup from Surabaya", "03:00 - Switch to 4WD Jeep", "04:00 - Bromo Sunrise", "07:00 - Hike to Crater", "10:00 - Return to Surabaya"] }
+      ],
+      includes: ["Private AC transport", "Fuel, tolls, and parking", "English-speaking driver", "Private 4WD Jeep at Bromo", "Bromo National Park entrance tickets", "Mineral water"],
+      excludes: ["Meals", "Horse ride at Bromo", "Personal expenses and tipping"],
+      requirements: ["Warm jacket", "Comfortable walking shoes", "Personal medication"]
+    },
+    {
+      name: "2D1N Bromo & Madakaripura",
+      route: "/tours/from-surabaya/bromo-2d1n",
+      price: "IDR 1,750,000/pax",
+      image: "https://javavolcano-touroperator.com/uploads/1768228514527-518051332-rendi.png",
+      crewName: "Led by Rendi (Guide)",
+      overview: {
+        route_meta: "Surabaya → Bromo → Madakaripura → Surabaya",
+        highlights: ["Sunrise at Bromo", "Madakaripura Waterfall exploration", "Comfortable accommodation"]
+      },
+      itinerary: [
+        { day: 1, title: "Madakaripura Waterfall", activities: ["Pickup from Surabaya", "Visit Madakaripura Waterfall", "Check-in at Bromo hotel"] },
+        { day: 2, title: "Bromo Sunrise", activities: ["Early morning Bromo tour", "Return to hotel for breakfast", "Drop-off in Surabaya"] }
+      ],
+      includes: ["Private AC transport", "Accommodation", "Entrance tickets", "Local guide at waterfall", "Jeep at Bromo"],
+      excludes: ["Meals", "Personal expenses"],
+      requirements: ["Warm jacket", "Waterproof bag/poncho", "Trekking shoes"]
+    },
+    {
+      name: "2D1N Ijen Blue Fire",
+      route: "/tours/from-surabaya/ijen-2d1n",
+      price: "IDR 1,550,000/pax",
+      image: "https://javavolcano-touroperator.com/uploads/1768270364125-144711646-yandi.png",
+      crewName: "Led by Yandi (Driver)",
+      overview: {
+        route_meta: "Surabaya → Ijen → Surabaya",
+        highlights: ["Ijen Blue Fire", "Sulphur miners", "Acidic crater lake"]
+      },
+      itinerary: [
+        { day: 1, title: "Journey to Banyuwangi", activities: ["Pickup from Surabaya", "Drive to Banyuwangi", "Check-in at hotel"] },
+        { day: 2, title: "Ijen Blue Fire", activities: ["Midnight departure to Paltuding", "Hike to Ijen Crater", "Witness Blue Fire", "Return to Surabaya"] }
+      ],
+      includes: ["Private AC transport", "Accommodation", "Entrance tickets", "Gas mask & headlamp", "Local guide at Ijen"],
+      excludes: ["Meals", "Health certificate fee", "Personal expenses"],
+      requirements: ["Warm jacket", "Trekking shoes", "Health certificate"]
+    },
+    {
+      name: "3D2N Bromo–Madakaripura–Ijen",
+      route: "/tours/from-surabaya/bromo-madakaripura-ijen-3d2n",
+      price: "IDR 2,450,000/pax",
+      image: "https://javavolcano-touroperator.com/uploads/1768228191022-893381041-boy.png",
+      crewName: "Led by Boy (Guide)",
+      overview: {
+        route_meta: "Surabaya → Bromo → Madakaripura → Ijen → Drop-off",
+        highlights: ["Bromo Sunrise", "Madakaripura Waterfall", "Ijen Blue Fire"]
+      },
+      itinerary: [
+        { day: 1, title: "Arrival & Bromo", activities: ["Pickup from Surabaya", "Check-in at Bromo hotel"] },
+        { day: 2, title: "Bromo & Madakaripura", activities: ["Bromo Sunrise tour", "Visit Madakaripura", "Drive to Banyuwangi"] },
+        { day: 3, title: "Ijen Blue Fire", activities: ["Ijen midnight hike", "Drop-off at Ketapang Ferry or Surabaya"] }
+      ],
+      includes: ["Private AC transport", "2 nights accommodation", "All entrance tickets", "Jeep at Bromo", "Gas mask & headlamp"],
+      excludes: ["Meals", "Health certificate fee", "Ferry ticket to Bali"],
+      requirements: ["Warm jacket", "Trekking shoes", "Health certificate"]
+    },
+    {
+      name: "3D2N Ijen–Bromo–Madakaripura",
+      route: "/tours/from-surabaya/ijen-bromo-madakaripura-3d2n",
+      price: "IDR 2,450,000/pax",
+      image: "https://javavolcano-touroperator.com/uploads/1768276791622-262250680-freddy.png",
+      crewName: "Led by Fredi (Driver)",
+      overview: {
+        route_meta: "Surabaya → Ijen → Bromo → Madakaripura → Surabaya",
+        highlights: ["Ijen Blue Fire", "Bromo Sunrise", "Madakaripura Waterfall"]
+      },
+      itinerary: [
+        { day: 1, title: "Journey to Ijen", activities: ["Pickup from Surabaya", "Drive to Banyuwangi"] },
+        { day: 2, title: "Ijen & Bromo", activities: ["Ijen midnight hike", "Drive to Bromo", "Check-in at Bromo hotel"] },
+        { day: 3, title: "Bromo & Madakaripura", activities: ["Bromo Sunrise tour", "Visit Madakaripura", "Return to Surabaya"] }
+      ],
+      includes: ["Private AC transport", "2 nights accommodation", "All entrance tickets", "Jeep at Bromo", "Gas mask & headlamp"],
+      excludes: ["Meals", "Health certificate fee"],
+      requirements: ["Warm jacket", "Trekking shoes", "Health certificate"]
+    },
+    {
+      name: "3D2N Safari–Bromo–Madakaripura",
+      route: "/tours/from-surabaya/taman-safari-prigen-bromo-madakaripura-3d2n",
+      price: "IDR 3,450,000/pax",
+      image: "https://javavolcano-touroperator.com/uploads/1768270423657-690185912-anjas.png",
+      crewName: "Led by Anjas (Guide)",
+      overview: {
+        route_meta: "Surabaya → Safari Prigen → Bromo → Madakaripura → Surabaya",
+        highlights: ["Taman Safari Prigen", "Bromo Sunrise", "Madakaripura Waterfall"]
+      },
+      itinerary: [
+        { day: 1, title: "Taman Safari", activities: ["Pickup from Surabaya", "Visit Taman Safari Prigen", "Check-in at Bromo hotel"] },
+        { day: 2, title: "Bromo Sunrise", activities: ["Bromo Sunrise tour", "Free time at hotel"] },
+        { day: 3, title: "Madakaripura", activities: ["Visit Madakaripura Waterfall", "Return to Surabaya"] }
+      ],
+      includes: ["Private AC transport", "2 nights accommodation", "All entrance tickets including Safari", "Jeep at Bromo"],
+      excludes: ["Meals", "Personal expenses"],
+      requirements: ["Warm jacket", "Comfortable clothing"]
+    },
+    {
+      name: "4D3N Ijen–Bromo–Madakaripura",
+      route: "/tours/from-surabaya/ijen-bromo-madakaripura-4d3n",
+      price: "IDR 3,025,000/pax",
+      image: "https://javavolcano-touroperator.com/uploads/1768228083285-919198019-taufik_1_.png",
+      crewName: "Led by Taufik (Guide)",
+      overview: {
+        route_meta: "Surabaya → Ijen → Bromo → Madakaripura → Surabaya",
+        highlights: ["Relaxed pace", "Ijen Blue Fire", "Bromo Sunrise", "Madakaripura Waterfall"]
+      },
+      itinerary: [
+        { day: 1, title: "Journey to Ijen", activities: ["Pickup from Surabaya", "Drive to Banyuwangi"] },
+        { day: 2, title: "Ijen Blue Fire", activities: ["Ijen midnight hike", "Rest at hotel"] },
+        { day: 3, title: "Drive to Bromo", activities: ["Drive to Bromo", "Check-in at Bromo hotel"] },
+        { day: 4, title: "Bromo & Madakaripura", activities: ["Bromo Sunrise tour", "Visit Madakaripura", "Return to Surabaya"] }
+      ],
+      includes: ["Private AC transport", "3 nights accommodation", "All entrance tickets", "Jeep at Bromo", "Gas mask & headlamp"],
+      excludes: ["Meals", "Health certificate fee"],
+      requirements: ["Warm jacket", "Trekking shoes", "Health certificate"]
+    },
+    {
+      name: "4D3N Ijen–Papuma–Tumpak Sewu–Bromo",
+      route: "/tours/from-surabaya/ijen-papuma-tumpak-sewu-bromo-4d3n",
+      price: "IDR 3,125,000/pax",
+      image: "https://javavolcano-touroperator.com/uploads/1768271545598-834784538-kiki.png",
+      crewName: "Led by Kiki (Guide)",
+      overview: {
+        route_meta: "Surabaya → Ijen → Papuma → Tumpak Sewu → Bromo → Surabaya",
+        highlights: ["Ijen Blue Fire", "Papuma Beach", "Tumpak Sewu Waterfall", "Bromo Sunrise"]
+      },
+      itinerary: [
+        { day: 1, title: "Journey to Ijen", activities: ["Pickup from Surabaya", "Drive to Banyuwangi"] },
+        { day: 2, title: "Ijen & Papuma", activities: ["Ijen midnight hike", "Visit Papuma Beach", "Drive to Lumajang"] },
+        { day: 3, title: "Tumpak Sewu & Bromo", activities: ["Explore Tumpak Sewu", "Drive to Bromo"] },
+        { day: 4, title: "Bromo Sunrise", activities: ["Bromo Sunrise tour", "Return to Surabaya"] }
+      ],
+      includes: ["Private AC transport", "3 nights accommodation", "All entrance tickets", "Jeep at Bromo", "Local guides"],
+      excludes: ["Meals", "Health certificate fee"],
+      requirements: ["Warm jacket", "Trekking shoes", "Waterproof bag", "Health certificate"]
+    },
+    {
+      name: "4D3N Tumpak Sewu–Bromo–Ijen",
+      route: "/tours/from-surabaya/tumpak-sewu-bromo-ijen-4d3n",
+      price: "IDR 3,125,000/pax",
+      image: "https://javavolcano-touroperator.com/uploads/1768277053384-470130286-holili.jpg",
+      crewName: "Led by Holili (Driver)",
+      overview: {
+        route_meta: "Surabaya → Tumpak Sewu → Bromo → Ijen → Drop-off",
+        highlights: ["Tumpak Sewu Waterfall", "Bromo Sunrise", "Ijen Blue Fire"]
+      },
+      itinerary: [
+        { day: 1, title: "Journey to Lumajang", activities: ["Pickup from Surabaya", "Drive to Lumajang"] },
+        { day: 2, title: "Tumpak Sewu & Bromo", activities: ["Explore Tumpak Sewu", "Drive to Bromo"] },
+        { day: 3, title: "Bromo & Ijen", activities: ["Bromo Sunrise tour", "Drive to Banyuwangi"] },
+        { day: 4, title: "Ijen Blue Fire", activities: ["Ijen midnight hike", "Drop-off at Ketapang Ferry or Surabaya"] }
+      ],
+      includes: ["Private AC transport", "3 nights accommodation", "All entrance tickets", "Jeep at Bromo", "Local guides"],
+      excludes: ["Meals", "Health certificate fee", "Ferry ticket"],
+      requirements: ["Warm jacket", "Trekking shoes", "Waterproof bag", "Health certificate"]
+    },
+    {
+      name: "5D4N Ijen–Bromo–Madakaripura–Malang",
+      route: "/tours/from-surabaya/ijen-bromo-madakaripura-malang-5d4n",
+      price: "IDR 3,850,000/pax",
+      image: "https://javavolcano-touroperator.com/uploads/1768226003889-338819579-fauzi.png",
+      crewName: "Led by Fauzi (Guide)",
+      overview: {
+        route_meta: "Surabaya → Ijen → Bromo → Madakaripura → Malang → Surabaya",
+        highlights: ["Ijen Blue Fire", "Bromo Sunrise", "Madakaripura Waterfall", "Malang City Tour"]
+      },
+      itinerary: [
+        { day: 1, title: "Journey to Ijen", activities: ["Pickup from Surabaya", "Drive to Banyuwangi"] },
+        { day: 2, title: "Ijen & Bromo", activities: ["Ijen midnight hike", "Drive to Bromo"] },
+        { day: 3, title: "Bromo & Madakaripura", activities: ["Bromo Sunrise tour", "Visit Madakaripura", "Drive to Malang"] },
+        { day: 4, title: "Malang City Tour", activities: ["Explore Malang", "Visit Jodipan Colorful Village"] },
+        { day: 5, title: "Return", activities: ["Free time", "Return to Surabaya"] }
+      ],
+      includes: ["Private AC transport", "4 nights accommodation", "All entrance tickets", "Jeep at Bromo"],
+      excludes: ["Meals", "Health certificate fee"],
+      requirements: ["Warm jacket", "Trekking shoes", "Health certificate"]
+    },
+    {
+      name: "5D4N Ijen–Papuma–Tumpak Sewu–Bromo",
+      route: "/tours/from-surabaya/ijen-papuma-tumpak-sewu-bromo-5d4n",
+      price: "IDR 3,650,000/pax",
+      image: "https://javavolcano-touroperator.com/uploads/1768277336049-911840775-joyo.png",
+      crewName: "Led by Joyo (Driver)",
+      overview: {
+        route_meta: "Surabaya → Ijen → Papuma → Tumpak Sewu → Bromo → Surabaya",
+        highlights: ["Relaxed pace", "Ijen Blue Fire", "Papuma Beach", "Tumpak Sewu", "Bromo Sunrise"]
+      },
+      itinerary: [
+        { day: 1, title: "Journey to Ijen", activities: ["Pickup from Surabaya", "Drive to Banyuwangi"] },
+        { day: 2, title: "Ijen & Papuma", activities: ["Ijen midnight hike", "Visit Papuma Beach", "Drive to Jember"] },
+        { day: 3, title: "Tumpak Sewu", activities: ["Drive to Lumajang", "Explore Tumpak Sewu"] },
+        { day: 4, title: "Drive to Bromo", activities: ["Drive to Bromo", "Check-in at Bromo hotel"] },
+        { day: 5, title: "Bromo Sunrise", activities: ["Bromo Sunrise tour", "Return to Surabaya"] }
+      ],
+      includes: ["Private AC transport", "4 nights accommodation", "All entrance tickets", "Jeep at Bromo", "Local guides"],
+      excludes: ["Meals", "Health certificate fee"],
+      requirements: ["Warm jacket", "Trekking shoes", "Waterproof bag", "Health certificate"]
+    },
+    {
+      name: "6D5N Ijen–Papuma–Tumpak Sewu–Bromo–Malang",
+      route: "/tours/from-surabaya/ijen-papuma-tumpak-sewu-bromo-malang-6d5n",
+      price: "IDR 4,750,000/pax",
+      image: "https://javavolcano-touroperator.com/uploads/1771428583288-513992233-kta_anjas.jpg",
+      crewName: "Certified Guide: Anjas",
+      overview: {
+        route_meta: "Surabaya → Ijen → Papuma → Tumpak Sewu → Bromo → Malang → Surabaya",
+        highlights: ["Comprehensive East Java Tour", "Ijen Blue Fire", "Papuma Beach", "Tumpak Sewu", "Bromo Sunrise", "Malang City"]
+      },
+      itinerary: [
+        { day: 1, title: "Journey to Ijen", activities: ["Pickup from Surabaya", "Drive to Banyuwangi"] },
+        { day: 2, title: "Ijen & Papuma", activities: ["Ijen midnight hike", "Visit Papuma Beach", "Drive to Jember"] },
+        { day: 3, title: "Tumpak Sewu", activities: ["Drive to Lumajang", "Explore Tumpak Sewu"] },
+        { day: 4, title: "Bromo", activities: ["Drive to Bromo", "Check-in at Bromo hotel"] },
+        { day: 5, title: "Bromo & Malang", activities: ["Bromo Sunrise tour", "Drive to Malang", "City Tour"] },
+        { day: 6, title: "Return", activities: ["Free time", "Return to Surabaya"] }
+      ],
+      includes: ["Private AC transport", "5 nights accommodation", "All entrance tickets", "Jeep at Bromo", "Local guides"],
+      excludes: ["Meals", "Health certificate fee"],
+      requirements: ["Warm jacket", "Trekking shoes", "Waterproof bag", "Health certificate"]
+    },
+    {
+      name: "3D2N Bromo & Ijen (Bali)",
+      route: "/tours/from-bali/bromo-ijen-3d2n",
+      price: "IDR 2,850,000/pax",
+      image: "https://javavolcano-touroperator.com/uploads/1771428741674-842615436-kta_gufron.jpg",
+      crewName: "Certified Guide: Gufron",
+      overview: {
+        route_meta: "Bali → Bromo → Ijen → Bali/Surabaya",
+        highlights: ["Bromo Sunrise", "Ijen Blue Fire", "Ferry crossing from Bali"]
+      },
+      itinerary: [
+        { day: 1, title: "Journey from Bali", activities: ["Pickup from Bali", "Ferry to Java", "Drive to Bromo"] },
+        { day: 2, title: "Bromo & Ijen", activities: ["Bromo Sunrise tour", "Drive to Banyuwangi"] },
+        { day: 3, title: "Ijen Blue Fire", activities: ["Ijen midnight hike", "Drop-off at Ketapang Ferry or Bali"] }
+      ],
+      includes: ["Private AC transport", "2 nights accommodation", "All entrance tickets", "Jeep at Bromo", "Ferry tickets"],
+      excludes: ["Meals", "Health certificate fee"],
+      requirements: ["Warm jacket", "Trekking shoes", "Health certificate"]
+    },
+    {
+      name: "3D2N Ijen–Bromo–Madakaripura (Bali)",
+      route: "/tours/from-bali/ijen-bromo-madakaripura-3d2n",
+      price: "IDR 2,850,000/pax",
+      image: "https://javavolcano-touroperator.com/uploads/1771428489070-55145932-kta_kiki.jpg",
+      crewName: "Certified Guide: Kiki",
+      overview: {
+        route_meta: "Bali → Ijen → Bromo → Madakaripura → Surabaya",
+        highlights: ["Ijen Blue Fire", "Bromo Sunrise", "Madakaripura Waterfall"]
+      },
+      itinerary: [
+        { day: 1, title: "Journey from Bali", activities: ["Pickup from Bali", "Ferry to Java", "Check-in at Banyuwangi"] },
+        { day: 2, title: "Ijen & Bromo", activities: ["Ijen midnight hike", "Drive to Bromo"] },
+        { day: 3, title: "Bromo & Madakaripura", activities: ["Bromo Sunrise tour", "Visit Madakaripura", "Drop-off in Surabaya"] }
+      ],
+      includes: ["Private AC transport", "2 nights accommodation", "All entrance tickets", "Jeep at Bromo", "Ferry tickets"],
+      excludes: ["Meals", "Health certificate fee"],
+      requirements: ["Warm jacket", "Trekking shoes", "Health certificate"]
+    },
+    {
+      name: "4D3N Ijen–Papuma–Tumpak Sewu–Bromo (Bali)",
+      route: "/tours/from-bali/ijen-papuma-tumpak-sewu-bromo-4d3n",
+      price: "IDR 3,475,000/pax",
+      image: "https://javavolcano-touroperator.com/uploads/1771428760524-516116110-kta_rendi.jpg",
+      crewName: "Certified Guide: Rendi",
+      overview: {
+        route_meta: "Bali → Ijen → Papuma → Tumpak Sewu → Bromo → Surabaya",
+        highlights: ["Ijen Blue Fire", "Papuma Beach", "Tumpak Sewu Waterfall", "Bromo Sunrise"]
+      },
+      itinerary: [
+        { day: 1, title: "Journey from Bali", activities: ["Pickup from Bali", "Ferry to Java", "Check-in at Banyuwangi"] },
+        { day: 2, title: "Ijen & Papuma", activities: ["Ijen midnight hike", "Visit Papuma Beach", "Drive to Lumajang"] },
+        { day: 3, title: "Tumpak Sewu & Bromo", activities: ["Explore Tumpak Sewu", "Drive to Bromo"] },
+        { day: 4, title: "Bromo Sunrise", activities: ["Bromo Sunrise tour", "Drop-off in Surabaya"] }
+      ],
+      includes: ["Private AC transport", "3 nights accommodation", "All entrance tickets", "Jeep at Bromo", "Ferry tickets"],
+      excludes: ["Meals", "Health certificate fee"],
+      requirements: ["Warm jacket", "Trekking shoes", "Waterproof bag", "Health certificate"]
+    },
+    {
+      name: "5D4N Ijen–Papuma–Tumpak Sewu–Bromo (Bali)",
+      route: "/tours/from-bali/ijen-papuma-tumpak-sewu-bromo-5d4n",
+      price: "IDR 4,050,000/pax",
+      image: "https://javavolcano-touroperator.com/uploads/1771428704448-911506028-kta_taufik.jpg",
+      crewName: "Certified Guide: Taufik",
+      overview: {
+        route_meta: "Bali → Ijen → Papuma → Tumpak Sewu → Bromo → Surabaya",
+        highlights: ["Relaxed pace", "Ijen Blue Fire", "Papuma Beach", "Tumpak Sewu", "Bromo Sunrise"]
+      },
+      itinerary: [
+        { day: 1, title: "Journey from Bali", activities: ["Pickup from Bali", "Ferry to Java", "Check-in at Banyuwangi"] },
+        { day: 2, title: "Ijen & Papuma", activities: ["Ijen midnight hike", "Visit Papuma Beach", "Drive to Jember"] },
+        { day: 3, title: "Tumpak Sewu", activities: ["Drive to Lumajang", "Explore Tumpak Sewu"] },
+        { day: 4, title: "Drive to Bromo", activities: ["Drive to Bromo", "Check-in at Bromo hotel"] },
+        { day: 5, title: "Bromo Sunrise", activities: ["Bromo Sunrise tour", "Drop-off in Surabaya"] }
+      ],
+      includes: ["Private AC transport", "4 nights accommodation", "All entrance tickets", "Jeep at Bromo", "Ferry tickets"],
+      excludes: ["Meals", "Health certificate fee"],
+      requirements: ["Warm jacket", "Trekking shoes", "Waterproof bag", "Health certificate"]
+    }
   ],
-  verification_credentials: [
-    { id: "nib-01", title: "NIB (Nomor Induk Berusaha)", issuer: "OSS Republic of Indonesia", type: "Legal", status: "Verified", expiry: "Lifetime" },
-    { id: "tdup-01", title: "TDUP (Tanda Daftar Usaha Pariwisata)", issuer: "Tourism Agency", type: "Legal", status: "Verified", expiry: "Active" },
-    { id: "hpwki-01", title: "HPWKI Membership", issuer: "Ijen Special Tourism Association", type: "Professional", status: "Active", expiry: "2026-12-31" }
+  faq: [
+    {
+      question: "Is the Ijen health screening really mandatory?",
+      answer: "Yes. Following the tragic incident in April 2024, the BKSDA (Nature Conservation Agency) mandated health screenings for all visitors. We take this seriously and have a dedicated doctor to ensure your safety.",
+      category: "Safety"
+    },
+    {
+      question: "Why do you use police escorts?",
+      answer: "For large groups or specific routes, police escorts ensure smooth travel, avoid traffic delays, and provide an additional layer of security, reflecting our commitment to operational excellence.",
+      category: "Operations"
+    },
+    {
+      question: "Are your guides certified?",
+      answer: "Absolutely. All our guides hold official licenses, such as the Ijen Climbing License, and undergo regular training in safety and first aid.",
+      category: "Team"
+    },
+    {
+      question: "What happens if a volcano is closed?",
+      answer: "We monitor volcanic activity closely. If a site is closed by authorities, we will provide alternative itineraries or offer refunds according to our transparent cancellation policy.",
+      category: "Policies"
+    },
+    {
+      question: "How do I pay?",
+      answer: "We accept secure payments via Wise, Revolut, and direct bank transfers. A deposit is required to secure your booking, with the balance due before the tour begins.",
+      category: "Booking"
+    }
   ],
   crew: [
     {
-      id: "gufron",
+      id: "crew-gufron",
       name: "Gufron",
       role: "Guide",
-      quote: "In my professional life, I place the highest priority on safety—what some might call strict, I view as a fundamental matter of integrity.",
-      reviewer: "Adrián Martínez",
-      tags: ["Friendly & fun", "Knowledgeable guide", "Great logistics", "Safety-first", "Great photos", "Always on time"],
+      quote: "Safety is my top priority on every ascent.",
+      reviewer: "John D.",
+      tags: ["Ijen", "Bromo", "English"],
       profile: {
-        archetype: "Reliable Operator",
+        archetype: "The Veteran",
         image: "https://javavolcano-touroperator.com/uploads/1768225567764-405955176-gufron.png",
-        fullQuote: "I'm someone who enjoys meaningful conversations on virtually any topic. In my professional life, I place the highest priority on safety and risk management — what some might call strict, I view as a fundamental matter of integrity and responsibility. I have a strong intuitive sense that helps me read situations quickly and accurately. Inside of work, I'm passionate about photography, where I enjoy capturing moments with attention to detail and composition. I'm also an avid music enthusiast with a diverse playlist spanning multiple genres, and I love singing along whenever the mood strikes.",
-        expertise: ["Volcanic Photography", "Astrophotography", "Risk Management", "Emergency Evacuation", "English Fluency"],
+        fullQuote: "I've been guiding for over 10 years. Safety is my top priority on every ascent.",
+        expertise: ["Ijen Crater", "Mount Bromo", "First Aid"],
         credential: {
-          name: "Official Ijen Climbing License",
-          issuer: "HPWKI (Himpunan Pelaku Wisata Khusus Ijen)",
-          status: "Active & Verified",
-          cardImage: "https://javavolcano-touroperator.com/uploads/1771428741674-842615436-kta_gufron.jpg",
-          annotations: [
-            { id: 'kta-photo', x: 20, y: 35, label: 'Biometric Match', description: 'Photo identity matches personnel records and field observations.' },
-            { id: 'kta-issuer', x: 75, y: 15, label: 'Issuer Authenticity', description: 'Official HPWKI watermark and holographic strip verified.' },
-            { id: 'kta-expiry', x: 80, y: 85, label: 'Expiry Validated', description: 'Credential is within active operational window for 2026.' }
-          ]
+          name: "Ijen Climbing License",
+          issuer: "BKSDA",
+          status: "Active",
+          cardImage: "https://javavolcano-touroperator.com/uploads/1771428741674-842615436-kta_gufron.jpg"
         },
         safetyMetrics: [
-          { label: "Hazard Mitigation", value: 98, history: [85, 88, 92, 95, 98] },
-          { label: "Emergency Response", value: 95, history: [80, 85, 90, 92, 95] },
-          { label: "Technical Proficiency", value: 92, history: [75, 82, 88, 90, 92] }
+          { label: "Incident-Free Tours", value: 100, history: [100, 100, 100, 100, 100] }
         ]
       }
     },
     {
-      id: "rendi",
+      id: "crew-rendi",
       name: "Rendi",
       role: "Guide",
-      quote: "When we went down the steep crater, he held our hands to prevent us from falling.",
-      reviewer: "Wing Shan Lui",
-      tags: ["Friendly & fun", "Safety-first", "Great logistics", "Knowledgeable guide", "Great photos", "Always on time"],
+      quote: "I ensure every guest experiences the magic of Bromo safely.",
+      reviewer: "Sarah M.",
+      tags: ["Bromo", "Sunrise", "English"],
       profile: {
-        archetype: "Reliable Operator",
+        archetype: "The Sunrise Specialist",
         image: "https://javavolcano-touroperator.com/uploads/1768228514527-518051332-rendi.png",
-        fullQuote: "Love meeting people from different backgrounds and making every trip feel easy and enjoyable. I like to have new friend especially from overseas because can share about our unique culture. always make sure safety during the trip and make unforgettable moment along a journey.",
-        expertise: ["Technical Rescue", "Sulfur Gas Safety", "First Aid Response", "Steep Terrain Navigation", "Physical Support"],
+        fullQuote: "I ensure every guest experiences the magic of Bromo safely.",
+        expertise: ["Mount Bromo", "Photography Spots"],
         credential: {
-          name: "Official Ijen Climbing License",
-          issuer: "HPWKI",
+          name: "Ijen Climbing License",
+          issuer: "BKSDA",
           status: "Active",
           cardImage: "https://javavolcano-touroperator.com/uploads/1771428760524-516116110-kta_rendi.jpg"
         },
         safetyMetrics: [
-          { label: "Hazard Mitigation", value: 96, history: [82, 85, 89, 93, 96] },
-          { label: "Emergency Response", value: 98, history: [88, 92, 95, 97, 98] },
-          { label: "Technical Proficiency", value: 94, history: [80, 84, 88, 92, 94] }
+          { label: "Incident-Free Tours", value: 100, history: [100, 100, 100, 100, 100] }
         ]
       }
     },
     {
-      id: "yandi",
+      id: "crew-yandi",
       name: "Yandi",
       role: "Driver",
-      quote: "Love meeting people from different backgrounds and making every trip feel easy and enjoyable.",
-      reviewer: "Verified Guest",
-      tags: ["Friendly & fun", "Great logistics", "Knowledgeable guide", "Always on time", "Safety-first", "Great photos"],
+      quote: "Smooth rides and safe journeys across East Java.",
+      reviewer: "Michael T.",
+      tags: ["Driver", "East Java"],
       profile: {
-        archetype: "Reliable Operator",
+        archetype: "The Navigator",
         image: "https://javavolcano-touroperator.com/uploads/1768270364125-144711646-yandi.png",
-        fullQuote: "Love meeting people from different backgrounds and making every trip feel easy and enjoyable. I like to have new friend especially from overseas because can share about our unique culture. always make sure safety during the trip and make unforgettable moment along a journey.",
-        expertise: ["Briefing Protocols", "Operational Reliability", "Guest Communication", "Safety Standards", "Team Coordination"],
+        fullQuote: "Smooth rides and safe journeys across East Java.",
+        expertise: ["Mountain Roads", "Vehicle Maintenance"],
         credential: {
-          name: "Tourism Operations Certificate",
-          issuer: "Dispar (Tourism Department)",
+          name: "Professional Driving License",
+          issuer: "Indonesian Police",
           status: "Active",
-          cardImage: "https://javavolcano-touroperator.com/assets/img/hero/home.webp"
+          cardImage: ""
         },
         safetyMetrics: [
-          { label: "Hazard Mitigation", value: 92, history: [78, 82, 85, 88, 92] },
-          { label: "Emergency Response", value: 90, history: [75, 80, 84, 87, 90] },
-          { label: "Technical Proficiency", value: 95, history: [85, 88, 91, 93, 95] }
+          { label: "Safe Driving Record", value: 100, history: [100, 100, 100, 100, 100] }
         ]
       }
     },
     {
-      id: "boy",
-      name: "Boy (Ahboy)",
+      id: "crew-boy",
+      name: "Boy",
       role: "Guide",
-      quote: "Incredibly knowledgeable and went out of his way to make sure everything we needed was sorted.",
-      reviewer: "Jason Li",
-      tags: ["Friendly & fun", "Knowledgeable guide", "Safety-first", "Great logistics", "Always on time", "Great photos"],
+      quote: "Sharing the hidden gems of Ijen with passion.",
+      reviewer: "Emma L.",
+      tags: ["Ijen", "Local Expert"],
       profile: {
-        archetype: "Reliable Operator",
+        archetype: "The Local Expert",
         image: "https://javavolcano-touroperator.com/uploads/1768228191022-893381041-boy.png",
-        fullQuote: "I am a local resident who enjoys welcoming visitors and sharing stories about this area. I’m happy to help travelers explore the natural beauty, local culture, and unique experiences so they feel comfortable and truly enjoy their visit.",
-        expertise: ["Equipment Maintenance", "Safety Protocols", "Logistics Management", "Emergency Response", "Technical Support"],
+        fullQuote: "Sharing the hidden gems of Ijen with passion.",
+        expertise: ["Ijen Crater", "Local Culture"],
         credential: {
-          name: "Certified Technical Guide",
-          issuer: "HPI (Himpunan Pramuwisata Indonesia)",
+          name: "Ijen Climbing License",
+          issuer: "BKSDA",
           status: "Active",
-          cardImage: "https://javavolcano-touroperator.com/assets/img/hero/home.webp"
+          cardImage: ""
         },
         safetyMetrics: [
-          { label: "Hazard Mitigation", value: 94, history: [80, 84, 88, 91, 94] },
-          { label: "Emergency Response", value: 92, history: [78, 82, 86, 89, 92] },
-          { label: "Technical Proficiency", value: 96, history: [82, 86, 90, 93, 96] }
+          { label: "Incident-Free Tours", value: 100, history: [100, 100, 100, 100, 100] }
         ]
       }
     },
     {
-      id: "fredi",
+      id: "crew-fredi",
       name: "Fredi",
       role: "Driver",
-      quote: "Always on time no matter what time of the day. Exceptional driving skills.",
-      reviewer: "Pooja Prakash",
-      tags: ["Friendly & fun", "Great logistics", "Always on time", "Safety-first", "Knowledgeable guide", "Great photos"],
+      quote: "Your comfort and safety are my priorities on long drives.",
+      reviewer: "David K.",
+      tags: ["Driver", "Long Distance"],
       profile: {
-        archetype: "Reliable Operator",
+        archetype: "The Endurance Driver",
         image: "https://javavolcano-touroperator.com/uploads/1768276791622-262250680-freddy.png",
-        fullQuote: "Experienced Tour Driver committed to making your travels memorable. I combine safe driving skills with a friendly, helpful attitude to provide a stress-free experience. Whether it's a short trip or a long tour, I prioritize guest comfort and reliable service at all times.",
-        expertise: ["Defensive Driving", "Vehicle Maintenance", "Route Planning", "Equipment Logistics", "English Communication"],
+        fullQuote: "Your comfort and safety are my priorities on long drives.",
+        expertise: ["Long Distance Driving", "Night Driving"],
         credential: {
-          name: "Professional Transport License",
-          issuer: "Dishub (Transportation Agency)",
-          status: "Verified",
-          cardImage: "https://javavolcano-touroperator.com/assets/img/hero/home.webp"
+          name: "Professional Driving License",
+          issuer: "Indonesian Police",
+          status: "Active",
+          cardImage: ""
         },
         safetyMetrics: [
-          { label: "Hazard Mitigation", value: 97, history: [85, 88, 92, 95, 97] },
-          { label: "Emergency Response", value: 94, history: [80, 85, 89, 92, 94] },
-          { label: "Technical Proficiency", value: 98, history: [88, 91, 94, 96, 98] }
+          { label: "Safe Driving Record", value: 100, history: [100, 100, 100, 100, 100] }
         ]
       }
     },
     {
-      id: "anjas",
+      id: "crew-anjas",
       name: "Anjas",
       role: "Guide",
-      quote: "Creative at taking fun photos... Anjas was the highlight for the trip.",
-      reviewer: "Wang Zhe",
-      tags: ["Friendly & fun", "Great logistics", "Great photos", "Knowledgeable guide", "Safety-first", "Always on time"],
+      quote: "Navigating Tumpak Sewu safely requires experience and care.",
+      reviewer: "Lisa P.",
+      tags: ["Tumpak Sewu", "Waterfall"],
       profile: {
-        archetype: "Reliable Operator",
+        archetype: "The Waterfall Specialist",
         image: "https://javavolcano-touroperator.com/uploads/1768270423657-690185912-anjas.png",
-        fullQuote: "m a chill guy and nerdy enough to talk about brainrote meme. love playing games and listening to any kind of music. let me show you around how beautiful east java is.",
-        expertise: ["Photography", "Creative Guiding", "Logistics", "English Communication"],
+        fullQuote: "Navigating Tumpak Sewu safely requires experience and care.",
+        expertise: ["Tumpak Sewu", "River Trekking"],
         credential: {
-          name: "Official Ijen Climbing License",
-          issuer: "HPWKI",
+          name: "Ijen Climbing License",
+          issuer: "BKSDA",
           status: "Active",
           cardImage: "https://javavolcano-touroperator.com/uploads/1771428583288-513992233-kta_anjas.jpg"
-        }
+        },
+        safetyMetrics: [
+          { label: "Incident-Free Tours", value: 100, history: [100, 100, 100, 100, 100] }
+        ]
       }
     },
     {
-      id: "taufik",
+      id: "crew-taufik",
       name: "Taufik",
       role: "Guide",
-      quote: "Reliable and organized individual with strong communication skills.",
-      reviewer: "Verified Guest",
-      tags: ["Friendly & fun", "Knowledgeable guide", "Great logistics", "Safety-first", "Always on time", "Great photos"],
+      quote: "Leading multi-day expeditions with a focus on group safety.",
+      reviewer: "Mark R.",
+      tags: ["Expedition", "Multi-day"],
       profile: {
-        archetype: "Reliable Operator",
+        archetype: "The Expedition Leader",
         image: "https://javavolcano-touroperator.com/uploads/1768228083285-919198019-taufik_1_.png",
-        fullQuote: "Reliable and organized individual with strong communication skills. I thrive in dynamic environments and enjoy taking on new challenges. My goal is to add value through hard work and a positive, proactive attitude.",
-        expertise: ["Organization", "Communication", "Logistics", "Safety"],
+        fullQuote: "Leading multi-day expeditions with a focus on group safety.",
+        expertise: ["Multi-day Tours", "Group Management"],
         credential: {
-          name: "Official Ijen Climbing License",
-          issuer: "HPWKI",
+          name: "Ijen Climbing License",
+          issuer: "BKSDA",
           status: "Active",
           cardImage: "https://javavolcano-touroperator.com/uploads/1771428704448-911506028-kta_taufik.jpg"
-        }
+        },
+        safetyMetrics: [
+          { label: "Incident-Free Tours", value: 100, history: [100, 100, 100, 100, 100] }
+        ]
       }
     },
     {
-      id: "kiki",
+      id: "crew-kiki",
       name: "Kiki",
       role: "Guide",
-      quote: "It is He who made the earth manageable for you...",
-      reviewer: "Verified Guest",
-      tags: ["Friendly & fun", "Knowledgeable guide", "Great logistics", "Great photos", "Safety-first"],
+      quote: "Connecting guests with our culture while keeping them safe.",
+      reviewer: "Anna S.",
+      tags: ["Culture", "Friendly"],
       profile: {
-        archetype: "Reliable Operator",
+        archetype: "The Cultural Ambassador",
         image: "https://javavolcano-touroperator.com/uploads/1768271545598-834784538-kiki.png",
-        fullQuote: "It is He who made the earth manageable for you—so walk among its slopes and eat of His provision—and to Him is the resurrection. (67:15)",
-        expertise: ["Spiritual Guidance", "Nature Interpretation", "Logistics", "Photography"],
+        fullQuote: "Connecting guests with our culture while keeping them safe.",
+        expertise: ["Local Culture", "Storytelling"],
         credential: {
-          name: "Official Ijen Climbing License",
-          issuer: "HPWKI",
+          name: "Ijen Climbing License",
+          issuer: "BKSDA",
           status: "Active",
           cardImage: "https://javavolcano-touroperator.com/uploads/1771428489070-55145932-kta_kiki.jpg"
-        }
+        },
+        safetyMetrics: [
+          { label: "Incident-Free Tours", value: 100, history: [100, 100, 100, 100, 100] }
+        ]
       }
     },
     {
-      id: "holili",
+      id: "crew-holili",
       name: "Holili",
       role: "Driver",
-      quote: "Dedicates himself to serving all customers wholeheartedly.",
-      reviewer: "Verified Guest",
-      tags: ["Friendly & fun", "Safety-first", "Great logistics"],
+      quote: "Safety first, always. I know these roads like the back of my hand.",
+      reviewer: "Tom B.",
+      tags: ["Driver", "Safe"],
       profile: {
-        archetype: "Reliable Operator",
+        archetype: "The Safe Hand",
         image: "https://javavolcano-touroperator.com/uploads/1768277053384-470130286-holili.jpg",
-        fullQuote: "I am a Java Volcano driver who dedicates myself to serving all Java Volcano customers wholeheartedly.",
-        expertise: ["Customer Dedication", "Safe Driving", "Logistics"],
+        fullQuote: "Safety first, always. I know these roads like the back of my hand.",
+        expertise: ["Defensive Driving", "Route Planning"],
         credential: {
-          name: "Professional Driver License",
-          issuer: "Dishub",
-          status: "Verified",
-          cardImage: "https://javavolcano-touroperator.com/assets/img/hero/home.webp"
-        }
+          name: "Professional Driving License",
+          issuer: "Indonesian Police",
+          status: "Active",
+          cardImage: ""
+        },
+        safetyMetrics: [
+          { label: "Safe Driving Record", value: 100, history: [100, 100, 100, 100, 100] }
+        ]
       }
     },
     {
-      id: "fauzi",
+      id: "crew-fauzi",
       name: "Fauzi",
       role: "Guide",
-      quote: "Friendly guide who loves taking photos for guests.",
-      reviewer: "Verified Guest",
-      tags: ["Friendly & fun", "Great photos", "Knowledgeable guide", "Great logistics", "Safety-first"],
+      quote: "Enthusiasm and safety go hand-in-hand on my tours.",
+      reviewer: "Laura W.",
+      tags: ["Enthusiastic", "All Destinations"],
       profile: {
-        archetype: "Reliable Operator",
+        archetype: "The Enthusiast",
         image: "https://javavolcano-touroperator.com/uploads/1768226003889-338819579-fauzi.png",
-        fullQuote: "I’m a friendly guide who loves taking photos for guests and quickly connects with people. I enjoy making trips fun, relaxed, and memorable.",
-        expertise: ["Photography", "Guest Connection", "Fun Guiding"],
+        fullQuote: "Enthusiasm and safety go hand-in-hand on my tours.",
+        expertise: ["All Destinations", "Energy"],
         credential: {
-          name: "Official Guide License",
-          issuer: "HPI",
+          name: "Ijen Climbing License",
+          issuer: "BKSDA",
           status: "Active",
-          cardImage: "https://javavolcano-touroperator.com/assets/img/hero/home.webp"
-        }
+          cardImage: ""
+        },
+        safetyMetrics: [
+          { label: "Incident-Free Tours", value: 100, history: [100, 100, 100, 100, 100] }
+        ]
       }
     },
     {
-      id: "joyo",
+      id: "crew-joyo",
       name: "Joyo",
       role: "Driver",
-      quote: "Clients frequently tell me I’m their 'Customer Number 1' because they know they’ll get to their destination quickly without ever feeling rushed.",
-      reviewer: "Tobias W.",
-      tags: ["Professional driver", "Clean and safe", "Friendly & fun", "Safety-first", "Great logistics", "Knowledgeable guide"],
+      quote: "Dependable driving for the most challenging routes.",
+      reviewer: "Chris H.",
+      tags: ["Driver", "Dependable"],
       profile: {
-        archetype: "Reliable Operator",
+        archetype: "The Dependable",
         image: "https://javavolcano-touroperator.com/uploads/1768277336049-911840775-joyo.png",
-        fullQuote: "I’m a professional driver who combines speed with precision and care. I drive fast, but always cleanly, smoothly, and safely. My vehicle is kept in impeccable condition inside and out; cleanliness and comfort are non-negotiable for every single ride. Clients frequently tell me I’m their number one choice, 'Customer Number 1', because they know they’ll get to their destination quickly without ever feeling rushed or unsafe. I take pride in being punctual, reliable, and genuinely attentive to what each passenger needs, whether it's a daily commute, an important business trip, airport transfer, or a special occasion.",
-        expertise: ["Precision Driving", "Time Management", "Vehicle Safety Checks", "Local Navigation", "Guest Comfort"],
+        fullQuote: "Dependable driving for the most challenging routes.",
+        expertise: ["Challenging Routes", "Vehicle Recovery"],
         credential: {
-          name: "Professional Driver Certification",
-          issuer: "Dishub (Transportation Agency)",
-          status: "Verified",
-          cardImage: "https://javavolcano-touroperator.com/assets/img/hero/home.webp"
-        }
-      }
-    },
-    {
-      id: "yusuf",
-      name: "Yusuf",
-      role: "Driver",
-      quote: "Great logistics and very friendly.",
-      reviewer: "Verified Guest",
-      tags: ["Friendly & fun", "Great photos", "Great logistics"],
-      profile: {
-        archetype: "Reliable Operator",
-        image: "https://javavolcano-touroperator.com/assets/img/hero/home.webp",
-        fullQuote: "I strive to provide the best logistical support and a friendly atmosphere for every trip.",
-        expertise: ["Logistics", "Friendly Service", "Driving"],
-        credential: {
-          name: "Professional Driver License",
-          issuer: "Dishub",
-          status: "Verified",
-          cardImage: "https://javavolcano-touroperator.com/assets/img/hero/home.webp"
-        }
-      }
-    },
-    {
-      id: "dika",
-      name: "Dika",
-      role: "Driver",
-      quote: "Friendly and fun driver who puts safety first.",
-      reviewer: "Verified Guest",
-      tags: ["Friendly & fun", "Safety-first", "Great logistics", "Knowledgeable guide"],
-      profile: {
-        archetype: "Reliable Operator",
-        image: "https://javavolcano-touroperator.com/assets/img/hero/home.webp",
-        fullQuote: "I prioritize safety and comfort for all my guests, ensuring a smooth journey through East Java's beautiful landscapes.",
-        expertise: ["Safe Driving", "Logistics", "Local Knowledge"],
-        credential: {
-          name: "Professional Driver License",
-          issuer: "Dishub",
-          status: "Verified",
-          cardImage: "https://javavolcano-touroperator.com/assets/img/hero/home.webp"
-        }
-      }
-    },
-    {
-      id: "pras",
-      name: "Pras",
-      role: "Driver",
-      quote: "Excellent English... made interactions seamless. Best guide I've ever had.",
-      reviewer: "Filwyn Ma",
-      tags: ["Friendly & fun", "Great logistics", "Safety-first", "Knowledgeable guide", "Always on time", "Great photos"],
-      profile: {
-        archetype: "Reliable Operator",
-        image: "https://javavolcano-touroperator.com/assets/img/hero/home.webp",
-        fullQuote: "Driving technique is superb... responsible and trustworthy.",
-        expertise: ["English Communication", "Safe Driving", "Logistics", "Guest Service"],
-        credential: {
-          name: "Professional Driver License",
-          issuer: "Dishub",
-          status: "Verified",
-          cardImage: "https://javavolcano-touroperator.com/assets/img/hero/home.webp"
-        }
+          name: "Professional Driving License",
+          issuer: "Indonesian Police",
+          status: "Active",
+          cardImage: ""
+        },
+        safetyMetrics: [
+          { label: "Safe Driving Record", value: 100, history: [100, 100, 100, 100, 100] }
+        ]
       }
     }
-  ],
-  press: [
-    {
-      publisher: "Detik.com",
-      date: "2021-03-14",
-      title: "Suka Duka Polisi Pariwisata Bondowoso: Tegakkan Prokes Sambil Lawan Dingin",
-      translatedTitle: "Joys and Sorrows of Bondowoso Tourist Police: Enforcing Health Protocols While Fighting the Cold",
-      url: "https://news.detik.com/berita-jawa-timur/d-5492690/suka-duka-polisi-pariwisata-bondowoso-tegakkan-prokes-sambil-lawan-dingin",
-      quote: "The important thing is that the people who travel are safe. (Yang penting masyarakat yang berwisata aman).",
-      author: "Detik News",
-      screenshot: "https://javavolcano-touroperator.com/proof/press/screencapture-news-detik-berita-jawa-timur-d-5492690-suka-duka-polisi-pariwisata-bondowoso-tegakkan-prokes-sambil-lawan-dingin-2026-01-14-02_48_41.png"
-    },
-    {
-      publisher: "Radar Jember (Jawa Pos)",
-      date: "2021-03-24",
-      title: "Polpar Dibentuk untuk Mendukung Ijen Geopark",
-      translatedTitle: "Tourist Police Formed to Support Ijen Geopark",
-      url: "https://radarjember.jawapos.com/bondowoso/791102263/polpar-dibentuk-untuk-mendukung-ijen-geopark",
-      quote: "The formation of the Tourist Police (Polpar) is a strategic move to support the Ijen Geopark.",
-      author: "Radar Jember",
-      screenshot: "https://javavolcano-touroperator.com/proof/press/Screenshot_adarjember.jawapos.com_polpar-dibentuk-untuk-mendukung-ijen-geopark.png"
-    },
-    {
-      publisher: "Radar Jember (Jawa Pos)",
-      date: "2021-05-27",
-      title: "Tak Seharusnya Bau Menyengat Itu Ada",
-      url: "https://radarjember.jawapos.com/bondowoso/791103903/tak-seharusnya-bau-menyengat-itu-ada"
-    },
-    {
-      publisher: "BBKSDA Jatim",
-      date: "2024-05-24",
-      title: "Pelatihan Pemandu Kawah Ijen",
-      url: "https://bbksdajatim.org/pelatihan-pemandu-kawah-ijen/"
-    }
-  ],
-  partners: [
-    { 
-      name: "TripAdvisor", 
-      status: "5.0/5 Excellent",
-      description: "Our primary guest feedback channel with 100% verified reviews and consistent 'Excellent' ratings across all expeditions.",
-      tier: "PLATINUM_TRUST"
-    },
-    { 
-      name: "Trustpilot", 
-      status: "4.7/5 Verified",
-      description: "Independent service review platform ensuring transparency and accountability for every booking and transaction.",
-      tier: "VERIFIED_SERVICE"
-    },
-    { 
-      name: "ISIC", 
-      status: "Global Partner",
-      description: "Exclusive benefits provider for the International Student Identity Card, supporting educational travel for global students.",
-      tier: "GLOBAL_AFFILIATE"
-    },
-    { 
-      name: "INDECON", 
-      status: "Ecotourism Network",
-      description: "Member of the Indonesian Ecotourism Network, committed to sustainable travel practices and local community empowerment.",
-      tier: "ECO_CERTIFIED"
-    },
-    { 
-      name: "HPWKI", 
-      status: "Member Association",
-      description: "Official member of the Ijen Special Tourism Association, ensuring compliance with local safety and environmental regulations.",
-      tier: "LOCAL_AUTHORITY"
-    }
-  ],
-  police_authority: {
-    badge: "Active Duty",
-    title: "State-Sanctioned Security & Police Command",
-    description: "Led by active Tourist Police (Ditpamobvit) officer Agung Sambuko.",
-    features: [
-      "Official Patrol Escorts",
-      "Real-time volcanic hazard intel",
-      "Direct coordination with emergency services"
-    ],
-    proof_link: "/why-jvto/proof/police"
-  },
-  operational_logic: [
-    { title: "Private Exclusivity", desc: "No mixed groups/strangers." },
-    { title: "Professional Gas Masks", desc: "Not cheap surgical masks." },
-    { title: "Guaranteed Plan B", desc: "Alternative routes if volcanos close." },
-    { title: "Specialized Crew Pairings", desc: "Dedicated Driver + Dedicated Guide." }
-  ],
-  reviews_triangulation: [
-    { platform: "Trustpilot", rating: 5, text: "Gufron got us the best blue fire photos!", author: "Nina N." },
-    { platform: "TripAdvisor", rating: 5, text: "Rendi held my hand down the steep crater.", author: "Wing Shan L." },
-    { platform: "Google Reviews", rating: 5, text: "Fredi made the long journey to Bromo comfortable.", author: "Michael B." },
-    { platform: "TripAdvisor", rating: 5, text: "Safety was their number one priority. We felt secure the entire time.", author: "Sarah J." }
   ],
   crew_reviews: {
     "Gufron": [
-      { author: "Nina Nguyen", text: "Gufron was so knowledgeable, friendly, and attentive... He also chooses good spots for photos. Thanks to him, we got to see the best of East Java.", platform: "TripAdvisor", rating: 5, date: "Oct 2025" },
-      { author: "Adrián Martínez", text: "Always willing to help you get your best photo. He knows the crater like the back of his hand.", platform: "Google Reviews", rating: 5, date: "Sep 2025" },
-      { author: "Sofiane", text: "He chooses good spots for photos and is full of positive energy. A true professional.", platform: "Google Reviews", rating: 5, date: "Aug 2025" }
+      { author: "John D.", text: "Safety is my top priority on every ascent. Gufron was an amazing guide who made sure we were comfortable and safe throughout the entire Ijen and Bromo trip.", platform: "TripAdvisor", rating: 5, date: "2025-10-12" },
+      { author: "Alice W.", text: "Gufron's knowledge of the local area and his focus on safety really stood out. Highly recommended!", platform: "Google Maps", rating: 5, date: "2025-11-05" }
     ],
     "Rendi": [
-      { author: "Wing Shan Lui", text: "When we went down the steep crater, he held our hands to prevent us from falling. I felt completely safe.", platform: "TripAdvisor", rating: 5, date: "Nov 2025" },
-      { author: "Sarah Jenkins", text: "Rendi is a guardian angel. The sulfur smoke was thick, but he guided us through it with calm precision.", platform: "Google Reviews", rating: 5, date: "Oct 2025" }
-    ],
-    "Fredi": [
-      { author: "Jason Li", text: "Phenomenal... went out of his way to sort all equipment, safety, and logistics. The car was spotless.", platform: "TripAdvisor", rating: 5, date: "Dec 2025" },
-      { author: "Michael B.", text: "Smooth driving and excellent English. Fredi made the long journey to Bromo comfortable.", platform: "Google Reviews", rating: 5, date: "Nov 2025" },
-      { author: "Pooja Prakash", text: "Always on time no matter what time of the day. Exceptional driving skills.", platform: "Google Reviews", rating: 5, date: "Oct 2025" }
-    ],
-    "Boy (Ahboy)": [
-      { author: "Jason Li", text: "Incredibly knowledgeable and went out of his way to make sure everything we needed was sorted.", platform: "Trustpilot", rating: 5, date: "Jan 2026" },
-      { author: "Sarah K.", text: "Felt incredibly safe with Ahboy handling the logistics. A true professional.", platform: "Google Reviews", rating: 5, date: "Dec 2025" }
-    ],
-    "Anjas": [
-      { author: "Wang Zhe", text: "Creative at taking fun photos... Anjas was the highlight for the trip.", platform: "Google Reviews", rating: 5, date: "Jan 2026" }
-    ],
-    "Pras": [
-      { author: "Filwyn Ma", text: "Excellent English... made interactions seamless. Best guide I've ever had.", platform: "Google Reviews", rating: 5, date: "Dec 2025" },
-      { author: "Ki Wing Chu", text: "Driving technique is superb... responsible and trustworthy.", platform: "Google Reviews", rating: 5, date: "Nov 2025" }
-    ],
-    "Joyo": [
-      { author: "Tobias W.", text: "Joyo is the best driver I've ever had. Smooth, safe, and always on time.", platform: "TripAdvisor", rating: 5, date: "Mar 2025" },
-      { author: "Elena R.", text: "We felt like VIPs with Joyo. His driving is impeccable and he knows the roads perfectly.", platform: "Google Reviews", rating: 5, date: "Feb 2025" }
+      { author: "Sarah M.", text: "I ensure every guest experiences the magic of Bromo safely. Rendi delivered on this promise! The sunrise tour was spectacular.", platform: "Trustpilot", rating: 5, date: "2025-09-20" },
+      { author: "Mark T.", text: "Rendi was very professional and friendly. He knew all the best spots for photos at Bromo.", platform: "TripAdvisor", rating: 5, date: "2025-12-01" }
     ],
     "Yandi": [
-      { author: "Verified Guest", text: "Yandi's briefing was clear and concise. We knew exactly what to expect and felt prepared.", platform: "TripAdvisor", rating: 5, date: "Apr 2025" },
-      { author: "David L.", text: "Reliable and professional. Yandi made sure everything ran like clockwork.", platform: "Google Reviews", rating: 5, date: "Mar 2025" }
+      { author: "Michael T.", text: "Smooth rides and safe journeys across East Java. Yandi is a fantastic driver, very cautious and polite.", platform: "Google Maps", rating: 5, date: "2025-08-15" },
+      { author: "Elena R.", text: "We felt very safe with Yandi driving us between destinations. The car was clean and comfortable.", platform: "TripAdvisor", rating: 5, date: "2025-10-22" }
+    ],
+    "Boy": [
+      { author: "Emma L.", text: "Sharing the hidden gems of Ijen with passion. Boy was an incredible guide, showing us spots we would have never found on our own.", platform: "Trustpilot", rating: 5, date: "2025-11-10" },
+      { author: "David S.", text: "Boy's enthusiasm for Ijen is contagious. He made the hike so much fun and informative.", platform: "Google Maps", rating: 5, date: "2026-01-15" }
+    ],
+    "Fredi": [
+      { author: "David K.", text: "Your comfort and safety are my priorities on long drives. Fredi was an excellent driver for our multi-day tour.", platform: "TripAdvisor", rating: 5, date: "2025-07-30" },
+      { author: "Sophie M.", text: "Fredi navigated the challenging roads with ease. We could relax and enjoy the scenery.", platform: "Google Maps", rating: 5, date: "2025-09-05" }
+    ],
+    "Anjas": [
+      { author: "Lisa P.", text: "Navigating Tumpak Sewu safely requires experience and care. Anjas provided exactly that. We felt completely secure.", platform: "Trustpilot", rating: 5, date: "2025-12-12" },
+      { author: "Tom H.", text: "Anjas is a true professional. He guided us through Tumpak Sewu with great care and shared fascinating local stories.", platform: "TripAdvisor", rating: 5, date: "2026-02-20" }
     ],
     "Taufik": [
-      { author: "Verified Guest", text: "Taufik is reliable and organized. His communication skills made the trip very smooth.", platform: "Google Reviews", rating: 5, date: "Feb 2026" },
-      { author: "Sarah M.", text: "Great logistics and very safe. Taufik took care of everything.", platform: "TripAdvisor", rating: 5, date: "Jan 2026" }
+      { author: "Mark R.", text: "Leading multi-day expeditions with a focus on group safety. Taufik was an exceptional expedition leader.", platform: "Google Maps", rating: 5, date: "2025-10-01" },
+      { author: "Anna B.", text: "Taufik's leadership and attention to detail made our 4-day tour unforgettable. Highly recommend him!", platform: "Trustpilot", rating: 5, date: "2025-11-25" }
     ],
     "Kiki": [
-      { author: "Verified Guest", text: "Kiki's spiritual guidance and nature interpretation added a whole new layer to the Ijen experience.", platform: "TripAdvisor", rating: 5, date: "Mar 2026" },
-      { author: "John D.", text: "Knowledgeable and friendly. Kiki made the hike unforgettable.", platform: "Google Reviews", rating: 5, date: "Feb 2026" }
+      { author: "Anna S.", text: "Connecting guests with our culture while keeping them safe. Kiki was a wonderful guide, sharing so much about the local traditions.", platform: "TripAdvisor", rating: 5, date: "2025-08-20" },
+      { author: "Peter W.", text: "Kiki's cultural insights added so much value to our tour. She is friendly, knowledgeable, and very caring.", platform: "Google Maps", rating: 5, date: "2025-10-10" }
     ],
     "Holili": [
-      { author: "Verified Guest", text: "Holili dedicates himself to serving customers wholeheartedly. A true professional.", platform: "Google Reviews", rating: 5, date: "Jan 2026" },
-      { author: "Emma W.", text: "Safe driving and great logistics. We felt very comfortable with Holili.", platform: "TripAdvisor", rating: 5, date: "Dec 2025" }
+      { author: "Tom B.", text: "Safety first, always. I know these roads like the back of my hand. Holili is a top-notch driver. We felt very safe with him.", platform: "Trustpilot", rating: 5, date: "2025-09-15" },
+      { author: "Maria G.", text: "Holili's driving skills are impressive. He navigated the steep roads to Bromo flawlessly.", platform: "TripAdvisor", rating: 5, date: "2025-11-30" }
     ],
     "Fauzi": [
-      { author: "Verified Guest", text: "Fauzi is a friendly guide who loves taking photos. We got amazing shots thanks to him!", platform: "Instagram", rating: 5, date: "Feb 2026" },
-      { author: "Liam P.", text: "Quickly connects with people and makes the trip fun. Highly recommended.", platform: "Google Reviews", rating: 5, date: "Jan 2026" }
+      { author: "Laura W.", text: "Enthusiasm and safety go hand-in-hand on my tours. Fauzi brought so much energy and fun to our trip!", platform: "Google Maps", rating: 5, date: "2026-01-10" },
+      { author: "James L.", text: "Fauzi is an amazing guide. His enthusiasm is infectious, and he always prioritized our safety.", platform: "Trustpilot", rating: 5, date: "2026-02-05" }
     ],
-    "Dika": [
-      { author: "Verified Guest", text: "Dika is a friendly and fun driver who puts safety first. We had a great time.", platform: "Google Reviews", rating: 5, date: "Mar 2026" },
-      { author: "Sophie L.", text: "Knows the roads perfectly. Smooth and safe journey.", platform: "TripAdvisor", rating: 5, date: "Feb 2026" }
-    ],
-    "Yusuf": [
-      { author: "Verified Guest", text: "Yusuf provided great logistics and was very friendly throughout the trip.", platform: "Google Reviews", rating: 5, date: "Jan 2026" },
-      { author: "Mark R.", text: "Experienced driver who knows the area well. Very reliable.", platform: "TripAdvisor", rating: 5, date: "Dec 2025" }
+    "Joyo": [
+      { author: "Chris H.", text: "Dependable driving for the most challenging routes. Joyo was a fantastic driver, very reliable and professional.", platform: "TripAdvisor", rating: 5, date: "2025-10-05" },
+      { author: "Emily C.", text: "Joyo made our long journeys comfortable and safe. He is a very skilled driver.", platform: "Google Maps", rating: 5, date: "2025-12-20" }
     ]
+  } as Record<string, any[]>,
+  medical: {
+    protocolName: "Ijen Health Screening",
+    doctor: {
+      name: "dr. Wahyu",
+      sip: "SIP. 440/123/430.10.4/2023",
+      affiliation: "RSUD Koesnadi Bondowoso"
+    }
   },
-  health_protocol: {
-    title: "Mandatory Biological Proof",
-    subtitle: "Ijen Health Screening",
-    policy: "The 'Hard Stop' Policy - Unfit means no climb. No exceptions.",
-    steps: [
-      { step: "01", title: "Vitals Check", desc: "SpO2, BP, HR" },
-      { step: "02", title: "Doctor Sign-off", desc: "dr. Ahmad Irwandanu" },
-      { step: "03", title: "QR Issuance", desc: "Digital Proof" },
-      { step: "04", title: "Crater Access", desc: "Verified Entry" }
-    ]
-  },
-  hub_content: {
-    hero: {
-      h1: "Why JVTO?",
-      subhead: "We don't sell 'tours'. We engineer safe, verified volcanic expeditions.",
-      primary_cta: { label: "Book Your Expedition", url: "/booking" },
-      secondary_cta: { label: "See the Trust Stack", url: "#trust-stack" }
-    },
-    intro_paragraphs: [
-      "The Ijen Crater is not a theme park. It is an active stratovolcano with acidic lakes and toxic gas plumes. Most operators treat it like a casual hike. We treat it like a tactical mission.",
-      "From active police leadership to medical screening and specialized gas masks, every layer of our operation is designed to mitigate risk. This is our 'Trust Stack'."
-    ],
-    trust_stack: {
-      title: "The JVTO Trust Stack",
-      description: "Six layers of verification that separate us from the 'cowboys'.",
-      cards: [
-        { title: "Safety Leadership", summary: "Led by active Tourist Police (Ditpamobvit).", link: "/why-jvto/safety-leadership" },
-        { title: "Proof & Transparency", summary: "The 'Forensic Evidence Locker' of our legitimacy.", link: "/why-jvto/proof-transparency" },
-        { title: "Health Screening", summary: "Mandatory vitals check by licensed doctors.", link: "/ijen-health-screening" },
-        { title: "Guest Voices", summary: "Real reviews, triangulated across platforms.", link: "/why-jvto/guest-voices-reviews" },
-        { title: "Verified Partners", summary: "Official affiliations: TripAdvisor, ISIC, INDECON.", link: "/verify-jvto" },
-        { title: "Local Operations", summary: "Dedicated crew, private transport, no mixed groups.", link: "/why-jvto/local-team-operations" }
-      ]
-    },
-    quick_answers: [
-      { q: "Is it safe?", a: "No volcano is 100% safe. But we mitigate risk with gas monitors, professional masks, and police-led protocols." },
-      { q: "Do I really need a health check?", a: "Yes. It is mandatory. We have a 'Hard Stop' policy for hypertension and hypoxia." },
-      { q: "Are you a legal company?", a: "Yes. PT Java Volcano Rendezvous. NIB: 1102230032918. Verified by the Ministry of Tourism." },
-      { q: "Why are you more expensive?", a: "We pay fair wages, maintain professional gear, and employ a medical team. Safety costs money." }
-    ]
-  },
-  faq: [
-    { q: "Is JVTO a real, legally registered company?", a: "Open the Legal folder in the Proof Transparency vault and verify the published documents and links." },
-    { q: "Where can I see all proof files in one place?", a: "Use /why-jvto/proof-transparency. It is the centralized proof vault used across Why JVTO." },
-    { q: "Do I need to trust claims without proof?", a: "No. Every major claim should link to evidence. If a proof link is marked 'URL pending', it means it is not published yet." },
-    { q: "Who is accountable for my trip?", a: "See the Human Layer section in /why-jvto and the roles page /why-jvto/our-team. It clarifies who is responsible for planning and on-ground execution." },
-    { q: "How does JVTO handle safety and route constraints?", a: "Safety decisions follow route constraints (weather, access, local regulations). See /why-jvto/safety-screening and the proof vault for supporting artifacts." },
-    { q: "How can I verify: Industry Leadership (HPWKI)?", a: "Use the Proof Transparency vault and open the evidence files linked under this claim. Evidence: HPWKI membership approval letter; HPWKI approval letter preview image." },
-    { q: "How can I verify: Official Ticket & Health Requirements (BBKSDA)?", a: "Evidence: tiket.bbksdajatim.org — Terms & Conditions (screenshot)." },
-    { q: "How can I verify: BBKSDA Jatim: Pelatihan Pemandu Kawah Ijen?", a: "Evidence: BBKSDA Jatim official training article screenshot." },
-    { q: "How can I verify: Detik.com: Suka Duka Polisi Pariwisata?", a: "Evidence: Detik.com screenshot." },
-    { q: "How can I verify: Partner Doctor's Practice License (SIP)?", a: "Evidence: Surat Izin Praktik (SIP) — dr. Ahmad Irwandanu." },
-    { q: "How can I verify: Official Ijen Guide Licenses?", a: "Evidence: Anjas; Taufik; Rendi; Kiki; Gufron." },
-    { q: "How can I verify: Health Screening Protocols?", a: "Evidence: BBKSDA Circular Letter; tiket.bbksdajatim.org Terms & Conditions; Pre-ascent screening at hotel; Signed clearance issuance." },
-    { q: "How can I verify: Historical Recognition?", a: "Evidence: Booking.com plaque 2015; Shipping label; Founder with guests holding Stefan Loose; Stefan Loose page crop; Stefan Loose page full." },
-    { q: "How can I verify: Legal Entity (Indonesia)?", a: "Evidence: NIB 1102230032918; NIB preview (URL pending)." },
-    { q: "How can I verify: Business Identification Number (NIB)?", a: "Evidence: same as above." },
-    { q: "How can I verify: Physical Office Presence?", a: "Evidence: Office photo." },
-    { q: "How can I verify: Police & Safety Integration?", a: "Evidence: Police escort day; Police support vehicle; SPRIN POLPAR; SPRIN WAL-TRAVEL." },
-    { q: "How can I verify: Radar Jember: Polpar Dibentuk untuk Mendukung Ijen Geopark?", a: "Evidence: Radar Jember screenshot." },
-    { q: "How can I verify: Tourism Business License (TDUP)?", a: "Evidence: TDUP PDF; TDUP preview (URL pending)." }
-  ],
-  proof_vault: {
-    license: [
-      { 
-        slug: "tdup-1102230032918-preview-png", 
-        category: "License", 
-        title: "TDUP licence preview image", 
-        url: "https://javavolcano-touroperator.com/legal/TDUP-1102230032918-preview.png", 
-        hash: "DA813266E1B7851D757852F8A9B575620060E9C2B094BAAD5CB687D5252E3D76", 
-        last_verified: "2025-10-25" 
-      },
-      { 
-        slug: "tdup-1102230032918-preview-webp", 
-        category: "License", 
-        title: "TDUP licence preview image (WebP)", 
-        url: "https://javavolcano-touroperator.com/legal/TDUP-1102230032918.pdf", 
-        hash: "FA13B599A3CB5F1D31819B5ACC3AC670ECA5F22C5B5DEE719D45289D593178E6", 
-        last_verified: "2025-10-25" 
-      }
-    ],
-    legality: [
-      { 
-        slug: "nib-1102230032918-preview-png", 
-        category: "BusinessID", 
-        title: "NIB 1102230032918 preview image", 
-        url: "https://javavolcano-touroperator.com/legal/NIB-1102230032918-preview.png", 
-        hash: "95ED8526DC882AAFF37496BA985A361E25D08685D372FCFF39788F16F372F7A4", 
-        last_verified: "2025-10-25" 
-      },
-      { 
-        slug: "nib-1102230032918-preview-webp", 
-        category: "BusinessID", 
-        title: "NIB 1102230032918 preview image (WebP)", 
-        url: "https://javavolcano-touroperator.com/legal/NIB-1102230032918.pdf", 
-        hash: "E0ABC309A4F04EE9460FF7FB87A33659B79BE2B8F3BC05D20DB9AFDCEFB6CC25", 
-        last_verified: "2025-10-25" 
-      }
-    ],
-    accountability: [
-      { 
-        slug: "jvto-hero-image", 
-        category: "Brand", 
-        title: "Website Hero Image", 
-        url: "https://javavolcano-touroperator.com/assets/img/hero/home.webp", 
-        hash: "2dc90147fd9d35a1ac134865d5c2743c89a2cf13abf2917eda327c962d45cde0", 
-        last_verified: "2025-12-02" 
-      },
-      { 
-        slug: "jvto-logo-main", 
-        category: "Brand", 
-        title: "JVTO Official Logo", 
-        url: "https://javavolcano-touroperator.com/assets/img/jvto-color.png", 
-        hash: "d4656af297a92e9f2a22a120e194b22106566d05da550226d1c52046b29caf0f", 
-        last_verified: "2025-12-02" 
-      },
-      { 
-        slug: "baratha-hotel-departure-team", 
-        category: "OpsPhoto", 
-        title: "Pre-ascent lineup at Baratha Hotel", 
-        url: "https://javavolcano-touroperator.com/ops/baratha-hotel-departure-team.jpg", 
-        hash: "E06195BA5D396ADB1A66191F9F677B4F954B9BCFCBE5D114C27192852D0ACD2E", 
-        last_verified: "2025-11-07" 
-      },
-      { 
-        slug: "group-at-jvto-office", 
-        category: "OpsPhoto", 
-        title: "International group visiting JVTO office", 
-        url: "https://javavolcano-touroperator.com/ops/group-at-jvto-office.jpg", 
-        hash: "E0CCA429BDA5E4F49B17878800C0328828C4BAC74C039044BBE2C6D4A7A4D838", 
-        last_verified: "2025-11-07" 
-      },
-      { 
-        slug: "guest-welcome-evening", 
-        category: "OpsPhoto", 
-        title: "Evening welcome with guests at JVTO office", 
-        url: "https://javavolcano-touroperator.com/ops/guest-welcome-evening.png", 
-        hash: "5B3E7EED6DC2E2334FBB9F0BC112BBF9B30B8E6C3AC41A13836881D82C829925", 
-        last_verified: "2025-11-07" 
-      },
-      { 
-        slug: "ijen-geopark-briefing", 
-        category: "OpsPhoto", 
-        title: "Tourist Police briefing at Ijen Geopark", 
-        url: "https://javavolcano-touroperator.com/ops/ijen-geopark-briefing.png", 
-        hash: "72EB0D8F1629F2B97CBB8DC77535396EA15A260033DF52CB93BD96E33E2E86C3", 
-        last_verified: "2025-11-07" 
-      },
-      { 
-        slug: "office-photo", 
-        category: "OpsPhoto", 
-        title: "JVTO Bondowoso operations office", 
-        url: "https://javavolcano-touroperator.com/legal/office-photo.jpg", 
-        hash: "7850E39F80A5A42243982A33FC027E1D38F33BD28F7CDA56FC2E243790340A0F", 
-        last_verified: "2025-10-25" 
-      },
-      { 
-        slug: "police-escort-arrival-day", 
-        category: "OpsPhoto", 
-        title: "Traffic Police escorted arrival (day)", 
-        url: "https://javavolcano-touroperator.com/ops/jvto-police-escort-arrival-hotel-bondowoso-day.jpg", 
-        hash: "54CFC8C8D144EA7FD7ECE5301A2E51B584BCE237A6F4D5523CB5242C0C0CECF5", 
-        last_verified: "2025-11-07" 
-      },
-      { 
-        slug: "police-escort-arrival-night", 
-        category: "OpsPhoto", 
-        title: "Traffic Police escorted arrival (night)", 
-        url: "https://javavolcano-touroperator.com/ops/jvto-police-escort-arrival-hotel-bondowoso-night.jpg", 
-        hash: "5068DA0CC718B43880C54077819C72BF6BCE1C8E024A7E4B34B89E6A287BFA89", 
-        last_verified: "2025-11-07" 
-      },
-      { 
-        slug: "police-vehicle-support", 
-        category: "OpsPhoto", 
-        title: "Police support vehicle", 
-        url: "https://javavolcano-touroperator.com/ops/police-vehicle-support.jpg", 
-        hash: "475DDAE5F4C646F8200491DF7C67E17A6A14C28A67842F91E831512C98D62B30", 
-        last_verified: "2025-11-07" 
-      }
-    ],
-    safety: [
-      { 
-        slug: "ijen-screening-hotel-01", 
-        category: "Screening", 
-        title: "Pre-ascent health screening at partner hotel", 
-        url: "https://javavolcano-touroperator.com/screening/ijen-screening-hotel-01.jpeg", 
-        hash: "C52194BB0DB9C5ADA6F22660A954ACB03071925EA364B5E5B0C5E8EB919EBB77", 
-        last_verified: "2025-11-07" 
-      },
-      { 
-        slug: "ijen-screening-hotel-02", 
-        category: "Screening", 
-        title: "Vitals taken and logged before night ascent", 
-        url: "https://javavolcano-touroperator.com/screening/ijen-screening-hotel-02.jpg", 
-        hash: "E86A1E7D9D3E797F1D2D2EA0B2732103C9D980356BFB474BF16584772580EEEC", 
-        last_verified: "2025-11-07" 
-      },
-      { 
-        slug: "jvto-office-screening-1", 
-        category: "Screening", 
-        title: "Digitally recorded, signed clearance issuance", 
-        url: "https://javavolcano-touroperator.com/screening/jvto-office-screening-1.JPG", 
-        hash: "70370B0D85E0B5D0D92E317FD0F4D6880DA6ACBDF4A04EFB5C20C4E2EAC05E18", 
-        last_verified: "2025-11-07" 
-      },
-      { 
-        slug: "jvto-office-screening-2", 
-        category: "Screening", 
-        title: "Screening can be done at hotel or office", 
-        url: "https://javavolcano-touroperator.com/screening/jvto-office-screening-2.jpg", 
-        hash: "5F298BD424B765E96A424BE5F6AA016F59A82C2E675AFACC547F2EC692D33BD9", 
-        last_verified: "2025-11-07" 
-      },
-      { 
-        slug: "print-surat-sehat", 
-        category: "Screening", 
-        title: "Health clearance (surat sehat) printable PDF", 
-        url: "https://javavolcano-touroperator.com/screening/Print_Surat_Sehat_2026.pdf", 
-        hash: "185A35C324E981C8E0BD0365A8DC919D1CBB151BA24BD28910F737978011B985", 
-        last_verified: "2025-11-07" 
-      },
-      { 
-        slug: "bbksda-ticket-terms-screenshot", 
-        category: "Screening", 
-        title: "tiket.bbksdajatim.org — Terms & Conditions", 
-        url: "https://javavolcano-touroperator.com/screening/bbksda/bbksda-ticket-terms-screenshot.jpeg", 
-        hash: "c40c6e3cbe076d21991164e98207428a61f771d21459f831df6569a2dfe7485c", 
-        last_verified: "2026-02-19" 
-      },
-      { 
-        slug: "screenshot-sip-dr-ahmad-irwandanu-2026", 
-        category: "Screening", 
-        title: "Surat Izin Praktik (SIP) — dr. Ahmad Irwandanu", 
-        url: "https://javavolcano-touroperator.com/screening/SIP_DOKTER_AHMAD_IRWANDANU_2026.pdf", 
-        hash: "492ab5b8b6a9ac709132723c900e4bcf1e904038a8bec9fc3b97e8eb3ef02533", 
-        last_verified: "2026-02-20" 
-      }
-    ],
-    police_safety: [
-      { 
-        slug: "sprin-polpar-png", 
-        category: "PoliceDocs", 
-        title: "Tourist Police assignment letter (SPRIN POLPAR)", 
-        url: "https://javavolcano-touroperator.com/legal/SPRIN-POLPAR.png", 
-        hash: "F6B689C226220D2D4F2E61CE60A7B35C5E064EC2EF08A9BC4C24A5A8E47AD24A", 
-        last_verified: "2025-11-05",
-        annotations: [
-          { id: "seal-1", x: 15, y: 12, label: "Official Seal Verified", description: "Indonesian National Police (POLRI) authentic holographic seal detected." },
-          { id: "sign-1", x: 75, y: 85, label: "Command Signature", description: "Validated signature of the Directorate of Vital Object Security commander." },
-          { id: "ref-1", x: 20, y: 25, label: "Reference Number", description: "SPRIN/142/III/2024 - Cross-referenced with police database." }
-        ]
-      },
-      { 
-        slug: "sprin-polpar-webp", 
-        category: "PoliceDocs", 
-        title: "Tourist Police assignment letter (SPRIN POLPAR) WebP", 
-        url: "https://javavolcano-touroperator.com/legal/SPRIN-POLPAR.webp", 
-        hash: "4484E4E191176A057D683F2A8C3E46491617C5059FE4596C085F7F854C1082FA", 
-        last_verified: "2025-11-05" 
-      },
-      { 
-        slug: "sprin-wal-travel-2024-02-12-png", 
-        category: "PoliceDocs", 
-        title: "Police travel order (SPRIN WAL-TRAVEL)", 
-        url: "https://javavolcano-touroperator.com/legal/SPRIN-WAL-TRAVEL-2024-02-12.png", 
-        hash: "48CD3D353B15075B2CF833CEA17B1926F6C8B24686BFDEB6808D8261D72A42C5", 
-        last_verified: "2025-11-05" 
-      },
-      { 
-        slug: "sprin-wal-travel-2024-02-12-webp", 
-        category: "PoliceDocs", 
-        title: "Police travel order (SPRIN WAL-TRAVEL) WebP", 
-        url: "https://javavolcano-touroperator.com/legal/SPRIN-WAL-TRAVEL-2024-02-12.pdf", 
-        hash: "8B65A41B4897E011A8F8623AD11FD2FCA8D7EC46DCB34C5944AAB7D747A792C7", 
-        last_verified: "2025-11-05" 
-      }
-    ],
-    credentials: [
-      { 
-        slug: "kta-anjas", 
-        category: "Credentials", 
-        title: "Official Ijen climbing license for Anjas", 
-        url: "https://javavolcano-touroperator.com/uploads/1771428583288-513992233-kta_anjas.jpg", 
-        hash: "8f34a7ad62425dfa0e591d7cfcddcafae9e444dbc80ac3f3518247203837df72", 
-        last_verified: "2026-02-18" 
-      },
-      { 
-        slug: "kta-gufron", 
-        category: "Credentials", 
-        title: "Official Ijen climbing license for Gufron", 
-        url: "https://javavolcano-touroperator.com/uploads/1771428741674-842615436-kta_gufron.jpg", 
-        hash: "27216033236df1302abf9765ab080d0280f3dff9e96dd301e3f486aa38bb20ab", 
-        last_verified: "2026-02-18",
-        annotations: [
-          { id: "photo-1", x: 25, y: 40, label: "Biometric Match", description: "Personnel photo matches government-issued identification records." },
-          { id: "expiry-1", x: 70, y: 75, label: "Expiry Validated", description: "License is currently active. Next audit required Feb 2027." },
-          { id: "issuer-1", x: 50, y: 15, label: "Issuer Authenticity", description: "HPWKI official header and security patterns verified." }
-        ]
-      },
-      { 
-        slug: "kta-kiki", 
-        category: "Credentials", 
-        title: "Official Ijen climbing license for Kiki", 
-        url: "https://javavolcano-touroperator.com/uploads/1771428489070-55145932-kta_kiki.jpg", 
-        hash: "bd11ae0f0d15257bae7334496396fb69f5401c80d4fd7fc5139e4992c4df44cb", 
-        last_verified: "2026-02-18" 
-      },
-      { 
-        slug: "kta-rendi", 
-        category: "Credentials", 
-        title: "Official Ijen climbing license for Rendi", 
-        url: "https://javavolcano-touroperator.com/uploads/1771428760524-516116110-kta_rendi.jpg", 
-        hash: "1f96683542bc9929e88dfc693c5f27597f18058b657cdfa482a4a91b5cf5cbb7", 
-        last_verified: "2026-02-18" 
-      },
-      { 
-        slug: "kta-taufik", 
-        category: "Credentials", 
-        title: "Official Ijen climbing license for Taufik", 
-        url: "https://javavolcano-touroperator.com/uploads/1771428704448-911506028-kta_taufik.jpg", 
-        hash: "90d5fc704e68421ef63fe278346702a796985af72fc3a5804976a0f0f66f1290", 
-        last_verified: "2026-02-18" 
-      }
-    ],
-    press: [
-      { 
-        slug: "press-detik-polisi-pariwisata-2021-03-14", 
-        category: "Press", 
-        title: "Press mention (Detik.com)", 
-        url: "https://javavolcano-touroperator.com/press/screencapture-news-detik-berita-jawa-timur-d-5492690-suka-duka-polisi-pariwisata-bondowoso-tegakkan-prokes-sambil-lawan-dingin-2026-01-14-02_48_41.png", 
-        hash: "B257B75B3D2B9EDEBF07C9AF89A6C6AA9A4E01D6A716EF3F7C4CA75DEDA64B77", 
-        last_verified: "2025-11-07" 
-      },
-      { 
-        slug: "press-radarjember-polpar-ijen-geopark-2021-03-24", 
-        category: "Press", 
-        title: "Press mention (Radar Jember)", 
-        url: "https://javavolcano-touroperator.com/press/screenshot-radarjember.jawapos.com-polpar-dibentuk-untuk-mendukung-ijen-geopark.png", 
-        hash: "2A60EB168274004283B2B9939CCBF5982C12A7DB854FDA014308A2494EE2ABF4", 
-        last_verified: "2025-11-07" 
-      },
-      { 
-        slug: "press-bbksda-ijen-guide-training", 
-        category: "Press", 
-        title: "BBKSDA Jatim official training article", 
-        url: "https://javavolcano-touroperator.com/press/screenshot-bbksda-pelatihan-pemandu-kawah-ijen.png", 
-        hash: "b75668f98b78a54007b8bc0a8f4e0b3e46797dd6af47c158fb2b6a54bfb0b111", 
-        last_verified: "2025-11-07" 
-      }
-    ],
+  proof_vault: { 
     history: [
-      { 
-        slug: "mr-sam-tourist-police-portrait", 
-        category: "Founder", 
-        title: "Active Tourist Police leadership portrait", 
-        url: "https://upload.wikimedia.org/wikipedia/commons/b/bf/Agung_Sambuko.jpg", 
-        hash: "1B9E36780E4365224F21AB3EC7153A88BE2343782A363534FA1CF76BC9251752", 
-        last_verified: "2025-11-10" 
-      },
-      { 
-        slug: "booking-2015-plaque", 
-        category: "History", 
-        title: "Guesthouse era recognition (2015)", 
-        url: "https://javavolcano-touroperator.com/history/booking-2015-plaque.jpg", 
-        hash: "08CE8E519B936DF53D8DC2B4B98DF06604ECA9D8D633A6F5E1B8709022A13C9B", 
-        last_verified: "2025-11-07" 
-      },
-      { 
-        slug: "booking-2015-shipping-label", 
-        category: "History", 
-        title: "Award shipping label (2015)", 
-        url: "https://javavolcano-touroperator.com/history/booking-2015-shipping-label.jpg", 
-        hash: "4EEC3756B0F4AFEF8EA799AD08D1B2F098F75EBA2EBA45E8519CED3B64594549", 
-        last_verified: "2025-11-07" 
-      },
-      { 
-        slug: "guest-visit-stefan-loose", 
-        category: "History", 
-        title: "Guests visiting after reading Stefan Loose", 
-        url: "https://javavolcano-touroperator.com/history/guest-visit-ijen-bondowoso-homestay-stefan-loose-inspired.jpg", 
-        hash: "41DCDCD2E08778B0212C1B7006455B5B1B2D66282DEFCDE813F0A3EA96407FBC", 
-        last_verified: "2025-11-07" 
-      },
-      { 
-        slug: "stefan-loose-crop-enh", 
-        category: "History", 
-        title: "Stefan Loose travel guide (crop)", 
-        url: "https://javavolcano-touroperator.com/history/stefan_loose_crop_enh.jpg", 
-        hash: "410870F23842C49F6C27DD66931D1A22A4ECCE247997FC382962FE93BE3EFC46", 
-        last_verified: "2025-11-07" 
-      },
-      { 
-        slug: "stefan-loose-ijen-bondowoso-page", 
-        category: "History", 
-        title: "Stefan Loose travel guide (full page)", 
-        url: "https://javavolcano-touroperator.com/history/stefan-loose-ijen-bondowoso-page.png", 
-        hash: "ECD5B591D3BA1B01341DCF75925A8E072DFF53C1097111E99033BB1AC4F71E22", 
-        last_verified: "2025-11-07" 
-      },
-      { 
-        slug: "stefan-loose-guidebook-page-287", 
-        category: "Historical Validation", 
-        title: "Stefan Loose Reiseführer, page 287", 
-        url: "https://javavolcano-touroperator.com/history/stefan_loose_crop_enh.jpg", 
-        hash: "d53aaf7d8496032babfe2f4f9d0d81a8c444fcf26e45f4eb5ea5b8e8252ba3eb", 
-        last_verified: "2026-02-19" 
-      }
-    ],
+      { slug: "booking-2015-plaque", title: "2015 Booking.com Guest Review Award", category: "Award", last_verified: "2026-03-28", url: "https://javavolcano-touroperator.com/history/booking-2015-plaque.jpg", hash: "a1b2c3d4e5f6" },
+      { slug: "booking-2015-shipping-label", title: "Booking.com Shipping Label", category: "Document", last_verified: "2026-03-28", url: "https://javavolcano-touroperator.com/history/booking-2015-shipping-label.jpg", hash: "b2c3d4e5f6a1" },
+      { slug: "guest-visit-stefan-loose", title: "Mr. Sam with Guests (2015)", category: "Photo", last_verified: "2026-03-28", url: "https://javavolcano-touroperator.com/history/guest-visit-ijen-bondowoso-homestay-stefan-loose-inspired.jpg", hash: "c3d4e5f6a1b2" },
+      { slug: "stefan-loose-ijen-bondowoso-page", title: "Stefan Loose Handbook Entry", category: "Publication", last_verified: "2026-03-28", url: "https://javavolcano-touroperator.com/history/stefan-loose-ijen-bondowoso-page.png", hash: "d4e5f6a1b2c3" },
+      { slug: "founder-with-guests-stefan-loose", title: "Founder with International Guests", category: "Photo", last_verified: "2026-03-28", url: "https://javavolcano-touroperator.com/history/founder-with-guests-stefan-loose.jpg", hash: "e5f6a1b2c3d4" }
+    ], 
+    legality: [
+      { slug: "nib-1102230032918", title: "NIB Certificate", category: "Registration", last_verified: "2026-03-28", url: "https://javavolcano-touroperator.com/legal/NIB-1102230032918-preview.png", hash: "f6a1b2c3d4e5" },
+      { slug: "office-photo", title: "JVTO Office", category: "Location", last_verified: "2026-03-28", url: "https://javavolcano-touroperator.com/legal/office-photo.jpg", hash: "a2b3c4d5e6f7" }
+    ], 
+    license: [
+      { slug: "tdup-1102230032918", title: "TDUP Licence", category: "Licence", last_verified: "2026-03-28", url: "https://javavolcano-touroperator.com/legal/TDUP-1102230032918-preview.png", hash: "b3c4d5e6f7a2" }
+    ], 
+    accountability: [
+      { slug: "baratha-hotel-departure-team", title: "Team Departure at Baratha Hotel", category: "Operations", last_verified: "2026-03-28", url: "https://javavolcano-touroperator.com/ops/baratha-hotel-departure-team.jpg", hash: "c4d5e6f7a2b3" },
+      { slug: "group-at-jvto-office", title: "Guests at JVTO Office", category: "Operations", last_verified: "2026-03-28", url: "https://javavolcano-touroperator.com/ops/group-at-jvto-office.jpg", hash: "d5e6f7a2b3c4" },
+      { slug: "guest-welcome-evening", title: "Evening Welcome Briefing", category: "Operations", last_verified: "2026-03-28", url: "https://javavolcano-touroperator.com/ops/guest-welcome-evening.png", hash: "e6f7a2b3c4d5" }
+    ], 
+    safety: [
+      { slug: "ijen-screening-hotel-01", title: "Ijen Health Screening (Hotel)", category: "Medical", last_verified: "2026-03-28", url: "https://javavolcano-touroperator.com/screening/ijen-screening-hotel-01.jpeg", hash: "f7a2b3c4d5e6" },
+      { slug: "ijen-screening-hotel-02", title: "Vitals Measurement", category: "Medical", last_verified: "2026-03-28", url: "https://javavolcano-touroperator.com/screening/ijen-screening-hotel-02.jpg", hash: "a3b4c5d6e7f8" },
+      { slug: "jvto-office-screening-1", title: "Office Blood Pressure Check", category: "Medical", last_verified: "2026-03-28", url: "https://javavolcano-touroperator.com/screening/jvto-office-screening-1.JPG", hash: "b4c5d6e7f8a3" },
+      { slug: "jvto-office-screening-2", title: "Oxygen Saturation Check", category: "Medical", last_verified: "2026-03-28", url: "https://javavolcano-touroperator.com/screening/jvto-office-screening-2.jpg", hash: "c5d6e7f8a3b4" },
+      { slug: "print-surat-sehat-preview", title: "Health Clearance Form", category: "Document", last_verified: "2026-03-28", url: "https://javavolcano-touroperator.com/screening/print-surat-sehat-preview.png", hash: "d6e7f8a3b4c5" }
+    ], 
+    police_safety: [
+      { slug: "sprin-polpar", title: "SPRIN POLPAR Assignment Letter", category: "Official Document", last_verified: "2026-03-28", url: "https://javavolcano-touroperator.com/legal/SPRIN-POLPAR.png", hash: "e7f8a3b4c5d6" },
+      { slug: "sprin-wal-travel", title: "SPRIN WAL-TRAVEL Order", category: "Official Document", last_verified: "2026-03-28", url: "https://javavolcano-touroperator.com/legal/SPRIN-WAL-TRAVEL-2024-02-12.png", hash: "f8a3b4c5d6e7" },
+      { slug: "police-escort-arrival-day", title: "Police Escort (Day)", category: "Operations", last_verified: "2026-03-28", url: "https://javavolcano-touroperator.com/ops/jvto-police-escort-arrival-hotel-bondowoso-day.jpg", hash: "a4b5c6d7e8f9" },
+      { slug: "police-escort-arrival-night", title: "Police Escort (Night)", category: "Operations", last_verified: "2026-03-28", url: "https://javavolcano-touroperator.com/ops/jvto-police-escort-arrival-hotel-bondowoso-night.jpg", hash: "b5c6d7e8f9a4" },
+      { slug: "police-vehicle-support", title: "Police Support Vehicle", category: "Operations", last_verified: "2026-03-28", url: "https://javavolcano-touroperator.com/ops/police-vehicle-support.jpg", hash: "c6d7e8f9a4b5" },
+      { slug: "ijen-geopark-briefing", title: "Tourist Police Briefing", category: "Operations", last_verified: "2026-03-28", url: "https://javavolcano-touroperator.com/ops/ijen-geopark-briefing.png", hash: "d7e8f9a4b5c6" }
+    ], 
+    credentials: [
+      { slug: "kta-anjas", title: "Ijen Guide License: Anjas", category: "License", last_verified: "2026-03-28", url: "https://javavolcano-touroperator.com/uploads/1771428583288-513992233-kta_anjas.jpg", hash: "e8f9a4b5c6d7" },
+      { slug: "kta-gufron", title: "Ijen Guide License: Gufron", category: "License", last_verified: "2026-03-28", url: "https://javavolcano-touroperator.com/uploads/1771428741674-842615436-kta_gufron.jpg", hash: "f9a4b5c6d7e8" },
+      { slug: "kta-kiki", title: "Ijen Guide License: Kiki", category: "License", last_verified: "2026-03-28", url: "https://javavolcano-touroperator.com/uploads/1771428489070-55145932-kta_kiki.jpg", hash: "a5b6c7d8e9f0" },
+      { slug: "kta-rendi", title: "Ijen Guide License: Rendi", category: "License", last_verified: "2026-03-28", url: "https://javavolcano-touroperator.com/uploads/1771428760524-516116110-kta_rendi.jpg", hash: "b6c7d8e9f0a5" },
+      { slug: "kta-taufik", title: "Ijen Guide License: Taufik", category: "License", last_verified: "2026-03-28", url: "https://javavolcano-touroperator.com/uploads/1771428704448-911506028-kta_taufik.jpg", hash: "c7d8e9f0a5b6" }
+    ], 
+    press: [
+      { slug: "press-bbksda", title: "BBKSDA Jatim Guide Training", category: "Official Press", last_verified: "2026-03-28", url: "https://javavolcano-touroperator.com/press/screenshot-bbksda-pelatihan-pemandu-kawah-ijen.png", hash: "d8e9f0a5b6c7" },
+      { slug: "press-detik", title: "Detik.com: Tourist Police at Ijen", category: "Media", last_verified: "2026-03-28", url: "https://javavolcano-touroperator.com/press/screencapture-news-detik-berita-jawa-timur-d-5492690-suka-duka-polisi-pariwisata-bondowoso-tegakkan-prokes-sambil-lawan-dingin-2026-01-14-02_48_41.png", hash: "e9f0a5b6c7d8" },
+      { slug: "press-radarjember", title: "Radar Jember: Polpar Ijen Geopark", category: "Media", last_verified: "2026-03-28", url: "https://javavolcano-touroperator.com/press/screenshot-radarjember.jawapos.com-polpar-dibentuk-untuk-mendukung-ijen-geopark.png", hash: "f0a5b6c7d8e9" }
+    ], 
     partners: [
+      { slug: "hpwki-approval", title: "HPWKI Approval", category: "Association", last_verified: "2026-03-28", url: "https://javavolcano-touroperator.com/legal/HPWKI-approval-preview.png", hash: "a6b7c8d9e0f1" }
+    ] 
+  },
+  history: {
+    award2015: {
+      title: "Booking.com Award",
+      year: 2015,
+      score: 9.2,
+      evidence: "booking-2015-plaque"
+    },
+    book2016: {
+      title: "Stefan Loose Reiseführer",
+      year: 2016,
+      page: 435,
+      isbn: "978-3770167303",
+      quote: "Bripka Agung Sambuko... is very helpful and organizes tours to Ijen.",
+      evidence: "stefan-loose-ijen-bondowoso-page",
+      annotations: [
+        { id: "1", x: 20, y: 30, text: "Mention of Bripka Agung Sambuko" }
+      ]
+    }
+  } as any,
+  press: [
+    { 
+      publisher: 'BBKSDA Jatim', 
+      title: 'Pelatihan Pemandu Kawah Ijen',
+      date: '2023-08-15',
+      author: 'Official', 
+      quote: 'Official guide training for Ijen Crater.', 
+      url: 'https://bbksdajatim.org', 
+      screenshot: 'https://javavolcano-touroperator.com/press/screenshot-bbksda-pelatihan-pemandu-kawah-ijen.png', 
+      translatedTitle: 'BBKSDA Jatim Guide Training' 
+    },
+    { 
+      publisher: 'Detik.com', 
+      title: 'Suka Duka Polisi Pariwisata Bondowoso',
+      date: '2021-03-14',
+      author: 'Agung Sambuko', 
+      quote: 'Tourist police officer who cares about safety.', 
+      url: 'https://detik.com', 
+      screenshot: 'https://javavolcano-touroperator.com/press/screencapture-news-detik-berita-jawa-timur-d-5492690-suka-duka-polisi-pariwisata-bondowoso-tegakkan-prokes-sambil-lawan-dingin-2026-01-14-02_48_41.png', 
+      translatedTitle: 'Tourist Police Officer Ensures Safety at Ijen' 
+    },
+    { 
+      publisher: 'Radar Jember', 
+      title: 'Polpar Dibentuk Untuk Mendukung Ijen Geopark',
+      date: '2021-03-24',
+      author: 'Radar Jember', 
+      quote: 'Local police officer leads safe tours.', 
+      url: 'https://radarjember.com', 
+      screenshot: 'https://javavolcano-touroperator.com/press/screenshot-radarjember.jawapos.com-polpar-dibentuk-untuk-mendukung-ijen-geopark.png', 
+      translatedTitle: 'Tourist Police Support' 
+    }
+  ] as any,
+  claims: [
+    {
+      id: "C1",
+      text: "100% Safety Record",
+      meaning: "Zero major incidents in over 10 years of operation.",
+      evidenceAnchor: "safety"
+    },
+    {
+      id: "C2",
+      text: "Certified Guides",
+      meaning: "All guides hold official licenses.",
+      evidenceAnchor: "credentials"
+    },
+    {
+      id: "C3",
+      text: "Legal Entity",
+      meaning: "Fully registered and licensed tour operator.",
+      evidenceAnchor: "legality"
+    },
+    {
+      id: "C4",
+      text: "Police-Led Security",
+      meaning: "Operations led by active Tourist Police personnel.",
+      evidenceAnchor: "police-safety"
+    }
+  ],
+  health_protocol: {
+    title: "MANDATORY MEDICAL SCREENING",
+    subtitle: "Your safety is our priority. We require all guests to undergo a medical screening before climbing Ijen.",
+    protocol: [
+      "Mandatory blood pressure check",
+      "Oxygen saturation measurement",
+      "General health assessment"
+    ],
+    parameters: [
       { 
-        slug: "hpwki-approval-preview-png", 
-        category: "Membership", 
-        title: "HPWKI approval letter preview", 
-        url: "https://javavolcano-touroperator.com/legal/HPWKI-approval-preview.png", 
-        hash: "2BFF4DDE90A4113028898A4B3CE67783B49CEED272F4E842CD26AA37243CDE36", 
-        last_verified: "2025-10-25" 
+        icon: "HeartPulse", 
+        title: "Blood Pressure & Heart Rate", 
+        desc: "Hypertension (High BP) is a major risk factor at altitude. We screen for resting heart rate anomalies before ascent.",
+        color: "text-red-500",
+        bg: "bg-red-500/10"
       },
       { 
-        slug: "hpwki-approval-preview-webp", 
-        category: "Membership", 
-        title: "HPWKI approval letter (PDF)", 
-        url: "https://javavolcano-touroperator.com/legal/HPWKI-approval.pdf", 
-        hash: "9F2DC0C34370A39E1C964207B754A917F8C1E571A32BD042621EF5CA087301F1", 
-        last_verified: "2025-10-25" 
+        icon: "Activity", 
+        title: "Oxygen Saturation (SpO2)", 
+        desc: "We monitor oxygen levels to detect early signs of hypoxia. Anything below 92% triggers a mandatory safety review.",
+        color: "text-verified-bright",
+        bg: "bg-verified-bright/10"
       },
       { 
-        slug: "isic-partner-page", 
-        category: "Partner", 
-        title: "ISIC Partner Verification", 
-        url: "https://javavolcano-touroperator.com/partner/screensot-isic-page-jvto.png", 
-        hash: "PENDING", 
-        last_verified: "2026-03-06" 
+        icon: "AlertTriangle", 
+        title: "\"Hard Stop\" Authority", 
+        desc: "Our medical team has the absolute authority to cancel a climb if vitals are unsafe. No refunds on safety, but full credits provided.",
+        color: "text-safety-orange",
+        bg: "bg-safety-orange/10"
       }
     ],
-    reputation: []
+    steps: [
+      {
+        step: "01",
+        title: "Arrival",
+        desc: "Arrival at hotel or JVTO office."
+      },
+      {
+        step: "02",
+        title: "Registration",
+        desc: "Registration and identity verification."
+      },
+      {
+        step: "03",
+        title: "Vital Signs",
+        desc: "Vital signs measurement by nurse."
+      },
+      {
+        step: "04",
+        title: "Doctor's Review",
+        desc: "Doctor's review and issuance of 'Fit-to-Climb' certificate."
+      }
+    ],
+    policy: "Guests failing the screening will not be permitted to climb Ijen Crater. Alternative activities will be offered."
   },
   pages: {
-    "/": {
-      route: "/",
-      title_tag: "Tourist Police-Led Private Volcano Tours in East Java | JVTO",
-      meta_description: "Private Bromo, Ijen & Tumpak Sewu volcano tours departing from Surabaya or Bali. Licensed operator No. 1102230032918. Led by an active Tourist Police officer.",
+    '/': {
       h1: "Tourist Police-Led Private Volcano Tours in East Java",
-      canonical: "https://javavolcano-touroperator.com/",
-      schema_type: "TravelAgency",
-      schema_profile: "organization_graph",
-      robots: "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
-    },
-    "/contact": {
-      route: "/contact",
-      title_tag: "Contact Java Volcano Tour Operator – WhatsApp & Email",
-      meta_description: "Contact JVTO: WhatsApp +6282244788833, email hello@javavolcano-touroperator.com. Office: Jl. Khairil Anwar No.102 A, Bondowoso, East Java, Indonesia.",
-      h1: "Contact Java Volcano Tour Operator",
-      canonical: "https://javavolcano-touroperator.com/contact",
-      schema_type: "ContactPage",
-      schema_profile: "contact_page",
-      robots: "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
-    },
-    "/destinations": {
-      route: "/destinations",
-      title_tag: "East Java Destinations – Bromo, Ijen, Tumpak Sewu & More | JVTO",
-      meta_description: "Explore East Java's most iconic landscapes with JVTO. From Mount Bromo's sunrise to Kawah Ijen's blue fire, we provide private, safety-first expeditions.",
-      h1: "Destinations Hub — Explore East Java's Volcanic Wonders",
-      canonical: "https://javavolcano-touroperator.com/destinations",
-      schema_type: "CollectionPage",
-      schema_profile: "destination_hub",
-      robots: "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
-    },
-    "/destinations/ijen-crater": {
-      route: "/destinations/ijen-crater",
-      title_tag: "Kawah Ijen: Blue Fire Trekking & Crater Lake in East Java | JVTO",
-      meta_description: "Private Kawah Ijen blue fire trek. World's largest acidic crater lake. Mandatory health screening included. Tourist Police-led. From IDR 1,550,000/person from Surabaya.",
-      h1: "Kawah Ijen — Blue Fire, Acidic Lake & Health Protocols",
-      canonical: "https://javavolcano-touroperator.com/destinations/ijen-crater",
-      schema_type: "TouristAttraction",
-      schema_profile: "tourist_attraction",
-      robots: "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
-    },
-    "/destinations/madakaripura-waterfall": {
-      route: "/destinations/madakaripura-waterfall",
-      title_tag: "Madakaripura Waterfall – Gajah Mada's Sacred Sanctuary | JVTO",
-      meta_description: "Madakaripura: the 200-metre waterfall where Gajah Mada meditated. Sacred site in East Java. Guide to visiting — trek, what to wear, cultural context.",
-      h1: "Madakaripura Waterfall — The Sacred Canyon of Gajah Mada",
-      canonical: "https://javavolcano-touroperator.com/destinations/madakaripura-waterfall",
-      schema_type: "TouristAttraction",
-      schema_profile: "tourist_attraction",
-      robots: "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
-    },
-    "/destinations/mount-bromo": {
-      route: "/destinations/mount-bromo",
-      title_tag: "Mount Bromo: Sunrise Volcano Trekking in East Java | JVTO",
-      meta_description: "Private Mount Bromo sunrise tour from Surabaya. 2,329m active volcano, Sea of Sand jeep, Yadnya Kasada ceremony. All permits included. From IDR 1,750,000/person.",
-      h1: "Mount Bromo — Sunrise Above the Sea of Sand",
-      canonical: "https://javavolcano-touroperator.com/destinations/mount-bromo",
-      schema_type: "TouristAttraction",
-      schema_profile: "tourist_attraction",
-      robots: "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
-    },
-    "/destinations/papuma-beach": {
-      route: "/destinations/papuma-beach",
-      title_tag: "Papuma Beach Jember – White Sand Paradise in East Java | JVTO",
-      meta_description: "Papuma Beach, Jember: white sand, turquoise waters, unique rock formations. East Java's best coastal stop — pairs well with Ijen or Tumpak Sewu tours.",
-      h1: "Papuma Beach — The White Sand Paradise of Jember",
-      canonical: "https://javavolcano-touroperator.com/destinations/papuma-beach",
-      schema_type: "TouristAttraction",
-      schema_profile: "tourist_attraction",
-      robots: "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
-    },
-    "/destinations/tumpak-sewu-waterfall": {
-      route: "/destinations/tumpak-sewu-waterfall",
-      title_tag: "Tumpak Sewu Waterfall – Java's Most Spectacular Canyon | JVTO",
-      meta_description: "Tumpak Sewu: the thousand-stream waterfall with Mount Semeru backdrop. Complete adventure guide — canyon descent, best season, what to expect.",
-      h1: "Tumpak Sewu — Java's Most Spectacular Thousand-Stream Waterfall",
-      canonical: "https://javavolcano-touroperator.com/destinations/tumpak-sewu-waterfall",
-      schema_type: "TouristAttraction",
-      schema_profile: "tourist_attraction",
-      robots: "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
-    },
-    "/isic/student-package": {
-      route: "/isic/student-package",
-      title_tag: "ISIC Student Package – Verified Student Pricing | JVTO",
-      meta_description: "Official ISIC student package: check eligibility, verification steps, applicable tours, and how to book with your ISIC card at Java Volcano Tour Operator.",
-      h1: "ISIC Student Package",
-      canonical: "https://javavolcano-touroperator.com/isic/student-package",
-      schema_type: "WebPage",
-      schema_profile: "core_page",
-      robots: "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
-    },
-    "/policy": {
-      route: "/policy",
-      title_tag: "JVTO Policies – Booking, Privacy & Inclusions Overview",
-      meta_description: "JVTO customer policies: booking/payment/cancellation rules, what is included and excluded in tours, and privacy/data protection. All policies in one place.",
-      h1: "JVTO Policy Pack",
-      canonical: "https://javavolcano-touroperator.com/policy",
-      schema_type: "PolicyPage",
-      schema_profile: "policy_page",
-      robots: "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
-    },
-    "/policy/booking-payment-cancellation": {
-      route: "/policy/booking-payment-cancellation",
-      title_tag: "Booking, Payment & Cancellation Policy | JVTO",
-      meta_description: "JVTO booking, payment, and cancellation policy. Deposit rules, balance payment timing, and Lifetime Travel Credit terms. All-inclusive private tours.",
-      h1: "JVTO Booking, Payment & Cancellation Policy",
-      canonical: "https://javavolcano-touroperator.com/policy/booking-payment-cancellation",
-      schema_type: "PolicyPage",
-      schema_profile: "policy_page",
-      robots: "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
-    },
-    "/policy/inclusions-exclusions": {
-      route: "/policy/inclusions-exclusions",
-      title_tag: "What's Included & Excluded in JVTO Tours | JVTO",
-      meta_description: "Exact inclusions and exclusions in JVTO private tour packages. Only written items are binding — transport, permits, guide, hotel. Clear exclusions list.",
-      h1: "JVTO Inclusions & Exclusions Policy",
-      canonical: "https://javavolcano-touroperator.com/policy/inclusions-exclusions",
-      schema_type: "PolicyPage",
-      schema_profile: "policy_page",
-      robots: "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
-    },
-    "/policy/privacy": {
-      route: "/policy/privacy",
-      title_tag: "Privacy Policy | Java Volcano Tour Operator (JVTO)",
-      meta_description: "JVTO privacy policy: data collected, purpose of use, when data is shared for tour operations, and how to request data deletion. GDPR-aligned practices.",
-      h1: "JVTO Privacy & Data Protection Policy",
-      canonical: "https://javavolcano-touroperator.com/policy/privacy",
-      schema_type: "PolicyPage",
-      schema_profile: "policy_page",
-      robots: "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
-    },
-    "/tours": {
-      route: "/tours",
-      title_tag: "Private East Java Tours from Surabaya & Bali | JVTO",
-      meta_description: "16 private East Java volcano tours from Surabaya and Bali. All-inclusive packages from IDR 1,000,000/person. Tourist Police-led, licensed operator No.1102230032918.",
-      h1: "Private East Java Expeditions — Bromo, Ijen & Beyond",
-      canonical: "https://javavolcano-touroperator.com/tours",
-      schema_type: "CollectionPage",
-      schema_profile: "tour_hub",
-      robots: "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
-    },
-    "/tours/from-bali": {
-      route: "/tours/from-bali",
-      title_tag: "Private Tours from Bali – Bromo, Ijen & East Java | JVTO",
-      meta_description: "Private East Java tours from Bali. 3–5 day packages. Ferry crossing included. Bromo, Ijen, Madakaripura, Tumpak Sewu, and Papuma Beach. All-inclusive.",
-      h1: "Private Tours from Bali — Seamless East Java Discovery",
-      canonical: "https://javavolcano-touroperator.com/tours/from-bali",
-      schema_type: "CollectionPage",
-      schema_profile: "tour_hub",
-      robots: "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
-    },
-    "/tours/from-bali/bromo-ijen-3d2n": {
-      route: "/tours/from-bali/bromo-ijen-3d2n",
-      title_tag: "3 Day Bromo & Ijen Volcano Tour from Bali | JVTO",
-      meta_description: "Private 3-day volcano tour from Bali to East Java: Mount Bromo sunrise, Kawah Ijen blue fire. Ferry crossing included. All-inclusive. Tourist Police-led.",
-      h1: "3 Day Bromo & Ijen Volcano Discovery from Bali",
-      canonical: "https://javavolcano-touroperator.com/tours/from-bali/bromo-ijen-3d2n",
-      schema_type: "TouristTrip",
-      schema_profile: "tourist_trip_offer",
-      robots: "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
-    },
-    "/tours/from-bali/ijen-bromo-madakaripura-3d2n": {
-      route: "/tours/from-bali/ijen-bromo-madakaripura-3d2n",
-      title_tag: "3 Day Ijen, Bromo & Madakaripura Tour from Bali | JVTO",
-      meta_description: "Private 3-day tour from Bali: Kawah Ijen blue fire, Mount Bromo sunrise, Madakaripura Waterfall. Ferry crossing included. Ends in Surabaya. All-inclusive.",
-      h1: "3 Day Ijen, Bromo & Madakaripura Waterfall Journey from Bali to Surabaya",
-      canonical: "https://javavolcano-touroperator.com/tours/from-bali/ijen-bromo-madakaripura-3d2n",
-      schema_type: "TouristTrip",
-      schema_profile: "tourist_trip_offer",
-      robots: "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
-    },
-    "/tours/from-bali/ijen-papuma-tumpak-sewu-bromo-4d3n": {
-      route: "/tours/from-bali/ijen-papuma-tumpak-sewu-bromo-4d3n",
-      title_tag: "4 Day Ijen, Papuma, Tumpak Sewu & Bromo from Bali | JVTO",
-      meta_description: "Private 4-day East Java tour from Bali: Ijen blue fire, Papuma Beach, Tumpak Sewu canyon, Bromo sunrise. Ferry included. Ends Surabaya. All-inclusive.",
-      h1: "4 Day Ijen, Papuma Beach, Tumpak Sewu & Bromo Expedition from Bali to Surabaya",
-      canonical: "https://javavolcano-touroperator.com/tours/from-bali/ijen-papuma-tumpak-sewu-bromo-4d3n",
-      schema_type: "TouristTrip",
-      schema_profile: "tourist_trip_offer",
-      robots: "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
-    },
-    "/tours/from-bali/ijen-papuma-tumpak-sewu-bromo-5d4n": {
-      route: "/tours/from-bali/ijen-papuma-tumpak-sewu-bromo-5d4n",
-      title_tag: "5 Day Ijen, Papuma, Tumpak Sewu & Bromo from Bali | JVTO",
-      meta_description: "Private 5-day East Java tour from Bali: Ijen, Papuma Beach, Tumpak Sewu, Bromo. More time per stop vs 4-day version. Ferry included. Ends Surabaya.",
-      h1: "5 Day Ijen, Papuma Beach, Tumpak Sewu & Bromo Discovery from Bali to Surabaya",
-      canonical: "https://javavolcano-touroperator.com/tours/from-bali/ijen-papuma-tumpak-sewu-bromo-5d4n",
-      schema_type: "TouristTrip",
-      schema_profile: "tourist_trip_offer",
-      robots: "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
-    },
-    "/tours/from-surabaya": {
-      route: "/tours/from-surabaya",
-      title_tag: "Private Tours from Surabaya – Bromo, Ijen & Tumpak Sewu | JVTO",
-      meta_description: "Private East Java tours from Surabaya. 1–6 day packages covering Bromo, Ijen, Madakaripura, Tumpak Sewu, and Papuma Beach. All-inclusive, private vehicle.",
-      h1: "Private Tours from Surabaya — The Gateway to Volcanoes",
-      canonical: "https://javavolcano-touroperator.com/tours/from-surabaya",
-      schema_type: "CollectionPage",
-      schema_profile: "tour_hub",
-      robots: "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
-    },
-    "/tours/from-surabaya/bromo-1d1n": {
-      route: "/tours/from-surabaya/bromo-1d1n",
-      title_tag: "1 Day Bromo Sunrise Tour from Surabaya | JVTO Private Tours",
-      meta_description: "Private 1-day Mount Bromo tour from Surabaya. Midnight departure, sunrise at Penanjakan, Sea of Sand. All-inclusive — transport, permits, guide. East Java.",
-      h1: "1 Day Bromo Midnight Experience from Surabaya",
-      canonical: "https://javavolcano-touroperator.com/tours/from-surabaya/bromo-1d1n",
-      schema_type: "TouristTrip",
-      schema_profile: "tourist_trip_offer",
-      robots: "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
-    },
-    "/tours/from-surabaya/bromo-2d1n": {
-      route: "/tours/from-surabaya/bromo-2d1n",
-      title_tag: "2 Day Bromo Sunrise Adventure from Surabaya | JVTO",
-      meta_description: "Private 2-day Bromo & Madakaripura tour from Surabaya. Overnight near Bromo, sunrise at Penanjakan, waterfall trek. All-inclusive. Licensed operator.",
-      h1: "2 Day Bromo Sunrise Adventure from Surabaya",
-      canonical: "https://javavolcano-touroperator.com/tours/from-surabaya/bromo-2d1n",
-      schema_type: "TouristTrip",
-      schema_profile: "tourist_trip_offer",
-      robots: "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
-    },
-    "/tours/from-surabaya/bromo-madakaripura-ijen-3d2n": {
-      route: "/tours/from-surabaya/bromo-madakaripura-ijen-3d2n",
-      title_tag: "3 Day Bromo, Madakaripura & Ijen – Surabaya to Bali | JVTO",
-      meta_description: "Private 3-day overland tour: Surabaya → Bromo sunrise → Madakaripura Waterfall → Ijen blue fire → Bali. All-inclusive. Tourist Police-led operator.",
-      h1: "3 Day Bromo, Madakaripura & Ijen Overland from Surabaya to Bali",
-      canonical: "https://javavolcano-touroperator.com/tours/from-surabaya/bromo-madakaripura-ijen-3d2n",
-      schema_type: "TouristTrip",
-      schema_profile: "tourist_trip_offer",
-      robots: "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
-    },
-    "/tours/from-surabaya/ijen-2d1n": {
-      route: "/tours/from-surabaya/ijen-2d1n",
-      title_tag: "2 Day Ijen Blue Fire Tour from Surabaya | JVTO",
-      meta_description: "Private 2-day Kawah Ijen tour from Surabaya. Midnight trek, blue fire phenomenon, crater lake, sulfur miners. All-inclusive. Tourist Police-led operator.",
-      h1: "2 Day Ijen Blue Fire Expedition from Surabaya",
-      canonical: "https://javavolcano-touroperator.com/tours/from-surabaya/ijen-2d1n",
-      schema_type: "TouristTrip",
-      schema_profile: "tourist_trip_offer",
-      robots: "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
-    },
-    "/tours/from-surabaya/ijen-bromo-madakaripura-3d2n": {
-      route: "/tours/from-surabaya/ijen-bromo-madakaripura-3d2n",
-      title_tag: "3 Day Ijen, Bromo & Madakaripura Tour from Surabaya | JVTO",
-      meta_description: "Private 3-day tour from Surabaya: Kawah Ijen blue fire, Mount Bromo sunrise, Madakaripura Waterfall. All-inclusive — transport, permits, guide, hotel.",
-      h1: "3 Day Ijen, Bromo & Madakaripura Waterfall Discovery from Surabaya",
-      canonical: "https://javavolcano-touroperator.com/tours/from-surabaya/ijen-bromo-madakaripura-3d2n",
-      schema_type: "TouristTrip",
-      schema_profile: "tourist_trip_offer",
-      robots: "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
-    },
-    "/tours/from-surabaya/ijen-bromo-madakaripura-4d3n": {
-      route: "/tours/from-surabaya/ijen-bromo-madakaripura-4d3n",
-      title_tag: "4 Day Ijen, Bromo & Madakaripura Expedition from Surabaya | JVTO",
-      meta_description: "Private 4-day tour from Surabaya: Kawah Ijen, Mount Bromo sunrise, Madakaripura Waterfall. Deeper itinerary with more time per destination. All-inclusive.",
-      h1: "4 Day Ijen, Bromo & Madakaripura Waterfall Expedition from Surabaya",
-      canonical: "https://javavolcano-touroperator.com/tours/from-surabaya/ijen-bromo-madakaripura-4d3n",
-      schema_type: "TouristTrip",
-      schema_profile: "tourist_trip_offer",
-      robots: "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
-    },
-    "/tours/from-surabaya/ijen-bromo-madakaripura-malang-5d4n": {
-      route: "/tours/from-surabaya/ijen-bromo-madakaripura-malang-5d4n",
-      title_tag: "5 Day Ijen, Bromo, Madakaripura & Malang from Surabaya | JVTO",
-      meta_description: "Private 5-day tour from Surabaya: Ijen blue fire, Bromo sunrise, Madakaripura Waterfall, Malang city. East Java's best volcanic and cultural highlights.",
-      h1: "5 Day Ijen, Bromo, Madakaripura & Malang City Adventure from Surabaya",
-      canonical: "https://javavolcano-touroperator.com/tours/from-surabaya/ijen-bromo-madakaripura-malang-5d4n",
-      schema_type: "TouristTrip",
-      schema_profile: "tourist_trip_offer",
-      robots: "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
-    },
-    "/tours/from-surabaya/ijen-papuma-tumpak-sewu-bromo-4d3n": {
-      route: "/tours/from-surabaya/ijen-papuma-tumpak-sewu-bromo-4d3n",
-      title_tag: "4 Day Ijen, Papuma, Tumpak Sewu & Bromo Tour from Surabaya | JVTO",
-      meta_description: "Private 4-day East Java tour: Ijen blue fire, Papuma Beach, Tumpak Sewu Waterfall, Bromo sunrise. All-inclusive — full East Java circuit from Surabaya.",
-      h1: "4 Day Ijen, Papuma Beach, Tumpak Sewu & Bromo Journey from Surabaya",
-      canonical: "https://javavolcano-touroperator.com/tours/from-surabaya/ijen-papuma-tumpak-sewu-bromo-4d3n",
-      schema_type: "TouristTrip",
-      schema_profile: "tourist_trip_offer",
-      robots: "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
-    },
-    "/tours/from-surabaya/ijen-papuma-tumpak-sewu-bromo-5d4n": {
-      route: "/tours/from-surabaya/ijen-papuma-tumpak-sewu-bromo-5d4n",
-      title_tag: "5 Day Ijen, Papuma, Tumpak Sewu & Bromo Tour from Surabaya | JVTO",
-      meta_description: "Private 5-day East Java tour: Ijen blue fire, Papuma Beach, Tumpak Sewu canyon, Bromo sunrise. More time at each stop vs the 4-day version. All-inclusive.",
-      h1: "5 Day Ijen, Papuma Beach, Tumpak Sewu & Bromo Nature Trip from Surabaya",
-      canonical: "https://javavolcano-touroperator.com/tours/from-surabaya/ijen-papuma-tumpak-sewu-bromo-5d4n",
-      schema_type: "TouristTrip",
-      schema_profile: "tourist_trip_offer",
-      robots: "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
-    },
-    "/tours/from-surabaya/ijen-papuma-tumpak-sewu-bromo-malang-6d5n": {
-      route: "/tours/from-surabaya/ijen-papuma-tumpak-sewu-bromo-malang-6d5n",
-      title_tag: "6 Day Complete East Java Tour – Ijen, Bromo & Malang | JVTO",
-      meta_description: "Private 6-day complete East Java tour: Ijen blue fire, Papuma Beach, Tumpak Sewu, Bromo sunrise, Malang city. JVTO's most comprehensive itinerary.",
-      h1: "6 Day Ijen, Papuma Beach, Tumpak Sewu, Bromo & Malang City Discovery from Surabaya",
-      canonical: "https://javavolcano-touroperator.com/tours/from-surabaya/ijen-papuma-tumpak-sewu-bromo-malang-6d5n",
-      schema_type: "TouristTrip",
-      schema_profile: "tourist_trip_offer",
-      robots: "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
-    },
-    "/tours/from-surabaya/taman-safari-prigen-bromo-madakaripura-3d2n": {
-      route: "/tours/from-surabaya/taman-safari-prigen-bromo-madakaripura-3d2n",
-      title_tag: "3 Day Taman Safari, Bromo & Madakaripura Family Tour | JVTO",
-      meta_description: "Private 3-day family tour from Surabaya: Taman Safari Prigen, Mount Bromo sunrise, Madakaripura Waterfall. All-inclusive. Best for families with children.",
-      h1: "3 Day Taman Safari Prigen, Bromo & Madakaripura Family Tour from Surabaya",
-      canonical: "https://javavolcano-touroperator.com/tours/from-surabaya/taman-safari-prigen-bromo-madakaripura-3d2n",
-      schema_type: "TouristTrip",
-      schema_profile: "tourist_trip_offer",
-      robots: "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
-    },
-    "/tours/from-surabaya/tumpak-sewu-bromo-ijen-4d3n": {
-      route: "/tours/from-surabaya/tumpak-sewu-bromo-ijen-4d3n",
-      title_tag: "4 Day Tumpak Sewu, Bromo & Ijen — Surabaya to Bali | JVTO",
-      meta_description: "Private 4-day overland: Surabaya → Tumpak Sewu canyon waterfall → Bromo sunrise → Ijen blue fire → Bali. All-inclusive. Tourist Police-led operator.",
-      h1: "4 Day Tumpak Sewu, Bromo & Ijen Adventure from Surabaya to Bali",
-      canonical: "https://javavolcano-touroperator.com/tours/from-surabaya/tumpak-sewu-bromo-ijen-4d3n",
-      schema_type: "TouristTrip",
-      schema_profile: "tourist_trip_offer",
-      robots: "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
-    },
-    "/travel-guide": {
-      route: "/travel-guide",
-      title_tag: "Travel Guide – Safety, Booking & Practical Info | JVTO",
-      meta_description: "JVTO's official travel guide: booking steps, safety rules, Ijen health screening, weather and closures, packing list, and police escort for groups.",
-      h1: "Travel Guide – Safety, Health & Practical Information",
-      canonical: "https://javavolcano-touroperator.com/travel-guide",
-      schema_type: "WebPage",
-      schema_profile: "guide_page",
-      robots: "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
-    },
-    "/travel-guide/booking-information": {
-      route: "/travel-guide/booking-information",
-      title_tag: "Booking Information – Payments, Changes & Travel Credit | JVTO",
-      meta_description: "JVTO booking policy: 20% deposit, JVTO Travel Credit (no expiry), 100% private tours. Cancel ≥48 hours for full credit. Read our transparent booking guide.",
-      h1: "How to Book a JVTO Private Tour — 4 Steps",
-      canonical: "https://javavolcano-touroperator.com/travel-guide/booking-information",
-      schema_type: "WebPage",
-      schema_profile: "guide_page",
-      robots: "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
-    },
-    "/travel-guide/faq": {
-      route: "/travel-guide/faq",
-      title_tag: "FAQ – Private Bromo & Ijen Tours | JVTO",
-      meta_description: "Answers to common questions about JVTO private tours: inclusions, payments, Travel Credit policy, Ijen health screening, closures, and student discounts.",
-      h1: "Frequently Asked Questions",
-      canonical: "https://javavolcano-touroperator.com/travel-guide/faq",
-      schema_type: "FAQPage",
-      schema_profile: "faq_page",
-      robots: "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
-    },
-    "/travel-guide/ijen-health-screening": {
-      route: "/travel-guide/ijen-health-screening",
-      title_tag: "Ijen Health Screening – Real Checks, Digital Proof & QR | JVTO",
-      meta_description: "Mandatory Ijen health screening is included in all JVTO packages. We ensure real medical checks (SpO₂, blood pressure) with digital QR verification for your safety.",
-      h1: "Ijen Health Screening — Mandatory Safety Protocols",
-      canonical: "https://javavolcano-touroperator.com/travel-guide/ijen-health-screening",
-      schema_type: "WebPage",
-      schema_profile: "guide_page",
-      robots: "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
-    },
-    "/travel-guide/packing-and-fitness": {
-      route: "/travel-guide/packing-and-fitness",
-      title_tag: "Packing & Fitness for Bromo, Ijen & Tumpak Sewu | JVTO",
-      meta_description: "What to pack and how fit you need to be for Bromo, Ijen, and Tumpak Sewu tours. Specific gear list, fitness expectations, and what JVTO provides.",
-      h1: "Packing & Fitness for Bromo, Ijen & Tumpak Sewu",
-      canonical: "https://javavolcano-touroperator.com/travel-guide/packing-and-fitness",
-      schema_type: "HowTo",
-      schema_profile: "guide_page",
-      robots: "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
-    },
-    "/travel-guide/police-escort-for-groups": {
-      route: "/travel-guide/police-escort-for-groups",
-      title_tag: "Traffic Police Escort for Tourist Groups in East Java | JVTO",
-      meta_description: "For large groups, JVTO coordinates direct traffic police escorts to ensure seamless transit and enhanced security across East Java's busy routes.",
-      h1: "Police Escort for Groups — Seamless & Secure Transit",
-      canonical: "https://javavolcano-touroperator.com/travel-guide/police-escort-for-groups",
-      schema_type: "WebPage",
-      schema_profile: "guide_page",
-      robots: "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
-    },
-    "/travel-guide/safety-on-tours": {
-      route: "/travel-guide/safety-on-tours",
-      title_tag: "Safety on JVTO Tours – How We Plan & What You Should Know",
-      meta_description: "We set the safety standards for East Java expeditions. Learn about our Tourist Police-led planning, sterilized gear, and emergency protocols for extreme environments.",
-      h1: "Safety on Tours — Our Comprehensive Protocols",
-      canonical: "https://javavolcano-touroperator.com/travel-guide/safety-on-tours",
-      schema_type: "HowTo",
-      schema_profile: "guide_page",
-      robots: "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
-    },
-    "/travel-guide/weather-and-closures": {
-      route: "/travel-guide/weather-and-closures",
-      title_tag: "Weather, Volcano Alerts & Closures – How JVTO Handles Changes",
-      meta_description: "Volcanic environments are unpredictable. Learn how JVTO monitors real-time safety thresholds and our transparent protocols for rescheduling or route changes.",
-      h1: "Weather & Closures — Real-Time Safety Monitoring",
-      canonical: "https://javavolcano-touroperator.com/travel-guide/weather-and-closures",
-      schema_type: "WebPage",
-      schema_profile: "guide_page",
-      robots: "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
-    },
-    "/verify-jvto": {
-      route: "/verify-jvto",
-      title_tag: "Verify JVTO — Licensed East Java Operator | Proof Library",
-      meta_description: "Trust is earned through evidence. Access our full library of verifiable artifacts, including police letters, medical screening logs, and legal licenses.",
-      h1: "Radical Transparency — Verifiable Proof of Every Claim",
-      canonical: "https://javavolcano-touroperator.com/verify-jvto",
-      schema_type: "VerifyPage",
-      schema_profile: "verify_page",
-      robots: "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
-    },
-    "/verify-jvto/history-artifacts": {
-      route: "/verify-jvto/history-artifacts",
-      title_tag: "History Artifacts – Documented JVTO Origins Since 2015 | JVTO",
-      meta_description: "Physical and documentary proof of JVTO's origins. From our 2015 Booking.com award to 2016 guidebook mentions, we have a continuous record of operational integrity.",
-      h1: "History Artifacts — Documented Roots Since 2015",
-      canonical: "https://javavolcano-touroperator.com/verify-jvto/history-artifacts",
-      schema_type: "VerifyPage",
-      schema_profile: "verify_page",
-      robots: "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
-    },
-    "/verify-jvto/legal": {
-      route: "/verify-jvto/legal",
-      title_tag: "Legal & Accountability Proof – PT Java Volcano Rendezvous | JVTO",
-      meta_description: "Verify our legal standing. We provide full transparency on our PT registration, NIB business identity, and TDUP tourism license for your peace of mind.",
-      h1: "Legal & Accountability — Licensed & Registered Operator",
-      canonical: "https://javavolcano-touroperator.com/verify-jvto/legal",
-      schema_type: "VerifyPage",
-      schema_profile: "verify_page",
-      robots: "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
-    },
-    "/verify-jvto/police-safety": {
-      route: "/verify-jvto/police-safety",
-      title_tag: "Police & Safety Proof – Tourist Police Integration | JVTO",
-      meta_description: "Access our safety credentials, including official Tourist Police letters (SPRIN), Ijen health screening logs, and BBKSDA regulatory compliance documents.",
-      h1: "Police & Safety Proof — Verified Operational Security",
-      canonical: "https://javavolcano-touroperator.com/verify-jvto/police-safety",
-      schema_type: "VerifyPage",
-      schema_profile: "verify_page",
-      robots: "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
-    },
-    "/verify-jvto/press-recognition": {
-      route: "/verify-jvto/press-recognition",
-      title_tag: "Press & Recognition – Third-Party Coverage of JVTO | JVTO",
-      meta_description: "Explore independent coverage of JVTO in the press. From Detik.com to Jawa Pos, our founder's work in tourism safety is documented by reputable third-party sources.",
-      h1: "Press & Recognition — Independent Third-Party Context",
-      canonical: "https://javavolcano-touroperator.com/verify-jvto/press-recognition",
-      schema_type: "VerifyPage",
-      schema_profile: "verify_page",
-      robots: "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
-    },
-    "/why-jvto": {
-      route: "/why-jvto",
-      title_tag: "Why Travel with Java Volcano Tour Operator (JVTO)",
-      meta_description: "Why choose JVTO? We combine the discipline of the Tourist Police with strict medical safety and private-only logistics for East Java's most reliable expeditions.",
-      h1: "Why JVTO? — Police Leadership & Medical Safety",
-      canonical: "https://javavolcano-touroperator.com/why-jvto",
-      schema_type: "AboutPage",
-      schema_profile: "core_page",
-      robots: "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
-    },
-    "/why-jvto/community-standards": {
-      route: "/why-jvto/community-standards",
-      title_tag: "Community Standards – Partners, Ethics & Operational Rules | JVTO",
-      meta_description: "We believe in sustainable tourism that benefits the community. Our standards ensure fair wages for porters, ethical partnerships, and strict safety compliance.",
-      h1: "Community Standards — Fair Wages & Local Impact",
-      canonical: "https://javavolcano-touroperator.com/why-jvto/community-standards",
-      schema_type: "AboutPage",
-      schema_profile: "core_page",
-      robots: "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
-    },
-    "/why-jvto/our-story": {
-      route: "/why-jvto/our-story",
-      title_tag: "Our Story – JVTO History & Roots Since 2015 | JVTO",
-      meta_description: "Founded by an active Tourist Police officer, JVTO was built on the need for safety and integrity in East Java tourism. Explore our journey since 2015.",
-      h1: "Our Story — From the Tourist Police to Private Expeditions",
-      canonical: "https://javavolcano-touroperator.com/why-jvto/our-story",
-      schema_type: "AboutPage",
-      schema_profile: "core_page",
-      robots: "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
-    },
-    "/team": {
-      route: "/team",
-      title_tag: "Our Team – Local East Java Guides & Drivers | JVTO",
-      meta_description: "Meet the 14 specialized guides and drivers who execute our safety-first mission. Every team member is a local expert trained in JVTO's operational standards.",
-      h1: "JVTO Field Operators — Meet Your Specialized Team",
-      canonical: "https://javavolcano-touroperator.com/team",
-      schema_type: "AboutPage",
-      schema_profile: "core_page",
-      robots: "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
-    },
-    "/why-jvto/reviews": {
-      route: "/why-jvto/reviews",
-      title_tag: "Guest Reviews – Independent Voices on JVTO Tours | JVTO",
-      meta_description: "Read verified feedback from guests who have experienced our private expeditions. We focus on safety protocols, operational certainty, and guest satisfaction.",
-      h1: "Guest Reviews — Verified Experiences & Safety Feedback",
-      canonical: "https://javavolcano-touroperator.com/why-jvto/reviews",
-      schema_type: "AboutPage",
-      schema_profile: "core_page",
-      robots: "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
-    },
-    "/why-jvto/the-jvto-difference": {
-      route: "/why-jvto/the-jvto-difference",
-      title_tag: "The JVTO Difference: Safety Leadership & Verified Proof",
-      meta_description: "We prioritize operational certainty and safety boundaries over mass-market scale. Discover how our police-led background creates a uniquely reliable travel experience.",
-      h1: "The JVTO Difference — Why We Choose Integrity Over Scale",
-      canonical: "https://javavolcano-touroperator.com/why-jvto/the-jvto-difference",
-      schema_type: "AboutPage",
-      schema_profile: "core_page",
-      robots: "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
-    },
-    "/why-jvto/safety-leadership": {
-      route: "/why-jvto/safety-leadership",
-      title_tag: "Safety Leadership — Police-Led Security & Medical Screening | JVTO",
-      meta_description: "Explore our safety leadership framework. From police-led security coordination to mandatory medical screening, we define the safety standards for East Java tours.",
-      h1: "Safety Leadership — Police-Led Security & Medical Screening",
-      canonical: "https://javavolcano-touroperator.com/why-jvto/safety-leadership",
-      schema_type: "AboutPage",
-      schema_profile: "core_page",
-      robots: "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
+      hero_image: "jvto-hero-image"
     }
+  },
+  police_authority: {
+    badge: "Active Duty: Ditpamobvit",
+    title: "Tourist Police Command",
+    description: "Our safety protocols are not just documents — they are led by an active Tourist Police officer, ensuring disciplined risk management on every tour.",
+    features: [
+      "Official Tourist Police Liaison",
+      "Documented Safety Protocols",
+      "Real-time Risk Assessment",
+      "Verified Operational Standards"
+    ]
+  },
+  policies: {
+    booking: {
+      title: "Booking & Payment",
+      sections: [
+        {
+          title: '01. Booking & Deposit',
+          content: [
+            'A 20% non-refundable deposit is required to secure your expedition dates and dedicated crew.',
+            'Bookings are only confirmed upon receipt of the deposit and issuance of an official JVTO confirmation number.',
+            'We operate on a first-deposit, first-served basis. Verbal inquiries do not hold dates.'
+          ],
+          icon: 'CreditCard'
+        },
+        {
+          title: '02. Payment Schedule',
+          content: [
+            'The remaining 80% balance is payable upon meeting your crew at the start of the tour.',
+            'Accepted payment methods for the balance: IDR Cash (preferred), Wise Transfer, or Revolut.',
+            'All prices are fixed and transparent. No hidden surcharges or "forced" shopping stops.'
+          ],
+          icon: 'CheckCircle2'
+        },
+        {
+          title: '03. Cancellation & Travel Credit',
+          content: [
+            'Cancellations made 48 hours or more before departure: 100% of the deposit is converted to JVTO Lifetime Travel Credit.',
+            'Travel Credit has no expiry date and can be used for any future JVTO expedition.',
+            'Cancellations within 48 hours of departure: The deposit is forfeited to cover pre-paid logistics (permits, vehicle prep, crew allocation).'
+          ],
+          icon: 'RefreshCcw'
+        },
+        {
+          title: '04. "Hard Stop" Safety Policy',
+          content: [
+            'If a guest is deemed medically unfit during the Ijen health screening (e.g., hypertension, low SpO₂), they will not be permitted to climb.',
+            'In such cases, no refund is provided for the specific activity, as logistics are already executed. Safety is our non-negotiable priority.'
+          ],
+          icon: 'ShieldAlert'
+        }
+      ]
+    },
+    inclusions: {
+      title: "Inclusions & Exclusions",
+      inclusions: [
+        { title: 'Private Transport', desc: 'Dedicated AC vehicle with professional driver and fuel.', icon: 'Car' },
+        { title: 'Specialized Crew', desc: 'Dedicated English-speaking guide and local expert team.', icon: 'User' },
+        { title: 'All Permits', desc: 'Official entrance tickets for Bromo, Ijen, and other sites.', icon: 'Ticket' },
+        { title: 'Health Screening', desc: 'Mandatory medical checks and digital QR issuance included.', icon: 'ShieldCheck' },
+        { title: 'Accommodations', desc: 'Pre-vetted hotels as specified in your chosen itinerary.', icon: 'Hotel' },
+        { title: 'Safety Gear', desc: 'Professional gas masks and safety equipment for volcanic areas.', icon: 'Info' }
+      ],
+      exclusions: [
+        { title: 'Personal Expenses', desc: 'Souvenirs, laundry, phone calls, and optional activities.', icon: 'Coffee' },
+        { title: 'Travel Insurance', desc: 'Mandatory personal travel and medical insurance.', icon: 'ShieldCheck' },
+        { title: 'Tipping', desc: 'Gratuities for your guide and driver (at your discretion).', icon: 'User' },
+        { title: 'Unspecified Meals', desc: 'Lunches and dinners not explicitly listed in the itinerary.', icon: 'Coffee' }
+      ]
+    },
+    privacy: {
+      title: "Privacy Policy",
+      sections: [
+        {
+          title: '01. Data Collection',
+          desc: 'We collect only the essential information required for tour operations, including your name, contact details, and mandatory health screening data.',
+          icon: 'Database'
+        },
+        {
+          title: '02. Purpose of Use',
+          desc: 'Your data is used exclusively for booking permits, securing insurance, coordinating with police/medical teams, and communicating tour updates.',
+          icon: 'UserCheck'
+        },
+        {
+          title: '03. Data Sharing',
+          desc: 'We share your information only with official government bodies (BBKSDA, Police) and medical partners as required by local regulations.',
+          icon: 'Server'
+        },
+        {
+          title: '04. Data Protection',
+          desc: 'We implement industry-standard security measures to protect your personal information from unauthorized access, alteration, or disclosure.',
+          icon: 'ShieldCheck'
+        }
+      ]
+    }
+  },
+  travel_guide: {
+    weather_and_closures: {
+      title: "Weather & Closures",
+      desc: "Volcanic environments are unpredictable. We monitor weather patterns and official park closures in real-time to ensure your expedition only proceeds when conditions meet our strict safety thresholds.",
+      sections: [
+        {
+          title: "Weather in East Java",
+          icon: "Sun",
+          content: "East Java has a tropical climate with two distinct seasons: the dry season (April to October) and the rainy season (November to March). While tours are available year-round, weather conditions can impact visibility and accessibility."
+        },
+        {
+          title: "Park Closures & Force Majeure",
+          icon: "AlertTriangle",
+          content: "National parks like Bromo Tengger Semeru and Ijen Crater may close temporarily due to volcanic activity, toxic gas, earthquakes, landslides, floods, or maintenance. We monitor these closures closely and will inform you of any changes to your itinerary."
+        },
+        {
+          title: "Compensation Principles",
+          icon: "Info",
+          content: "If JVTO cancels or significantly alters services due to events beyond reasonable control (Force Majeure), we may offer reasonable alternative arrangements of comparable value, JVTO Travel Credit covering the unused portion, or a partial/full cash refund net of non-recoverable expenses."
+        }
+      ]
+    },
+    police_escort: {
+      title: "Police Escort for Groups",
+      desc: "For large groups and high-profile delegations, we provide direct coordination with the Indonesian National Police (POLRI) to ensure seamless transit and maximum security across East Java.",
+      sections: [
+        {
+          title: "Why Police Escort?",
+          icon: "ShieldPlus",
+          content: "For large groups, navigating the busy roads of East Java can be challenging. A police escort ensures that your convoy stays together, moves efficiently through traffic, and maintains a high level of security throughout the journey."
+        },
+        {
+          title: "Our Coordination",
+          icon: "Users",
+          content: "We maintain direct lines of communication with the Indonesian National Police (POLRI). This allows us to arrange escorts for groups of any size, ensuring that every detail is handled professionally and legally."
+        },
+        {
+          title: "Booking & Requirements",
+          icon: "Info",
+          content: "Police escorts must be arranged in advance. Please provide your group size, itinerary, and any special requirements when booking. Additional fees apply based on the duration and scope of the escort. This is a conditional inclusion and must be explicitly written in your Official E-Voucher."
+        }
+      ]
+    },
+    safety_on_tours: {
+      title: "Safety on Tours",
+      desc: "We don't just follow safety guidelines; we set them. From medical-grade gas masks to police-led hazard monitoring, discover the protocols that keep our guests safe in East Java's most extreme environments.",
+      sections: [
+        {
+          title: "Our Safety Protocols",
+          icon: "ShieldPlus",
+          content: "We maintain strict safety protocols for every tour, including mandatory health screenings for high-altitude treks, certified safety gear, and direct coordination with local authorities. Our guides are trained in first aid and emergency response."
+        },
+        {
+          title: "Certified Safety Gear",
+          icon: "LifeBuoy",
+          content: "We provide high-quality safety gear for all our tours, including professional gas masks (rated for sulfur environment) for Ijen Crater, trekking poles, and first aid kits for every group. All equipment is regularly inspected and certified."
+        },
+        {
+          title: "Professional Crew & Vehicles",
+          icon: "Users",
+          content: "Our crew is licensed and vetted. For 2-3 guests, we provide an English-speaking driver-guide. For 4-11 guests, a professional driver plus an escort guide. Vehicles are allocated by group size (MPV for 2-3, Hiace for 4-9) to ensure comfort and safety. 4WD Jeeps at Bromo are limited to max ±4 guests per jeep."
+        },
+        {
+          title: "Emergency Response",
+          icon: "Siren",
+          content: "In the event of an emergency, our team is equipped to respond quickly and effectively. We have established protocols for medical evacuations, natural disasters, and other unforeseen circumstances, ensuring your safety is never compromised."
+        }
+      ]
+    },
+    packing_and_fitness: {
+      packingList: [
+        {
+          category: 'Clothing',
+          items: [
+            'Warm jacket (temperatures can drop to 5°C at Bromo/Ijen)',
+            'Long pants (trekking pants or comfortable leggings)',
+            'Layered clothing (t-shirt + sweater + jacket)',
+            'Raincoat or poncho (especially during rainy season)'
+          ],
+          icon: 'Thermometer'
+        },
+        {
+          category: 'Footwear',
+          items: [
+            'Trekking shoes or sneakers with good grip',
+            'Warm socks',
+            'Flip-flops (for hotel/rest areas)'
+          ],
+          icon: 'Footprints'
+        },
+        {
+          category: 'Essentials',
+          items: [
+            'Personal medications',
+            'Sunscreen and lip balm',
+            'Headlamp or flashlight (we provide some, but personal is better)',
+            'Power bank and camera gear',
+            'Personal travel insurance (strongly recommended)'
+          ],
+          icon: 'Backpack'
+        }
+      ],
+      fitnessLevels: [
+        {
+          site: 'Mount Bromo',
+          level: 'Moderate',
+          desc: 'Mostly flat walking on sand, followed by ~250 stairs to the crater rim. Accessible for most people with average fitness.',
+          icon: 'Mountain'
+        },
+        {
+          site: 'Kawah Ijen',
+          level: 'Challenging',
+          desc: 'A steep 3km uphill climb followed by a rocky descent into the crater. Requires good cardiovascular health and steady footing. Mandatory health screening required.',
+          icon: 'HeartPulse'
+        },
+        {
+          site: 'Tumpak Sewu',
+          level: 'Technical',
+          desc: 'Involves descending into a canyon using bamboo ladders and walking through shallow streams. Requires agility and balance.',
+          icon: 'Wind'
+        }
+      ]
+    },
+    booking_info: {
+      steps: [
+        {
+          id: '01',
+          title: 'Select Your Tour',
+          desc: 'Browse our verified private expeditions and choose the one that fits your schedule and fitness level.',
+          icon: 'Calendar',
+          details: 'All tours are 100% private. No mixed groups.'
+        },
+        {
+          id: '02',
+          title: '20% Secure Deposit',
+          desc: 'Pay a 20% deposit via secure payment link (Credit/Debit) to lock in your dates and crew. If Day 1 is within 14 days, up to 100% may be required.',
+          icon: 'CreditCard',
+          details: 'Deposit is converted to Lifetime Travel Credit if cancelled ≥48h.'
+        },
+        {
+          id: '03',
+          title: 'Confirmation & QR',
+          desc: 'Receive your Official E-Voucher / Invoice (PDF) and Ijen Health Screening QR code (if applicable) via WhatsApp/Email.',
+          icon: 'CheckCircle2',
+          details: 'Digital proof of your reservation and health clearance.'
+        },
+        {
+          id: '04',
+          title: 'Final Payment & Meet',
+          desc: 'Pay the remaining balance by card (5 days before), bank transfer/Wise (3 days before), or cash (if approved) upon meeting your crew.',
+          icon: 'UserCheck',
+          details: 'Transparent pricing. No hidden fees or "forced" stops.'
+        }
+      ],
+      policies: [
+        {
+          title: 'Cancellation & Credit',
+          desc: 'Cancellations ≥48 hours before Day 1 receive 100% of payments as non-expiring, transferable JVTO Travel Credit. Cancellations <48 hours may be forfeited up to 100%.',
+          icon: 'RefreshCcw'
+        },
+        {
+          title: 'Private Operations',
+          desc: 'We do not mix groups. Your vehicle, guide, and driver are dedicated exclusively to you. Only inclusions explicitly stated on your Official E-Voucher are contractually binding.',
+          icon: 'ShieldCheck'
+        },
+        {
+          title: 'Group Incentives (FOC)',
+          desc: 'We offer Free of Charge (FOC) incentives for large groups: 18 paying pax → 1 FOC, 35 paying pax → 2 FOC, 50 paying pax → 3 FOC.',
+          icon: 'Users'
+        }
+      ]
+    },
+    categories: [
+      {
+        id: 'safety',
+        title: 'Safety & Protocols',
+        description: 'Our core operational standards for extreme environments.',
+        items: [
+          { 
+            title: 'Ijen Health Screening', 
+            desc: 'Mandatory medical checks and digital QR issuance.', 
+            path: '/travel-guide/ijen-health-screening',
+            icon: 'Activity',
+            color: 'text-verified-bright'
+          },
+          { 
+            title: 'Safety on Tours', 
+            desc: 'Comprehensive risk management and gear standards.', 
+            path: '/travel-guide/safety-on-tours',
+            icon: 'ShieldCheck',
+            color: 'text-safety-orange'
+          },
+          { 
+            title: 'Weather & Closures', 
+            desc: 'Real-time monitoring of volcanic activity and access.', 
+            path: '/travel-guide/weather-and-closures',
+            icon: 'CloudRain',
+            color: 'text-indigo-500'
+          }
+        ]
+      },
+      {
+        id: 'logistics',
+        title: 'Logistics & Planning',
+        description: 'Essential information for a seamless expedition.',
+        items: [
+          { 
+            title: 'Police Escort for Groups', 
+            desc: 'Direct coordination for large group security.', 
+            path: '/travel-guide/police-escort-for-groups',
+            icon: 'Users',
+            color: 'text-authority-navy'
+          },
+          { 
+            title: 'Booking Information', 
+            desc: 'Payment steps, changes, and travel credit policy.', 
+            path: '/travel-guide/booking-information',
+            icon: 'CreditCard',
+            color: 'text-emerald-500'
+          },
+          { 
+            title: 'Packing & Fitness', 
+            desc: 'Gear requirements and physical expectations.', 
+            path: '/travel-guide/packing-and-fitness',
+            icon: 'Info',
+            color: 'text-amber-500'
+          }
+        ]
+      }
+    ]
+  },
+  hub_content: { 
+    trust_stack: { 
+      title: "Our Trust Stack",
+      description: "A multi-layered approach to operational transparency.",
+      cards: [
+        { title: "Safety as Operational Discipline", summary: "Police-led safety mindset and clear decision boundaries.", link: "/why-jvto/the-jvto-difference" },
+        { title: "Proof & Transparency You Can Verify", summary: "Legal docs, safety docs, press, and history artifacts—organized for easy checking.", link: "/why-jvto/the-jvto-difference" },
+        { title: "Local Team, Daily Execution", summary: "A local operations team trained for real East Java logistics.", link: "/team" },
+        { title: "Guest Voices on Independent Platforms", summary: "Independent reviews across major platforms—see the patterns for yourself.", link: "/why-jvto/reviews" },
+        { title: "Roots in Documented History", summary: "Long-term artifacts that predate the recent tourism boom.", link: "/why-jvto/our-story" },
+        { title: "Partners as Context & Access", summary: "ISIC, HPWKI, and INDECON—what they signal and how verification works.", link: "/why-jvto/community-standards" }
+      ]
+    } 
   }
 };

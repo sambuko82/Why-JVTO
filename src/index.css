@@ -27,7 +27,7 @@
 
 @layer components {
   .bento-card {
-    @apply bg-white border border-slate-200 rounded-[2.5rem] shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden;
+    @apply bg-white border border-slate-200 rounded-[2.5rem] shadow-sm hover:shadow-lg hover:-translate-y-1 hover:border-safety-orange/30 transition-all duration-300 overflow-hidden;
   }
   
   .tech-badge {

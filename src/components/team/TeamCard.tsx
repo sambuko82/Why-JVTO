@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Quote, Fingerprint, ShieldCheck, ChevronRight, Search } from 'lucide-react';
+import { Quote, Fingerprint, ShieldCheck, ChevronRight, Search, Star } from 'lucide-react';
 import { motion } from 'motion/react';
 import { CrewMember } from '../../types';
 import { AuditTrail } from '../AuditTrail';
 import { SafetyMetrics } from '../SafetyMetrics';
 import { AUDIT_LOGS } from '../../lib/auditLogs';
+import { SSOT } from '../../lib/ssot';
 
 interface TeamCardProps {
   crew: CrewMember;
@@ -22,6 +23,9 @@ export const TeamCard: React.FC<TeamCardProps> = ({ crew, index, compact = false
     setIsAuditOpen(true);
   };
 
+  const reviews = SSOT.crew_reviews[crew.name] || [];
+  const avgRating = reviews.length > 0 ? (reviews.reduce((acc, r) => acc + r.rating, 0) / reviews.length).toFixed(1) : null;
+
   return (
     <>
       <motion.article 
@@ -30,7 +34,7 @@ export const TeamCard: React.FC<TeamCardProps> = ({ crew, index, compact = false
         viewport={{ once: true }}
         transition={{ duration: 0.5, delay: index * 0.05 }}
         onClick={() => navigate(`/team/${crew.id}`)}
-        className={`bento-card bg-white group flex flex-col relative cursor-pointer hover:border-safety-orange transition-all ${compact ? 'p-0' : ''}`}
+        className={`bento-card bg-audit-white group flex flex-col relative cursor-pointer hover:border-safety-orange transition-all ${compact ? 'p-0' : ''}`}
       >
         <div className="scanline"></div>
         <div className="aspect-[3/4] overflow-hidden relative border-b border-slate-100">
@@ -63,7 +67,7 @@ export const TeamCard: React.FC<TeamCardProps> = ({ crew, index, compact = false
             <h3 className="text-2xl font-black uppercase text-authority-navy leading-none">{crew.name}</h3>
           </div>
           
-          <div className="flex gap-2">
+          <div className="flex flex-wrap gap-2">
             <button 
               onClick={handleAuditClick}
               className="verified-badge hover:bg-verified-bright hover:text-white transition-colors flex items-center gap-2 group/badge"
@@ -71,6 +75,12 @@ export const TeamCard: React.FC<TeamCardProps> = ({ crew, index, compact = false
               VERIFIED_OPERATIVE
               <ShieldCheck className="w-3 h-3 group-hover/badge:scale-110 transition-transform" />
             </button>
+            {avgRating && (
+              <div className="verified-badge bg-slate-50 text-slate-600 border-slate-200 flex items-center gap-1">
+                <Star className="w-3 h-3 text-safety-orange fill-safety-orange" />
+                <span>{avgRating} ({reviews.length})</span>
+              </div>
+            )}
           </div>
 
           {/* Safety Metrics Integration */}

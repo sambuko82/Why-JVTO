@@ -91,7 +91,7 @@ export default function SafetyLeadership() {
           </div>
 
           <div className="space-y-8">
-            <div className="bento-card bg-white p-10 border-2 border-slate-100">
+            <div className="bento-card bg-audit-white p-10 border-2 border-slate-100">
               <div className="flex items-center gap-4 mb-6">
                 <div className="w-12 h-12 rounded-xl bg-verified-bright/5 text-verified-bright flex items-center justify-center border border-verified-bright/10">
                   <Activity className="w-6 h-6" />
@@ -103,7 +103,7 @@ export default function SafetyLeadership() {
                 through official police channels.
               </p>
             </div>
-            <div className="bento-card bg-white p-10 border-2 border-slate-100">
+            <div className="bento-card bg-audit-white p-10 border-2 border-slate-100">
               <div className="flex items-center gap-4 mb-6">
                 <div className="w-12 h-12 rounded-xl bg-indigo-500/5 text-indigo-500 flex items-center justify-center border border-indigo-500/10">
                   <MapPin className="w-6 h-6" />
@@ -127,7 +127,7 @@ export default function SafetyLeadership() {
           
           <div className="grid md:grid-cols-4 gap-6">
             {SSOT.health_protocol.steps.map((step, i) => (
-              <div key={i} className="bento-card bg-white p-8 border-2 border-slate-100 relative">
+              <div key={i} className="bento-card bg-audit-white p-8 border-2 border-slate-100 relative">
                 <span className="absolute top-6 right-6 font-mono text-[11px] text-slate-200 font-black">{step.step}</span>
                 <h4 className="text-lg font-black uppercase mb-3 mt-4">{step.title}</h4>
                 <p className="text-slate-500 text-xs leading-relaxed">{step.desc}</p>
@@ -160,7 +160,7 @@ export default function SafetyLeadership() {
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="bento-card bg-white p-12 border-2 border-slate-100 relative overflow-hidden group"
+              className="bento-card bg-audit-white p-12 border-2 border-slate-100 relative overflow-hidden group"
             >
               <div className="absolute top-0 right-0 p-6 font-mono text-[11px] text-slate-200 font-black">
                 CLAIM_{claim.id}
@@ -169,7 +169,7 @@ export default function SafetyLeadership() {
                 <h3 className="text-2xl font-black text-authority-navy uppercase leading-tight mb-6">
                   {claim.text}
                 </h3>
-                <div className="p-6 bg-slate-50 rounded-xl border border-slate-100 mb-8">
+                <div className="p-6 bg-audit-white rounded-xl border border-slate-100 mb-8">
                   <p className="text-slate-600 font-light leading-relaxed italic">
                     "{claim.meaning}"
                   </p>

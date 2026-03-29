@@ -22,11 +22,21 @@ export default function WeatherClosures() {
   const navigate = useNavigate();
   const onBack = () => navigate('/travel-guide');
   const meta = SSOT.pages['/travel-guide/weather-and-closures'];
+  const data = SSOT.travel_guide.weather_and_closures;
+
+  const getIcon = (iconName: string) => {
+    switch (iconName) {
+      case 'Sun': return Sun;
+      case 'AlertTriangle': return AlertTriangle;
+      case 'Info': return Info;
+      default: return CloudRain;
+    }
+  };
 
   return (
-    <div className="min-h-screen bg-white text-authority-navy font-sans selection:bg-safety-orange/30 pb-24 md:pb-0">
+    <div className="min-h-screen bg-audit-white text-authority-navy font-sans selection:bg-safety-orange/30 pb-24 md:pb-0">
       {/* Header */}
-      <div className="border-b border-slate-100 bg-white/80 relative z-40 backdrop-blur-xl">
+      <div className="border-b border-slate-100 bg-audit-white/80 relative z-40 backdrop-blur-xl">
         <div className="container mx-auto px-4 md:px-6 py-4 md:py-6 flex items-center justify-between">
           <button 
             onClick={onBack}
@@ -59,57 +69,26 @@ export default function WeatherClosures() {
         </motion.div>
 
         <div className="space-y-12 md:space-y-24">
-          
-          {/* 1. Weather in East Java */}
-          <section>
-            <div className="flex items-center gap-3 md:gap-4 mb-4 md:mb-8">
-              <div className="p-2 md:p-3 bg-slate-50 rounded-xl md:rounded-2xl text-safety-orange border border-slate-100">
-                <Sun className="w-6 h-6 md:w-8 md:h-8" />
+          {data.sections.map((section, index) => (
+            <section key={index}>
+              <div className="flex items-center gap-3 md:gap-4 mb-4 md:mb-8">
+                <div className="p-2 md:p-3 bg-slate-50 rounded-xl md:rounded-2xl text-safety-orange border border-slate-100">
+                  {React.createElement(getIcon(section.icon), { className: "w-6 h-6 md:w-8 md:h-8" })}
+                </div>
+                <h2 className="text-2xl md:text-3xl font-black text-authority-navy uppercase tracking-tighter">{section.title}</h2>
               </div>
-              <h2 className="text-2xl md:text-3xl font-black text-authority-navy uppercase tracking-tighter">Weather in East Java</h2>
-            </div>
-            <div className="prose prose-slate max-w-none">
-              <p className="text-base md:text-lg text-slate-600 leading-relaxed">
-                East Java has a tropical climate with two distinct seasons: the dry season (April to October) and the rainy season (November to March). While tours are available year-round, weather conditions can impact visibility and accessibility.
-              </p>
-            </div>
-          </section>
-
-          {/* 2. Park Closures */}
-          <section>
-            <div className="flex items-center gap-3 md:gap-4 mb-4 md:mb-8">
-              <div className="p-2 md:p-3 bg-slate-50 rounded-xl md:rounded-2xl text-safety-orange border border-slate-100">
-                <AlertTriangle className="w-6 h-6 md:w-8 md:h-8" />
+              <div className="prose prose-slate max-w-none">
+                <p className="text-base md:text-lg text-slate-600 leading-relaxed">
+                  {section.content}
+                </p>
               </div>
-              <h2 className="text-2xl md:text-3xl font-black text-authority-navy uppercase tracking-tighter">Park Closures</h2>
-            </div>
-            <div className="prose prose-slate max-w-none">
-              <p className="text-base md:text-lg text-slate-600 leading-relaxed">
-                National parks like Bromo Tengger Semeru and Ijen Crater may close temporarily due to volcanic activity, extreme weather, or maintenance. We monitor these closures closely and will inform you of any changes to your itinerary.
-              </p>
-            </div>
-          </section>
-
-          {/* 3. Our Policy */}
-          <section>
-            <div className="flex items-center gap-3 md:gap-4 mb-4 md:mb-8">
-              <div className="p-2 md:p-3 bg-slate-50 rounded-xl md:rounded-2xl text-safety-orange border border-slate-100">
-                <Info className="w-6 h-6 md:w-8 md:h-8" />
-              </div>
-              <h2 className="text-2xl md:text-3xl font-black text-authority-navy uppercase tracking-tighter">Our Policy</h2>
-            </div>
-            <div className="prose prose-slate max-w-none">
-              <p className="text-base md:text-lg text-slate-600 leading-relaxed">
-                In the event of a closure or extreme weather, we will offer alternative itineraries or reschedule your tour. Your safety is our primary concern, and we appreciate your understanding.
-              </p>
-            </div>
-          </section>
-
+            </section>
+          ))}
         </div>
         
         {/* Footer Audit Stamp */}
         <div className="mt-16 md:mt-32 pt-8 md:pt-12 border-t border-slate-100 flex flex-col items-center">
-          <div className="p-6 md:p-8 bg-slate-50 border border-slate-200 rounded-2xl md:rounded-3xl flex flex-col items-center">
+          <div className="p-6 md:p-8 bento-card bg-audit-white border border-slate-200 rounded-2xl md:rounded-3xl flex flex-col items-center">
             <CloudRain className="w-10 h-10 md:w-12 md:h-12 text-safety-orange mb-3 md:mb-4" />
             <span className="text-xl md:text-2xl font-black text-authority-navy uppercase tracking-tighter leading-none mb-2">WEATHER_VERIFIED</span>
             <span className="font-mono text-[9px] md:text-[10px] text-slate-500 tracking-[0.2em] uppercase">JVTO Weather 2026</span>

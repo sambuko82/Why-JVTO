@@ -4,74 +4,57 @@ import { HeroSection } from '../components/home/HeroSection';
 import { Differentiators } from '../components/home/Differentiators';
 import { DestinationGrid } from '../components/home/DestinationGrid';
 import { TourBrowser } from '../components/home/TourBrowser';
-import { TrustSignals } from '../components/home/TrustSignals';
-import { FounderSpotlight } from '../components/home/FounderSpotlight';
 import { VerifyCTA } from '../components/home/VerifyCTA';
 import { Footer } from '../components/home/Footer';
-import { SSOT } from '../lib/ssot';
+import { AuthorityShield } from '../components/home/AuthorityShield';
+import { HealthFlow } from '../components/home/HealthFlow';
+import { TrustStack } from '../components/home/TrustStack';
+import { TravelGuideTeaser } from '../components/home/TravelGuideTeaser';
+import { FAQSection } from '../components/home/FAQSection';
+import { ReviewsSection } from '../components/home/ReviewsSection';
 
 export default function HomePage() {
-  // ============================================================================
-  // SKEMA JSON-LD (SEO Nuclear Option)
-  // ============================================================================
-  const jsonLdSchema = {
-    "@context": "https://schema.org",
-    "@type": SSOT.pages['/'].schema_type || "TravelAgency",
-    "@id": `${SSOT.organization.url}/#organization`,
-    "name": SSOT.organization.name,
-    "legalName": SSOT.organization.legalName,
-    "foundingDate": SSOT.organization.foundingDate,
-    "url": SSOT.organization.url,
-    "description": SSOT.organization.description,
-    "founder": {
-      "@type": "Person",
-      "name": SSOT.organization.founder.name,
-      "jobTitle": SSOT.organization.founder.role,
-      "memberOf": {
-        "@type": "GovernmentOrganization",
-        "name": "Indonesian National Police",
-        "subOrganization": {
-          "@type": "GovernmentOrganization",
-          "name": SSOT.organization.founder.unit
-        }
-      },
-      "sameAs": SSOT.organization.founder.sameAs
-    },
-    "subjectOf": [
-      {
-        "@type": "Book",
-        "name": SSOT.history.book2016.title,
-        "isbn": SSOT.history.book2016.isbn
-      }
-    ]
-  };
-
   return (
-    <div className="min-h-screen bg-white font-sans text-authority-navy selection:bg-safety-orange/30 pb-20 md:pb-0">
-      <PageSEO route="/" schema={jsonLdSchema} />
+    <div className="min-h-screen bg-audit-white font-sans text-authority-navy selection:bg-safety-orange/30">
+      <PageSEO route="/" />
 
-      {/* SECTION 1: HERO (The Authority Statement) */}
+      {/* SECTION A-B: HERO */}
       <HeroSection />
 
-      {/* SECTION 2: DIFFERENTIATORS (The JVTO Difference) */}
+      {/* SECTION C: ENTITY ANCHOR */}
+      <AuthorityShield />
+
+      {/* SECTION D: DIFFERENTIATORS */}
       <Differentiators />
 
-      {/* SECTION 3: DESTINATIONS (Explore the Ring of Fire) */}
+      {/* SECTION E: DESTINATIONS */}
       <DestinationGrid />
 
-      {/* SECTION 4: TOURS BROWSER (Departure Selector) */}
+      {/* SECTION F: DEPARTURE CITY */}
       <TourBrowser />
 
-      {/* SECTION 5: TRUST SIGNALS (Why Trust JVTO?) */}
-      <TrustSignals />
+      {/* SECTION G: FEATURED TOURS */}
+      {/* (Already part of TourBrowser or needs separate component) */}
 
-      {/* SECTION 6: FOUNDER SPOTLIGHT (Police Leadership) */}
-      <FounderSpotlight />
+      {/* SECTION I: MANDATORY REQUIREMENT */}
+      <HealthFlow />
 
-      {/* SECTION 7: VERIFY CTA (Ready to Audit?) */}
+      {/* SECTION J: INTERNATIONAL GUESTS */}
+      <TrustStack />
+
+      {/* SECTION K: REVIEWS */}
+      <ReviewsSection />
+
+      {/* SECTION M: TRAVEL GUIDE */}
+      <TravelGuideTeaser />
+
+      {/* SECTION N: FAQ */}
+      <FAQSection />
+
+      {/* SECTION O: PRE-FOOTER CTA */}
       <VerifyCTA />
 
-      {/* SECTION 8: FOOTER */}
+      {/* SECTION P: FOOTER */}
       <Footer />
     </div>
   );
