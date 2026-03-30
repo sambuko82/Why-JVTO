@@ -25,7 +25,7 @@ export const PressProof = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-safety-orange/10 border border-safety-orange/30 text-safety-orange text-[10px] md:text-[11px] font-mono font-bold uppercase tracking-[0.15em] md:tracking-[0.2em] mb-6 md:mb-8">
+              <div className="badge-eyebrow badge-eyebrow-orange mb-6 md:mb-8">
                 <Newspaper className="w-3 h-3" /> National Media Verification
               </div>
               <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-white mb-6 md:mb-8 leading-[0.9] uppercase tracking-tighter">

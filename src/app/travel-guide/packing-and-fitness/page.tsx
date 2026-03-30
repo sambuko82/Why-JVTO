@@ -139,7 +139,7 @@ export default function PackingAndFitness() {
           <div className="scanline"></div>
           <div className="relative z-10 flex flex-col md:flex-row items-center text-center md:text-left justify-between gap-10 md:gap-12">
             <div className="max-w-md">
-              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 text-safety-orange text-[10px] md:text-[11px] font-mono font-bold uppercase tracking-[0.2em] mb-6">
+              <div className="badge-eyebrow badge-eyebrow-white mb-6">
                 <ShieldCheck className="w-3 h-3" /> JVTO Provided Gear
               </div>
               <h2 className="text-3xl md:text-4xl font-black uppercase leading-none mb-4">We Supply <br />The Tech.</h2>

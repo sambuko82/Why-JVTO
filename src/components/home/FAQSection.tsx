@@ -29,7 +29,7 @@ export const FAQSection = () => {
     <section className="py-16 md:py-24 bg-audit-white relative overflow-hidden border-b border-slate-100">
       <div className="max-w-4xl mx-auto px-4 md:px-6">
         <div className="text-center mb-12 md:mb-16">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-authority-navy/5 border border-authority-navy/10 text-authority-navy text-[10px] md:text-[11px] font-mono font-bold uppercase tracking-[0.15em] md:tracking-[0.2em] mb-4 md:mb-6 mx-auto">
+          <div className="badge-eyebrow badge-eyebrow-navy mb-4 md:mb-6 mx-auto">
             <HelpCircle className="w-3 h-3" /> Frequently Asked Questions
           </div>
           <h2 className="text-3xl xs:text-4xl md:text-5xl font-black uppercase tracking-tighter leading-[0.9] text-authority-navy">

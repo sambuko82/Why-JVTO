@@ -52,7 +52,7 @@ export const FounderSpotlight = () => {
           </div>
 
           <div>
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-authority-navy/5 border border-authority-navy/10 text-authority-navy text-[10px] md:text-[11px] font-mono font-bold uppercase tracking-[0.15em] md:tracking-[0.2em] mb-6 md:mb-8">
+            <div className="badge-eyebrow badge-eyebrow-navy mb-6 md:mb-8">
               <Star className="w-3 h-3" /> Police Leadership
             </div>
             <h2 className="text-3xl xs:text-4xl md:text-6xl font-black uppercase tracking-tighter leading-[0.9] text-authority-navy mb-6 md:mb-8">

@@ -60,7 +60,7 @@ export default function WhyJVTOHub() {
             transition={{ duration: 0.6 }}
             className="relative z-10 max-w-4xl mx-auto"
           >
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-safety-orange/10 border border-safety-orange/20 text-safety-orange text-[11px] font-mono font-bold uppercase tracking-[0.2em] mb-8">
+            <div className="badge-eyebrow badge-eyebrow-orange mb-8">
               <Shield className="w-4 h-4" /> {policeAuth.badge}
             </div>
             <h1 className="text-5xl md:text-7xl font-black text-authority-navy mb-8 leading-[1.1] tracking-tight">

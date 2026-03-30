@@ -59,7 +59,7 @@ export default function IjenHealthScreening() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16 md:mb-24"
         >
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-safety-orange/10 border border-safety-orange/30 text-safety-orange text-[10px] md:text-[11px] font-mono font-bold uppercase tracking-[0.2em] mb-6 md:mb-8">
+          <div className="badge-eyebrow badge-eyebrow-orange mb-6 md:mb-8">
             <Stethoscope className="w-4 h-4" /> Supervised by Licensed Physician
           </div>
           <h1 className="text-4xl md:text-9xl font-black text-authority-navy mb-6 md:mb-8 leading-[0.85] uppercase tracking-tighter">
@@ -177,7 +177,7 @@ export default function IjenHealthScreening() {
           className="max-w-5xl mx-auto"
         >
           <div className="text-center mb-12 md:mb-16">
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-verified-bright/10 border border-verified-bright/30 text-verified-bright text-[10px] md:text-[11px] font-mono font-bold uppercase tracking-[0.2em] mb-4 md:mb-6">
+            <div className="badge-eyebrow bg-verified-bright/10 border border-verified-bright/30 text-verified-bright mb-4 md:mb-6">
               <QrCode className="w-4 h-4" /> Digital Health Ledger
             </div>
             <h2 className="text-3xl md:text-5xl font-black text-authority-navy uppercase mb-4 md:mb-6 tracking-tighter">Fit-to-Climb Certificate</h2>

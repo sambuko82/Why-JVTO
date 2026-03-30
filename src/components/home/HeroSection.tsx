@@ -96,7 +96,7 @@ export const HeroSection = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-black/40 border border-white/20 text-white text-[10px] md:text-[11px] font-mono font-bold uppercase tracking-[0.2em] mb-8 backdrop-blur-md"
+            className="badge-eyebrow bg-black/40 border border-white/20 text-white mb-8 backdrop-blur-md"
           >
             <ShieldCheck className="w-3 h-3 text-safety-orange" /> Verified Operator
           </motion.div>

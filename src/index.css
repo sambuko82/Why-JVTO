@@ -30,8 +30,20 @@
     @apply bg-white border border-slate-200 rounded-[2.5rem] shadow-sm hover:shadow-lg hover:-translate-y-1 hover:border-safety-orange/30 transition-all duration-300 overflow-hidden;
   }
   
-  .tech-badge {
-    @apply bg-authority-navy text-white font-mono text-[11px] px-2 py-1 rounded-[0.5rem] uppercase tracking-wider;
+  .badge-eyebrow {
+    @apply inline-flex items-center gap-2 px-4 py-1.5 rounded-full font-mono font-bold uppercase tracking-[0.15em] md:tracking-[0.2em] text-[10px] md:text-[11px];
+  }
+  
+  .badge-eyebrow-navy {
+    @apply bg-authority-navy/5 border border-authority-navy/10 text-authority-navy;
+  }
+  
+  .badge-eyebrow-orange {
+    @apply bg-safety-orange/10 border border-safety-orange/30 text-safety-orange;
+  }
+  
+  .badge-eyebrow-white {
+    @apply bg-white/5 border border-white/10 text-white;
   }
   
   .verified-badge {

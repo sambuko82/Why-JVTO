@@ -23,7 +23,7 @@ export const AuthorityShield = () => {
             transition={{ duration: 0.6 }}
             className="mb-16 md:mb-24 max-w-4xl"
           >
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 text-safety-orange text-[10px] md:text-[11px] font-mono font-bold uppercase tracking-[0.2em] mb-8">
+            <div className="badge-eyebrow badge-eyebrow-white mb-8">
               <Newspaper className="w-3 h-3" /> Police Leadership & Media Verification
             </div>
             <h2 className="text-4xl md:text-5xl lg:text-7xl font-black mb-6 leading-[0.9] uppercase tracking-tighter">

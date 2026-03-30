@@ -14,7 +14,7 @@ export const VerifyCTA = () => {
           <div className="absolute inset-0 grid-pattern z-0 opacity-10"></div>
           
           <div className="relative z-10 max-w-3xl">
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-safety-orange/10 border border-safety-orange/30 text-safety-orange text-[10px] md:text-[11px] font-mono font-bold uppercase tracking-[0.15em] md:tracking-[0.2em] mb-6 md:mb-8">
+            <div className="badge-eyebrow badge-eyebrow-orange mb-6 md:mb-8">
               <Lock className="w-3 h-3" /> System Audit Ready
             </div>
             <h2 className="text-3xl xs:text-4xl md:text-7xl font-black uppercase tracking-tighter leading-[0.85] mb-6 md:mb-8">

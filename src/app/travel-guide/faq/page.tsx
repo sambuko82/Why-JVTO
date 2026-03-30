@@ -152,7 +152,7 @@ export default function FAQPage() {
           <div className="scanline"></div>
           <div className="relative z-10 flex flex-col md:flex-row items-center text-center md:text-left justify-between gap-10 md:gap-12">
             <div className="max-w-md">
-              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-safety-orange/10 border border-safety-orange/30 text-safety-orange text-[10px] md:text-[11px] font-mono font-bold uppercase tracking-[0.2em] mb-6">
+              <div className="badge-eyebrow badge-eyebrow-orange mb-6">
                 <MessageSquare className="w-3 h-3" /> Direct Assistance
               </div>
               <h2 className="text-3xl md:text-4xl font-black uppercase leading-none mb-4">Still Have <br className="hidden md:block" />Questions?</h2>

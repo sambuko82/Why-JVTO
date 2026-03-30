@@ -21,7 +21,7 @@ export const EvidenceBadge = ({ type, text }: { type: 'verified' | 'public' | 'd
 export const SectionHeading = ({ title, subtitle, badge }: { title: string, subtitle?: string, badge?: string }) => (
   <div className="mb-16 text-center max-w-3xl mx-auto">
     {badge && (
-      <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-safety-orange/10 border border-safety-orange/30 text-safety-orange text-[11px] font-mono font-bold uppercase tracking-[0.2em] mb-8">
+      <div className="badge-eyebrow badge-eyebrow-orange mb-8">
         <Lock className="w-3 h-3" /> {badge}
       </div>
     )}

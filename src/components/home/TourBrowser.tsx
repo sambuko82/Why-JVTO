@@ -34,7 +34,7 @@ export const TourBrowser = () => {
       <div className="max-w-7xl mx-auto px-4 md:px-6">
         <div className="flex flex-col md:flex-row items-start md:items-end justify-between gap-6 md:gap-8 mb-12 md:mb-16">
           <div className="max-w-2xl">
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-safety-orange/5 border border-safety-orange/10 text-safety-orange text-[10px] md:text-[11px] font-mono font-bold uppercase tracking-[0.15em] md:tracking-[0.2em] mb-4 md:mb-6">
+            <div className="badge-eyebrow badge-eyebrow-orange mb-4 md:mb-6">
               <Clock className="w-3 h-3" /> Choose Your Departure City
             </div>
             <h2 className="text-3xl xs:text-4xl md:text-6xl font-black uppercase tracking-tighter leading-[0.9] text-authority-navy">

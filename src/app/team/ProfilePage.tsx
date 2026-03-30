@@ -252,7 +252,7 @@ export default function CrewProfile() {
               </div>
 
               <div className="relative z-10">
-                <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-safety-orange/10 border border-safety-orange/30 text-safety-orange text-[11px] font-mono font-bold uppercase tracking-[0.2em] mb-10">
+                <div className="badge-eyebrow badge-eyebrow-orange mb-10">
                   <Award className="h-4 w-4" /> {profileData.archetype}
                 </div>
                 <h1 className="text-6xl md:text-9xl font-black text-authority-navy mb-4 leading-[0.85] uppercase tracking-tighter">

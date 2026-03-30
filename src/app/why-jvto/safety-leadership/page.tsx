@@ -66,7 +66,7 @@ export default function SafetyLeadership() {
           <div className="bento-card bg-authority-navy text-white p-12 relative overflow-hidden">
             <div className="scanline"></div>
             <div className="relative z-10">
-              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-safety-orange/10 border border-safety-orange/30 text-safety-orange text-[11px] font-mono font-bold uppercase tracking-[0.2em] mb-8">
+              <div className="badge-eyebrow badge-eyebrow-orange mb-8">
                 <ShieldCheck className="w-3 h-3" /> State-Sanctioned Security
               </div>
               <h3 className="text-3xl font-black uppercase mb-6 leading-none">Police Command</h3>

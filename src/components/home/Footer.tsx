@@ -16,7 +16,7 @@ export const Footer = () => {
         {/* Pre-footer CTA Band (moved from previous Footer content) */}
         <div className="flex flex-col lg:flex-row justify-between items-center gap-12 lg:gap-20 mb-16 md:mb-32">
           <div className="max-w-2xl text-center lg:text-left">
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-safety-orange/10 border border-safety-orange/30 text-safety-orange text-[10px] md:text-[11px] font-mono font-bold uppercase tracking-[0.15em] md:tracking-[0.2em] mb-6 md:mb-8">
+            <div className="badge-eyebrow badge-eyebrow-orange mb-6 md:mb-8">
               <Lock className="w-3 h-3" /> Secure Booking Protocol
             </div>
             <h2 className="text-3xl xs:text-4xl md:text-7xl font-black leading-[0.9] mb-6 md:mb-8 uppercase">
