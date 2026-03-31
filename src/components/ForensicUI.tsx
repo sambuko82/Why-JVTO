@@ -1,5 +1,5 @@
 import React from 'react';
-import { ShieldCheck, FileCheck, ExternalLink, Lock, CheckCircle2, AlertCircle, Fingerprint } from 'lucide-react';
+import { ShieldCheck, FileCheck, ExternalLink, Lock, CheckCircle2, AlertCircle, Fingerprint, type LucideIcon } from 'lucide-react';
 
 export const EvidenceBadge = ({ type, text }: { type: 'verified' | 'public' | 'doc', text: string }) => {
   const styles = {
@@ -37,20 +37,20 @@ export const HashBadge = ({ hash }: { hash: string }) => (
   </div>
 );
 
-export const PillarCard = ({ 
-  icon: Icon, 
-  title, 
-  claim, 
-  evidence, 
-  actionLabel, 
-  onAction 
-}: { 
-  icon: any, 
-  title: string, 
-  claim: string, 
-  evidence: string[], 
-  actionLabel: string, 
-  onAction: () => void 
+export const PillarCard = ({
+  icon: Icon,
+  title,
+  claim,
+  evidence,
+  actionLabel,
+  onAction
+}: {
+  icon: LucideIcon,
+  title: string,
+  claim: string,
+  evidence: string[],
+  actionLabel: string,
+  onAction: () => void
 }) => (
   <div className="bento-card bg-white/5 border-white/10 p-10 group hover:bg-white/10 transition-all relative overflow-hidden">
     <div className="scanline"></div>

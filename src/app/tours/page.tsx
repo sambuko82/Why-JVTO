@@ -58,10 +58,11 @@ export default function ToursHub() {
               className="group cursor-pointer bg-white rounded-2xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col"
             >
               <div className="aspect-[4/3] relative overflow-hidden">
-                <img 
+                <img
                   src={tour.image}
-                  alt={tour.name} 
+                  alt={tour.name}
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  loading="lazy"
                   referrerPolicy="no-referrer"
                 />
                 {tour.crewName && (

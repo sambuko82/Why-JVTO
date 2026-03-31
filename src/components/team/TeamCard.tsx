@@ -38,10 +38,11 @@ export const TeamCard: React.FC<TeamCardProps> = ({ crew, index, compact = false
       >
         <div className="scanline"></div>
         <div className="aspect-[3/4] overflow-hidden relative border-b border-slate-100">
-          <img 
-            alt={crew.name} 
-            className="w-full h-full object-cover grayscale contrast-125 transition-all duration-700 group-hover:grayscale-0 group-hover:scale-110" 
-            src={crew.profile.image} 
+          <img
+            alt={crew.name}
+            className="w-full h-full object-cover grayscale contrast-125 transition-all duration-700 group-hover:grayscale-0 group-hover:scale-110"
+            src={crew.profile.image}
+            loading="lazy"
             referrerPolicy="no-referrer"
           />
           <div className="absolute top-6 left-6">

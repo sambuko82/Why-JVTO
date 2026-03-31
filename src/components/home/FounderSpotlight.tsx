@@ -19,10 +19,11 @@ export const FounderSpotlight = () => {
               className="relative z-10 flex flex-col gap-4"
             >
               <div className="aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl">
-                <img 
-                  src={SSOT.assets.find(a => a.slug === 'founder-with-guests-stefan-loose')?.url || 'https://javavolcano-touroperator.com/history/founder-with-guests-stefan-loose.jpg'} 
-                  alt={SSOT.assets.find(a => a.slug === 'founder-with-guests-stefan-loose')?.alt || 'Agung Sambuko - Founder & Tourist Police'} 
+                <img
+                  src={SSOT.assets.find(a => a.slug === 'founder-with-guests-stefan-loose')?.url || 'https://javavolcano-touroperator.com/history/founder-with-guests-stefan-loose.jpg'}
+                  alt={SSOT.assets.find(a => a.slug === 'founder-with-guests-stefan-loose')?.alt || 'Agung Sambuko - Founder & Tourist Police'}
                   className="w-full h-full object-cover object-top"
+                  loading="lazy"
                   referrerPolicy="no-referrer"
                 />
               </div>

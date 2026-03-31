@@ -38,7 +38,19 @@ export default function DestinationDetail() {
   const route = `/destinations/${destinationId}`;
   const meta = SSOT.pages[route];
 
-  const destinationData: Record<string, any> = {
+  interface DestinationEntry {
+    title: string;
+    image: string;
+    images: string[];
+    imageContext: string;
+    category: string;
+    duration: string;
+    description: string;
+    highlights: string[];
+    safety: string;
+  }
+
+  const destinationData: Record<string, DestinationEntry> = {
     'ijen-crater': {
       title: 'Ijen Crater',
       image: SSOT.destinations.find(d => d.slug === 'ijen-crater')?.image || '',
