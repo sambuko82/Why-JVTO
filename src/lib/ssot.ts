@@ -499,6 +499,29 @@ export const SSOT = {
       }
     },
     {
+      id: "crew-taufik-local",
+      name: "Taufik",
+      role: "Guide",
+      quote: "Local knowledge is the key to a safe and authentic journey.",
+      reviewer: "Michael B.",
+      tags: ["Ijen", "Local", "English"],
+      profile: {
+        archetype: "The Local Expert",
+        image: "https://picsum.photos/seed/taufik/800/1000",
+        fullQuote: "I've lived here all my life. I know every path and every risk.",
+        expertise: ["Ijen Crater", "Local Culture", "Navigation"],
+        credential: {
+          name: "Ijen Climbing License",
+          issuer: "BKSDA",
+          status: "Active",
+          cardImage: "https://javavolcano-touroperator.com/uploads/1771428704448-911506028-kta_taufik.jpg"
+        },
+        safetyMetrics: [
+          { label: "Incident-Free Tours", value: 100, history: [100, 100, 100, 100, 100] }
+        ]
+      }
+    },
+    {
       id: "crew-yandi",
       name: "Yandi",
       role: "Driver",
@@ -591,7 +614,7 @@ export const SSOT = {
       }
     },
     {
-      id: "crew-taufik",
+      id: "crew-taufik-expedition",
       name: "Taufik",
       role: "Guide",
       quote: "Leading multi-day expeditions with a focus on group safety.",
@@ -1285,7 +1308,17 @@ export const SSOT = {
         { title: "Local Team, Daily Execution", summary: "A local operations team trained for real East Java logistics.", link: "/team" },
         { title: "Guest Voices on Independent Platforms", summary: "Independent reviews across major platforms—see the patterns for yourself.", link: "/why-jvto/reviews" },
         { title: "Roots in Documented History", summary: "Long-term artifacts that predate the recent tourism boom.", link: "/why-jvto/our-story" },
-        { title: "Partners as Context & Access", summary: "ISIC, HPWKI, and INDECON—what they signal and how verification works.", link: "/why-jvto/community-standards" }
+        { 
+          title: "Partners as Context & Access", 
+          summary: "ISIC, HPWKI, and INDECON—what they signal and how verification works.", 
+          link: "/why-jvto/community-standards",
+          narrative: "JVTO operates at the intersection of international standards and local expertise. Our affiliations with HPWKI, ISIC, and INDECON are not merely badges—they are active commitments to safety, sustainable tourism, and professional excellence in East Java's volcanic regions.",
+          partners: [
+            { name: "HPWKI", logo: "https://javavolcano-touroperator.com/legal/HPWKI-approval-preview.png" },
+            { name: "ISIC", logo: "https://javavolcano-touroperator.com/partner/screensot-isic-page-jvto.png" },
+            { name: "INDECON", logo: "https://picsum.photos/seed/indecon/200/200" }
+          ]
+        }
       ]
     } 
   }

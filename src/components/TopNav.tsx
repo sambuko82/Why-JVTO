@@ -32,13 +32,13 @@ export const TopNav = () => {
       <motion.div className="fixed top-0 left-0 right-0 h-1 bg-safety-orange origin-left z-[102]" style={{ scaleX }} />
       <nav className="fixed top-0 left-0 right-0 z-[101] bg-authority-navy/95 backdrop-blur-xl border-b border-white/10 py-3">
         <div className="max-w-7xl mx-auto px-4 md:px-6 flex items-center justify-between">
-          <div className="flex items-center gap-3 cursor-pointer group" onClick={() => navigate('/')}>
-            <div className="p-2 bg-safety-orange rounded-lg text-white group-hover:scale-105 transition-transform shadow-lg shadow-safety-orange/20">
-              <ShieldCheck className="w-5 h-5" />
+          <div className="flex items-center gap-2 md:gap-3 cursor-pointer group" onClick={() => navigate('/')}>
+            <div className="p-1.5 md:p-2 bg-safety-orange rounded-lg text-white group-hover:scale-105 transition-transform shadow-lg shadow-safety-orange/20">
+              <ShieldCheck className="w-4 h-4 md:w-5 md:h-5" />
             </div>
             <div>
-              <h1 className="font-black uppercase tracking-tighter leading-none text-white">JVTO</h1>
-              <p className="font-mono text-[10px] uppercase tracking-widest text-slate-500">Java Volcano Tour Operator</p>
+              <h1 className="font-black uppercase tracking-tighter leading-none text-white text-sm md:text-base">JVTO</h1>
+              <p className="font-mono text-[8px] md:text-[10px] uppercase tracking-widest text-slate-500">Java Volcano Tour Operator</p>
             </div>
           </div>
 

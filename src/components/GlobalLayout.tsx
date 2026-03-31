@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { TopNav } from './TopNav';
 import { BottomNav } from './home/BottomNav';
 import { BookingRail } from './BookingRail';
+import { AuthorityStickyBar } from './AuthorityStickyBar';
 import { useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'motion/react';
 
@@ -16,6 +17,7 @@ export const GlobalLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <div className="min-h-screen flex flex-col bg-audit-white">
       <TopNav />
+      <AuthorityStickyBar />
       <AnimatePresence mode="wait">
         <motion.main 
           key={location.pathname}
@@ -23,7 +25,7 @@ export const GlobalLayout = ({ children }: { children: React.ReactNode }) => {
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -10 }}
           transition={{ duration: 0.3 }}
-          className="flex-1 pt-[60px] pb-32 md:pb-24"
+          className="flex-1 pt-[104px] pb-24 md:pb-24"
         >
           {children}
         </motion.main>

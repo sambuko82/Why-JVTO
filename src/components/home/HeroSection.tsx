@@ -91,7 +91,7 @@ export const HeroSection = () => {
       </div>
       
       <div className="relative z-10 flex-1 flex flex-col justify-center items-center max-w-7xl mx-auto px-4 md:px-6 py-12 md:py-24 w-full">
-        <div className="max-w-5xl text-center flex flex-col items-center mt-12 md:mt-0">
+        <div className="max-w-5xl text-center flex flex-col items-center mt-20 md:mt-0">
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -107,13 +107,13 @@ export const HeroSection = () => {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="flex flex-col items-center justify-center gap-2 md:gap-3 mb-12 w-full"
           >
-            <span className="block text-lg sm:text-xl md:text-2xl lg:text-3xl text-safety-orange font-bold tracking-[0.2em] uppercase drop-shadow-lg">
+            <span className="block text-sm sm:text-xl md:text-2xl lg:text-3xl text-safety-orange font-bold tracking-[0.2em] uppercase drop-shadow-lg">
               Tourist Police-Led
             </span>
-            <span className="block text-4xl xs:text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-black tracking-tighter uppercase text-white drop-shadow-[0_8px_8px_rgba(0,0,0,0.6)] leading-none">
+            <span className="block text-2xl xs:text-3xl sm:text-5xl md:text-7xl lg:text-8xl xl:text-9xl font-black tracking-tighter uppercase text-white drop-shadow-[0_8px_8px_rgba(0,0,0,0.6)] leading-[0.9] md:leading-none">
               Private Volcano Tours
             </span>
-            <span className="block text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-light italic text-white/90 drop-shadow-md mt-2 md:mt-4">
+            <span className="block text-lg sm:text-2xl md:text-4xl lg:text-5xl font-light italic text-white/90 drop-shadow-md mt-1 md:mt-4">
               in East Java
             </span>
           </motion.h1>

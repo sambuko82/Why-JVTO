@@ -30,6 +30,8 @@ export const TrustStack = () => {
     hash: `SHA-256: ${Math.random().toString(16).substring(2, 6)}...${Math.random().toString(16).substring(2, 6)}`
   }));
 
+  const gridItems = items.slice(0, 5);
+
   return (
     <section id="trust-stack" className="py-24 px-4 md:px-6 max-w-7xl mx-auto">
       <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-8">
@@ -56,8 +58,8 @@ export const TrustStack = () => {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 md:grid-rows-3 gap-4 auto-rows-[minmax(250px,auto)]">
-        {items.map((item, i) => {
+      <div className="grid grid-cols-1 md:grid-cols-3 md:grid-rows-2 gap-4 auto-rows-[minmax(250px,auto)]">
+        {gridItems.map((item, i) => {
           const IconComponent = item.icon;
           return (
             <motion.div 

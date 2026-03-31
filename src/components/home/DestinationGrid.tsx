@@ -44,19 +44,19 @@ const DestinationCard = ({ dest, idx, navigate }: { dest: any, idx: number, navi
           referrerPolicy="no-referrer"
         />
       </motion.div>
-      <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/90 opacity-90 transition-opacity duration-300 group-hover:opacity-100"></div>
+      <div className="absolute inset-0 bg-gradient-to-b from-black/5 via-transparent to-black/70 opacity-70 transition-opacity duration-300 group-hover:opacity-90"></div>
       
-      <div className="absolute top-0 left-0 right-0 p-6">
-        <p className="text-white font-bold uppercase tracking-widest text-xs drop-shadow-md">
+      <div className="absolute top-0 left-0 right-0 p-4 md:p-6">
+        <p className="text-white font-bold uppercase tracking-widest text-[9px] md:text-xs drop-shadow-md">
           {dest.highlight}
         </p>
       </div>
       
-      <div className="absolute bottom-0 left-0 right-0 p-6 flex flex-col justify-end">
-        <h3 className="text-2xl md:text-3xl font-black text-white uppercase tracking-tight mb-2 drop-shadow-lg group-hover:-translate-y-1 transition-transform duration-300">
+      <div className="absolute bottom-0 left-0 right-0 p-4 md:p-6 flex flex-col justify-end">
+        <h3 className="text-lg md:text-3xl font-black text-white uppercase tracking-tight mb-1 md:mb-2 drop-shadow-lg group-hover:-translate-y-1 transition-transform duration-300">
           {dest.name}
         </h3>
-        <div className="flex items-center gap-2 text-safety-orange font-mono text-[11px] uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-all transform translate-y-2 group-hover:translate-y-0">
+        <div className="flex items-center gap-2 text-safety-orange font-mono text-[10px] md:text-[11px] uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-all transform translate-y-2 group-hover:translate-y-0">
           View Dossier <ChevronRight className="w-3 h-3" />
         </div>
       </div>
