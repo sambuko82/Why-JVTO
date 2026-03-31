@@ -8,12 +8,10 @@ import { VerifyCTA } from '../components/home/VerifyCTA';
 import { Footer } from '../components/home/Footer';
 import { AuthorityShield } from '../components/home/AuthorityShield';
 import { HealthFlow } from '../components/home/HealthFlow';
-import { TrustStack } from '../components/home/TrustStack';
-import { PartnerHighlight } from '../components/home/PartnerHighlight';
+import { TrustHub } from '../components/home/TrustHub';
 import { CrewSection } from '../components/CrewSection';
 import { ReviewsSection } from '../components/home/ReviewsSection';
 import { GuideAndFAQ } from '../components/home/GuideAndFAQ';
-import { TransparencyHub } from '../components/home/TransparencyHub';
 import { AtmosphericBreak } from '../components/home/AtmosphericBreak';
 
 export default function HomePage() {
@@ -42,20 +40,14 @@ export default function HomePage() {
       {/* SECTION I: MANDATORY REQUIREMENT */}
       <HealthFlow />
 
-      {/* SECTION J: INTERNATIONAL GUESTS */}
-      <TrustStack />
-
-      {/* STRATEGIC AFFILIATIONS HIGHLIGHT */}
-      <PartnerHighlight />
+      {/* SECTION J: INTEGRATED TRUST HUB (PILLARS, PARTNERS, EVIDENCE) */}
+      <TrustHub />
 
       {/* SECTION K: TEAM & CREW */}
       <CrewSection />
 
       {/* SECTION L: REVIEWS */}
       <ReviewsSection />
-
-      {/* CONSOLIDATED TRANSPARENCY HUB (HISTORY, PRESS, FORENSIC) */}
-      <TransparencyHub />
 
       {/* SECTION M & N: TRAVEL GUIDE & FAQ (INTEGRATED) */}
       <GuideAndFAQ />
