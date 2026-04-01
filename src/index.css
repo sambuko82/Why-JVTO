@@ -115,9 +115,9 @@
     text-shadow: 0 0 10px rgba(255, 107, 53, 0.5);
   }
 
-  /* Visual Rhythm Utilities */
+  /* Visual Rhythm Utilities - 4-Point Grid Logic (32px baseline = py-8) */
   .section-spacing {
-    @apply py-12 md:py-16 lg:py-20;
+    @apply py-16 md:py-24 lg:py-32; /* Maintaining breathing room for premium feel */
   }
   
   .section-spacing-tight {
@@ -125,18 +125,24 @@
   }
 
   .container-authority {
-    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+    @apply max-w-7xl mx-auto px-4 sm:px-8 lg:px-12; /* Increased horizontal padding for spatial logic */
   }
 
+  /* Pro Typography Framework */
   .heading-display {
-    @apply text-4xl sm:text-5xl md:text-7xl lg:text-8xl tracking-[-0.03em] leading-[1.1] text-authority-navy;
+    @apply text-4xl sm:text-5xl md:text-7xl lg:text-8xl tracking-[-0.04em] leading-[1.05] text-authority-navy font-black uppercase;
   }
 
   .heading-section {
-    @apply text-3xl sm:text-4xl md:text-6xl tracking-[-0.02em] leading-[1.15] text-authority-navy;
+    @apply text-3xl sm:text-4xl md:text-6xl tracking-[-0.03em] leading-[1.1] text-authority-navy font-black uppercase;
   }
 
   .body-text {
-    @apply text-slate-500 font-light leading-relaxed text-sm md:text-base lg:text-lg;
+    @apply text-slate-500 font-light leading-relaxed text-sm md:text-base lg:text-lg tracking-tight;
+  }
+
+  /* Pro Overlay Hack: Progressive Blur + Gradient */
+  .pro-overlay {
+    @apply absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent backdrop-blur-[2px];
   }
 }

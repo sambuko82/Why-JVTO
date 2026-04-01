@@ -69,44 +69,43 @@ export default function DestinationsHub() {
   ];
 
   return (
-    <div className="min-h-screen bg-audit-white text-authority-navy font-sans selection:bg-safety-orange/30 pb-24 md:pb-0">
+    <div className="min-h-screen bg-white text-authority-navy font-sans selection:bg-safety-orange/30 pb-24 md:pb-0">
       {/* Header */}
-      <div className="border-b border-slate-200 bg-audit-white/80 relative z-40 backdrop-blur-xl">
-        <div className="container mx-auto px-4 md:px-6 py-4 md:py-6 flex items-center justify-between">
-          <div className="flex items-center gap-2 md:gap-3 text-safety-orange text-[10px] md:text-[11px] font-mono font-bold uppercase tracking-[0.15em] md:tracking-[0.2em]">
-            <Compass className="w-3.5 h-3.5 md:w-4 md:h-4" /> Destination Registry
+      <div className="border-b border-slate-100 bg-white/80 relative z-40 backdrop-blur-xl sticky top-0">
+        <div className="container-authority py-4 md:py-6 flex items-center justify-between">
+          <div className="flex items-center gap-3 text-safety-orange text-[10px] md:text-[11px] font-black uppercase tracking-[0.2em]">
+            <Compass className="w-4 h-4" /> Destination Registry
           </div>
-          <div className="flex items-center gap-4 md:gap-6">
-            <button onClick={() => navigate('/why-jvto')} className="text-[10px] md:text-[11px] font-mono font-bold uppercase tracking-widest text-slate-500 hover:text-authority-navy transition-colors">Why JVTO</button>
-            <button onClick={() => navigate('/verify-jvto')} className="text-[10px] md:text-[11px] font-mono font-bold uppercase tracking-widest text-slate-500 hover:text-authority-navy transition-colors">Verify</button>
+          <div className="flex items-center gap-6 md:gap-10">
+            <button onClick={() => navigate('/why-jvto')} className="text-[10px] md:text-[11px] font-black uppercase tracking-[0.2em] text-slate-400 hover:text-authority-navy transition-colors">Why JVTO</button>
+            <button onClick={() => navigate('/verify-jvto')} className="text-[10px] md:text-[11px] font-black uppercase tracking-[0.2em] text-slate-400 hover:text-authority-navy transition-colors">Verify</button>
           </div>
         </div>
       </div>
 
-      <div className="container mx-auto px-4 md:px-6 py-12 md:py-24 max-w-7xl relative z-10">
+      <div className="container-authority py-16 md:py-32 relative z-10">
         <PageSEO route="/destinations" />
         
         {/* Hero Section */}
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="mb-12 md:mb-24"
+          transition={{ duration: 0.8, ease: [0.23, 1, 0.32, 1] }}
+          className="mb-20 md:mb-32"
         >
-          <div className="flex items-center gap-2 mb-4 md:mb-6">
-            <MapPin className="w-3.5 h-3.5 md:w-4 md:h-4 text-safety-orange" />
-            <span className="font-mono text-[10px] md:text-[11px] uppercase tracking-widest text-slate-500">East Java Exploration</span>
+          <div className="badge-eyebrow bg-safety-orange/10 text-safety-orange mb-8">
+            <MapPin className="w-3.5 h-3.5" /> East Java Exploration
           </div>
-          <h1 className="text-4xl md:text-9xl font-black text-authority-navy mb-4 md:mb-8 leading-[0.85] uppercase tracking-tighter">
+          <h1 className="text-5xl md:text-9xl font-black text-authority-navy mb-10 leading-[0.85] uppercase tracking-tighter">
             {meta?.h1 || 'DESTINATIONS.'}
           </h1>
-          <p className="text-lg md:text-2xl text-slate-500 max-w-3xl leading-tight font-light">
+          <p className="body-text max-w-3xl">
             Discover the most iconic landscapes in Indonesia. From the blue fires of Ijen to the sea of sand at Bromo, we provide private, safety-first expeditions to every major destination in East Java.
           </p>
         </motion.div>
 
         {/* Destination Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 md:gap-16">
           {destinations.map((dest, i) => (
             <motion.div 
               key={dest.id}
@@ -117,51 +116,59 @@ export default function DestinationsHub() {
               onClick={() => navigate(`/destinations/${dest.id}`)}
               className="group cursor-pointer"
             >
-              <div className="relative aspect-[4/5] overflow-hidden rounded-[2rem] md:rounded-[2.5rem] mb-4 md:mb-6 bg-slate-100">
+              <div className="relative aspect-[4/5] overflow-hidden rounded-[3rem] mb-8 bg-slate-50 shadow-sm group-hover:shadow-2xl transition-all duration-700">
                 <img 
                   src={dest.image} 
                   alt={dest.title}
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
                   referrerPolicy="no-referrer"
                 />
                 {dest.imageContext && (
-                  <div className="absolute top-4 left-4 bg-safety-orange text-white text-[9px] px-2 py-1 rounded-md font-mono font-bold uppercase tracking-widest z-10 shadow-md">
+                  <div className="absolute top-6 left-6 bg-white/90 backdrop-blur text-authority-navy text-[10px] px-4 py-2 rounded-xl font-black uppercase tracking-[0.1em] z-10 shadow-2xl border border-white/20">
                     {dest.imageContext}
                   </div>
                 )}
-                <div className="absolute inset-0 bg-gradient-to-t from-authority-navy/80 via-transparent to-transparent opacity-60 group-hover:opacity-80 transition-opacity"></div>
-                <div className="absolute bottom-6 md:bottom-8 left-6 md:left-8 right-6 md:right-8">
-                  <div className="flex items-center gap-2 mb-2">
-                    <span className="px-3 py-1 bg-safety-orange text-white text-[9px] md:text-[10px] font-mono font-black uppercase tracking-widest rounded-full">
+                <div className="absolute inset-0 bg-gradient-to-t from-authority-navy/90 via-authority-navy/20 to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-500"></div>
+                <div className="absolute bottom-8 left-8 right-8 md:bottom-12 md:left-12 md:right-12">
+                  <div className="flex items-center gap-3 mb-4">
+                    <span className="px-4 py-1.5 bg-safety-orange text-white text-[10px] font-black uppercase tracking-[0.1em] rounded-xl shadow-2xl shadow-safety-orange/20">
                       {dest.category}
                     </span>
                   </div>
-                  <h3 className="text-2xl md:text-3xl font-black text-white uppercase tracking-tighter leading-none mb-2">{dest.title}</h3>
-                  <div className="flex items-center gap-3 text-white/60 font-mono text-[9px] md:text-[10px] uppercase tracking-widest">
-                    <Clock className="w-3 h-3" /> {dest.duration}
+                  <h3 className="text-3xl md:text-4xl font-black text-white uppercase tracking-tighter leading-none mb-4 group-hover:text-safety-orange transition-colors">{dest.title}</h3>
+                  <div className="flex items-center gap-3 text-white/60 font-mono text-[10px] uppercase tracking-[0.2em] font-black">
+                    <Clock className="w-4 h-4" /> {dest.duration}
                   </div>
                 </div>
               </div>
-              <p className="text-sm md:text-base text-slate-500 leading-relaxed mb-4 line-clamp-2 px-2 md:px-4">
-                {dest.description}
-              </p>
-              <div className="flex items-center gap-2 text-safety-orange font-mono text-[10px] md:text-[11px] font-black uppercase tracking-widest px-2 md:px-4 group-hover:gap-4 transition-all">
-                Explore Details <ArrowRight className="w-4 h-4" />
+              <div className="px-4">
+                <p className="text-slate-500 text-base leading-relaxed mb-6 line-clamp-2 font-medium">
+                  {dest.description}
+                </p>
+                <div className="flex items-center gap-3 text-safety-orange font-black uppercase tracking-[0.2em] text-[11px] group-hover:gap-5 transition-all duration-500">
+                  Explore Details <ArrowRight className="w-5 h-5" />
+                </div>
               </div>
             </motion.div>
           ))}
         </div>
         
         {/* Footer Audit Stamp */}
-        <div className="mt-20 md:mt-32 pt-8 md:pt-12 border-t border-slate-200 flex flex-col items-center">
-          <div className="p-8 md:p-12 bg-white border-2 md:border-4 border-safety-orange rounded-[2rem] md:rounded-[2.5rem] -rotate-2 shadow-2xl relative overflow-hidden group hover:rotate-0 transition-transform">
+        <div className="mt-24 md:mt-40 pt-16 md:pt-24 border-t border-slate-100 flex flex-col items-center">
+          <motion.div 
+            whileHover={{ scale: 1.02, rotate: 0 }}
+            className="p-12 md:p-20 bg-white border-4 md:border-8 border-safety-orange rounded-[3rem] md:rounded-[4rem] -rotate-2 shadow-[0_40px_80px_-15px_rgba(242,125,38,0.2)] relative overflow-hidden group transition-all duration-700"
+          >
+            <div className="absolute inset-0 bg-gradient-to-br from-safety-orange/5 to-transparent" />
             <div className="scanline"></div>
-            <div className="flex flex-col items-center">
-              <Navigation className="w-12 h-12 md:w-20 md:h-20 text-safety-orange mb-4 md:mb-8" />
-              <span className="text-3xl md:text-5xl font-black text-authority-navy uppercase tracking-tighter leading-none mb-3">REGION_VERIFIED</span>
-              <span className="font-mono text-[9px] md:text-[11px] text-slate-500 tracking-[0.2em] md:tracking-[0.4em] uppercase">East Java Registry 2026</span>
+            <div className="flex flex-col items-center relative z-10">
+              <div className="w-24 h-24 md:w-32 md:h-32 rounded-[2rem] bg-safety-orange/10 flex items-center justify-center mb-8 md:mb-12">
+                <Navigation className="w-12 h-12 md:w-16 md:h-16 text-safety-orange" />
+              </div>
+              <span className="text-4xl md:text-7xl font-black text-authority-navy uppercase tracking-tighter leading-none mb-4">REGION_VERIFIED</span>
+              <span className="font-mono text-[10px] md:text-xs text-slate-400 tracking-[0.3em] md:tracking-[0.5em] uppercase font-black">East Java Registry 2026</span>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </div>

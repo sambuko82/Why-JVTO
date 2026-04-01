@@ -31,7 +31,7 @@ const DestinationCard = ({ dest, idx, navigate }: { dest: any, idx: number, navi
       viewport={{ once: true }}
       transition={{ delay: idx * 0.1 }}
       onClick={() => navigate(dest.route)}
-      className="relative shrink-0 w-[80vw] sm:w-[320px] md:w-[380px] aspect-[4/5] rounded-2xl overflow-hidden group cursor-pointer snap-start shadow-md hover:shadow-xl transition-shadow"
+      className="relative shrink-0 w-[85vw] sm:w-[340px] md:w-[400px] aspect-[4/5] rounded-[2.5rem] overflow-hidden group cursor-pointer snap-start shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_20px_50px_rgb(0,0,0,0.08)] transition-all duration-500"
     >
       <motion.div 
         className={`absolute inset-0 w-full h-full origin-center ${isDesktop ? 'scale-[1.25]' : 'scale-100'}`}
@@ -52,12 +52,12 @@ const DestinationCard = ({ dest, idx, navigate }: { dest: any, idx: number, navi
         </p>
       </div>
       
-      <div className="absolute bottom-0 left-0 right-0 p-4 md:p-6 flex flex-col justify-end">
-        <h3 className="text-lg md:text-3xl font-black text-white uppercase tracking-tight mb-1 md:mb-2 drop-shadow-lg group-hover:-translate-y-1 transition-transform duration-300">
+      <div className="absolute bottom-0 left-0 right-0 p-6 md:p-10 flex flex-col justify-end">
+        <h3 className="text-2xl md:text-4xl font-black text-white uppercase tracking-tight mb-2 md:mb-4 drop-shadow-lg group-hover:-translate-y-2 transition-transform duration-500">
           {dest.name}
         </h3>
-        <div className="flex items-center gap-2 text-safety-orange font-mono text-[10px] md:text-[11px] uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-all transform translate-y-2 group-hover:translate-y-0">
-          View Dossier <ChevronRight className="w-3 h-3" />
+        <div className="flex items-center gap-3 text-safety-orange font-mono text-[10px] md:text-[12px] font-black uppercase tracking-[0.2em] opacity-0 group-hover:opacity-100 transition-all transform translate-y-4 group-hover:translate-y-0 duration-500">
+          View Dossier <ChevronRight className="w-4 h-4" />
         </div>
       </div>
     </motion.div>

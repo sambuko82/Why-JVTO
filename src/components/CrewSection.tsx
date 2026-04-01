@@ -21,9 +21,9 @@ export const CrewSection: React.FC = () => {
     <section id="crew" className="section-spacing bg-white relative overflow-hidden">
       <div className="container-authority">
         {/* Header Section - Authority Style */}
-        <div className="flex flex-col md:flex-row items-start md:items-end justify-between gap-6 md:gap-8 mb-12 md:mb-16">
+        <div className="flex flex-col md:flex-row items-start md:items-end justify-between gap-8 md:gap-12 mb-16 md:mb-24">
           <div className="max-w-2xl">
-            <div className="badge-eyebrow badge-eyebrow-navy mb-4 md:mb-6">
+            <div className="badge-eyebrow bg-authority-navy text-white mb-6 md:mb-8">
               <Users className="w-3 h-3" /> The Human Element
             </div>
             <h2 className="heading-section">
@@ -37,7 +37,7 @@ export const CrewSection: React.FC = () => {
         </div>
 
         {/* Crew Grid - Full Photo Style aligned with DestinationGrid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
           {displayedCrew.map((member, idx) => (
             <motion.div
               key={member.id}
@@ -46,7 +46,7 @@ export const CrewSection: React.FC = () => {
               viewport={{ once: true }}
               transition={{ delay: idx * 0.1 }}
               onClick={() => handleCrewClick(member)}
-              className="relative aspect-[4/5] rounded-2xl overflow-hidden group cursor-pointer shadow-md hover:shadow-xl transition-all duration-300"
+              className="relative aspect-[4/5] rounded-[2.5rem] overflow-hidden group cursor-pointer shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_20px_50px_rgb(0,0,0,0.08)] transition-all duration-500"
             >
               {/* Full Profile Image */}
               <img 
@@ -57,31 +57,31 @@ export const CrewSection: React.FC = () => {
               />
               
               {/* Overlay Gradient - Consistent with DestinationCard */}
-              <div className="absolute inset-0 bg-gradient-to-b from-black/5 via-transparent to-black/80 opacity-70 group-hover:opacity-90 transition-opacity duration-300" />
+              <div className="absolute inset-0 bg-gradient-to-b from-black/5 via-transparent to-black/90 opacity-70 group-hover:opacity-100 transition-opacity duration-500" />
 
               {/* Content Overlay */}
-              <div className="absolute inset-x-0 bottom-0 p-6 md:p-8 z-10">
-                <div className="flex items-center gap-2 mb-2">
-                  <span className="text-safety-orange font-mono text-[9px] md:text-[10px] uppercase tracking-widest font-bold">
+              <div className="absolute inset-x-0 bottom-0 p-8 md:p-10 z-10">
+                <div className="flex items-center gap-3 mb-3">
+                  <span className="text-safety-orange font-mono text-[10px] md:text-[11px] font-black uppercase tracking-[0.2em]">
                     {member.role}
                   </span>
-                  <div className="w-1 h-1 rounded-full bg-white/40" />
-                  <span className="text-white/60 font-mono text-[9px] md:text-[10px] uppercase tracking-widest font-bold">
+                  <div className="w-1.5 h-1.5 rounded-full bg-white/40" />
+                  <span className="text-white/60 font-mono text-[10px] md:text-[11px] font-black uppercase tracking-[0.2em]">
                     {member.profile.archetype}
                   </span>
                 </div>
 
-                <h3 className="text-xl md:text-3xl font-black text-white uppercase tracking-tight mb-3 group-hover:-translate-y-1 transition-transform duration-300">
+                <h3 className="text-2xl md:text-4xl font-black text-white uppercase tracking-tight mb-4 group-hover:-translate-y-2 transition-transform duration-500 leading-none">
                   {member.name}
                 </h3>
 
-                <div className="flex items-center justify-between pt-4 border-t border-white/10">
-                  <div className="flex items-center gap-1 text-safety-orange font-mono text-[10px] md:text-[11px] uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-all transform translate-y-2 group-hover:translate-y-0">
-                    View Profile <ChevronRight className="w-3 h-3" />
+                <div className="flex items-center justify-between pt-6 border-t border-white/20">
+                  <div className="flex items-center gap-2 text-safety-orange font-mono text-[10px] md:text-[12px] font-black uppercase tracking-[0.2em] opacity-0 group-hover:opacity-100 transition-all transform translate-y-4 group-hover:translate-y-0 duration-500">
+                    View Profile <ChevronRight className="w-4 h-4" />
                   </div>
-                  <div className="flex items-center gap-1">
-                    <ShieldCheck className="w-3 h-3 text-verified-bright" />
-                    <span className="text-[9px] font-mono text-white/40 uppercase tracking-widest">Licensed</span>
+                  <div className="flex items-center gap-2">
+                    <ShieldCheck className="w-4 h-4 text-verified-bright" />
+                    <span className="text-[10px] font-mono text-white/40 font-black uppercase tracking-[0.2em]">Licensed</span>
                   </div>
                 </div>
               </div>
@@ -95,15 +95,15 @@ export const CrewSection: React.FC = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="mt-12 md:mt-20 text-center"
+          className="mt-16 md:mt-24 text-center"
         >
           <button 
             onClick={() => navigate('/team')}
-            className="w-full sm:w-auto bg-safety-orange hover:bg-safety-orange/90 text-white px-8 md:px-12 py-4 md:py-5 rounded-xl font-black uppercase tracking-wider text-xs md:text-sm transition-all shadow-xl shadow-safety-orange/20 flex items-center justify-center gap-3 mx-auto group"
+            className="w-full sm:w-auto bg-safety-orange hover:bg-orange-600 text-white px-12 py-6 rounded-2xl font-black uppercase tracking-[0.2em] text-sm transition-all shadow-2xl shadow-safety-orange/20 flex items-center justify-center gap-4 mx-auto group"
           >
-            Explore Full Team Registry <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            Explore Full Team Registry <ChevronRight className="w-6 h-6 group-hover:translate-x-2 transition-transform" />
           </button>
-          <p className="mt-6 text-slate-400 font-mono text-[10px] uppercase tracking-widest">
+          <p className="mt-8 text-slate-400 font-mono text-[10px] font-black uppercase tracking-[0.25em]">
             Total Operational Force: {SSOT.crew.length} Verified Members
           </p>
         </motion.div>

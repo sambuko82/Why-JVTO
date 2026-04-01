@@ -88,36 +88,36 @@ export const AssetViewer = ({ isOpen, onClose, assetUrl, assetTitle, assetHash, 
           initial={{ opacity: 0, scale: 0.9, y: 20 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
           exit={{ opacity: 0, scale: 0.9, y: 20 }}
-          className="relative w-full max-w-6xl h-full bg-white md:rounded-[2.5rem] overflow-hidden flex flex-col shadow-2xl border border-white/10"
+          className="relative w-full max-w-6xl h-full bg-white md:rounded-[3rem] overflow-hidden flex flex-col shadow-2xl border border-slate-200"
         >
           <div className="scanline"></div>
           
           {/* Header */}
-          <div className="p-6 md:p-8 border-b border-slate-100 flex items-center justify-between bg-white/80 backdrop-blur-md z-20">
-            <div className="flex items-center gap-4">
-              <div className="p-2 md:p-3 bg-safety-orange/10 rounded-xl md:rounded-2xl text-safety-orange">
-                {assetType === 'pdf' ? <FileText className="w-5 h-5 md:w-6 md:h-6" /> : <Search className="w-5 h-5 md:w-6 md:h-6" />}
+          <div className="p-8 md:p-10 border-b border-slate-100 flex items-center justify-between bg-white/80 backdrop-blur-md z-20">
+            <div className="flex items-center gap-6">
+              <div className="w-14 h-14 md:w-16 md:h-16 bg-slate-50 rounded-2xl flex items-center justify-center text-authority-navy shadow-sm">
+                {assetType === 'pdf' ? <FileText className="w-6 h-6 md:w-8 md:h-8" /> : <Search className="w-6 h-6 md:w-8 md:h-8" />}
               </div>
               <div>
-                <h3 className="text-lg md:text-2xl font-black text-authority-navy uppercase leading-none mb-1">{assetTitle}</h3>
-                <div className="flex items-center gap-2">
-                  <Fingerprint className="w-3 h-3 text-slate-500" />
-                  <span className="font-mono text-[11px] text-slate-500 uppercase tracking-widest truncate max-w-[150px] md:max-w-[200px]">
+                <h3 className="text-xl md:text-3xl font-black text-authority-navy uppercase leading-none mb-2 tracking-tight">{assetTitle}</h3>
+                <div className="flex items-center gap-3">
+                  <Fingerprint className="w-3.5 h-3.5 text-slate-400" />
+                  <span className="font-mono text-[10px] font-black text-slate-400 uppercase tracking-[0.2em] truncate max-w-[150px] md:max-w-[300px]">
                     HASH: {assetHash}
                   </span>
                 </div>
               </div>
             </div>
             
-            <div className="flex items-center gap-4">
-              <div className="hidden md:flex items-center gap-2 px-4 py-2 bg-verified-bright/10 border border-verified-bright/30 rounded-xl text-verified-bright font-mono text-[11px] font-bold uppercase tracking-widest">
+            <div className="flex items-center gap-6">
+              <div className="hidden md:flex items-center gap-3 px-5 py-2.5 bg-verified-bright/10 border border-verified-bright/20 rounded-2xl text-verified-bright font-black text-[10px] uppercase tracking-[0.2em] shadow-sm">
                 <ShieldCheck className="w-4 h-4" /> Integrity_Verified
               </div>
               <button 
                 onClick={onClose}
-                className="p-2 md:p-3 bg-slate-100 hover:bg-safety-orange hover:text-white rounded-xl transition-all group"
+                className="w-12 h-12 md:w-14 md:h-14 bg-slate-50 hover:bg-safety-orange hover:text-white rounded-2xl transition-all duration-500 group flex items-center justify-center shadow-sm"
               >
-                <X className="w-5 h-5 md:w-6 md:h-6 text-slate-500 group-hover:text-white" />
+                <X className="w-6 h-6 text-slate-400 group-hover:text-white" />
               </button>
             </div>
           </div>

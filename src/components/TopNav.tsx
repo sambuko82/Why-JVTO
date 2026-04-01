@@ -43,13 +43,13 @@ export const TopNav = () => {
           </div>
 
           {/* Desktop Nav */}
-          <div className="hidden lg:flex items-center gap-8">
+          <div className="hidden lg:flex items-center gap-10">
             {navItems.map(item => (
               <button
                 key={item.path}
                 onClick={() => navigate(item.path)}
-                className={`relative font-mono text-[11px] uppercase tracking-widest transition-colors group ${
-                  location.pathname === item.path ? 'text-white font-bold' : 'text-slate-500 hover:text-white'
+                className={`relative font-mono text-[11px] uppercase tracking-[0.15em] transition-colors group ${
+                  location.pathname === item.path ? 'text-white font-bold' : 'text-slate-400 hover:text-white'
                 }`}
               >
                 {item.label}
@@ -58,12 +58,18 @@ export const TopNav = () => {
                 )}
               </button>
             ))}
-            <div className="flex items-center gap-4 ml-4">
-              <button onClick={() => navigate('/tours')} className="bg-safety-orange text-white px-6 py-2 rounded-full font-black uppercase tracking-wider text-[11px] hover:bg-white hover:text-authority-navy transition-all hover:scale-105 active:scale-95 shadow-lg shadow-safety-orange/20">
-                View All Tours
+            <div className="flex items-center gap-4 ml-6">
+              <button 
+                onClick={() => navigate('/tours')} 
+                className="bg-safety-orange text-white px-8 py-3 rounded-xl font-black uppercase tracking-widest text-[11px] hover:bg-orange-600 transition-all hover:scale-105 active:scale-95 shadow-xl shadow-safety-orange/20"
+              >
+                Book Tour
               </button>
-              <button onClick={() => navigate('/verify-jvto')} className="border border-white/20 text-white px-6 py-2 rounded-full font-black uppercase tracking-wider text-[11px] hover:bg-white/10 transition-all hover:scale-105 active:scale-95">
-                Verify JVTO
+              <button 
+                onClick={() => navigate('/verify-jvto')} 
+                className="bg-white/5 backdrop-blur-md border border-white/10 text-white px-8 py-3 rounded-xl font-black uppercase tracking-widest text-[11px] hover:bg-white/10 transition-all hover:scale-105 active:scale-95"
+              >
+                Verify
               </button>
             </div>
           </div>

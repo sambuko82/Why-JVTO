@@ -28,7 +28,7 @@ export const HealthFlow = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <div className="badge-eyebrow badge-eyebrow-orange mb-8">
+              <div className="badge-eyebrow bg-authority-navy text-white mb-8">
                 <ShieldAlert className="w-3 h-3" /> Medical "Hard Stop" Protocol
               </div>
               <h2 className="heading-section mb-8">
@@ -59,9 +59,9 @@ export const HealthFlow = () => {
 
             <button 
               onClick={() => navigate('/travel-guide/ijen-health-screening')}
-              className="group inline-flex items-center justify-center w-full sm:w-auto gap-3 bg-authority-navy text-white px-8 py-4 rounded-xl font-black uppercase tracking-wider transition-all hover:bg-safety-orange"
+              className="group inline-flex items-center justify-center w-full sm:w-auto gap-4 bg-authority-navy text-white px-10 py-5 rounded-2xl font-black uppercase tracking-[0.2em] text-sm transition-all hover:bg-slate-800 shadow-xl shadow-authority-navy/20"
             >
-              View Full Medical Protocol <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              View Full Medical Protocol <ChevronRight className="w-5 h-5 group-hover:translate-x-2 transition-transform" />
             </button>
           </div>
 

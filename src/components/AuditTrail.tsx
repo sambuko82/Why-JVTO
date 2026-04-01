@@ -35,34 +35,34 @@ export const AuditTrail: React.FC<AuditTrailProps> = ({ entityId, entityName, lo
             initial={{ opacity: 0, scale: 0.9, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.9, y: 20 }}
-            className="fixed left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-lg bg-white rounded-[2rem] shadow-2xl z-[101] overflow-hidden border border-slate-200"
+            className="fixed left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-xl bg-white rounded-[3rem] shadow-2xl z-[101] overflow-hidden border border-slate-200"
           >
             <div className="scanline"></div>
             
             {/* Header */}
-            <div className="p-8 border-b border-slate-100 flex items-center justify-between bg-audit-white/50">
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 bg-safety-orange/10 rounded-xl flex items-center justify-center text-safety-orange">
-                  <History className="w-6 h-6" />
+            <div className="p-10 border-b border-slate-100 flex items-center justify-between bg-slate-50/50">
+              <div className="flex items-center gap-6">
+                <div className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center text-authority-navy shadow-sm">
+                  <History className="w-8 h-8" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-black text-authority-navy uppercase tracking-tighter leading-none mb-1">Audit Trail</h3>
-                  <p className="font-mono text-[11px] text-slate-500 uppercase tracking-widest">Entity: {entityName} // ID: {entityId}</p>
+                  <h3 className="text-2xl font-black text-authority-navy uppercase tracking-tight leading-none mb-2">Audit Trail</h3>
+                  <p className="font-mono text-[10px] font-black text-slate-400 uppercase tracking-[0.2em]">Entity: {entityName} // ID: {entityId}</p>
                 </div>
               </div>
               <button 
                 onClick={onClose}
-                className="w-10 h-10 rounded-full hover:bg-slate-100 flex items-center justify-center text-slate-500 transition-colors"
+                className="w-12 h-12 rounded-2xl bg-white hover:bg-safety-orange hover:text-white flex items-center justify-center text-slate-400 transition-all duration-500 shadow-sm group"
               >
-                <X className="w-5 h-5" />
+                <X className="w-6 h-6 group-hover:text-white" />
               </button>
             </div>
             
             {/* Content */}
-            <div className="p-8 max-h-[60vh] overflow-y-auto custom-scrollbar">
-              <div className="space-y-8 relative">
+            <div className="p-10 max-h-[60vh] overflow-y-auto custom-scrollbar">
+              <div className="space-y-10 relative">
                 {/* Timeline Line */}
-                <div className="absolute left-[19px] top-2 bottom-2 w-px bg-slate-100"></div>
+                <div className="absolute left-[23px] top-4 bottom-4 w-px bg-slate-100"></div>
                 
                 {logs.map((log, i) => (
                   <motion.div 
@@ -70,22 +70,22 @@ export const AuditTrail: React.FC<AuditTrailProps> = ({ entityId, entityName, lo
                     initial={{ opacity: 0, x: -10 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: i * 0.1 }}
-                    className="relative pl-12"
+                    className="relative pl-16"
                   >
                     {/* Timeline Dot */}
-                    <div className="absolute left-0 top-1 w-10 h-10 rounded-xl bg-white border-2 border-slate-100 flex items-center justify-center z-10">
-                      <CheckCircle2 className="w-4 h-4 text-verified-bright" />
+                    <div className="absolute left-0 top-1 w-12 h-12 rounded-2xl bg-white border border-slate-100 flex items-center justify-center z-10 shadow-sm group hover:border-safety-orange transition-all duration-500">
+                      <CheckCircle2 className="w-5 h-5 text-verified-bright" />
                     </div>
                     
-                    <div className="flex flex-col gap-1">
+                    <div className="flex flex-col gap-2">
                       <div className="flex items-center justify-between">
-                        <span className="font-mono text-[11px] font-black text-safety-orange uppercase tracking-widest">{log.event}</span>
-                        <div className="flex items-center gap-1.5 text-slate-500">
-                          <Clock className="w-3 h-3" />
-                          <span className="font-mono text-[11px] uppercase tracking-widest">{log.timestamp}</span>
+                        <span className="font-mono text-[10px] font-black text-safety-orange uppercase tracking-[0.2em]">{log.event}</span>
+                        <div className="flex items-center gap-2 text-slate-400">
+                          <Clock className="w-3.5 h-3.5" />
+                          <span className="font-mono text-[10px] font-black uppercase tracking-[0.2em]">{log.timestamp}</span>
                         </div>
                       </div>
-                      <p className="text-sm text-authority-navy font-medium leading-tight">{log.detail}</p>
+                      <p className="text-base text-authority-navy font-black leading-tight tracking-tight">{log.detail}</p>
                     </div>
                   </motion.div>
                 ))}
@@ -93,12 +93,12 @@ export const AuditTrail: React.FC<AuditTrailProps> = ({ entityId, entityName, lo
             </div>
             
             {/* Footer */}
-            <div className="p-6 bg-slate-50 border-t border-slate-100 flex items-center justify-between">
-              <div className="flex items-center gap-2">
-                <Fingerprint className="w-4 h-4 text-slate-300" />
-                <span className="font-mono text-[11px] text-slate-500 uppercase tracking-widest">Hash: {entityId.slice(0, 12)}...</span>
+            <div className="p-8 bg-slate-50 border-t border-slate-100 flex items-center justify-between">
+              <div className="flex items-center gap-3">
+                <Fingerprint className="w-5 h-5 text-slate-300" />
+                <span className="font-mono text-[10px] font-black text-slate-400 uppercase tracking-[0.2em]">Hash: {entityId.slice(0, 12)}...</span>
               </div>
-              <div className="tech-badge bg-verified-bright/10 text-verified-bright border-verified-bright/20">
+              <div className="px-5 py-2 rounded-xl bg-verified-bright/10 text-verified-bright border border-verified-bright/20 font-black text-[10px] uppercase tracking-[0.2em] shadow-sm">
                 STATUS: SECURE
               </div>
             </div>

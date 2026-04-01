@@ -76,7 +76,7 @@ export const HeroSection = () => {
         </div>
       </div>
 
-      {/* Full Background Image */}
+      {/* Full Background Image with Pro Overlay Hack */}
       <div className="absolute inset-0 z-0 overflow-hidden">
         <motion.img 
           initial={{ scale: 1.1, opacity: 0 }}
@@ -87,10 +87,7 @@ export const HeroSection = () => {
           className="w-full h-full object-cover"
           referrerPolicy="no-referrer"
         />
-        {/* Cinematic Vignette & Gradient */}
-        <div className="absolute inset-0 bg-black/20"></div>
-        <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent"></div>
-        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-transparent h-40"></div>
+        <div className="pro-overlay" />
         
         {/* Scanline Effect - Halo Enhancement */}
         <div className="scanline opacity-10"></div>
@@ -102,45 +99,48 @@ export const HeroSection = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="badge-eyebrow bg-black/40 border border-white/20 text-white mb-8 backdrop-blur-md"
+            className="badge-eyebrow bg-safety-orange text-white mb-8 shadow-lg shadow-safety-orange/20"
           >
-            <ShieldCheck className="w-3 h-3 text-safety-orange" /> Verified Operator
+            <ShieldCheck className="w-3 h-3 text-white" /> Verified Police-Led Operator
           </motion.div>
           
           <motion.h1 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="flex flex-col items-center justify-center gap-2 md:gap-3 mb-12 w-full"
+            className="flex flex-col items-center justify-center gap-2 md:gap-4 mb-12 w-full"
           >
-            <span className="block text-sm sm:text-xl md:text-2xl lg:text-3xl text-safety-orange font-bold tracking-[0.2em] uppercase drop-shadow-lg">
-              Tourist Police-Led
+            <span className="block text-sm sm:text-xl md:text-2xl lg:text-3xl text-safety-orange font-black tracking-[0.3em] uppercase drop-shadow-lg">
+              Official Authority
             </span>
-            <span className="heading-display block text-white drop-shadow-[0_8px_8px_rgba(0,0,0,0.6)]">
+            <span className="heading-display block text-white drop-shadow-[0_12px_12px_rgba(0,0,0,0.8)]">
               Private Volcano Tours
             </span>
-            <span className="block text-lg sm:text-2xl md:text-4xl lg:text-5xl font-light italic text-white/90 drop-shadow-md mt-1 md:mt-4">
-              in East Java
+            <span className="block text-lg sm:text-2xl md:text-4xl lg:text-5xl font-light italic text-white/90 drop-shadow-md mt-2">
+              East Java, Indonesia
             </span>
           </motion.h1>
           
+          {/* Single CTA Protocol: Primary is dominant, Secondary is Ghost/Outline */}
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto"
+            className="flex flex-col sm:flex-row items-center justify-center gap-6 w-full sm:w-auto"
           >
             <button 
               onClick={() => navigate('/tours')}
-              className="w-full sm:w-auto bg-safety-orange hover:bg-safety-orange/90 text-white px-8 md:px-12 py-4 md:py-5 rounded-xl font-black uppercase tracking-wider transition-all shadow-xl shadow-safety-orange/20 flex items-center justify-center gap-3 group text-sm md:text-base"
+              className="w-full sm:w-auto bg-safety-orange hover:bg-orange-600 text-white px-12 py-5 rounded-xl font-black uppercase tracking-[0.15em] transition-all shadow-2xl shadow-safety-orange/40 flex items-center justify-center gap-4 group text-sm md:text-lg"
             >
-              <Search className="w-4 h-4 md:w-5 md:h-5 group-hover:scale-110 transition-transform" /> Browse Private Tours
+              <Search className="w-5 h-5 md:w-6 md:h-6 group-hover:scale-110 transition-transform" /> 
+              Browse Private Tours
             </button>
             <button 
               onClick={() => navigate('/verify-jvto')}
-              className="w-full sm:w-auto bg-white/10 backdrop-blur-md border border-white/20 hover:bg-white/20 text-white px-8 md:px-12 py-4 md:py-5 rounded-xl font-black uppercase tracking-wider transition-all flex items-center justify-center gap-3 text-sm md:text-base"
+              className="w-full sm:w-auto bg-white/5 backdrop-blur-xl border border-white/20 hover:bg-white/10 text-white px-12 py-5 rounded-xl font-black uppercase tracking-[0.15em] transition-all flex items-center justify-center gap-4 text-sm md:text-lg"
             >
-              <Lock className="w-4 h-4 md:w-5 md:h-5 text-white/70" /> Verify Credentials
+              <Lock className="w-5 h-5 md:w-6 md:h-6 text-safety-orange" /> 
+              Verify Credentials
             </button>
           </motion.div>
         </div>

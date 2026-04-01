@@ -88,7 +88,7 @@ export const ReviewsSection = () => {
           
           {/* LEFT: Trust Signals */}
           <div className="lg:col-span-5">
-            <div className="badge-eyebrow badge-eyebrow-orange mb-6">
+            <div className="badge-eyebrow bg-authority-navy text-white mb-8">
               <ShieldCheck className="w-3 h-3" /> External Verification Hub
             </div>
             <h2 className="heading-section mb-8">
@@ -99,7 +99,7 @@ export const ReviewsSection = () => {
               Our reputation is built on transparency. We don't host reviews ourselves—we invite you to audit our performance on the world's most trusted independent platforms.
             </p>
 
-            <div className="space-y-4">
+            <div className="space-y-6">
               {PLATFORMS.map((platform, idx) => (
                 <motion.a
                   key={platform.name}
@@ -110,28 +110,28 @@ export const ReviewsSection = () => {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: idx * 0.1 }}
-                  className="group flex items-center justify-between p-5 bg-white rounded-2xl border border-slate-200 shadow-sm hover:shadow-md hover:border-safety-orange/30 transition-all"
+                  className="group flex items-center justify-between p-6 bg-white rounded-2xl border border-slate-100 shadow-sm hover:shadow-2xl hover:border-safety-orange/30 transition-all duration-500"
                 >
-                  <div className="flex items-center gap-4">
+                  <div className="flex items-center gap-5">
                     {platform.icon}
                     <div>
-                      <h3 className="text-sm font-black uppercase tracking-tight text-authority-navy group-hover:text-safety-orange transition-colors">
+                      <h3 className="text-sm font-black uppercase tracking-[0.1em] text-authority-navy group-hover:text-safety-orange transition-colors">
                         {platform.name}
                       </h3>
-                      <div className="flex items-center gap-2 mt-1">
+                      <div className="flex items-center gap-3 mt-2">
                         <div className="flex items-center gap-0.5 text-safety-orange">
                           {[...Array(5)].map((_, i) => (
-                            <Star key={i} className="w-3 h-3 fill-current" />
+                            <Star key={i} className="w-3.5 h-3.5 fill-current" />
                           ))}
                         </div>
-                        <span className="text-[10px] font-mono font-bold text-slate-400 uppercase tracking-widest">
+                        <span className="font-mono text-[10px] font-black text-slate-400 uppercase tracking-[0.2em]">
                           {platform.rating} • {platform.reviews}
                         </span>
                       </div>
                     </div>
                   </div>
-                  <div className="w-10 h-10 rounded-full bg-slate-50 flex items-center justify-center group-hover:bg-safety-orange group-hover:text-white transition-all">
-                    <ExternalLink className="w-4 h-4" />
+                  <div className="w-12 h-12 rounded-2xl bg-slate-50 flex items-center justify-center group-hover:bg-safety-orange group-hover:text-white transition-all duration-500 shadow-sm">
+                    <ExternalLink className="w-5 h-5" />
                   </div>
                 </motion.a>
               ))}
@@ -140,7 +140,7 @@ export const ReviewsSection = () => {
 
           {/* RIGHT: Featured Testimonials */}
           <div className="lg:col-span-7">
-            <div className="grid gap-6">
+            <div className="grid gap-8">
               {topReviews.map((review, idx) => (
                 <motion.div
                   key={idx}
@@ -148,45 +148,45 @@ export const ReviewsSection = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: 0.3 + idx * 0.1 }}
-                  className="bg-white p-6 md:p-8 rounded-3xl border border-slate-100 shadow-sm relative group"
+                  className="bg-white p-8 md:p-12 rounded-[2.5rem] border border-slate-100 shadow-sm relative group hover:shadow-2xl transition-all duration-500"
                 >
-                  <div className="absolute top-6 right-8 opacity-5 group-hover:opacity-10 transition-opacity">
-                    <MessageSquare className="w-16 h-16 text-authority-navy" />
+                  <div className="absolute top-8 right-12 opacity-5 group-hover:opacity-10 transition-opacity">
+                    <MessageSquare className="w-20 h-20 text-authority-navy" />
                   </div>
                   
-                  <div className="flex items-center gap-2 mb-6">
+                  <div className="flex items-center gap-3 mb-8">
                     <div className="flex items-center gap-0.5 text-safety-orange">
                       {[...Array(review.rating)].map((_, i) => (
-                        <Star key={i} className="w-3 h-3 fill-current" />
+                        <Star key={i} className="w-4 h-4 fill-current" />
                       ))}
                     </div>
-                    <span className="text-[10px] font-mono font-bold text-slate-300 uppercase tracking-widest">
+                    <span className="font-mono text-[10px] font-black text-slate-300 uppercase tracking-[0.2em]">
                       Verified {review.platform}
                     </span>
                   </div>
 
-                  <p className="text-slate-700 text-base md:text-lg leading-relaxed font-medium mb-8 italic relative z-10">
+                  <p className="text-authority-navy text-lg md:text-2xl leading-relaxed font-black mb-10 italic relative z-10 drop-shadow-sm">
                     "{review.text}"
                   </p>
 
-                  <div className="flex items-center justify-between pt-6 border-t border-slate-50">
-                    <div className="flex items-center gap-3">
-                      <div className="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center text-authority-navy font-black text-xs">
+                  <div className="flex items-center justify-between pt-8 border-t border-slate-50">
+                    <div className="flex items-center gap-4">
+                      <div className="w-12 h-12 rounded-2xl bg-slate-100 flex items-center justify-center text-authority-navy font-black text-sm shadow-sm">
                         {review.author.charAt(0)}
                       </div>
                       <div>
-                        <p className="text-authority-navy font-black uppercase tracking-tight text-sm">
+                        <p className="text-authority-navy font-black uppercase tracking-tight text-base">
                           {review.author}
                         </p>
-                        <p className="text-slate-400 text-[10px] font-mono uppercase tracking-widest">
+                        <p className="text-slate-400 font-mono text-[10px] font-black uppercase tracking-[0.2em]">
                           {new Date(review.date).toLocaleDateString('en-US', { month: 'short', year: 'numeric' })}
                         </p>
                       </div>
                     </div>
 
-                    <div className="flex items-center gap-2 px-3 py-1.5 bg-verified-bright/5 rounded-full border border-verified-bright/10">
-                      <CheckCircle2 className="w-3 h-3 text-verified-bright" />
-                      <span className="text-[10px] font-bold text-authority-navy uppercase tracking-tight">
+                    <div className="flex items-center gap-3 px-4 py-2 bg-verified-bright/5 rounded-xl border border-verified-bright/10">
+                      <CheckCircle2 className="w-4 h-4 text-verified-bright" />
+                      <span className="text-[10px] md:text-[11px] font-black text-authority-navy uppercase tracking-[0.1em]">
                         Guided by {review.crewName}
                       </span>
                     </div>
@@ -199,16 +199,16 @@ export const ReviewsSection = () => {
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
-              className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-8 p-8 bg-authority-navy rounded-3xl text-white overflow-hidden relative"
+              className="mt-16 flex flex-col sm:flex-row items-center justify-center gap-10 p-10 md:p-12 bg-authority-navy rounded-[2.5rem] text-white overflow-hidden relative shadow-2xl shadow-authority-navy/20"
             >
-              <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2" />
+              <div className="absolute top-0 right-0 w-48 h-48 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2" />
               <div className="text-center sm:text-left relative z-10">
-                <h4 className="text-xl font-black uppercase tracking-tight mb-2">Ready to audit us?</h4>
-                <p className="text-white/60 text-sm font-light">Explore 700+ verified guest experiences across all platforms.</p>
+                <h4 className="text-2xl md:text-3xl font-black uppercase tracking-tight mb-3 leading-none">Ready to audit us?</h4>
+                <p className="text-white/60 text-base font-light">Explore 700+ verified guest experiences across all platforms.</p>
               </div>
               <a 
                 href="/why-jvto/reviews" 
-                className="px-8 py-4 bg-safety-orange text-white rounded-xl font-black uppercase tracking-widest text-xs hover:scale-105 transition-transform relative z-10 shadow-lg shadow-safety-orange/20"
+                className="px-10 py-5 bg-safety-orange hover:bg-orange-600 text-white rounded-2xl font-black uppercase tracking-[0.2em] text-sm hover:scale-105 transition-all relative z-10 shadow-2xl shadow-safety-orange/20"
               >
                 View All Reviews
               </a>

@@ -130,22 +130,22 @@ export const FounderSpotlight = () => {
               <div className="flex flex-col sm:flex-row items-center gap-6">
                 <button 
                   onClick={() => window.location.href = '/verify-jvto/police-safety'}
-                  className="w-full sm:w-auto bg-authority-navy text-white px-8 py-4 rounded-xl font-black uppercase tracking-widest text-xs hover:bg-slate-800 transition-all flex items-center justify-center gap-3 group"
+                  className="w-full sm:w-auto bg-authority-navy text-white px-10 py-5 rounded-xl font-black uppercase tracking-widest text-sm hover:bg-slate-800 transition-all shadow-xl shadow-authority-navy/20 flex items-center justify-center gap-4 group"
                 >
                   View Police Credentials
-                  <ExternalLink className="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+                  <ExternalLink className="w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
                 </button>
                 
-                <div className="flex items-center gap-3">
-                  <div className="flex -space-x-2">
+                <div className="flex items-center gap-4">
+                  <div className="flex -space-x-3">
                     {[1, 2, 3].map(i => (
-                      <div key={i} className="w-8 h-8 rounded-full border-2 border-white bg-slate-200 overflow-hidden">
+                      <div key={i} className="w-10 h-10 rounded-full border-2 border-white bg-slate-200 overflow-hidden shadow-sm">
                         <img src={`https://picsum.photos/seed/guest${i}/100/100`} alt="Guest" referrerPolicy="no-referrer" />
                       </div>
                     ))}
                   </div>
-                  <p className="text-[10px] font-mono uppercase tracking-widest text-slate-400">
-                    Trusted by <span className="text-authority-navy font-bold">5,000+</span> Global Travelers
+                  <p className="text-[11px] font-mono uppercase tracking-[0.15em] text-slate-400">
+                    Trusted by <span className="text-authority-navy font-black">5,000+</span> Travelers
                   </p>
                 </div>
               </div>

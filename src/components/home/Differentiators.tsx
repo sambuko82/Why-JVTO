@@ -41,12 +41,12 @@ export const Differentiators = () => {
   return (
     <section className="section-spacing bg-audit-white relative overflow-hidden border-y border-slate-100">
       <div className="container-authority">
-        <div className="flex flex-col xl:flex-row gap-8 xl:gap-12 items-center">
+        <div className="flex flex-col xl:flex-row gap-12 xl:gap-20 items-center">
           
           {/* Text Column (Left) */}
-          <div className="xl:w-1/4 flex flex-col justify-center shrink-0 text-center xl:text-left">
-            <div className="inline-block relative mb-4 w-fit mx-auto xl:mx-0">
-              <h2 className="text-[10px] font-black uppercase tracking-widest text-authority-navy relative z-10">
+          <div className="xl:w-1/3 flex flex-col justify-center shrink-0 text-center xl:text-left">
+            <div className="inline-block relative mb-6 w-fit mx-auto xl:mx-0">
+              <h2 className="font-mono text-[10px] md:text-xs font-black uppercase tracking-[0.25em] text-authority-navy relative z-10">
                 Operational Excellence
               </h2>
               {/* Marker underline effect */}
@@ -55,17 +55,17 @@ export const Differentiators = () => {
               </svg>
             </div>
             
-            <p className="text-xl md:text-2xl font-black uppercase tracking-tight text-authority-navy mb-4 leading-none">
-              Volcanic environments demand precision.
-            </p>
+            <h3 className="heading-section mb-6">
+              Volcanic precision.
+            </h3>
             <p className="body-text">
-              That's why we operate with military-grade protocols.
+              We operate with military-grade protocols to ensure every expedition is secured against the unpredictable nature of East Java's peaks.
             </p>
           </div>
 
           {/* Cards Grid (Right - Scrollable on mobile, 3 Columns on desktop) */}
-          <div className="xl:w-3/4 w-full">
-            <div className="flex overflow-x-auto md:grid md:grid-cols-3 gap-4 md:gap-6 pb-6 md:pb-0 -mx-6 px-6 md:mx-0 md:px-0 snap-x hide-scrollbar">
+          <div className="xl:w-2/3 w-full">
+            <div className="flex overflow-x-auto md:grid md:grid-cols-3 gap-6 md:gap-8 pb-8 md:pb-0 -mx-6 px-6 md:mx-0 md:px-0 snap-x hide-scrollbar">
               {differentiators.map((item, idx) => (
                 <motion.div
                   key={idx}
@@ -74,17 +74,17 @@ export const Differentiators = () => {
                   viewport={{ once: true, margin: "-50px" }}
                   transition={{ delay: idx * 0.1 }}
                   onClick={() => navigate(item.link)}
-                  className="shrink-0 w-[80vw] md:w-auto snap-start p-6 md:p-8 rounded-2xl bg-white shadow-[0_4px_20px_rgb(0,0,0,0.03)] border border-slate-100 hover:shadow-[0_10px_30px_rgb(0,0,0,0.06)] hover:-translate-y-1 transition-all duration-300 group flex flex-col cursor-pointer"
+                  className="shrink-0 w-[85vw] md:w-auto snap-start p-8 md:p-10 rounded-[2rem] bg-white shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-slate-100 hover:shadow-[0_20px_50px_rgb(0,0,0,0.08)] hover:-translate-y-2 transition-all duration-500 group flex flex-col cursor-pointer"
                 >
                   <TwoToneIcon Icon={item.icon} />
-                  <h3 className="text-base font-bold text-authority-navy mb-2">
+                  <h3 className="text-lg md:text-xl font-black text-authority-navy uppercase tracking-tight mb-3">
                     {item.title}
                   </h3>
-                  <p className="text-sm text-slate-600 leading-relaxed font-normal mb-6">
+                  <p className="body-text text-sm mb-8 line-clamp-3">
                     {item.desc}
                   </p>
-                  <div className="mt-auto pt-2 flex items-center gap-1 text-safety-orange font-mono text-[11px] uppercase tracking-widest group-hover:translate-x-1 transition-transform">
-                    Learn More <ChevronRight className="w-3 h-3" />
+                  <div className="mt-auto pt-4 flex items-center gap-2 text-safety-orange font-mono text-[11px] font-black uppercase tracking-[0.2em] group-hover:gap-4 transition-all">
+                    Learn More <ChevronRight className="w-4 h-4" />
                   </div>
                 </motion.div>
               ))}

@@ -54,7 +54,7 @@ export const GuideAndFAQ = () => {
           
           {/* Left: Travel Guide Intelligence */}
           <div className="lg:col-span-5">
-            <div className="badge-eyebrow badge-eyebrow-navy mb-6">
+            <div className="badge-eyebrow bg-authority-navy text-white mb-8">
               <BookOpen className="w-3 h-3" /> Essential Intelligence
             </div>
             <h2 className="heading-section mb-8">
@@ -65,7 +65,7 @@ export const GuideAndFAQ = () => {
               Don't arrive unprepared. Our intelligence reports cover the critical logistics of East Java's volcanic terrain.
             </p>
 
-            <div className="space-y-4">
+            <div className="space-y-6">
               {guides.map((guide, idx) => (
                 <motion.div
                   key={idx}
@@ -74,20 +74,22 @@ export const GuideAndFAQ = () => {
                   viewport={{ once: true }}
                   transition={{ delay: idx * 0.1 }}
                   onClick={() => navigate(guide.link)}
-                  className="p-6 rounded-2xl bg-audit-white border border-slate-200 hover:border-safety-orange/50 hover:shadow-md transition-all cursor-pointer group flex items-center gap-6"
+                  className="p-8 rounded-[2rem] bg-white border border-slate-100 hover:border-safety-orange/50 hover:shadow-2xl transition-all duration-500 cursor-pointer group flex items-center gap-8 shadow-sm"
                 >
-                  <div className="p-3 rounded-xl bg-white shadow-sm shrink-0">
-                    <guide.icon className="w-6 h-6 text-authority-navy" />
+                  <div className="w-14 h-14 rounded-2xl bg-slate-50 flex items-center justify-center shrink-0 group-hover:bg-safety-orange group-hover:text-white transition-all duration-500 shadow-sm">
+                    <guide.icon className="w-6 h-6" />
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-lg font-black text-authority-navy uppercase tracking-tight mb-1">
+                    <h3 className="text-base font-black text-authority-navy uppercase tracking-[0.1em] mb-2 group-hover:text-safety-orange transition-colors">
                       {guide.title}
                     </h3>
-                    <p className="text-xs text-slate-500 font-light leading-tight">
+                    <p className="text-xs text-slate-400 font-black uppercase tracking-[0.1em] leading-tight opacity-60">
                       {guide.desc}
                     </p>
                   </div>
-                  <ChevronRight className="w-5 h-5 text-slate-300 group-hover:text-safety-orange group-hover:translate-x-1 transition-all" />
+                  <div className="w-10 h-10 rounded-xl bg-slate-50 flex items-center justify-center group-hover:bg-safety-orange group-hover:text-white transition-all duration-500">
+                    <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                  </div>
                 </motion.div>
               ))}
             </div>
@@ -95,33 +97,35 @@ export const GuideAndFAQ = () => {
 
           {/* Right: FAQ Intelligence */}
           <div className="lg:col-span-7">
-            <div className="bg-audit-white rounded-[3rem] p-8 md:p-12 border border-slate-200">
-              <div className="flex items-center gap-3 mb-8">
-                <HelpCircle className="w-5 h-5 text-safety-orange" />
-                <span className="font-mono text-xs uppercase tracking-[0.3em] font-bold text-slate-500">FAQ Registry</span>
+            <div className="bg-white rounded-[3rem] p-10 md:p-16 border border-slate-100 shadow-2xl shadow-slate-200/50">
+              <div className="flex items-center gap-4 mb-10">
+                <div className="w-10 h-10 rounded-xl bg-safety-orange/10 flex items-center justify-center">
+                  <HelpCircle className="w-5 h-5 text-safety-orange" />
+                </div>
+                <span className="font-mono text-[10px] font-black uppercase tracking-[0.3em] text-slate-400">FAQ Registry</span>
               </div>
               
-              <h3 className="text-3xl md:text-4xl font-black text-authority-navy uppercase tracking-tighter mb-10 leading-none">
+              <h3 className="text-3xl md:text-5xl font-black text-authority-navy uppercase tracking-tighter mb-12 leading-[0.9]">
                 Clear Answers. <br />
                 <span className="text-safety-orange">No Ambiguity.</span>
               </h3>
 
-              <div className="space-y-3">
+              <div className="space-y-4">
                 {faqs.map((faq, idx) => (
                   <div 
                     key={idx}
-                    className="border border-slate-200 rounded-2xl bg-white overflow-hidden transition-all hover:border-safety-orange/30"
+                    className="border border-slate-100 rounded-2xl bg-slate-50/50 overflow-hidden transition-all hover:border-safety-orange/30 hover:bg-white hover:shadow-xl duration-500"
                   >
                     <button
                       onClick={() => setOpenIndex(openIndex === idx ? null : idx)}
-                      className="w-full flex items-center justify-between p-5 md:p-6 text-left focus:outline-none"
+                      className="w-full flex items-center justify-between p-6 md:p-8 text-left focus:outline-none group"
                     >
-                      <h4 className="text-sm md:text-base font-bold text-authority-navy pr-8">
+                      <h4 className="text-sm md:text-lg font-black text-authority-navy pr-8 uppercase tracking-tight group-hover:text-safety-orange transition-colors">
                         {faq.question}
                       </h4>
-                      <ChevronDown 
-                        className={`w-4 h-4 text-safety-orange shrink-0 transition-transform duration-300 ${openIndex === idx ? 'rotate-180' : ''}`} 
-                      />
+                      <div className={`w-8 h-8 rounded-lg flex items-center justify-center transition-all duration-500 ${openIndex === idx ? 'bg-safety-orange text-white rotate-180' : 'bg-white text-slate-300 shadow-sm'}`}>
+                        <ChevronDown className="w-4 h-4" />
+                      </div>
                     </button>
                     <AnimatePresence>
                       {openIndex === idx && (
@@ -129,9 +133,9 @@ export const GuideAndFAQ = () => {
                           initial={{ height: 0, opacity: 0 }}
                           animate={{ height: 'auto', opacity: 1 }}
                           exit={{ height: 0, opacity: 0 }}
-                          transition={{ duration: 0.3 }}
+                          transition={{ duration: 0.4, ease: [0.23, 1, 0.32, 1] }}
                         >
-                          <div className="px-5 md:px-6 pb-5 md:pb-6 text-xs md:text-sm text-slate-600 font-light leading-relaxed">
+                          <div className="px-6 md:px-8 pb-8 text-sm md:text-base text-slate-500 font-medium leading-relaxed border-t border-slate-100 pt-6">
                             {faq.answer}
                           </div>
                         </motion.div>

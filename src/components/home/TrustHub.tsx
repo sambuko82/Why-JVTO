@@ -96,7 +96,7 @@ export const TrustHub = () => {
         {/* Section Header */}
         <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end mb-16 gap-8">
           <div className="max-w-2xl">
-            <div className="badge-eyebrow badge-eyebrow-navy mb-6">
+            <div className="badge-eyebrow bg-authority-navy text-white mb-6">
               <Lock className="w-3 h-3" /> System Integrity Dashboard
             </div>
             <h2 className="heading-section mb-6">
@@ -109,15 +109,15 @@ export const TrustHub = () => {
           </div>
 
           {/* Main Hub Navigation */}
-          <div className="flex flex-wrap gap-2 bg-slate-100 p-1.5 rounded-2xl border border-slate-200 w-full lg:w-auto">
+          <div className="flex flex-wrap gap-3 bg-slate-50 p-2 rounded-[2rem] border border-slate-100 w-full lg:w-auto">
             {mainTabs.map((tab) => (
               <button
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id as HubTab)}
-                className={`flex-1 lg:flex-none flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl font-black uppercase tracking-wider text-[10px] md:text-xs transition-all ${
+                className={`flex-1 lg:flex-none flex items-center justify-center gap-3 px-8 py-4 rounded-2xl font-black uppercase tracking-[0.2em] text-[10px] md:text-xs transition-all ${
                   activeTab === tab.id 
-                    ? 'bg-authority-navy text-white shadow-lg' 
-                    : 'text-slate-500 hover:text-authority-navy hover:bg-white/50'
+                    ? 'bg-authority-navy text-white shadow-2xl shadow-authority-navy/20' 
+                    : 'text-slate-400 hover:text-authority-navy hover:bg-white'
                 }`}
               >
                 <tab.icon className="w-4 h-4" />
@@ -145,25 +145,25 @@ export const TrustHub = () => {
                   <div 
                     key={i}
                     onClick={() => navigate(item.link)}
-                    className={`p-8 md:p-10 rounded-[2rem] border border-slate-200 bg-white shadow-sm hover:shadow-xl hover:border-safety-orange/30 transition-all group cursor-pointer flex flex-col justify-between relative overflow-hidden ${i === 0 ? 'md:col-span-2' : ''}`}
+                    className={`p-10 md:p-12 rounded-[2.5rem] border border-slate-100 bg-white shadow-sm hover:shadow-2xl hover:border-safety-orange/30 transition-all group cursor-pointer flex flex-col justify-between relative overflow-hidden ${i === 0 ? 'md:col-span-2' : ''}`}
                   >
-                    <div className="absolute top-0 right-0 w-32 h-32 bg-slate-50 rounded-bl-full -z-10 group-hover:bg-safety-orange/5 transition-colors"></div>
+                    <div className="absolute top-0 right-0 w-40 h-40 bg-slate-50 rounded-bl-full -z-10 group-hover:bg-safety-orange/5 transition-colors"></div>
                     <div>
-                      <div className="flex justify-between items-start mb-10">
-                        <div className="p-4 rounded-2xl bg-slate-50 group-hover:bg-white transition-colors border border-slate-100 group-hover:border-safety-orange/20">
-                          <item.icon className={`w-8 h-8 ${item.iconColor}`} />
+                      <div className="flex justify-between items-start mb-12">
+                        <div className="p-5 rounded-2xl bg-slate-50 group-hover:bg-white transition-colors border border-slate-100 group-hover:border-safety-orange/20">
+                          <item.icon className={`w-10 h-10 ${item.iconColor}`} />
                         </div>
-                        <span className="font-mono text-[10px] text-slate-300 uppercase tracking-widest">{item.hash}</span>
+                        <span className="font-mono text-[10px] text-slate-300 font-black uppercase tracking-[0.25em]">{item.hash}</span>
                       </div>
-                      <h3 className="text-2xl md:text-3xl font-black mb-4 uppercase leading-none tracking-tight text-authority-navy group-hover:text-safety-orange transition-colors">{item.title}</h3>
-                      <p className="text-base md:text-lg leading-relaxed font-light text-slate-500">{item.summary}</p>
+                      <h3 className="text-2xl md:text-4xl font-black mb-6 uppercase leading-none tracking-tight text-authority-navy group-hover:text-safety-orange transition-colors">{item.title}</h3>
+                      <p className="body-text text-base md:text-lg">{item.summary}</p>
                     </div>
-                    <div className="flex items-center justify-between mt-10 pt-8 border-t border-slate-100">
-                      <div className="flex items-center gap-3">
-                        <Eye className="w-4 h-4 text-safety-orange" />
-                        <span className="font-mono text-[10px] uppercase tracking-[0.2em] font-bold text-slate-600">Inspect Proof</span>
+                    <div className="flex items-center justify-between mt-12 pt-10 border-t border-slate-100">
+                      <div className="flex items-center gap-4">
+                        <Eye className="w-5 h-5 text-safety-orange" />
+                        <span className="font-mono text-[10px] uppercase tracking-[0.3em] font-black text-slate-600">Inspect Proof</span>
                       </div>
-                      <ChevronRight className="w-5 h-5 text-slate-400 group-hover:text-safety-orange group-hover:translate-x-1 transition-all" />
+                      <ChevronRight className="w-6 h-6 text-slate-400 group-hover:text-safety-orange group-hover:translate-x-2 transition-all" />
                     </div>
                   </div>
                 ))}
