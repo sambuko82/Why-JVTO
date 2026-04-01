@@ -77,8 +77,11 @@ export const HeroSection = () => {
       </div>
 
       {/* Full Background Image */}
-      <div className="absolute inset-0 z-0">
-        <img 
+      <div className="absolute inset-0 z-0 overflow-hidden">
+        <motion.img 
+          initial={{ scale: 1.1, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          transition={{ duration: 1.5, ease: "easeOut" }}
           src={SSOT.assets.find(a => a.slug === 'jvto-hero-image')?.url || 'https://javavolcano-touroperator.com/assets/img/hero/home.webp'} 
           alt={SSOT.assets.find(a => a.slug === 'jvto-hero-image')?.alt || 'Scenic view of Java volcanoes.'} 
           className="w-full h-full object-cover"
@@ -88,6 +91,9 @@ export const HeroSection = () => {
         <div className="absolute inset-0 bg-black/20"></div>
         <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent"></div>
         <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-transparent h-40"></div>
+        
+        {/* Scanline Effect - Halo Enhancement */}
+        <div className="scanline opacity-10"></div>
       </div>
       
       <div className="relative z-10 flex-1 flex flex-col justify-center items-center max-w-7xl mx-auto px-4 md:px-6 py-12 md:py-24 w-full">
@@ -110,7 +116,7 @@ export const HeroSection = () => {
             <span className="block text-sm sm:text-xl md:text-2xl lg:text-3xl text-safety-orange font-bold tracking-[0.2em] uppercase drop-shadow-lg">
               Tourist Police-Led
             </span>
-            <span className="block text-2xl xs:text-3xl sm:text-5xl md:text-7xl lg:text-8xl xl:text-9xl font-black tracking-tighter uppercase text-white drop-shadow-[0_8px_8px_rgba(0,0,0,0.6)] leading-[0.9] md:leading-none">
+            <span className="heading-display block text-white drop-shadow-[0_8px_8px_rgba(0,0,0,0.6)]">
               Private Volcano Tours
             </span>
             <span className="block text-lg sm:text-2xl md:text-4xl lg:text-5xl font-light italic text-white/90 drop-shadow-md mt-1 md:mt-4">
@@ -139,8 +145,6 @@ export const HeroSection = () => {
           </motion.div>
         </div>
       </div>
-      
-      <StatusTicker />
     </section>
   );
 };

@@ -79,11 +79,11 @@ export const ReviewsSection = () => {
   }, []);
 
   return (
-    <section className="py-20 md:py-32 bg-audit-white relative overflow-hidden border-y border-slate-200">
+    <section className="section-spacing bg-white relative overflow-hidden border-y border-slate-200">
       {/* Background Accents */}
       <div className="absolute top-0 right-0 w-1/2 h-full bg-slate-50/50 -skew-x-12 transform translate-x-1/4 pointer-events-none" />
       
-      <div className="max-w-7xl mx-auto px-4 md:px-6 relative z-10">
+      <div className="container-authority relative z-10">
         <div className="grid lg:grid-cols-12 gap-12 lg:gap-20 items-start">
           
           {/* LEFT: Trust Signals */}
@@ -91,11 +91,11 @@ export const ReviewsSection = () => {
             <div className="badge-eyebrow badge-eyebrow-orange mb-6">
               <ShieldCheck className="w-3 h-3" /> External Verification Hub
             </div>
-            <h2 className="text-4xl md:text-6xl font-black uppercase tracking-tighter leading-[0.85] text-authority-navy mb-8">
+            <h2 className="heading-section mb-8">
               Verified <br />
               <span className="text-safety-orange">Trust Signals.</span>
             </h2>
-            <p className="text-slate-500 font-light leading-relaxed mb-12 max-w-md">
+            <p className="body-text mb-12 max-w-md">
               Our reputation is built on transparency. We don't host reviews ourselves—we invite you to audit our performance on the world's most trusted independent platforms.
             </p>
 

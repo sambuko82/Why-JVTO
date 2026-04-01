@@ -1,170 +1,158 @@
 import React from 'react';
-import { ShieldCheck, Award, Star, ChevronRight, Newspaper, ExternalLink } from 'lucide-react';
 import { motion } from 'motion/react';
-import { useNavigate } from 'react-router-dom';
+import { ShieldCheck, Award, FileText, ExternalLink, BadgeCheck, Scale } from 'lucide-react';
 import { SSOT } from '../../lib/ssot';
 
 export const FounderSpotlight = () => {
-  const navigate = useNavigate();
+  const founder = SSOT.organization.founder;
+  const portrait = SSOT.assets.find(a => a.slug === 'mr-sam-tourist-police-portrait');
+  const legalDoc = SSOT.assets.find(a => a.slug === 'sprin-polpar-png');
 
   return (
-    <section className="py-16 md:py-24 bg-audit-white relative overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 md:px-6">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center mb-16 md:mb-24">
-          <div className="relative">
+    <section className="section-spacing bg-white overflow-hidden relative">
+      {/* Background Decorative Elements */}
+      <div className="absolute top-0 right-0 w-1/3 h-full bg-slate-50/50 -skew-x-12 translate-x-20 z-0 hidden lg:block" />
+      
+      <div className="container-authority relative z-10">
+        <div className="grid lg:grid-cols-12 gap-12 lg:gap-20 items-center">
+          
+          {/* Image Column */}
+          <div className="lg:col-span-5 relative">
             <motion.div 
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="relative z-10 flex flex-col gap-4"
+              transition={{ duration: 0.8 }}
+              className="relative"
             >
-              <div className="aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl">
+              {/* Main Portrait */}
+              <div className="relative rounded-2xl overflow-hidden shadow-2xl border-8 border-white group">
                 <img 
-                  src={SSOT.assets.find(a => a.slug === 'founder-with-guests-stefan-loose')?.url || 'https://javavolcano-touroperator.com/history/founder-with-guests-stefan-loose.jpg'} 
-                  alt={SSOT.assets.find(a => a.slug === 'founder-with-guests-stefan-loose')?.alt || 'Agung Sambuko - Founder & Tourist Police'} 
-                  className="w-full h-full object-cover object-top"
+                  src={portrait?.url} 
+                  alt={portrait?.alt}
+                  className="w-full aspect-[3/4] object-cover grayscale hover:grayscale-0 transition-all duration-700"
                   referrerPolicy="no-referrer"
                 />
-              </div>
-              
-              <div className="p-6 md:p-8 bg-white border border-slate-200 rounded-3xl shadow-xl">
-                <div className="flex items-center gap-4 mb-4">
-                  <div className="p-2 md:p-3 rounded-full bg-safety-orange/10">
-                    <ShieldCheck className="w-5 h-5 md:w-6 md:h-6 text-safety-orange" />
-                  </div>
-                  <div>
-                    <h4 className="text-lg md:text-xl font-black text-authority-navy uppercase tracking-tight mb-1">
-                      {SSOT.organization.founder.name}
-                    </h4>
-                    <p className="text-slate-500 text-[10px] md:text-xs font-bold uppercase tracking-widest">
-                      {SSOT.organization.founder.role}
-                    </p>
+                <div className="absolute inset-0 bg-gradient-to-t from-authority-navy/80 via-transparent to-transparent opacity-60" />
+                
+                {/* Floating Badge */}
+                <div className="absolute bottom-6 left-6 right-6 p-4 bg-white/10 backdrop-blur-md border border-white/20 rounded-xl">
+                  <div className="flex items-center gap-3">
+                    <div className="p-2 bg-safety-orange rounded-lg">
+                      <ShieldCheck className="w-5 h-5 text-white" />
+                    </div>
+                    <div>
+                      <p className="font-mono text-[10px] uppercase tracking-widest text-white/70 leading-none mb-1">Official ID</p>
+                      <p className="font-black text-white uppercase tracking-tight text-sm">POLRI Ditpamobvit</p>
+                    </div>
                   </div>
                 </div>
-                <p className="text-slate-600 font-medium italic text-sm md:text-base leading-relaxed">
-                  "In the Ring of Fire, safety is not a marketing promise. It is achieved through Police Leadership, Medical Protocols, and Cryptographic Evidence."
-                </p>
+              </div>
+
+              {/* Decorative Frame */}
+              <div className="absolute -top-4 -left-4 w-24 h-24 border-t-2 border-l-2 border-safety-orange/30 -z-10" />
+              <div className="absolute -bottom-4 -right-4 w-24 h-24 border-b-2 border-r-2 border-authority-navy/20 -z-10" />
+            </motion.div>
+
+            {/* Context Card - Floating */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              className="absolute -bottom-10 -right-6 md:right-0 bg-authority-navy text-white p-6 rounded-2xl shadow-2xl max-w-[280px] hidden md:block"
+            >
+              <div className="flex items-center gap-3 mb-4">
+                <BadgeCheck className="w-6 h-6 text-safety-orange" />
+                <span className="font-black uppercase tracking-widest text-xs">Dual-Authority</span>
+              </div>
+              <p className="text-xs text-slate-300 leading-relaxed mb-4">
+                "As an active officer, I don't just sell tours. I enforce safety standards that protect both travelers and the volcanic environment."
+              </p>
+              <div className="h-px w-full bg-white/10 mb-4" />
+              <div className="flex items-center justify-between">
+                <span className="font-mono text-[9px] uppercase tracking-widest text-white/40">Verified Status</span>
+                <span className="text-[10px] font-bold text-verified-bright uppercase">Active Duty</span>
               </div>
             </motion.div>
-            
-            <div className="absolute -top-10 -left-10 w-40 h-40 bg-safety-orange/5 rounded-full blur-3xl"></div>
-            <div className="absolute -bottom-10 -right-10 w-60 h-60 bg-authority-navy/5 rounded-full blur-3xl"></div>
           </div>
 
-          <div>
-            <div className="badge-eyebrow badge-eyebrow-navy mb-6 md:mb-8">
-              <Star className="w-3 h-3" /> Police Leadership
-            </div>
-            <h2 className="text-3xl xs:text-4xl md:text-6xl font-black uppercase tracking-tighter leading-[0.9] text-authority-navy mb-6 md:mb-8">
-              Our Story: <br />
-              <span className="text-safety-orange">From Local Host to Police-Led Operator.</span>
-            </h2>
-            <p className="text-lg md:text-xl text-slate-500 font-light leading-relaxed mb-10 md:mb-12">
-              {SSOT.organization.name} began as a family guesthouse in {SSOT.organization.address_json.addressLocality} — the town closest to Ijen Crater — in {SSOT.organization.foundingDate.split('-')[0]}. Our founder, {SSOT.organization.founder.name}, is an active Tourist Police officer who saw safety gaps in East Java's tour industry and built something different: private-only routes, a mandatory health screening system, and transparent written policies. Today, JVTO is a registered {SSOT.organization.legalName} serving independent travelers from across Southeast Asia.
-            </p>
-            
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-8 mb-10 md:mb-12">
-              <div className="flex items-center gap-4">
-                <div className="p-3 rounded-xl bg-slate-100">
-                  <Award className="w-6 h-6 text-authority-navy" />
-                </div>
-                <div>
-                  <h5 className="text-sm font-black uppercase tracking-tight text-authority-navy">
-                    Official Liaison
-                  </h5>
-                  <p className="text-xs text-slate-500 font-light uppercase tracking-widest">
-                    Direct Police Network
-                  </p>
-                </div>
-              </div>
-              <div className="flex items-center gap-4">
-                <div className="p-3 rounded-xl bg-slate-100">
-                  <ShieldCheck className="w-6 h-6 text-authority-navy" />
-                </div>
-                <div>
-                  <h5 className="text-sm font-black uppercase tracking-tight text-authority-navy">
-                    Safety First
-                  </h5>
-                  <p className="text-xs text-slate-500 font-light uppercase tracking-widest">
-                    Police-Grade Protocols
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <button 
-              onClick={() => navigate('/why-jvto/our-story')}
-              className="bg-authority-navy text-white px-10 py-5 rounded-xl font-black uppercase tracking-wider transition-all hover:bg-authority-navy/90 flex items-center justify-center gap-3 group"
+          {/* Content Column */}
+          <div className="lg:col-span-7">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
             >
-              Read Our Story <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </button>
-          </div>
-        </div>
+              <div className="inline-flex items-center gap-2 px-3 py-1 bg-slate-100 rounded-full mb-6">
+                <Scale className="w-3 h-3 text-authority-navy" />
+                <span className="font-mono text-[10px] font-bold uppercase tracking-widest text-authority-navy">Leadership Spotlight</span>
+              </div>
 
-        {/* Media Carousel */}
-        {SSOT.press && SSOT.press.length > 0 && (
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="pt-12 border-t border-slate-200"
-          >
-            <div className="flex items-center justify-between mb-8">
-              <div className="flex items-center gap-3">
-                <div className="p-2.5 rounded-xl bg-safety-orange/10">
-                  <Newspaper className="w-5 h-5 text-safety-orange" />
+              <h2 className="heading-section mb-6">
+                The Authority Behind <span className="text-safety-orange">The Expedition.</span>
+              </h2>
+
+              <div className="space-y-6 mb-10">
+                <p className="body-text">
+                  Meet <strong>{founder.name}</strong>, widely known as Mr. Sam. He is the architect of JVTO's safety-first philosophy and an active officer in the <strong>{founder.unit}</strong> of the Indonesian National Police.
+                </p>
+                
+                <p className="body-text">
+                  His unique position allows JVTO to operate with a level of institutional trust and logistical precision that is unmatched in East Java. Every itinerary is vetted against real-time police intelligence and volcanic activity reports.
+                </p>
+              </div>
+
+              {/* Service Record Grid */}
+              <div className="grid sm:grid-cols-2 gap-4 mb-10">
+                <div className="p-4 bg-slate-50 rounded-xl border border-slate-100">
+                  <div className="flex items-center gap-3 mb-2">
+                    <Award className="w-4 h-4 text-safety-orange" />
+                    <span className="font-bold text-sm text-authority-navy uppercase tracking-tight">Police Liaison</span>
+                  </div>
+                  <p className="text-xs text-slate-500 leading-relaxed">
+                    Direct coordination with park rangers and local authorities for emergency response.
+                  </p>
                 </div>
-                <h3 className="text-xl md:text-2xl font-black uppercase tracking-tight text-authority-navy">
-                  National Media Coverage
-                </h3>
+                <div className="p-4 bg-slate-50 rounded-xl border border-slate-100">
+                  <div className="flex items-center gap-3 mb-2">
+                    <FileText className="w-4 h-4 text-safety-orange" />
+                    <span className="font-bold text-sm text-authority-navy uppercase tracking-tight">Legal Compliance</span>
+                  </div>
+                  <p className="text-xs text-slate-500 leading-relaxed">
+                    Ensuring all permits, licenses, and insurance protocols meet strict national standards.
+                  </p>
+                </div>
               </div>
-              <div className="hidden md:flex items-center gap-2 text-xs font-bold text-slate-400 uppercase tracking-widest">
-                Swipe to view <ChevronRight className="w-4 h-4" />
-              </div>
-            </div>
 
-            <div className="flex overflow-x-auto snap-x snap-mandatory hide-scrollbar gap-4 md:gap-6 pb-8 -mx-4 px-4 md:mx-0 md:px-0">
-              {SSOT.press.map((article, idx) => (
-                <a
-                  key={idx}
-                  href={article.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="snap-start shrink-0 w-[280px] md:w-[360px] group flex flex-col bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-xl hover:border-safety-orange/30 transition-all duration-300"
+              {/* CTA / Proof Link */}
+              <div className="flex flex-col sm:flex-row items-center gap-6">
+                <button 
+                  onClick={() => window.location.href = '/verify-jvto/police-safety'}
+                  className="w-full sm:w-auto bg-authority-navy text-white px-8 py-4 rounded-xl font-black uppercase tracking-widest text-xs hover:bg-slate-800 transition-all flex items-center justify-center gap-3 group"
                 >
-                  <div className="relative aspect-[16/10] overflow-hidden bg-slate-100">
-                    <img 
-                      src={article.screenshot} 
-                      alt={`${article.publisher} Coverage`} 
-                      className="w-full h-full object-cover object-top transform group-hover:scale-105 transition-transform duration-700"
-                      referrerPolicy="no-referrer"
-                    />
-                    <div className="absolute inset-0 bg-authority-navy/0 group-hover:bg-authority-navy/40 transition-colors duration-300 flex items-center justify-center">
-                      <div className="opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300 bg-safety-orange text-white px-4 py-2 rounded-full font-bold text-xs uppercase tracking-wider flex items-center gap-2">
-                        Read Article <ExternalLink className="w-3 h-3" />
+                  View Police Credentials
+                  <ExternalLink className="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+                </button>
+                
+                <div className="flex items-center gap-3">
+                  <div className="flex -space-x-2">
+                    {[1, 2, 3].map(i => (
+                      <div key={i} className="w-8 h-8 rounded-full border-2 border-white bg-slate-200 overflow-hidden">
+                        <img src={`https://picsum.photos/seed/guest${i}/100/100`} alt="Guest" referrerPolicy="no-referrer" />
                       </div>
-                    </div>
+                    ))}
                   </div>
-                  <div className="p-5 flex flex-col flex-grow">
-                    <div className="text-[10px] font-black text-safety-orange uppercase tracking-[0.2em] mb-2">
-                      {article.publisher}
-                    </div>
-                    <h4 className="text-sm font-bold text-authority-navy leading-snug mb-3 line-clamp-2">
-                      {article.translatedTitle}
-                    </h4>
-                    <div className="mt-auto pt-4 border-t border-slate-100 flex items-center justify-between">
-                      <span className="text-[10px] font-mono text-slate-400 uppercase tracking-widest">
-                        {new Date(article.date).getFullYear()}
-                      </span>
-                      <ExternalLink className="w-3.5 h-3.5 text-slate-300 group-hover:text-safety-orange transition-colors" />
-                    </div>
-                  </div>
-                </a>
-              ))}
-            </div>
-          </motion.div>
-        )}
+                  <p className="text-[10px] font-mono uppercase tracking-widest text-slate-400">
+                    Trusted by <span className="text-authority-navy font-bold">5,000+</span> Global Travelers
+                  </p>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+
+        </div>
       </div>
     </section>
   );

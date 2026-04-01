@@ -48,8 +48,8 @@ export const GuideAndFAQ = () => {
   ];
 
   return (
-    <section id="guide-faq" className="py-24 bg-white border-y border-slate-100 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 md:px-6">
+    <section id="guide-faq" className="section-spacing bg-white border-y border-slate-100 overflow-hidden">
+      <div className="container-authority">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
           
           {/* Left: Travel Guide Intelligence */}
@@ -57,11 +57,11 @@ export const GuideAndFAQ = () => {
             <div className="badge-eyebrow badge-eyebrow-navy mb-6">
               <BookOpen className="w-3 h-3" /> Essential Intelligence
             </div>
-            <h2 className="text-4xl md:text-6xl font-black uppercase tracking-tighter leading-[0.9] text-authority-navy mb-8">
+            <h2 className="heading-section mb-8">
               Travel <br />
               <span className="text-safety-orange">Guide.</span>
             </h2>
-            <p className="text-slate-500 font-light text-lg leading-relaxed mb-12">
+            <p className="body-text mb-12">
               Don't arrive unprepared. Our intelligence reports cover the critical logistics of East Java's volcanic terrain.
             </p>
 

@@ -17,26 +17,28 @@ export const HealthFlow = () => {
   const mainImage = SSOT.assets.find(a => a.slug === 'ijen-screening-hotel-01');
 
   return (
-    <section className="py-24 md:py-32 px-4 md:px-6 max-w-7xl mx-auto">
-      <div className="flex flex-col lg:flex-row gap-16 lg:gap-24 items-center">
-        {/* Left: Content & Protocol */}
-        <div className="lg:w-1/2 flex flex-col justify-center">
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
-            <div className="badge-eyebrow badge-eyebrow-orange mb-8">
-              <ShieldAlert className="w-3 h-3" /> Medical "Hard Stop" Protocol
-            </div>
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-authority-navy leading-[0.9] mb-8 uppercase tracking-tighter">
-              Ijen Health Screening — <br />
-              <span className="text-safety-orange">Mandatory, Included.</span>
-            </h2>
-            <p className="text-slate-500 text-lg md:text-xl mb-12 leading-relaxed font-light">
-              Ijen health screening is mandatory by Indonesian law to hike Ijen. {SSOT.organization.name} arranges your pre-ascent screening with a licensed physician. The cost is included in all Ijen packages — no extra charge.
-            </p>
+    <section className="section-spacing bg-audit-white relative overflow-hidden">
+      <div className="container-authority">
+        <div className="flex flex-col lg:flex-row gap-16 lg:gap-24 items-start">
+          {/* Left: Content & Protocol */}
+          <div className="lg:w-1/2 flex flex-col justify-center">
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
+              <div className="badge-eyebrow badge-eyebrow-orange mb-8">
+                <ShieldAlert className="w-3 h-3" /> Medical "Hard Stop" Protocol
+              </div>
+              <h2 className="heading-section mb-8">
+                Ijen Health Screening — <br />
+                <span className="text-safety-orange">Mandatory, Included.</span>
+              </h2>
+              <p className="body-text mb-12">
+                Ijen health screening is mandatory by Indonesian law to hike Ijen. {SSOT.organization.name} arranges your pre-ascent screening with a licensed physician. The cost is included in all Ijen packages — no extra charge.
+              </p>
+            </motion.div>
 
             <div className="flex flex-col gap-8 mb-12">
               {steps.map((item, i) => (
@@ -61,62 +63,62 @@ export const HealthFlow = () => {
             >
               View Full Medical Protocol <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </button>
-          </motion.div>
-        </div>
+          </div>
 
-        {/* Right: Consolidated Evidence & Data */}
-        <div className="lg:w-1/2 w-full">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="relative rounded-[2.5rem] overflow-hidden bg-slate-100 aspect-[4/5] shadow-2xl mb-8"
-          >
-            {mainImage && (
-              <img 
-                src={mainImage.url} 
-                alt={mainImage.alt} 
-                className="w-full h-full object-cover"
-                referrerPolicy="no-referrer"
-              />
-            )}
-            <div className="absolute inset-0 bg-gradient-to-t from-authority-navy/80 via-transparent to-transparent flex items-end p-8 md:p-12">
-               <div className="text-white">
-                 <div className="flex items-center gap-2 mb-3">
-                    <div className="w-2 h-2 rounded-full bg-safety-orange animate-pulse" />
-                    <span className="text-[10px] md:text-[11px] font-mono uppercase tracking-widest font-bold">Live Screening Operations</span>
+          {/* Right: Consolidated Evidence & Data */}
+          <div className="lg:w-1/2 w-full">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="relative rounded-[2.5rem] overflow-hidden bg-slate-100 aspect-[4/5] shadow-2xl mb-8"
+            >
+              {mainImage && (
+                <img 
+                  src={mainImage.url} 
+                  alt={mainImage.alt} 
+                  className="w-full h-full object-cover"
+                  referrerPolicy="no-referrer"
+                />
+              )}
+              <div className="absolute inset-0 bg-gradient-to-t from-authority-navy/80 via-transparent to-transparent flex items-end p-8 md:p-12">
+                 <div className="text-white">
+                   <div className="flex items-center gap-2 mb-3">
+                      <div className="w-2 h-2 rounded-full bg-safety-orange animate-pulse" />
+                      <span className="text-[10px] md:text-[11px] font-mono uppercase tracking-widest font-bold">Live Screening Operations</span>
+                   </div>
+                   <p className="text-lg md:text-xl font-light leading-tight max-w-md">{mainImage?.alt}</p>
                  </div>
-                 <p className="text-lg md:text-xl font-light leading-tight max-w-md">{mainImage?.alt}</p>
-               </div>
-            </div>
-          </motion.div>
+              </div>
+            </motion.div>
 
-          {/* Data Points */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            className="grid grid-cols-2 gap-4"
-          >
-            <div className="bg-slate-50 p-6 rounded-3xl border border-slate-100">
-              <div className="flex items-center gap-2 mb-2">
-                <FileText className="w-4 h-4 text-slate-400" />
-                <span className="font-mono text-[10px] text-slate-500 uppercase tracking-widest">Requirement</span>
+            {/* Data Points */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              className="grid grid-cols-2 gap-4"
+            >
+              <div className="bg-slate-50 p-6 rounded-3xl border border-slate-100">
+                <div className="flex items-center gap-2 mb-2">
+                  <FileText className="w-4 h-4 text-slate-400" />
+                  <span className="font-mono text-[10px] text-slate-500 uppercase tracking-widest">Requirement</span>
+                </div>
+                <p className="font-black text-authority-navy text-lg md:text-xl uppercase tracking-tight leading-none">Surat Sehat</p>
+                <p className="text-xs text-slate-500 mt-2">Official Health Certificate</p>
               </div>
-              <p className="font-black text-authority-navy text-lg md:text-xl uppercase tracking-tight leading-none">Surat Sehat</p>
-              <p className="text-xs text-slate-500 mt-2">Official Health Certificate</p>
-            </div>
-            <div className="bg-authority-navy p-6 rounded-3xl text-white">
-              <div className="flex items-center gap-2 mb-2">
-                <Activity className="w-4 h-4 text-safety-orange" />
-                <span className="font-mono text-[10px] text-slate-400 uppercase tracking-widest">Clearance</span>
+              <div className="bg-authority-navy p-6 rounded-3xl text-white">
+                <div className="flex items-center gap-2 mb-2">
+                  <Activity className="w-4 h-4 text-safety-orange" />
+                  <span className="font-mono text-[10px] text-slate-400 uppercase tracking-widest">Clearance</span>
+                </div>
+                <p className="font-black text-safety-orange text-lg md:text-xl uppercase tracking-tight leading-none">100%</p>
+                <p className="text-xs text-slate-400 mt-2">Guests Screened Pre-Ascent</p>
               </div>
-              <p className="font-black text-safety-orange text-lg md:text-xl uppercase tracking-tight leading-none">100%</p>
-              <p className="text-xs text-slate-400 mt-2">Guests Screened Pre-Ascent</p>
-            </div>
-          </motion.div>
+            </motion.div>
+          </div>
         </div>
       </div>
     </section>

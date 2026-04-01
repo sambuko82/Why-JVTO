@@ -27,13 +27,13 @@ export const TourBrowser = () => {
   ];
 
   return (
-    <section className="py-12 md:py-24 bg-audit-white relative overflow-hidden border-b border-slate-100">
-      <div className="max-w-7xl mx-auto px-4 md:px-6 mb-12 md:mb-16">
+    <section className="section-spacing bg-white relative overflow-hidden border-b border-slate-100">
+      <div className="container-authority mb-12 md:mb-16">
         <div className="max-w-2xl">
           <div className="badge-eyebrow badge-eyebrow-orange mb-4 md:mb-6">
             <Clock className="w-3 h-3" /> Choose Your Departure City
           </div>
-          <h2 className="text-3xl xs:text-4xl md:text-6xl font-black uppercase tracking-tighter leading-[0.9] text-authority-navy">
+          <h2 className="heading-section">
             Choose Your <br />
             <span className="text-safety-orange">Departure City.</span>
           </h2>
@@ -44,7 +44,7 @@ export const TourBrowser = () => {
         {tourDepartures.map((departure) => (
           <div key={departure.id} className="w-full">
             {/* Row Header */}
-            <div className="max-w-7xl mx-auto px-4 md:px-6 mb-8">
+            <div className="container-authority mb-8">
               <div className="flex items-center gap-4">
                 <div className="h-px flex-1 bg-slate-200"></div>
                 <h3 className="text-sm md:text-base font-black uppercase tracking-[0.3em] text-slate-400">

@@ -39,9 +39,9 @@ export const Differentiators = () => {
   ];
 
   return (
-    <section className="py-12 md:py-24 bg-white relative overflow-hidden border-y border-slate-100">
-      <div className="max-w-[1400px] mx-auto px-6 md:px-12">
-        <div className="flex flex-col xl:flex-row gap-8 xl:gap-12 items-center mb-12 md:mb-16">
+    <section className="section-spacing bg-audit-white relative overflow-hidden border-y border-slate-100">
+      <div className="container-authority">
+        <div className="flex flex-col xl:flex-row gap-8 xl:gap-12 items-center">
           
           {/* Text Column (Left) */}
           <div className="xl:w-1/4 flex flex-col justify-center shrink-0 text-center xl:text-left">
@@ -55,10 +55,10 @@ export const Differentiators = () => {
               </svg>
             </div>
             
-            <p className="text-lg md:text-xl font-medium text-authority-navy mb-2 leading-snug">
-              Volcanic environments demand precision. We leave nothing to chance.
+            <p className="text-xl md:text-2xl font-black uppercase tracking-tight text-authority-navy mb-4 leading-none">
+              Volcanic environments demand precision.
             </p>
-            <p className="text-sm text-slate-500 font-normal">
+            <p className="body-text">
               That's why we operate with military-grade protocols.
             </p>
           </div>
@@ -91,29 +91,6 @@ export const Differentiators = () => {
             </div>
           </div>
 
-        </div>
-
-        {/* Forensic Verification CTA */}
-        <div className="mt-8 md:mt-12 p-6 md:p-10 rounded-3xl bg-slate-50 border border-slate-200 flex flex-col md:flex-row items-center justify-between gap-8">
-          <div className="flex items-center gap-4 md:gap-6">
-            <div className="p-3 md:p-4 rounded-full bg-safety-orange/10">
-              <FileCheck className="w-6 h-6 md:w-8 md:h-8 text-safety-orange" />
-            </div>
-            <div>
-              <h4 className="text-xl md:text-2xl font-black uppercase tracking-tight mb-1 text-authority-navy">
-                Forensic Verification
-              </h4>
-              <p className="text-slate-500 font-light text-[10px] md:text-sm uppercase tracking-widest">
-                Audit our legal entity, police liaison, and medical protocols in real-time.
-              </p>
-            </div>
-          </div>
-          <button 
-            onClick={() => navigate('/verify-jvto')}
-            className="w-full md:w-auto bg-safety-orange text-white px-8 md:px-10 py-4 md:py-5 rounded-xl font-black uppercase tracking-wider transition-all shadow-xl shadow-safety-orange/20 hover:scale-105 text-sm md:text-base"
-          >
-            Start System Audit
-          </button>
         </div>
       </div>
     </section>

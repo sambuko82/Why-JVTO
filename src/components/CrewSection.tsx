@@ -18,20 +18,20 @@ export const CrewSection: React.FC = () => {
   const displayedCrew = SSOT.crew.slice(0, 3);
 
   return (
-    <section id="crew" className="py-12 md:py-24 bg-audit-white relative overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 md:px-6">
+    <section id="crew" className="section-spacing bg-white relative overflow-hidden">
+      <div className="container-authority">
         {/* Header Section - Authority Style */}
         <div className="flex flex-col md:flex-row items-start md:items-end justify-between gap-6 md:gap-8 mb-12 md:mb-16">
           <div className="max-w-2xl">
             <div className="badge-eyebrow badge-eyebrow-navy mb-4 md:mb-6">
               <Users className="w-3 h-3" /> The Human Element
             </div>
-            <h2 className="text-3xl xs:text-4xl md:text-6xl font-black uppercase tracking-tighter leading-[0.9] text-authority-navy">
+            <h2 className="heading-section">
               MEET THE <br />
               <span className="text-safety-orange">VANGUARD.</span>
             </h2>
           </div>
-          <p className="text-slate-500 font-light max-w-sm leading-tight text-sm md:text-base">
+          <p className="body-text max-w-sm">
             Our crew isn't just a team; they are the heart of our mission. Every guide and driver is vetted, licensed, and deeply committed to your safety.
           </p>
         </div>

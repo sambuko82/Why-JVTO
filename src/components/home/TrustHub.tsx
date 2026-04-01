@@ -72,6 +72,14 @@ export const TrustHub = () => {
     }
   ];
 
+  const [copiedHash, setCopiedHash] = useState<string | null>(null);
+
+  const copyToClipboard = (text: string) => {
+    navigator.clipboard.writeText(text);
+    setCopiedHash(text);
+    setTimeout(() => setCopiedHash(null), 2000);
+  };
+
   const formatHash = (hash: string) => hash.substring(0, 8).toUpperCase() + "..." + hash.substring(hash.length - 4).toUpperCase();
   const forensicDocs = [
     { title: "NIB Entity", img: SSOT.proof_vault.legality[0].url, hash: formatHash(SSOT.proof_vault.legality[0].hash), type: "LEGAL_ENTITY" },
@@ -82,8 +90,8 @@ export const TrustHub = () => {
   const activeArticle = SSOT.press[activePressIndex];
 
   return (
-    <section id="trust-hub" className="py-24 md:py-32 bg-audit-white relative overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 md:px-6">
+    <section id="trust-hub" className="section-spacing bg-white relative overflow-hidden">
+      <div className="container-authority">
         
         {/* Section Header */}
         <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end mb-16 gap-8">
@@ -91,11 +99,11 @@ export const TrustHub = () => {
             <div className="badge-eyebrow badge-eyebrow-navy mb-6">
               <Lock className="w-3 h-3" /> System Integrity Dashboard
             </div>
-            <h2 className="text-4xl md:text-7xl font-black text-authority-navy leading-[0.85] mb-6 uppercase tracking-tighter">
+            <h2 className="heading-section mb-6">
               OPERATIONAL <br />
               <span className="text-safety-orange">TRANSPARENCY.</span>
             </h2>
-            <p className="text-slate-500 text-lg md:text-xl leading-tight font-light">
+            <p className="body-text">
               We don't ask for trust; we provide the infrastructure for you to audit our legal, safety, and historical credentials directly.
             </p>
           </div>
@@ -181,7 +189,7 @@ export const TrustHub = () => {
                       </div>
                       <span className="font-mono text-xs uppercase tracking-[0.4em] font-black text-safety-orange">Strategic Affiliations</span>
                     </div>
-                    <h2 className="text-4xl md:text-6xl font-black mb-8 uppercase leading-[0.9] tracking-tighter">
+                    <h2 className="heading-section text-white mb-8">
                       {partnerHighlight.title.split(' ').slice(0, 2).join(' ')} <br />
                       <span className="text-safety-orange">{partnerHighlight.title.split(' ').slice(2).join(' ')}</span>
                     </h2>
@@ -328,9 +336,26 @@ export const TrustHub = () => {
                               <div className="absolute top-4 right-4 bg-authority-navy/80 text-white px-2 py-1 rounded text-[8px] font-mono uppercase tracking-widest">{doc.type}</div>
                             </div>
                             <h4 className="font-black text-authority-navy uppercase mb-4">{doc.title}</h4>
-                            <div className="bg-slate-50 p-3 rounded-xl border border-slate-100 flex items-center gap-3">
-                              <Fingerprint className="w-4 h-4 text-slate-400" />
-                              <span className="font-mono text-[9px] text-slate-500 uppercase tracking-widest truncate">{doc.hash}</span>
+                            <div 
+                              onClick={() => copyToClipboard(doc.hash)}
+                              className="bg-slate-50 p-3 rounded-xl border border-slate-100 flex items-center justify-between gap-3 cursor-pointer hover:bg-slate-100 transition-colors relative"
+                            >
+                              <div className="flex items-center gap-3">
+                                <Fingerprint className="w-4 h-4 text-slate-400" />
+                                <span className="font-mono text-[9px] text-slate-500 uppercase tracking-widest truncate">{doc.hash}</span>
+                              </div>
+                              <AnimatePresence>
+                                {copiedHash === doc.hash && (
+                                  <motion.div 
+                                    initial={{ opacity: 0, scale: 0.8, y: 10 }}
+                                    animate={{ opacity: 1, scale: 1, y: 0 }}
+                                    exit={{ opacity: 0, scale: 0.8, y: 10 }}
+                                    className="absolute -top-10 left-1/2 -translate-x-1/2 bg-success-green text-white text-[8px] font-black uppercase tracking-widest px-3 py-1.5 rounded-lg shadow-lg z-50 whitespace-nowrap"
+                                  >
+                                    Hash Copied
+                                  </motion.div>
+                                )}
+                              </AnimatePresence>
                             </div>
                           </div>
                         ))}

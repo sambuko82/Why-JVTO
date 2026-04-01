@@ -2,6 +2,7 @@ import React from 'react';
 import { PageSEO } from '../components/PageSEO';
 import { HeroSection } from '../components/home/HeroSection';
 import { Differentiators } from '../components/home/Differentiators';
+import { FounderSpotlight } from '../components/home/FounderSpotlight';
 import { DestinationGrid } from '../components/home/DestinationGrid';
 import { TourBrowser } from '../components/home/TourBrowser';
 import { VerifyCTA } from '../components/home/VerifyCTA';
@@ -12,6 +13,8 @@ import { TrustHub } from '../components/home/TrustHub';
 import { CrewSection } from '../components/CrewSection';
 import { ReviewsSection } from '../components/home/ReviewsSection';
 import { GuideAndFAQ } from '../components/home/GuideAndFAQ';
+import { AuthorityDock } from '../components/home/AuthorityDock';
+import { OperationalInquiry } from '../components/home/OperationalInquiry';
 import { AtmosphericBreak } from '../components/home/AtmosphericBreak';
 
 export default function HomePage() {
@@ -22,11 +25,11 @@ export default function HomePage() {
       {/* SECTION A-B: HERO */}
       <HeroSection />
 
-      {/* SECTION C: ENTITY ANCHOR */}
-      <AuthorityShield />
-
       {/* SECTION D: DIFFERENTIATORS */}
       <Differentiators />
+
+      {/* SECTION D.1: FOUNDER SPOTLIGHT */}
+      <FounderSpotlight />
 
       {/* SECTION E: DESTINATIONS */}
       <DestinationGrid />
@@ -34,13 +37,10 @@ export default function HomePage() {
       {/* SECTION F: DEPARTURE CITY */}
       <TourBrowser />
 
-      {/* SECTION G: FEATURED TOURS */}
-      {/* (Already part of TourBrowser or needs separate component) */}
-
       {/* SECTION I: MANDATORY REQUIREMENT */}
       <HealthFlow />
 
-      {/* SECTION J: INTEGRATED TRUST HUB (PILLARS, PARTNERS, EVIDENCE) */}
+      {/* SECTION J: INTEGRATED TRUST HUB */}
       <TrustHub />
 
       {/* SECTION K: TEAM & CREW */}
@@ -49,11 +49,8 @@ export default function HomePage() {
       {/* SECTION L: REVIEWS */}
       <ReviewsSection />
 
-      {/* SECTION M & N: TRAVEL GUIDE & FAQ (INTEGRATED) */}
+      {/* SECTION M & N: TRAVEL GUIDE & FAQ */}
       <GuideAndFAQ />
-
-      {/* SECTION O: PRE-FOOTER CTA */}
-      <VerifyCTA />
 
       {/* SECTION P: FOOTER */}
       <Footer />

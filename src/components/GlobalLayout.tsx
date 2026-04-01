@@ -1,13 +1,13 @@
 import React, { useEffect } from 'react';
 import { TopNav } from './TopNav';
 import { BottomNav } from './home/BottomNav';
-import { BookingRail } from './BookingRail';
-import { AuthorityStickyBar } from './AuthorityStickyBar';
 import { useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'motion/react';
+import { Helmet } from 'react-helmet-async';
 
 export const GlobalLayout = ({ children }: { children: React.ReactNode }) => {
   const location = useLocation();
+  const canonicalUrl = `https://javavolcano-touroperator.com${location.pathname}`;
   
   // Scroll to top on route change
   useEffect(() => {
@@ -16,8 +16,10 @@ export const GlobalLayout = ({ children }: { children: React.ReactNode }) => {
 
   return (
     <div className="min-h-screen flex flex-col bg-audit-white">
+      <Helmet>
+        <link rel="canonical" href={canonicalUrl} />
+      </Helmet>
       <TopNav />
-      <AuthorityStickyBar />
       <AnimatePresence mode="wait">
         <motion.main 
           key={location.pathname}
@@ -25,13 +27,12 @@ export const GlobalLayout = ({ children }: { children: React.ReactNode }) => {
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -10 }}
           transition={{ duration: 0.3 }}
-          className="flex-1 pt-[104px] pb-24 md:pb-24"
+          className="flex-1 pt-[60px] pb-24 md:pb-24"
         >
           {children}
         </motion.main>
       </AnimatePresence>
       <BottomNav />
-      <BookingRail />
     </div>
   );
 };

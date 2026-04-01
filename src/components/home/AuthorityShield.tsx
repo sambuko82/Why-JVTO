@@ -12,28 +12,30 @@ export const AuthorityShield = () => {
   const activeArticle = SSOT.press[activeIndex];
 
   return (
-    <section className="py-24 md:py-32 px-4 md:px-6 max-w-7xl mx-auto">
-      <div className="bg-authority-navy rounded-[2.5rem] p-8 md:p-16 lg:p-20 text-white relative overflow-hidden shadow-2xl">
-        <div className="relative z-10">
-          {/* Header Narrative */}
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="mb-16 md:mb-24 max-w-4xl"
-          >
-            <div className="badge-eyebrow badge-eyebrow-white mb-8">
-              <Newspaper className="w-3 h-3" /> Police Leadership & Media Verification
-            </div>
-            <h2 className="text-4xl md:text-5xl lg:text-7xl font-black mb-6 leading-[0.9] uppercase tracking-tighter">
-              Duty First, <br className="hidden md:block" />
-              <span className="text-safety-orange">Business Second.</span>
-            </h2>
-            <p className="text-white/70 text-lg md:text-2xl leading-relaxed font-light max-w-3xl">
-              Our dedication to safety is not just a company SOP. Our founder, {SSOT.organization.founder.name}, is an active Tourist Police officer covered by national media for guarding visitor safety directly in the extreme conditions of Ijen Crater.
-            </p>
-          </motion.div>
+    <section className="section-spacing">
+      <div className="container-authority">
+        <div className="bg-authority-navy rounded-[2.5rem] p-8 md:p-16 lg:p-20 text-white relative overflow-hidden shadow-2xl">
+          <div className="relative z-10">
+            {/* Header Narrative */}
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="mb-16 md:mb-24 max-w-4xl"
+            >
+              <div className="badge-eyebrow badge-eyebrow-white mb-8">
+                <Newspaper className="w-3 h-3" /> Police Leadership & Media Verification
+              </div>
+              <h2 className="heading-section text-white mb-6">
+                Duty First, <br className="hidden md:block" />
+                <span className="text-safety-orange">Business Second.</span>
+              </h2>
+              <p className="text-white/70 text-lg md:text-2xl leading-relaxed font-light max-w-3xl">
+                Our dedication to safety is not just a company SOP. Our founder, {SSOT.organization.founder.name}, is an active Tourist Police officer covered by national media for guarding visitor safety directly in the extreme conditions of Ijen Crater.
+              </p>
+            </motion.div>
+          </div>
 
           <div className="grid lg:grid-cols-12 gap-12 lg:gap-24 items-start">
             
