@@ -52,7 +52,7 @@ export const AuthorityDock = () => {
                   initial={{ height: 0, opacity: 0 }}
                   animate={{ height: 'auto', opacity: 1 }}
                   exit={{ height: 0, opacity: 0 }}
-                  className="absolute bottom-full left-0 right-0 mb-4 bg-authority-navy/95 backdrop-blur-xl border border-white/10 rounded-[2rem] overflow-hidden shadow-2xl"
+                  className="absolute bottom-full left-0 right-0 mb-4 bg-authority-navy/95 backdrop-blur-xl border border-white/10 rounded-md overflow-hidden shadow-hover"
                 >
                   <div className="p-8 grid grid-cols-2 md:grid-cols-4 gap-8">
                     {statusItems.map((item, idx) => (
@@ -76,7 +76,7 @@ export const AuthorityDock = () => {
             </AnimatePresence>
 
             {/* Main Dock Bar */}
-            <div className="bg-authority-navy/90 backdrop-blur-xl border border-white/10 rounded-full p-2 shadow-2xl flex items-center justify-between gap-4">
+            <div className="bg-authority-navy/90 backdrop-blur-xl border border-white/10 rounded-full p-2 shadow-hover flex items-center justify-between gap-4">
               {/* Status Toggle */}
               <button
                 onClick={() => setIsExpanded(!isExpanded)}
@@ -114,7 +114,7 @@ export const AuthorityDock = () => {
                 </a>
                 <button 
                   onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-                  className="bg-safety-orange hover:bg-safety-orange/90 text-white px-6 py-3 rounded-full font-black uppercase tracking-widest text-[10px] transition-all shadow-lg shadow-safety-orange/20 flex items-center gap-2"
+                  className="bg-safety-orange hover:bg-safety-orange/90 text-white px-6 py-3 rounded-full font-black uppercase tracking-widest text-[10px] transition-all shadow-hover shadow-safety-orange/20 flex items-center gap-2"
                 >
                   <Lock className="w-3 h-3" /> Secure Booking
                 </button>

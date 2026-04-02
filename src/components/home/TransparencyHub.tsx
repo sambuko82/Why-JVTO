@@ -95,14 +95,14 @@ export const TransparencyHub = () => {
           </div>
           
           {/* Tab Navigation */}
-          <div className="flex flex-wrap gap-2 bg-white/5 p-1.5 rounded-2xl border border-white/10">
+          <div className="flex flex-wrap gap-2 bg-white/5 p-1.5 rounded-md border border-white/10">
             {tabs.map((tab) => (
               <button
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id as TabType)}
-                className={`flex items-center gap-2 px-6 py-3 rounded-xl font-black uppercase tracking-wider text-xs transition-all ${
+                className={`flex items-center gap-2 px-6 py-3 rounded-md font-black uppercase tracking-wider text-xs transition-all ${
                   activeTab === tab.id 
-                    ? 'bg-safety-orange text-white shadow-lg shadow-safety-orange/20' 
+                    ? 'bg-safety-orange text-white shadow-card shadow-safety-orange/20' 
                     : 'text-slate-400 hover:text-white hover:bg-white/5'
                 }`}
               >
@@ -141,7 +141,7 @@ export const TransparencyHub = () => {
                       <p className="text-slate-400 leading-relaxed mb-6 font-light">{artifact.desc}</p>
                       
                       {artifact.meta && (
-                        <div className="bg-black/20 p-4 rounded-xl border border-white/5 mb-6">
+                        <div className="bg-black/20 p-4 rounded-md border border-white/5 mb-6">
                           <div className="grid grid-cols-2 gap-4">
                             {Object.entries(artifact.meta).map(([key, value]) => (
                               <div key={key}>
@@ -162,7 +162,7 @@ export const TransparencyHub = () => {
                 </div>
                 <div className="grid grid-cols-1 gap-6">
                   {artifacts.map((artifact, i) => (
-                    <div key={i} className="relative rounded-3xl overflow-hidden border border-white/10 group aspect-[16/9]">
+                    <div key={i} className="relative rounded-md overflow-hidden border border-white/10 group aspect-[16/9]">
                       <img 
                         src={artifact.images[0]} 
                         className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
@@ -194,9 +194,9 @@ export const TransparencyHub = () => {
                     <button
                       key={idx}
                       onClick={() => setActivePressIndex(idx)}
-                      className={`w-full text-left p-5 rounded-2xl border transition-all flex items-center justify-between group ${
+                      className={`w-full text-left p-5 rounded-md border transition-all flex items-center justify-between group ${
                         activePressIndex === idx 
-                          ? 'bg-white/10 border-safety-orange/50 shadow-lg' 
+                          ? 'bg-white/10 border-safety-orange/50 shadow-card' 
                           : 'bg-white/5 border-white/10 hover:bg-white/10'
                       }`}
                     >
@@ -213,7 +213,7 @@ export const TransparencyHub = () => {
                   ))}
                 </div>
                 <div className="lg:w-2/3">
-                  <div className="bg-white/5 p-8 rounded-3xl border border-white/10 mb-8 relative">
+                  <div className="bg-white/5 p-8 rounded-md border border-white/10 mb-8 relative">
                     <Quote className="absolute top-6 right-6 w-12 h-12 text-white/5" />
                     <p className="text-slate-200 italic text-xl leading-relaxed mb-8 relative z-10">
                       "{activeArticle.quote}"
@@ -230,7 +230,7 @@ export const TransparencyHub = () => {
                     href={activeArticle.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="block relative bg-white rounded-3xl overflow-hidden group shadow-2xl"
+                    className="block relative bg-white rounded-md overflow-hidden group shadow-hover"
                   >
                     <div className="bg-slate-100 px-6 py-4 flex items-center justify-between border-b border-slate-200">
                       <div className="flex gap-2">
@@ -266,7 +266,7 @@ export const TransparencyHub = () => {
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
                   {forensicDocs.map((doc, i) => (
                     <div key={i} className="bento-card bg-white/5 border-white/10 p-6 group hover:bg-white/10 transition-all">
-                      <div className="relative h-48 rounded-2xl mb-6 overflow-hidden border border-white/10">
+                      <div className="relative h-48 rounded-md mb-6 overflow-hidden border border-white/10">
                         <img 
                           src={doc.img} 
                           className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 opacity-60 group-hover:opacity-100"
@@ -281,14 +281,14 @@ export const TransparencyHub = () => {
                         </div>
                       </div>
                       <h4 className="font-black text-white text-lg uppercase mb-4">{doc.title}</h4>
-                      <div className="bg-black/20 p-3 rounded-xl border border-white/5 flex items-center gap-3">
+                      <div className="bg-black/20 p-3 rounded-md border border-white/5 flex items-center gap-3">
                         <Fingerprint className="w-4 h-4 text-slate-500" />
                         <span className="font-mono text-[10px] text-slate-500 uppercase tracking-widest truncate">SHA-256: {doc.hash}</span>
                       </div>
                     </div>
                   ))}
                 </div>
-                <div className="flex flex-col md:flex-row items-center justify-between p-8 bg-white/5 rounded-3xl border border-white/10 gap-8">
+                <div className="flex flex-col md:flex-row items-center justify-between p-8 bg-white/5 rounded-md border border-white/10 gap-8">
                   <div className="flex flex-col gap-2">
                     <div className="flex items-center gap-3">
                       <div className="status-live"></div>
@@ -298,7 +298,7 @@ export const TransparencyHub = () => {
                   </div>
                   <button 
                     onClick={() => navigate('/verify-jvto')}
-                    className="w-full md:w-auto group bg-white text-authority-navy px-10 py-4 rounded-xl font-black uppercase tracking-wider transition-all hover:bg-safety-orange hover:text-white flex items-center justify-center gap-3 shadow-xl"
+                    className="w-full md:w-auto group bg-white text-authority-navy px-10 py-4 rounded-md font-black uppercase tracking-wider transition-all hover:bg-safety-orange hover:text-white flex items-center justify-center gap-3 shadow-hover"
                   >
                     <Lock className="w-5 h-5"/> Enter Full Proof Library <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                   </button>

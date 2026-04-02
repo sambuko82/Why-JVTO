@@ -76,7 +76,7 @@ export const TourBrowser = () => {
           </h2>
 
           {/* Filters */}
-          <div className="flex flex-wrap gap-8 md:gap-12 p-8 md:p-10 bg-slate-50 rounded-[2.5rem] border border-slate-100">
+          <div className="flex flex-wrap gap-8 md:gap-12 p-8 md:p-10 bg-slate-50 rounded-md border border-slate-100">
             <div className="space-y-4">
               <div className="flex items-center gap-2 text-authority-navy font-mono text-[10px] font-black uppercase tracking-[0.2em]">
                 <Filter className="w-3 h-3 text-safety-orange" /> Duration
@@ -86,7 +86,7 @@ export const TourBrowser = () => {
                   <button 
                     key={opt}
                     onClick={() => setDurationFilter(opt)}
-                    className={`px-5 py-2.5 rounded-xl font-mono text-[10px] font-black uppercase tracking-widest transition-all border ${durationFilter === opt ? 'bg-authority-navy text-white border-authority-navy shadow-lg shadow-authority-navy/10' : 'bg-white text-slate-400 border-slate-100 hover:border-slate-200'}`}
+                    className={`px-5 py-2.5 rounded-sm font-mono text-[10px] font-black uppercase tracking-widest transition-all border ${durationFilter === opt ? 'bg-authority-navy text-white border-authority-navy shadow-card' : 'bg-white text-slate-400 border-slate-100 hover:border-slate-200'}`}
                   >
                     {opt === 'all' ? 'All' : opt + ' Days'}
                   </button>
@@ -109,7 +109,7 @@ export const TourBrowser = () => {
                   <button 
                     key={opt.id}
                     onClick={() => setPriceFilter(opt.id)}
-                    className={`px-5 py-2.5 rounded-xl font-mono text-[10px] font-black uppercase tracking-widest transition-all border ${priceFilter === opt.id ? 'bg-authority-navy text-white border-authority-navy shadow-lg shadow-authority-navy/10' : 'bg-white text-slate-400 border-slate-100 hover:border-slate-200'}`}
+                    className={`px-5 py-2.5 rounded-sm font-mono text-[10px] font-black uppercase tracking-widest transition-all border ${priceFilter === opt.id ? 'bg-authority-navy text-white border-authority-navy shadow-card' : 'bg-white text-slate-400 border-slate-100 hover:border-slate-200'}`}
                   >
                     {opt.label}
                   </button>
@@ -140,7 +140,7 @@ export const TourBrowser = () => {
                 <div className="flex overflow-x-auto gap-6 pb-12 pr-4 md:pr-8 snap-x hide-scrollbar">
                   {/* Info Card (First item in scroll) */}
                   <div className="shrink-0 w-[85vw] sm:w-[340px] md:w-[400px] snap-start">
-                    <div className="p-8 md:p-12 rounded-[2.5rem] bg-slate-50 border border-slate-100 h-full flex flex-col justify-between aspect-[4/5] shadow-sm">
+                    <div className="p-8 md:p-12 rounded-md bg-slate-50 border border-slate-100 h-full flex flex-col justify-between aspect-[4/5] shadow-card">
                       <div>
                         <h3 className="text-2xl md:text-4xl font-black text-authority-navy uppercase tracking-tight mb-4 md:mb-6 leading-none">
                           {departure.shortName} <br /> Logistics
@@ -170,7 +170,7 @@ export const TourBrowser = () => {
                   {departure.tours.map(tour => (
                     <div 
                       key={tour.route} 
-                      className="relative shrink-0 w-[85vw] sm:w-[340px] md:w-[400px] aspect-[4/5] snap-start group cursor-pointer rounded-[2.5rem] overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_20px_50px_rgb(0,0,0,0.08)] transition-all duration-500"
+                      className="relative shrink-0 w-[85vw] sm:w-[340px] md:w-[400px] aspect-[4/5] snap-start group cursor-pointer rounded-md overflow-hidden shadow-card hover:shadow-hover transition-all duration-500"
                       onClick={() => navigate(tour.route)} 
                     >
                       <img 
@@ -183,7 +183,7 @@ export const TourBrowser = () => {
                       
                       {/* Top Badge */}
                       {tour.crewName && (
-                        <div className="absolute top-6 left-6 md:top-8 md:left-8 bg-safety-orange text-white text-[9px] md:text-[10px] px-3 py-1.5 md:px-4 md:py-2 rounded-xl font-mono font-black uppercase tracking-[0.2em] z-10 shadow-lg shadow-safety-orange/20">
+                        <div className="absolute top-6 left-6 md:top-8 md:left-8 bg-safety-orange text-white text-[9px] md:text-[10px] px-3 py-1.5 md:px-4 md:py-2 rounded-sm font-mono font-black uppercase tracking-[0.2em] z-10 shadow-hover shadow-safety-orange/20">
                           {tour.crewName}
                         </div>
                       )}
@@ -193,7 +193,7 @@ export const TourBrowser = () => {
                           {tour.name}
                         </h3>
                         
-                        <div className="flex items-center justify-between mb-4 md:mb-6 relative z-10 bg-white/10 backdrop-blur-xl p-4 md:p-5 rounded-2xl border border-white/20">
+                        <div className="flex items-center justify-between mb-4 md:mb-6 relative z-10 bg-white/10 backdrop-blur-xl p-4 md:p-5 rounded-sm border border-white/20">
                           <div className="flex flex-col">
                             <span className="text-white/60 text-[9px] md:text-[10px] font-mono font-black uppercase tracking-[0.2em] mb-1 md:mb-2">Duration</span>
                             <span className="text-white font-black text-xs md:text-sm uppercase">{tour.name.split(' ')[0]}</span>
@@ -228,7 +228,7 @@ export const TourBrowser = () => {
           ))
         ) : (
           <div className="container-authority py-24 text-center">
-            <div className="w-20 h-20 bg-slate-50 rounded-3xl flex items-center justify-center text-slate-200 mx-auto mb-8 shadow-inner">
+            <div className="w-20 h-20 bg-slate-50 rounded-md flex items-center justify-center text-slate-200 mx-auto mb-8 shadow-card">
               <Filter className="w-10 h-10" />
             </div>
             <h3 className="text-2xl md:text-3xl font-black text-authority-navy uppercase mb-4 tracking-tight">No Tours Found</h3>
@@ -237,7 +237,7 @@ export const TourBrowser = () => {
             </p>
             <button 
               onClick={() => { setDurationFilter('all'); setPriceFilter('all'); }}
-              className="px-8 py-4 bg-authority-navy text-white rounded-2xl font-mono text-[11px] font-black uppercase tracking-[0.2em] hover:bg-slate-800 transition-all"
+              className="px-8 py-4 bg-authority-navy text-white rounded-md font-mono text-[11px] font-black uppercase tracking-[0.2em] hover:bg-slate-800 transition-all"
             >
               Reset All Filters
             </button>
@@ -249,7 +249,7 @@ export const TourBrowser = () => {
       <div className="max-w-7xl mx-auto px-4 md:px-6 mt-24 md:mt-32 text-center">
         <button 
           onClick={() => navigate('/tours')}
-          className="w-full sm:w-auto bg-authority-navy hover:bg-slate-800 text-white px-12 py-6 rounded-2xl font-black uppercase tracking-[0.2em] text-sm transition-all shadow-2xl shadow-authority-navy/20 flex items-center justify-center gap-4 mx-auto group"
+          className="w-full sm:w-auto bg-authority-navy hover:bg-slate-800 text-white px-12 py-6 rounded-md font-black uppercase tracking-[0.2em] text-sm transition-all shadow-hover shadow-authority-navy/20 flex items-center justify-center gap-4 mx-auto group"
         >
           View All Private Tours <ChevronRight className="w-6 h-6 group-hover:translate-x-2 transition-transform" />
         </button>

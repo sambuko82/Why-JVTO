@@ -9,7 +9,7 @@ export const VerifyCTA = () => {
   return (
     <section className="py-16 md:py-24 bg-audit-white relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 md:px-6">
-        <div className="relative p-8 md:p-20 rounded-3xl md:rounded-[3rem] bg-authority-navy text-white overflow-hidden">
+        <div className="relative p-8 md:p-20 rounded-md bg-authority-navy text-white overflow-hidden shadow-hover">
           {/* Grid Pattern Overlay */}
           <div className="absolute inset-0 grid-pattern z-0 opacity-10"></div>
           
@@ -28,13 +28,13 @@ export const VerifyCTA = () => {
             <div className="flex flex-col sm:flex-row items-center gap-4">
               <button 
                 onClick={() => navigate('/verify-jvto')}
-                className="w-full sm:w-auto bg-safety-orange hover:bg-safety-orange/90 text-white px-8 md:px-10 py-4 md:py-5 rounded-xl font-black uppercase tracking-wider text-xs md:text-sm transition-all shadow-xl shadow-safety-orange/20 flex items-center justify-center gap-3 group"
+                className="w-full sm:w-auto bg-safety-orange hover:bg-safety-orange/90 text-white px-8 md:px-10 py-4 md:py-5 rounded-md font-black uppercase tracking-wider text-xs md:text-sm transition-all shadow-hover shadow-safety-orange/20 flex items-center justify-center gap-3 group"
               >
                 <Search className="w-5 h-5 group-hover:scale-110 transition-transform" /> Start Forensic Audit
               </button>
               <button 
                 onClick={() => navigate('/why-jvto/the-jvto-difference')}
-                className="w-full sm:w-auto bg-white/5 border border-white/10 hover:bg-white/10 text-white px-8 md:px-10 py-4 md:py-5 rounded-xl font-black uppercase tracking-wider text-xs md:text-sm transition-all flex items-center justify-center gap-3"
+                className="w-full sm:w-auto bg-white/5 border border-white/10 hover:bg-white/10 text-white px-8 md:px-10 py-4 md:py-5 rounded-md font-black uppercase tracking-wider text-xs md:text-sm transition-all flex items-center justify-center gap-3"
               >
                 The JVTO Difference <ChevronRight className="w-5 h-5" />
               </button>

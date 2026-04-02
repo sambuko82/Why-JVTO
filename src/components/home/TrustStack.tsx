@@ -69,13 +69,13 @@ export const TrustStack = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
               onClick={() => navigate(item.link)}
-              className={`p-8 md:p-10 rounded-3xl border border-slate-200 shadow-sm hover:shadow-xl hover:border-safety-orange/30 transition-all group cursor-pointer flex flex-col justify-between ${item.size} ${item.bg} relative overflow-hidden`}
+              className={`p-8 md:p-10 rounded-md border border-slate-200 shadow-card hover:shadow-hover hover:border-safety-orange/30 transition-all group cursor-pointer flex flex-col justify-between ${item.size} ${item.bg} relative overflow-hidden`}
             >
               <div className="absolute top-0 right-0 w-32 h-32 bg-slate-50 rounded-bl-full -z-10 group-hover:bg-safety-orange/5 transition-colors"></div>
               
               <div>
                 <div className="flex justify-between items-start mb-10">
-                  <div className="p-4 rounded-2xl bg-slate-50 group-hover:bg-white transition-colors border border-slate-100 group-hover:border-safety-orange/20">
+                  <div className="p-4 rounded-md bg-slate-50 group-hover:bg-white transition-colors border border-slate-100 group-hover:border-safety-orange/20">
                     <IconComponent className={`w-8 h-8 md:w-10 md:h-10 ${item.iconColor}`} />
                   </div>
                   <div className="flex flex-col items-end">

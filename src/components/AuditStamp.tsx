@@ -18,7 +18,7 @@ export const AuditStamp = ({
 }: AuditStampProps) => {
   return (
     <div className={`mt-32 pt-12 border-t border-slate-200 flex flex-col items-center ${className}`}>
-      <div className="p-12 bg-white border-4 border-safety-orange rounded-[2.5rem] rotate-2 shadow-2xl relative overflow-hidden group hover:rotate-0 transition-transform">
+      <div className="p-12 bg-white border-4 border-safety-orange rounded-md rotate-2 shadow-hover relative overflow-hidden group hover:rotate-0 transition-transform">
         <div className="scanline"></div>
         <div className="flex flex-col items-center">
           <ShieldCheck className="w-20 h-20 text-safety-orange mb-8" />

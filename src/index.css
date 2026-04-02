@@ -19,6 +19,11 @@
   --color-danger-red: #EF4444;
   --color-success-green: #22C55E;
   --color-warning-yellow: #F59E0B;
+
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --shadow-card: 0 4px 12px rgba(0,0,0,0.08);
+  --shadow-hover: 0 8px 24px rgba(0,0,0,0.12);
 }
 
 @layer base {
@@ -43,7 +48,7 @@
 
 @layer components {
   .bento-card {
-    @apply bg-white border border-slate-200 rounded-[2.5rem] shadow-sm hover:shadow-lg hover:-translate-y-1 hover:border-safety-orange/30 transition-all duration-300 overflow-hidden;
+    @apply bg-white border border-slate-200 rounded-(--radius-md) shadow-(--shadow-card) hover:shadow-(--shadow-hover) hover:-translate-y-1 hover:border-safety-orange/30 transition-all duration-300 overflow-hidden;
   }
   
   .badge-eyebrow {

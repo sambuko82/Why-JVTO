@@ -27,7 +27,7 @@ export const CrewProfileModal: React.FC<CrewProfileModalProps> = ({ crew, isOpen
             initial={{ opacity: 0, scale: 0.9, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.9, y: 20 }}
-            className="relative w-full max-w-5xl bg-[#151619] border border-white/10 rounded-2xl overflow-hidden shadow-2xl flex flex-col md:flex-row"
+            className="relative w-full max-w-5xl bg-[#151619] border border-white/10 rounded-md overflow-hidden shadow-hover flex flex-col md:flex-row"
           >
             {/* Close Button */}
             <button 
@@ -84,9 +84,9 @@ export const CrewProfileModal: React.FC<CrewProfileModalProps> = ({ crew, isOpen
 
                   <section>
                     <h3 className="text-[10px] uppercase tracking-[0.2em] text-white/40 font-bold mb-4">Official Credential</h3>
-                    <div className="p-4 bg-white/5 border border-white/10 rounded-xl">
+                    <div className="p-4 bg-white/5 border border-white/10 rounded-md">
                       <div className="flex items-start gap-4">
-                        <div className="p-2 bg-white/10 rounded-lg">
+                        <div className="p-2 bg-white/10 rounded-md">
                           <ShieldCheck className="w-6 h-6 text-white" />
                         </div>
                         <div>
@@ -107,7 +107,7 @@ export const CrewProfileModal: React.FC<CrewProfileModalProps> = ({ crew, isOpen
                   <h3 className="text-[10px] uppercase tracking-[0.2em] text-white/40 font-bold mb-4">Performance Metrics</h3>
                   <div className="grid grid-cols-1 gap-4">
                     {crew.profile.safetyMetrics.map((metric: any, idx: number) => (
-                      <div key={idx} className="p-6 bg-white/5 border border-white/10 rounded-xl">
+                      <div key={idx} className="p-6 bg-white/5 border border-white/10 rounded-md">
                         <div className="flex justify-between items-end mb-4">
                           <div>
                             <p className="text-white/60 text-xs uppercase tracking-wider mb-1">{metric.label}</p>
@@ -138,11 +138,11 @@ export const CrewProfileModal: React.FC<CrewProfileModalProps> = ({ crew, isOpen
                 {/* Contact CTA */}
                 <section className="pt-6 border-t border-white/10">
                   <div className="flex flex-wrap gap-4">
-                    <button className="flex-1 bg-white text-black px-6 py-4 rounded-xl font-bold text-sm uppercase tracking-wider hover:bg-white/90 transition-colors flex items-center justify-center gap-2">
+                    <button className="flex-1 bg-white text-black px-6 py-4 rounded-md font-bold text-sm uppercase tracking-wider hover:bg-white/90 transition-colors flex items-center justify-center gap-2">
                       <Mail className="w-4 h-4" />
                       Request for My Tour
                     </button>
-                    <button className="px-6 py-4 border border-white/20 rounded-xl text-white hover:bg-white/5 transition-colors flex items-center justify-center gap-2">
+                    <button className="px-6 py-4 border border-white/20 rounded-md text-white hover:bg-white/5 transition-colors flex items-center justify-center gap-2">
                       <Phone className="w-4 h-4" />
                     </button>
                   </div>

@@ -46,7 +46,7 @@ export const CrewSection: React.FC = () => {
               viewport={{ once: true }}
               transition={{ delay: idx * 0.1 }}
               onClick={() => handleCrewClick(member)}
-              className="relative aspect-[4/5] rounded-[2.5rem] overflow-hidden group cursor-pointer shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_20px_50px_rgb(0,0,0,0.08)] transition-all duration-500"
+              className="relative aspect-[4/5] rounded-md overflow-hidden group cursor-pointer shadow-card hover:shadow-hover transition-all duration-500"
             >
               {/* Full Profile Image */}
               <img 
@@ -99,7 +99,7 @@ export const CrewSection: React.FC = () => {
         >
           <button 
             onClick={() => navigate('/team')}
-            className="w-full sm:w-auto bg-safety-orange hover:bg-orange-600 text-white px-12 py-6 rounded-2xl font-black uppercase tracking-[0.2em] text-sm transition-all shadow-2xl shadow-safety-orange/20 flex items-center justify-center gap-4 mx-auto group"
+            className="w-full sm:w-auto bg-safety-orange hover:bg-orange-600 text-white px-12 py-6 rounded-md font-black uppercase tracking-[0.2em] text-sm transition-all shadow-hover shadow-safety-orange/20 flex items-center justify-center gap-4 mx-auto group"
           >
             Explore Full Team Registry <ChevronRight className="w-6 h-6 group-hover:translate-x-2 transition-transform" />
           </button>

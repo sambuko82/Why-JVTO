@@ -59,7 +59,7 @@ export const HeroSection = () => {
             <button 
               onClick={startAudit}
               disabled={isAuditing}
-              className={`font-mono text-[10px] md:text-[11px] px-3 md:px-4 py-1.5 rounded-lg border transition-all uppercase tracking-widest flex items-center gap-2 ${isAuditing ? 'bg-safety-orange/20 border-safety-orange/50 text-safety-orange' : 'bg-white/10 border-white/20 hover:bg-white/20 text-white'}`}
+              className={`font-mono text-[10px] md:text-[11px] px-3 md:px-4 py-1.5 rounded-sm border transition-all uppercase tracking-widest flex items-center gap-2 ${isAuditing ? 'bg-safety-orange/20 border-safety-orange/50 text-safety-orange' : 'bg-white/10 border-white/20 hover:bg-white/20 text-white'}`}
             >
               {isAuditing ? (
                 <>
@@ -99,7 +99,7 @@ export const HeroSection = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="badge-eyebrow bg-safety-orange text-white mb-8 shadow-lg shadow-safety-orange/20"
+            className="badge-eyebrow bg-safety-orange text-white mb-8 shadow-card shadow-safety-orange/20"
           >
             <ShieldCheck className="w-3 h-3 text-white" /> Verified Police-Led Operator
           </motion.div>
@@ -130,14 +130,14 @@ export const HeroSection = () => {
           >
             <button 
               onClick={() => navigate('/tours')}
-              className="w-full sm:w-auto bg-safety-orange hover:bg-orange-600 text-white px-12 py-5 rounded-xl font-black uppercase tracking-[0.15em] transition-all shadow-2xl shadow-safety-orange/40 flex items-center justify-center gap-4 group text-sm md:text-lg"
+              className="w-full sm:w-auto bg-safety-orange hover:bg-orange-600 text-white px-12 py-5 rounded-md font-black uppercase tracking-[0.15em] transition-all shadow-hover shadow-safety-orange/40 flex items-center justify-center gap-4 group text-sm md:text-lg"
             >
               <Search className="w-5 h-5 md:w-6 md:h-6 group-hover:scale-110 transition-transform" /> 
               Browse Private Tours
             </button>
             <button 
               onClick={() => navigate('/verify-jvto')}
-              className="w-full sm:w-auto bg-white/5 backdrop-blur-xl border border-white/20 hover:bg-white/10 text-white px-12 py-5 rounded-xl font-black uppercase tracking-[0.15em] transition-all flex items-center justify-center gap-4 text-sm md:text-lg"
+              className="w-full sm:w-auto bg-white/5 backdrop-blur-xl border border-white/20 hover:bg-white/10 text-white px-12 py-5 rounded-md font-black uppercase tracking-[0.15em] transition-all flex items-center justify-center gap-4 text-sm md:text-lg"
             >
               <Lock className="w-5 h-5 md:w-6 md:h-6 text-safety-orange" /> 
               Verify Credentials

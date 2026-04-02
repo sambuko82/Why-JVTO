@@ -74,7 +74,7 @@ export default function TeamRegistryPage() {
             <input 
               type="text"
               placeholder="SEARCH PERSONNEL..."
-              className="w-full bg-white border-2 border-slate-200 rounded-xl md:rounded-2xl py-4 md:py-5 pl-12 md:pl-16 pr-4 md:pr-6 font-mono text-[10px] md:text-xs uppercase tracking-widest focus:border-safety-orange focus:ring-0 transition-all outline-none"
+              className="w-full bg-white border-2 border-slate-200 rounded-md md:rounded-md py-4 md:py-5 pl-12 md:pl-16 pr-4 md:pr-6 font-mono text-[10px] md:text-xs uppercase tracking-widest focus:border-safety-orange focus:ring-0 transition-all outline-none"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
             />

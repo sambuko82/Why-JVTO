@@ -43,7 +43,7 @@ export const HealthFlow = () => {
             <div className="flex flex-col gap-8 mb-12">
               {steps.map((item, i) => (
                 <div key={i} className="flex items-start gap-6 group">
-                  <div className="p-4 rounded-2xl bg-slate-50 text-safety-orange group-hover:bg-safety-orange group-hover:text-white transition-colors">
+                  <div className="p-4 rounded-md bg-slate-50 text-safety-orange group-hover:bg-safety-orange group-hover:text-white transition-colors">
                     <item.icon className="w-6 h-6" />
                   </div>
                   <div>
@@ -59,7 +59,7 @@ export const HealthFlow = () => {
 
             <button 
               onClick={() => navigate('/travel-guide/ijen-health-screening')}
-              className="group inline-flex items-center justify-center w-full sm:w-auto gap-4 bg-authority-navy text-white px-10 py-5 rounded-2xl font-black uppercase tracking-[0.2em] text-sm transition-all hover:bg-slate-800 shadow-xl shadow-authority-navy/20"
+              className="group inline-flex items-center justify-center w-full sm:w-auto gap-4 bg-authority-navy text-white px-10 py-5 rounded-md font-black uppercase tracking-[0.2em] text-sm transition-all hover:bg-slate-800 shadow-hover shadow-authority-navy/20"
             >
               View Full Medical Protocol <ChevronRight className="w-5 h-5 group-hover:translate-x-2 transition-transform" />
             </button>
@@ -72,7 +72,7 @@ export const HealthFlow = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="relative rounded-[2.5rem] overflow-hidden bg-slate-100 aspect-[4/5] shadow-2xl mb-8"
+              className="relative rounded-md overflow-hidden bg-slate-100 aspect-[4/5] shadow-hover mb-8"
             >
               {mainImage && (
                 <img 
@@ -101,7 +101,7 @@ export const HealthFlow = () => {
               transition={{ duration: 0.6, delay: 0.4 }}
               className="grid grid-cols-2 gap-4"
             >
-              <div className="bg-slate-50 p-6 rounded-3xl border border-slate-100">
+              <div className="bg-slate-50 p-6 rounded-md border border-slate-100 shadow-card">
                 <div className="flex items-center gap-2 mb-2">
                   <FileText className="w-4 h-4 text-slate-400" />
                   <span className="font-mono text-[10px] text-slate-500 uppercase tracking-widest">Requirement</span>
@@ -109,7 +109,7 @@ export const HealthFlow = () => {
                 <p className="font-black text-authority-navy text-lg md:text-xl uppercase tracking-tight leading-none">Surat Sehat</p>
                 <p className="text-xs text-slate-500 mt-2">Official Health Certificate</p>
               </div>
-              <div className="bg-authority-navy p-6 rounded-3xl text-white">
+              <div className="bg-authority-navy p-6 rounded-md text-white shadow-card">
                 <div className="flex items-center gap-2 mb-2">
                   <Activity className="w-4 h-4 text-safety-orange" />
                   <span className="font-mono text-[10px] text-slate-400 uppercase tracking-widest">Clearance</span>

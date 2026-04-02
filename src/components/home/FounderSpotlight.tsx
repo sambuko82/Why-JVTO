@@ -26,7 +26,7 @@ export const FounderSpotlight = () => {
               className="relative"
             >
               {/* Main Portrait */}
-              <div className="relative rounded-2xl overflow-hidden shadow-2xl border-8 border-white group">
+              <div className="relative rounded-md overflow-hidden shadow-hover border-8 border-white group">
                 <img 
                   src={portrait?.url} 
                   alt={portrait?.alt}
@@ -36,9 +36,9 @@ export const FounderSpotlight = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-authority-navy/80 via-transparent to-transparent opacity-60" />
                 
                 {/* Floating Badge */}
-                <div className="absolute bottom-6 left-6 right-6 p-4 bg-white/10 backdrop-blur-md border border-white/20 rounded-xl">
+                <div className="absolute bottom-6 left-6 right-6 p-4 bg-white/10 backdrop-blur-md border border-white/20 rounded-md">
                   <div className="flex items-center gap-3">
-                    <div className="p-2 bg-safety-orange rounded-lg">
+                    <div className="p-2 bg-safety-orange rounded-md">
                       <ShieldCheck className="w-5 h-5 text-white" />
                     </div>
                     <div>
@@ -60,7 +60,7 @@ export const FounderSpotlight = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.4 }}
-              className="absolute -bottom-10 -right-6 md:right-0 bg-authority-navy text-white p-6 rounded-2xl shadow-2xl max-w-[280px] hidden md:block"
+              className="absolute -bottom-10 -right-6 md:right-0 bg-authority-navy text-white p-6 rounded-md shadow-hover max-w-[280px] hidden md:block"
             >
               <div className="flex items-center gap-3 mb-4">
                 <BadgeCheck className="w-6 h-6 text-safety-orange" />
@@ -106,7 +106,7 @@ export const FounderSpotlight = () => {
 
               {/* Service Record Grid */}
               <div className="grid sm:grid-cols-2 gap-4 mb-10">
-                <div className="p-4 bg-slate-50 rounded-xl border border-slate-100">
+                <div className="p-4 bg-slate-50 rounded-md border border-slate-100">
                   <div className="flex items-center gap-3 mb-2">
                     <Award className="w-4 h-4 text-safety-orange" />
                     <span className="font-bold text-sm text-authority-navy uppercase tracking-tight">Police Liaison</span>
@@ -115,7 +115,7 @@ export const FounderSpotlight = () => {
                     Direct coordination with park rangers and local authorities for emergency response.
                   </p>
                 </div>
-                <div className="p-4 bg-slate-50 rounded-xl border border-slate-100">
+                <div className="p-4 bg-slate-50 rounded-md border border-slate-100">
                   <div className="flex items-center gap-3 mb-2">
                     <FileText className="w-4 h-4 text-safety-orange" />
                     <span className="font-bold text-sm text-authority-navy uppercase tracking-tight">Legal Compliance</span>
@@ -130,7 +130,7 @@ export const FounderSpotlight = () => {
               <div className="flex flex-col sm:flex-row items-center gap-6">
                 <button 
                   onClick={() => window.location.href = '/verify-jvto/police-safety'}
-                  className="w-full sm:w-auto bg-authority-navy text-white px-10 py-5 rounded-xl font-black uppercase tracking-widest text-sm hover:bg-slate-800 transition-all shadow-xl shadow-authority-navy/20 flex items-center justify-center gap-4 group"
+                  className="w-full sm:w-auto bg-authority-navy text-white px-10 py-5 rounded-md font-black uppercase tracking-widest text-sm hover:bg-slate-800 transition-all shadow-hover shadow-authority-navy/20 flex items-center justify-center gap-4 group"
                 >
                   View Police Credentials
                   <ExternalLink className="w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
@@ -139,7 +139,7 @@ export const FounderSpotlight = () => {
                 <div className="flex items-center gap-4">
                   <div className="flex -space-x-3">
                     {[1, 2, 3].map(i => (
-                      <div key={i} className="w-10 h-10 rounded-full border-2 border-white bg-slate-200 overflow-hidden shadow-sm">
+                      <div key={i} className="w-10 h-10 rounded-full border-2 border-white bg-slate-200 overflow-hidden shadow-card">
                         <img src={`https://picsum.photos/seed/guest${i}/100/100`} alt="Guest" referrerPolicy="no-referrer" />
                       </div>
                     ))}

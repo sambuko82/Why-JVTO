@@ -64,7 +64,7 @@ export const OperationalInquiry = () => {
               ))}
             </div>
 
-            <div className="mt-16 p-6 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm">
+            <div className="mt-16 p-6 rounded-md bg-white/5 border border-white/10 backdrop-blur-sm">
               <div className="flex items-center gap-3 mb-4">
                 <AlertTriangle className="w-5 h-5 text-amber-400" />
                 <span className="text-xs font-black uppercase tracking-widest text-amber-400">Safety Advisory</span>
@@ -81,12 +81,12 @@ export const OperationalInquiry = () => {
               initial={{ opacity: 0, x: 20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="bg-white rounded-[2.5rem] overflow-hidden shadow-2xl border border-white/10"
+              className="bg-white rounded-md overflow-hidden shadow-hover border border-white/10"
             >
               {/* Form Header */}
               <div className="bg-slate-50 border-b border-slate-200 p-8 flex items-center justify-between">
                 <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-xl bg-authority-navy flex items-center justify-center text-white">
+                  <div className="w-12 h-12 rounded-md bg-authority-navy flex items-center justify-center text-white">
                     <FileText className="w-6 h-6" />
                   </div>
                   <div>
@@ -111,7 +111,7 @@ export const OperationalInquiry = () => {
                     <input 
                       type="text" 
                       placeholder="Enter full name"
-                      className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-4 text-sm font-medium focus:ring-2 focus:ring-safety-orange/20 focus:border-safety-orange outline-none transition-all"
+                      className="w-full bg-slate-50 border border-slate-200 rounded-md px-4 py-4 text-sm font-medium focus:ring-2 focus:ring-safety-orange/20 focus:border-safety-orange outline-none transition-all"
                     />
                   </div>
 
@@ -123,7 +123,7 @@ export const OperationalInquiry = () => {
                     <input 
                       type="email" 
                       placeholder="email@example.com"
-                      className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-4 text-sm font-medium focus:ring-2 focus:ring-safety-orange/20 focus:border-safety-orange outline-none transition-all"
+                      className="w-full bg-slate-50 border border-slate-200 rounded-md px-4 py-4 text-sm font-medium focus:ring-2 focus:ring-safety-orange/20 focus:border-safety-orange outline-none transition-all"
                     />
                   </div>
 
@@ -134,7 +134,7 @@ export const OperationalInquiry = () => {
                     </label>
                     <input 
                       type="date" 
-                      className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-4 text-sm font-medium focus:ring-2 focus:ring-safety-orange/20 focus:border-safety-orange outline-none transition-all"
+                      className="w-full bg-slate-50 border border-slate-200 rounded-md px-4 py-4 text-sm font-medium focus:ring-2 focus:ring-safety-orange/20 focus:border-safety-orange outline-none transition-all"
                     />
                   </div>
 
@@ -143,7 +143,7 @@ export const OperationalInquiry = () => {
                     <label className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-400 flex items-center gap-2">
                       <Users className="w-3 h-3" /> Total Personnel (Pax)
                     </label>
-                    <select className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-4 text-sm font-medium focus:ring-2 focus:ring-safety-orange/20 focus:border-safety-orange outline-none transition-all appearance-none">
+                    <select className="w-full bg-slate-50 border border-slate-200 rounded-md px-4 py-4 text-sm font-medium focus:ring-2 focus:ring-safety-orange/20 focus:border-safety-orange outline-none transition-all appearance-none">
                       {[1,2,3,4,5,6,7,8,9,10].map(n => <option key={n} value={n}>{n} Person{n > 1 ? 's' : ''}</option>)}
                       <option value="11+">11+ (Group Request)</option>
                     </select>
@@ -154,18 +154,18 @@ export const OperationalInquiry = () => {
                     <label className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-400 flex items-center gap-2">
                       <ShieldCheck className="w-3 h-3" /> Selected Operational Package
                     </label>
-                    <select className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-4 text-sm font-medium focus:ring-2 focus:ring-safety-orange/20 focus:border-safety-orange outline-none transition-all appearance-none">
+                    <select className="w-full bg-slate-50 border border-slate-200 rounded-md px-4 py-4 text-sm font-medium focus:ring-2 focus:ring-safety-orange/20 focus:border-safety-orange outline-none transition-all appearance-none">
                       {packages.map(p => <option key={p} value={p}>{p}</option>)}
                     </select>
                   </div>
                 </div>
 
                 {/* Health Confirmation */}
-                <div className="mt-12 p-6 rounded-2xl bg-slate-50 border border-slate-200 flex items-start gap-4 cursor-pointer hover:bg-slate-100 transition-colors group">
+                <div className="mt-12 p-6 rounded-md bg-slate-50 border border-slate-200 flex items-start gap-4 cursor-pointer hover:bg-slate-100 transition-colors group">
                   <div className="relative flex items-center justify-center mt-1">
                     <input 
                       type="checkbox" 
-                      className="peer h-5 w-5 cursor-pointer appearance-none rounded border border-slate-300 bg-white checked:bg-safety-orange checked:border-safety-orange transition-all"
+                      className="peer h-5 w-5 cursor-pointer appearance-none rounded-sm border border-slate-300 bg-white checked:bg-safety-orange checked:border-safety-orange transition-all"
                     />
                     <CheckCircle2 className="absolute w-3 h-3 text-white opacity-0 peer-checked:opacity-100 transition-opacity pointer-events-none" />
                   </div>
@@ -178,7 +178,7 @@ export const OperationalInquiry = () => {
                 </div>
 
                 {/* Submit Button */}
-                <button className="w-full mt-12 bg-authority-navy text-white py-6 rounded-2xl font-black uppercase tracking-[0.2em] text-xs flex items-center justify-center gap-4 hover:bg-slate-900 transition-all group shadow-xl shadow-authority-navy/20">
+                <button className="w-full mt-12 bg-authority-navy text-white py-6 rounded-md font-black uppercase tracking-[0.2em] text-xs flex items-center justify-center gap-4 hover:bg-slate-900 transition-all group shadow-hover shadow-authority-navy/20">
                   <Send className="w-4 h-4 text-safety-orange group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
                   Submit Deployment Request
                 </button>

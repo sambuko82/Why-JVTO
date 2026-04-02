@@ -110,7 +110,7 @@ export const ReviewsSection = () => {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: idx * 0.1 }}
-                  className="group flex items-center justify-between p-6 bg-white rounded-2xl border border-slate-100 shadow-sm hover:shadow-2xl hover:border-safety-orange/30 transition-all duration-500"
+                  className="group flex items-center justify-between p-6 bg-white rounded-md border border-slate-100 shadow-card hover:shadow-hover hover:border-safety-orange/30 transition-all duration-500"
                 >
                   <div className="flex items-center gap-5">
                     {platform.icon}
@@ -130,7 +130,7 @@ export const ReviewsSection = () => {
                       </div>
                     </div>
                   </div>
-                  <div className="w-12 h-12 rounded-2xl bg-slate-50 flex items-center justify-center group-hover:bg-safety-orange group-hover:text-white transition-all duration-500 shadow-sm">
+                  <div className="w-12 h-12 rounded-md bg-slate-50 flex items-center justify-center group-hover:bg-safety-orange group-hover:text-white transition-all duration-500 shadow-card">
                     <ExternalLink className="w-5 h-5" />
                   </div>
                 </motion.a>
@@ -148,7 +148,7 @@ export const ReviewsSection = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: 0.3 + idx * 0.1 }}
-                  className="bg-white p-8 md:p-12 rounded-[2.5rem] border border-slate-100 shadow-sm relative group hover:shadow-2xl transition-all duration-500"
+                  className="bg-white p-8 md:p-12 rounded-md border border-slate-100 shadow-card relative group hover:shadow-hover transition-all duration-500"
                 >
                   <div className="absolute top-8 right-12 opacity-5 group-hover:opacity-10 transition-opacity">
                     <MessageSquare className="w-20 h-20 text-authority-navy" />
@@ -171,7 +171,7 @@ export const ReviewsSection = () => {
 
                   <div className="flex items-center justify-between pt-8 border-t border-slate-50">
                     <div className="flex items-center gap-4">
-                      <div className="w-12 h-12 rounded-2xl bg-slate-100 flex items-center justify-center text-authority-navy font-black text-sm shadow-sm">
+                      <div className="w-12 h-12 rounded-md bg-slate-100 flex items-center justify-center text-authority-navy font-black text-sm shadow-card">
                         {review.author.charAt(0)}
                       </div>
                       <div>
@@ -184,7 +184,7 @@ export const ReviewsSection = () => {
                       </div>
                     </div>
 
-                    <div className="flex items-center gap-3 px-4 py-2 bg-verified-bright/5 rounded-xl border border-verified-bright/10">
+                    <div className="flex items-center gap-3 px-4 py-2 bg-verified-bright/5 rounded-sm border border-verified-bright/10">
                       <CheckCircle2 className="w-4 h-4 text-verified-bright" />
                       <span className="text-[10px] md:text-[11px] font-black text-authority-navy uppercase tracking-[0.1em]">
                         Guided by {review.crewName}
@@ -199,7 +199,7 @@ export const ReviewsSection = () => {
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
-              className="mt-16 flex flex-col sm:flex-row items-center justify-center gap-10 p-10 md:p-12 bg-authority-navy rounded-[2.5rem] text-white overflow-hidden relative shadow-2xl shadow-authority-navy/20"
+              className="mt-16 flex flex-col sm:flex-row items-center justify-center gap-10 p-10 md:p-12 bg-authority-navy rounded-md text-white overflow-hidden relative shadow-hover shadow-authority-navy/20"
             >
               <div className="absolute top-0 right-0 w-48 h-48 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2" />
               <div className="text-center sm:text-left relative z-10">
@@ -208,7 +208,7 @@ export const ReviewsSection = () => {
               </div>
               <a 
                 href="/why-jvto/reviews" 
-                className="px-10 py-5 bg-safety-orange hover:bg-orange-600 text-white rounded-2xl font-black uppercase tracking-[0.2em] text-sm hover:scale-105 transition-all relative z-10 shadow-2xl shadow-safety-orange/20"
+                className="px-10 py-5 bg-safety-orange hover:bg-orange-600 text-white rounded-md font-black uppercase tracking-[0.2em] text-sm hover:scale-105 transition-all relative z-10 shadow-hover shadow-safety-orange/20"
               >
                 View All Reviews
               </a>

@@ -63,7 +63,7 @@ export const TeamRegistry = () => {
           </ul>
         </div>
         <div className="flex flex-col items-center md:items-end justify-center gap-6">
-          <div className="p-8 bg-white border-2 border-safety-orange rounded-3xl -rotate-3 shadow-xl relative overflow-hidden group hover:rotate-0 transition-transform">
+          <div className="p-8 bg-white border-2 border-safety-orange rounded-md -rotate-3 shadow-hover relative overflow-hidden group hover:rotate-0 transition-transform">
             <div className="scanline"></div>
             <div className="flex flex-col items-center">
               <ShieldCheck className="w-12 h-12 text-safety-orange mb-4" />
@@ -72,7 +72,7 @@ export const TeamRegistry = () => {
             </div>
           </div>
 
-          <div className="p-6 bg-authority-navy rounded-2xl border border-white/10 shadow-lg w-full max-w-[200px]">
+          <div className="p-6 bg-authority-navy rounded-md border border-white/10 shadow-hover w-full max-w-[200px]">
             <div className="flex items-center justify-between mb-4">
               <Activity className="w-4 h-4 text-safety-orange" />
               <span className="font-mono text-[11px] text-slate-500 uppercase tracking-widest">Fleet Safety Index</span>

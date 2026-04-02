@@ -88,14 +88,14 @@ export const AssetViewer = ({ isOpen, onClose, assetUrl, assetTitle, assetHash, 
           initial={{ opacity: 0, scale: 0.9, y: 20 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
           exit={{ opacity: 0, scale: 0.9, y: 20 }}
-          className="relative w-full max-w-6xl h-full bg-white md:rounded-[3rem] overflow-hidden flex flex-col shadow-2xl border border-slate-200"
+          className="relative w-full max-w-6xl h-full bg-white md:rounded-md overflow-hidden flex flex-col shadow-hover border border-slate-200"
         >
           <div className="scanline"></div>
           
           {/* Header */}
           <div className="p-8 md:p-10 border-b border-slate-100 flex items-center justify-between bg-white/80 backdrop-blur-md z-20">
             <div className="flex items-center gap-6">
-              <div className="w-14 h-14 md:w-16 md:h-16 bg-slate-50 rounded-2xl flex items-center justify-center text-authority-navy shadow-sm">
+              <div className="w-14 h-14 md:w-16 md:h-16 bg-slate-50 rounded-md flex items-center justify-center text-authority-navy shadow-card">
                 {assetType === 'pdf' ? <FileText className="w-6 h-6 md:w-8 md:h-8" /> : <Search className="w-6 h-6 md:w-8 md:h-8" />}
               </div>
               <div>
@@ -110,12 +110,12 @@ export const AssetViewer = ({ isOpen, onClose, assetUrl, assetTitle, assetHash, 
             </div>
             
             <div className="flex items-center gap-6">
-              <div className="hidden md:flex items-center gap-3 px-5 py-2.5 bg-verified-bright/10 border border-verified-bright/20 rounded-2xl text-verified-bright font-black text-[10px] uppercase tracking-[0.2em] shadow-sm">
+              <div className="hidden md:flex items-center gap-3 px-5 py-2.5 bg-verified-bright/10 border border-verified-bright/20 rounded-md text-verified-bright font-black text-[10px] uppercase tracking-[0.2em] shadow-card">
                 <ShieldCheck className="w-4 h-4" /> Integrity_Verified
               </div>
               <button 
                 onClick={onClose}
-                className="w-12 h-12 md:w-14 md:h-14 bg-slate-50 hover:bg-safety-orange hover:text-white rounded-2xl transition-all duration-500 group flex items-center justify-center shadow-sm"
+                className="w-12 h-12 md:w-14 md:h-14 bg-slate-50 hover:bg-safety-orange hover:text-white rounded-md transition-all duration-500 group flex items-center justify-center shadow-card"
               >
                 <X className="w-6 h-6 text-slate-400 group-hover:text-white" />
               </button>
@@ -126,7 +126,7 @@ export const AssetViewer = ({ isOpen, onClose, assetUrl, assetTitle, assetHash, 
           <div className="flex-1 overflow-hidden relative bg-slate-50 flex items-center justify-center p-4 md:p-8">
             <div 
               ref={containerRef}
-              className="relative max-w-full max-h-full shadow-2xl border border-slate-200 rounded-xl overflow-hidden cursor-crosshair group touch-none"
+              className="relative max-w-full max-h-full shadow-hover border border-slate-200 rounded-md overflow-hidden cursor-crosshair group touch-none"
               onMouseMove={handleMouseMove}
               onMouseEnter={() => setIsLoupeActive(true)}
               onMouseLeave={() => setIsLoupeActive(false)}
@@ -172,7 +172,7 @@ export const AssetViewer = ({ isOpen, onClose, assetUrl, assetTitle, assetHash, 
                         initial={{ opacity: 0, y: 10, scale: 0.9 }}
                         animate={{ opacity: 1, y: 0, scale: 1 }}
                         exit={{ opacity: 0, y: 10, scale: 0.9 }}
-                        className="absolute bottom-full left-1/2 -translate-x-1/2 mb-4 w-48 md:w-64 bg-authority-navy text-white p-4 rounded-xl border border-white/10 shadow-2xl z-50 pointer-events-none"
+                        className="absolute bottom-full left-1/2 -translate-x-1/2 mb-4 w-48 md:w-64 bg-authority-navy text-white p-4 rounded-md border border-white/10 shadow-hover z-50 pointer-events-none"
                       >
                         <div className="scanline opacity-20"></div>
                         <div className="font-mono text-[11px] text-safety-orange uppercase tracking-widest mb-1 font-black">
@@ -214,7 +214,7 @@ export const AssetViewer = ({ isOpen, onClose, assetUrl, assetTitle, assetHash, 
             </div>
             
             {/* Controls Overlay */}
-            <div className="absolute bottom-6 md:bottom-8 left-1/2 -translate-x-1/2 flex items-center gap-2 md:gap-4 bg-authority-navy/90 backdrop-blur-md px-4 md:px-6 py-2 md:py-3 rounded-xl md:rounded-2xl border border-white/10 z-40">
+            <div className="absolute bottom-6 md:bottom-8 left-1/2 -translate-x-1/2 flex items-center gap-2 md:gap-4 bg-authority-navy/90 backdrop-blur-md px-4 md:px-6 py-2 md:py-3 rounded-md md:rounded-md border border-white/10 z-40">
               <button onClick={() => setZoom(prev => Math.max(0.5, prev - 0.25))} className="p-2 text-white hover:text-safety-orange transition-colors">
                 <ZoomOut className="w-4 h-4 md:w-5 md:h-5" />
               </button>

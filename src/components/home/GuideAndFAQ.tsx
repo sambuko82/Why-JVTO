@@ -74,9 +74,9 @@ export const GuideAndFAQ = () => {
                   viewport={{ once: true }}
                   transition={{ delay: idx * 0.1 }}
                   onClick={() => navigate(guide.link)}
-                  className="p-8 rounded-[2rem] bg-white border border-slate-100 hover:border-safety-orange/50 hover:shadow-2xl transition-all duration-500 cursor-pointer group flex items-center gap-8 shadow-sm"
+                  className="p-8 rounded-md bg-white border border-slate-100 hover:border-safety-orange/50 hover:shadow-hover transition-all duration-500 cursor-pointer group flex items-center gap-8 shadow-card"
                 >
-                  <div className="w-14 h-14 rounded-2xl bg-slate-50 flex items-center justify-center shrink-0 group-hover:bg-safety-orange group-hover:text-white transition-all duration-500 shadow-sm">
+                  <div className="w-14 h-14 rounded-md bg-slate-50 flex items-center justify-center shrink-0 group-hover:bg-safety-orange group-hover:text-white transition-all duration-500 shadow-card">
                     <guide.icon className="w-6 h-6" />
                   </div>
                   <div className="flex-1">
@@ -87,7 +87,7 @@ export const GuideAndFAQ = () => {
                       {guide.desc}
                     </p>
                   </div>
-                  <div className="w-10 h-10 rounded-xl bg-slate-50 flex items-center justify-center group-hover:bg-safety-orange group-hover:text-white transition-all duration-500">
+                  <div className="w-10 h-10 rounded-sm bg-slate-50 flex items-center justify-center group-hover:bg-safety-orange group-hover:text-white transition-all duration-500">
                     <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                   </div>
                 </motion.div>
@@ -97,9 +97,9 @@ export const GuideAndFAQ = () => {
 
           {/* Right: FAQ Intelligence */}
           <div className="lg:col-span-7">
-            <div className="bg-white rounded-[3rem] p-10 md:p-16 border border-slate-100 shadow-2xl shadow-slate-200/50">
+            <div className="bg-white rounded-md p-10 md:p-16 border border-slate-100 shadow-hover shadow-slate-200/50">
               <div className="flex items-center gap-4 mb-10">
-                <div className="w-10 h-10 rounded-xl bg-safety-orange/10 flex items-center justify-center">
+                <div className="w-10 h-10 rounded-sm bg-safety-orange/10 flex items-center justify-center">
                   <HelpCircle className="w-5 h-5 text-safety-orange" />
                 </div>
                 <span className="font-mono text-[10px] font-black uppercase tracking-[0.3em] text-slate-400">FAQ Registry</span>
@@ -114,7 +114,7 @@ export const GuideAndFAQ = () => {
                 {faqs.map((faq, idx) => (
                   <div 
                     key={idx}
-                    className="border border-slate-100 rounded-2xl bg-slate-50/50 overflow-hidden transition-all hover:border-safety-orange/30 hover:bg-white hover:shadow-xl duration-500"
+                    className="border border-slate-100 rounded-md bg-slate-50/50 overflow-hidden transition-all hover:border-safety-orange/30 hover:bg-white hover:shadow-hover duration-500"
                   >
                     <button
                       onClick={() => setOpenIndex(openIndex === idx ? null : idx)}
@@ -123,7 +123,7 @@ export const GuideAndFAQ = () => {
                       <h4 className="text-sm md:text-lg font-black text-authority-navy pr-8 uppercase tracking-tight group-hover:text-safety-orange transition-colors">
                         {faq.question}
                       </h4>
-                      <div className={`w-8 h-8 rounded-lg flex items-center justify-center transition-all duration-500 ${openIndex === idx ? 'bg-safety-orange text-white rotate-180' : 'bg-white text-slate-300 shadow-sm'}`}>
+                      <div className={`w-8 h-8 rounded-sm flex items-center justify-center transition-all duration-500 ${openIndex === idx ? 'bg-safety-orange text-white rotate-180' : 'bg-white text-slate-300 shadow-card'}`}>
                         <ChevronDown className="w-4 h-4" />
                       </div>
                     </button>

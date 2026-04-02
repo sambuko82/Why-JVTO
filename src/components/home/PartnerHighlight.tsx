@@ -17,7 +17,7 @@ export const PartnerHighlight = () => {
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="relative rounded-[3rem] bg-authority-navy text-white overflow-hidden border border-white/10 shadow-2xl"
+          className="relative rounded-md bg-authority-navy text-white overflow-hidden border border-white/10 shadow-hover"
         >
           {/* Background Effects */}
           <div className="absolute top-0 right-0 w-full h-full bg-gradient-to-br from-safety-orange/10 via-transparent to-blue-500/10 pointer-events-none" />
@@ -33,7 +33,7 @@ export const PartnerHighlight = () => {
                 transition={{ delay: 0.2 }}
                 className="flex items-center gap-3 mb-8"
               >
-                <div className="p-3 rounded-2xl bg-safety-orange/20 border border-safety-orange/30">
+                <div className="p-3 rounded-md bg-safety-orange/20 border border-safety-orange/30">
                   <Handshake className="w-6 h-6 text-safety-orange" />
                 </div>
                 <span className="font-mono text-xs uppercase tracking-[0.4em] font-black text-safety-orange">Strategic Affiliations</span>
@@ -69,12 +69,12 @@ export const PartnerHighlight = () => {
               >
                 <button 
                   onClick={() => navigate(highlight.link)}
-                  className="px-8 py-4 bg-safety-orange hover:bg-safety-orange/90 text-white rounded-xl font-black uppercase tracking-widest transition-all shadow-lg shadow-safety-orange/20 flex items-center gap-3 group"
+                  className="px-8 py-4 bg-safety-orange hover:bg-safety-orange/90 text-white rounded-md font-black uppercase tracking-widest transition-all shadow-card shadow-safety-orange/20 flex items-center gap-3 group"
                 >
                   <span>Verify Standards</span>
                   <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </button>
-                <div className="flex items-center gap-3 px-6 py-4 bg-white/5 rounded-xl border border-white/10">
+                <div className="flex items-center gap-3 px-6 py-4 bg-white/5 rounded-md border border-white/10">
                   <ShieldCheck className="w-5 h-5 text-verified-bright" />
                   <span className="font-mono text-[10px] uppercase tracking-widest font-bold text-white/60">Audit Status: PASS</span>
                 </div>
@@ -91,10 +91,10 @@ export const PartnerHighlight = () => {
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true }}
                     transition={{ delay: 0.2 + idx * 0.1 }}
-                    className="group/partner relative bg-white rounded-3xl p-8 flex flex-col items-center justify-center gap-6 shadow-2xl hover:shadow-safety-orange/10 transition-all duration-500 border border-white/5"
+                    className="group/partner relative bg-white rounded-md p-8 flex flex-col items-center justify-center gap-6 shadow-hover hover:shadow-safety-orange/10 transition-all duration-500 border border-white/5"
                   >
                     {/* Verification Badge */}
-                    <div className="absolute -top-3 -right-3 bg-authority-navy text-white p-2 rounded-xl shadow-lg border border-white/10 z-20 group-hover/partner:scale-110 transition-transform">
+                    <div className="absolute -top-3 -right-3 bg-authority-navy text-white p-2 rounded-md shadow-card border border-white/10 z-20 group-hover/partner:scale-110 transition-transform">
                       <ShieldCheck className="w-4 h-4 text-verified-bright" />
                     </div>
 
@@ -128,7 +128,7 @@ export const PartnerHighlight = () => {
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
                   transition={{ delay: 0.5 }}
-                  className="bg-safety-orange/10 border border-safety-orange/30 rounded-3xl p-8 flex flex-col justify-center items-center text-center gap-4 group cursor-pointer hover:bg-safety-orange/20 transition-all"
+                  className="bg-safety-orange/10 border border-safety-orange/30 rounded-md p-8 flex flex-col justify-center items-center text-center gap-4 group cursor-pointer hover:bg-safety-orange/20 transition-all"
                 >
                   <Globe className="w-10 h-10 text-safety-orange mb-2 group-hover:scale-110 transition-transform" />
                   <h4 className="text-xl font-black uppercase tracking-tighter text-white">Local Impact</h4>

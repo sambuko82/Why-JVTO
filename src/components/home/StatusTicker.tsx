@@ -38,6 +38,6 @@ const TickerItem = ({ icon, label, value, status }: { icon: React.ReactNode, lab
     <span className="text-slate-500">{icon}</span>
     <span className="font-mono text-[11px] uppercase tracking-widest text-slate-500">{label}:</span>
     <span className="font-mono text-[11px] uppercase tracking-widest text-white font-bold">{value}</span>
-    <span className="font-mono text-[11px] px-1.5 py-0.5 rounded bg-verified-bright/10 text-verified-bright border border-verified-bright/20 font-bold">{status}</span>
+    <span className="font-mono text-[11px] px-1.5 py-0.5 rounded-sm bg-verified-bright/10 text-verified-bright border border-verified-bright/20 font-bold">{status}</span>
   </div>
 );

@@ -83,13 +83,13 @@ export default function TourDetail() {
 
             <button 
               onClick={() => navigate('/travel-guide/booking-information')}
-              className="w-full bg-safety-orange text-white py-5 rounded-xl font-black uppercase tracking-wider text-sm hover:bg-safety-orange/90 transition-all shadow-xl shadow-safety-orange/20 mb-8"
+              className="w-full bg-safety-orange text-white py-5 rounded-md font-black uppercase tracking-wider text-sm hover:bg-safety-orange/90 transition-all shadow-hover shadow-safety-orange/20 mb-8"
             >
               Request Booking
             </button>
           </div>
           <div className="lg:w-1/2">
-            <div className="aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl relative">
+            <div className="aspect-[4/3] rounded-md overflow-hidden shadow-hover relative">
               <img 
                 src={tour.image}
                 alt={tour.name} 
@@ -97,7 +97,7 @@ export default function TourDetail() {
                 referrerPolicy="no-referrer"
               />
               {tour.crewName && (
-                <div className="absolute bottom-6 left-6 bg-authority-navy/90 backdrop-blur text-white text-xs px-4 py-2 rounded-lg font-mono uppercase tracking-widest shadow-xl border border-white/10">
+                <div className="absolute bottom-6 left-6 bg-authority-navy/90 backdrop-blur text-white text-xs px-4 py-2 rounded-md font-mono uppercase tracking-widest shadow-hover border border-white/10">
                   {tour.crewName}
                 </div>
               )}
@@ -150,7 +150,7 @@ export default function TourDetail() {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className="bg-slate-50 p-6 rounded-2xl"
+                className="bg-slate-50 p-6 rounded-md"
               >
                 <h3 className="font-mono text-sm uppercase tracking-widest font-bold mb-6 flex items-center gap-2">
                   <CheckCircle2 className="w-4 h-4 text-verified-bright" /> Inclusions
@@ -170,7 +170,7 @@ export default function TourDetail() {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className="bg-slate-50 p-6 rounded-2xl"
+                className="bg-slate-50 p-6 rounded-md"
               >
                 <h3 className="font-mono text-sm uppercase tracking-widest font-bold mb-6 flex items-center gap-2">
                   <XCircle className="w-4 h-4 text-red-500" /> Exclusions
@@ -190,7 +190,7 @@ export default function TourDetail() {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className="bg-safety-orange/5 p-6 rounded-2xl border border-safety-orange/20"
+                className="bg-safety-orange/5 p-6 rounded-md border border-safety-orange/20"
               >
                 <h3 className="font-mono text-sm uppercase tracking-widest font-bold mb-6 flex items-center gap-2 text-safety-orange">
                   <AlertTriangle className="w-4 h-4" /> Requirements

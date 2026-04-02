@@ -31,7 +31,7 @@ const DestinationCard = ({ dest, idx, navigate }: { dest: any, idx: number, navi
       viewport={{ once: true }}
       transition={{ delay: idx * 0.1 }}
       onClick={() => navigate(dest.route)}
-      className="relative shrink-0 w-[85vw] sm:w-[340px] md:w-[400px] aspect-[4/5] rounded-[2.5rem] overflow-hidden group cursor-pointer snap-start shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_20px_50px_rgb(0,0,0,0.08)] transition-all duration-500"
+      className="relative shrink-0 w-[85vw] sm:w-[340px] md:w-[400px] aspect-[4/5] rounded-md overflow-hidden group cursor-pointer snap-start shadow-card hover:shadow-hover transition-all duration-500"
     >
       <motion.div 
         className={`absolute inset-0 w-full h-full origin-center ${isDesktop ? 'scale-[1.25]' : 'scale-100'}`}

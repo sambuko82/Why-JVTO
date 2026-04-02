@@ -104,7 +104,7 @@ export const TeamSection = () => {
                   </div>
                 </div>
 
-                <div className="mb-6 p-4 bg-audit-white rounded-2xl border border-slate-200/50 relative overflow-hidden">
+                <div className="mb-6 p-4 bg-audit-white rounded-md border border-slate-200/50 relative overflow-hidden">
                   <div className="absolute top-0 right-0 p-2 opacity-10">
                     <Shield className="w-12 h-12 text-authority-navy" />
                   </div>
@@ -145,13 +145,13 @@ export const TeamSection = () => {
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
-          className="mt-20 p-1 bg-gradient-to-r from-safety-orange via-authority-navy to-verified-lime rounded-[3rem]"
+          className="mt-20 p-1 bg-gradient-to-r from-safety-orange via-authority-navy to-verified-lime rounded-md"
         >
-          <div className="bg-white rounded-[2.8rem] p-8 md:p-12 flex flex-col lg:flex-row items-center gap-12 overflow-hidden relative">
+          <div className="bg-white rounded-md p-8 md:p-12 flex flex-col lg:flex-row items-center gap-12 overflow-hidden relative">
             <div className="absolute top-0 right-0 w-64 h-64 bg-safety-orange/5 rounded-full -mr-32 -mt-32 blur-3xl" />
             
             <div className="w-full lg:w-1/3 relative">
-              <div className="aspect-square rounded-[2rem] overflow-hidden border-4 border-audit-white shadow-2xl">
+              <div className="aspect-square rounded-md overflow-hidden border-4 border-audit-white shadow-hover">
                 <img
                   src={SSOT.organization.founder.sameAs[0] === "https://polri.go.id/" ? "https://upload.wikimedia.org/wikipedia/commons/b/bf/Agung_Sambuko.jpg" : "https://upload.wikimedia.org/wikipedia/commons/b/bf/Agung_Sambuko.jpg"}
                   alt={SSOT.organization.founder.name}
@@ -159,7 +159,7 @@ export const TeamSection = () => {
                   referrerPolicy="no-referrer"
                 />
               </div>
-              <div className="absolute -bottom-4 -right-4 bg-authority-navy text-white p-4 rounded-2xl shadow-xl border border-white/10">
+              <div className="absolute -bottom-4 -right-4 bg-authority-navy text-white p-4 rounded-md shadow-hover border border-white/10">
                 <Shield className="w-6 h-6 text-safety-orange mb-1" />
                 <p className="text-[10px] font-mono font-bold uppercase tracking-widest">Active Duty</p>
               </div>

@@ -14,7 +14,7 @@ export const AuthorityShield = () => {
   return (
     <section className="section-spacing">
       <div className="container-authority">
-        <div className="bg-authority-navy rounded-[2.5rem] p-8 md:p-16 lg:p-20 text-white relative overflow-hidden shadow-2xl">
+        <div className="bg-authority-navy rounded-md p-8 md:p-16 lg:p-20 text-white relative overflow-hidden shadow-hover">
           <div className="relative z-10">
             {/* Header Narrative */}
             <motion.div 
@@ -47,7 +47,7 @@ export const AuthorityShield = () => {
               transition={{ duration: 0.6 }}
               className="lg:col-span-5 flex flex-col gap-6"
             >
-              <div className="relative aspect-[4/5] overflow-hidden rounded-3xl">
+              <div className="relative aspect-[4/5] overflow-hidden rounded-md">
                 <img 
                   src={SSOT.assets.find(a => a.slug === 'mr-sam-tourist-police-portrait')?.url || 'https://upload.wikimedia.org/wikipedia/commons/b/bf/Agung_Sambuko.jpg'} 
                   alt={SSOT.assets.find(a => a.slug === 'mr-sam-tourist-police-portrait')?.alt || 'Officer Agung Sambuko in Official Tourist Police Uniform'} 
@@ -121,7 +121,7 @@ export const AuthorityShield = () => {
                     href={activeArticle.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="block relative rounded-2xl overflow-hidden group cursor-pointer"
+                    className="block relative rounded-md overflow-hidden group cursor-pointer"
                   >
                     <div className="relative aspect-[16/9] overflow-hidden bg-white/5">
                       <img 

@@ -35,14 +35,14 @@ export const AuditTrail: React.FC<AuditTrailProps> = ({ entityId, entityName, lo
             initial={{ opacity: 0, scale: 0.9, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.9, y: 20 }}
-            className="fixed left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-xl bg-white rounded-[3rem] shadow-2xl z-[101] overflow-hidden border border-slate-200"
+            className="fixed left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-xl bg-white rounded-md shadow-hover z-[101] overflow-hidden border border-slate-200"
           >
             <div className="scanline"></div>
             
             {/* Header */}
             <div className="p-10 border-b border-slate-100 flex items-center justify-between bg-slate-50/50">
               <div className="flex items-center gap-6">
-                <div className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center text-authority-navy shadow-sm">
+                <div className="w-16 h-16 bg-white rounded-md flex items-center justify-center text-authority-navy shadow-card">
                   <History className="w-8 h-8" />
                 </div>
                 <div>
@@ -52,7 +52,7 @@ export const AuditTrail: React.FC<AuditTrailProps> = ({ entityId, entityName, lo
               </div>
               <button 
                 onClick={onClose}
-                className="w-12 h-12 rounded-2xl bg-white hover:bg-safety-orange hover:text-white flex items-center justify-center text-slate-400 transition-all duration-500 shadow-sm group"
+                className="w-12 h-12 rounded-md bg-white hover:bg-safety-orange hover:text-white flex items-center justify-center text-slate-400 transition-all duration-500 shadow-card group"
               >
                 <X className="w-6 h-6 group-hover:text-white" />
               </button>
@@ -73,7 +73,7 @@ export const AuditTrail: React.FC<AuditTrailProps> = ({ entityId, entityName, lo
                     className="relative pl-16"
                   >
                     {/* Timeline Dot */}
-                    <div className="absolute left-0 top-1 w-12 h-12 rounded-2xl bg-white border border-slate-100 flex items-center justify-center z-10 shadow-sm group hover:border-safety-orange transition-all duration-500">
+                    <div className="absolute left-0 top-1 w-12 h-12 rounded-md bg-white border border-slate-100 flex items-center justify-center z-10 shadow-card group hover:border-safety-orange transition-all duration-500">
                       <CheckCircle2 className="w-5 h-5 text-verified-bright" />
                     </div>
                     
@@ -98,7 +98,7 @@ export const AuditTrail: React.FC<AuditTrailProps> = ({ entityId, entityName, lo
                 <Fingerprint className="w-5 h-5 text-slate-300" />
                 <span className="font-mono text-[10px] font-black text-slate-400 uppercase tracking-[0.2em]">Hash: {entityId.slice(0, 12)}...</span>
               </div>
-              <div className="px-5 py-2 rounded-xl bg-verified-bright/10 text-verified-bright border border-verified-bright/20 font-black text-[10px] uppercase tracking-[0.2em] shadow-sm">
+              <div className="px-5 py-2 rounded-md bg-verified-bright/10 text-verified-bright border border-verified-bright/20 font-black text-[10px] uppercase tracking-[0.2em] shadow-card">
                 STATUS: SECURE
               </div>
             </div>

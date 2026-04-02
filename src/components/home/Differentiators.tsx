@@ -74,7 +74,7 @@ export const Differentiators = () => {
                   viewport={{ once: true, margin: "-50px" }}
                   transition={{ delay: idx * 0.1 }}
                   onClick={() => navigate(item.link)}
-                  className="shrink-0 w-[85vw] md:w-auto snap-start p-8 md:p-10 rounded-[2rem] bg-white shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-slate-100 hover:shadow-[0_20px_50px_rgb(0,0,0,0.08)] hover:-translate-y-2 transition-all duration-500 group flex flex-col cursor-pointer"
+                  className="shrink-0 w-[85vw] md:w-auto snap-start p-8 md:p-10 rounded-md bg-white shadow-card border border-slate-100 hover:shadow-hover hover:-translate-y-2 transition-all duration-500 group flex flex-col cursor-pointer"
                 >
                   <TwoToneIcon Icon={item.icon} />
                   <h3 className="text-lg md:text-xl font-black text-authority-navy uppercase tracking-tight mb-3">

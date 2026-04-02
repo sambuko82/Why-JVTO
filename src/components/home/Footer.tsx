@@ -62,7 +62,7 @@ export const Footer = () => {
         {/* Bottom Bar */}
         <div className="pt-12 md:pt-16 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-10">
           <div className="flex flex-col md:flex-row items-center gap-6 md:gap-10">
-            <div className="flex items-center gap-3 px-4 py-2 bg-white/5 rounded-xl border border-white/10">
+            <div className="flex items-center gap-3 px-4 py-2 bg-white/5 rounded-md border border-white/10">
               <ShieldCheck className="w-4 h-4 text-safety-orange" />
               <span className="text-[10px] font-black uppercase tracking-[0.2em] text-white/60">Verified Operator</span>
             </div>

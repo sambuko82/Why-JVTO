@@ -36,7 +36,7 @@ export const BookingRail = () => {
           exit={{ y: 100, opacity: 0 }}
           className="fixed bottom-20 md:bottom-8 left-0 right-0 z-[90] pointer-events-none flex justify-center px-4 md:px-6"
         >
-          <div className="pointer-events-auto w-full max-w-5xl bg-authority-navy/95 backdrop-blur-xl border border-white/10 p-4 md:p-4 rounded-3xl md:rounded-full shadow-2xl flex flex-col md:flex-row items-center justify-between gap-4 relative overflow-hidden">
+          <div className="pointer-events-auto w-full max-w-5xl bg-authority-navy/95 backdrop-blur-xl border border-white/10 p-4 md:p-4 rounded-md md:rounded-md shadow-hover flex flex-col md:flex-row items-center justify-between gap-4 relative overflow-hidden">
             {/* Progress Bar */}
             <div className="absolute top-0 left-0 h-[2px] bg-verified-bright transition-all duration-300" style={{ width: `${auditProgress}%` }}></div>
 
@@ -71,7 +71,7 @@ export const BookingRail = () => {
                 href={whatsappUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`flex-1 md:flex-none flex items-center justify-center gap-3 px-6 md:px-8 py-3 md:py-4 rounded-2xl md:rounded-full font-black uppercase tracking-tight transition-all group shadow-lg text-sm md:text-base ${
+                className={`flex-1 md:flex-none flex items-center justify-center gap-3 px-6 md:px-8 py-3 md:py-4 rounded-md md:rounded-md font-black uppercase tracking-tight transition-all group shadow-card text-sm md:text-base ${
                   auditProgress > 70 
                     ? 'bg-safety-orange hover:bg-safety-orange/90 text-white shadow-safety-orange/20' 
                     : 'bg-white/10 text-white/40 cursor-not-allowed'
