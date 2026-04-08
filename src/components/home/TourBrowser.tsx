@@ -179,7 +179,7 @@ export const TourBrowser = () => {
                         className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                         referrerPolicy="no-referrer"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-transparent to-black/90 opacity-80 transition-opacity duration-500 group-hover:opacity-100"></div>
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-80 transition-opacity duration-500 group-hover:opacity-100"></div>
                       
                       {/* Top Badge */}
                       {tour.crewName && (
@@ -188,34 +188,34 @@ export const TourBrowser = () => {
                         </div>
                       )}
                       
-                      <div className="absolute bottom-0 left-0 right-0 p-6 md:p-10 flex flex-col justify-end">
-                        <h3 className="text-2xl md:text-4xl font-black text-white uppercase tracking-tight mb-3 md:mb-5 drop-shadow-lg group-hover:-translate-y-2 transition-transform duration-500 leading-none">
+                      <div className="absolute bottom-0 left-0 right-0 h-[30%] p-5 md:p-8 flex flex-col justify-end transition-all duration-500 group-hover:h-[35%]">
+                        <h3 className="text-lg md:text-2xl font-black text-white uppercase tracking-tight mb-2 md:mb-4 drop-shadow-lg group-hover:-translate-y-1 transition-transform duration-500 leading-none">
                           {tour.name}
                         </h3>
                         
-                        <div className="flex items-center justify-between mb-4 md:mb-6 relative z-10 bg-white/10 backdrop-blur-xl p-4 md:p-5 rounded-sm border border-white/20">
+                        <div className="flex items-center justify-between mb-3 md:mb-5 relative z-10 bg-white/5 backdrop-blur-md p-3 md:p-4 rounded-sm border border-white/10">
                           <div className="flex flex-col">
-                            <span className="text-white/60 text-[9px] md:text-[10px] font-mono font-black uppercase tracking-[0.2em] mb-1 md:mb-2">Duration</span>
-                            <span className="text-white font-black text-xs md:text-sm uppercase">{tour.name.split(' ')[0]}</span>
+                            <span className="text-white/40 text-[7px] md:text-[8px] font-mono font-black uppercase tracking-[0.2em] mb-0.5">Duration</span>
+                            <span className="text-white font-black text-[10px] md:text-xs uppercase">{tour.name.split(' ')[0]}</span>
                           </div>
                           <div className="flex flex-col items-end">
-                            <span className="text-white/60 text-[9px] md:text-[10px] font-mono font-black uppercase tracking-[0.2em] mb-1 md:mb-2">From</span>
-                            <span className="text-safety-orange font-black text-lg md:text-xl">{tour.price}</span>
+                            <span className="text-white/40 text-[7px] md:text-[8px] font-mono font-black uppercase tracking-[0.2em] mb-0.5">From</span>
+                            <span className="text-safety-orange font-black text-sm md:text-base">{tour.price}</span>
                           </div>
                         </div>
                         
-                        <div className="pt-6 border-t border-white/20 flex items-center justify-between mt-auto">
-                          <div className="flex items-center gap-3">
-                            <div className="flex items-center text-safety-orange">
-                              <Star className="w-4 h-4 fill-current" />
-                              <Star className="w-4 h-4 fill-current" />
-                              <Star className="w-4 h-4 fill-current" />
-                              <Star className="w-4 h-4 fill-current" />
-                              <Star className="w-4 h-4 fill-current" />
+                        <div className="pt-3 md:pt-4 border-t border-white/10 flex items-center justify-between">
+                          <div className="flex items-center gap-2">
+                            <div className="flex items-center text-safety-orange scale-75 origin-left">
+                              <Star className="w-3 h-3 fill-current" />
+                              <Star className="w-3 h-3 fill-current" />
+                              <Star className="w-3 h-3 fill-current" />
+                              <Star className="w-3 h-3 fill-current" />
+                              <Star className="w-3 h-3 fill-current" />
                             </div>
-                            <span className="text-xs text-white font-black">5.0</span>
+                            <span className="text-[10px] text-white font-black">5.0</span>
                           </div>
-                          <span className="font-mono text-[9px] md:text-[10px] font-black uppercase tracking-[0.25em] text-white/60">
+                          <span className="font-mono text-[8px] md:text-[9px] font-black uppercase tracking-[0.25em] text-white/40">
                             Moderate
                           </span>
                         </div>

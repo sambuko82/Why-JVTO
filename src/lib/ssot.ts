@@ -120,6 +120,13 @@ export const SSOT = {
         route_meta: "Surabaya → Bromo → Surabaya",
         highlights: ["Sunrise at Penanjakan/King Kong Hill", "4WD Jeep adventure across the Sea of Sand", "Hike to the active Bromo crater"]
       },
+      technical_dossier: {
+        coordinates: "7.9425° S, 112.9530° E",
+        elevation: "2,329m",
+        difficulty: "MODERATE",
+        risk_level: "LEVEL 2 (ADVISORY)",
+        equipment_check: ["Thermal Layers", "Headlamp", "Sun Protection"]
+      },
       itinerary: [
         { day: 1, title: "Midnight Departure & Sunrise", activities: ["00:00 - Pickup from Surabaya", "03:00 - Switch to 4WD Jeep", "04:00 - Bromo Sunrise", "07:00 - Hike to Crater", "10:00 - Return to Surabaya"] }
       ],
@@ -154,6 +161,13 @@ export const SSOT = {
       overview: {
         route_meta: "Surabaya → Ijen → Surabaya",
         highlights: ["Ijen Blue Fire", "Sulphur miners", "Acidic crater lake"]
+      },
+      technical_dossier: {
+        coordinates: "8.0585° S, 114.2421° E",
+        elevation: "2,799m",
+        difficulty: "CHALLENGING",
+        risk_level: "LEVEL 3 (SULPHUR ADVISORY)",
+        equipment_check: ["Respirator Mask", "Trekking Poles", "Thermal Layers"]
       },
       itinerary: [
         { day: 1, title: "Journey to Banyuwangi", activities: ["Pickup from Surabaya", "Drive to Banyuwangi", "Check-in at hotel"] },
@@ -269,6 +283,13 @@ export const SSOT = {
       overview: {
         route_meta: "Surabaya → Tumpak Sewu → Bromo → Ijen → Drop-off",
         highlights: ["Tumpak Sewu Waterfall", "Bromo Sunrise", "Ijen Blue Fire"]
+      },
+      technical_dossier: {
+        coordinates: "8.2311° S, 112.9161° E",
+        elevation: "VARIOUS",
+        difficulty: "TECHNICAL / HIGH ENDURANCE",
+        risk_level: "LEVEL 3 (MULTIPLE HAZARDS)",
+        equipment_check: ["Waterproof Gear", "Anti-Slip Shoes", "Respirator Mask"]
       },
       itinerary: [
         { day: 1, title: "Journey to Lumajang", activities: ["Pickup from Surabaya", "Drive to Lumajang"] },
