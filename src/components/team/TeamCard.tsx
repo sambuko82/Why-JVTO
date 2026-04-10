@@ -34,7 +34,7 @@ export const TeamCard: React.FC<TeamCardProps> = ({ crew, index, compact = false
         viewport={{ once: true }}
         transition={{ duration: 0.5, delay: index * 0.05 }}
         onClick={() => navigate(`/team/${crew.id}`)}
-        className={`bento-card bg-audit-white group flex flex-col relative cursor-pointer hover:border-safety-orange transition-all ${compact ? 'p-0' : ''}`}
+        className={`bento-card bg-audit-white group flex flex-col relative cursor-pointer hover:border-jvto-orange transition-all ${compact ? 'p-0' : ''}`}
       >
         <div className="scanline"></div>
         <div className="aspect-[3/4] overflow-hidden relative border-b border-slate-100">
@@ -45,12 +45,12 @@ export const TeamCard: React.FC<TeamCardProps> = ({ crew, index, compact = false
             referrerPolicy="no-referrer"
           />
           <div className="absolute top-6 left-6">
-            <div className="tech-badge bg-authority-navy/80 backdrop-blur text-white border border-white/10">
+            <div className="tech-badge bg-jvto-navy/80 backdrop-blur text-white border border-white/10">
               ID: {crew.id.toUpperCase()}
             </div>
           </div>
-          <div className="absolute inset-0 bg-gradient-to-t from-authority-navy/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-8">
-            <div className="w-full bg-safety-orange text-white font-black py-4 rounded-xl text-xs uppercase tracking-widest flex items-center justify-center gap-2 shadow-xl">
+          <div className="absolute inset-0 bg-gradient-to-t from-jvto-navy/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-8">
+            <div className="w-full bg-jvto-orange text-white font-black py-4 rounded-xl text-xs uppercase tracking-widest flex items-center justify-center gap-2 shadow-xl">
               Inspect Profile {compact ? <Search className="w-4 h-4" /> : <ChevronRight className="w-4 h-4" />}
             </div>
           </div>
@@ -59,25 +59,25 @@ export const TeamCard: React.FC<TeamCardProps> = ({ crew, index, compact = false
         <div className="p-8 flex flex-col gap-6">
           <div>
             <div className="flex items-center justify-between mb-2">
-              <span className="font-mono text-[11px] text-safety-orange uppercase font-black tracking-widest">
+              <span className="font-mono text-[11px] text-jvto-orange uppercase font-black tracking-widest">
                 {crew.role}
               </span>
               <div className="status-live"></div>
             </div>
-            <h3 className="text-2xl font-black uppercase text-authority-navy leading-none">{crew.name}</h3>
+            <h3 className="text-2xl font-black uppercase text-jvto-navy leading-none">{crew.name}</h3>
           </div>
           
           <div className="flex flex-wrap gap-2">
             <button 
               onClick={handleAuditClick}
-              className="verified-badge hover:bg-verified-bright hover:text-white transition-colors flex items-center gap-2 group/badge"
+              className="verified-badge hover:bg-jvto-lime hover:text-white transition-colors flex items-center gap-2 group/badge"
             >
               VERIFIED_OPERATIVE
               <ShieldCheck className="w-3 h-3 group-hover/badge:scale-110 transition-transform" />
             </button>
             {avgRating && (
               <div className="verified-badge bg-slate-50 text-slate-600 border-slate-200 flex items-center gap-1">
-                <Star className="w-3 h-3 text-safety-orange fill-safety-orange" />
+                <Star className="w-3 h-3 text-jvto-orange fill-jvto-orange" />
                 <span>{avgRating} ({reviews.length})</span>
               </div>
             )}
@@ -100,7 +100,7 @@ export const TeamCard: React.FC<TeamCardProps> = ({ crew, index, compact = false
               <Fingerprint className="w-4 h-4 text-slate-300" />
               <span className="font-mono text-[11px] text-slate-500 uppercase tracking-widest">Hash: {crew.id.slice(0, 8)}</span>
             </div>
-            <ShieldCheck className="w-4 h-4 text-verified-bright" />
+            <ShieldCheck className="w-4 h-4 text-jvto-lime" />
           </div>
         </div>
       </motion.article>

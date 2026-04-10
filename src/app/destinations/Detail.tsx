@@ -132,17 +132,17 @@ export default function DestinationDetail() {
   }
 
   return (
-    <div className="min-h-screen bg-audit-white text-authority-navy font-sans selection:bg-safety-orange/30 pb-24 md:pb-0">
+    <div className="min-h-screen bg-surface-page text-jvto-navy font-sans selection:bg-jvto-orange/30 pb-24 md:pb-0">
       {/* Header */}
-      <div className="border-b border-slate-100 bg-audit-white/80 relative z-40 backdrop-blur-xl">
+      <div className="border-b border-slate-100 bg-surface-page/80 relative z-40 backdrop-blur-xl">
         <div className="container mx-auto px-6 py-6 flex items-center justify-between">
           <button 
             onClick={onBack}
-            className="group flex items-center gap-3 text-[11px] font-mono font-bold text-slate-500 hover:text-authority-navy transition-all uppercase tracking-widest"
+            className="group flex items-center gap-3 text-[11px] font-mono font-bold text-slate-500 hover:text-jvto-navy transition-all uppercase tracking-widest"
           >
             <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" /> Back to Registry
           </button>
-          <div className="flex items-center gap-3 text-safety-orange text-[11px] font-mono font-bold uppercase tracking-[0.2em]">
+          <div className="flex items-center gap-3 text-jvto-orange text-[11px] font-mono font-bold uppercase tracking-[0.2em]">
             <MapPin className="w-4 h-4" /> {data.title}
           </div>
         </div>
@@ -204,7 +204,7 @@ export default function DestinationDetail() {
         )}
 
         {data.imageContext && (
-          <div className="absolute top-8 left-8 bg-safety-orange text-white text-[10px] px-3 py-1.5 rounded-md font-mono font-bold uppercase tracking-widest z-10 shadow-lg">
+          <div className="absolute top-8 left-8 bg-jvto-orange text-white text-[10px] px-3 py-1.5 rounded-md font-mono font-bold uppercase tracking-widest z-10 shadow-lg">
             {data.imageContext}
           </div>
         )}
@@ -217,14 +217,14 @@ export default function DestinationDetail() {
               transition={{ duration: 0.6 }}
             >
               <div className="flex items-center gap-2 mb-6">
-                <span className="px-4 py-2 bg-safety-orange text-white text-[11px] font-mono font-black uppercase tracking-widest rounded-full">
+                <span className="px-4 py-2 bg-jvto-orange text-white text-[11px] font-mono font-black uppercase tracking-widest rounded-full">
                   {data.category}
                 </span>
-                <span className="px-4 py-2 bg-white/80 backdrop-blur-md text-authority-navy text-[11px] font-mono font-black uppercase tracking-widest rounded-full border border-slate-200">
+                <span className="px-4 py-2 bg-white/80 backdrop-blur-md text-jvto-navy text-[11px] font-mono font-black uppercase tracking-widest rounded-full border border-slate-200">
                   <Clock className="w-3 h-3 inline mr-2" /> {data.duration}
                 </span>
               </div>
-              <h1 className="text-6xl md:text-9xl font-black text-authority-navy uppercase tracking-tighter leading-[0.85] mb-8">
+              <h1 className="text-6xl md:text-9xl font-black text-jvto-navy uppercase tracking-tighter leading-[0.85] mb-8">
                 {meta?.h1 || data.title + '.'}
               </h1>
             </motion.div>
@@ -248,36 +248,36 @@ export default function DestinationDetail() {
               <h2 className="text-3xl font-black uppercase tracking-tighter mb-8">Highlights</h2>
               <div className="grid sm:grid-cols-2 gap-4">
                 {data.highlights.map((highlight: string, i: number) => (
-                  <div key={i} className="flex items-center gap-4 p-6 bento-card bg-audit-white rounded-3xl border border-slate-100">
-                    <CheckCircle2 className="w-6 h-6 text-safety-orange shrink-0" />
+                  <div key={i} className="flex items-center gap-4 p-6 bento-card bg-surface-page rounded-3xl border border-slate-100">
+                    <CheckCircle2 className="w-6 h-6 text-jvto-orange shrink-0" />
                     <span className="text-lg font-bold uppercase tracking-tight">{highlight}</span>
                   </div>
                 ))}
               </div>
             </section>
 
-            <section className="p-12 bg-safety-orange/5 rounded-[3rem] border border-safety-orange/20">
+            <section className="p-12 bg-jvto-orange/5 rounded-[3rem] border border-jvto-orange/20">
               <div className="flex items-center gap-4 mb-8">
-                <ShieldCheck className="w-10 h-10 text-safety-orange" />
+                <ShieldCheck className="w-10 h-10 text-jvto-orange" />
                 <h2 className="text-3xl font-black uppercase tracking-tighter">Safety & Coordination</h2>
               </div>
               <p className="text-xl text-slate-600 leading-relaxed mb-8">
                 {data.safety}
               </p>
-              <div className="flex items-center gap-4 p-6 bento-card bg-audit-white rounded-2xl border border-safety-orange/10">
-                <Info className="w-6 h-6 text-safety-orange" />
+              <div className="flex items-center gap-4 p-6 bento-card bg-surface-page rounded-2xl border border-jvto-orange/10">
+                <Info className="w-6 h-6 text-jvto-orange" />
                 <span className="text-sm font-mono uppercase tracking-widest text-slate-500">JVTO Safety Protocol V2.1 Active</span>
               </div>
             </section>
           </div>
 
           <div className="space-y-8">
-            <div className="p-12 bg-authority-navy text-white rounded-[3rem] sticky top-32">
+            <div className="p-12 bg-jvto-navy text-white rounded-[3rem] sticky top-32">
               <h3 className="text-2xl font-black uppercase tracking-tighter mb-8">Ready to Explore?</h3>
               <p className="text-white/60 mb-12 leading-relaxed">
                 Book your journey with the most trusted operator in East Java.
               </p>
-              <button className="w-full py-6 bg-safety-orange text-white font-black uppercase tracking-widest rounded-2xl hover:bg-white hover:text-safety-orange transition-all mb-6">
+              <button className="w-full py-6 bg-jvto-orange text-white font-black uppercase tracking-widest rounded-2xl hover:bg-white hover:text-jvto-orange transition-all mb-6">
                 Book This Tour
               </button>
               <button className="w-full py-6 bg-white/10 text-white font-black uppercase tracking-widest rounded-2xl hover:bg-white/20 transition-all flex items-center justify-center gap-3">
@@ -289,11 +289,11 @@ export default function DestinationDetail() {
         
         {/* Footer Audit Stamp */}
         <div className="mt-32 pt-12 border-t border-slate-200 flex flex-col items-center">
-          <div className="p-12 bento-card bg-audit-white border-4 border-safety-orange rounded-[2.5rem] -rotate-2 shadow-2xl relative overflow-hidden group hover:rotate-0 transition-transform">
+          <div className="p-12 bento-card bg-surface-page border-4 border-jvto-orange rounded-[2.5rem] -rotate-2 shadow-2xl relative overflow-hidden group hover:rotate-0 transition-transform">
             <div className="scanline"></div>
             <div className="flex flex-col items-center">
-              <Navigation className="w-20 h-20 text-safety-orange mb-8" />
-              <span className="text-5xl font-black text-authority-navy uppercase tracking-tighter leading-none mb-3">DESTINATION_VERIFIED</span>
+              <Navigation className="w-20 h-20 text-jvto-orange mb-8" />
+              <span className="text-5xl font-black text-jvto-navy uppercase tracking-tighter leading-none mb-3">DESTINATION_VERIFIED</span>
               <span className="font-mono text-[11px] text-slate-500 tracking-[0.4em] uppercase">JVTO Registry 2026</span>
             </div>
           </div>

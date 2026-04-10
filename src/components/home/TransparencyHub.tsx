@@ -73,7 +73,7 @@ export const TransparencyHub = () => {
   const activeArticle = SSOT.press[activePressIndex];
 
   return (
-    <section className="bg-authority-navy py-32 px-6 relative overflow-hidden border-y border-white/5">
+    <section className="bg-jvto-navy py-32 px-6 relative overflow-hidden border-y border-white/5">
       {/* Grid Pattern */}
       <div className="absolute inset-0 grid-pattern opacity-5"></div>
       
@@ -82,12 +82,12 @@ export const TransparencyHub = () => {
         <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 gap-8">
           <div className="max-w-2xl">
             <div className="flex items-center gap-2 mb-4">
-              <Database className="w-4 h-4 text-safety-orange" />
+              <Database className="w-4 h-4 text-jvto-orange" />
               <span className="font-mono text-[11px] uppercase tracking-widest text-slate-500">The Audit Vault v3.0</span>
             </div>
             <h2 className="text-4xl md:text-6xl font-black text-white leading-[0.9] mb-6 uppercase">
               TRANSPARENCY <br />
-              <span className="text-safety-orange">HUB.</span>
+              <span className="text-jvto-orange">HUB.</span>
             </h2>
             <p className="text-slate-400 text-xl leading-tight font-light">
               Consolidated forensic evidence. We don't ask for trust; we provide the infrastructure for you to audit us directly.
@@ -102,7 +102,7 @@ export const TransparencyHub = () => {
                 onClick={() => setActiveTab(tab.id as TabType)}
                 className={`flex items-center gap-2 px-6 py-3 rounded-md font-black uppercase tracking-wider text-xs transition-all ${
                   activeTab === tab.id 
-                    ? 'bg-safety-orange text-white shadow-card shadow-safety-orange/20' 
+                    ? 'bg-jvto-orange text-white shadow-card shadow-jvto-orange/20' 
                     : 'text-slate-400 hover:text-white hover:bg-white/5'
                 }`}
               >
@@ -130,7 +130,7 @@ export const TransparencyHub = () => {
                     <div key={i} className="bento-card bg-white/5 border-white/10 p-8 group hover:bg-white/10 transition-all">
                       <div className="flex items-center justify-between mb-6">
                         <div className="flex items-center gap-4">
-                          <div className="w-12 h-12 rounded-full bg-safety-orange text-white flex items-center justify-center font-black text-lg">
+                          <div className="w-12 h-12 rounded-full bg-jvto-orange text-white flex items-center justify-center font-black text-lg">
                             {artifact.year}
                           </div>
                           <div className="tech-badge bg-white/10 text-white border-white/20">{artifact.type}</div>
@@ -169,9 +169,9 @@ export const TransparencyHub = () => {
                         alt={artifact.title}
                         referrerPolicy="no-referrer"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-authority-navy to-transparent opacity-60"></div>
+                      <div className="absolute inset-0 bg-gradient-to-t from-jvto-navy to-transparent opacity-60"></div>
                       <div className="absolute bottom-8 left-8">
-                        <span className="font-mono text-[11px] uppercase tracking-widest text-safety-orange mb-2 block">Archival Record {artifact.year}</span>
+                        <span className="font-mono text-[11px] uppercase tracking-widest text-jvto-orange mb-2 block">Archival Record {artifact.year}</span>
                         <h4 className="text-xl font-black text-white uppercase">{artifact.title}</h4>
                       </div>
                     </div>
@@ -196,7 +196,7 @@ export const TransparencyHub = () => {
                       onClick={() => setActivePressIndex(idx)}
                       className={`w-full text-left p-5 rounded-md border transition-all flex items-center justify-between group ${
                         activePressIndex === idx 
-                          ? 'bg-white/10 border-safety-orange/50 shadow-card' 
+                          ? 'bg-white/10 border-jvto-orange/50 shadow-card' 
                           : 'bg-white/5 border-white/10 hover:bg-white/10'
                       }`}
                     >
@@ -208,7 +208,7 @@ export const TransparencyHub = () => {
                           {article.translatedTitle}
                         </p>
                       </div>
-                      <ChevronRight className={`w-5 h-5 transition-transform ${activePressIndex === idx ? 'text-safety-orange translate-x-1' : 'text-slate-600'}`} />
+                      <ChevronRight className={`w-5 h-5 transition-transform ${activePressIndex === idx ? 'text-jvto-orange translate-x-1' : 'text-slate-600'}`} />
                     </button>
                   ))}
                 </div>
@@ -220,8 +220,8 @@ export const TransparencyHub = () => {
                     </p>
                     <div className="flex items-center justify-between border-t border-white/5 pt-6">
                       <div className="flex items-center gap-3">
-                        <div className="h-px w-8 bg-safety-orange"></div>
-                        <span className="font-mono font-bold text-safety-orange uppercase tracking-widest text-xs">— {activeArticle.author}</span>
+                        <div className="h-px w-8 bg-jvto-orange"></div>
+                        <span className="font-mono font-bold text-jvto-orange uppercase tracking-widest text-xs">— {activeArticle.author}</span>
                       </div>
                       <span className="font-mono text-slate-500 text-xs">{new Date(activeArticle.date).getFullYear()}</span>
                     </div>
@@ -242,7 +242,7 @@ export const TransparencyHub = () => {
                         <Lock className="w-3 h-3 text-emerald-500" />
                         {activeArticle.url.replace('https://', '').split('/')[0]}
                       </div>
-                      <ExternalLink className="w-4 h-4 text-slate-400 group-hover:text-safety-orange transition-colors" />
+                      <ExternalLink className="w-4 h-4 text-slate-400 group-hover:text-jvto-orange transition-colors" />
                     </div>
                     <img 
                       src={activeArticle.screenshot} 
@@ -273,7 +273,7 @@ export const TransparencyHub = () => {
                           alt={doc.title}
                           referrerPolicy="no-referrer"
                         />
-                        <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-authority-navy/40">
+                        <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-jvto-navy/40">
                           <Search className="w-8 h-8 text-white" />
                         </div>
                         <div className="absolute top-4 right-4">
@@ -298,7 +298,7 @@ export const TransparencyHub = () => {
                   </div>
                   <button 
                     onClick={() => navigate('/verify-jvto')}
-                    className="w-full md:w-auto group bg-white text-authority-navy px-10 py-4 rounded-md font-black uppercase tracking-wider transition-all hover:bg-safety-orange hover:text-white flex items-center justify-center gap-3 shadow-hover"
+                    className="w-full md:w-auto group bg-white text-jvto-navy px-10 py-4 rounded-md font-black uppercase tracking-wider transition-all hover:bg-jvto-orange hover:text-white flex items-center justify-center gap-3 shadow-hover"
                   >
                     <Lock className="w-5 h-5"/> Enter Full Proof Library <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                   </button>

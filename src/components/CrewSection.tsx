@@ -23,12 +23,12 @@ export const CrewSection: React.FC = () => {
         {/* Header Section - Authority Style */}
         <div className="flex flex-col md:flex-row items-start md:items-end justify-between gap-8 md:gap-12 mb-16 md:mb-24">
           <div className="max-w-2xl">
-            <div className="badge-eyebrow bg-authority-navy text-white mb-6 md:mb-8">
+            <div className="badge-eyebrow bg-jvto-navy text-white mb-6 md:mb-8">
               <Users className="w-3 h-3" /> The Human Element
             </div>
             <h2 className="heading-section">
               MEET THE <br />
-              <span className="text-safety-orange">VANGUARD.</span>
+              <span className="text-jvto-orange">VANGUARD.</span>
             </h2>
           </div>
           <p className="body-text max-w-sm">
@@ -62,7 +62,7 @@ export const CrewSection: React.FC = () => {
               {/* Content Overlay */}
               <div className="absolute inset-x-0 bottom-0 p-8 md:p-10 z-10">
                 <div className="flex items-center gap-3 mb-3">
-                  <span className="text-safety-orange font-mono text-[10px] md:text-[11px] font-black uppercase tracking-[0.2em]">
+                  <span className="text-jvto-orange font-mono text-[10px] md:text-[11px] font-black uppercase tracking-[0.2em]">
                     {member.role}
                   </span>
                   <div className="w-1.5 h-1.5 rounded-full bg-white/40" />
@@ -76,11 +76,11 @@ export const CrewSection: React.FC = () => {
                 </h3>
 
                 <div className="flex items-center justify-between pt-6 border-t border-white/20">
-                  <div className="flex items-center gap-2 text-safety-orange font-mono text-[10px] md:text-[12px] font-black uppercase tracking-[0.2em] opacity-0 group-hover:opacity-100 transition-all transform translate-y-4 group-hover:translate-y-0 duration-500">
+                  <div className="flex items-center gap-2 text-jvto-orange font-mono text-[10px] md:text-[12px] font-black uppercase tracking-[0.2em] opacity-0 group-hover:opacity-100 transition-all transform translate-y-4 group-hover:translate-y-0 duration-500">
                     View Profile <ChevronRight className="w-4 h-4" />
                   </div>
                   <div className="flex items-center gap-2">
-                    <ShieldCheck className="w-4 h-4 text-verified-bright" />
+                    <ShieldCheck className="w-4 h-4 text-jvto-lime" />
                     <span className="text-[10px] font-mono text-white/40 font-black uppercase tracking-[0.2em]">Licensed</span>
                   </div>
                 </div>
@@ -99,7 +99,7 @@ export const CrewSection: React.FC = () => {
         >
           <button 
             onClick={() => navigate('/team')}
-            className="w-full sm:w-auto bg-safety-orange hover:bg-orange-600 text-white px-12 py-6 rounded-md font-black uppercase tracking-[0.2em] text-sm transition-all shadow-hover shadow-safety-orange/20 flex items-center justify-center gap-4 mx-auto group"
+            className="w-full sm:w-auto bg-jvto-orange hover:bg-orange-600 text-white px-12 py-6 rounded-md font-black uppercase tracking-[0.2em] text-sm transition-all shadow-hover shadow-jvto-orange/20 flex items-center justify-center gap-4 mx-auto group"
           >
             Explore Full Team Registry <ChevronRight className="w-6 h-6 group-hover:translate-x-2 transition-transform" />
           </button>

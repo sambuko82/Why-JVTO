@@ -33,7 +33,7 @@ export default function FAQPage() {
   };
 
   return (
-    <div className="min-h-screen bg-audit-white text-authority-navy font-sans selection:bg-safety-orange/30 pb-24 md:pb-0">
+    <div className="min-h-screen bg-audit-white text-jvto-navy font-sans selection:bg-jvto-orange/30 pb-24 md:pb-0">
       {/* Grid Pattern Overlay */}
       <div className="fixed inset-0 grid-pattern opacity-5 pointer-events-none"></div>
       
@@ -42,11 +42,11 @@ export default function FAQPage() {
         <div className="container mx-auto px-6 py-6 flex items-center justify-between">
           <button 
             onClick={() => navigate('/')}
-            className="group flex items-center gap-3 text-[11px] font-mono font-bold text-slate-500 hover:text-authority-navy transition-all uppercase tracking-widest"
+            className="group flex items-center gap-3 text-[11px] font-mono font-bold text-slate-500 hover:text-jvto-navy transition-all uppercase tracking-widest"
           >
             <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" /> Back to Hub
           </button>
-          <div className="flex items-center gap-3 text-safety-orange text-[11px] font-mono font-bold uppercase tracking-[0.2em]">
+          <div className="flex items-center gap-3 text-jvto-orange text-[11px] font-mono font-bold uppercase tracking-[0.2em]">
             <Lock className="w-4 h-4" /> Support Protocol v1.9
           </div>
         </div>
@@ -60,12 +60,12 @@ export default function FAQPage() {
           className="mb-16"
         >
           <div className="flex items-center gap-2 mb-6">
-            <HelpCircle className="w-4 h-4 text-safety-orange" />
+            <HelpCircle className="w-4 h-4 text-jvto-orange" />
             <span className="font-mono text-[11px] uppercase tracking-widest text-slate-500">Knowledge Base & FAQ</span>
           </div>
-          <h1 className="text-5xl md:text-8xl font-black text-authority-navy mb-8 leading-[0.85] uppercase tracking-tighter">
+          <h1 className="text-5xl md:text-8xl font-black text-jvto-navy mb-8 leading-[0.85] uppercase tracking-tighter">
             SYSTEM <br />
-            <span className="text-safety-orange">GUIDANCE.</span>
+            <span className="text-jvto-orange">GUIDANCE.</span>
           </h1>
           <p className="text-slate-500 text-xl leading-tight font-light max-w-2xl">
             Technical answers to operational questions. If your query is not addressed below, 
@@ -81,7 +81,7 @@ export default function FAQPage() {
           <input 
             type="text"
             placeholder="SEARCH PROTOCOLS (E.G. 'VERIFY', 'POLICE', 'LEGAL')..."
-            className="w-full bg-white border-2 border-slate-200 rounded-2xl py-6 pl-16 pr-6 font-mono text-xs uppercase tracking-widest focus:border-safety-orange focus:ring-0 transition-all outline-none shadow-xl shadow-black/5"
+            className="w-full bg-white border-2 border-slate-200 rounded-2xl py-6 pl-16 pr-6 font-mono text-xs uppercase tracking-widest focus:border-jvto-orange focus:ring-0 transition-all outline-none shadow-xl shadow-black/5"
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
           />
@@ -95,7 +95,7 @@ export default function FAQPage() {
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.05 }}
-              className={`bento-card bg-white border-2 transition-all overflow-hidden ${openIndex === index ? 'border-safety-orange shadow-2xl' : 'border-slate-100 hover:border-slate-200'}`}
+              className={`bento-card bg-white border-2 transition-all overflow-hidden ${openIndex === index ? 'border-jvto-orange shadow-2xl' : 'border-slate-100 hover:border-slate-200'}`}
             >
               <button 
                 onClick={() => toggleFaq(index)}
@@ -103,11 +103,11 @@ export default function FAQPage() {
               >
                 <div className="flex items-center gap-6">
                   <span className="font-mono text-[11px] text-slate-300 font-black">0{index + 1}</span>
-                  <h3 className="text-xl font-black text-authority-navy uppercase leading-tight group-hover:text-safety-orange transition-colors">
+                  <h3 className="text-xl font-black text-jvto-navy uppercase leading-tight group-hover:text-jvto-orange transition-colors">
                     {faq.question}
                   </h3>
                 </div>
-                {openIndex === index ? <ChevronUp className="w-5 h-5 text-safety-orange" /> : <ChevronDown className="w-5 h-5 text-slate-300" />}
+                {openIndex === index ? <ChevronUp className="w-5 h-5 text-jvto-orange" /> : <ChevronDown className="w-5 h-5 text-slate-300" />}
               </button>
               
               <AnimatePresence>
@@ -131,8 +131,8 @@ export default function FAQPage() {
                         </div>
                         <div className="h-3 w-px bg-slate-200"></div>
                         <div className="flex items-center gap-2">
-                          <ShieldCheck className="w-3 h-3 text-verified-bright" />
-                          <span className="font-mono text-[11px] text-verified-bright uppercase tracking-widest font-bold">Verified_Answer</span>
+                          <ShieldCheck className="w-3 h-3 text-jvto-lime" />
+                          <span className="font-mono text-[11px] text-jvto-lime uppercase tracking-widest font-bold">Verified_Answer</span>
                         </div>
                       </div>
                     </div>
@@ -151,7 +151,7 @@ export default function FAQPage() {
         </div>
 
         {/* Contact CTA */}
-        <div className="mt-32 p-12 bg-authority-navy rounded-[3rem] text-white relative overflow-hidden shadow-2xl">
+        <div className="mt-32 p-12 bg-jvto-navy rounded-[3rem] text-white relative overflow-hidden shadow-2xl">
           <div className="scanline"></div>
           <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-12">
             <div className="max-w-md">
@@ -167,7 +167,7 @@ export default function FAQPage() {
               href="https://wa.me/6281235061451"
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-safety-orange hover:bg-safety-orange/90 text-white px-10 py-5 rounded-xl font-black uppercase tracking-wider transition-all shadow-xl shadow-safety-orange/20 flex items-center gap-3 group"
+              className="bg-jvto-orange hover:bg-jvto-orange/90 text-white px-10 py-5 rounded-xl font-black uppercase tracking-wider transition-all shadow-xl shadow-jvto-orange/20 flex items-center gap-3 group"
             >
               Open Secure Channel <ChevronDown className="w-5 h-5 -rotate-90 group-hover:translate-x-1 transition-transform" />
             </a>
@@ -176,11 +176,11 @@ export default function FAQPage() {
 
         {/* Footer Audit Stamp */}
         <div className="mt-32 pt-12 border-t border-slate-200 flex flex-col items-center">
-          <div className="p-12 bg-white border-4 border-safety-orange rounded-[2.5rem] rotate-2 shadow-2xl relative overflow-hidden group hover:rotate-0 transition-transform">
+          <div className="p-12 bg-white border-4 border-jvto-orange rounded-[2.5rem] rotate-2 shadow-2xl relative overflow-hidden group hover:rotate-0 transition-transform">
             <div className="scanline"></div>
             <div className="flex flex-col items-center">
-              <ShieldCheck className="w-20 h-20 text-safety-orange mb-8" />
-              <span className="text-5xl font-black text-authority-navy uppercase tracking-tighter leading-none mb-3">KNOWLEDGE_AUDITED</span>
+              <ShieldCheck className="w-20 h-20 text-jvto-orange mb-8" />
+              <span className="text-5xl font-black text-jvto-navy uppercase tracking-tighter leading-none mb-3">KNOWLEDGE_AUDITED</span>
               <span className="font-mono text-[11px] text-slate-500 tracking-[0.4em] uppercase">Support Registry 2026</span>
             </div>
           </div>

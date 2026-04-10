@@ -17,7 +17,7 @@ export const TeamFilter = ({ currentFilter, onFilterChange, count }: TeamFilterP
             key={filter}
             onClick={() => onFilterChange(filter)}
             className={`px-8 py-3 font-black text-[11px] uppercase tracking-widest transition-all rounded-xl ${
-              currentFilter === filter ? 'bg-authority-navy text-white shadow-lg' : 'hover:bg-slate-50 text-slate-500'
+              currentFilter === filter ? 'bg-jvto-navy text-white shadow-lg' : 'hover:bg-slate-50 text-slate-500'
             }`}
           >
             {filter}

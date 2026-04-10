@@ -15,12 +15,12 @@ export const TeamRegistry = () => {
       <div className="flex flex-col md:flex-row md:items-end justify-between mb-20 gap-8">
         <div className="max-w-2xl">
           <div className="flex items-center gap-2 mb-4">
-            <UserCheck className="w-4 h-4 text-safety-orange" />
+            <UserCheck className="w-4 h-4 text-jvto-orange" />
             <span className="font-mono text-[11px] uppercase tracking-widest text-slate-500">Human Intelligence Infrastructure</span>
           </div>
-          <h2 className="text-4xl md:text-6xl font-black text-authority-navy leading-[0.9] mb-6 uppercase">
+          <h2 className="text-4xl md:text-6xl font-black text-jvto-navy leading-[0.9] mb-6 uppercase">
             PERSONNEL <br />
-            <span className="text-safety-orange">ROSTER.</span>
+            <span className="text-jvto-orange">ROSTER.</span>
           </h2>
           <p className="text-slate-600 text-xl leading-tight font-light">
             Every operative listed below is vetted through our multi-layer verification protocol. Connecting faces to verifiable competencies.
@@ -45,8 +45,8 @@ export const TeamRegistry = () => {
           <ul className="space-y-3">
             {['Background Checks', 'Annual Health Audit', 'Safety Training Cert'].map((sop, i) => (
               <li key={i} className="flex items-center gap-3">
-                <div className="w-1 h-1 rounded-full bg-safety-orange" />
-                <span className="text-[11px] font-bold text-authority-navy uppercase tracking-wider">{sop}</span>
+                <div className="w-1 h-1 rounded-full bg-jvto-orange" />
+                <span className="text-[11px] font-bold text-jvto-navy uppercase tracking-wider">{sop}</span>
               </li>
             ))}
           </ul>
@@ -56,25 +56,25 @@ export const TeamRegistry = () => {
           <ul className="space-y-3">
             {['Banyuwangi Tourist Guide Assoc.', 'Indonesian Ministry of Tourism', 'JVTO Safety Infrastructure'].map((body, i) => (
               <li key={i} className="flex items-center gap-3">
-                <div className="w-1 h-1 rounded-full bg-verified-lime" />
-                <span className="text-[11px] font-bold text-authority-navy uppercase tracking-wider">{body}</span>
+                <div className="w-1 h-1 rounded-full bg-jvto-lime" />
+                <span className="text-[11px] font-bold text-jvto-navy uppercase tracking-wider">{body}</span>
               </li>
             ))}
           </ul>
         </div>
         <div className="flex flex-col items-center md:items-end justify-center gap-6">
-          <div className="p-8 bg-white border-2 border-safety-orange rounded-md -rotate-3 shadow-hover relative overflow-hidden group hover:rotate-0 transition-transform">
+          <div className="p-8 bg-white border-2 border-jvto-orange rounded-md -rotate-3 shadow-hover relative overflow-hidden group hover:rotate-0 transition-transform">
             <div className="scanline"></div>
             <div className="flex flex-col items-center">
-              <ShieldCheck className="w-12 h-12 text-safety-orange mb-4" />
-              <span className="text-3xl font-black text-authority-navy uppercase tracking-tighter leading-none mb-2">100% COMPLIANT</span>
+              <ShieldCheck className="w-12 h-12 text-jvto-orange mb-4" />
+              <span className="text-3xl font-black text-jvto-navy uppercase tracking-tighter leading-none mb-2">100% COMPLIANT</span>
               <span className="font-mono text-[11px] text-slate-500 tracking-widest uppercase">Personnel Audit 2026</span>
             </div>
           </div>
 
-          <div className="p-6 bg-authority-navy rounded-md border border-white/10 shadow-hover w-full max-w-[200px]">
+          <div className="p-6 bg-jvto-navy rounded-md border border-white/10 shadow-hover w-full max-w-[200px]">
             <div className="flex items-center justify-between mb-4">
-              <Activity className="w-4 h-4 text-safety-orange" />
+              <Activity className="w-4 h-4 text-jvto-orange" />
               <span className="font-mono text-[11px] text-slate-500 uppercase tracking-widest">Fleet Safety Index</span>
             </div>
             <div className="text-3xl font-black text-white mb-2">95.4%</div>
@@ -83,7 +83,7 @@ export const TeamRegistry = () => {
                 initial={{ width: 0 }}
                 whileInView={{ width: '95.4%' }}
                 transition={{ duration: 1.5 }}
-                className="h-full bg-safety-orange"
+                className="h-full bg-jvto-orange"
               />
             </div>
             <p className="font-mono text-[11px] text-slate-500 uppercase tracking-widest mt-2">Aggregate performance across {SSOT.crew.length} operatives</p>

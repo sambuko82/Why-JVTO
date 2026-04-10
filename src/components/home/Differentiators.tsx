@@ -7,9 +7,9 @@ import { SSOT } from '../../lib/ssot';
 const TwoToneIcon = ({ Icon }: { Icon: any }) => (
   <div className="relative w-16 h-16 mb-6 group-hover:scale-105 transition-transform origin-bottom-left">
     {/* Accent shape (simulating the green blob in the illustration) */}
-    <div className="absolute top-0 right-1 w-10 h-10 bg-safety-orange rounded-full opacity-90" />
+    <div className="absolute top-0 right-1 w-10 h-10 bg-jvto-orange rounded-full opacity-90" />
     {/* Main icon (simulating the black outline) */}
-    <Icon className="absolute bottom-0 left-0 w-12 h-12 text-authority-navy relative z-10" strokeWidth={1.5} />
+    <Icon className="absolute bottom-0 left-0 w-12 h-12 text-jvto-navy relative z-10" strokeWidth={1.5} />
   </div>
 );
 
@@ -46,11 +46,11 @@ export const Differentiators = () => {
           {/* Text Column (Left) */}
           <div className="xl:w-1/3 flex flex-col justify-center shrink-0 text-center xl:text-left">
             <div className="inline-block relative mb-6 w-fit mx-auto xl:mx-0">
-              <h2 className="font-mono text-[10px] md:text-xs font-black uppercase tracking-[0.25em] text-authority-navy relative z-10">
+              <h2 className="font-mono text-[10px] md:text-xs font-black uppercase tracking-[0.25em] text-jvto-navy relative z-10">
                 Operational Excellence
               </h2>
               {/* Marker underline effect */}
-              <svg className="absolute -bottom-1 left-0 w-full h-2 text-safety-orange/80 z-0" viewBox="0 0 100 10" preserveAspectRatio="none">
+              <svg className="absolute -bottom-1 left-0 w-full h-2 text-jvto-orange/80 z-0" viewBox="0 0 100 10" preserveAspectRatio="none">
                 <path d="M0 5 Q 50 0 100 5 Q 50 10 0 5" fill="currentColor" />
               </svg>
             </div>
@@ -77,13 +77,13 @@ export const Differentiators = () => {
                   className="shrink-0 w-[85vw] md:w-auto snap-start p-8 md:p-10 rounded-md bg-white shadow-card border border-slate-100 hover:shadow-hover hover:-translate-y-2 transition-all duration-500 group flex flex-col cursor-pointer"
                 >
                   <TwoToneIcon Icon={item.icon} />
-                  <h3 className="text-lg md:text-xl font-black text-authority-navy uppercase tracking-tight mb-3">
+                  <h3 className="text-lg md:text-xl font-black text-jvto-navy uppercase tracking-tight mb-3">
                     {item.title}
                   </h3>
                   <p className="body-text text-sm mb-8 line-clamp-3">
                     {item.desc}
                   </p>
-                  <div className="mt-auto pt-4 flex items-center gap-2 text-safety-orange font-mono text-[11px] font-black uppercase tracking-[0.2em] group-hover:gap-4 transition-all">
+                  <div className="mt-auto pt-4 flex items-center gap-2 text-jvto-orange font-mono text-[11px] font-black uppercase tracking-[0.2em] group-hover:gap-4 transition-all">
                     Learn More <ChevronRight className="w-4 h-4" />
                   </div>
                 </motion.div>

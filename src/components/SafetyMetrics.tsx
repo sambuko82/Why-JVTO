@@ -15,7 +15,7 @@ export const SafetyMetrics: React.FC<SafetyMetricsProps> = ({ metrics, compact =
     <div className={`flex flex-col gap-4 ${compact ? 'gap-2' : 'gap-6'}`}>
       {!compact && (
         <div className="flex items-center gap-2 mb-2">
-          <ShieldCheck className="w-4 h-4 text-safety-orange" />
+          <ShieldCheck className="w-4 h-4 text-jvto-orange" />
           <span className="font-mono text-[11px] uppercase tracking-[0.2em] text-slate-500">Safety Performance Metrics</span>
         </div>
       )}
@@ -23,10 +23,10 @@ export const SafetyMetrics: React.FC<SafetyMetricsProps> = ({ metrics, compact =
       {metrics.map((metric, idx) => (
         <div key={idx} className="group/metric">
           <div className="flex items-center justify-between mb-1.5">
-            <span className="font-mono text-[11px] uppercase tracking-wider text-slate-500 group-hover/metric:text-authority-navy transition-colors">
+            <span className="font-mono text-[11px] uppercase tracking-wider text-slate-500 group-hover/metric:text-jvto-navy transition-colors">
               {metric.label}
             </span>
-            <span className="font-mono text-[11px] font-bold text-authority-navy">
+            <span className="font-mono text-[11px] font-bold text-jvto-navy">
               {metric.value}%
             </span>
           </div>
@@ -37,8 +37,8 @@ export const SafetyMetrics: React.FC<SafetyMetricsProps> = ({ metrics, compact =
               <svg className="w-full h-full" viewBox="0 0 100 40" preserveAspectRatio="none">
                 <defs>
                   <linearGradient id={`grad-${idx}`} x1="0%" y1="0%" x2="0%" y2="100%">
-                    <stop offset="0%" stopColor="#FF6321" stopOpacity="0.2" />
-                    <stop offset="100%" stopColor="#FF6321" stopOpacity="0" />
+                    <stop offset="0%" stopColor="#F27D26" stopOpacity="0.2" />
+                    <stop offset="100%" stopColor="#F27D26" stopOpacity="0" />
                   </linearGradient>
                 </defs>
                 
@@ -78,7 +78,7 @@ export const SafetyMetrics: React.FC<SafetyMetricsProps> = ({ metrics, compact =
                     cx={(i / (metric.history.length - 1)) * 100}
                     cy={40 - (val / 100) * 35}
                     r="1.5"
-                    fill="#FF6321"
+                    fill="#F27D26"
                   />
                 ))}
               </svg>
@@ -107,13 +107,13 @@ export const SafetyMetrics: React.FC<SafetyMetricsProps> = ({ metrics, compact =
                     cy="24"
                     r="20"
                     fill="none"
-                    stroke="#FF6321"
+                    stroke="#F27D26"
                     strokeWidth="3"
                     strokeLinecap="round"
                   />
                 </svg>
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <Activity className="w-3 h-3 text-safety-orange opacity-50" />
+                  <Activity className="w-3 h-3 text-jvto-orange opacity-50" />
                 </div>
               </div>
             )}

@@ -45,7 +45,7 @@ export default function WhyJVTOHub() {
   const featureIcons = [AlertTriangle, Scale, Siren, Network];
 
   return (
-    <div className="bg-audit-white text-authority-navy font-sans selection:bg-safety-orange/30">
+    <div className="bg-surface-page text-jvto-navy font-sans selection:bg-jvto-orange/30">
       <PageSEO route="/why-jvto" />
       
       {/* Grid Pattern Overlay */}
@@ -63,7 +63,7 @@ export default function WhyJVTOHub() {
             <div className="badge-eyebrow badge-eyebrow-orange mb-8">
               <Shield className="w-4 h-4" /> {policeAuth.badge}
             </div>
-            <h1 className="text-5xl md:text-7xl font-black text-authority-navy mb-8 leading-[1.1] tracking-tight">
+            <h1 className="text-5xl md:text-7xl font-black text-jvto-navy mb-8 leading-[1.1] tracking-tight">
               Beyond Tourism. Engineered for Safety & Certainty.
             </h1>
             <p className="text-slate-500 text-lg md:text-xl leading-relaxed font-light mb-12 max-w-2xl mx-auto">
@@ -72,13 +72,13 @@ export default function WhyJVTOHub() {
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <button 
                 onClick={() => navigate('/verify-jvto')}
-                className="w-full sm:w-auto bg-safety-orange hover:bg-safety-orange/90 text-white px-8 py-4 rounded-xl font-bold uppercase tracking-wider transition-all shadow-[0_0_30px_rgba(249,115,22,0.2)] flex items-center justify-center gap-2"
+                className="w-full sm:w-auto bg-jvto-orange hover:bg-jvto-orange/90 text-white px-8 py-4 rounded-xl font-bold uppercase tracking-wider transition-all shadow-[0_0_30px_rgba(249,115,22,0.2)] flex items-center justify-center gap-2"
               >
                 View Forensic Proof <ArrowRight className="w-5 h-5" />
               </button>
               <button 
                 onClick={() => navigate('/team')}
-                className="w-full sm:w-auto bg-white hover:bg-slate-50 border border-slate-200 text-authority-navy px-8 py-4 rounded-xl font-bold uppercase tracking-wider transition-all flex items-center justify-center gap-2 shadow-sm"
+                className="w-full sm:w-auto bg-white hover:bg-slate-50 border border-slate-200 text-jvto-navy px-8 py-4 rounded-xl font-bold uppercase tracking-wider transition-all flex items-center justify-center gap-2 shadow-sm"
               >
                 Meet the Team
               </button>
@@ -97,8 +97,8 @@ export default function WhyJVTOHub() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
             >
-              <ShieldCheck className="w-12 h-12 text-safety-orange mb-6" />
-              <h2 className="text-3xl md:text-4xl font-black text-authority-navy mb-6 tracking-tight">
+              <ShieldCheck className="w-12 h-12 text-jvto-orange mb-6" />
+              <h2 className="text-3xl md:text-4xl font-black text-jvto-navy mb-6 tracking-tight">
                 {policeAuth.title}
               </h2>
               <p className="text-slate-500 text-lg leading-relaxed mb-10">
@@ -111,10 +111,10 @@ export default function WhyJVTOHub() {
                   return (
                     <div key={idx} className="flex items-start gap-4">
                       <div className="w-10 h-10 rounded-lg bg-slate-100 border border-slate-200 flex items-center justify-center shrink-0">
-                        <Icon className="w-5 h-5 text-authority-navy" />
+                        <Icon className="w-5 h-5 text-jvto-navy" />
                       </div>
                       <div>
-                        <h4 className="text-authority-navy font-bold text-sm">{feature}</h4>
+                        <h4 className="text-jvto-navy font-bold text-sm">{feature}</h4>
                       </div>
                     </div>
                   );
@@ -123,7 +123,7 @@ export default function WhyJVTOHub() {
               
               <button 
                 onClick={() => navigate('/why-jvto/safety-leadership')}
-                className="text-safety-orange font-mono text-sm uppercase tracking-widest hover:text-authority-navy transition-colors flex items-center gap-2"
+                className="text-jvto-orange font-mono text-sm uppercase tracking-widest hover:text-jvto-navy transition-colors flex items-center gap-2"
               >
                 Read the Founder's Doctrine <ArrowRight className="w-4 h-4" />
               </button>
@@ -135,7 +135,7 @@ export default function WhyJVTOHub() {
               viewport={{ once: true }}
               className="relative"
             >
-              <div className="absolute inset-0 bg-gradient-to-tr from-safety-orange/10 to-transparent rounded-3xl blur-2xl"></div>
+              <div className="absolute inset-0 bg-gradient-to-tr from-jvto-orange/10 to-transparent rounded-3xl blur-2xl"></div>
               <div className="relative rounded-3xl overflow-hidden border border-slate-200 bg-white aspect-[4/5] shadow-xl">
                 <img 
                   src={SSOT.assets.find(a => a.slug === 'mr-sam-tourist-police-portrait')?.url} 
@@ -144,7 +144,7 @@ export default function WhyJVTOHub() {
                   referrerPolicy="no-referrer"
                 />
                 <div className="absolute bottom-0 left-0 right-0 p-8 bg-gradient-to-t from-black/80 to-transparent">
-                  <div className="font-mono text-xs text-safety-orange uppercase tracking-widest mb-1">Founder</div>
+                  <div className="font-mono text-xs text-jvto-orange uppercase tracking-widest mb-1">Founder</div>
                   <div className="text-white font-bold text-xl">{founder.name}</div>
                   <div className="text-slate-300 text-sm">{founder.role} - {founder.unit}</div>
                 </div>
@@ -156,7 +156,7 @@ export default function WhyJVTOHub() {
         {/* ⏳ LAYER 4: TIMELINE TWIN (HISTORY & ARTIFACTS) */}
         <section id="history" className="container mx-auto px-6 py-24 border-t border-slate-200">
           <div className="max-w-3xl mx-auto text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-black text-authority-navy mb-6 tracking-tight">
+            <h2 className="text-3xl md:text-4xl font-black text-jvto-navy mb-6 tracking-tight">
               Roots in Documented History
             </h2>
             <p className="text-slate-500 text-lg leading-relaxed">
@@ -174,10 +174,10 @@ export default function WhyJVTOHub() {
                 viewport={{ once: true }}
                 className="relative flex flex-col md:flex-row gap-8 md:flex-row-reverse"
               >
-                <div className="absolute left-4 md:left-1/2 w-3 h-3 bg-safety-orange rounded-full -translate-x-[5px] md:-translate-x-1/2 mt-1.5 md:mt-0 md:top-1/2 md:-translate-y-1/2 shadow-[0_0_10px_rgba(249,115,22,0.4)]"></div>
+                <div className="absolute left-4 md:left-1/2 w-3 h-3 bg-jvto-orange rounded-full -translate-x-[5px] md:-translate-x-1/2 mt-1.5 md:mt-0 md:top-1/2 md:-translate-y-1/2 shadow-[0_0_10px_rgba(249,115,22,0.4)]"></div>
                 <div className="ml-12 md:ml-0 md:w-1/2 md:pl-12">
-                  <div className="font-mono text-safety-orange text-sm font-bold mb-2">2015</div>
-                  <h3 className="text-xl font-bold text-authority-navy mb-4">{SSOT.history.award2015.title}</h3>
+                  <div className="font-mono text-jvto-orange text-sm font-bold mb-2">2015</div>
+                  <h3 className="text-xl font-bold text-jvto-navy mb-4">{SSOT.history.award2015.title}</h3>
                   <div className="inline-block px-4 py-2 bg-white border border-slate-200 rounded-lg text-xs text-slate-500 font-mono shadow-sm">
                     [Artifact: Score {SSOT.history.award2015.score}]
                   </div>
@@ -190,10 +190,10 @@ export default function WhyJVTOHub() {
                 viewport={{ once: true }}
                 className="relative flex flex-col md:flex-row gap-8"
               >
-                <div className="absolute left-4 md:left-1/2 w-3 h-3 bg-safety-orange rounded-full -translate-x-[5px] md:-translate-x-1/2 mt-1.5 md:mt-0 md:top-1/2 md:-translate-y-1/2 shadow-[0_0_10px_rgba(249,115,22,0.4)]"></div>
+                <div className="absolute left-4 md:left-1/2 w-3 h-3 bg-jvto-orange rounded-full -translate-x-[5px] md:-translate-x-1/2 mt-1.5 md:mt-0 md:top-1/2 md:-translate-y-1/2 shadow-[0_0_10px_rgba(249,115,22,0.4)]"></div>
                 <div className="ml-12 md:ml-0 md:w-1/2 md:pr-12 md:text-right">
-                  <div className="font-mono text-safety-orange text-sm font-bold mb-2">2016</div>
-                  <h3 className="text-xl font-bold text-authority-navy mb-4">{SSOT.history.book2016.title}</h3>
+                  <div className="font-mono text-jvto-orange text-sm font-bold mb-2">2016</div>
+                  <h3 className="text-xl font-bold text-jvto-navy mb-4">{SSOT.history.book2016.title}</h3>
                   <div className="inline-flex px-4 py-2 bg-white border border-slate-200 rounded-lg text-xs text-slate-500 font-mono shadow-sm">
                     [Artifact: ISBN {SSOT.history.book2016.isbn}]
                   </div>
@@ -206,10 +206,10 @@ export default function WhyJVTOHub() {
                 viewport={{ once: true }}
                 className="relative flex flex-col md:flex-row gap-8 md:flex-row-reverse"
               >
-                <div className="absolute left-4 md:left-1/2 w-3 h-3 bg-safety-orange rounded-full -translate-x-[5px] md:-translate-x-1/2 mt-1.5 md:mt-0 md:top-1/2 md:-translate-y-1/2 shadow-[0_0_10px_rgba(249,115,22,0.4)]"></div>
+                <div className="absolute left-4 md:left-1/2 w-3 h-3 bg-jvto-orange rounded-full -translate-x-[5px] md:-translate-x-1/2 mt-1.5 md:mt-0 md:top-1/2 md:-translate-y-1/2 shadow-[0_0_10px_rgba(249,115,22,0.4)]"></div>
                 <div className="ml-12 md:ml-0 md:w-1/2 md:pl-12">
-                  <div className="font-mono text-safety-orange text-sm font-bold mb-2">2016</div>
-                  <h3 className="text-xl font-bold text-authority-navy mb-4">Official Founding</h3>
+                  <div className="font-mono text-jvto-orange text-sm font-bold mb-2">2016</div>
+                  <h3 className="text-xl font-bold text-jvto-navy mb-4">Official Founding</h3>
                   <div className="inline-block px-4 py-2 bg-white border border-slate-200 rounded-lg text-xs text-slate-500 font-mono shadow-sm">
                     [Artifact: Founded {SSOT.organization.foundingDate}]
                   </div>
@@ -220,7 +220,7 @@ export default function WhyJVTOHub() {
             <div className="mt-16 text-center">
               <button 
                 onClick={() => navigate('/verify-jvto/history-artifacts')}
-                className="text-safety-orange font-mono text-sm uppercase tracking-widest hover:text-authority-navy transition-colors inline-flex items-center gap-2"
+                className="text-jvto-orange font-mono text-sm uppercase tracking-widest hover:text-jvto-navy transition-colors inline-flex items-center gap-2"
               >
                 Explore the Artifact Vault <ArrowRight className="w-4 h-4" />
               </button>
@@ -235,14 +235,14 @@ export default function WhyJVTOHub() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="bento-card bg-audit-white p-8 md:p-12 relative overflow-hidden"
+              className="bento-card bg-surface-page p-8 md:p-12 relative overflow-hidden"
             >
-              <div className="absolute top-0 right-0 w-64 h-64 bg-safety-orange/5 rounded-full blur-[80px] pointer-events-none"></div>
+              <div className="absolute top-0 right-0 w-64 h-64 bg-jvto-orange/5 rounded-full blur-[80px] pointer-events-none"></div>
               
               <div className="flex items-center gap-4 mb-8">
-                <FileText className="w-8 h-8 text-safety-orange" />
+                <FileText className="w-8 h-8 text-jvto-orange" />
                 <div>
-                  <h2 className="text-2xl md:text-3xl font-black text-authority-navy tracking-tight">
+                  <h2 className="text-2xl md:text-3xl font-black text-jvto-navy tracking-tight">
                     Verified Legal Entity
                   </h2>
                   <p className="text-slate-500 mt-1">Operating under strict Indonesian tourism laws. No shell companies.</p>
@@ -250,27 +250,27 @@ export default function WhyJVTOHub() {
               </div>
               
               <div className="grid sm:grid-cols-2 gap-6 mb-10">
-                <div className="bg-audit-white border border-slate-100 rounded-xl p-6">
+                <div className="bg-surface-page border border-slate-100 rounded-xl p-6">
                   <div className="text-xs font-mono text-slate-500 uppercase tracking-widest mb-2">Entity Name</div>
-                  <div className="text-authority-navy font-mono font-bold">{SSOT.organization.legalName}</div>
+                  <div className="text-jvto-navy font-mono font-bold">{SSOT.organization.legalName}</div>
                 </div>
-                <div className="bg-audit-white border border-slate-100 rounded-xl p-6">
+                <div className="bg-surface-page border border-slate-100 rounded-xl p-6">
                   <div className="text-xs font-mono text-slate-500 uppercase tracking-widest mb-2">NIB Registration</div>
-                  <div className="text-authority-navy font-mono font-bold">1102230032918</div>
+                  <div className="text-jvto-navy font-mono font-bold">1102230032918</div>
                 </div>
-                <div className="bg-audit-white border border-slate-100 rounded-xl p-6">
+                <div className="bg-surface-page border border-slate-100 rounded-xl p-6">
                   <div className="text-xs font-mono text-slate-500 uppercase tracking-widest mb-2">TDUP License</div>
-                  <div className="text-authority-navy font-mono font-bold">1102230032918</div>
+                  <div className="text-jvto-navy font-mono font-bold">1102230032918</div>
                 </div>
-                <div className="bg-audit-white border border-slate-100 rounded-xl p-6">
+                <div className="bg-surface-page border border-slate-100 rounded-xl p-6">
                   <div className="text-xs font-mono text-slate-500 uppercase tracking-widest mb-2">Location</div>
-                  <div className="text-authority-navy font-mono font-bold">{SSOT.organization.address_json.addressLocality}, {SSOT.organization.address_json.addressRegion}</div>
+                  <div className="text-jvto-navy font-mono font-bold">{SSOT.organization.address_json.addressLocality}, {SSOT.organization.address_json.addressRegion}</div>
                 </div>
               </div>
               
               <button 
                 onClick={() => navigate('/verify-jvto/legal')}
-                className="bg-authority-navy hover:bg-authority-navy/90 text-white px-6 py-3 rounded-lg font-mono text-sm uppercase tracking-widest transition-all w-full sm:w-auto shadow-md"
+                className="bg-jvto-navy hover:bg-jvto-navy/90 text-white px-6 py-3 rounded-lg font-mono text-sm uppercase tracking-widest transition-all w-full sm:w-auto shadow-md"
               >
                 View Cryptographic Legal Proof
               </button>
@@ -281,7 +281,7 @@ export default function WhyJVTOHub() {
         {/* 🔍 LAYER 6: TRIANGULATION GRID (REVIEWS & GUEST VOICES) */}
         <section id="reviews" className="container mx-auto px-6 py-24 border-t border-slate-200">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-black text-authority-navy mb-6 tracking-tight">
+            <h2 className="text-3xl md:text-4xl font-black text-jvto-navy mb-6 tracking-tight">
               Guest Voices on Independent Platforms
             </h2>
             <p className="text-slate-500 text-lg leading-relaxed max-w-2xl mx-auto">
@@ -303,19 +303,19 @@ export default function WhyJVTOHub() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: idx * 0.1 }}
-                  className="bento-card bg-audit-white p-8 flex flex-col items-center justify-center text-center"
+                  className="bento-card bg-surface-page p-8 flex flex-col items-center justify-center text-center"
                 >
                   <div className="flex items-center gap-1 mb-6">
                     {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="w-6 h-6 fill-safety-orange text-safety-orange" />
+                      <Star key={i} className="w-6 h-6 fill-jvto-orange text-jvto-orange" />
                     ))}
                   </div>
-                  <h3 className="text-authority-navy text-xl font-bold mb-4">Verified on {platform}</h3>
+                  <h3 className="text-jvto-navy text-xl font-bold mb-4">Verified on {platform}</h3>
                   <a 
                     href={url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-sm font-mono text-safety-orange uppercase tracking-widest hover:underline"
+                    className="text-sm font-mono text-jvto-orange uppercase tracking-widest hover:underline"
                   >
                     View Profile
                   </a>
@@ -327,7 +327,7 @@ export default function WhyJVTOHub() {
           <div className="text-center">
             <button 
               onClick={() => navigate('/why-jvto/reviews')}
-              className="text-safety-orange font-mono text-sm uppercase tracking-widest hover:text-authority-navy transition-colors inline-flex items-center gap-2"
+              className="text-jvto-orange font-mono text-sm uppercase tracking-widest hover:text-jvto-navy transition-colors inline-flex items-center gap-2"
             >
               Analyze All Reviews <ArrowRight className="w-4 h-4" />
             </button>
@@ -338,8 +338,8 @@ export default function WhyJVTOHub() {
         <section id="health" className="container mx-auto px-6 py-24 border-t border-slate-200">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-16">
-              <Activity className="w-12 h-12 text-safety-orange mx-auto mb-6" />
-              <h2 className="text-3xl md:text-4xl font-black text-authority-navy mb-6 tracking-tight">
+              <Activity className="w-12 h-12 text-jvto-orange mx-auto mb-6" />
+              <h2 className="text-3xl md:text-4xl font-black text-jvto-navy mb-6 tracking-tight">
                 {healthProto.title}
               </h2>
               <p className="text-slate-500 text-lg leading-relaxed">
@@ -351,10 +351,10 @@ export default function WhyJVTOHub() {
               <div className="hidden md:block absolute top-1/2 left-0 right-0 h-0.5 bg-slate-200 -translate-y-1/2 z-0"></div>
               {healthProto.steps.map((step, idx) => (
                 <div key={idx} className="relative z-10 flex flex-col items-center gap-4 w-full md:w-auto">
-                  <div className="w-16 h-16 rounded-full bg-white border-2 border-safety-orange flex items-center justify-center text-authority-navy font-bold text-xl shadow-[0_0_20px_rgba(249,115,22,0.1)]">
+                  <div className="w-16 h-16 rounded-full bg-white border-2 border-jvto-orange flex items-center justify-center text-jvto-navy font-bold text-xl shadow-[0_0_20px_rgba(249,115,22,0.1)]">
                     {step.step}
                   </div>
-                  <div className="bg-white border border-slate-200 px-6 py-3 rounded-xl text-authority-navy font-medium text-center w-full md:w-48 shadow-sm">
+                  <div className="bg-white border border-slate-200 px-6 py-3 rounded-xl text-jvto-navy font-medium text-center w-full md:w-48 shadow-sm">
                     {step.title}
                   </div>
                 </div>
@@ -372,7 +372,7 @@ export default function WhyJVTOHub() {
             <div className="text-center">
               <button 
                 onClick={() => navigate('/travel-guide/ijen-health-screening')}
-                className="text-safety-orange font-mono text-sm uppercase tracking-widest hover:text-authority-navy transition-colors inline-flex items-center gap-2"
+                className="text-jvto-orange font-mono text-sm uppercase tracking-widest hover:text-jvto-navy transition-colors inline-flex items-center gap-2"
               >
                 View the Full Medical Protocol <ArrowRight className="w-4 h-4" />
               </button>
@@ -383,7 +383,7 @@ export default function WhyJVTOHub() {
         {/* 💎 LAYER 8: VALUE LIST (THE JVTO DIFFERENCE) */}
         <section className="container mx-auto px-6 py-24 border-t border-slate-200">
           <div className="max-w-3xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-black text-authority-navy mb-4 tracking-tight text-center">
+            <h2 className="text-3xl md:text-4xl font-black text-jvto-navy mb-4 tracking-tight text-center">
               Safety as Operational Discipline
             </h2>
             <p className="text-slate-500 text-lg text-center mb-12">
@@ -398,11 +398,11 @@ export default function WhyJVTOHub() {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: idx * 0.1 }}
-                  className="flex items-start gap-4 bento-card bg-audit-white border border-slate-200 rounded-xl p-6 shadow-sm"
+                  className="flex items-start gap-4 bento-card bg-surface-page border border-slate-200 rounded-xl p-6 shadow-sm"
                 >
-                  <CheckCircle2 className="w-6 h-6 text-verified-lime shrink-0 mt-1" />
+                  <CheckCircle2 className="w-6 h-6 text-jvto-lime shrink-0 mt-1" />
                   <div>
-                    <span className="text-authority-navy font-bold block mb-1">{claim.text}</span>
+                    <span className="text-jvto-navy font-bold block mb-1">{claim.text}</span>
                     <span className="text-slate-500 text-sm">{claim.meaning}</span>
                   </div>
                 </motion.div>
@@ -412,7 +412,7 @@ export default function WhyJVTOHub() {
             <div className="text-center">
               <button 
                 onClick={() => navigate('/why-jvto/the-jvto-difference')}
-                className="text-safety-orange font-mono text-sm uppercase tracking-widest hover:text-authority-navy transition-colors inline-flex items-center gap-2"
+                className="text-jvto-orange font-mono text-sm uppercase tracking-widest hover:text-jvto-navy transition-colors inline-flex items-center gap-2"
               >
                 Compare Our Standards <ArrowRight className="w-4 h-4" />
               </button>
@@ -427,14 +427,14 @@ export default function WhyJVTOHub() {
           </h2>
           <div className="flex flex-wrap justify-center items-center gap-12 md:gap-24 opacity-50 grayscale hover:grayscale-0 transition-all duration-500">
             {SSOT.proof_vault.partners.map((partner, idx) => (
-              <div key={idx} className="text-xl font-black text-authority-navy tracking-tighter">
+              <div key={idx} className="text-xl font-black text-jvto-navy tracking-tighter">
                 {partner.title}
               </div>
             ))}
-            <div className="text-xl font-black text-authority-navy tracking-tighter">
+            <div className="text-xl font-black text-jvto-navy tracking-tighter">
               ISIC
             </div>
-            <div className="text-xl font-black text-authority-navy tracking-tighter">
+            <div className="text-xl font-black text-jvto-navy tracking-tighter">
               INDECON
             </div>
           </div>

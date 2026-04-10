@@ -32,19 +32,19 @@ export const HeroSection = () => {
   };
 
   return (
-    <section className="relative bg-authority-navy text-white min-h-[90vh] flex flex-col overflow-hidden">
+    <section className="relative bg-jvto-navy text-white min-h-[90vh] flex flex-col overflow-hidden">
       {/* 60s Fast Audit Header */}
       <div className="bg-slate-900/80 backdrop-blur-md border-b border-white/10 py-3 relative z-50">
         <div className="max-w-7xl mx-auto px-4 md:px-6 flex flex-col md:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-3 md:gap-4">
             <div className="flex items-center gap-2">
-              <div className="status-live bg-safety-orange"></div>
-              <span className="font-mono text-[10px] md:text-[11px] uppercase tracking-[0.15em] md:tracking-[0.2em] text-safety-orange font-bold">60s Fast Audit:</span>
+              <div className="status-live bg-jvto-orange"></div>
+              <span className="font-mono text-[10px] md:text-[11px] uppercase tracking-[0.15em] md:tracking-[0.2em] text-jvto-orange font-bold">60s Fast Audit:</span>
             </div>
             <div className="flex items-center gap-2">
               {auditSteps.map((step, idx) => (
                 <div key={step.id} className="flex items-center gap-1.5 md:gap-2">
-                  <div className={`h-1.5 w-6 md:w-8 rounded-full transition-all duration-500 ${auditStep > idx ? 'bg-safety-orange' : 'bg-white/20'}`}></div>
+                  <div className={`h-1.5 w-6 md:w-8 rounded-full transition-all duration-500 ${auditStep > idx ? 'bg-jvto-orange' : 'bg-white/20'}`}></div>
                   <span className={`font-mono text-[10px] md:text-[11px] uppercase tracking-widest hidden sm:block ${auditStep > idx ? 'text-white' : 'text-white/40'}`}>
                     {step.label}
                   </span>
@@ -59,11 +59,11 @@ export const HeroSection = () => {
             <button 
               onClick={startAudit}
               disabled={isAuditing}
-              className={`font-mono text-[10px] md:text-[11px] px-3 md:px-4 py-1.5 rounded-sm border transition-all uppercase tracking-widest flex items-center gap-2 ${isAuditing ? 'bg-safety-orange/20 border-safety-orange/50 text-safety-orange' : 'bg-white/10 border-white/20 hover:bg-white/20 text-white'}`}
+              className={`font-mono text-[10px] md:text-[11px] px-3 md:px-4 py-1.5 rounded-sm border transition-all uppercase tracking-widest flex items-center gap-2 ${isAuditing ? 'bg-jvto-orange/20 border-jvto-orange/50 text-jvto-orange' : 'bg-white/10 border-white/20 hover:bg-white/20 text-white'}`}
             >
               {isAuditing ? (
                 <>
-                  <div className="w-3 h-3 border-2 border-safety-orange border-t-transparent rounded-full animate-spin"></div>
+                  <div className="w-3 h-3 border-2 border-jvto-orange border-t-transparent rounded-full animate-spin"></div>
                   Auditing...
                 </>
               ) : (
@@ -76,17 +76,19 @@ export const HeroSection = () => {
         </div>
       </div>
 
-      {/* Full Background Image with Pro Overlay Hack */}
+      {/* Full Background Video/Image with Pro Overlay Hack */}
       <div className="absolute inset-0 z-0 overflow-hidden">
-        <motion.img 
-          initial={{ scale: 1.1, opacity: 0 }}
-          animate={{ scale: 1, opacity: 1 }}
-          transition={{ duration: 1.5, ease: "easeOut" }}
-          src={SSOT.assets.find(a => a.slug === 'jvto-hero-image')?.url || 'https://javavolcano-touroperator.com/assets/img/hero/home.webp'} 
-          alt={SSOT.assets.find(a => a.slug === 'jvto-hero-image')?.alt || 'Scenic view of Java volcanoes.'} 
+        <video 
+          autoPlay 
+          muted 
+          loop 
+          playsInline
           className="w-full h-full object-cover"
-          referrerPolicy="no-referrer"
-        />
+          poster={SSOT.assets.find(a => a.slug === 'jvto-hero-image')?.url || 'https://javavolcano-touroperator.com/assets/img/hero/home.webp'}
+        >
+          <source src="https://javavolcano-touroperator.com/assets/video/hero.mp4" type="video/mp4" />
+          {/* Fallback to image if video fails or is not found */}
+        </video>
         <div className="pro-overlay" />
         
         {/* Scanline Effect - Halo Enhancement */}
@@ -99,7 +101,7 @@ export const HeroSection = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="badge-eyebrow bg-safety-orange text-white mb-8 shadow-card shadow-safety-orange/20"
+            className="badge-eyebrow bg-jvto-orange text-white mb-8 shadow-card shadow-jvto-orange/20"
           >
             <ShieldCheck className="w-3 h-3 text-white" /> Verified Police-Led Operator
           </motion.div>
@@ -108,9 +110,9 @@ export const HeroSection = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="flex flex-col items-center justify-center gap-2 md:gap-4 mb-12 w-full"
+            className="flex flex-col items-center justify-center gap-2 md:gap-4 mb-8 w-full"
           >
-            <span className="block text-sm sm:text-xl md:text-2xl lg:text-3xl text-safety-orange font-black tracking-[0.3em] uppercase drop-shadow-lg">
+            <span className="block text-sm sm:text-xl md:text-2xl lg:text-3xl text-jvto-orange font-black tracking-[0.3em] uppercase drop-shadow-lg">
               Official Authority
             </span>
             <span className="heading-display block text-white drop-shadow-[0_12px_12px_rgba(0,0,0,0.8)]">
@@ -120,6 +122,25 @@ export const HeroSection = () => {
               East Java, Indonesia
             </span>
           </motion.h1>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="bg-jvto-navy/60 backdrop-blur-md border border-white/10 p-6 rounded-lg mb-12 max-w-3xl"
+          >
+            <div className="flex items-start gap-4 text-left">
+              <div className="bg-jvto-orange/20 p-2 rounded-md mt-1">
+                <ShieldCheck className="w-6 h-6 text-jvto-orange" />
+              </div>
+              <div>
+                <h3 className="text-jvto-orange font-mono text-xs uppercase tracking-widest mb-2">Brand Core & Safety Protocol</h3>
+                <p className="text-white/90 text-sm md:text-base leading-relaxed font-medium">
+                  {SSOT.organization.brandCore}
+                </p>
+              </div>
+            </div>
+          </motion.div>
           
           {/* Single CTA Protocol: Primary is dominant, Secondary is Ghost/Outline */}
           <motion.div 
@@ -130,16 +151,16 @@ export const HeroSection = () => {
           >
             <button 
               onClick={() => navigate('/tours')}
-              className="w-full sm:w-auto bg-safety-orange hover:bg-orange-600 text-white px-12 py-5 rounded-md font-black uppercase tracking-[0.15em] transition-all shadow-hover shadow-safety-orange/40 flex items-center justify-center gap-4 group text-sm md:text-lg"
+              className="btn-primary w-full sm:w-auto flex items-center justify-center gap-4 group text-sm md:text-lg py-5 px-12"
             >
               <Search className="w-5 h-5 md:w-6 md:h-6 group-hover:scale-110 transition-transform" /> 
               Browse Private Tours
             </button>
             <button 
               onClick={() => navigate('/verify-jvto')}
-              className="w-full sm:w-auto bg-white/5 backdrop-blur-xl border border-white/20 hover:bg-white/10 text-white px-12 py-5 rounded-md font-black uppercase tracking-[0.15em] transition-all flex items-center justify-center gap-4 text-sm md:text-lg"
+              className="btn-secondary w-full sm:w-auto border-white/20 text-white hover:bg-white/10 flex items-center justify-center gap-4 text-sm md:text-lg py-5 px-12"
             >
-              <Lock className="w-5 h-5 md:w-6 md:h-6 text-safety-orange" /> 
+              <Lock className="w-5 h-5 md:w-6 md:h-6 text-jvto-orange" /> 
               Verify Credentials
             </button>
           </motion.div>

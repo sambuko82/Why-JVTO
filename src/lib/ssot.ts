@@ -7,6 +7,7 @@ export const SSOT = {
     foundingDate: "2016-01-01",
     url: "https://javavolcano-touroperator.com/",
     description: "Java Volcano Tour Operator (JVTO) is a registered Indonesian travel company based in Bondowoso and led by an active Tourist Police officer. We design private, all-inclusive itineraries to Mount Bromo, Ijen Crater and Tumpak Sewu with clear safety rules, transparent pricing and real local impact.",
+    brandCore: "Java Volcano Tour Operator ensures safety through mandatory pre-ascent health screenings (blood pressure and SpO2) and police-led oversight. We provide professional-grade respirators rated for sulfur protection, ensuring that every private expedition complies with the rigorous safety clearances issued by Ijen Geopark authorities and the East Java Tourist Police.",
     founder: {
       name: "Agung Sambuko (Mr. Sam)",
       role: "Founder & Active Tourist Police Officer",
@@ -111,9 +112,16 @@ export const SSOT = {
   ],
   tours: [
     {
-      name: "1D1N Bromo Midnight Tour",
+      name: "1D1N Bromo Midnight Experience",
       route: "/tours/from-surabaya/bromo-1d1n",
-      price: "IDR 1,000,000/pax",
+      price: "IDR 1,550,000/pax",
+      pricing_tiers: [
+        { pax: "2 pax", price: 1550000, note: "Entry-level — use for 'From' display" },
+        { pax: "3–4 pax", price: 1400000, note: "" },
+        { pax: "5–7 pax", price: 1250000, note: "" },
+        { pax: "8–10 pax", price: 1050000, note: "" },
+        { pax: "11+ pax", price: 1000000, note: "Best value per person" }
+      ],
       image: "https://javavolcano-touroperator.com/uploads/1768225567764-405955176-gufron.png",
       crewName: "Led by Gufron (Guide)",
       overview: {
@@ -128,7 +136,7 @@ export const SSOT = {
         equipment_check: ["Thermal Layers", "Headlamp", "Sun Protection"]
       },
       itinerary: [
-        { day: 1, title: "Midnight Departure & Sunrise", activities: ["00:00 - Pickup from Surabaya", "03:00 - Switch to 4WD Jeep", "04:00 - Bromo Sunrise", "07:00 - Hike to Crater", "10:00 - Return to Surabaya"] }
+        { day: 1, title: "Midnight Departure & Sunrise", activities: ["00:00 AM - Pickup from Surabaya", "03:00 AM - Switch to 4WD Jeep", "04:00 AM - Bromo Sunrise", "07:00 AM - Hike to Crater", "10:00 AM - Return to Surabaya"] }
       ],
       includes: ["Private AC transport", "Fuel, tolls, and parking", "English-speaking driver", "Private 4WD Jeep at Bromo", "Bromo National Park entrance tickets", "Mineral water"],
       excludes: ["Meals", "Horse ride at Bromo", "Personal expenses and tipping"],
@@ -145,8 +153,8 @@ export const SSOT = {
         highlights: ["Sunrise at Bromo", "Madakaripura Waterfall exploration", "Comfortable accommodation"]
       },
       itinerary: [
-        { day: 1, title: "Madakaripura Waterfall", activities: ["Pickup from Surabaya", "Visit Madakaripura Waterfall", "Check-in at Bromo hotel"] },
-        { day: 2, title: "Bromo Sunrise", activities: ["Early morning Bromo tour", "Return to hotel for breakfast", "Drop-off in Surabaya"] }
+        { day: 1, title: "Madakaripura Waterfall", activities: ["09:00 AM - Pickup from Surabaya", "12:00 PM - Visit Madakaripura Waterfall", "04:00 PM - Check-in at Bromo hotel"] },
+        { day: 2, title: "Bromo Sunrise", activities: ["03:00 AM - Early morning Bromo tour", "08:00 AM - Return to hotel for breakfast", "11:00 AM - Drop-off in Surabaya"] }
       ],
       includes: ["Private AC transport", "Accommodation", "Entrance tickets", "Local guide at waterfall", "Jeep at Bromo"],
       excludes: ["Meals", "Personal expenses"],
@@ -178,7 +186,7 @@ export const SSOT = {
       requirements: ["Warm jacket", "Trekking shoes", "Health certificate"]
     },
     {
-      name: "3D2N Bromo–Madakaripura–Ijen",
+      name: "3D2N Bromo–Madakaripura–Ijen (→ Bali)",
       route: "/tours/from-surabaya/bromo-madakaripura-ijen-3d2n",
       price: "IDR 2,450,000/pax",
       image: "https://javavolcano-touroperator.com/uploads/1768228191022-893381041-boy.png",
@@ -216,7 +224,7 @@ export const SSOT = {
       requirements: ["Warm jacket", "Trekking shoes", "Health certificate"]
     },
     {
-      name: "3D2N Safari–Bromo–Madakaripura",
+      name: "3D2N Safari–Bromo–Madakaripura (Family Easy)",
       route: "/tours/from-surabaya/taman-safari-prigen-bromo-madakaripura-3d2n",
       price: "IDR 3,450,000/pax",
       image: "https://javavolcano-touroperator.com/uploads/1768270423657-690185912-anjas.png",
@@ -275,7 +283,7 @@ export const SSOT = {
       requirements: ["Warm jacket", "Trekking shoes", "Waterproof bag", "Health certificate"]
     },
     {
-      name: "4D3N Tumpak Sewu–Bromo–Ijen",
+      name: "4D3N Tumpak Sewu–Bromo–Ijen (→ Bali)",
       route: "/tours/from-surabaya/tumpak-sewu-bromo-ijen-4d3n",
       price: "IDR 3,125,000/pax",
       image: "https://javavolcano-touroperator.com/uploads/1768277053384-470130286-holili.jpg",
@@ -366,7 +374,7 @@ export const SSOT = {
       requirements: ["Warm jacket", "Trekking shoes", "Waterproof bag", "Health certificate"]
     },
     {
-      name: "3D2N Bromo & Ijen (Bali)",
+      name: "3D2N Bromo & Ijen (Round-trip Bali)",
       route: "/tours/from-bali/bromo-ijen-3d2n",
       price: "IDR 2,850,000/pax",
       image: "https://javavolcano-touroperator.com/uploads/1771428741674-842615436-kta_gufron.jpg",
@@ -385,7 +393,7 @@ export const SSOT = {
       requirements: ["Warm jacket", "Trekking shoes", "Health certificate"]
     },
     {
-      name: "3D2N Ijen–Bromo–Madakaripura (Bali)",
+      name: "3D2N Ijen–Bromo–Madakaripura (Bali → Surabaya)",
       route: "/tours/from-bali/ijen-bromo-madakaripura-3d2n",
       price: "IDR 2,850,000/pax",
       image: "https://javavolcano-touroperator.com/uploads/1771428489070-55145932-kta_kiki.jpg",
@@ -404,7 +412,7 @@ export const SSOT = {
       requirements: ["Warm jacket", "Trekking shoes", "Health certificate"]
     },
     {
-      name: "4D3N Ijen–Papuma–Tumpak Sewu–Bromo (Bali)",
+      name: "4D3N Ijen–Papuma–Tumpak Sewu–Bromo (Bali → Surabaya)",
       route: "/tours/from-bali/ijen-papuma-tumpak-sewu-bromo-4d3n",
       price: "IDR 3,475,000/pax",
       image: "https://javavolcano-touroperator.com/uploads/1771428760524-516116110-kta_rendi.jpg",
@@ -424,7 +432,7 @@ export const SSOT = {
       requirements: ["Warm jacket", "Trekking shoes", "Waterproof bag", "Health certificate"]
     },
     {
-      name: "5D4N Ijen–Papuma–Tumpak Sewu–Bromo (Bali)",
+      name: "5D4N Ijen–Papuma–Tumpak Sewu–Bromo (Bali → Surabaya)",
       route: "/tours/from-bali/ijen-papuma-tumpak-sewu-bromo-5d4n",
       price: "IDR 4,050,000/pax",
       image: "https://javavolcano-touroperator.com/uploads/1771428704448-911506028-kta_taufik.jpg",
@@ -990,7 +998,16 @@ export const SSOT = {
   pages: {
     '/': {
       h1: "Tourist Police-Led Private Volcano Tours in East Java",
-      hero_image: "jvto-hero-image"
+      hero_image: "jvto-hero-image",
+      ai_snippet: "Java Volcano Tour Operator provides police-led private expeditions to Bromo and Ijen with mandatory health screenings and professional-grade safety equipment."
+    },
+    '/verify-jvto': {
+      h1: "Proof Library",
+      ai_snippet: "Verify JVTO's legal credentials, police safety protocols, and historical recognition through our cryptographically secured proof library and government registries."
+    },
+    '/why-jvto': {
+      h1: "The JVTO Difference",
+      ai_snippet: "Discover why JVTO is the trusted choice for private volcano tours in East Java, backed by police-led safety, transparent pricing, and a decade of experience."
     }
   },
   police_authority: {

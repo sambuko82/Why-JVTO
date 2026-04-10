@@ -1,38 +1,47 @@
-@import url('https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@800&family=Inter:wght@400;500&family=JetBrains+Mono:wght@500&display=swap');
 @import "tailwindcss";
 
 @theme {
-  --font-sans: "Public Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-heading: "Raleway", sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
-  --font-heading: "Public Sans", sans-serif;
   
-  --color-safety-orange: #FF6B35;
-  --color-authority-navy: #0F172A;
-  --color-authority-charcoal: #0D1B12;
-  --color-verified-lime: #A3E635;
-  --color-verified-bright: #CCFF00;
-  --color-audit-white: #F4F6F8;
-  --color-slate-200: #E2E8F0;
+  --color-jvto-navy: #0D1B2A;
+  --color-jvto-navy-mid: #1C2E40;
+  --color-jvto-orange: #E8650A;
+  --color-jvto-orange-hover: #C4520A;
+  --color-jvto-lime: #8CC63F;
+  --color-jvto-gold: #F5A623;
+  --color-wa-green: #25D366;
   
-  /* Semantic Color Key - Cognitive UX */
-  --color-trust-blue: #0F172A;
-  --color-danger-red: #EF4444;
-  --color-success-green: #22C55E;
-  --color-warning-yellow: #F59E0B;
+  --color-surface-page: #F5F4F1;
+  --color-surface-card: #FFFFFF;
+  --color-surface-input: #F0EDE6;
+  --color-lime-pale: #EFF8E2;
+  
+  --color-text-heading: #1A2535;
+  --color-text-body: #2D3748;
+  --color-text-muted: #6B7280;
+  --color-text-verified: #3D6B18;
 
-  --radius-sm: 4px;
+  --radius-xs: 4px;
+  --radius-sm: 6px;
   --radius-md: 8px;
-  --shadow-card: 0 4px 12px rgba(0,0,0,0.08);
-  --shadow-hover: 0 8px 24px rgba(0,0,0,0.12);
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+
+  --shadow-card: 0 1px 3px rgba(0,0,0,0.07);
+  --shadow-hover: 0 4px 14px rgba(0,0,0,0.12);
+  --shadow-modal: 0 20px 48px rgba(0,0,0,0.2);
 }
 
 @layer base {
   body {
-    @apply bg-audit-white text-authority-navy font-sans antialiased;
+    @apply bg-surface-page text-text-body font-sans antialiased;
   }
   
-  h1, h2, h3, h4, h5, h6 {
-    @apply font-heading font-black uppercase;
+  h1, h2, h3 {
+    @apply font-heading font-extrabold uppercase text-text-heading;
   }
 }
 
@@ -48,7 +57,7 @@
 
 @layer components {
   .bento-card {
-    @apply bg-white border border-slate-200 rounded-(--radius-md) shadow-(--shadow-card) hover:shadow-(--shadow-hover) hover:-translate-y-1 hover:border-safety-orange/30 transition-all duration-300 overflow-hidden;
+    @apply bg-white border border-slate-200 rounded-(--radius-md) shadow-(--shadow-card) hover:shadow-(--shadow-hover) hover:-translate-y-1 hover:border-jvto-orange/30 transition-all duration-300 overflow-hidden;
   }
   
   .badge-eyebrow {
@@ -56,11 +65,11 @@
   }
   
   .badge-eyebrow-navy {
-    @apply bg-authority-navy/5 border border-authority-navy/10 text-authority-navy;
+    @apply bg-jvto-navy/5 border border-jvto-navy/10 text-jvto-navy;
   }
   
   .badge-eyebrow-orange {
-    @apply bg-safety-orange/10 border border-safety-orange/30 text-safety-orange;
+    @apply bg-jvto-orange/10 border border-jvto-orange/30 text-jvto-orange;
   }
   
   .badge-eyebrow-white {
@@ -68,7 +77,7 @@
   }
   
   .verified-badge {
-    @apply bg-gradient-to-r from-verified-bright to-verified-lime text-authority-navy font-mono font-bold text-[11px] px-2 py-1 rounded-[0.5rem] uppercase tracking-wider shadow-sm;
+    @apply bg-gradient-to-r from-jvto-lime to-jvto-lime text-jvto-navy font-mono font-bold text-[11px] px-2 py-1 rounded-[0.5rem] uppercase tracking-wider shadow-sm;
   }
   
   .hash-string {
@@ -80,20 +89,20 @@
   }
   
   .status-live::after {
-    @apply animate-ping absolute inline-flex h-full w-full rounded-full bg-safety-orange opacity-75 content-[''];
+    @apply animate-ping absolute inline-flex h-full w-full rounded-full bg-jvto-orange opacity-75 content-[''];
   }
   
   .status-live::before {
-    @apply relative inline-flex rounded-full h-2 w-2 bg-safety-orange content-[''];
+    @apply relative inline-flex rounded-full h-2 w-2 bg-jvto-orange content-[''];
   }
   
   .scanline {
-    @apply absolute w-full h-[2px] bg-safety-orange/30 shadow-[0_0_10px_rgba(255,107,53,0.5)] z-10 pointer-events-none;
+    @apply absolute w-full h-[2px] bg-jvto-orange/30 shadow-[0_0_10px_rgba(255,107,53,0.5)] z-10 pointer-events-none;
     animation: scan 3s linear infinite;
   }
 
   .forensic-loupe {
-    @apply absolute w-48 h-48 rounded-full border-4 border-safety-orange shadow-2xl pointer-events-none overflow-hidden z-30 bg-white;
+    @apply absolute w-48 h-48 rounded-full border-4 border-jvto-orange shadow-2xl pointer-events-none overflow-hidden z-30 bg-white;
   }
   
   @keyframes scan {
@@ -130,16 +139,59 @@
   }
 
   .container-authority {
-    @apply max-w-7xl mx-auto px-4 sm:px-8 lg:px-12; /* Increased horizontal padding for spatial logic */
+    @apply max-w-[1200px] mx-auto px-4 sm:px-8 lg:px-12;
+  }
+
+  .verify-context {
+    @apply bg-[#0A1520] text-jvto-lime font-mono;
+    --surface-page: #0A1520;
+    --surface-card: #0D2414;
+    --text-heading: #8CC63F;
+    --text-body: #C8D8C0;
+    --text-muted: #5A8A60;
+    --border-default: #1E3A2A;
+    --border-strong: #2A5030;
+  }
+  
+  .verify-context * {
+    @apply font-mono;
+  }
+
+  .tour-card {
+    @apply bg-surface-card rounded-(--radius-lg) shadow-(--shadow-card) border-t-3 border-jvto-orange overflow-hidden;
+  }
+
+  .pillar-card {
+    @apply bg-surface-card rounded-(--radius-lg) shadow-(--shadow-card) border-t-3 border-jvto-navy overflow-hidden;
+  }
+
+  .btn-book {
+    @apply bg-jvto-orange text-white px-6 py-3 rounded-(--radius-sm) font-bold uppercase tracking-wider hover:bg-jvto-orange-hover transition-all;
+  }
+
+  .btn-primary {
+    @apply bg-jvto-navy text-white px-6 py-3 rounded-(--radius-sm) font-bold uppercase tracking-wider hover:bg-jvto-navy/90 transition-all;
+  }
+
+  .btn-secondary {
+    @apply border-1.5 border-jvto-navy text-jvto-navy px-6 py-3 rounded-(--radius-sm) font-bold uppercase tracking-wider hover:bg-jvto-navy hover:text-white transition-all;
+  }
+
+  .btn-verify {
+    @apply border border-jvto-lime text-jvto-lime px-6 py-3 rounded-(--radius-sm) font-bold uppercase tracking-wider hover:bg-jvto-lime hover:text-white transition-all;
+  }
+
+  .btn-wa {
+    @apply bg-wa-green text-white px-6 py-3 rounded-(--radius-sm) font-bold uppercase tracking-wider hover:bg-wa-green/90 transition-all;
   }
 
   /* Pro Typography Framework */
   .heading-display {
-    @apply text-4xl sm:text-5xl md:text-7xl lg:text-8xl tracking-[-0.04em] leading-[1.05] text-authority-navy font-black uppercase;
+    @apply text-4xl sm:text-5xl md:text-7xl lg:text-8xl tracking-[-0.04em] leading-[1.05] text-jvto-navy font-black uppercase;
   }
 
   .heading-section {
-    @apply text-3xl sm:text-4xl md:text-6xl tracking-[-0.03em] leading-[1.1] text-authority-navy font-black uppercase;
+    @apply text-3xl sm:text-4xl md:text-6xl tracking-[-0.03em] leading-[1.1] text-jvto-navy font-black uppercase;
   }
 
   .body-text {
@@ -148,6 +200,6 @@
 
   /* Pro Overlay Hack: Progressive Blur + Gradient */
   .pro-overlay {
-    @apply absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent backdrop-blur-[2px];
+    @apply absolute inset-0 bg-gradient-to-t from-jvto-navy/90 via-jvto-navy/40 to-transparent backdrop-blur-[2px];
   }
 }

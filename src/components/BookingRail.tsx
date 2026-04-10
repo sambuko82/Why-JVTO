@@ -36,12 +36,12 @@ export const BookingRail = () => {
           exit={{ y: 100, opacity: 0 }}
           className="fixed bottom-20 md:bottom-8 left-0 right-0 z-[90] pointer-events-none flex justify-center px-4 md:px-6"
         >
-          <div className="pointer-events-auto w-full max-w-5xl bg-authority-navy/95 backdrop-blur-xl border border-white/10 p-4 md:p-4 rounded-md md:rounded-md shadow-hover flex flex-col md:flex-row items-center justify-between gap-4 relative overflow-hidden">
+          <div className="pointer-events-auto w-full max-w-5xl bg-jvto-navy/95 backdrop-blur-xl border border-white/10 p-4 md:p-4 rounded-md md:rounded-md shadow-hover flex flex-col md:flex-row items-center justify-between gap-4 relative overflow-hidden">
             {/* Progress Bar */}
-            <div className="absolute top-0 left-0 h-[2px] bg-verified-bright transition-all duration-300" style={{ width: `${auditProgress}%` }}></div>
+            <div className="absolute top-0 left-0 h-[2px] bg-jvto-lime transition-all duration-300" style={{ width: `${auditProgress}%` }}></div>
 
             <div className="flex items-center gap-4 w-full md:w-auto">
-              <div className="hidden sm:flex p-3 bg-verified-bright/10 rounded-full text-verified-bright relative">
+              <div className="hidden sm:flex p-3 bg-jvto-lime/10 rounded-full text-jvto-lime relative">
                 <ShieldCheck className="w-6 h-6" />
                 {auditProgress > 80 && (
                   <motion.div 
@@ -49,13 +49,13 @@ export const BookingRail = () => {
                     animate={{ scale: 1 }}
                     className="absolute -top-1 -right-1"
                   >
-                    <CheckCircle2 className="w-4 h-4 text-verified-bright fill-authority-navy" />
+                    <CheckCircle2 className="w-4 h-4 text-jvto-lime fill-jvto-navy" />
                   </motion.div>
                 )}
               </div>
               <div>
                 <div className="flex items-center gap-2 mb-1">
-                  <span className={`flex h-2 w-2 rounded-full ${auditProgress > 90 ? 'bg-verified-bright' : 'bg-safety-orange'} animate-pulse`}></span>
+                  <span className={`flex h-2 w-2 rounded-full ${auditProgress > 90 ? 'bg-jvto-lime' : 'bg-jvto-orange'} animate-pulse`}></span>
                   <span className="font-mono text-[11px] text-white/70 font-bold uppercase tracking-widest">
                     {auditProgress < 50 ? 'Audit_In_Progress' : auditProgress < 90 ? 'Verification_Deepening' : 'Audit_Complete_Ready_To_Deploy'}
                   </span>
@@ -73,7 +73,7 @@ export const BookingRail = () => {
                 rel="noopener noreferrer"
                 className={`flex-1 md:flex-none flex items-center justify-center gap-3 px-6 md:px-8 py-3 md:py-4 rounded-md md:rounded-md font-black uppercase tracking-tight transition-all group shadow-card text-sm md:text-base ${
                   auditProgress > 70 
-                    ? 'bg-safety-orange hover:bg-safety-orange/90 text-white shadow-safety-orange/20' 
+                    ? 'bg-jvto-orange hover:bg-jvto-orange/90 text-white shadow-jvto-orange/20' 
                     : 'bg-white/10 text-white/40 cursor-not-allowed'
                 }`}
                 onClick={(e) => {

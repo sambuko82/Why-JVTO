@@ -54,12 +54,12 @@ export const GuideAndFAQ = () => {
           
           {/* Left: Travel Guide Intelligence */}
           <div className="lg:col-span-5">
-            <div className="badge-eyebrow bg-authority-navy text-white mb-8">
+            <div className="badge-eyebrow bg-jvto-navy text-white mb-8">
               <BookOpen className="w-3 h-3" /> Essential Intelligence
             </div>
             <h2 className="heading-section mb-8">
               Travel <br />
-              <span className="text-safety-orange">Guide.</span>
+              <span className="text-jvto-orange">Guide.</span>
             </h2>
             <p className="body-text mb-12">
               Don't arrive unprepared. Our intelligence reports cover the critical logistics of East Java's volcanic terrain.
@@ -74,20 +74,20 @@ export const GuideAndFAQ = () => {
                   viewport={{ once: true }}
                   transition={{ delay: idx * 0.1 }}
                   onClick={() => navigate(guide.link)}
-                  className="p-8 rounded-md bg-white border border-slate-100 hover:border-safety-orange/50 hover:shadow-hover transition-all duration-500 cursor-pointer group flex items-center gap-8 shadow-card"
+                  className="p-8 rounded-md bg-white border border-slate-100 hover:border-jvto-orange/50 hover:shadow-hover transition-all duration-500 cursor-pointer group flex items-center gap-8 shadow-card"
                 >
-                  <div className="w-14 h-14 rounded-md bg-slate-50 flex items-center justify-center shrink-0 group-hover:bg-safety-orange group-hover:text-white transition-all duration-500 shadow-card">
+                  <div className="w-14 h-14 rounded-md bg-slate-50 flex items-center justify-center shrink-0 group-hover:bg-jvto-orange group-hover:text-white transition-all duration-500 shadow-card">
                     <guide.icon className="w-6 h-6" />
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-base font-black text-authority-navy uppercase tracking-[0.1em] mb-2 group-hover:text-safety-orange transition-colors">
+                    <h3 className="text-base font-black text-jvto-navy uppercase tracking-[0.1em] mb-2 group-hover:text-jvto-orange transition-colors">
                       {guide.title}
                     </h3>
                     <p className="text-xs text-slate-400 font-black uppercase tracking-[0.1em] leading-tight opacity-60">
                       {guide.desc}
                     </p>
                   </div>
-                  <div className="w-10 h-10 rounded-sm bg-slate-50 flex items-center justify-center group-hover:bg-safety-orange group-hover:text-white transition-all duration-500">
+                  <div className="w-10 h-10 rounded-sm bg-slate-50 flex items-center justify-center group-hover:bg-jvto-orange group-hover:text-white transition-all duration-500">
                     <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                   </div>
                 </motion.div>
@@ -99,31 +99,31 @@ export const GuideAndFAQ = () => {
           <div className="lg:col-span-7">
             <div className="bg-white rounded-md p-10 md:p-16 border border-slate-100 shadow-hover shadow-slate-200/50">
               <div className="flex items-center gap-4 mb-10">
-                <div className="w-10 h-10 rounded-sm bg-safety-orange/10 flex items-center justify-center">
-                  <HelpCircle className="w-5 h-5 text-safety-orange" />
+                <div className="w-10 h-10 rounded-sm bg-jvto-orange/10 flex items-center justify-center">
+                  <HelpCircle className="w-5 h-5 text-jvto-orange" />
                 </div>
                 <span className="font-mono text-[10px] font-black uppercase tracking-[0.3em] text-slate-400">FAQ Registry</span>
               </div>
               
-              <h3 className="text-3xl md:text-5xl font-black text-authority-navy uppercase tracking-tighter mb-12 leading-[0.9]">
+              <h3 className="text-3xl md:text-5xl font-black text-jvto-navy uppercase tracking-tighter mb-12 leading-[0.9]">
                 Clear Answers. <br />
-                <span className="text-safety-orange">No Ambiguity.</span>
+                <span className="text-jvto-orange">No Ambiguity.</span>
               </h3>
 
               <div className="space-y-4">
                 {faqs.map((faq, idx) => (
                   <div 
                     key={idx}
-                    className="border border-slate-100 rounded-md bg-slate-50/50 overflow-hidden transition-all hover:border-safety-orange/30 hover:bg-white hover:shadow-hover duration-500"
+                    className="border border-slate-100 rounded-md bg-slate-50/50 overflow-hidden transition-all hover:border-jvto-orange/30 hover:bg-white hover:shadow-hover duration-500"
                   >
                     <button
                       onClick={() => setOpenIndex(openIndex === idx ? null : idx)}
                       className="w-full flex items-center justify-between p-6 md:p-8 text-left focus:outline-none group"
                     >
-                      <h4 className="text-sm md:text-lg font-black text-authority-navy pr-8 uppercase tracking-tight group-hover:text-safety-orange transition-colors">
+                      <h4 className="text-sm md:text-lg font-black text-jvto-navy pr-8 uppercase tracking-tight group-hover:text-jvto-orange transition-colors">
                         {faq.question}
                       </h4>
-                      <div className={`w-8 h-8 rounded-sm flex items-center justify-center transition-all duration-500 ${openIndex === idx ? 'bg-safety-orange text-white rotate-180' : 'bg-white text-slate-300 shadow-card'}`}>
+                      <div className={`w-8 h-8 rounded-sm flex items-center justify-center transition-all duration-500 ${openIndex === idx ? 'bg-jvto-orange text-white rotate-180' : 'bg-white text-slate-300 shadow-card'}`}>
                         <ChevronDown className="w-4 h-4" />
                       </div>
                     </button>

@@ -42,7 +42,7 @@ export default function BookingInformation() {
   };
 
   return (
-    <div className="min-h-screen bg-audit-white text-authority-navy font-sans selection:bg-safety-orange/30 pb-24 md:pb-0">
+    <div className="min-h-screen bg-audit-white text-jvto-navy font-sans selection:bg-jvto-orange/30 pb-24 md:pb-0">
       {/* Grid Pattern Overlay */}
       <div className="fixed inset-0 grid-pattern opacity-5 pointer-events-none"></div>
       
@@ -51,11 +51,11 @@ export default function BookingInformation() {
         <div className="container mx-auto px-6 py-6 flex items-center justify-between">
           <button 
             onClick={() => navigate('/travel-guide')}
-            className="group flex items-center gap-3 text-[11px] font-mono font-bold text-slate-500 hover:text-authority-navy transition-all uppercase tracking-widest"
+            className="group flex items-center gap-3 text-[11px] font-mono font-bold text-slate-500 hover:text-jvto-navy transition-all uppercase tracking-widest"
           >
             <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" /> Travel Guide
           </button>
-          <div className="flex items-center gap-3 text-safety-orange text-[11px] font-mono font-bold uppercase tracking-[0.2em]">
+          <div className="flex items-center gap-3 text-jvto-orange text-[11px] font-mono font-bold uppercase tracking-[0.2em]">
             <Lock className="w-4 h-4" /> Booking_Protocol_v1.9
           </div>
         </div>
@@ -71,10 +71,10 @@ export default function BookingInformation() {
           className="mb-16 md:mb-24"
         >
           <div className="flex items-center gap-2 mb-6">
-            <Clock className="w-4 h-4 text-safety-orange" />
+            <Clock className="w-4 h-4 text-jvto-orange" />
             <span className="font-mono text-[11px] uppercase tracking-widest text-slate-500">Operational Workflow</span>
           </div>
-          <h1 className="text-4xl md:text-8xl font-black text-authority-navy mb-8 leading-[0.85] uppercase tracking-tighter">
+          <h1 className="text-4xl md:text-8xl font-black text-jvto-navy mb-8 leading-[0.85] uppercase tracking-tighter">
             {meta?.h1 || 'HOW TO BOOK.'}
           </h1>
           <p className="text-slate-500 text-lg md:text-xl leading-tight font-light max-w-2xl">
@@ -96,11 +96,11 @@ export default function BookingInformation() {
                 {step.id}
               </div>
               <div className="relative z-10">
-                <div className="w-12 h-12 md:w-14 md:h-14 rounded-2xl bg-slate-50 text-safety-orange flex items-center justify-center border border-slate-100 mb-6 md:mb-8 group-hover:scale-110 transition-transform">
+                <div className="w-12 h-12 md:w-14 md:h-14 rounded-2xl bg-slate-50 text-jvto-orange flex items-center justify-center border border-slate-100 mb-6 md:mb-8 group-hover:scale-110 transition-transform">
                   {React.createElement(getIcon(step.icon), { className: "w-6 h-6 md:w-7 md:h-7" })}
                 </div>
-                <h3 className="text-xl md:text-2xl font-black text-authority-navy uppercase mb-4 tracking-tight">
-                  <span className="text-safety-orange mr-2">{step.id}.</span> {step.title}
+                <h3 className="text-xl md:text-2xl font-black text-jvto-navy uppercase mb-4 tracking-tight">
+                  <span className="text-jvto-orange mr-2">{step.id}.</span> {step.title}
                 </h3>
                 <p className="text-slate-500 text-base md:text-lg leading-tight font-light mb-6">
                   {step.desc}
@@ -130,10 +130,10 @@ export default function BookingInformation() {
                 transition={{ delay: 0.4 + index * 0.1 }}
                 className="text-center p-6 md:p-0"
               >
-                <div className="w-12 h-12 rounded-full bg-slate-50 text-authority-navy flex items-center justify-center border border-slate-100 mx-auto mb-6">
+                <div className="w-12 h-12 rounded-full bg-slate-50 text-jvto-navy flex items-center justify-center border border-slate-100 mx-auto mb-6">
                   {React.createElement(getIcon(policy.icon), { className: "w-5 h-5" })}
                 </div>
-                <h4 className="text-lg font-black text-authority-navy uppercase mb-3 tracking-tight">{policy.title}</h4>
+                <h4 className="text-lg font-black text-jvto-navy uppercase mb-3 tracking-tight">{policy.title}</h4>
                 <p className="text-slate-500 text-sm leading-tight font-light">{policy.desc}</p>
               </motion.div>
             ))}
@@ -149,15 +149,15 @@ export default function BookingInformation() {
           className="bento-card bg-slate-50 p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-8 group cursor-pointer border-2 border-dashed border-slate-200"
         >
           <div className="flex flex-col md:flex-row items-center gap-6 md:gap-8 text-center md:text-left">
-            <div className="w-16 h-16 rounded-2xl bg-white text-authority-navy flex items-center justify-center border border-slate-200 group-hover:scale-110 transition-transform">
+            <div className="w-16 h-16 rounded-2xl bg-white text-jvto-navy flex items-center justify-center border border-slate-200 group-hover:scale-110 transition-transform">
               <FileText className="w-8 h-8" />
             </div>
             <div>
-              <h2 className="text-2xl md:text-3xl font-black uppercase leading-none mb-2 tracking-tight text-authority-navy">Full Policy Document</h2>
+              <h2 className="text-2xl md:text-3xl font-black uppercase leading-none mb-2 tracking-tight text-jvto-navy">Full Policy Document</h2>
               <p className="text-slate-500 text-base md:text-lg font-light leading-tight">Read the detailed legal terms for booking, payments, and cancellations.</p>
             </div>
           </div>
-          <div className="flex items-center gap-3 text-authority-navy font-mono text-[11px] font-bold uppercase tracking-widest">
+          <div className="flex items-center gap-3 text-jvto-navy font-mono text-[11px] font-bold uppercase tracking-widest">
             Read Policy <ChevronRight className="w-5 h-5 group-hover:translate-x-2 transition-transform" />
           </div>
         </motion.div>

@@ -37,7 +37,7 @@ export default function FAQPage() {
   };
 
   return (
-    <div className="min-h-screen bg-audit-white text-authority-navy font-sans selection:bg-safety-orange/30 pb-24 md:pb-0">
+    <div className="min-h-screen bg-audit-white text-jvto-navy font-sans selection:bg-jvto-orange/30 pb-24 md:pb-0">
       {/* Grid Pattern Overlay */}
       <div className="fixed inset-0 grid-pattern opacity-5 pointer-events-none"></div>
       
@@ -46,11 +46,11 @@ export default function FAQPage() {
         <div className="container mx-auto px-6 py-6 flex items-center justify-between">
           <button 
             onClick={() => navigate('/travel-guide')}
-            className="group flex items-center gap-3 text-[11px] font-mono font-bold text-slate-500 hover:text-authority-navy transition-all uppercase tracking-widest"
+            className="group flex items-center gap-3 text-[11px] font-mono font-bold text-slate-500 hover:text-jvto-navy transition-all uppercase tracking-widest"
           >
             <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" /> Travel Guide
           </button>
-          <div className="flex items-center gap-3 text-safety-orange text-[11px] font-mono font-bold uppercase tracking-[0.2em]">
+          <div className="flex items-center gap-3 text-jvto-orange text-[11px] font-mono font-bold uppercase tracking-[0.2em]">
             <Lock className="w-4 h-4" /> FAQ_Registry_v1.9
           </div>
         </div>
@@ -66,10 +66,10 @@ export default function FAQPage() {
           className="mb-16 md:mb-24"
         >
           <div className="flex items-center gap-2 mb-6">
-            <HelpCircle className="w-4 h-4 text-safety-orange" />
+            <HelpCircle className="w-4 h-4 text-jvto-orange" />
             <span className="font-mono text-[11px] uppercase tracking-widest text-slate-500">Knowledge Base</span>
           </div>
-          <h1 className="text-4xl md:text-8xl font-black text-authority-navy mb-8 leading-[0.85] uppercase tracking-tighter">
+          <h1 className="text-4xl md:text-8xl font-black text-jvto-navy mb-8 leading-[0.85] uppercase tracking-tighter">
             {meta?.h1 || 'COMMON QUESTIONS.'}
           </h1>
           <p className="text-slate-500 text-lg md:text-xl leading-tight font-light max-w-2xl">
@@ -85,7 +85,7 @@ export default function FAQPage() {
           <input 
             type="text"
             placeholder="SEARCH QUESTIONS OR KEYWORDS..."
-            className="w-full bg-white border-2 border-slate-200 rounded-2xl py-4 md:py-6 pl-14 md:pl-16 pr-6 font-mono text-[10px] md:text-xs uppercase tracking-widest focus:border-safety-orange focus:ring-0 transition-all outline-none shadow-sm"
+            className="w-full bg-white border-2 border-slate-200 rounded-2xl py-4 md:py-6 pl-14 md:pl-16 pr-6 font-mono text-[10px] md:text-xs uppercase tracking-widest focus:border-jvto-orange focus:ring-0 transition-all outline-none shadow-sm"
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
           />
@@ -100,7 +100,7 @@ export default function FAQPage() {
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.05 }}
-                className={`bento-card bg-audit-white border-2 transition-all overflow-hidden ${isOpen ? 'border-safety-orange shadow-2xl' : 'border-slate-100'}`}
+                className={`bento-card bg-audit-white border-2 transition-all overflow-hidden ${isOpen ? 'border-jvto-orange shadow-2xl' : 'border-slate-100'}`}
               >
                 <button 
                   onClick={() => toggleFaq(faq.question)}
@@ -108,12 +108,12 @@ export default function FAQPage() {
                 >
                   <div className="flex items-center gap-4 md:gap-6">
                     <span className="font-mono text-[10px] md:text-[11px] text-slate-300 font-black shrink-0">0{index + 1}</span>
-                    <h3 className="text-lg md:text-xl font-black text-authority-navy uppercase leading-tight group-hover:text-safety-orange transition-colors">
+                    <h3 className="text-lg md:text-xl font-black text-jvto-navy uppercase leading-tight group-hover:text-jvto-orange transition-colors">
                       {faq.question}
                     </h3>
                   </div>
                   <div className="shrink-0 ml-4">
-                    {isOpen ? <ChevronUp className="w-5 h-5 text-safety-orange" /> : <ChevronDown className="w-5 h-5 text-slate-300" />}
+                    {isOpen ? <ChevronUp className="w-5 h-5 text-jvto-orange" /> : <ChevronDown className="w-5 h-5 text-slate-300" />}
                   </div>
                 </button>
                 
@@ -148,7 +148,7 @@ export default function FAQPage() {
         </div>
 
         {/* Contact CTA */}
-        <div className="mt-24 md:mt-32 p-8 md:p-12 bg-authority-navy rounded-[2rem] md:rounded-[3rem] text-white relative overflow-hidden shadow-2xl">
+        <div className="mt-24 md:mt-32 p-8 md:p-12 bg-jvto-navy rounded-[2rem] md:rounded-[3rem] text-white relative overflow-hidden shadow-2xl">
           <div className="scanline"></div>
           <div className="relative z-10 flex flex-col md:flex-row items-center text-center md:text-left justify-between gap-10 md:gap-12">
             <div className="max-w-md">
@@ -164,7 +164,7 @@ export default function FAQPage() {
               href="https://wa.me/6281235061451"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full md:w-auto bg-safety-orange hover:bg-safety-orange/90 text-white px-10 py-5 rounded-xl font-black uppercase tracking-wider transition-all shadow-xl shadow-safety-orange/20 flex items-center justify-center gap-3 group"
+              className="w-full md:w-auto bg-jvto-orange hover:bg-jvto-orange/90 text-white px-10 py-5 rounded-xl font-black uppercase tracking-wider transition-all shadow-xl shadow-jvto-orange/20 flex items-center justify-center gap-3 group"
             >
               Message Us <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </a>

@@ -19,7 +19,7 @@ import { AtmosphericBreak } from '../components/home/AtmosphericBreak';
 
 export default function HomePage() {
   return (
-    <div className="min-h-screen bg-audit-white font-sans text-authority-navy selection:bg-safety-orange/30">
+    <div className="min-h-screen bg-surface-page font-sans text-jvto-navy selection:bg-jvto-orange/30">
       <PageSEO route="/" />
 
       {/* SECTION A-B: HERO */}

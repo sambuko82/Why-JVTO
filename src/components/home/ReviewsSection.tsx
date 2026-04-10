@@ -88,12 +88,12 @@ export const ReviewsSection = () => {
           
           {/* LEFT: Trust Signals */}
           <div className="lg:col-span-5">
-            <div className="badge-eyebrow bg-authority-navy text-white mb-8">
+            <div className="badge-eyebrow bg-jvto-navy text-white mb-8">
               <ShieldCheck className="w-3 h-3" /> External Verification Hub
             </div>
             <h2 className="heading-section mb-8">
               Verified <br />
-              <span className="text-safety-orange">Trust Signals.</span>
+              <span className="text-jvto-orange">Trust Signals.</span>
             </h2>
             <p className="body-text mb-12 max-w-md">
               Our reputation is built on transparency. We don't host reviews ourselves—we invite you to audit our performance on the world's most trusted independent platforms.
@@ -110,16 +110,16 @@ export const ReviewsSection = () => {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: idx * 0.1 }}
-                  className="group flex items-center justify-between p-6 bg-white rounded-md border border-slate-100 shadow-card hover:shadow-hover hover:border-safety-orange/30 transition-all duration-500"
+                  className="group flex items-center justify-between p-6 bg-white rounded-md border border-slate-100 shadow-card hover:shadow-hover hover:border-jvto-orange/30 transition-all duration-500"
                 >
                   <div className="flex items-center gap-5">
                     {platform.icon}
                     <div>
-                      <h3 className="text-sm font-black uppercase tracking-[0.1em] text-authority-navy group-hover:text-safety-orange transition-colors">
+                      <h3 className="text-sm font-black uppercase tracking-[0.1em] text-jvto-navy group-hover:text-jvto-orange transition-colors">
                         {platform.name}
                       </h3>
                       <div className="flex items-center gap-3 mt-2">
-                        <div className="flex items-center gap-0.5 text-safety-orange">
+                        <div className="flex items-center gap-0.5 text-jvto-orange">
                           {[...Array(5)].map((_, i) => (
                             <Star key={i} className="w-3.5 h-3.5 fill-current" />
                           ))}
@@ -130,7 +130,7 @@ export const ReviewsSection = () => {
                       </div>
                     </div>
                   </div>
-                  <div className="w-12 h-12 rounded-md bg-slate-50 flex items-center justify-center group-hover:bg-safety-orange group-hover:text-white transition-all duration-500 shadow-card">
+                  <div className="w-12 h-12 rounded-md bg-slate-50 flex items-center justify-center group-hover:bg-jvto-orange group-hover:text-white transition-all duration-500 shadow-card">
                     <ExternalLink className="w-5 h-5" />
                   </div>
                 </motion.a>
@@ -155,7 +155,7 @@ export const ReviewsSection = () => {
                   </div>
                   
                   <div className="flex items-center gap-3 mb-8">
-                    <div className="flex items-center gap-0.5 text-safety-orange">
+                    <div className="flex items-center gap-0.5 text-jvto-orange">
                       {[...Array(review.rating)].map((_, i) => (
                         <Star key={i} className="w-4 h-4 fill-current" />
                       ))}
@@ -165,17 +165,17 @@ export const ReviewsSection = () => {
                     </span>
                   </div>
 
-                  <p className="text-authority-navy text-lg md:text-2xl leading-relaxed font-black mb-10 italic relative z-10 drop-shadow-sm">
+                  <p className="text-jvto-navy text-lg md:text-2xl leading-relaxed font-black mb-10 italic relative z-10 drop-shadow-sm">
                     "{review.text}"
                   </p>
 
                   <div className="flex items-center justify-between pt-8 border-t border-slate-50">
                     <div className="flex items-center gap-4">
-                      <div className="w-12 h-12 rounded-md bg-slate-100 flex items-center justify-center text-authority-navy font-black text-sm shadow-card">
+                      <div className="w-12 h-12 rounded-md bg-slate-100 flex items-center justify-center text-jvto-navy font-black text-sm shadow-card">
                         {review.author.charAt(0)}
                       </div>
                       <div>
-                        <p className="text-authority-navy font-black uppercase tracking-tight text-base">
+                        <p className="text-jvto-navy font-black uppercase tracking-tight text-base">
                           {review.author}
                         </p>
                         <p className="text-slate-400 font-mono text-[10px] font-black uppercase tracking-[0.2em]">
@@ -184,9 +184,9 @@ export const ReviewsSection = () => {
                       </div>
                     </div>
 
-                    <div className="flex items-center gap-3 px-4 py-2 bg-verified-bright/5 rounded-sm border border-verified-bright/10">
-                      <CheckCircle2 className="w-4 h-4 text-verified-bright" />
-                      <span className="text-[10px] md:text-[11px] font-black text-authority-navy uppercase tracking-[0.1em]">
+                    <div className="flex items-center gap-3 px-4 py-2 bg-jvto-lime/5 rounded-sm border border-jvto-lime/10">
+                      <CheckCircle2 className="w-4 h-4 text-jvto-lime" />
+                      <span className="text-[10px] md:text-[11px] font-black text-jvto-navy uppercase tracking-[0.1em]">
                         Guided by {review.crewName}
                       </span>
                     </div>
@@ -199,7 +199,7 @@ export const ReviewsSection = () => {
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
-              className="mt-16 flex flex-col sm:flex-row items-center justify-center gap-10 p-10 md:p-12 bg-authority-navy rounded-md text-white overflow-hidden relative shadow-hover shadow-authority-navy/20"
+              className="mt-16 flex flex-col sm:flex-row items-center justify-center gap-10 p-10 md:p-12 bg-jvto-navy rounded-md text-white overflow-hidden relative shadow-hover shadow-jvto-navy/20"
             >
               <div className="absolute top-0 right-0 w-48 h-48 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2" />
               <div className="text-center sm:text-left relative z-10">
@@ -208,7 +208,7 @@ export const ReviewsSection = () => {
               </div>
               <a 
                 href="/why-jvto/reviews" 
-                className="px-10 py-5 bg-safety-orange hover:bg-orange-600 text-white rounded-md font-black uppercase tracking-[0.2em] text-sm hover:scale-105 transition-all relative z-10 shadow-hover shadow-safety-orange/20"
+                className="px-10 py-5 bg-jvto-orange hover:bg-orange-600 text-white rounded-md font-black uppercase tracking-[0.2em] text-sm hover:scale-105 transition-all relative z-10 shadow-hover shadow-jvto-orange/20"
               >
                 View All Reviews
               </a>

@@ -27,7 +27,7 @@ export const AuditTrail: React.FC<AuditTrailProps> = ({ entityId, entityName, lo
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={onClose}
-            className="fixed inset-0 bg-authority-navy/40 backdrop-blur-sm z-[100]"
+            className="fixed inset-0 bg-jvto-navy/40 backdrop-blur-sm z-[100]"
           />
           
           {/* Popover */}
@@ -42,17 +42,17 @@ export const AuditTrail: React.FC<AuditTrailProps> = ({ entityId, entityName, lo
             {/* Header */}
             <div className="p-10 border-b border-slate-100 flex items-center justify-between bg-slate-50/50">
               <div className="flex items-center gap-6">
-                <div className="w-16 h-16 bg-white rounded-md flex items-center justify-center text-authority-navy shadow-card">
+                <div className="w-16 h-16 bg-white rounded-md flex items-center justify-center text-jvto-navy shadow-card">
                   <History className="w-8 h-8" />
                 </div>
                 <div>
-                  <h3 className="text-2xl font-black text-authority-navy uppercase tracking-tight leading-none mb-2">Audit Trail</h3>
+                  <h3 className="text-2xl font-black text-jvto-navy uppercase tracking-tight leading-none mb-2">Audit Trail</h3>
                   <p className="font-mono text-[10px] font-black text-slate-400 uppercase tracking-[0.2em]">Entity: {entityName} // ID: {entityId}</p>
                 </div>
               </div>
               <button 
                 onClick={onClose}
-                className="w-12 h-12 rounded-md bg-white hover:bg-safety-orange hover:text-white flex items-center justify-center text-slate-400 transition-all duration-500 shadow-card group"
+                className="w-12 h-12 rounded-md bg-white hover:bg-jvto-orange hover:text-white flex items-center justify-center text-slate-400 transition-all duration-500 shadow-card group"
               >
                 <X className="w-6 h-6 group-hover:text-white" />
               </button>
@@ -73,19 +73,19 @@ export const AuditTrail: React.FC<AuditTrailProps> = ({ entityId, entityName, lo
                     className="relative pl-16"
                   >
                     {/* Timeline Dot */}
-                    <div className="absolute left-0 top-1 w-12 h-12 rounded-md bg-white border border-slate-100 flex items-center justify-center z-10 shadow-card group hover:border-safety-orange transition-all duration-500">
-                      <CheckCircle2 className="w-5 h-5 text-verified-bright" />
+                    <div className="absolute left-0 top-1 w-12 h-12 rounded-md bg-white border border-slate-100 flex items-center justify-center z-10 shadow-card group hover:border-jvto-orange transition-all duration-500">
+                      <CheckCircle2 className="w-5 h-5 text-jvto-lime" />
                     </div>
                     
                     <div className="flex flex-col gap-2">
                       <div className="flex items-center justify-between">
-                        <span className="font-mono text-[10px] font-black text-safety-orange uppercase tracking-[0.2em]">{log.event}</span>
+                        <span className="font-mono text-[10px] font-black text-jvto-orange uppercase tracking-[0.2em]">{log.event}</span>
                         <div className="flex items-center gap-2 text-slate-400">
                           <Clock className="w-3.5 h-3.5" />
                           <span className="font-mono text-[10px] font-black uppercase tracking-[0.2em]">{log.timestamp}</span>
                         </div>
                       </div>
-                      <p className="text-base text-authority-navy font-black leading-tight tracking-tight">{log.detail}</p>
+                      <p className="text-base text-jvto-navy font-black leading-tight tracking-tight">{log.detail}</p>
                     </div>
                   </motion.div>
                 ))}
@@ -98,7 +98,7 @@ export const AuditTrail: React.FC<AuditTrailProps> = ({ entityId, entityName, lo
                 <Fingerprint className="w-5 h-5 text-slate-300" />
                 <span className="font-mono text-[10px] font-black text-slate-400 uppercase tracking-[0.2em]">Hash: {entityId.slice(0, 12)}...</span>
               </div>
-              <div className="px-5 py-2 rounded-md bg-verified-bright/10 text-verified-bright border border-verified-bright/20 font-black text-[10px] uppercase tracking-[0.2em] shadow-card">
+              <div className="px-5 py-2 rounded-md bg-jvto-lime/10 text-jvto-lime border border-jvto-lime/20 font-black text-[10px] uppercase tracking-[0.2em] shadow-card">
                 STATUS: SECURE
               </div>
             </div>

@@ -38,7 +38,7 @@ export default function PackingAndFitness() {
   };
 
   return (
-    <div className="min-h-screen bg-audit-white text-authority-navy font-sans selection:bg-safety-orange/30 pb-24 md:pb-0">
+    <div className="min-h-screen bg-audit-white text-jvto-navy font-sans selection:bg-jvto-orange/30 pb-24 md:pb-0">
       {/* Grid Pattern Overlay */}
       <div className="fixed inset-0 grid-pattern opacity-5 pointer-events-none"></div>
       
@@ -47,11 +47,11 @@ export default function PackingAndFitness() {
         <div className="container mx-auto px-6 py-6 flex items-center justify-between">
           <button 
             onClick={() => navigate('/travel-guide')}
-            className="group flex items-center gap-3 text-[11px] font-mono font-bold text-slate-500 hover:text-authority-navy transition-all uppercase tracking-widest"
+            className="group flex items-center gap-3 text-[11px] font-mono font-bold text-slate-500 hover:text-jvto-navy transition-all uppercase tracking-widest"
           >
             <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" /> Travel Guide
           </button>
-          <div className="flex items-center gap-3 text-safety-orange text-[11px] font-mono font-bold uppercase tracking-[0.2em]">
+          <div className="flex items-center gap-3 text-jvto-orange text-[11px] font-mono font-bold uppercase tracking-[0.2em]">
             <Lock className="w-4 h-4" /> Prep_Protocol_v1.9
           </div>
         </div>
@@ -67,10 +67,10 @@ export default function PackingAndFitness() {
           className="mb-16 md:mb-24"
         >
           <div className="flex items-center gap-2 mb-6">
-            <Backpack className="w-4 h-4 text-safety-orange" />
+            <Backpack className="w-4 h-4 text-jvto-orange" />
             <span className="font-mono text-[11px] uppercase tracking-widest text-slate-500">Preparation Standards</span>
           </div>
-          <h1 className="text-4xl md:text-8xl font-black text-authority-navy mb-8 leading-[0.85] uppercase tracking-tighter">
+          <h1 className="text-4xl md:text-8xl font-black text-jvto-navy mb-8 leading-[0.85] uppercase tracking-tighter">
             {meta?.h1 || 'PACKING & FITNESS.'}
           </h1>
           <p className="text-slate-500 text-lg md:text-xl leading-tight font-light max-w-2xl">
@@ -80,7 +80,7 @@ export default function PackingAndFitness() {
 
         {/* Fitness Section */}
         <div className="mb-24 md:mb-32">
-          <h2 className="text-2xl md:text-3xl font-black text-authority-navy uppercase tracking-tight mb-8 md:mb-12">Fitness Expectations</h2>
+          <h2 className="text-2xl md:text-3xl font-black text-jvto-navy uppercase tracking-tight mb-8 md:mb-12">Fitness Expectations</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8">
             {fitnessLevels.map((item, index) => (
               <motion.div
@@ -88,15 +88,15 @@ export default function PackingAndFitness() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1 }}
-                className="bento-card bg-audit-white p-6 md:p-8 border-t-4 border-t-authority-navy"
+                className="bento-card bg-audit-white p-6 md:p-8 border-t-4 border-t-jvto-navy"
               >
-                <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-slate-50 text-safety-orange flex items-center justify-center border border-slate-100 mb-6">
+                <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-slate-50 text-jvto-orange flex items-center justify-center border border-slate-100 mb-6">
                   {React.createElement(getIcon(item.icon), { className: "w-5 h-5 md:w-6 md:h-6" })}
                 </div>
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-100 text-authority-navy text-[10px] font-mono font-bold uppercase tracking-widest mb-4">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-100 text-jvto-navy text-[10px] font-mono font-bold uppercase tracking-widest mb-4">
                   {item.level}
                 </div>
-                <h3 className="text-lg md:text-xl font-black text-authority-navy uppercase mb-3 tracking-tight">{item.site}</h3>
+                <h3 className="text-lg md:text-xl font-black text-jvto-navy uppercase mb-3 tracking-tight">{item.site}</h3>
                 <p className="text-slate-500 text-sm leading-tight font-light">{item.desc}</p>
               </motion.div>
             ))}
@@ -105,7 +105,7 @@ export default function PackingAndFitness() {
 
         {/* Packing List Section */}
         <div className="mb-24 md:mb-32">
-          <h2 className="text-2xl md:text-3xl font-black text-authority-navy uppercase tracking-tight mb-8 md:mb-12">Packing Checklist</h2>
+          <h2 className="text-2xl md:text-3xl font-black text-jvto-navy uppercase tracking-tight mb-8 md:mb-12">Packing Checklist</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8">
             {packingList.map((category, index) => (
               <motion.div
@@ -116,15 +116,15 @@ export default function PackingAndFitness() {
                 className="bento-card bg-audit-white p-6 md:p-8"
               >
                 <div className="flex items-center gap-4 mb-6 md:mb-8">
-                  <div className="w-10 h-10 rounded-xl bg-slate-50 text-authority-navy flex items-center justify-center border border-slate-100">
+                  <div className="w-10 h-10 rounded-xl bg-slate-50 text-jvto-navy flex items-center justify-center border border-slate-100">
                     {React.createElement(getIcon(category.icon), { className: "w-5 h-5" })}
                   </div>
-                  <h3 className="text-lg md:text-xl font-black text-authority-navy uppercase tracking-tight">{category.category}</h3>
+                  <h3 className="text-lg md:text-xl font-black text-jvto-navy uppercase tracking-tight">{category.category}</h3>
                 </div>
                 <ul className="space-y-3 md:space-y-4">
                   {category.items.map((item, i) => (
                     <li key={i} className="flex gap-3 text-slate-500 text-sm leading-tight font-light">
-                      <div className="mt-1.5 w-1 h-1 rounded-full bg-safety-orange shrink-0"></div>
+                      <div className="mt-1.5 w-1 h-1 rounded-full bg-jvto-orange shrink-0"></div>
                       {item}
                     </li>
                   ))}
@@ -135,7 +135,7 @@ export default function PackingAndFitness() {
         </div>
 
         {/* Gear Provided Notice */}
-        <div className="p-8 md:p-12 bg-authority-navy text-white rounded-[2rem] md:rounded-[3rem] shadow-2xl relative overflow-hidden">
+        <div className="p-8 md:p-12 bg-jvto-navy text-white rounded-[2rem] md:rounded-[3rem] shadow-2xl relative overflow-hidden">
           <div className="scanline"></div>
           <div className="relative z-10 flex flex-col md:flex-row items-center text-center md:text-left justify-between gap-10 md:gap-12">
             <div className="max-w-md">
@@ -149,7 +149,7 @@ export default function PackingAndFitness() {
             </div>
             <button 
               onClick={() => navigate('/travel-guide/safety-on-tours')}
-              className="w-full md:w-auto bg-white text-authority-navy px-8 md:px-10 py-4 md:py-5 rounded-xl font-black uppercase tracking-wider transition-all hover:bg-slate-100 flex items-center justify-center gap-3 group"
+              className="w-full md:w-auto bg-white text-jvto-navy px-8 md:px-10 py-4 md:py-5 rounded-xl font-black uppercase tracking-wider transition-all hover:bg-slate-100 flex items-center justify-center gap-3 group"
             >
               Safety Standards <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </button>

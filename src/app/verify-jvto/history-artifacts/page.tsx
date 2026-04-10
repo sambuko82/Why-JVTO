@@ -48,7 +48,7 @@ export default function HistoryArtifactsProof() {
   };
 
   return (
-    <div className="min-h-screen bg-audit-white text-authority-navy font-sans selection:bg-safety-orange/30 pb-24 md:pb-0">
+    <div className="min-h-screen bg-audit-white text-jvto-navy font-sans selection:bg-jvto-orange/30 pb-24 md:pb-0">
       {/* Grid Pattern Overlay */}
       <div className="fixed inset-0 grid-pattern opacity-5 pointer-events-none"></div>
       
@@ -57,11 +57,11 @@ export default function HistoryArtifactsProof() {
         <div className="container mx-auto px-6 py-6 flex items-center justify-between">
           <button 
             onClick={onBack}
-            className="group flex items-center gap-3 text-[11px] font-mono font-bold text-slate-500 hover:text-authority-navy transition-all uppercase tracking-widest"
+            className="group flex items-center gap-3 text-[11px] font-mono font-bold text-slate-500 hover:text-jvto-navy transition-all uppercase tracking-widest"
           >
             <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" /> Back to Proof Hub
           </button>
-          <div className="flex items-center gap-3 text-safety-orange text-[11px] font-mono font-bold uppercase tracking-[0.2em]">
+          <div className="flex items-center gap-3 text-jvto-orange text-[11px] font-mono font-bold uppercase tracking-[0.2em]">
             <History className="w-4 h-4" /> History & Artifacts Registry
           </div>
         </div>
@@ -78,10 +78,10 @@ export default function HistoryArtifactsProof() {
           className="mb-24"
         >
           <div className="flex items-center gap-2 mb-6">
-            <Library className="w-4 h-4 text-safety-orange" />
+            <Library className="w-4 h-4 text-jvto-orange" />
             <span className="font-mono text-[11px] uppercase tracking-widest text-slate-500">Historical Documentation Archive</span>
           </div>
-          <h1 className="text-5xl md:text-9xl font-black text-authority-navy mb-8 leading-[0.85] uppercase tracking-tighter">
+          <h1 className="text-5xl md:text-9xl font-black text-jvto-navy mb-8 leading-[0.85] uppercase tracking-tighter">
             {meta?.h1 || 'HISTORY & ARTIFACTS.'}
           </h1>
           <p className="text-2xl text-slate-500 max-w-3xl leading-tight font-light">
@@ -100,11 +100,11 @@ export default function HistoryArtifactsProof() {
           >
             <div className="flex items-center justify-between mb-12">
               <div className="flex items-center gap-4">
-                <div className="p-3 bg-slate-50 rounded-2xl text-safety-orange border border-slate-100">
+                <div className="p-3 bg-slate-50 rounded-2xl text-jvto-orange border border-slate-100">
                   <Archive className="w-8 h-8" />
                 </div>
                 <div>
-                  <h2 className="text-3xl font-black text-authority-navy uppercase leading-none mb-1">Historical Artifacts</h2>
+                  <h2 className="text-3xl font-black text-jvto-navy uppercase leading-none mb-1">Historical Artifacts</h2>
                   <p className="font-mono text-[11px] text-slate-500 uppercase tracking-widest">LEGACY_DOCUMENTATION_REGISTRY</p>
                 </div>
               </div>
@@ -116,12 +116,12 @@ export default function HistoryArtifactsProof() {
                 <div 
                   key={i}
                   onClick={() => openAsset(item.url, item.title, item.hash || 'PENDING', 'image')}
-                  className="bento-card bg-white p-12 relative group cursor-pointer hover:border-safety-orange transition-all duration-500"
+                  className="bento-card bg-white p-12 relative group cursor-pointer hover:border-jvto-orange transition-all duration-500"
                 >
                   <div className="scanline"></div>
                   <div className="flex justify-between items-start mb-10">
-                    <div className="text-safety-orange font-black font-mono text-[11px] uppercase tracking-[0.2em]">{item.category}</div>
-                    <div className="p-3 bg-slate-50 rounded-2xl border border-slate-100 group-hover:bg-safety-orange group-hover:text-white transition-all">
+                    <div className="text-jvto-orange font-black font-mono text-[11px] uppercase tracking-[0.2em]">{item.category}</div>
+                    <div className="p-3 bg-slate-50 rounded-2xl border border-slate-100 group-hover:bg-jvto-orange group-hover:text-white transition-all">
                       <Download className="w-6 h-6" />
                     </div>
                   </div>
@@ -132,7 +132,7 @@ export default function HistoryArtifactsProof() {
                   </div>
                   <div className="flex items-center justify-between pt-8 border-t border-slate-100">
                     <div className="flex items-center gap-3">
-                      <Eye className="w-5 h-5 text-safety-orange" />
+                      <Eye className="w-5 h-5 text-jvto-orange" />
                       <span className="font-mono text-[11px] uppercase tracking-widest font-black">Inspect Document</span>
                     </div>
                     <HashBadge hash={item.hash || 'PENDING'} />
@@ -146,11 +146,11 @@ export default function HistoryArtifactsProof() {
         
         {/* Footer Audit Stamp */}
         <div className="mt-32 pt-12 border-t border-slate-200 flex flex-col items-center">
-          <div className="p-12 bg-white border-4 border-safety-orange rounded-[2.5rem] -rotate-2 shadow-2xl relative overflow-hidden group hover:rotate-0 transition-transform">
+          <div className="p-12 bg-white border-4 border-jvto-orange rounded-[2.5rem] -rotate-2 shadow-2xl relative overflow-hidden group hover:rotate-0 transition-transform">
             <div className="scanline"></div>
             <div className="flex flex-col items-center">
-              <Scroll className="w-20 h-20 text-safety-orange mb-8" />
-              <span className="text-5xl font-black text-authority-navy uppercase tracking-tighter leading-none mb-3">LEGACY_VERIFIED</span>
+              <Scroll className="w-20 h-20 text-jvto-orange mb-8" />
+              <span className="text-5xl font-black text-jvto-navy uppercase tracking-tighter leading-none mb-3">LEGACY_VERIFIED</span>
               <span className="font-mono text-[11px] text-slate-500 tracking-[0.4em] uppercase">Historical Archive 2026</span>
             </div>
           </div>

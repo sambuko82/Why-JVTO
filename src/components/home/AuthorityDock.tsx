@@ -29,9 +29,9 @@ export const AuthorityDock = () => {
   }, []);
 
   const statusItems = [
-    { label: 'Police Liaison', value: 'Active', icon: ShieldCheck, color: 'text-verified-bright' },
+    { label: 'Police Liaison', value: 'Active', icon: ShieldCheck, color: 'text-jvto-lime' },
     { label: 'Medical Desk', value: 'Standby', icon: Activity, color: 'text-blue-400' },
-    { label: 'Volcanic Alert', value: 'Normal', icon: AlertCircle, color: 'text-verified-bright' },
+    { label: 'Volcanic Alert', value: 'Normal', icon: AlertCircle, color: 'text-jvto-lime' },
     { label: 'Weather (Ijen)', value: 'Clear', icon: CloudSun, color: 'text-amber-400' },
   ];
 
@@ -52,7 +52,7 @@ export const AuthorityDock = () => {
                   initial={{ height: 0, opacity: 0 }}
                   animate={{ height: 'auto', opacity: 1 }}
                   exit={{ height: 0, opacity: 0 }}
-                  className="absolute bottom-full left-0 right-0 mb-4 bg-authority-navy/95 backdrop-blur-xl border border-white/10 rounded-md overflow-hidden shadow-hover"
+                  className="absolute bottom-full left-0 right-0 mb-4 bg-jvto-navy/95 backdrop-blur-xl border border-white/10 rounded-md overflow-hidden shadow-hover"
                 >
                   <div className="p-8 grid grid-cols-2 md:grid-cols-4 gap-8">
                     {statusItems.map((item, idx) => (
@@ -63,7 +63,7 @@ export const AuthorityDock = () => {
                         </div>
                         <div className="flex items-baseline gap-2">
                           <span className="text-xl font-black text-white uppercase tracking-tight">{item.value}</span>
-                          <div className={`w-1.5 h-1.5 rounded-full ${item.color === 'text-verified-bright' ? 'bg-verified-bright animate-pulse' : 'bg-white/20'}`} />
+                          <div className={`w-1.5 h-1.5 rounded-full ${item.color === 'text-jvto-lime' ? 'bg-jvto-lime animate-pulse' : 'bg-white/20'}`} />
                         </div>
                       </div>
                     ))}
@@ -76,15 +76,15 @@ export const AuthorityDock = () => {
             </AnimatePresence>
 
             {/* Main Dock Bar */}
-            <div className="bg-authority-navy/90 backdrop-blur-xl border border-white/10 rounded-full p-2 shadow-hover flex items-center justify-between gap-4">
+            <div className="bg-jvto-navy/90 backdrop-blur-xl border border-white/10 rounded-full p-2 shadow-hover flex items-center justify-between gap-4">
               {/* Status Toggle */}
               <button
                 onClick={() => setIsExpanded(!isExpanded)}
                 className="flex items-center gap-3 pl-6 pr-4 py-3 hover:bg-white/5 rounded-full transition-colors group"
               >
                 <div className="flex -space-x-2">
-                  <div className="w-6 h-6 rounded-full bg-verified-bright/20 border border-verified-bright/30 flex items-center justify-center">
-                    <ShieldCheck className="w-3 h-3 text-verified-bright" />
+                  <div className="w-6 h-6 rounded-full bg-jvto-lime/20 border border-jvto-lime/30 flex items-center justify-center">
+                    <ShieldCheck className="w-3 h-3 text-jvto-lime" />
                   </div>
                   <div className="w-6 h-6 rounded-full bg-blue-400/20 border border-blue-400/30 flex items-center justify-center">
                     <Activity className="w-3 h-3 text-blue-400" />
@@ -109,12 +109,12 @@ export const AuthorityDock = () => {
                   rel="noopener noreferrer"
                   className="flex items-center gap-2 bg-white/5 hover:bg-white/10 text-white px-5 py-3 rounded-full transition-all border border-white/5 group"
                 >
-                  <MessageSquare className="w-4 h-4 text-safety-orange group-hover:scale-110 transition-transform" />
+                  <MessageSquare className="w-4 h-4 text-jvto-orange group-hover:scale-110 transition-transform" />
                   <span className="text-[10px] font-black uppercase tracking-widest hidden sm:inline">Direct Inquiry</span>
                 </a>
                 <button 
                   onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-                  className="bg-safety-orange hover:bg-safety-orange/90 text-white px-6 py-3 rounded-full font-black uppercase tracking-widest text-[10px] transition-all shadow-hover shadow-safety-orange/20 flex items-center gap-2"
+                  className="bg-jvto-orange hover:bg-jvto-orange/90 text-white px-6 py-3 rounded-full font-black uppercase tracking-widest text-[10px] transition-all shadow-hover shadow-jvto-orange/20 flex items-center gap-2"
                 >
                   <Lock className="w-3 h-3" /> Secure Booking
                 </button>

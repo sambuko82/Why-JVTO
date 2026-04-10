@@ -56,7 +56,7 @@ const DestinationCard = ({ dest, idx, navigate }: { dest: any, idx: number, navi
         <h3 className="text-2xl md:text-4xl font-black text-white uppercase tracking-tight mb-2 md:mb-4 drop-shadow-lg group-hover:-translate-y-2 transition-transform duration-500">
           {dest.name}
         </h3>
-        <div className="flex items-center gap-3 text-safety-orange font-mono text-[10px] md:text-[12px] font-black uppercase tracking-[0.2em] opacity-0 group-hover:opacity-100 transition-all transform translate-y-4 group-hover:translate-y-0 duration-500">
+        <div className="flex items-center gap-3 text-jvto-orange font-mono text-[10px] md:text-[12px] font-black uppercase tracking-[0.2em] opacity-0 group-hover:opacity-100 transition-all transform translate-y-4 group-hover:translate-y-0 duration-500">
           View Dossier <ChevronRight className="w-4 h-4" />
         </div>
       </div>
@@ -77,7 +77,7 @@ export const DestinationGrid = () => {
             </div>
             <h2 className="heading-section">
               Explore the <br />
-              <span className="text-safety-orange">Ring of Fire.</span>
+              <span className="text-jvto-orange">Ring of Fire.</span>
             </h2>
           </div>
           <p className="body-text max-w-sm">

@@ -1,0 +1,21 @@
+{
+  "name": "Java Volcano Tour Operator",
+  "description": "Official AI Agent configuration for Java Volcano Tour Operator (JVTO). Led by Tourist Police, providing private volcano expeditions in East Java.",
+  "entity": {
+    "name": "Java Volcano Tour Operator",
+    "legalName": "PT Java Volcano Rendezvous",
+    "founder": "Agung Sambuko (Mr. Sam)",
+    "hq": "Bondowoso, East Java, Indonesia"
+  },
+  "capabilities": [
+    "Private Tour Booking",
+    "Safety Verification",
+    "Ijen Health Screening Information",
+    "Police-Led Expedition Coordination"
+  ],
+  "discovery": {
+    "llms_txt": "/llms.txt",
+    "verification_hub": "/verify-jvto",
+    "legal_docs": "/verify-jvto/legal"
+  }
+}

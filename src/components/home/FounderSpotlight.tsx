@@ -33,12 +33,12 @@ export const FounderSpotlight = () => {
                   className="w-full aspect-[3/4] object-cover grayscale hover:grayscale-0 transition-all duration-700"
                   referrerPolicy="no-referrer"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-authority-navy/80 via-transparent to-transparent opacity-60" />
+                <div className="absolute inset-0 bg-gradient-to-t from-jvto-navy/80 via-transparent to-transparent opacity-60" />
                 
                 {/* Floating Badge */}
                 <div className="absolute bottom-6 left-6 right-6 p-4 bg-white/10 backdrop-blur-md border border-white/20 rounded-md">
                   <div className="flex items-center gap-3">
-                    <div className="p-2 bg-safety-orange rounded-md">
+                    <div className="p-2 bg-jvto-orange rounded-md">
                       <ShieldCheck className="w-5 h-5 text-white" />
                     </div>
                     <div>
@@ -50,8 +50,8 @@ export const FounderSpotlight = () => {
               </div>
 
               {/* Decorative Frame */}
-              <div className="absolute -top-4 -left-4 w-24 h-24 border-t-2 border-l-2 border-safety-orange/30 -z-10" />
-              <div className="absolute -bottom-4 -right-4 w-24 h-24 border-b-2 border-r-2 border-authority-navy/20 -z-10" />
+              <div className="absolute -top-4 -left-4 w-24 h-24 border-t-2 border-l-2 border-jvto-orange/30 -z-10" />
+              <div className="absolute -bottom-4 -right-4 w-24 h-24 border-b-2 border-r-2 border-jvto-navy/20 -z-10" />
             </motion.div>
 
             {/* Context Card - Floating */}
@@ -60,10 +60,10 @@ export const FounderSpotlight = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.4 }}
-              className="absolute -bottom-10 -right-6 md:right-0 bg-authority-navy text-white p-6 rounded-md shadow-hover max-w-[280px] hidden md:block"
+              className="absolute -bottom-10 -right-6 md:right-0 bg-jvto-navy text-white p-6 rounded-md shadow-hover max-w-[280px] hidden md:block"
             >
               <div className="flex items-center gap-3 mb-4">
-                <BadgeCheck className="w-6 h-6 text-safety-orange" />
+                <BadgeCheck className="w-6 h-6 text-jvto-orange" />
                 <span className="font-black uppercase tracking-widest text-xs">Dual-Authority</span>
               </div>
               <p className="text-xs text-slate-300 leading-relaxed mb-4">
@@ -72,7 +72,7 @@ export const FounderSpotlight = () => {
               <div className="h-px w-full bg-white/10 mb-4" />
               <div className="flex items-center justify-between">
                 <span className="font-mono text-[9px] uppercase tracking-widest text-white/40">Verified Status</span>
-                <span className="text-[10px] font-bold text-verified-bright uppercase">Active Duty</span>
+                <span className="text-[10px] font-bold text-jvto-lime uppercase">Active Duty</span>
               </div>
             </motion.div>
           </div>
@@ -86,12 +86,12 @@ export const FounderSpotlight = () => {
               transition={{ duration: 0.6 }}
             >
               <div className="inline-flex items-center gap-2 px-3 py-1 bg-slate-100 rounded-full mb-6">
-                <Scale className="w-3 h-3 text-authority-navy" />
-                <span className="font-mono text-[10px] font-bold uppercase tracking-widest text-authority-navy">Leadership Spotlight</span>
+                <Scale className="w-3 h-3 text-jvto-navy" />
+                <span className="font-mono text-[10px] font-bold uppercase tracking-widest text-jvto-navy">Leadership Spotlight</span>
               </div>
 
               <h2 className="heading-section mb-6">
-                The Authority Behind <span className="text-safety-orange">The Expedition.</span>
+                The Authority Behind <span className="text-jvto-orange">The Expedition.</span>
               </h2>
 
               <div className="space-y-6 mb-10">
@@ -108,8 +108,8 @@ export const FounderSpotlight = () => {
               <div className="grid sm:grid-cols-2 gap-4 mb-10">
                 <div className="p-4 bg-slate-50 rounded-md border border-slate-100">
                   <div className="flex items-center gap-3 mb-2">
-                    <Award className="w-4 h-4 text-safety-orange" />
-                    <span className="font-bold text-sm text-authority-navy uppercase tracking-tight">Police Liaison</span>
+                    <Award className="w-4 h-4 text-jvto-orange" />
+                    <span className="font-bold text-sm text-jvto-navy uppercase tracking-tight">Police Liaison</span>
                   </div>
                   <p className="text-xs text-slate-500 leading-relaxed">
                     Direct coordination with park rangers and local authorities for emergency response.
@@ -117,8 +117,8 @@ export const FounderSpotlight = () => {
                 </div>
                 <div className="p-4 bg-slate-50 rounded-md border border-slate-100">
                   <div className="flex items-center gap-3 mb-2">
-                    <FileText className="w-4 h-4 text-safety-orange" />
-                    <span className="font-bold text-sm text-authority-navy uppercase tracking-tight">Legal Compliance</span>
+                    <FileText className="w-4 h-4 text-jvto-orange" />
+                    <span className="font-bold text-sm text-jvto-navy uppercase tracking-tight">Legal Compliance</span>
                   </div>
                   <p className="text-xs text-slate-500 leading-relaxed">
                     Ensuring all permits, licenses, and insurance protocols meet strict national standards.
@@ -130,7 +130,7 @@ export const FounderSpotlight = () => {
               <div className="flex flex-col sm:flex-row items-center gap-6">
                 <button 
                   onClick={() => window.location.href = '/verify-jvto/police-safety'}
-                  className="w-full sm:w-auto bg-authority-navy text-white px-10 py-5 rounded-md font-black uppercase tracking-widest text-sm hover:bg-slate-800 transition-all shadow-hover shadow-authority-navy/20 flex items-center justify-center gap-4 group"
+                  className="w-full sm:w-auto bg-jvto-navy text-white px-10 py-5 rounded-md font-black uppercase tracking-widest text-sm hover:bg-slate-800 transition-all shadow-hover shadow-jvto-navy/20 flex items-center justify-center gap-4 group"
                 >
                   View Police Credentials
                   <ExternalLink className="w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
@@ -145,7 +145,7 @@ export const FounderSpotlight = () => {
                     ))}
                   </div>
                   <p className="text-[11px] font-mono uppercase tracking-[0.15em] text-slate-400">
-                    Trusted by <span className="text-authority-navy font-black">5,000+</span> Travelers
+                    Trusted by <span className="text-jvto-navy font-black">5,000+</span> Travelers
                   </p>
                 </div>
               </div>

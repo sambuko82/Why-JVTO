@@ -23,19 +23,19 @@ export default function OurStory() {
   const historyClaims = SSOT.claims;
 
   return (
-    <div className="min-h-screen bg-audit-white text-authority-navy font-sans selection:bg-safety-orange/30 pb-24 md:pb-0">
+    <div className="min-h-screen bg-surface-page text-jvto-navy font-sans selection:bg-jvto-orange/30 pb-24 md:pb-0">
       <div className="fixed inset-0 grid-pattern opacity-5 pointer-events-none"></div>
       
       {/* Header */}
-      <div className="border-b border-slate-200 bg-audit-white/80 relative z-40 backdrop-blur-xl">
+      <div className="border-b border-slate-200 bg-surface-page/80 relative z-40 backdrop-blur-xl">
         <div className="container mx-auto px-6 py-6 flex items-center justify-between">
           <button 
             onClick={() => navigate('/why-jvto')}
-            className="group flex items-center gap-3 text-[11px] font-mono font-bold text-slate-500 hover:text-authority-navy transition-all uppercase tracking-widest"
+            className="group flex items-center gap-3 text-[11px] font-mono font-bold text-slate-500 hover:text-jvto-navy transition-all uppercase tracking-widest"
           >
             <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" /> Why JVTO Hub
           </button>
-          <div className="flex items-center gap-3 text-safety-orange text-[11px] font-mono font-bold uppercase tracking-[0.2em]">
+          <div className="flex items-center gap-3 text-jvto-orange text-[11px] font-mono font-bold uppercase tracking-[0.2em]">
             <Lock className="w-4 h-4" /> Protocol_History_v1.9
           </div>
         </div>
@@ -49,10 +49,10 @@ export default function OurStory() {
           className="mb-24"
         >
           <div className="flex items-center gap-2 mb-6">
-            <History className="w-4 h-4 text-safety-orange" />
+            <History className="w-4 h-4 text-jvto-orange" />
             <span className="font-mono text-[11px] uppercase tracking-widest text-slate-500">Our Story & Recognition</span>
           </div>
-          <h1 className="text-5xl md:text-8xl font-black text-authority-navy mb-8 leading-[0.85] uppercase tracking-tighter">
+          <h1 className="text-5xl md:text-8xl font-black text-jvto-navy mb-8 leading-[0.85] uppercase tracking-tighter">
             {meta?.h1 || 'PROVEN HERITAGE.'}
           </h1>
           <p className="text-slate-500 text-xl leading-tight font-light max-w-2xl">
@@ -79,10 +79,10 @@ export default function OurStory() {
             </div>
           </div>
 
-          <div className="bento-card bg-authority-navy text-white p-12 relative overflow-hidden">
+          <div className="bento-card bg-jvto-navy text-white p-12 relative overflow-hidden">
             <div className="scanline"></div>
             <div className="relative z-10">
-              <div className="w-16 h-16 rounded-2xl bg-white/5 text-safety-orange flex items-center justify-center mb-8 border border-white/10">
+              <div className="w-16 h-16 rounded-2xl bg-white/5 text-jvto-orange flex items-center justify-center mb-8 border border-white/10">
                 <BookOpen className="w-8 h-8" />
               </div>
               <h3 className="text-3xl font-black uppercase mb-4 leading-none">{SSOT.history.book2016.title}</h3>
@@ -103,7 +103,7 @@ export default function OurStory() {
         {/* Press Section */}
         <div className="mb-32">
           <div className="flex items-center gap-2 mb-12">
-            <Newspaper className="w-4 h-4 text-safety-orange" />
+            <Newspaper className="w-4 h-4 text-jvto-orange" />
             <h2 className="text-3xl font-black uppercase">Independent Media Coverage</h2>
           </div>
           
@@ -114,13 +114,13 @@ export default function OurStory() {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className="bento-card bg-audit-white p-10 border-2 border-slate-100 group hover:border-safety-orange transition-all"
+                className="bento-card bg-surface-page p-10 border-2 border-slate-100 group hover:border-jvto-orange transition-all"
               >
                 <div className="flex items-center justify-between mb-8">
-                  <span className="font-mono text-[11px] text-safety-orange uppercase tracking-widest font-bold">{item.publisher}</span>
+                  <span className="font-mono text-[11px] text-jvto-orange uppercase tracking-widest font-bold">{item.publisher}</span>
                   <span className="font-mono text-[11px] text-slate-300 uppercase tracking-widest">{item.date}</span>
                 </div>
-                <h4 className="text-xl font-black uppercase mb-6 leading-tight group-hover:text-safety-orange transition-colors">
+                <h4 className="text-xl font-black uppercase mb-6 leading-tight group-hover:text-jvto-orange transition-colors">
                   {item.title}
                 </h4>
                 {item.translatedTitle && (
@@ -130,7 +130,7 @@ export default function OurStory() {
                 )}
                 <button 
                   onClick={() => navigate('/verify-jvto#press')}
-                  className="inline-flex items-center gap-3 text-[11px] font-mono font-bold text-slate-500 uppercase tracking-widest hover:text-safety-orange transition-all"
+                  className="inline-flex items-center gap-3 text-[11px] font-mono font-bold text-slate-500 uppercase tracking-widest hover:text-jvto-orange transition-all"
                 >
                   View Original Artifact <ChevronRight className="w-4 h-4" />
                 </button>
@@ -147,23 +147,23 @@ export default function OurStory() {
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="bento-card bg-audit-white p-12 border-2 border-slate-100 relative overflow-hidden group"
+              className="bento-card bg-surface-page p-12 border-2 border-slate-100 relative overflow-hidden group"
             >
               <div className="absolute top-0 right-0 p-6 font-mono text-[11px] text-slate-200 font-black">
                 CLAIM_{claim.id}
               </div>
               <div className="max-w-3xl">
-                <h3 className="text-2xl font-black text-authority-navy uppercase leading-tight mb-6">
+                <h3 className="text-2xl font-black text-jvto-navy uppercase leading-tight mb-6">
                   {claim.text}
                 </h3>
-                <div className="p-6 bg-audit-white rounded-xl border border-slate-100 mb-8">
+                <div className="p-6 bg-surface-page rounded-xl border border-slate-100 mb-8">
                   <p className="text-slate-600 font-light leading-relaxed italic">
                     "{claim.meaning}"
                   </p>
                 </div>
                 <button 
                   onClick={() => navigate(`/verify-jvto#${claim.evidenceAnchor}`)}
-                  className="inline-flex items-center gap-3 text-[11px] font-mono font-bold text-safety-orange uppercase tracking-widest hover:gap-5 transition-all"
+                  className="inline-flex items-center gap-3 text-[11px] font-mono font-bold text-jvto-orange uppercase tracking-widest hover:gap-5 transition-all"
                 >
                   Inspect Evidence <ChevronRight className="w-4 h-4" />
                 </button>
@@ -173,7 +173,7 @@ export default function OurStory() {
         </div>
 
         {/* Final CTA */}
-        <div className="mt-32 p-12 bg-audit-white border-4 border-slate-100 rounded-[3rem] text-center">
+        <div className="mt-32 p-12 bg-surface-page border-4 border-slate-100 rounded-[3rem] text-center">
           <h3 className="text-3xl font-black uppercase mb-6">Explore the Full Proof Vault</h3>
           <p className="text-slate-500 text-lg font-light leading-tight mb-12 max-w-2xl mx-auto">
             Our history is just one layer of the Trust Stack. Access the centralized 
@@ -181,7 +181,7 @@ export default function OurStory() {
           </p>
           <button 
             onClick={() => navigate('/verify-jvto')}
-            className="bg-authority-navy text-white px-12 py-6 rounded-2xl font-black uppercase tracking-widest hover:bg-safety-orange transition-all shadow-2xl"
+            className="bg-jvto-navy text-white px-12 py-6 rounded-2xl font-black uppercase tracking-widest hover:bg-jvto-orange transition-all shadow-2xl"
           >
             Access Proof Vault
           </button>

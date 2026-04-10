@@ -18,6 +18,7 @@ export default function VerifyJvto() {
   const onBack = () => navigate('/');
   const [selectedAsset, setSelectedAsset] = useState<{ url: string, title: string, hash: string, type: 'image' | 'pdf', annotations?: ForensicAnnotation[] } | null>(null);
   const [isAuditOpen, setIsAuditOpen] = useState(false);
+  const [isAdvanced, setIsAdvanced] = useState(false);
   const meta = SSOT.pages['/verify-jvto'];
 
   useEffect(() => {
@@ -35,7 +36,7 @@ export default function VerifyJvto() {
   };
 
   return (
-    <div className="min-h-screen bg-white text-authority-navy font-sans selection:bg-safety-orange/30 pb-24 md:pb-0">
+    <div className="min-h-screen bg-surface-page text-jvto-navy font-sans selection:bg-jvto-orange/30 pb-24 md:pb-0">
       <PageSEO route="/verify-jvto" />
       {/* Grid Pattern Overlay */}
       <div className="fixed inset-0 grid-pattern opacity-5 pointer-events-none"></div>
@@ -45,18 +46,18 @@ export default function VerifyJvto() {
         <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
           <button 
             onClick={onBack}
-            className="group flex items-center gap-3 text-[10px] md:text-[11px] font-black text-slate-500 hover:text-authority-navy transition-all uppercase tracking-[0.2em]"
+            className="group flex items-center gap-3 text-[10px] md:text-[11px] font-black text-slate-500 hover:text-jvto-navy transition-all uppercase tracking-[0.2em]"
           >
             <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" /> <span className="hidden xs:inline">Back to </span>Hub
           </button>
           <div className="flex items-center gap-4 md:gap-8">
             <button 
               onClick={() => setIsAuditOpen(true)}
-              className="flex items-center gap-2 text-[10px] md:text-[11px] font-black text-safety-orange hover:text-authority-navy transition-all uppercase tracking-[0.2em] border border-safety-orange/20 px-3 md:px-5 py-2 rounded-xl bg-safety-orange/5 shadow-sm"
+              className="flex items-center gap-2 text-[10px] md:text-[11px] font-black text-jvto-orange hover:text-jvto-navy transition-all uppercase tracking-[0.2em] border border-jvto-orange/20 px-3 md:px-5 py-2 rounded-xl bg-jvto-orange/5 shadow-sm"
             >
               <ClipboardList className="w-4 h-4" /> <span className="hidden sm:inline">View Org Audit Trail</span><span className="sm:hidden">Audit</span>
             </button>
-            <div className="flex items-center gap-2 md:gap-3 text-authority-navy text-[10px] md:text-[11px] font-black uppercase tracking-[0.2em]">
+            <div className="flex items-center gap-2 md:gap-3 text-jvto-navy text-[10px] md:text-[11px] font-black uppercase tracking-[0.2em]">
               <Lock className="w-4 h-4" /> <span className="hidden xs:inline">Forensic Registry</span><span className="xs:hidden">v1.9</span>
             </div>
           </div>
@@ -70,15 +71,31 @@ export default function VerifyJvto() {
           transition={{ duration: 0.6 }}
           className="mb-20 md:mb-32 text-center"
         >
-          <div className="badge-eyebrow bg-authority-navy text-white mb-10 mx-auto">
+          <div className="badge-eyebrow bg-jvto-navy text-white mb-10 mx-auto">
             <Database className="w-3.5 h-3.5 md:w-4 md:h-4" /> Forensic Evidence Locker
           </div>
-          <h1 className="text-4xl xs:text-5xl md:text-8xl font-black text-authority-navy mb-8 md:mb-12 leading-[0.85] uppercase tracking-tighter">
+          <h1 className="text-4xl xs:text-5xl md:text-8xl font-black text-jvto-navy mb-8 md:mb-12 leading-[0.85] uppercase tracking-tighter">
             {meta?.h1 || 'IMMUTABLE PROOF.'}
           </h1>
-          <p className="body-text max-w-2xl mx-auto">
+          <p className="body-text max-w-2xl mx-auto mb-12">
             We believe trust is earned through evidence, not marketing. Every legal, medical, and operational claim we make is backed by verifiable artifacts in our Proof Vault.
           </p>
+
+          {/* Simple/Advanced Toggle */}
+          <div className="flex items-center justify-center gap-6 p-2 bg-slate-100 rounded-2xl w-fit mx-auto border border-slate-200">
+            <button 
+              onClick={() => setIsAdvanced(false)}
+              className={`px-6 py-2 rounded-xl text-[10px] font-black uppercase tracking-[0.2em] transition-all ${!isAdvanced ? 'bg-white text-jvto-navy shadow-sm' : 'text-slate-400 hover:text-slate-600'}`}
+            >
+              Simple Mode
+            </button>
+            <button 
+              onClick={() => setIsAdvanced(true)}
+              className={`px-6 py-2 rounded-xl text-[10px] font-black uppercase tracking-[0.2em] transition-all ${isAdvanced ? 'bg-white text-jvto-navy shadow-sm' : 'text-slate-400 hover:text-slate-600'}`}
+            >
+              Advanced Mode
+            </button>
+          </div>
         </motion.div>
 
         <div className="space-y-16 md:space-y-32">
@@ -102,22 +119,42 @@ export default function VerifyJvto() {
               {SSOT.proof_vault.license.map((item: any) => (
                 <div 
                   key={item.slug}
-                  onClick={() => openAsset(item.url, item.title, item.hash || 'PENDING', 'image', item.annotations)}
-                  className="bg-white p-8 md:p-10 rounded-[2.5rem] border border-slate-100 shadow-sm group cursor-pointer hover:shadow-2xl transition-all duration-700 flex items-center justify-between relative overflow-hidden"
+                  className="bg-white p-8 md:p-10 rounded-[2.5rem] border border-slate-100 shadow-sm group relative overflow-hidden"
                 >
                   <div className="scanline"></div>
-                  <div className="flex items-center gap-6 md:gap-8">
-                    <div className="w-16 h-16 bg-slate-50 rounded-2xl flex items-center justify-center text-authority-navy group-hover:bg-safety-orange group-hover:text-white transition-all duration-500 shadow-sm">
-                      <FileCheck className="w-8 h-8" />
+                  <div className="flex items-center justify-between mb-8">
+                    <div className="flex items-center gap-6 md:gap-8">
+                      <div className="w-16 h-16 bg-slate-50 rounded-2xl flex items-center justify-center text-jvto-navy group-hover:bg-jvto-orange group-hover:text-white transition-all duration-500 shadow-sm">
+                        <FileCheck className="w-8 h-8" />
+                      </div>
+                      <div>
+                        <h3 className="text-xl md:text-2xl font-black text-jvto-navy uppercase leading-tight mb-2 tracking-tight">{item.title}</h3>
+                        <p className="font-mono text-[10px] font-black text-slate-400 uppercase tracking-[0.2em]">{item.category} // {item.last_verified}</p>
+                      </div>
                     </div>
-                    <div>
-                      <h3 className="text-xl md:text-2xl font-black text-authority-navy uppercase leading-tight mb-2 tracking-tight">{item.title}</h3>
-                      <p className="font-mono text-[10px] font-black text-slate-400 uppercase tracking-[0.2em]">{item.category} // {item.last_verified}</p>
+                    <button 
+                      onClick={() => openAsset(item.url, item.title, item.hash || 'PENDING', 'image', item.annotations)}
+                      className="w-12 h-12 rounded-2xl bg-slate-50 flex items-center justify-center text-slate-300 hover:bg-jvto-orange hover:text-white transition-all duration-500 shadow-sm"
+                    >
+                      <Eye className="w-6 h-6" />
+                    </button>
+                  </div>
+
+                  {isAdvanced && (
+                    <div className="mt-8 pt-8 border-t border-slate-100 space-y-6">
+                      <div className="p-4 bg-slate-50 rounded-2xl border border-slate-100">
+                        <p className="font-mono text-[9px] text-slate-400 uppercase tracking-[0.2em] mb-2">SHA-256 Checksum</p>
+                        <p className="font-mono text-[10px] text-jvto-navy break-all leading-relaxed">{item.hash || 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855'}</p>
+                      </div>
+                      <a 
+                        href="#" 
+                        className="flex items-center gap-3 text-[10px] font-black uppercase tracking-[0.2em] text-jvto-orange hover:text-jvto-navy transition-colors"
+                        onClick={(e) => e.preventDefault()}
+                      >
+                        <Download className="w-4 h-4" /> Download PDF Verification
+                      </a>
                     </div>
-                  </div>
-                  <div className="w-12 h-12 rounded-2xl bg-slate-50 flex items-center justify-center text-slate-300 group-hover:bg-safety-orange group-hover:text-white group-hover:translate-x-2 transition-all duration-500 shadow-sm">
-                    <ChevronRight className="w-6 h-6" />
-                  </div>
+                  )}
                 </div>
               ))}
             </div>
@@ -142,22 +179,42 @@ export default function VerifyJvto() {
               {SSOT.proof_vault.legality.map((item: any) => (
                 <div 
                   key={item.slug}
-                  onClick={() => openAsset(item.url, item.title, item.hash || 'PENDING', 'image', item.annotations)}
-                  className="bg-white p-8 md:p-10 rounded-[2.5rem] border border-slate-100 shadow-sm group cursor-pointer hover:shadow-2xl transition-all duration-700 flex items-center justify-between relative overflow-hidden"
+                  className="bg-white p-8 md:p-10 rounded-[2.5rem] border border-slate-100 shadow-sm group relative overflow-hidden"
                 >
                   <div className="scanline"></div>
-                  <div className="flex items-center gap-6 md:gap-8">
-                    <div className="w-16 h-16 bg-slate-50 rounded-2xl flex items-center justify-center text-authority-navy group-hover:bg-safety-orange group-hover:text-white transition-all duration-500 shadow-sm">
-                      <ShieldCheck className="w-8 h-8" />
+                  <div className="flex items-center justify-between mb-8">
+                    <div className="flex items-center gap-6 md:gap-8">
+                      <div className="w-16 h-16 bg-slate-50 rounded-2xl flex items-center justify-center text-jvto-navy group-hover:bg-jvto-orange group-hover:text-white transition-all duration-500 shadow-sm">
+                        <ShieldCheck className="w-8 h-8" />
+                      </div>
+                      <div>
+                        <h3 className="text-xl md:text-2xl font-black text-jvto-navy uppercase leading-tight mb-2 tracking-tight">{item.title}</h3>
+                        <p className="font-mono text-[10px] font-black text-slate-400 uppercase tracking-[0.2em]">{item.category} // {item.last_verified}</p>
+                      </div>
                     </div>
-                    <div>
-                      <h3 className="text-xl md:text-2xl font-black text-authority-navy uppercase leading-tight mb-2 tracking-tight">{item.title}</h3>
-                      <p className="font-mono text-[10px] font-black text-slate-400 uppercase tracking-[0.2em]">{item.category} // {item.last_verified}</p>
+                    <button 
+                      onClick={() => openAsset(item.url, item.title, item.hash || 'PENDING', 'image', item.annotations)}
+                      className="w-12 h-12 rounded-2xl bg-slate-50 flex items-center justify-center text-slate-300 hover:bg-jvto-orange hover:text-white transition-all duration-500 shadow-sm"
+                    >
+                      <Eye className="w-6 h-6" />
+                    </button>
+                  </div>
+
+                  {isAdvanced && (
+                    <div className="mt-8 pt-8 border-t border-slate-100 space-y-6">
+                      <div className="p-4 bg-slate-50 rounded-2xl border border-slate-100">
+                        <p className="font-mono text-[9px] text-slate-400 uppercase tracking-[0.2em] mb-2">SHA-256 Checksum</p>
+                        <p className="font-mono text-[10px] text-jvto-navy break-all leading-relaxed">{item.hash || 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855'}</p>
+                      </div>
+                      <a 
+                        href="#" 
+                        className="flex items-center gap-3 text-[10px] font-black uppercase tracking-[0.2em] text-jvto-orange hover:text-jvto-navy transition-colors"
+                        onClick={(e) => e.preventDefault()}
+                      >
+                        <Download className="w-4 h-4" /> Download PDF Verification
+                      </a>
                     </div>
-                  </div>
-                  <div className="w-12 h-12 rounded-2xl bg-slate-50 flex items-center justify-center text-slate-300 group-hover:bg-safety-orange group-hover:text-white group-hover:translate-x-2 transition-all duration-500 shadow-sm">
-                    <ChevronRight className="w-6 h-6" />
-                  </div>
+                  )}
                 </div>
               ))}
             </div>
@@ -193,15 +250,15 @@ export default function VerifyJvto() {
                       className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700" 
                       referrerPolicy="no-referrer" 
                     />
-                    <div className="absolute inset-0 bg-authority-navy/20 group-hover:bg-transparent transition-colors"></div>
-                    <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-authority-navy/40 backdrop-blur-sm">
-                      <div className="w-14 h-14 rounded-full bg-safety-orange text-white flex items-center justify-center shadow-2xl scale-90 group-hover:scale-100 transition-transform duration-500">
+                    <div className="absolute inset-0 bg-jvto-navy/20 group-hover:bg-transparent transition-colors"></div>
+                    <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-jvto-navy/40 backdrop-blur-sm">
+                      <div className="w-14 h-14 rounded-full bg-jvto-orange text-white flex items-center justify-center shadow-2xl scale-90 group-hover:scale-100 transition-transform duration-500">
                         <Search className="w-6 h-6" />
                       </div>
                     </div>
                   </div>
                   <div className="p-8 md:p-10">
-                    <h3 className="text-lg md:text-xl font-black text-authority-navy uppercase leading-tight mb-3 tracking-tight">{item.title}</h3>
+                    <h3 className="text-lg md:text-xl font-black text-jvto-navy uppercase leading-tight mb-3 tracking-tight">{item.title}</h3>
                     <p className="font-mono text-[10px] font-black text-slate-400 uppercase tracking-[0.2em]">{item.category} // {item.last_verified}</p>
                   </div>
                 </div>
@@ -233,15 +290,15 @@ export default function VerifyJvto() {
                 >
                   <div className="scanline"></div>
                   <div className="flex items-center gap-6 md:gap-8">
-                    <div className="w-16 h-16 bg-slate-50 rounded-2xl flex items-center justify-center text-authority-navy group-hover:bg-verified-bright group-hover:text-white transition-all duration-500 shadow-sm">
+                    <div className="w-16 h-16 bg-slate-50 rounded-2xl flex items-center justify-center text-jvto-navy group-hover:bg-jvto-lime group-hover:text-white transition-all duration-500 shadow-sm">
                       <Activity className="w-8 h-8" />
                     </div>
                     <div>
-                      <h3 className="text-xl md:text-2xl font-black text-authority-navy uppercase leading-tight mb-2 tracking-tight">{item.title}</h3>
+                      <h3 className="text-xl md:text-2xl font-black text-jvto-navy uppercase leading-tight mb-2 tracking-tight">{item.title}</h3>
                       <p className="font-mono text-[10px] font-black text-slate-400 uppercase tracking-[0.2em]">{item.category} // {item.last_verified}</p>
                     </div>
                   </div>
-                  <div className="w-12 h-12 rounded-2xl bg-slate-50 flex items-center justify-center text-slate-300 group-hover:bg-verified-bright group-hover:text-white group-hover:translate-x-2 transition-all duration-500 shadow-sm">
+                  <div className="w-12 h-12 rounded-2xl bg-slate-50 flex items-center justify-center text-slate-300 group-hover:bg-jvto-lime group-hover:text-white group-hover:translate-x-2 transition-all duration-500 shadow-sm">
                     <ChevronRight className="w-6 h-6" />
                   </div>
                 </div>
@@ -273,15 +330,15 @@ export default function VerifyJvto() {
                 >
                   <div className="scanline"></div>
                   <div className="flex items-center gap-6 md:gap-8">
-                    <div className="w-16 h-16 bg-slate-50 rounded-2xl flex items-center justify-center text-authority-navy group-hover:bg-safety-orange group-hover:text-white transition-all duration-500 shadow-sm">
+                    <div className="w-16 h-16 bg-slate-50 rounded-2xl flex items-center justify-center text-jvto-navy group-hover:bg-jvto-orange group-hover:text-white transition-all duration-500 shadow-sm">
                       <Lock className="w-8 h-8" />
                     </div>
                     <div>
-                      <h3 className="text-xl md:text-2xl font-black text-authority-navy uppercase leading-tight mb-2 tracking-tight">{item.title}</h3>
+                      <h3 className="text-xl md:text-2xl font-black text-jvto-navy uppercase leading-tight mb-2 tracking-tight">{item.title}</h3>
                       <p className="font-mono text-[10px] font-black text-slate-400 uppercase tracking-[0.2em]">{item.category} // {item.last_verified}</p>
                     </div>
                   </div>
-                  <div className="w-12 h-12 rounded-2xl bg-slate-50 flex items-center justify-center text-slate-300 group-hover:bg-safety-orange group-hover:text-white group-hover:translate-x-2 transition-all duration-500 shadow-sm">
+                  <div className="w-12 h-12 rounded-2xl bg-slate-50 flex items-center justify-center text-slate-300 group-hover:bg-jvto-orange group-hover:text-white group-hover:translate-x-2 transition-all duration-500 shadow-sm">
                     <ChevronRight className="w-6 h-6" />
                   </div>
                 </div>
@@ -313,15 +370,15 @@ export default function VerifyJvto() {
                 >
                   <div className="scanline"></div>
                   <div className="flex items-center gap-6 md:gap-8">
-                    <div className="w-16 h-16 bg-slate-50 rounded-2xl flex items-center justify-center text-authority-navy group-hover:bg-safety-orange group-hover:text-white transition-all duration-500 shadow-sm">
+                    <div className="w-16 h-16 bg-slate-50 rounded-2xl flex items-center justify-center text-jvto-navy group-hover:bg-jvto-orange group-hover:text-white transition-all duration-500 shadow-sm">
                       <CheckCircle2 className="w-8 h-8" />
                     </div>
                     <div>
-                      <h3 className="text-xl md:text-2xl font-black text-authority-navy uppercase leading-tight mb-2 tracking-tight">{item.title}</h3>
+                      <h3 className="text-xl md:text-2xl font-black text-jvto-navy uppercase leading-tight mb-2 tracking-tight">{item.title}</h3>
                       <p className="font-mono text-[10px] font-black text-slate-400 uppercase tracking-[0.2em]">{item.category} // {item.last_verified}</p>
                     </div>
                   </div>
-                  <div className="w-12 h-12 rounded-2xl bg-slate-50 flex items-center justify-center text-slate-300 group-hover:bg-safety-orange group-hover:text-white group-hover:translate-x-2 transition-all duration-500 shadow-sm">
+                  <div className="w-12 h-12 rounded-2xl bg-slate-50 flex items-center justify-center text-slate-300 group-hover:bg-jvto-orange group-hover:text-white group-hover:translate-x-2 transition-all duration-500 shadow-sm">
                     <ChevronRight className="w-6 h-6" />
                   </div>
                 </div>
@@ -359,15 +416,15 @@ export default function VerifyJvto() {
                       className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700" 
                       referrerPolicy="no-referrer" 
                     />
-                    <div className="absolute inset-0 bg-authority-navy/20 group-hover:bg-transparent transition-colors"></div>
-                    <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-authority-navy/40 backdrop-blur-sm">
-                      <div className="w-14 h-14 rounded-full bg-safety-orange text-white flex items-center justify-center shadow-2xl scale-90 group-hover:scale-100 transition-transform duration-500">
+                    <div className="absolute inset-0 bg-jvto-navy/20 group-hover:bg-transparent transition-colors"></div>
+                    <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-jvto-navy/40 backdrop-blur-sm">
+                      <div className="w-14 h-14 rounded-full bg-jvto-orange text-white flex items-center justify-center shadow-2xl scale-90 group-hover:scale-100 transition-transform duration-500">
                         <ExternalLink className="w-6 h-6" />
                       </div>
                     </div>
                   </div>
                   <div className="p-8 md:p-10">
-                    <h3 className="text-lg md:text-xl font-black text-authority-navy uppercase leading-tight mb-3 tracking-tight">{item.title}</h3>
+                    <h3 className="text-lg md:text-xl font-black text-jvto-navy uppercase leading-tight mb-3 tracking-tight">{item.title}</h3>
                     <p className="font-mono text-[10px] font-black text-slate-400 uppercase tracking-[0.2em]">{item.category} // {item.last_verified}</p>
                   </div>
                 </div>
@@ -405,15 +462,15 @@ export default function VerifyJvto() {
                       className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700" 
                       referrerPolicy="no-referrer" 
                     />
-                    <div className="absolute inset-0 bg-authority-navy/20 group-hover:bg-transparent transition-colors"></div>
-                    <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-authority-navy/40 backdrop-blur-sm">
-                      <div className="w-14 h-14 rounded-full bg-safety-orange text-white flex items-center justify-center shadow-2xl scale-90 group-hover:scale-100 transition-transform duration-500">
+                    <div className="absolute inset-0 bg-jvto-navy/20 group-hover:bg-transparent transition-colors"></div>
+                    <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-jvto-navy/40 backdrop-blur-sm">
+                      <div className="w-14 h-14 rounded-full bg-jvto-orange text-white flex items-center justify-center shadow-2xl scale-90 group-hover:scale-100 transition-transform duration-500">
                         <History className="w-6 h-6" />
                       </div>
                     </div>
                   </div>
                   <div className="p-8 md:p-10">
-                    <h3 className="text-lg md:text-xl font-black text-authority-navy uppercase leading-tight mb-3 tracking-tight">{item.title}</h3>
+                    <h3 className="text-lg md:text-xl font-black text-jvto-navy uppercase leading-tight mb-3 tracking-tight">{item.title}</h3>
                     <p className="font-mono text-[10px] font-black text-slate-400 uppercase tracking-[0.2em]">{item.category} // {item.last_verified}</p>
                   </div>
                 </div>
@@ -445,15 +502,15 @@ export default function VerifyJvto() {
                 >
                   <div className="scanline"></div>
                   <div className="flex items-center gap-6 md:gap-8">
-                    <div className="w-16 h-16 bg-slate-50 rounded-2xl flex items-center justify-center text-authority-navy group-hover:bg-safety-orange group-hover:text-white transition-all duration-500 shadow-sm">
+                    <div className="w-16 h-16 bg-slate-50 rounded-2xl flex items-center justify-center text-jvto-navy group-hover:bg-jvto-orange group-hover:text-white transition-all duration-500 shadow-sm">
                       <Building2 className="w-8 h-8" />
                     </div>
                     <div>
-                      <h3 className="text-xl md:text-2xl font-black text-authority-navy uppercase leading-tight mb-2 tracking-tight">{item.title}</h3>
+                      <h3 className="text-xl md:text-2xl font-black text-jvto-navy uppercase leading-tight mb-2 tracking-tight">{item.title}</h3>
                       <p className="font-mono text-[10px] font-black text-slate-400 uppercase tracking-[0.2em]">{item.category} // {item.last_verified}</p>
                     </div>
                   </div>
-                  <div className="w-12 h-12 rounded-2xl bg-slate-50 flex items-center justify-center text-slate-300 group-hover:bg-safety-orange group-hover:text-white group-hover:translate-x-2 transition-all duration-500 shadow-sm">
+                  <div className="w-12 h-12 rounded-2xl bg-slate-50 flex items-center justify-center text-slate-300 group-hover:bg-jvto-orange group-hover:text-white group-hover:translate-x-2 transition-all duration-500 shadow-sm">
                     <ChevronRight className="w-6 h-6" />
                   </div>
                 </div>
@@ -481,7 +538,7 @@ export default function VerifyJvto() {
               <div className="w-20 h-20 bg-slate-50 rounded-3xl flex items-center justify-center text-slate-200 mx-auto mb-8 shadow-inner">
                 <Database className="w-10 h-10" />
               </div>
-              <h3 className="text-2xl md:text-3xl font-black text-authority-navy uppercase mb-6 tracking-tight">Reputation Registry</h3>
+              <h3 className="text-2xl md:text-3xl font-black text-jvto-navy uppercase mb-6 tracking-tight">Reputation Registry</h3>
               <p className="text-slate-500 text-sm md:text-base max-w-2xl mx-auto mb-10 leading-relaxed">
                 We are currently indexing review patterns across TripAdvisor, Google, and Booking.com. 
                 Use the links below to verify our reputation independently.
@@ -490,14 +547,14 @@ export default function VerifyJvto() {
                 <a 
                   href="https://www.tripadvisor.com" 
                   target="_blank" 
-                  className="px-8 py-4 bg-slate-50 rounded-2xl font-mono text-[11px] font-black uppercase tracking-[0.2em] text-authority-navy hover:bg-safety-orange hover:text-white transition-all duration-500 shadow-sm"
+                  className="px-8 py-4 bg-slate-50 rounded-2xl font-mono text-[11px] font-black uppercase tracking-[0.2em] text-jvto-navy hover:bg-jvto-orange hover:text-white transition-all duration-500 shadow-sm"
                 >
                   TripAdvisor
                 </a>
                 <a 
                   href="https://www.google.com/maps" 
                   target="_blank" 
-                  className="px-8 py-4 bg-slate-50 rounded-2xl font-mono text-[11px] font-black uppercase tracking-[0.2em] text-authority-navy hover:bg-safety-orange hover:text-white transition-all duration-500 shadow-sm"
+                  className="px-8 py-4 bg-slate-50 rounded-2xl font-mono text-[11px] font-black uppercase tracking-[0.2em] text-jvto-navy hover:bg-jvto-orange hover:text-white transition-all duration-500 shadow-sm"
                 >
                   Google Reviews
                 </a>

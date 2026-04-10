@@ -69,16 +69,16 @@ export default function DestinationsHub() {
   ];
 
   return (
-    <div className="min-h-screen bg-white text-authority-navy font-sans selection:bg-safety-orange/30 pb-24 md:pb-0">
+    <div className="min-h-screen bg-white text-jvto-navy font-sans selection:bg-jvto-orange/30 pb-24 md:pb-0">
       {/* Header */}
       <div className="border-b border-slate-100 bg-white/80 relative z-40 backdrop-blur-xl sticky top-0">
         <div className="container-authority py-4 md:py-6 flex items-center justify-between">
-          <div className="flex items-center gap-3 text-safety-orange text-[10px] md:text-[11px] font-black uppercase tracking-[0.2em]">
+          <div className="flex items-center gap-3 text-jvto-orange text-[10px] md:text-[11px] font-black uppercase tracking-[0.2em]">
             <Compass className="w-4 h-4" /> Destination Registry
           </div>
           <div className="flex items-center gap-6 md:gap-10">
-            <button onClick={() => navigate('/why-jvto')} className="text-[10px] md:text-[11px] font-black uppercase tracking-[0.2em] text-slate-400 hover:text-authority-navy transition-colors">Why JVTO</button>
-            <button onClick={() => navigate('/verify-jvto')} className="text-[10px] md:text-[11px] font-black uppercase tracking-[0.2em] text-slate-400 hover:text-authority-navy transition-colors">Verify</button>
+            <button onClick={() => navigate('/why-jvto')} className="text-[10px] md:text-[11px] font-black uppercase tracking-[0.2em] text-slate-400 hover:text-jvto-navy transition-colors">Why JVTO</button>
+            <button onClick={() => navigate('/verify-jvto')} className="text-[10px] md:text-[11px] font-black uppercase tracking-[0.2em] text-slate-400 hover:text-jvto-navy transition-colors">Verify</button>
           </div>
         </div>
       </div>
@@ -93,10 +93,10 @@ export default function DestinationsHub() {
           transition={{ duration: 0.8, ease: [0.23, 1, 0.32, 1] }}
           className="mb-20 md:mb-32"
         >
-          <div className="badge-eyebrow bg-safety-orange/10 text-safety-orange mb-8">
+          <div className="badge-eyebrow bg-jvto-orange/10 text-jvto-orange mb-8">
             <MapPin className="w-3.5 h-3.5" /> East Java Exploration
           </div>
-          <h1 className="text-5xl md:text-9xl font-black text-authority-navy mb-10 leading-[0.85] uppercase tracking-tighter">
+          <h1 className="text-5xl md:text-9xl font-black text-jvto-navy mb-10 leading-[0.85] uppercase tracking-tighter">
             {meta?.h1 || 'DESTINATIONS.'}
           </h1>
           <p className="body-text max-w-3xl">
@@ -124,18 +124,18 @@ export default function DestinationsHub() {
                   referrerPolicy="no-referrer"
                 />
                 {dest.imageContext && (
-                  <div className="absolute top-6 left-6 bg-white/90 backdrop-blur text-authority-navy text-[10px] px-4 py-2 rounded-xl font-black uppercase tracking-[0.1em] z-10 shadow-2xl border border-white/20">
+                  <div className="absolute top-6 left-6 bg-white/90 backdrop-blur text-jvto-navy text-[10px] px-4 py-2 rounded-xl font-black uppercase tracking-[0.1em] z-10 shadow-2xl border border-white/20">
                     {dest.imageContext}
                   </div>
                 )}
-                <div className="absolute inset-0 bg-gradient-to-t from-authority-navy/90 via-authority-navy/20 to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-500"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-jvto-navy/90 via-jvto-navy/20 to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-500"></div>
                 <div className="absolute bottom-8 left-8 right-8 md:bottom-12 md:left-12 md:right-12">
                   <div className="flex items-center gap-3 mb-4">
-                    <span className="px-4 py-1.5 bg-safety-orange text-white text-[10px] font-black uppercase tracking-[0.1em] rounded-xl shadow-2xl shadow-safety-orange/20">
+                    <span className="px-4 py-1.5 bg-jvto-orange text-white text-[10px] font-black uppercase tracking-[0.1em] rounded-xl shadow-2xl shadow-jvto-orange/20">
                       {dest.category}
                     </span>
                   </div>
-                  <h3 className="text-3xl md:text-4xl font-black text-white uppercase tracking-tighter leading-none mb-4 group-hover:text-safety-orange transition-colors">{dest.title}</h3>
+                  <h3 className="text-3xl md:text-4xl font-black text-white uppercase tracking-tighter leading-none mb-4 group-hover:text-jvto-orange transition-colors">{dest.title}</h3>
                   <div className="flex items-center gap-3 text-white/60 font-mono text-[10px] uppercase tracking-[0.2em] font-black">
                     <Clock className="w-4 h-4" /> {dest.duration}
                   </div>
@@ -145,7 +145,7 @@ export default function DestinationsHub() {
                 <p className="text-slate-500 text-base leading-relaxed mb-6 line-clamp-2 font-medium">
                   {dest.description}
                 </p>
-                <div className="flex items-center gap-3 text-safety-orange font-black uppercase tracking-[0.2em] text-[11px] group-hover:gap-5 transition-all duration-500">
+                <div className="flex items-center gap-3 text-jvto-orange font-black uppercase tracking-[0.2em] text-[11px] group-hover:gap-5 transition-all duration-500">
                   Explore Details <ArrowRight className="w-5 h-5" />
                 </div>
               </div>
@@ -157,15 +157,15 @@ export default function DestinationsHub() {
         <div className="mt-24 md:mt-40 pt-16 md:pt-24 border-t border-slate-100 flex flex-col items-center">
           <motion.div 
             whileHover={{ scale: 1.02, rotate: 0 }}
-            className="p-12 md:p-20 bg-white border-4 md:border-8 border-safety-orange rounded-[3rem] md:rounded-[4rem] -rotate-2 shadow-[0_40px_80px_-15px_rgba(242,125,38,0.2)] relative overflow-hidden group transition-all duration-700"
+            className="p-12 md:p-20 bg-white border-4 md:border-8 border-jvto-orange rounded-[3rem] md:rounded-[4rem] -rotate-2 shadow-[0_40px_80px_-15px_rgba(242,125,38,0.2)] relative overflow-hidden group transition-all duration-700"
           >
-            <div className="absolute inset-0 bg-gradient-to-br from-safety-orange/5 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-br from-jvto-orange/5 to-transparent" />
             <div className="scanline"></div>
             <div className="flex flex-col items-center relative z-10">
-              <div className="w-24 h-24 md:w-32 md:h-32 rounded-[2rem] bg-safety-orange/10 flex items-center justify-center mb-8 md:mb-12">
-                <Navigation className="w-12 h-12 md:w-16 md:h-16 text-safety-orange" />
+              <div className="w-24 h-24 md:w-32 md:h-32 rounded-[2rem] bg-jvto-orange/10 flex items-center justify-center mb-8 md:mb-12">
+                <Navigation className="w-12 h-12 md:w-16 md:h-16 text-jvto-orange" />
               </div>
-              <span className="text-4xl md:text-7xl font-black text-authority-navy uppercase tracking-tighter leading-none mb-4">REGION_VERIFIED</span>
+              <span className="text-4xl md:text-7xl font-black text-jvto-navy uppercase tracking-tighter leading-none mb-4">REGION_VERIFIED</span>
               <span className="font-mono text-[10px] md:text-xs text-slate-400 tracking-[0.3em] md:tracking-[0.5em] uppercase font-black">East Java Registry 2026</span>
             </div>
           </motion.div>

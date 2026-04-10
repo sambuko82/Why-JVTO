@@ -29,11 +29,11 @@ export const TopNav = () => {
 
   return (
     <>
-      <motion.div className="fixed top-0 left-0 right-0 h-1 bg-safety-orange origin-left z-[102]" style={{ scaleX }} />
-      <nav className="fixed top-0 left-0 right-0 z-[101] bg-authority-navy/95 backdrop-blur-xl border-b border-white/10 py-3">
+      <motion.div className="fixed top-0 left-0 right-0 h-1 bg-jvto-orange origin-left z-[102]" style={{ scaleX }} />
+      <nav className="fixed top-0 left-0 right-0 z-[101] bg-jvto-navy/95 backdrop-blur-xl border-b border-white/10 py-3">
         <div className="max-w-7xl mx-auto px-4 md:px-6 flex items-center justify-between">
           <div className="flex items-center gap-2 md:gap-3 cursor-pointer group" onClick={() => navigate('/')}>
-            <div className="p-1.5 md:p-2 bg-safety-orange rounded-lg text-white group-hover:scale-105 transition-transform shadow-lg shadow-safety-orange/20">
+            <div className="p-1.5 md:p-2 bg-jvto-orange rounded-lg text-white group-hover:scale-105 transition-transform shadow-lg shadow-jvto-orange/20">
               <ShieldCheck className="w-4 h-4 md:w-5 md:h-5" />
             </div>
             <div>
@@ -54,20 +54,20 @@ export const TopNav = () => {
               >
                 {item.label}
                 {location.pathname === item.path && (
-                  <motion.div layoutId="navIndicator" className="absolute -bottom-2 left-0 right-0 h-0.5 bg-safety-orange" />
+                  <motion.div layoutId="navIndicator" className="absolute -bottom-2 left-0 right-0 h-0.5 bg-jvto-orange" />
                 )}
               </button>
             ))}
             <div className="flex items-center gap-4 ml-6">
               <button 
                 onClick={() => navigate('/tours')} 
-                className="bg-safety-orange text-white px-8 py-3 rounded-xl font-black uppercase tracking-widest text-[11px] hover:bg-orange-600 transition-all hover:scale-105 active:scale-95 shadow-xl shadow-safety-orange/20"
+                className="btn-primary px-8 py-3 text-[11px] rounded-xl"
               >
                 Book Tour
               </button>
               <button 
                 onClick={() => navigate('/verify-jvto')} 
-                className="bg-white/5 backdrop-blur-md border border-white/10 text-white px-8 py-3 rounded-xl font-black uppercase tracking-widest text-[11px] hover:bg-white/10 transition-all hover:scale-105 active:scale-95"
+                className="btn-secondary px-8 py-3 text-[11px] rounded-xl"
               >
                 Verify
               </button>
@@ -92,7 +92,7 @@ export const TopNav = () => {
               animate={{ opacity: 1, height: '100vh' }}
               exit={{ opacity: 0, height: 0 }}
               transition={{ duration: 0.3, ease: 'easeInOut' }}
-              className="lg:hidden absolute top-full left-0 right-0 bg-authority-navy/95 backdrop-blur-2xl border-t border-white/10 flex flex-col overflow-hidden"
+              className="lg:hidden absolute top-full left-0 right-0 bg-jvto-navy/95 backdrop-blur-2xl border-t border-white/10 flex flex-col overflow-hidden"
             >
               <div className="flex-1 p-6 flex flex-col gap-2 overflow-y-auto">
                 {navItems.map((item, i) => (
@@ -103,11 +103,11 @@ export const TopNav = () => {
                     key={item.path}
                     onClick={() => { navigate(item.path); setIsOpen(false); }}
                     className={`flex items-center justify-between font-black uppercase tracking-widest text-lg py-4 border-b border-white/5 transition-colors ${
-                      location.pathname === item.path ? 'text-safety-orange' : 'text-white hover:text-safety-orange'
+                      location.pathname === item.path ? 'text-jvto-orange' : 'text-white hover:text-jvto-orange'
                     }`}
                   >
                     {item.label}
-                    <ChevronRight className={`w-5 h-5 ${location.pathname === item.path ? 'text-safety-orange' : 'text-slate-600'}`} />
+                    <ChevronRight className={`w-5 h-5 ${location.pathname === item.path ? 'text-jvto-orange' : 'text-slate-600'}`} />
                   </motion.button>
                 ))}
                 
@@ -117,10 +117,10 @@ export const TopNav = () => {
                   transition={{ delay: 0.4 }}
                   className="mt-8 flex flex-col gap-4"
                 >
-                  <button onClick={() => { navigate('/tours'); setIsOpen(false); }} className="w-full bg-safety-orange text-white py-4 rounded-xl font-black uppercase tracking-wider text-sm active:scale-95 transition-transform shadow-lg shadow-safety-orange/20">
+                  <button onClick={() => { navigate('/tours'); setIsOpen(false); }} className="btn-primary w-full py-4 rounded-xl text-sm">
                     View All Tours
                   </button>
-                  <button onClick={() => { navigate('/verify-jvto'); setIsOpen(false); }} className="w-full border border-white/20 text-white py-4 rounded-xl font-black uppercase tracking-wider text-sm active:scale-95 transition-transform">
+                  <button onClick={() => { navigate('/verify-jvto'); setIsOpen(false); }} className="btn-secondary w-full py-4 rounded-xl text-sm">
                     Verify JVTO
                   </button>
                 </motion.div>
@@ -131,7 +131,7 @@ export const TopNav = () => {
                   transition={{ delay: 0.5 }}
                   className="mt-auto pt-8 pb-12"
                 >
-                  <a href="https://wa.me/6282244788833" className="flex items-center justify-center gap-3 text-safety-orange font-black uppercase tracking-widest text-sm p-4 bg-white/5 rounded-xl active:scale-95 transition-transform">
+                  <a href="https://wa.me/6282244788833" className="btn-wa w-full flex items-center justify-center gap-3 p-4 rounded-xl">
                     <MessageSquare className="w-5 h-5" /> Chat on WhatsApp
                   </a>
                   <p className="text-[10px] text-slate-500 font-mono uppercase tracking-widest text-center mt-4">Available 08:00–22:00 WIB</p>

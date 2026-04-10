@@ -4,12 +4,12 @@ import { Activity, Wind, Thermometer, ShieldCheck } from 'lucide-react';
 
 export const StatusTicker = () => {
   return (
-    <div className="bg-authority-charcoal border-y border-white/5 py-3 overflow-hidden">
+    <div className="bg-slate-900 border-y border-white/5 py-3 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex items-center gap-8 whitespace-nowrap animate-marquee">
           <div className="flex items-center gap-2">
             <div className="status-live"></div>
-            <span className="font-mono text-[11px] uppercase tracking-[0.2em] text-safety-orange font-bold">Live Status:</span>
+            <span className="font-mono text-[11px] uppercase tracking-[0.2em] text-jvto-orange font-bold">Live Status:</span>
           </div>
           
           <div className="flex items-center gap-6">
@@ -38,6 +38,6 @@ const TickerItem = ({ icon, label, value, status }: { icon: React.ReactNode, lab
     <span className="text-slate-500">{icon}</span>
     <span className="font-mono text-[11px] uppercase tracking-widest text-slate-500">{label}:</span>
     <span className="font-mono text-[11px] uppercase tracking-widest text-white font-bold">{value}</span>
-    <span className="font-mono text-[11px] px-1.5 py-0.5 rounded-sm bg-verified-bright/10 text-verified-bright border border-verified-bright/20 font-bold">{status}</span>
+    <span className="font-mono text-[11px] px-1.5 py-0.5 rounded-sm bg-jvto-lime/10 text-jvto-lime border border-jvto-lime/20 font-bold">{status}</span>
   </div>
 );

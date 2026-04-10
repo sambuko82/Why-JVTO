@@ -51,7 +51,7 @@ export default function PressRecognition() {
   };
 
   return (
-    <div className="min-h-screen bg-audit-white text-authority-navy font-sans selection:bg-safety-orange/30 pb-24 md:pb-0">
+    <div className="min-h-screen bg-audit-white text-jvto-navy font-sans selection:bg-jvto-orange/30 pb-24 md:pb-0">
       {/* Grid Pattern Overlay */}
       <div className="fixed inset-0 grid-pattern opacity-5 pointer-events-none"></div>
       
@@ -60,11 +60,11 @@ export default function PressRecognition() {
         <div className="container mx-auto px-6 py-6 flex items-center justify-between">
           <button 
             onClick={onBack}
-            className="group flex items-center gap-3 text-[11px] font-mono font-bold text-slate-500 hover:text-authority-navy transition-all uppercase tracking-widest"
+            className="group flex items-center gap-3 text-[11px] font-mono font-bold text-slate-500 hover:text-jvto-navy transition-all uppercase tracking-widest"
           >
             <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" /> Back to Hub
           </button>
-          <div className="flex items-center gap-3 text-safety-orange text-[11px] font-mono font-bold uppercase tracking-[0.2em]">
+          <div className="flex items-center gap-3 text-jvto-orange text-[11px] font-mono font-bold uppercase tracking-[0.2em]">
             <Globe className="w-4 h-4" /> Global Recognition Registry
           </div>
         </div>
@@ -81,10 +81,10 @@ export default function PressRecognition() {
           className="mb-24"
         >
           <div className="flex items-center gap-2 mb-6">
-            <Database className="w-4 h-4 text-safety-orange" />
+            <Database className="w-4 h-4 text-jvto-orange" />
             <span className="font-mono text-[11px] uppercase tracking-widest text-slate-500">Public Record Archive</span>
           </div>
-          <h1 className="text-5xl md:text-9xl font-black text-authority-navy mb-8 leading-[0.85] uppercase tracking-tighter">
+          <h1 className="text-5xl md:text-9xl font-black text-jvto-navy mb-8 leading-[0.85] uppercase tracking-tighter">
             {meta?.h1 || 'PRESS RECOGNITION.'}
           </h1>
           <p className="text-2xl text-slate-500 max-w-3xl leading-tight font-light">
@@ -103,11 +103,11 @@ export default function PressRecognition() {
           >
             <div className="flex items-center justify-between mb-12">
               <div className="flex items-center gap-4">
-                <div className="p-3 bg-slate-50 rounded-2xl text-safety-orange border border-slate-100">
+                <div className="p-3 bg-slate-50 rounded-2xl text-jvto-orange border border-slate-100">
                   <BookOpen className="w-8 h-8" />
                 </div>
                 <div>
-                  <h2 className="text-3xl font-black text-authority-navy uppercase leading-none mb-1">Guidebook Artifact</h2>
+                  <h2 className="text-3xl font-black text-jvto-navy uppercase leading-none mb-1">Guidebook Artifact</h2>
                   <p className="font-mono text-[11px] text-slate-500 uppercase tracking-widest">STEFAN_LOOSE_INDONESIEN</p>
                 </div>
               </div>
@@ -123,7 +123,7 @@ export default function PressRecognition() {
                     <div className="h-8 w-[2px] bg-slate-200"></div>
                     <span className="font-mono text-[11px] text-slate-500 uppercase tracking-widest">Independent Audit</span>
                   </div>
-                  <h3 className="text-4xl font-black text-authority-navy uppercase leading-none mb-6 tracking-tighter">
+                  <h3 className="text-4xl font-black text-jvto-navy uppercase leading-none mb-6 tracking-tighter">
                     "The Best Choice in Bondowoso"
                   </h3>
                   <div className="bg-slate-50 p-8 rounded-[2.5rem] border border-slate-100 italic text-xl text-slate-600 leading-tight mb-8">
@@ -132,11 +132,11 @@ export default function PressRecognition() {
                   <div className="grid grid-cols-2 gap-8">
                     <div>
                       <p className="font-mono text-[11px] text-slate-500 uppercase tracking-widest mb-2">ISBN Registry</p>
-                      <p className="text-lg font-black text-authority-navy">{SSOT.history.book2016.isbn}</p>
+                      <p className="text-lg font-black text-jvto-navy">{SSOT.history.book2016.isbn}</p>
                     </div>
                     <div>
                       <p className="font-mono text-[11px] text-slate-500 uppercase tracking-widest mb-2">Page Reference</p>
-                      <p className="text-lg font-black text-authority-navy">Page {SSOT.history.book2016.page}</p>
+                      <p className="text-lg font-black text-jvto-navy">Page {SSOT.history.book2016.page}</p>
                     </div>
                   </div>
                   <HashBadge hash="4F8E...2D1A" />
@@ -152,11 +152,11 @@ export default function PressRecognition() {
                   <div className="relative z-10">
                     <div className="font-mono text-[11px] text-slate-500 uppercase tracking-widest mb-8">Archival Scan</div>
                     <div className="flex items-center justify-center h-64 border-2 border-dashed border-white/20 rounded-2xl mb-8">
-                      <Eye className="w-16 h-16 text-white/20 group-hover:text-safety-orange group-hover:scale-110 transition-all duration-500" />
+                      <Eye className="w-16 h-16 text-white/20 group-hover:text-jvto-orange group-hover:scale-110 transition-all duration-500" />
                     </div>
                     <div className="flex items-center justify-between">
                       <span className="font-mono text-[11px] text-white uppercase tracking-widest font-black">Inspect Document</span>
-                      <div className="tech-badge bg-safety-orange text-white">LOUPE_ENABLED</div>
+                      <div className="tech-badge bg-jvto-orange text-white">LOUPE_ENABLED</div>
                     </div>
                   </div>
                 </div>
@@ -173,11 +173,11 @@ export default function PressRecognition() {
           >
             <div className="flex items-center justify-between mb-12">
               <div className="flex items-center gap-4">
-                <div className="p-3 bg-slate-50 rounded-2xl text-safety-orange border border-slate-100">
+                <div className="p-3 bg-slate-50 rounded-2xl text-jvto-orange border border-slate-100">
                   <Newspaper className="w-8 h-8" />
                 </div>
                 <div>
-                  <h2 className="text-3xl font-black text-authority-navy uppercase leading-none mb-1">Media Corroboration</h2>
+                  <h2 className="text-3xl font-black text-jvto-navy uppercase leading-none mb-1">Media Corroboration</h2>
                   <p className="font-mono text-[11px] text-slate-500 uppercase tracking-widest">POLICE_LED_OPERATIONS_NEWS</p>
                 </div>
               </div>
@@ -189,12 +189,12 @@ export default function PressRecognition() {
                 <div 
                   key={i}
                   onClick={() => openAsset(item.screenshot || '', item.title, 'B257B7...DA64B77', 'image', item.annotations)}
-                  className="bento-card bg-white p-12 relative group cursor-pointer hover:bg-authority-navy hover:text-white transition-all duration-500"
+                  className="bento-card bg-white p-12 relative group cursor-pointer hover:bg-jvto-navy hover:text-white transition-all duration-500"
                 >
                   <div className="scanline"></div>
                   <div className="flex justify-between items-start mb-10">
-                    <div className="text-safety-orange font-black font-mono text-[11px] uppercase tracking-[0.2em]">{item.publisher}</div>
-                    <div className="p-3 bg-slate-50 rounded-2xl border border-slate-100 group-hover:bg-safety-orange group-hover:text-white transition-all">
+                    <div className="text-jvto-orange font-black font-mono text-[11px] uppercase tracking-[0.2em]">{item.publisher}</div>
+                    <div className="p-3 bg-slate-50 rounded-2xl border border-slate-100 group-hover:bg-jvto-orange group-hover:text-white transition-all">
                       <ExternalLink className="w-6 h-6" />
                     </div>
                   </div>
@@ -205,7 +205,7 @@ export default function PressRecognition() {
                   </div>
                   <div className="flex items-center justify-between pt-8 border-t border-current/10">
                     <div className="flex items-center gap-3">
-                      <Eye className="w-5 h-5 text-safety-orange" />
+                      <Eye className="w-5 h-5 text-jvto-orange" />
                       <span className="font-mono text-[11px] uppercase tracking-widest font-black">Inspect Source</span>
                     </div>
                     <HashBadge hash="B257...B77" />
@@ -224,21 +224,21 @@ export default function PressRecognition() {
           >
             <div className="flex items-center justify-between mb-12">
               <div className="flex items-center gap-4">
-                <div className="p-3 bg-slate-50 rounded-2xl text-safety-orange border border-slate-100">
+                <div className="p-3 bg-slate-50 rounded-2xl text-jvto-orange border border-slate-100">
                   <Globe className="w-8 h-8" />
                 </div>
                 <div>
-                  <h2 className="text-3xl font-black text-authority-navy uppercase leading-none mb-1">Guest Registry</h2>
+                  <h2 className="text-3xl font-black text-jvto-navy uppercase leading-none mb-1">Guest Registry</h2>
                   <p className="font-mono text-[11px] text-slate-500 uppercase tracking-widest">TRIANGULATED_REVIEWS</p>
                 </div>
               </div>
               <div className="flex items-center gap-2">
-                <ShieldCheck className="w-5 h-5 text-verified-bright" />
+                <ShieldCheck className="w-5 h-5 text-jvto-orange" />
                 <span className="font-mono text-[11px] text-slate-500 uppercase tracking-widest">Verified by Booking.com</span>
               </div>
             </div>
 
-            <div className="bento-card bg-authority-navy text-white p-16 relative overflow-hidden">
+            <div className="bento-card bg-jvto-navy text-white p-16 relative overflow-hidden">
               <div className="scanline"></div>
               <div className="grid lg:grid-cols-2 gap-16 items-center">
                 <div>
@@ -247,13 +247,13 @@ export default function PressRecognition() {
                      <div className="h-8 w-[2px] bg-white/10"></div>
                      <div className="flex items-center gap-1.5">
                        {[...Array(5)].map((_, i) => (
-                         <div key={i} className="w-4 h-4 bg-safety-orange rounded-full"></div>
+                         <div key={i} className="w-4 h-4 bg-jvto-orange rounded-full"></div>
                        ))}
                      </div>
                   </div>
                   <h3 className="text-4xl font-black uppercase leading-none mb-8 tracking-tighter">
                     "Exceptional" <br />
-                    <span className="text-safety-orange">9.8 / 10 Score</span>
+                    <span className="text-jvto-orange">9.8 / 10 Score</span>
                   </h3>
                   <p className="text-slate-500 text-xl leading-tight font-light mb-12">
                     Our Booking.com registry dates back to 2015, providing a decade of operational transparency and consistent guest satisfaction.
@@ -295,11 +295,11 @@ export default function PressRecognition() {
         
         {/* Footer Audit Stamp */}
         <div className="mt-32 pt-12 border-t border-slate-200 flex flex-col items-center">
-          <div className="p-12 bg-white border-4 border-safety-orange rounded-[2.5rem] -rotate-2 shadow-2xl relative overflow-hidden group hover:rotate-0 transition-transform">
+          <div className="p-12 bg-white border-4 border-jvto-orange rounded-[2.5rem] -rotate-2 shadow-2xl relative overflow-hidden group hover:rotate-0 transition-transform">
             <div className="scanline"></div>
             <div className="flex flex-col items-center">
-              <Globe className="w-20 h-20 text-safety-orange mb-8" />
-              <span className="text-5xl font-black text-authority-navy uppercase tracking-tighter leading-none mb-3">RECORD_VERIFIED</span>
+              <Globe className="w-20 h-20 text-jvto-orange mb-8" />
+              <span className="text-5xl font-black text-jvto-navy uppercase tracking-tighter leading-none mb-3">RECORD_VERIFIED</span>
               <span className="font-mono text-[11px] text-slate-500 tracking-[0.4em] uppercase">Public Registry 2026</span>
             </div>
           </div>

@@ -30,7 +30,7 @@ export const AtmosphericBreak = ({
           referrerPolicy="no-referrer"
         />
         <div 
-          className="absolute inset-0 bg-authority-navy" 
+          className="absolute inset-0 bg-jvto-navy" 
           style={{ opacity: overlayOpacity }}
         />
       </motion.div>

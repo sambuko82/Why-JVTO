@@ -67,26 +67,26 @@ export const TourBrowser = () => {
     <section className="section-spacing bg-white relative overflow-hidden border-b border-slate-100">
       <div className="container-authority mb-16 md:mb-24">
         <div className="max-w-4xl">
-          <div className="badge-eyebrow bg-authority-navy text-white mb-6 md:mb-8">
+          <div className="badge-eyebrow bg-jvto-navy text-white mb-6 md:mb-8">
             <Clock className="w-3 h-3" /> Choose Your Departure City
           </div>
           <h2 className="heading-section mb-12">
             Choose Your <br />
-            <span className="text-safety-orange">Departure City.</span>
+            <span className="text-jvto-orange">Departure City.</span>
           </h2>
 
           {/* Filters */}
           <div className="flex flex-wrap gap-8 md:gap-12 p-8 md:p-10 bg-slate-50 rounded-md border border-slate-100">
             <div className="space-y-4">
-              <div className="flex items-center gap-2 text-authority-navy font-mono text-[10px] font-black uppercase tracking-[0.2em]">
-                <Filter className="w-3 h-3 text-safety-orange" /> Duration
+              <div className="flex items-center gap-2 text-jvto-navy font-mono text-[10px] font-black uppercase tracking-[0.2em]">
+                <Filter className="w-3 h-3 text-jvto-orange" /> Duration
               </div>
               <div className="flex flex-wrap gap-2">
                 {['all', '1-2', '3-4', '5+'].map(opt => (
                   <button 
                     key={opt}
                     onClick={() => setDurationFilter(opt)}
-                    className={`px-5 py-2.5 rounded-sm font-mono text-[10px] font-black uppercase tracking-widest transition-all border ${durationFilter === opt ? 'bg-authority-navy text-white border-authority-navy shadow-card' : 'bg-white text-slate-400 border-slate-100 hover:border-slate-200'}`}
+                    className={`px-5 py-2.5 rounded-sm font-mono text-[10px] font-black uppercase tracking-widest transition-all border ${durationFilter === opt ? 'bg-jvto-navy text-white border-jvto-navy shadow-card' : 'bg-white text-slate-400 border-slate-100 hover:border-slate-200'}`}
                   >
                     {opt === 'all' ? 'All' : opt + ' Days'}
                   </button>
@@ -95,8 +95,8 @@ export const TourBrowser = () => {
             </div>
 
             <div className="space-y-4">
-              <div className="flex items-center gap-2 text-authority-navy font-mono text-[10px] font-black uppercase tracking-[0.2em]">
-                <Filter className="w-3 h-3 text-safety-orange" /> Price Range
+              <div className="flex items-center gap-2 text-jvto-navy font-mono text-[10px] font-black uppercase tracking-[0.2em]">
+                <Filter className="w-3 h-3 text-jvto-orange" /> Price Range
               </div>
               <div className="flex flex-wrap gap-2">
                 {[
@@ -109,7 +109,7 @@ export const TourBrowser = () => {
                   <button 
                     key={opt.id}
                     onClick={() => setPriceFilter(opt.id)}
-                    className={`px-5 py-2.5 rounded-sm font-mono text-[10px] font-black uppercase tracking-widest transition-all border ${priceFilter === opt.id ? 'bg-authority-navy text-white border-authority-navy shadow-card' : 'bg-white text-slate-400 border-slate-100 hover:border-slate-200'}`}
+                    className={`px-5 py-2.5 rounded-sm font-mono text-[10px] font-black uppercase tracking-widest transition-all border ${priceFilter === opt.id ? 'bg-jvto-navy text-white border-jvto-navy shadow-card' : 'bg-white text-slate-400 border-slate-100 hover:border-slate-200'}`}
                   >
                     {opt.label}
                   </button>
@@ -142,21 +142,21 @@ export const TourBrowser = () => {
                   <div className="shrink-0 w-[85vw] sm:w-[340px] md:w-[400px] snap-start">
                     <div className="p-8 md:p-12 rounded-md bg-slate-50 border border-slate-100 h-full flex flex-col justify-between aspect-[4/5] shadow-card">
                       <div>
-                        <h3 className="text-2xl md:text-4xl font-black text-authority-navy uppercase tracking-tight mb-4 md:mb-6 leading-none">
+                        <h3 className="text-2xl md:text-4xl font-black text-jvto-navy uppercase tracking-tight mb-4 md:mb-6 leading-none">
                           {departure.shortName} <br /> Logistics
                         </h3>
                         <p className="body-text text-sm md:text-base mb-8 md:mb-10">
                           {departure.description}
                         </p>
                         <div className="space-y-4 md:space-y-6 mb-8 md:mb-10">
-                          <div className="flex items-center gap-4 text-authority-navy font-mono text-[10px] md:text-[11px] font-black uppercase tracking-[0.2em]">
-                            <ShieldCheck className="w-5 h-5 text-safety-orange shrink-0" /> Police Escort
+                          <div className="flex items-center gap-4 text-jvto-navy font-mono text-[10px] md:text-[11px] font-black uppercase tracking-[0.2em]">
+                            <ShieldCheck className="w-5 h-5 text-jvto-orange shrink-0" /> Police Escort
                           </div>
-                          <div className="flex items-center gap-4 text-authority-navy font-mono text-[10px] md:text-[11px] font-black uppercase tracking-[0.2em]">
-                            <Users className="w-5 h-5 text-safety-orange shrink-0" /> Private Group
+                          <div className="flex items-center gap-4 text-jvto-navy font-mono text-[10px] md:text-[11px] font-black uppercase tracking-[0.2em]">
+                            <Users className="w-5 h-5 text-jvto-orange shrink-0" /> Private Group
                           </div>
-                          <div className="flex items-center gap-4 text-authority-navy font-mono text-[10px] md:text-[11px] font-black uppercase tracking-[0.2em]">
-                            <MapPin className="w-5 h-5 text-safety-orange shrink-0" /> Door-to-Door
+                          <div className="flex items-center gap-4 text-jvto-navy font-mono text-[10px] md:text-[11px] font-black uppercase tracking-[0.2em]">
+                            <MapPin className="w-5 h-5 text-jvto-orange shrink-0" /> Door-to-Door
                           </div>
                         </div>
                       </div>
@@ -170,7 +170,7 @@ export const TourBrowser = () => {
                   {departure.tours.map(tour => (
                     <div 
                       key={tour.route} 
-                      className="relative shrink-0 w-[85vw] sm:w-[340px] md:w-[400px] aspect-[4/5] snap-start group cursor-pointer rounded-md overflow-hidden shadow-card hover:shadow-hover transition-all duration-500"
+                      className="tour-card relative shrink-0 w-[85vw] sm:w-[340px] md:w-[400px] aspect-[4/5] snap-start group cursor-pointer hover:shadow-hover transition-all duration-500"
                       onClick={() => navigate(tour.route)} 
                     >
                       <img 
@@ -179,14 +179,19 @@ export const TourBrowser = () => {
                         className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                         referrerPolicy="no-referrer"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-80 transition-opacity duration-500 group-hover:opacity-100"></div>
+                      <div className="pro-overlay opacity-80 transition-opacity duration-500 group-hover:opacity-100"></div>
                       
                       {/* Top Badge */}
-                      {tour.crewName && (
-                        <div className="absolute top-6 left-6 md:top-8 md:left-8 bg-safety-orange text-white text-[9px] md:text-[10px] px-3 py-1.5 md:px-4 md:py-2 rounded-sm font-mono font-black uppercase tracking-[0.2em] z-10 shadow-hover shadow-safety-orange/20">
-                          {tour.crewName}
+                      <div className="absolute top-6 left-6 md:top-8 md:left-8 flex flex-col gap-2 z-10">
+                        {tour.crewName && (
+                          <div className="bg-jvto-orange text-white text-[9px] md:text-[10px] px-3 py-1.5 md:px-4 md:py-2 rounded-sm font-mono font-black uppercase tracking-[0.2em] shadow-hover shadow-jvto-orange/20">
+                            {tour.crewName}
+                          </div>
+                        )}
+                        <div className="bg-jvto-lime text-jvto-navy text-[9px] md:text-[10px] px-3 py-1.5 md:px-4 md:py-2 rounded-sm font-mono font-black uppercase tracking-[0.2em] shadow-hover shadow-jvto-lime/20 flex items-center gap-2">
+                          <ShieldCheck className="w-3 h-3" /> Verified
                         </div>
-                      )}
+                      </div>
                       
                       <div className="absolute bottom-0 left-0 right-0 h-[30%] p-5 md:p-8 flex flex-col justify-end transition-all duration-500 group-hover:h-[35%]">
                         <h3 className="text-lg md:text-2xl font-black text-white uppercase tracking-tight mb-2 md:mb-4 drop-shadow-lg group-hover:-translate-y-1 transition-transform duration-500 leading-none">
@@ -200,13 +205,13 @@ export const TourBrowser = () => {
                           </div>
                           <div className="flex flex-col items-end">
                             <span className="text-white/40 text-[7px] md:text-[8px] font-mono font-black uppercase tracking-[0.2em] mb-0.5">From</span>
-                            <span className="text-safety-orange font-black text-sm md:text-base">{tour.price}</span>
+                            <span className="text-jvto-orange font-black text-sm md:text-base">{tour.price} <span className="text-[8px] md:text-[10px] text-white/40 font-normal">(2 pax)</span></span>
                           </div>
                         </div>
                         
                         <div className="pt-3 md:pt-4 border-t border-white/10 flex items-center justify-between">
                           <div className="flex items-center gap-2">
-                            <div className="flex items-center text-safety-orange scale-75 origin-left">
+                            <div className="flex items-center text-jvto-orange scale-75 origin-left">
                               <Star className="w-3 h-3 fill-current" />
                               <Star className="w-3 h-3 fill-current" />
                               <Star className="w-3 h-3 fill-current" />
@@ -231,13 +236,13 @@ export const TourBrowser = () => {
             <div className="w-20 h-20 bg-slate-50 rounded-md flex items-center justify-center text-slate-200 mx-auto mb-8 shadow-card">
               <Filter className="w-10 h-10" />
             </div>
-            <h3 className="text-2xl md:text-3xl font-black text-authority-navy uppercase mb-4 tracking-tight">No Tours Found</h3>
+            <h3 className="text-2xl md:text-3xl font-black text-jvto-navy uppercase mb-4 tracking-tight">No Tours Found</h3>
             <p className="text-slate-500 text-sm md:text-base max-w-md mx-auto mb-10 leading-relaxed">
               We couldn't find any tours matching your current filters. Try adjusting your duration or price range.
             </p>
             <button 
               onClick={() => { setDurationFilter('all'); setPriceFilter('all'); }}
-              className="px-8 py-4 bg-authority-navy text-white rounded-md font-mono text-[11px] font-black uppercase tracking-[0.2em] hover:bg-slate-800 transition-all"
+              className="px-8 py-4 bg-jvto-navy text-white rounded-md font-mono text-[11px] font-black uppercase tracking-[0.2em] hover:bg-slate-800 transition-all"
             >
               Reset All Filters
             </button>
@@ -249,7 +254,7 @@ export const TourBrowser = () => {
       <div className="max-w-7xl mx-auto px-4 md:px-6 mt-24 md:mt-32 text-center">
         <button 
           onClick={() => navigate('/tours')}
-          className="w-full sm:w-auto bg-authority-navy hover:bg-slate-800 text-white px-12 py-6 rounded-md font-black uppercase tracking-[0.2em] text-sm transition-all shadow-hover shadow-authority-navy/20 flex items-center justify-center gap-4 mx-auto group"
+          className="w-full sm:w-auto bg-jvto-navy hover:bg-slate-800 text-white px-12 py-6 rounded-md font-black uppercase tracking-[0.2em] text-sm transition-all shadow-hover shadow-jvto-navy/20 flex items-center justify-center gap-4 mx-auto group"
         >
           View All Private Tours <ChevronRight className="w-6 h-6 group-hover:translate-x-2 transition-transform" />
         </button>

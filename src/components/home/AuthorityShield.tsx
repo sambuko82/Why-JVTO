@@ -14,7 +14,7 @@ export const AuthorityShield = () => {
   return (
     <section className="section-spacing">
       <div className="container-authority">
-        <div className="bg-authority-navy rounded-md p-8 md:p-16 lg:p-20 text-white relative overflow-hidden shadow-hover">
+        <div className="bg-jvto-navy rounded-md p-8 md:p-16 lg:p-20 text-white relative overflow-hidden shadow-hover">
           <div className="relative z-10">
             {/* Header Narrative */}
             <motion.div 
@@ -29,7 +29,7 @@ export const AuthorityShield = () => {
               </div>
               <h2 className="heading-section text-white mb-6">
                 Duty First, <br className="hidden md:block" />
-                <span className="text-safety-orange">Business Second.</span>
+                <span className="text-jvto-orange">Business Second.</span>
               </h2>
               <p className="text-white/70 text-lg md:text-2xl leading-relaxed font-light max-w-3xl">
                 Our dedication to safety is not just a company SOP. Our founder, {SSOT.organization.founder.name}, is an active Tourist Police officer covered by national media for guarding visitor safety directly in the extreme conditions of Ijen Crater.
@@ -54,12 +54,12 @@ export const AuthorityShield = () => {
                   className="w-full h-full object-cover object-top"
                   referrerPolicy="no-referrer"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-authority-navy/90 via-transparent to-transparent"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-jvto-navy/90 via-transparent to-transparent"></div>
                 
                 <div className="absolute bottom-0 left-0 right-0 p-8">
                   <div className="flex items-center gap-2 mb-3">
-                    <span className="h-2 w-2 rounded-full bg-safety-orange animate-pulse"></span>
-                    <p className="font-mono text-[11px] text-safety-orange uppercase tracking-[0.2em] font-bold">Active Duty: {SSOT.organization.founder.unit}</p>
+                    <span className="h-2 w-2 rounded-full bg-jvto-orange animate-pulse"></span>
+                    <p className="font-mono text-[11px] text-jvto-orange uppercase tracking-[0.2em] font-bold">Active Duty: {SSOT.organization.founder.unit}</p>
                   </div>
                   <p className="text-white font-black text-3xl uppercase leading-none tracking-tighter">{SSOT.organization.founder.name}</p>
                   <p className="text-white/70 font-mono text-[11px] uppercase tracking-widest mt-2">{SSOT.organization.founder.role}</p>
@@ -110,8 +110,8 @@ export const AuthorityShield = () => {
                       "{activeArticle.quote}"
                     </p>
                     <div className="flex items-center gap-3">
-                      <div className="h-px w-8 bg-safety-orange"></div>
-                      <span className="text-xs font-mono font-bold text-safety-orange uppercase tracking-widest">{activeArticle.author}</span>
+                      <div className="h-px w-8 bg-jvto-orange"></div>
+                      <span className="text-xs font-mono font-bold text-jvto-orange uppercase tracking-widest">{activeArticle.author}</span>
                       <span className="text-xs font-mono text-white/30 uppercase tracking-widest ml-2">{new Date(activeArticle.date).getFullYear()}</span>
                     </div>
                   </div>
@@ -132,8 +132,8 @@ export const AuthorityShield = () => {
                       />
                       
                       {/* Hover Overlay */}
-                      <div className="absolute inset-0 bg-authority-navy/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-sm">
-                        <div className="bg-safety-orange text-white px-8 py-4 rounded-full font-black uppercase tracking-wider text-sm flex items-center gap-3 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                      <div className="absolute inset-0 bg-jvto-navy/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-sm">
+                        <div className="bg-jvto-orange text-white px-8 py-4 rounded-full font-black uppercase tracking-wider text-sm flex items-center gap-3 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
                           Read Original Article <ExternalLink className="w-5 h-5" />
                         </div>
                       </div>

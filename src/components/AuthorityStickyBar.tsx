@@ -22,7 +22,7 @@ export const AuthorityStickyBar = () => {
           <div className="flex items-center gap-2 min-w-0">
             <Activity className="w-3.5 h-3.5 text-slate-400 shrink-0" />
             <p className="font-mono text-[10px] md:text-[11px] uppercase tracking-widest text-slate-600 truncate">
-              <span className="font-bold text-authority-navy">Ijen Status:</span> Normal (Level 1) • <span className="text-emerald-600 font-bold">Open for Tourism</span>
+              <span className="font-bold text-jvto-navy">Ijen Status:</span> Normal (Level 1) • <span className="text-emerald-600 font-bold">Open for Tourism</span>
             </p>
           </div>
         </div>
@@ -31,7 +31,7 @@ export const AuthorityStickyBar = () => {
         <div className="flex items-center gap-2 shrink-0">
           <button 
             onClick={() => navigate('/travel-guide/weather-and-closures')}
-            className="hidden sm:flex items-center gap-1.5 px-3 py-1.5 text-slate-500 hover:text-authority-navy transition-colors"
+            className="hidden sm:flex items-center gap-1.5 px-3 py-1.5 text-slate-500 hover:text-jvto-navy transition-colors"
           >
             <Info className="w-3.5 h-3.5" />
             <span className="font-mono text-[10px] uppercase tracking-widest font-bold">Details</span>
@@ -41,9 +41,9 @@ export const AuthorityStickyBar = () => {
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
             onClick={() => navigate('/tours')}
-            className="flex items-center gap-2 bg-authority-navy text-white px-4 py-1.5 rounded-full shadow-lg shadow-authority-navy/10 group transition-all"
+            className="flex items-center gap-2 bg-jvto-navy text-white px-4 py-1.5 rounded-full shadow-lg shadow-jvto-navy/10 group transition-all"
           >
-            <Calendar className="w-3.5 h-3.5 text-safety-orange" />
+            <Calendar className="w-3.5 h-3.5 text-jvto-orange" />
             <span className="font-black uppercase tracking-wider text-[10px] md:text-[11px]">Check Availability</span>
             <ChevronRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
           </motion.button>

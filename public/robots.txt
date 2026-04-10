@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+Allow: /verify-jvto/
+Allow: /legal/
+Allow: /assets/
+Allow: /llms.txt
+Allow: /.well-known/ai-agent-config.json
+
+Sitemap: https://javavolcano-touroperator.com/sitemap.xml

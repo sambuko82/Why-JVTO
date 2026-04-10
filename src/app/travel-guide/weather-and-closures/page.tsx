@@ -34,17 +34,17 @@ export default function WeatherClosures() {
   };
 
   return (
-    <div className="min-h-screen bg-audit-white text-authority-navy font-sans selection:bg-safety-orange/30 pb-24 md:pb-0">
+    <div className="min-h-screen bg-audit-white text-jvto-navy font-sans selection:bg-jvto-orange/30 pb-24 md:pb-0">
       {/* Header */}
       <div className="border-b border-slate-100 bg-audit-white/80 relative z-40 backdrop-blur-xl">
         <div className="container mx-auto px-4 md:px-6 py-4 md:py-6 flex items-center justify-between">
           <button 
             onClick={onBack}
-            className="group flex items-center gap-3 text-[10px] md:text-[11px] font-mono font-bold text-slate-500 hover:text-authority-navy transition-all uppercase tracking-widest"
+            className="group flex items-center gap-3 text-[10px] md:text-[11px] font-mono font-bold text-slate-500 hover:text-jvto-navy transition-all uppercase tracking-widest"
           >
             <ArrowLeft className="w-3.5 h-3.5 md:w-4 md:h-4 group-hover:-translate-x-1 transition-transform" /> <span className="hidden xs:inline">Back to </span>Travel Guide
           </button>
-          <div className="flex items-center gap-2 md:gap-3 text-safety-orange text-[10px] md:text-[11px] font-mono font-bold uppercase tracking-[0.15em] md:tracking-[0.2em]">
+          <div className="flex items-center gap-2 md:gap-3 text-jvto-orange text-[10px] md:text-[11px] font-mono font-bold uppercase tracking-[0.15em] md:tracking-[0.2em]">
             <CloudRain className="w-3.5 h-3.5 md:w-4 md:h-4" /> Weather & Closures
           </div>
         </div>
@@ -60,7 +60,7 @@ export default function WeatherClosures() {
           transition={{ duration: 0.6 }}
           className="mb-12 md:mb-24 text-center"
         >
-          <h1 className="text-4xl md:text-8xl font-black text-authority-navy mb-4 md:mb-8 leading-[0.85] uppercase tracking-tighter">
+          <h1 className="text-4xl md:text-8xl font-black text-jvto-navy mb-4 md:mb-8 leading-[0.85] uppercase tracking-tighter">
             {meta?.h1 || 'WEATHER & CLOSURES.'}
           </h1>
           <p className="text-lg md:text-2xl text-slate-500 max-w-2xl mx-auto leading-tight font-light">
@@ -72,10 +72,10 @@ export default function WeatherClosures() {
           {data.sections.map((section, index) => (
             <section key={index}>
               <div className="flex items-center gap-3 md:gap-4 mb-4 md:mb-8">
-                <div className="p-2 md:p-3 bg-slate-50 rounded-xl md:rounded-2xl text-safety-orange border border-slate-100">
+                <div className="p-2 md:p-3 bg-slate-50 rounded-xl md:rounded-2xl text-jvto-orange border border-slate-100">
                   {React.createElement(getIcon(section.icon), { className: "w-6 h-6 md:w-8 md:h-8" })}
                 </div>
-                <h2 className="text-2xl md:text-3xl font-black text-authority-navy uppercase tracking-tighter">{section.title}</h2>
+                <h2 className="text-2xl md:text-3xl font-black text-jvto-navy uppercase tracking-tighter">{section.title}</h2>
               </div>
               <div className="prose prose-slate max-w-none">
                 <p className="text-base md:text-lg text-slate-600 leading-relaxed">
@@ -89,8 +89,8 @@ export default function WeatherClosures() {
         {/* Footer Audit Stamp */}
         <div className="mt-16 md:mt-32 pt-8 md:pt-12 border-t border-slate-100 flex flex-col items-center">
           <div className="p-6 md:p-8 bento-card bg-audit-white border border-slate-200 rounded-2xl md:rounded-3xl flex flex-col items-center">
-            <CloudRain className="w-10 h-10 md:w-12 md:h-12 text-safety-orange mb-3 md:mb-4" />
-            <span className="text-xl md:text-2xl font-black text-authority-navy uppercase tracking-tighter leading-none mb-2">WEATHER_VERIFIED</span>
+            <CloudRain className="w-10 h-10 md:w-12 md:h-12 text-jvto-orange mb-3 md:mb-4" />
+            <span className="text-xl md:text-2xl font-black text-jvto-navy uppercase tracking-tighter leading-none mb-2">WEATHER_VERIFIED</span>
             <span className="font-mono text-[9px] md:text-[10px] text-slate-500 tracking-[0.2em] uppercase">JVTO Weather 2026</span>
           </div>
         </div>

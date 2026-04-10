@@ -28,17 +28,17 @@ export default function TourDetail() {
 
   if (!tour) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-audit-white text-authority-navy">
+      <div className="min-h-screen flex items-center justify-center bg-audit-white text-jvto-navy">
         <div className="text-center">
           <h1 className="text-4xl font-black uppercase mb-4">Tour Not Found</h1>
-          <button onClick={() => navigate('/tours')} className="text-safety-orange underline uppercase font-mono text-sm">Return to Tours</button>
+          <button onClick={() => navigate('/tours')} className="text-jvto-orange underline uppercase font-mono text-sm">Return to Tours</button>
         </div>
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-audit-white text-authority-navy font-sans selection:bg-safety-orange/30 pb-24 md:pb-0">
+    <div className="min-h-screen bg-audit-white text-jvto-navy font-sans selection:bg-jvto-orange/30 pb-24 md:pb-0">
       <PageSEO route={route} />
       
       {/* Header */}
@@ -46,16 +46,16 @@ export default function TourDetail() {
         <div className="container mx-auto px-4 md:px-6 py-4 md:py-6 flex items-center justify-between">
           <button 
             onClick={() => navigate('/tours')}
-            className="group flex items-center gap-3 text-[10px] md:text-[11px] font-mono font-bold text-slate-500 hover:text-authority-navy transition-all uppercase tracking-widest"
+            className="group flex items-center gap-3 text-[10px] md:text-[11px] font-mono font-bold text-slate-500 hover:text-jvto-navy transition-all uppercase tracking-widest"
           >
             <ArrowLeft className="w-3.5 h-3.5 md:w-4 md:h-4 group-hover:-translate-x-1 transition-transform" /> <span className="hidden xs:inline">Back to </span>Tours
           </button>
           <div className="flex items-center gap-4 md:gap-6">
-            <div className="hidden sm:flex items-center gap-2 px-3 py-1 bg-verified-bright/10 border border-verified-bright/20 rounded-sm">
-              <div className="w-1.5 h-1.5 rounded-full bg-verified-bright animate-pulse"></div>
-              <span className="font-mono text-[9px] uppercase tracking-widest text-authority-navy font-bold">System Active</span>
+            <div className="hidden sm:flex items-center gap-2 px-3 py-1 bg-jvto-lime/10 border border-jvto-lime/20 rounded-sm">
+              <div className="w-1.5 h-1.5 rounded-full bg-jvto-lime animate-pulse"></div>
+              <span className="font-mono text-[9px] uppercase tracking-widest text-jvto-navy font-bold">System Active</span>
             </div>
-            <button onClick={() => navigate('/verify-jvto')} className="text-[10px] md:text-[11px] font-mono font-bold uppercase tracking-widest text-slate-500 hover:text-authority-navy transition-colors">Verify</button>
+            <button onClick={() => navigate('/verify-jvto')} className="text-[10px] md:text-[11px] font-mono font-bold uppercase tracking-widest text-slate-500 hover:text-jvto-navy transition-colors">Verify</button>
           </div>
         </div>
       </div>
@@ -69,10 +69,10 @@ export default function TourDetail() {
         >
           <div className="lg:w-1/2">
             <div className="flex items-center gap-2 mb-4 md:mb-6">
-              <Fingerprint className="w-3.5 h-3.5 md:w-4 md:h-4 text-safety-orange" />
+              <Fingerprint className="w-3.5 h-3.5 md:w-4 md:h-4 text-jvto-orange" />
               <span className="font-mono text-[10px] md:text-[11px] uppercase tracking-widest text-slate-500">Operational Dossier: {tour.name.split(' ')[0]}</span>
             </div>
-            <h1 className="text-4xl md:text-7xl font-black text-authority-navy mb-4 md:mb-8 leading-[0.85] uppercase tracking-tighter">
+            <h1 className="text-4xl md:text-7xl font-black text-jvto-navy mb-4 md:mb-8 leading-[0.85] uppercase tracking-tighter">
               {tour.name}
             </h1>
             
@@ -82,34 +82,34 @@ export default function TourDetail() {
               </p>
               <div className="h-6 w-px bg-slate-200"></div>
               <div className="flex items-center gap-2">
-                <ShieldCheck className="w-4 h-4 text-verified-bright" />
+                <ShieldCheck className="w-4 h-4 text-jvto-lime" />
                 <span className="font-mono text-[10px] uppercase tracking-widest font-bold text-slate-400">All-Inclusive</span>
               </div>
             </div>
             
             {/* Technical Dossier Grid */}
             {tour.technical_dossier && (
-              <div className="grid grid-cols-2 gap-4 mb-12 p-6 bg-authority-navy text-white rounded-md border border-white/10 relative overflow-hidden group">
-                <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-safety-orange/50 to-transparent animate-marquee"></div>
+              <div className="grid grid-cols-2 gap-4 mb-8 p-6 bg-jvto-navy text-white rounded-md border border-white/10 relative overflow-hidden group">
+                <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-jvto-orange/50 to-transparent animate-marquee"></div>
                 <div className="scanline opacity-10"></div>
                 
                 <div className="space-y-1">
                   <p className="font-mono text-[9px] uppercase tracking-widest text-white/40">Coordinates</p>
                   <p className="font-mono text-xs font-bold flex items-center gap-2">
-                    <Compass className="w-3 h-3 text-safety-orange" />
+                    <Compass className="w-3 h-3 text-jvto-orange" />
                     {tour.technical_dossier.coordinates}
                   </p>
                 </div>
                 <div className="space-y-1">
                   <p className="font-mono text-[9px] uppercase tracking-widest text-white/40">Max Elevation</p>
                   <p className="font-mono text-xs font-bold flex items-center gap-2">
-                    <Activity className="w-3 h-3 text-verified-bright" />
+                    <Activity className="w-3 h-3 text-jvto-lime" />
                     {tour.technical_dossier.elevation}
                   </p>
                 </div>
                 <div className="space-y-1">
                   <p className="font-mono text-[9px] uppercase tracking-widest text-white/40">Difficulty</p>
-                  <p className="font-mono text-xs font-bold text-safety-orange">{tour.technical_dossier.difficulty}</p>
+                  <p className="font-mono text-xs font-bold text-jvto-orange">{tour.technical_dossier.difficulty}</p>
                 </div>
                 <div className="space-y-1">
                   <p className="font-mono text-[9px] uppercase tracking-widest text-white/40">Risk Level</p>
@@ -118,20 +118,58 @@ export default function TourDetail() {
               </div>
             )}
 
+            {/* Tiered Pricing Table */}
+            <div className="mb-12 overflow-hidden rounded-md border border-slate-200 shadow-card">
+              <div className="bg-slate-50 px-4 py-3 border-b border-slate-200">
+                <h3 className="font-mono text-[10px] uppercase tracking-widest font-bold text-slate-500">Tiered Pricing Protocol (IDR per person)</h3>
+              </div>
+              <div className="grid grid-cols-2 divide-x divide-slate-200">
+                {tour.pricing_tiers ? (
+                  <>
+                    <div className="divide-y divide-slate-200">
+                      {tour.pricing_tiers.slice(0, 3).map((tier: any, idx: number) => (
+                        <div key={idx} className="px-4 py-2 flex justify-between items-center text-xs">
+                          <span className="font-mono text-slate-400">{tier.pax}</span>
+                          <span className="font-bold text-jvto-navy">{tier.price.toLocaleString()}</span>
+                        </div>
+                      ))}
+                    </div>
+                    <div className="divide-y divide-slate-200">
+                      {tour.pricing_tiers.slice(3).map((tier: any, idx: number) => (
+                        <div key={idx} className="px-4 py-2 flex justify-between items-center text-xs">
+                          <span className="font-mono text-slate-400">{tier.pax}</span>
+                          <span className="font-bold text-jvto-navy">{tier.price.toLocaleString()}</span>
+                        </div>
+                      ))}
+                      {tour.pricing_tiers.length < 6 && (
+                         <div className="px-4 py-2 flex justify-between items-center text-xs bg-slate-50/50">
+                            <span className="font-mono text-slate-300 italic">Verified Rate</span>
+                         </div>
+                      )}
+                    </div>
+                  </>
+                ) : (
+                  <div className="col-span-2 px-4 py-6 text-center text-slate-400 font-mono text-xs uppercase tracking-widest">
+                    Pricing tiers loading...
+                  </div>
+                )}
+              </div>
+            </div>
+
             {/* Overview Highlights */}
             {tour.overview && (
               <div className="mb-12">
                 <div className="flex items-center gap-3 mb-6">
-                  <Map className="w-5 h-5 text-safety-orange" />
+                  <Map className="w-5 h-5 text-jvto-orange" />
                   <h3 className="font-mono text-sm uppercase tracking-widest font-bold">Route & Highlights</h3>
                 </div>
-                <p className="font-mono text-xs text-slate-500 uppercase tracking-widest mb-4 border-l-2 border-safety-orange pl-4 py-1">
+                <p className="font-mono text-xs text-slate-500 uppercase tracking-widest mb-4 border-l-2 border-jvto-orange pl-4 py-1">
                   {tour.overview.route_meta}
                 </p>
                 <ul className="space-y-3">
                   {tour.overview.highlights.map((highlight: string, idx: number) => (
                     <li key={idx} className="flex items-start gap-3 text-sm text-slate-600">
-                      <CheckCircle2 className="w-4 h-4 text-verified-bright shrink-0 mt-0.5" />
+                      <CheckCircle2 className="w-4 h-4 text-jvto-lime shrink-0 mt-0.5" />
                       <span>{highlight}</span>
                     </li>
                   ))}
@@ -141,7 +179,7 @@ export default function TourDetail() {
 
             <button 
               onClick={() => navigate('/travel-guide/booking-information')}
-              className="w-full bg-safety-orange text-white py-5 rounded-md font-black uppercase tracking-wider text-sm hover:bg-safety-orange/90 transition-all shadow-hover shadow-safety-orange/20 mb-8 flex items-center justify-center gap-3"
+              className="btn-primary w-full mb-8 flex items-center justify-center gap-3"
             >
               <Lock className="w-4 h-4" />
               Request Booking Clearance
@@ -157,18 +195,18 @@ export default function TourDetail() {
                 className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
                 referrerPolicy="no-referrer"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-authority-navy/60 via-transparent to-transparent"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-jvto-navy/60 via-transparent to-transparent"></div>
               
               {tour.crewName && (
-                <div className="absolute bottom-6 left-6 bg-authority-navy/90 backdrop-blur text-white text-xs px-4 py-2 rounded-md font-mono uppercase tracking-widest shadow-hover border border-white/10 flex items-center gap-2">
-                  <ShieldCheck className="w-3 h-3 text-verified-bright" />
+                <div className="absolute bottom-6 left-6 bg-jvto-navy/90 backdrop-blur text-white text-xs px-4 py-2 rounded-md font-mono uppercase tracking-widest shadow-hover border border-white/10 flex items-center gap-2">
+                  <ShieldCheck className="w-3 h-3 text-jvto-lime" />
                   {tour.crewName}
                 </div>
               )}
 
               {/* Forensic Stamp overlay */}
               <div className="absolute top-6 right-6 rotate-12 opacity-80 pointer-events-none">
-                <div className="border-4 border-verified-bright text-verified-bright px-4 py-2 font-black uppercase tracking-tighter text-xl rounded-md bg-verified-bright/10 backdrop-blur-sm">
+                <div className="border-4 border-jvto-lime text-jvto-lime px-4 py-2 font-black uppercase tracking-tighter text-xl rounded-md bg-jvto-lime/10 backdrop-blur-sm">
                   Verified JVTO
                 </div>
               </div>
@@ -189,13 +227,13 @@ export default function TourDetail() {
                 className="mb-16"
               >
                 <div className="flex items-center gap-3 mb-8">
-                  <CalendarDays className="w-6 h-6 text-safety-orange" />
+                  <CalendarDays className="w-6 h-6 text-jvto-orange" />
                   <h2 className="text-3xl font-black uppercase tracking-tighter">Itinerary Protocol</h2>
                 </div>
                 <div className="space-y-8">
                   {tour.itinerary.map((day: any, idx: number) => (
                     <div key={idx} className="relative pl-8 md:pl-12 border-l border-slate-200">
-                      <div className="absolute left-[-17px] top-0 bg-audit-white border-2 border-safety-orange text-safety-orange w-8 h-8 rounded-full flex items-center justify-center font-mono text-xs font-bold">
+                      <div className="absolute left-[-17px] top-0 bg-surface-page border-2 border-jvto-orange text-jvto-orange w-8 h-8 rounded-full flex items-center justify-center font-mono text-xs font-bold">
                         {day.day}
                       </div>
                       <h3 className="text-xl font-bold mb-4 uppercase tracking-tight">{day.title}</h3>
@@ -203,7 +241,10 @@ export default function TourDetail() {
                         {day.activities.map((act: string, aIdx: number) => (
                           <li key={aIdx} className="text-slate-600 flex items-start gap-3 text-sm">
                             <span className="w-1.5 h-1.5 rounded-full bg-slate-300 shrink-0 mt-2"></span>
-                            <span>{act}</span>
+                            <span className="font-mono text-[10px] md:text-xs uppercase tracking-tight text-slate-400 shrink-0 mt-1">
+                              {act.includes(' - ') ? act.split(' - ')[0] : '08:00 AM'}
+                            </span>
+                            <span>{act.includes(' - ') ? act.split(' - ')[1] : act}</span>
                           </li>
                         ))}
                       </ul>
@@ -224,14 +265,21 @@ export default function TourDetail() {
                 className="bg-white p-8 rounded-md border border-slate-200 shadow-card"
               >
                 <h3 className="font-mono text-sm uppercase tracking-widest font-bold mb-6 flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-verified-bright" /> Inclusions
+                  <CheckCircle2 className="w-4 h-4 text-jvto-lime" /> Inclusions
                 </h3>
                 <ul className="space-y-3">
                   {tour.includes.map((item: string, idx: number) => (
                     <li key={idx} className="text-xs text-slate-600 flex items-start gap-2 font-mono uppercase tracking-tight">
-                      <span className="text-verified-bright mt-0.5">✓</span> {item}
+                      <span className="text-jvto-lime mt-0.5">✓</span> {item}
                     </li>
                   ))}
+                  {/* Specific PRD Inclusions */}
+                  <li className="text-xs text-jvto-navy flex items-start gap-2 font-mono uppercase tracking-tight font-bold">
+                    <span className="text-jvto-lime mt-0.5">✓</span> Industrial-grade respirators
+                  </li>
+                  <li className="text-xs text-jvto-navy flex items-start gap-2 font-mono uppercase tracking-tight font-bold">
+                    <span className="text-jvto-lime mt-0.5">✓</span> Oximeter health checks
+                  </li>
                 </ul>
               </motion.div>
             )}
@@ -261,21 +309,21 @@ export default function TourDetail() {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className="bg-authority-navy text-white p-8 rounded-md border border-white/10 shadow-hover"
+                className="bg-jvto-navy text-white p-8 rounded-md border border-white/10 shadow-hover"
               >
-                <h3 className="font-mono text-sm uppercase tracking-widest font-bold mb-6 flex items-center gap-2 text-safety-orange">
+                <h3 className="font-mono text-sm uppercase tracking-widest font-bold mb-6 flex items-center gap-2 text-jvto-orange">
                   <ShieldAlert className="w-4 h-4" /> Requirements
                 </h3>
                 <ul className="space-y-3">
                   {tour.requirements.map((item: string, idx: number) => (
                     <li key={idx} className="text-xs text-slate-300 flex items-start gap-2 font-mono uppercase tracking-tight">
-                      <span className="w-1.5 h-1.5 rounded-full bg-safety-orange shrink-0 mt-1.5"></span> {item}
+                      <span className="w-1.5 h-1.5 rounded-full bg-jvto-orange shrink-0 mt-1.5"></span> {item}
                     </li>
                   ))}
                 </ul>
                 <div className="mt-8 pt-6 border-t border-white/10">
                   <div className="flex items-center gap-3">
-                    <FileText className="w-5 h-5 text-verified-bright" />
+                    <FileText className="w-5 h-5 text-jvto-lime" />
                     <span className="text-[10px] font-mono uppercase tracking-widest text-white/60">Official Health Protocol Applied</span>
                   </div>
                 </div>
