@@ -4,7 +4,7 @@ import { SSOT } from '../lib/ssot';
 
 interface PageSEOProps {
   route?: string;
-  schema?: any;
+  schema?: Record<string, unknown>;
   metaOverride?: {
     title_tag?: string;
     meta_description?: string;

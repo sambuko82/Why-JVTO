@@ -1,45 +1,46 @@
 import React, { useRef, useState, useEffect } from 'react';
-import { motion, useScroll, useTransform } from 'motion/react';
+import { motion } from 'motion/react';
 import { ChevronRight, MapPin } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { SSOT } from '../../lib/ssot';
 
-const DestinationCard = ({ dest, idx, navigate }: { dest: any, idx: number, navigate: any }) => {
+interface Destination {
+  slug: string;
+  name: string;
+  route: string;
+  image: string;
+  highlight: string;
+}
+
+const DestinationCard = ({ dest, idx, navigate }: { dest: Destination, idx: number, navigate: (path: string) => void }) => {
   const ref = useRef<HTMLDivElement>(null);
-  const [isDesktop, setIsDesktop] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    const check = () => setIsDesktop(window.innerWidth >= 768);
-    check();
-    window.addEventListener('resize', check);
-    return () => window.removeEventListener('resize', check);
+    const el = ref.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => { if (entry.isIntersecting) setIsVisible(true); },
+      { threshold: 0.1 }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
   }, []);
-
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["start end", "end start"]
-  });
-
-  // Subtle vertical parallax: move image from -12% to 12%
-  const y = useTransform(scrollYProgress, [0, 1], ["-12%", "12%"]);
 
   return (
     <motion.div
       ref={ref}
       initial={{ opacity: 0, scale: 0.95 }}
-      whileInView={{ opacity: 1, scale: 1 }}
-      viewport={{ once: true }}
+      animate={isVisible ? { opacity: 1, scale: 1 } : {}}
       transition={{ delay: idx * 0.1 }}
       onClick={() => navigate(dest.route)}
       className="relative shrink-0 w-[85vw] sm:w-[340px] md:w-[400px] aspect-[4/5] rounded-md overflow-hidden group cursor-pointer snap-start shadow-card hover:shadow-hover transition-all duration-500"
     >
-      <motion.div 
-        className={`absolute inset-0 w-full h-full origin-center ${isDesktop ? 'scale-[1.25]' : 'scale-100'}`}
-        style={{ y: isDesktop ? y : 0 }}
-      >
-        <img 
+      <div className="absolute inset-0 w-full h-full origin-center">
+        <img
           src={dest.image}
-          alt={dest.name} 
+          alt={dest.name}
+          loading="lazy"
           className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
           referrerPolicy="no-referrer"
         />

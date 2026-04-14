@@ -7,6 +7,41 @@ import React from 'react';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
 
+class ErrorBoundary extends React.Component<
+  { children: React.ReactNode },
+  { hasError: boolean; error: Error | null }
+> {
+  constructor(props: { children: React.ReactNode }) {
+    super(props);
+    this.state = { hasError: false, error: null };
+  }
+
+  static getDerivedStateFromError(error: Error) {
+    return { hasError: true, error };
+  }
+
+  render() {
+    if (this.state.hasError) {
+      return (
+        <div className="min-h-screen flex items-center justify-center bg-authority-navy text-white p-8">
+          <div className="max-w-md text-center">
+            <p className="font-mono text-safety-orange text-xs uppercase tracking-widest mb-4">System Error</p>
+            <h1 className="text-2xl font-black uppercase mb-4">Something went wrong</h1>
+            <p className="text-slate-400 text-sm mb-8 font-mono">{this.state.error?.message}</p>
+            <button
+              onClick={() => window.location.href = '/'}
+              className="px-6 py-3 bg-safety-orange text-white text-xs font-black uppercase tracking-widest rounded-xl hover:bg-orange-600 transition-colors"
+            >
+              Return Home
+            </button>
+          </div>
+        </div>
+      );
+    }
+    return this.props.children;
+  }
+}
+
 // Existing Pages
 import WhyJvto from './app/page';
 import DestinationsHub from './app/destinations/page';
@@ -44,6 +79,7 @@ export default function App() {
   return (
     <HelmetProvider>
       <BrowserRouter>
+        <ErrorBoundary>
         <GlobalLayout>
           <Routes>
             {/* Main Hub */}
@@ -114,6 +150,7 @@ export default function App() {
             <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
         </GlobalLayout>
+        </ErrorBoundary>
       </BrowserRouter>
     </HelmetProvider>
   );

@@ -1,10 +1,10 @@
 import React from 'react';
-import { ShieldCheck, Activity, Lock, FileCheck, ChevronRight } from 'lucide-react';
+import { ShieldCheck, Activity, Lock, FileCheck, ChevronRight, type LucideIcon } from 'lucide-react';
 import { motion } from 'motion/react';
 import { useNavigate } from 'react-router-dom';
 import { SSOT } from '../../lib/ssot';
 
-const TwoToneIcon = ({ Icon }: { Icon: any }) => (
+const TwoToneIcon = ({ Icon }: { Icon: LucideIcon }) => (
   <div className="relative w-16 h-16 mb-6 group-hover:scale-105 transition-transform origin-bottom-left">
     {/* Accent shape (simulating the green blob in the illustration) */}
     <div className="absolute top-0 right-1 w-10 h-10 bg-jvto-orange rounded-full opacity-90" />

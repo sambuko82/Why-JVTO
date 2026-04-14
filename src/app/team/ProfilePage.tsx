@@ -164,9 +164,7 @@ export default function CrewProfile() {
 
   return (
     <div className="min-h-screen bg-audit-white font-sans text-authority-navy selection:bg-safety-orange/30 pb-24 md:pb-0">
-      <PageSEO metaOverride={dynamicMeta} />
-      {/* Invisible JSON-LD Injection */}
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdGraph) }} />
+      <PageSEO metaOverride={dynamicMeta} schema={jsonLdGraph} />
 
       {/* Header / Nav */}
       <nav className="bg-authority-navy border-b border-white/5 relative z-40 backdrop-blur-xl">
@@ -373,7 +371,7 @@ export default function CrewProfile() {
                 onClick={() => setSelectedAsset({ 
                   url: profileData.credential.cardImage, 
                   title: `${profileData.name} - ${profileData.credential.name}`,
-                  annotations: (profileData.credential as any).annotations
+                  annotations: profileData.credential.annotations
                 })}
                 className="relative bg-black/40 rounded-[2rem] p-6 border border-white/5 flex justify-center items-center h-80 overflow-hidden cursor-pointer group"
               >
