@@ -44,7 +44,7 @@ const DestinationCard = ({ dest, idx, navigate }: { dest: Destination, idx: numb
           className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
           referrerPolicy="no-referrer"
         />
-      </motion.div>
+      </div>
       <div className="absolute inset-0 bg-gradient-to-b from-black/5 via-transparent to-black/70 opacity-70 transition-opacity duration-300 group-hover:opacity-90"></div>
       
       <div className="absolute top-0 left-0 right-0 p-4 md:p-6">

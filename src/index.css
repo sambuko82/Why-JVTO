@@ -174,7 +174,7 @@
   }
 
   .btn-secondary {
-    @apply border-1.5 border-jvto-navy text-jvto-navy px-6 py-3 rounded-(--radius-sm) font-bold uppercase tracking-wider hover:bg-jvto-navy hover:text-white transition-all;
+    @apply border-2 border-jvto-navy text-jvto-navy px-6 py-3 rounded-(--radius-sm) font-bold uppercase tracking-wider hover:bg-jvto-navy hover:text-white transition-all;
   }
 
   .btn-verify {
